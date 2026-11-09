@@ -1,0 +1,573 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 3 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="3">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><span class="wk locked" title="En producción"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><span class="wk locked" title="En producción"><span class="n">S05</span><span class="t">Entorno y datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S06</span><span class="t">Primeras estrategias</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-03.svg)"><img src="img/cover-03.svg" alt=""></div><p class="eyebrow">SEMANA 03 · ETAPA 1 · FUNDAMENTOS</p><h1>Matemáticas y probabilidad para el trading</h1><p class="meta">11 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="3" data-total="11"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w3-done-presentacion"></span>Presentación</a><a class="tab" href="#s03-l1" data-tab="s03-l1" title="Fracciones, porcentajes, ratios, proporciones y reglas de tres"><span class="dot" data-dot="w3-done-s03-l1"></span>L1</a><a class="tab" href="#s03-l2" data-tab="s03-l2" title="Rentabilidad simple, logarítmica y anualizada"><span class="dot" data-dot="w3-done-s03-l2"></span>L2</a><a class="tab" href="#s03-l3" data-tab="s03-l3" title="Interés compuesto y la asimetría de las pérdidas"><span class="dot" data-dot="w3-done-s03-l3"></span>L3</a><a class="tab" href="#s03-l4" data-tab="s03-l4" title="Probabilidad básica y frecuencia"><span class="dot" data-dot="w3-done-s03-l4"></span>L4</a><a class="tab" href="#s03-l5" data-tab="s03-l5" title="Esperanza matemática e incertidumbre"><span class="dot" data-dot="w3-done-s03-l5"></span>L5</a><a class="tab" href="#s03-l6" data-tab="s03-l6" title="Distribuciones: normal, colas gruesas y por qué importan"><span class="dot" data-dot="w3-done-s03-l6"></span>L6</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w3-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w3-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-03-y-entrega-practica" data-tab="investigacion-i-03-y-entrega-practica" title="Investigación I-03 y entrega práctica"><span class="dot" data-dot="w3-done-investigacion-i-03-y-entrega-practica"></span>Investigación I-03 y entrega práctica</a><a class="tab" href="#examen-3" data-tab="examen-3" title="Examen de la semana 3 · Variante A"><span class="dot" data-dot="w3-done-examen-3"></span>Examen  3</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 03 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s03-l1"><span class="dot" data-dot="w3-done-s03-l1"></span><span class="tk">Lección L1</span><b>Fracciones, porcentajes, ratios, proporciones y reglas de tres</b><span class="tm">→</span></a><a class="toc-i" href="#s03-l2"><span class="dot" data-dot="w3-done-s03-l2"></span><span class="tk">Lección L2</span><b>Rentabilidad simple, logarítmica y anualizada</b><span class="tm">→</span></a><a class="toc-i" href="#s03-l3"><span class="dot" data-dot="w3-done-s03-l3"></span><span class="tk">Lección L3</span><b>Interés compuesto y la asimetría de las pérdidas</b><span class="tm">→</span></a><a class="toc-i" href="#s03-l4"><span class="dot" data-dot="w3-done-s03-l4"></span><span class="tk">Lección L4</span><b>Probabilidad básica y frecuencia</b><span class="tm">→</span></a><a class="toc-i" href="#s03-l5"><span class="dot" data-dot="w3-done-s03-l5"></span><span class="tk">Lección L5</span><b>Esperanza matemática e incertidumbre</b><span class="tm">→</span></a><a class="toc-i" href="#s03-l6"><span class="dot" data-dot="w3-done-s03-l6"></span><span class="tk">Lección L6</span><b>Distribuciones: normal, colas gruesas y por qué importan</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w3-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w3-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-03-y-entrega-practica"><span class="dot" data-dot="w3-done-investigacion-i-03-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-03 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-3"><span class="dot" data-dot="w3-done-examen-3"></span><span class="tk">Evaluación</span><b>Examen de la semana 3 · Variante A</b><span class="tm">→</span></a></nav><p>Ya sabes cómo funcionan los mercados y cómo se lanza una orden. Esta semana aprenderás las matemáticas que hay detrás de cada resultado: cómo se mide una rentabilidad, por qué perder un 50 % exige ganar un 100 % para recuperarse y qué significa que una estrategia tenga «ventaja». No necesitas saber matemáticas avanzadas: todo se reduce a operaciones con porcentajes y a pensar en probabilidades. Lo que sí necesitas es practicar hasta que estos cálculos te salgan solos, porque los usarás todas las semanas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Manejar porcentajes, ratios y reglas de tres para calcular tamaños, costes y riesgos.</li>
+<li>Calcular rentabilidades simples, logarítmicas y anualizadas, y saber cuándo usar cada una.</li>
+<li>Aplicar el interés compuesto y explicar la asimetría entre pérdidas y ganancias.</li>
+<li>Estimar probabilidades a partir de frecuencias y entender por qué hace falta una muestra grande.</li>
+<li>Calcular la esperanza matemática de una estrategia y su tasa de acierto de equilibrio.</li>
+<li>Explicar qué es una distribución normal, qué son las colas gruesas y por qué importan en los mercados.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Seis lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Ejercicios en hoja de cálculo y simulaciones</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-03, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 4</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Una hoja de cálculo: Google Sheets, Excel o LibreOffice Calc. Esta semana la usarás mucho.</li>
+<li>Una calculadora con la función logaritmo neperiano (ln). La del móvil en modo científico sirve.</li>
+<li>Tu cuaderno de investigación.</li>
+<li>Tu cuenta demo de MT4 o MT5 de la semana 2, para descargar datos en la investigación.</li>
+</ul>
+<aside class="callout tip"><p><strong>Consejo.</strong> Si las matemáticas no son tu fuerte, no te saltes los ejemplos: rehazlos en la hoja de cálculo hasta que te salgan igual. Entender una fórmula leyéndola no es lo mismo que saber usarla.</p></aside>
+<h4>Criterio para desbloquear la semana 4</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 3</li>
+<li>☐ Entrega práctica: hoja de cálculo de rentabilidad y esperanza</li>
+<li>☐ Investigación I-03: pasos 1 a 4, 7 y 8 documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w3-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s03-l1" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L1</span><h2>Fracciones, porcentajes, ratios, proporciones y reglas de tres</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<h4>Por qué empezar por aquí</h4>
+<p>Casi todos los errores de cálculo de un trader principiante vienen de confundir un porcentaje con un punto porcentual, o de aplicar mal una regla de tres al calcular el tamaño de una posición. Son errores pequeños en el papel y grandes en la cuenta. Esta lección repasa las herramientas que usarás a diario.</p>
+<h4>Fracciones, decimales y porcentajes</h4>
+<p>Son tres formas de escribir lo mismo:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Fracción</th>
+<th>Decimal</th>
+<th>Porcentaje</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1/2</td>
+<td>0,5</td>
+<td>50 %</td>
+</tr>
+<tr>
+<td>1/4</td>
+<td>0,25</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>1/100</td>
+<td>0,01</td>
+<td>1 %</td>
+</tr>
+<tr>
+<td>3/200</td>
+<td>0,015</td>
+<td>1,5 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>Para pasar de decimal a porcentaje se multiplica por 100; para pasar de porcentaje a decimal se divide entre 100. En la hoja de cálculo trabaja siempre con decimales (0,01) y aplica el formato de porcentaje solo para mostrarlo.</p>
+<h4>Porcentaje de una cantidad y variación porcentual</h4>
+<ul>
+<li><strong>Porcentaje de una cantidad:</strong> el 2 % de 3.000 € es 3.000 × 0,02 = 60 €.</li>
+<li><strong>Variación porcentual:</strong> si una cuenta pasa de 2.000 € a 2.150 €, ha variado:</li>
+</ul>
+<div class="math">$$\text{Variación} = \frac{\text{valor final} - \text{valor inicial}}{\text{valor inicial}} = \frac{2.150 - 2.000}{2.000} = 0{,}075 = 7{,}5\,\%$$</div>
+
+<p>El denominador es siempre el valor <strong>inicial</strong>. Es el error más común: dividir entre el valor final da otro número.</p>
+<h4>Porcentaje y punto porcentual</h4>
+<p>Si el drawdown máximo de una estrategia pasa del 10 % al 15 %, ha subido <strong>5 puntos porcentuales</strong>, pero ha aumentado un <strong>50 %</strong> (porque 5 es la mitad de 10). Las dos frases son correctas y dicen cosas distintas. Usa «puntos porcentuales» cuando restes dos porcentajes.</p>
+<aside class="callout warn"><p><strong>Error típico.</strong> «La tasa de acierto ha subido un 5 %» cuando ha pasado del 40 % al 45 %. Lo correcto es «ha subido 5 puntos» o «ha subido un 12,5 %».</p></aside>
+<h4>Ratios</h4>
+<p>Un <strong>ratio</strong> compara dos cantidades dividiéndolas. En trading los verás constantemente:</p>
+<ul>
+<li><strong>Ratio beneficio/riesgo (R:R):</strong> si arriesgas 20 pips para ganar 40, el ratio es 40/20 = 2, y se escribe 2:1 o «2R».</li>
+<li><strong>Profit factor:</strong> beneficio bruto entre pérdida bruta. Un profit factor de 1,5 significa que por cada euro perdido se ganaron 1,5.</li>
+<li><strong>Apalancamiento:</strong> tamaño de la posición entre el margen. Lo viste la semana pasada.</li>
+</ul>
+<p>Un ratio no tiene unidades si las dos cantidades están en la misma unidad: pips entre pips o euros entre euros.</p>
+<h4>Proporciones y regla de tres</h4>
+<p>Dos magnitudes son <strong>directamente proporcionales</strong> si, cuando una se multiplica por un número, la otra también. El valor del pip y el tamaño de la posición lo son: si 1 lote de EUR/USD vale 10 $ por pip, 0,30 lotes valen 3 $ por pip.</p>
+<p>La <strong>regla de tres</strong> resuelve proporciones:</p>
+<div class="math">$$\frac{1 \text{ lote}}{10\ \$} = \frac{x \text{ lotes}}{3\ \$} \quad\Rightarrow\quad x = \frac{3 \times 1}{10} = 0{,}30 \text{ lotes}$$</div>
+
+<aside class="callout example"><p><strong>Ejemplo.</strong> Tamaño de posición. Tienes 2.000 € y quieres arriesgar el 1 % (20 €) en una operación de EUR/USD con un stop de 25 pips. Con el EUR/USD a 1,0800, un pip de 1 lote vale 10 $ = 10 / 1,08 ≈ 9,26 €. Por tanto 25 pips de 1 lote son 25 × 9,26 = 231,50 €. Regla de tres: si 1 lote arriesga 231,50 €, para arriesgar 20 € necesitas 20 / 231,50 ≈ 0,086 lotes. Como el broker solo admite dos decimales, redondeas <strong>hacia abajo</strong>: 0,08 lotes.</p></aside>
+<p>Siempre se redondea hacia abajo el tamaño de posición: redondear hacia arriba significa arriesgar más de lo que decidiste.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Una cuenta pasa de 5.000 € a 4.600 €. ¿Cuál es la variación porcentual?</li>
+<li>El drawdown pasa del 8 % al 12 %. Exprésalo en puntos porcentuales y en variación porcentual.</li>
+<li>Con 3.000 €, un riesgo del 0,5 % y un stop de 40 pips en EUR/USD (pip de 1 lote = 9,26 €), ¿qué tamaño usarías?</li>
+</ol><div class="answer"><label for="w3-s03-l1">Tus respuestas</label><textarea id="w3-s03-l1" data-store="w3-s03-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l1"> He terminado esta sección</label></section><section class="pane" id="s03-l2" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L2</span><h2>Rentabilidad simple, logarítmica y anualizada</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>La rentabilidad simple</h4>
+<p>La <strong>rentabilidad simple</strong> de un periodo es la variación porcentual que viste en la lección anterior:</p>
+<div class="math">$$r = \frac{P_1 - P_0}{P_0} = \frac{P_1}{P_0} - 1$$</div>
+
+<p>Es la que entiende todo el mundo: si compras a 100 y vendes a 110, has ganado un 10 %.</p>
+<p>Su problema aparece al <strong>encadenar</strong> periodos. Si un activo sube un 10 % y luego baja un 10 %, no vuelve a 100:</p>
+<div class="math">$$100 \times 1{,}10 = 110 \qquad 110 \times 0{,}90 = 99$$</div>
+
+<p>Las rentabilidades simples no se suman: se <strong>multiplican</strong> los factores (1 + r). La rentabilidad total de varios periodos es:</p>
+<div class="math">$$R_{\text{total}} = (1 + r_1)(1 + r_2)\cdots(1 + r_n) - 1$$</div>
+
+<p>En el ejemplo: 1,10 × 0,90 − 1 = −0,01, es decir, −1 %.</p>
+<h4>La rentabilidad logarítmica</h4>
+<p>La <strong>rentabilidad logarítmica</strong> (o continua) usa el logaritmo neperiano:</p>
+<div class="math">$$r_{\log} = \ln\left(\frac{P_1}{P_0}\right)$$</div>
+
+<p>De 100 a 110: ln(1,10) = 0,0953. De 110 a 100: ln(100/110) = −0,0953. Son simétricas y, sobre todo, <strong>se suman</strong>: la rentabilidad logarítmica de varios periodos es la suma de las de cada periodo. Por eso los analistas cuantitativos las prefieren para hacer estadística.</p>
+<figure class="fig"><a href="img/s03-log-simple.svg" target="_blank" rel="noopener"><img src="img/s03-log-simple.svg" alt="Figura 3.1 · La rentabilidad simple y la logarítmica casi coinciden en movimientos pequeños y se separan en los grandes." loading="lazy"></a><figcaption>Figura 3.1 · La rentabilidad simple y la logarítmica casi coinciden en movimientos pequeños y se separan en los grandes.</figcaption></figure>
+<p>Para movimientos pequeños, de menos de un 2 o 3 %, las dos son casi iguales. Para pasar de una a otra:</p>
+<div class="math">$$r = e^{r_{\log}} - 1 \qquad r_{\log} = \ln(1 + r)$$</div>
+
+<aside class="callout key"><p><strong>Idea clave.</strong> Para hablar con personas, usa la rentabilidad simple. Para sumar, promediar o hacer estadística con muchos periodos, usa la logarítmica. Nunca mezcles las dos en la misma columna.</p></aside>
+<h4>La rentabilidad anualizada</h4>
+<p>Comparar un 30 % ganado en tres años con un 12 % ganado en uno exige ponerlos en la misma escala. La <strong>rentabilidad anualizada</strong> (o tasa anual compuesta, CAGR) es la rentabilidad constante por año que daría el mismo resultado final:</p>
+<div class="math">$$\text{CAGR} = \left(\frac{V_{\text{final}}}{V_{\text{inicial}}}\right)^{1/\text{años}} - 1$$</div>
+
+<p>Ejemplo: 10.000 € que se convierten en 15.000 € en 3 años: (1,5)^(1/3) − 1 = 0,1447, un 14,47 % anual. No es 50 / 3 = 16,7 %: dividir entre los años ignora la composición.</p>
+<p>Para pasar de una rentabilidad mensual a anual equivalente:</p>
+<div class="math">$$r_{\text{anual}} = (1 + r_{\text{mensual}})^{12} - 1$$</div>
+
+<p>Un 1 % mensual equivale a 1,01^12 − 1 = 12,68 % anual, no a un 12 %.</p>
+<aside class="callout warn"><p><strong>Error típico.</strong> Anualizar un resultado de pocas semanas. Si una estrategia gana un 5 % en un mes, su «rentabilidad anualizada» sería del 79,6 %. El cálculo es correcto, pero no significa nada: un mes no dice cómo será el año. Anualiza solo con un histórico largo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Una acción sube un 20 % y luego baja un 20 %. ¿Cuánto ha ganado o perdido en total?</li>
+<li>Calcula la rentabilidad logarítmica de pasar de 50 a 55.</li>
+<li>Una cuenta pasa de 2.000 € a 2.800 € en 2 años. ¿Cuál es su CAGR?</li>
+</ol><div class="answer"><label for="w3-s03-l2">Tus respuestas</label><textarea id="w3-s03-l2" data-store="w3-s03-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l2"> He terminado esta sección</label></section><section class="pane" id="s03-l3" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L3</span><h2>Interés compuesto y la asimetría de las pérdidas</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<h4>El interés compuesto</h4>
+<p>Con <strong>interés simple</strong>, cada periodo ganas sobre el capital inicial. Con <strong>interés compuesto</strong>, cada periodo ganas sobre el capital acumulado, incluidas las ganancias anteriores:</p>
+<div class="math">$$V_n = V_0 \times (1 + r)^n$$</div>
+
+<p>Con 1.000 € al 2 % mensual:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Meses</th>
+<th>Interés simple</th>
+<th>Interés compuesto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>12</td>
+<td>1.240,00 €</td>
+<td>1.268,24 €</td>
+</tr>
+<tr>
+<td>24</td>
+<td>1.480,00 €</td>
+<td>1.608,44 €</td>
+</tr>
+<tr>
+<td>60</td>
+<td>2.200,00 €</td>
+<td>3.281,03 €</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s03-compuesto.svg" target="_blank" rel="noopener"><img src="img/s03-compuesto.svg" alt="Figura 3.2 · Con el tiempo, la composición separa las dos curvas. Ejemplo con un 2 % mensual constante." loading="lazy"></a><figcaption>Figura 3.2 · Con el tiempo, la composición separa las dos curvas. Ejemplo con un 2 % mensual constante.</figcaption></figure>
+<p>La tabla muestra el atractivo del interés compuesto, y también su trampa: supone que <strong>cada mes</strong> se gana un 2 %, sin un solo mes malo. Ninguna estrategia real hace eso. En la semana 14 verás cómo se reinvierte con prudencia.</p>
+<h4>La asimetría de las pérdidas</h4>
+<p>Si pierdes un porcentaje L de tu cuenta, para volver al punto de partida necesitas ganar:</p>
+<div class="math">$$G = \frac{L}{1 - L}$$</div>
+
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Pérdida</th>
+<th>Ganancia necesaria para recuperar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10 %</td>
+<td>11,1 %</td>
+</tr>
+<tr>
+<td>20 %</td>
+<td>25,0 %</td>
+</tr>
+<tr>
+<td>30 %</td>
+<td>42,9 %</td>
+</tr>
+<tr>
+<td>50 %</td>
+<td>100,0 %</td>
+</tr>
+<tr>
+<td>75 %</td>
+<td>300,0 %</td>
+</tr>
+<tr>
+<td>90 %</td>
+<td>900,0 %</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s03-asimetria.svg" target="_blank" rel="noopener"><img src="img/s03-asimetria.svg" alt="Figura 3.3 · Cuanto mayor es la caída, más se dispara lo que necesitas ganar para recuperarte." loading="lazy"></a><figcaption>Figura 3.3 · Cuanto mayor es la caída, más se dispara lo que necesitas ganar para recuperarte.</figcaption></figure>
+<p>Es la razón matemática de que la gestión del riesgo sea lo primero. Una caída del 10 % se recupera con trabajo normal; una del 50 % puede costar años; una del 90 % casi nunca se recupera.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Las pérdidas pesan más que las ganancias equivalentes. Por eso en este curso el primer objetivo de cualquier estrategia o cartera es limitar el drawdown, no maximizar la rentabilidad.</p></aside>
+<h4>La volatilidad resta rentabilidad</h4>
+<p>Dos estrategias ganan de media un 5 % al mes. La A gana siempre un 5 %. La B alterna +25 % y −15 %, que también da una media aritmética del 5 %. Tras dos meses:</p>
+<ul>
+<li>A: 1,05 × 1,05 = 1,1025, un <strong>+10,25 %</strong>.</li>
+<li>B: 1,25 × 0,85 = 1,0625, un <strong>+6,25 %</strong>.</li>
+</ul>
+<p>La media aritmética es la misma, pero la B crece menos porque su volatilidad «resta» rentabilidad compuesta. Este efecto se llama <strong>lastre de la volatilidad</strong> (<em>volatility drag</em>). Lo que de verdad acumula tu cuenta es la <strong>media geométrica</strong>, no la aritmética.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuánto valen 5.000 € al 1,5 % mensual compuesto tras 24 meses?</li>
+<li>Tu cuenta cae un 40 %. ¿Qué rentabilidad necesitas para recuperarla?</li>
+<li>Explica con tus palabras por qué la estrategia B del ejemplo crece menos que la A.</li>
+</ol><div class="answer"><label for="w3-s03-l3">Tus respuestas</label><textarea id="w3-s03-l3" data-store="w3-s03-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l3"> He terminado esta sección</label></section><section class="pane" id="s03-l4" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L4</span><h2>Probabilidad básica y frecuencia</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué es una probabilidad</h4>
+<p>Una <strong>probabilidad</strong> es un número entre 0 y 1 (o entre 0 % y 100 %) que mide lo posible que es un suceso. 0 es imposible; 1, seguro. En trading casi nunca conocemos las probabilidades: las <strong>estimamos</strong> a partir de la frecuencia con que algo ocurrió en el pasado.</p>
+<div class="math">$$P(A) \approx \frac{\text{veces que ocurrió } A}{\text{número total de observaciones}}$$</div>
+
+<p>Si en 200 operaciones de un backtest 84 fueron ganadoras, la frecuencia de acierto es 84 / 200 = 0,42. Estimamos que la probabilidad de ganar es de alrededor del 42 %… <strong>si el futuro se parece al pasado</strong>, que es mucho suponer.</p>
+<h4>Reglas básicas</h4>
+<ul>
+<li><strong>Complemento:</strong> la probabilidad de que algo no ocurra es 1 − P(A). Si ganas el 42 % de las veces, pierdes el 58 %.</li>
+<li><strong>Sucesos independientes:</strong> si el resultado de una operación no influye en la siguiente, la probabilidad de que ocurran dos cosas seguidas es el producto: P(A y B) = P(A) × P(B).</li>
+<li><strong>Suma de sucesos excluyentes:</strong> si dos sucesos no pueden ocurrir a la vez, P(A o B) = P(A) + P(B).</li>
+</ul>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Rachas. Con una probabilidad de perder del 58 %, la probabilidad de perder 5 operaciones seguidas es 0,58^5 ≈ 0,066, un 6,6 %. Parece poco, pero en 200 operaciones habrá muchas oportunidades de que ocurra, y lo raro sería no ver nunca una racha así.</p></aside>
+<h4>Las rachas son normales</h4>
+<p>Las personas subestimamos las rachas. En una serie larga de operaciones independientes, la racha de pérdidas más larga que cabe esperar crece con el número de operaciones. Como orientación:</p>
+<div class="math">$$\text{Racha más larga esperada} \approx \frac{\ln\big(n \times (1 - q)\big)}{\ln(1/q)}$$</div>
+
+<p>donde n es el número de operaciones y q la probabilidad de perder. Con n = 200 y q = 0,58: ln(200 × 0,42) / ln(1/0,58) = ln(84) / ln(1,724) ≈ 4,43 / 0,545 ≈ <strong>8 pérdidas seguidas</strong>. Es una orientación: en la práctica la racha más larga varía mucho de una serie a otra. Una estrategia con un 42 % de acierto, aunque sea buena, te hará pasar por eso. Si no lo esperas, la abandonarás en el peor momento.</p>
+<figure class="fig"><a href="img/s03-rachas.svg" target="_blank" rel="noopener"><img src="img/s03-rachas.svg" alt="Figura 3.4 · Mil simulaciones de 200 operaciones con un 42 % de acierto: la racha más larga tiene una mediana de 8 pérdidas, y en el 80 % de los casos está entre 6 y 12. Datos simulados." loading="lazy"></a><figcaption>Figura 3.4 · Mil simulaciones de 200 operaciones con un 42 % de acierto: la racha más larga tiene una mediana de 8 pérdidas, y en el 80 % de los casos está entre 6 y 12. Datos simulados.</figcaption></figure>
+<h4>La ley de los grandes números</h4>
+<p>Lanza una moneda 10 veces y puede salir cara 7 veces (70 %). Lánzala 10.000 y saldrá cerca de un 50 %. La <strong>ley de los grandes números</strong> dice que la frecuencia observada se acerca a la probabilidad real cuantas más observaciones tienes.</p>
+<figure class="fig"><a href="img/s03-grandes-numeros.svg" target="_blank" rel="noopener"><img src="img/s03-grandes-numeros.svg" alt="Figura 3.5 · La frecuencia de caras se estabiliza cerca del 50 % al aumentar los lanzamientos. Datos simulados." loading="lazy"></a><figcaption>Figura 3.5 · La frecuencia de caras se estabiliza cerca del 50 % al aumentar los lanzamientos. Datos simulados.</figcaption></figure>
+<p>La consecuencia para ti: <strong>un backtest con 30 operaciones no demuestra nada.</strong> Su tasa de acierto puede estar muy lejos de la real por pura suerte. En la semana 4 aprenderás a medir cuánta incertidumbre tiene una muestra; por ahora, desconfía de cualquier conclusión con pocas operaciones.</p>
+<h4>La falacia del jugador</h4>
+<p>Después de 6 pérdidas seguidas, mucha gente piensa que «ya toca ganar». Si las operaciones son independientes, la probabilidad de la siguiente es la misma que siempre. Esta es la <strong>falacia del jugador</strong>, y lleva a aumentar el tamaño justo después de una racha mala, que es la forma más rápida de arruinarse.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>En 150 operaciones, 57 fueron ganadoras. ¿Cuál es la frecuencia de acierto y la de pérdida?</li>
+<li>Con un 50 % de acierto, ¿cuál es la probabilidad de perder 4 operaciones seguidas?</li>
+<li>¿Por qué 20 operaciones no bastan para saber si una estrategia funciona?</li>
+</ol><div class="answer"><label for="w3-s03-l4">Tus respuestas</label><textarea id="w3-s03-l4" data-store="w3-s03-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l4"> He terminado esta sección</label></section><section class="pane" id="s03-l5" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L5</span><h2>Esperanza matemática e incertidumbre</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 40 minutos</em></p>
+<h4>La pregunta que importa</h4>
+<p>Una estrategia que acierta el 70 % de las veces puede perder dinero. Otra que acierta el 35 % puede ganarlo. Lo que decide si una estrategia gana a largo plazo no es la tasa de acierto, sino la <strong>esperanza matemática</strong>: lo que ganas o pierdes de media por operación.</p>
+<h4>La fórmula</h4>
+<div class="math">$$E = p \times G - (1 - p) \times P$$</div>
+
+<p>donde p es la probabilidad de ganar, G la ganancia media de las operaciones ganadoras y P la pérdida media de las perdedoras (en positivo).</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Una estrategia acierta el 40 % de las veces. Sus ganadoras ganan de media 150 € y sus perdedoras pierden de media 80 €. E = 0,40 × 150 − 0,60 × 80 = 60 − 48 = <strong>12 € por operación</strong>. Con 200 operaciones al año, la expectativa es de unos 2.400 €, antes de considerar la variabilidad.</p></aside>
+<h4>La esperanza en R</h4>
+<p>Es más útil expresar la esperanza en múltiplos del riesgo (<strong>R</strong>), porque así no depende del tamaño de la cuenta. Si R es el ratio entre ganancia media y pérdida media:</p>
+<div class="math">$$E_R = p \times R - (1 - p)$$</div>
+
+<p>En el ejemplo, R = 150 / 80 = 1,875 y E_R = 0,40 × 1,875 − 0,60 = <strong>0,15 R</strong>: por cada euro que arriesgas, ganas 15 céntimos de media.</p>
+<h4>La tasa de acierto de equilibrio</h4>
+<p>¿Qué tasa de acierto necesitas para no perder con un ratio R dado? Basta con hacer E = 0:</p>
+<div class="math">$$p_{\text{equilibrio}} = \frac{1}{1 + R}$$</div>
+
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Ratio R</th>
+<th>Acierto mínimo para no perder</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0,5</td>
+<td>66,7 %</td>
+</tr>
+<tr>
+<td>1</td>
+<td>50,0 %</td>
+</tr>
+<tr>
+<td>1,5</td>
+<td>40,0 %</td>
+</tr>
+<tr>
+<td>2</td>
+<td>33,3 %</td>
+</tr>
+<tr>
+<td>3</td>
+<td>25,0 %</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s03-equilibrio.svg" target="_blank" rel="noopener"><img src="img/s03-equilibrio.svg" alt="Figura 3.6 · Por encima de la curva, la estrategia tiene esperanza positiva; por debajo, pierde. Los puntos son ejemplos." loading="lazy"></a><figcaption>Figura 3.6 · Por encima de la curva, la estrategia tiene esperanza positiva; por debajo, pierde. Los puntos son ejemplos.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> No preguntes «¿cuánto acierta?». Pregunta «¿cuánto acierta para el ratio que tiene?». Una tasa de acierto sin el ratio no dice nada.</p></aside>
+<h4>Los costes mueven la curva</h4>
+<p>Los costes (spread, comisión, deslizamiento y swap) restan de cada operación. Si una estrategia busca 10 pips de beneficio con 10 pips de stop y paga 1 pip de coste por operación, en realidad gana 9 pips y pierde 11: R = 9/11 = 0,82 y su acierto de equilibrio sube del 50 % al 55 %. Cuanto más pequeños son los objetivos, más pesan los costes. Por eso el <em>scalping</em> es tan difícil para un minorista.</p>
+<h4>Esperanza no es certeza</h4>
+<p>La esperanza es una <strong>media a largo plazo</strong>. En 20 operaciones, una estrategia con esperanza positiva puede perder dinero; en 2.000, es muy probable que gane si la esperanza es real. Dos preguntas que harás siempre:</p>
+<ol>
+<li><strong>¿Es real la esperanza?</strong> Puede que el backtest la haya encontrado por casualidad (lo verás en las semanas 10 y 11).</li>
+<li><strong>¿Puedo aguantar la variabilidad?</strong> Una esperanza positiva no sirve de nada si una racha te obliga a parar antes de que se manifieste.</li>
+</ol>
+<figure class="fig"><a href="img/s03-trayectorias.svg" target="_blank" rel="noopener"><img src="img/s03-trayectorias.svg" alt="Figura 3.7 · Veinte trayectorias de la misma estrategia (esperanza de 0,15 R por operación): todas tienen la misma ventaja y resultados muy distintos. Datos simulados." loading="lazy"></a><figcaption>Figura 3.7 · Veinte trayectorias de la misma estrategia (esperanza de 0,15 R por operación): todas tienen la misma ventaja y resultados muy distintos. Datos simulados.</figcaption></figure>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Acierto del 55 %, ganancia media 60 €, pérdida media 70 €. ¿Cuál es la esperanza?</li>
+<li>Con un ratio de 2,5, ¿qué tasa de acierto necesitas para no perder?</li>
+<li>¿Por qué una estrategia con esperanza positiva puede perder dinero durante meses?</li>
+</ol><div class="answer"><label for="w3-s03-l5">Tus respuestas</label><textarea id="w3-s03-l5" data-store="w3-s03-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l5"> He terminado esta sección</label></section><section class="pane" id="s03-l6" hidden><header class="pane-head"><span class="kicker">Semana 03 · Lección L6</span><h2>Distribuciones: normal, colas gruesas y por qué importan</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué es una distribución</h4>
+<p>Si apuntas la rentabilidad diaria de un activo durante cinco años y cuentas cuántos días cayeron en cada intervalo (entre −1 % y −0,5 %, entre −0,5 % y 0 %, etc.), obtienes un <strong>histograma</strong>. La forma de ese histograma es la <strong>distribución</strong> de las rentabilidades: dice qué valores son frecuentes y cuáles raros.</p>
+<h4>La distribución normal</h4>
+<p>La <strong>distribución normal</strong> (o campana de Gauss) es simétrica y queda definida por dos números: la <strong>media</strong> (el centro) y la <strong>desviación estándar</strong> (la anchura, que verás en detalle la semana que viene). Tiene una propiedad muy útil, la regla 68–95–99,7:</p>
+<ul>
+<li>Alrededor del 68 % de los valores caen a menos de 1 desviación estándar de la media.</li>
+<li>Alrededor del 95 %, a menos de 2.</li>
+<li>Alrededor del 99,7 %, a menos de 3.</li>
+</ul>
+<p>Según la normal, un movimiento de más de 4 desviaciones estándar es rarísimo: ocurriría aproximadamente un día de cada 16.000, es decir, una vez cada 60 años de sesiones.</p>
+<h4>Las colas gruesas</h4>
+<p>Las rentabilidades de los mercados <strong>no son normales</strong>. Tienen <strong>colas gruesas</strong> (<em>fat tails</em>): los movimientos extremos ocurren mucho más a menudo de lo que predice la normal. El 19 de octubre de 1987, el índice Dow Jones cayó un 22,6 % en una sola sesión, un movimiento que la distribución normal considera prácticamente imposible. Y no es un caso aislado: crisis, cierres con gap, decisiones de bancos centrales y desplomes de criptomonedas producen movimientos «imposibles» con regularidad.</p>
+<figure class="fig"><a href="img/s03-colas.svg" target="_blank" rel="noopener"><img src="img/s03-colas.svg" alt="Figura 3.8 · Una distribución con colas gruesas tiene más días tranquilos y más días extremos que la normal con la misma desviación estándar. Datos simulados." loading="lazy"></a><figcaption>Figura 3.8 · Una distribución con colas gruesas tiene más días tranquilos y más días extremos que la normal con la misma desviación estándar. Datos simulados.</figcaption></figure>
+<h4>Por qué importa a un trader algorítmico</h4>
+<ul>
+<li><strong>Los stops no te protegen de todo.</strong> Un gap puede saltar tu stop (lo viste en la semana 2), y los gaps grandes son más frecuentes de lo que «debería» pasar.</li>
+<li><strong>Las métricas basadas en la normal subestiman el riesgo.</strong> Si calculas el peor día esperable suponiendo normalidad, te quedarás corto.</li>
+<li><strong>El tamaño de posición debe dejar margen.</strong> Si una sola operación o un solo día puede hacer un daño grave a tu cuenta, el riesgo es demasiado alto aunque los cálculos «normales» digan que es improbable.</li>
+<li><strong>Los backtests cortos pueden no contener ningún evento extremo.</strong> Un histórico sin crisis da una imagen demasiado optimista.</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> Diseña tus estrategias y tu tamaño de posición pensando en que lo extremo ocurrirá. La pregunta no es «¿cuánto es probable perder?», sino «¿sobrevivo si pasa lo improbable?».</p></aside>
+<h4>Asimetría</h4>
+<p>Además de las colas, fíjate en la <strong>asimetría</strong> de la distribución de tus operaciones:</p>
+<ul>
+<li>Una estrategia de tendencia suele tener muchas pérdidas pequeñas y pocas ganancias grandes (asimetría positiva).</li>
+<li>Una estrategia de reversión o de venta de opciones suele ganar poco y a menudo, con pérdidas grandes y raras (asimetría negativa). Parece más cómoda… hasta el día de la pérdida grande.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Si una rentabilidad diaria tiene media 0 % y desviación estándar 1 %, ¿entre qué valores caerá aproximadamente el 95 % de los días según la normal?</li>
+<li>¿Qué significa que una distribución tenga colas gruesas?</li>
+<li>¿Qué tipo de asimetría esperas en una estrategia que busca tendencias largas con stops ajustados?</li>
+</ol><div class="answer"><label for="w3-s03-l6">Tus respuestas</label><textarea id="w3-s03-l6" data-store="w3-s03-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-s03-l6"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 03 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asimetría</td>
+<td>Skewness</td>
+<td>Grado en que una distribución se alarga más hacia un lado que hacia el otro</td>
+</tr>
+<tr>
+<td>CAGR</td>
+<td>Compound annual growth rate</td>
+<td>Rentabilidad anual constante que daría el mismo resultado final</td>
+</tr>
+<tr>
+<td>Colas gruesas</td>
+<td>Fat tails</td>
+<td>Mayor frecuencia de valores extremos que la que predice la normal</td>
+</tr>
+<tr>
+<td>Desviación estándar</td>
+<td>Standard deviation</td>
+<td>Medida de la dispersión de los datos alrededor de la media</td>
+</tr>
+<tr>
+<td>Distribución</td>
+<td>Distribution</td>
+<td>Forma en que se reparten los valores posibles y su frecuencia</td>
+</tr>
+<tr>
+<td>Distribución normal</td>
+<td>Normal distribution</td>
+<td>Distribución simétrica en forma de campana, definida por media y desviación estándar</td>
+</tr>
+<tr>
+<td>Esperanza matemática</td>
+<td>Expectancy</td>
+<td>Resultado medio esperado por operación a largo plazo</td>
+</tr>
+<tr>
+<td>Falacia del jugador</td>
+<td>Gambler's fallacy</td>
+<td>Creer que tras una racha es más probable el resultado contrario</td>
+</tr>
+<tr>
+<td>Frecuencia relativa</td>
+<td>Relative frequency</td>
+<td>Veces que ocurre un suceso dividido entre el total de observaciones</td>
+</tr>
+<tr>
+<td>Histograma</td>
+<td>Histogram</td>
+<td>Gráfico de barras que muestra cuántos valores caen en cada intervalo</td>
+</tr>
+<tr>
+<td>Interés compuesto</td>
+<td>Compound interest</td>
+<td>Ganancia que se calcula sobre el capital y las ganancias acumuladas</td>
+</tr>
+<tr>
+<td>Lastre de la volatilidad</td>
+<td>Volatility drag</td>
+<td>Pérdida de rentabilidad compuesta causada por la variabilidad de los resultados</td>
+</tr>
+<tr>
+<td>Ley de los grandes números</td>
+<td>Law of large numbers</td>
+<td>La frecuencia observada se acerca a la probabilidad real al aumentar la muestra</td>
+</tr>
+<tr>
+<td>Media geométrica</td>
+<td>Geometric mean</td>
+<td>Rentabilidad media por periodo que, compuesta, da el resultado final</td>
+</tr>
+<tr>
+<td>Probabilidad</td>
+<td>Probability</td>
+<td>Número entre 0 y 1 que mide lo posible que es un suceso</td>
+</tr>
+<tr>
+<td>Punto porcentual</td>
+<td>Percentage point</td>
+<td>Diferencia aritmética entre dos porcentajes</td>
+</tr>
+<tr>
+<td>R</td>
+<td>R multiple</td>
+<td>Resultado de una operación expresado en múltiplos del riesgo inicial</td>
+</tr>
+<tr>
+<td>Racha</td>
+<td>Streak</td>
+<td>Serie de resultados iguales consecutivos</td>
+</tr>
+<tr>
+<td>Rentabilidad logarítmica</td>
+<td>Log return</td>
+<td>Logaritmo neperiano del cociente entre precio final e inicial</td>
+</tr>
+<tr>
+<td>Rentabilidad simple</td>
+<td>Simple return</td>
+<td>Variación porcentual entre precio inicial y final</td>
+</tr>
+<tr>
+<td>Sucesos independientes</td>
+<td>Independent events</td>
+<td>Sucesos en los que el resultado de uno no afecta al otro</td>
+</tr>
+<tr>
+<td>Tasa de acierto de equilibrio</td>
+<td>Breakeven win rate</td>
+<td>Acierto mínimo para que la esperanza sea cero con un ratio dado</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w3-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 03 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p>Resuélvelos en tu hoja de cálculo, mostrando las fórmulas. Se entregan con la práctica de la semana.</p>
+<p><strong>E1 · Variaciones.</strong> Calcula la variación porcentual: a) de 1.250 € a 1.400 €; b) de 3.000 € a 2.550 €; c) de un spread de 0,8 pips a uno de 1,2 pips.</p>
+<p><strong>E2 · Puntos y porcentajes.</strong> La tasa de acierto de una estrategia baja del 48 % al 42 %. Exprésalo en puntos porcentuales y como variación porcentual.</p>
+<p><strong>E3 · Tamaño de posición.</strong> Cuenta de 4.000 €, riesgo del 1 % por operación, stop de 30 pips en EUR/USD, EUR/USD a 1,0800 (un pip de 1 lote vale 10 $). Calcula el tamaño en lotes redondeando correctamente.</p>
+<p><strong>E4 · Rentabilidades encadenadas.</strong> Una cuenta gana un 8 %, pierde un 5 %, gana un 3 % y pierde un 6 % en cuatro meses. Calcula: a) la rentabilidad total; b) la suma de las cuatro rentabilidades; c) explica por qué no coinciden.</p>
+<p><strong>E5 · Logarítmicas.</strong> Con los precios 100, 104, 101, 107, 103, calcula las cuatro rentabilidades simples y las cuatro logarítmicas. Comprueba que la suma de las logarítmicas es igual a ln(103/100).</p>
+<p><strong>E6 · CAGR.</strong> Una estrategia convierte 5.000 € en 7.200 € en 4 años. Calcula su CAGR. ¿Qué rentabilidad mensual compuesta constante daría el mismo resultado?</p>
+<p><strong>E7 · Recuperación.</strong> Construye en la hoja una tabla con las pérdidas del 5 % al 95 %, de 5 en 5, y la ganancia necesaria para recuperarlas. Haz un gráfico con ella.</p>
+<p><strong>E8 · Rachas.</strong> Con una tasa de acierto del 35 %: a) ¿cuál es la probabilidad de perder 6 operaciones seguidas? b) ¿Qué racha de pérdidas más larga cabe esperar en 300 operaciones?</p>
+<p><strong>E9 · Esperanza.</strong> Calcula la esperanza en euros y en R de: a) acierto 62 %, ganancia media 45 €, pérdida media 70 €; b) acierto 30 %, ganancia media 260 €, pérdida media 100 €. ¿Cuál preferirías y por qué?</p>
+<p><strong>E10 · Costes y equilibrio.</strong> Una estrategia busca 20 pips con un stop de 20 pips. Calcula su acierto de equilibrio: a) sin costes; b) con un coste de 1,5 pips por operación (que reduce la ganancia y aumenta la pérdida).</p>
+<p><strong>E11 · Simulación con moneda.</strong> En la hoja de cálculo, simula 200 operaciones con un 40 % de acierto, ganancia de 2R y pérdida de 1R. Usa <code>=SI(ALEATORIO()&lt;0,4;2;-1)</code> (o <code>=IF(RAND()&lt;0.4,2,-1)</code> en inglés) y una columna con el saldo acumulado. Pulsa F9 diez veces y anota el resultado final y la racha de pérdidas más larga de cada vez. ¿Qué conclusiones sacas?</p><div class="answer"><label for="w3-ejercicios-obligatorios">Tus respuestas</label><textarea id="w3-ejercicios-obligatorios" data-store="w3-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-03-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 03 · Sección</span><h2>Investigación I-03 y entrega práctica</h2></header><div class="read"><h3>Investigación I-03 · ¿Sube más días de los que baja?</h3>
+<p>Esta semana practicas los pasos 1, 2, 3, 4, 7 y 8 del ciclo: añades el <strong>diseño del experimento</strong>.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Elige un activo (por ejemplo, el S&amp;P 500, el DAX, EUR/USD o Bitcoin) y escribe una hipótesis sobre la frecuencia y el tamaño de sus días alcistas y bajistas. Ejemplo: «En los últimos 5 años, el DAX cerró al alza más del 50 % de los días y su esperanza diaria de comprar en la apertura y vender en el cierre fue positiva».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Busca y cita al menos una fuente que hable del comportamiento diario de tu activo o de la asimetría de sus rentabilidades. Anota quién la publica, la fecha y si aporta datos propios.</p>
+<p><strong>Paso 3 · Datos.</strong> Descarga al menos 3 años de velas diarias de tu activo. Puedes usar el historial de tu demo de MT5 (en el gráfico diario, <strong>Archivo → Guardar como</strong> o el menú de símbolos) u otra fuente gratuita. Documenta la fuente, la zona horaria y si los precios son bid, ask o último.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Antes de calcular nada, escribe en tu cuaderno exactamente qué vas a medir: qué columna usas (apertura y cierre), qué cuenta como día alcista, qué periodo exacto analizas y qué resultado confirmaría o refutaría tu hipótesis. Hacerlo antes evita cambiar el criterio después de ver los resultados.</p>
+<p><strong>Paso 7 · Comparación.</strong> Calcula para cada día la rentabilidad simple de apertura a cierre. Obtén: porcentaje de días alcistas, rentabilidad media de los días alcistas y de los bajistas, esperanza diaria y la racha más larga de días bajistas. Compara el primer año de tus datos con el último: ¿se parecen?</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma la hipótesis? ¿La esperanza sería positiva si restaras un coste realista (por ejemplo, el spread que mediste en la semana 2)? ¿Qué limitaciones tiene tu análisis?</p>
+<h3>Entrega práctica · Hoja de rentabilidad y esperanza</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S03_ENT</code></td>
+<td>Hoja de cálculo con los ejercicios E1 a E11, una pestaña por ejercicio y las fórmulas visibles</td>
+</tr>
+<tr>
+<td><code>CODIGO_S03_SIM</code></td>
+<td>La simulación del E11 con los resultados de las diez repeticiones y su gráfico</td>
+</tr>
+<tr>
+<td><code>CODIGO_S03_INV</code></td>
+<td>Hoja de cálculo de la investigación I-03, con los datos, los cálculos y las conclusiones</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sustituye <code>CODIGO</code> por tu código de alumno.</p>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que los cálculos sean correctos y que las fórmulas estén en la hoja, no copiadas como números. En la investigación se valora sobre todo el paso 4: que el experimento esté definido antes de los resultados. Una hoja sin fórmulas o sin los datos de origen quedará como NO EVALUABLE.</p><div class="answer"><label for="w3-investigacion-i-03-y-entrega-practica">Tus respuestas</label><textarea id="w3-investigacion-i-03-y-entrega-practica" data-store="w3-investigacion-i-03-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-investigacion-i-03-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-3" hidden><header class="pane-head"><span class="kicker">Semana 03 · Evaluación</span><h2>Examen de la semana 3 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> Una cuenta pasa de 4.000 € a 4.300 €. Su variación es…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q1" value="a" data-store="w3-exam-q1"><span><b>a)</b> 6,98 %</span></label><label class="opt"><input type="radio" name="w3q1" value="b" data-store="w3-exam-q1"><span><b>b)</b> 7,5 %</span></label><label class="opt"><input type="radio" name="w3q1" value="c" data-store="w3-exam-q1"><span><b>c)</b> 3 %</span></label><label class="opt"><input type="radio" name="w3q1" value="d" data-store="w3-exam-q1"><span><b>d)</b> 30 %</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> El drawdown pasa del 10 % al 14 %. Ha subido…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q2" value="a" data-store="w3-exam-q2"><span><b>a)</b> un 4 %</span></label><label class="opt"><input type="radio" name="w3q2" value="b" data-store="w3-exam-q2"><span><b>b)</b> 40 puntos porcentuales</span></label><label class="opt"><input type="radio" name="w3q2" value="c" data-store="w3-exam-q2"><span><b>c)</b> 4 puntos porcentuales</span></label><label class="opt"><input type="radio" name="w3q2" value="d" data-store="w3-exam-q2"><span><b>d)</b> un 14 %</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Al calcular un tamaño de posición, el resultado se redondea…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q3" value="a" data-store="w3-exam-q3"><span><b>a)</b> hacia arriba</span></label><label class="opt"><input type="radio" name="w3q3" value="b" data-store="w3-exam-q3"><span><b>b)</b> al entero más cercano</span></label><label class="opt"><input type="radio" name="w3q3" value="c" data-store="w3-exam-q3"><span><b>c)</b> hacia abajo</span></label><label class="opt"><input type="radio" name="w3q3" value="d" data-store="w3-exam-q3"><span><b>d)</b> a un lote entero</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un activo sube un 10 % y después baja un 10 %. En total…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q4" value="a" data-store="w3-exam-q4"><span><b>a)</b> pierde un 1 %</span></label><label class="opt"><input type="radio" name="w3q4" value="b" data-store="w3-exam-q4"><span><b>b)</b> queda igual</span></label><label class="opt"><input type="radio" name="w3q4" value="c" data-store="w3-exam-q4"><span><b>c)</b> gana un 1 %</span></label><label class="opt"><input type="radio" name="w3q4" value="d" data-store="w3-exam-q4"><span><b>d)</b> pierde un 10 %</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Las rentabilidades logarítmicas de varios periodos…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q5" value="a" data-store="w3-exam-q5"><span><b>a)</b> se multiplican</span></label><label class="opt"><input type="radio" name="w3q5" value="b" data-store="w3-exam-q5"><span><b>b)</b> se suman</span></label><label class="opt"><input type="radio" name="w3q5" value="c" data-store="w3-exam-q5"><span><b>c)</b> no se pueden combinar</span></label><label class="opt"><input type="radio" name="w3q5" value="d" data-store="w3-exam-q5"><span><b>d)</b> se promedian siempre</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Un 2 % mensual compuesto equivale a un anual de aproximadamente…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q6" value="a" data-store="w3-exam-q6"><span><b>a)</b> 24,0 %</span></label><label class="opt"><input type="radio" name="w3q6" value="b" data-store="w3-exam-q6"><span><b>b)</b> 2,0 %</span></label><label class="opt"><input type="radio" name="w3q6" value="c" data-store="w3-exam-q6"><span><b>c)</b> 26,8 %</span></label><label class="opt"><input type="radio" name="w3q6" value="d" data-store="w3-exam-q6"><span><b>d)</b> 22,4 %</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Tras perder un 50 %, para recuperar la cuenta necesitas ganar…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q7" value="a" data-store="w3-exam-q7"><span><b>a)</b> 50 %</span></label><label class="opt"><input type="radio" name="w3q7" value="b" data-store="w3-exam-q7"><span><b>b)</b> 75 %</span></label><label class="opt"><input type="radio" name="w3q7" value="c" data-store="w3-exam-q7"><span><b>c)</b> 150 %</span></label><label class="opt"><input type="radio" name="w3q7" value="d" data-store="w3-exam-q7"><span><b>d)</b> 100 %</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> El lastre de la volatilidad hace que…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q8" value="a" data-store="w3-exam-q8"><span><b>a)</b> dos estrategias con igual media aritmética crezcan distinto</span></label><label class="opt"><input type="radio" name="w3q8" value="b" data-store="w3-exam-q8"><span><b>b)</b> la volatilidad siempre aumente la rentabilidad</span></label><label class="opt"><input type="radio" name="w3q8" value="c" data-store="w3-exam-q8"><span><b>c)</b> la media geométrica sea mayor que la aritmética</span></label><label class="opt"><input type="radio" name="w3q8" value="d" data-store="w3-exam-q8"><span><b>d)</b> los costes bajen</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Con un 40 % de acierto, la probabilidad de perder 3 operaciones seguidas es…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q9" value="a" data-store="w3-exam-q9"><span><b>a)</b> 6,4 %</span></label><label class="opt"><input type="radio" name="w3q9" value="b" data-store="w3-exam-q9"><span><b>b)</b> 21,6 %</span></label><label class="opt"><input type="radio" name="w3q9" value="c" data-store="w3-exam-q9"><span><b>c)</b> 60 %</span></label><label class="opt"><input type="radio" name="w3q9" value="d" data-store="w3-exam-q9"><span><b>d)</b> 180 %</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> La ley de los grandes números dice que…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q10" value="a" data-store="w3-exam-q10"><span><b>a)</b> los grandes traders ganan más</span></label><label class="opt"><input type="radio" name="w3q10" value="b" data-store="w3-exam-q10"><span><b>b)</b> tras muchas pérdidas llega una ganancia</span></label><label class="opt"><input type="radio" name="w3q10" value="c" data-store="w3-exam-q10"><span><b>c)</b> la frecuencia observada se acerca a la probabilidad real al aumentar la muestra</span></label><label class="opt"><input type="radio" name="w3q10" value="d" data-store="w3-exam-q10"><span><b>d)</b> las muestras grandes siempre dan beneficios</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Creer que tras 5 pérdidas es más probable ganar la siguiente es…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q11" value="a" data-store="w3-exam-q11"><span><b>a)</b> la ley de los grandes números</span></label><label class="opt"><input type="radio" name="w3q11" value="b" data-store="w3-exam-q11"><span><b>b)</b> la falacia del jugador</span></label><label class="opt"><input type="radio" name="w3q11" value="c" data-store="w3-exam-q11"><span><b>c)</b> el interés compuesto</span></label><label class="opt"><input type="radio" name="w3q11" value="d" data-store="w3-exam-q11"><span><b>d)</b> la esperanza matemática</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Acierto 50 %, ganancia media 120 €, pérdida media 100 €. La esperanza es…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q12" value="a" data-store="w3-exam-q12"><span><b>a)</b> 20 €</span></label><label class="opt"><input type="radio" name="w3q12" value="b" data-store="w3-exam-q12"><span><b>b)</b> 110 €</span></label><label class="opt"><input type="radio" name="w3q12" value="c" data-store="w3-exam-q12"><span><b>c)</b> 0 €</span></label><label class="opt"><input type="radio" name="w3q12" value="d" data-store="w3-exam-q12"><span><b>d)</b> 10 €</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Con un ratio R = 3, el acierto de equilibrio es…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q13" value="a" data-store="w3-exam-q13"><span><b>a)</b> 33,3 %</span></label><label class="opt"><input type="radio" name="w3q13" value="b" data-store="w3-exam-q13"><span><b>b)</b> 25 %</span></label><label class="opt"><input type="radio" name="w3q13" value="c" data-store="w3-exam-q13"><span><b>c)</b> 75 %</span></label><label class="opt"><input type="radio" name="w3q13" value="d" data-store="w3-exam-q13"><span><b>d)</b> 30 %</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Según la distribución normal, a menos de 2 desviaciones estándar de la media cae aproximadamente el…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q14" value="a" data-store="w3-exam-q14"><span><b>a)</b> 68 %</span></label><label class="opt"><input type="radio" name="w3q14" value="b" data-store="w3-exam-q14"><span><b>b)</b> 99,7 %</span></label><label class="opt"><input type="radio" name="w3q14" value="c" data-store="w3-exam-q14"><span><b>c)</b> 50 %</span></label><label class="opt"><input type="radio" name="w3q14" value="d" data-store="w3-exam-q14"><span><b>d)</b> 95 %</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Que las rentabilidades tengan colas gruesas significa que…</legend><div class="opts"><label class="opt"><input type="radio" name="w3q15" value="a" data-store="w3-exam-q15"><span><b>a)</b> los movimientos extremos son más frecuentes que en la normal</span></label><label class="opt"><input type="radio" name="w3q15" value="b" data-store="w3-exam-q15"><span><b>b)</b> nunca hay movimientos extremos</span></label><label class="opt"><input type="radio" name="w3q15" value="c" data-store="w3-exam-q15"><span><b>c)</b> la media es negativa</span></label><label class="opt"><input type="radio" name="w3q15" value="d" data-store="w3-exam-q15"><span><b>d)</b> siguen exactamente la normal</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p>Muestra todos los pasos.</p>
+<p><strong>B1.</strong> Tienes una cuenta de 6.000 € y quieres arriesgar el 0,75 % por operación en EUR/USD con un stop de 35 pips. El EUR/USD cotiza a 1,0800 y un pip de 1 lote vale 10 $. Calcula el riesgo en euros, el valor del pip de 1 lote en euros y el tamaño de la posición en lotes.</p>
+<p><strong>B2.</strong> Una estrategia pasa de 10.000 € a 13.500 € en 3 años. a) Calcula su CAGR. b) Durante ese periodo sufrió una caída máxima del 22 %: ¿qué rentabilidad necesitó para recuperarse de ella?</p>
+<p><strong>B3.</strong> Un backtest da 240 operaciones: 96 ganadoras con una ganancia media de 180 € y 144 perdedoras con una pérdida media de 95 €. Calcula: a) la tasa de acierto; b) el ratio R; c) la esperanza en euros y en R; d) la tasa de acierto de equilibrio para ese ratio.</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: un conocido te enseña una estrategia que acierta el 85 % de las veces en 40 operaciones y te dice que «no puede fallar». Explica qué le preguntarías y por qué, usando al menos tres conceptos de esta semana (por ejemplo: ratio y esperanza, tamaño de muestra, asimetría o colas gruesas).</p><div class="answer"><label for="w3-examen-3">Tus respuestas a las partes B y C</label><textarea id="w3-examen-3" data-store="w3-examen-3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w3-done-examen-3"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
