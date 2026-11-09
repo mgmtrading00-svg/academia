@@ -1,0 +1,350 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 14 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="14">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-14.svg)"><img src="img/cover-14.svg" alt=""></div><p class="eyebrow">SEMANA 14 · ETAPA 4 · CARTERAS Y EJECUCIÓN</p><h1>Correlación, diversificación e interés compuesto</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="14" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w14-done-presentacion"></span>Presentación</a><a class="tab" href="#s14-l1" data-tab="s14-l1" title="Correlación de resultados y de drawdowns"><span class="dot" data-dot="w14-done-s14-l1"></span>L1</a><a class="tab" href="#s14-l2" data-tab="s14-l2" title="Exposición conjunta y duplicada"><span class="dot" data-dot="w14-done-s14-l2"></span>L2</a><a class="tab" href="#s14-l3" data-tab="s14-l3" title="Gestión conservadora, moderada y agresiva"><span class="dot" data-dot="w14-done-s14-l3"></span>L3</a><a class="tab" href="#s14-l4" data-tab="s14-l4" title="Riesgo de cartera, drawdown global y límites"><span class="dot" data-dot="w14-done-s14-l4"></span>L4</a><a class="tab" href="#s14-l5" data-tab="s14-l5" title="Interés compuesto, reinversión y retiradas"><span class="dot" data-dot="w14-done-s14-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w14-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w14-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-14-y-entrega-practica" data-tab="investigacion-i-14-y-entrega-practica" title="Investigación I-14 y entrega práctica"><span class="dot" data-dot="w14-done-investigacion-i-14-y-entrega-practica"></span>Investigación I-14 y entrega práctica</a><a class="tab" href="#examen-14" data-tab="examen-14" title="Examen de la semana 14 · Variante A"><span class="dot" data-dot="w14-done-examen-14"></span>Examen  14</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 14 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s14-l1"><span class="dot" data-dot="w14-done-s14-l1"></span><span class="tk">Lección L1</span><b>Correlación de resultados y de drawdowns</b><span class="tm">→</span></a><a class="toc-i" href="#s14-l2"><span class="dot" data-dot="w14-done-s14-l2"></span><span class="tk">Lección L2</span><b>Exposición conjunta y duplicada</b><span class="tm">→</span></a><a class="toc-i" href="#s14-l3"><span class="dot" data-dot="w14-done-s14-l3"></span><span class="tk">Lección L3</span><b>Gestión conservadora, moderada y agresiva</b><span class="tm">→</span></a><a class="toc-i" href="#s14-l4"><span class="dot" data-dot="w14-done-s14-l4"></span><span class="tk">Lección L4</span><b>Riesgo de cartera, drawdown global y límites</b><span class="tm">→</span></a><a class="toc-i" href="#s14-l5"><span class="dot" data-dot="w14-done-s14-l5"></span><span class="tk">Lección L5</span><b>Interés compuesto, reinversión y retiradas</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w14-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w14-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-14-y-entrega-practica"><span class="dot" data-dot="w14-done-investigacion-i-14-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-14 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-14"><span class="dot" data-dot="w14-done-examen-14"></span><span class="tk">Evaluación</span><b>Examen de la semana 14 · Variante A</b><span class="tm">→</span></a></nav><p>La semana pasada construiste tu primera cartera. Esta semana aprenderás a <strong>gestionar su riesgo como un todo</strong>: a mirar no solo si las estrategias están correlacionadas, sino si <strong>pierden a la vez</strong>; a detectar exposiciones duplicadas que no se ven a simple vista; a elegir un perfil de gestión conservador, moderado o agresivo con números; a poner límites a la cartera; y a decidir qué hacer con los beneficios: reinvertirlos, retirarlos o ambas cosas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Medir la correlación de los drawdowns, no solo de los resultados.</li>
+<li>Detectar y limitar la exposición conjunta y duplicada.</li>
+<li>Definir perfiles de gestión con su riesgo y su rentabilidad esperables.</li>
+<li>Fijar límites de riesgo a nivel de cartera.</li>
+<li>Planificar la reinversión y las retiradas con interés compuesto.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Análisis de riesgo de tu cartera y plan de gestión</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-14, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 15</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Tu cartera de la semana 13 y su plantilla de hoja de cálculo.</li>
+<li>Los resultados mensuales y, si puedes, diarios de cada estrategia.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 15</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 14</li>
+<li>☐ Entrega práctica: plan de gestión del riesgo de la cartera</li>
+<li>☐ Investigación I-14: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w14-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s14-l1" hidden><header class="pane-head"><span class="kicker">Semana 14 · Lección L1</span><h2>Correlación de resultados y de drawdowns</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La correlación no lo cuenta todo</h4>
+<p>Dos estrategias pueden tener una correlación baja en sus resultados mensuales y, sin embargo, <strong>sufrir sus peores rachas en los mismos meses</strong>. La correlación mide el comportamiento medio; el riesgo se juega en los extremos. Y en las crisis, las correlaciones tienden a subir (semana 4).</p>
+<h4>Correlación de drawdowns</h4>
+<p>Mide si las estrategias están en drawdown al mismo tiempo:</p>
+<ol>
+<li>Calcula la serie de drawdown de cada estrategia (semana 4) con datos diarios o mensuales.</li>
+<li>Marca los periodos en que cada una está en un drawdown mayor que, por ejemplo, la mitad de su máximo.</li>
+<li>Mira cuántos de esos periodos coinciden entre estrategias.</li>
+</ol>
+<figure class="fig"><a href="img/s14-solape.svg" target="_blank" rel="noopener"><img src="img/s14-solape.svg" alt="Figura 14.1 · Periodos de drawdown profundo de cuatro estrategias: lo que importa es cuánto se solapan. Datos simulados." loading="lazy"></a><figcaption>Figura 14.1 · Periodos de drawdown profundo de cuatro estrategias: lo que importa es cuánto se solapan. Datos simulados.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Una estrategia que entra en drawdown cuando las demás ganan es oro para la cartera, aunque por sí sola sea mediocre.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué la correlación de resultados no basta?</li>
+<li>¿Qué mide la correlación de drawdowns?</li>
+<li>¿Qué pasa con las correlaciones en las crisis?</li>
+</ol><div class="answer"><label for="w14-s14-l1">Tus respuestas</label><textarea id="w14-s14-l1" data-store="w14-s14-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-s14-l1"> He terminado esta sección</label></section><section class="pane" id="s14-l2" hidden><header class="pane-head"><span class="kicker">Semana 14 · Lección L2</span><h2>Exposición conjunta y duplicada</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La exposición escondida</h4>
+<p>Tres estrategias distintas pueden estar apostando a lo mismo sin que lo parezca. En divisas, cada par son dos apuestas: comprar EUR/USD es comprar euros y <strong>vender dólares</strong>.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Tienes abiertas a la vez una compra de EUR/USD, una compra de GBP/USD y una venta de USD/CHF. Son tres estrategias, tres pares y tres lógicas, pero las tres están <strong>vendiendo dólares</strong>. Si el dólar se fortalece de golpe, las tres pierden a la vez.</p></aside>
+<figure class="fig"><a href="img/s14-exposicion.svg" target="_blank" rel="noopener"><img src="img/s14-exposicion.svg" alt="Figura 14.2 · Tres posiciones en pares distintos con la misma exposición neta: vendidas en dólares." loading="lazy"></a><figcaption>Figura 14.2 · Tres posiciones en pares distintos con la misma exposición neta: vendidas en dólares.</figcaption></figure>
+<h4>Cómo medirla</h4>
+<ul>
+<li><strong>Por divisa:</strong> suma, para cada divisa, la exposición comprada y vendida de todas las posiciones abiertas (en euros o en riesgo).</li>
+<li><strong>Por factor:</strong> en índices, todas las compras de índices de acciones son en buena parte la misma apuesta («apetito por el riesgo»).</li>
+<li><strong>Riesgo abierto total:</strong> suma el riesgo hasta el stop de todas las posiciones abiertas.</li>
+</ul>
+<h4>Cómo limitarla</h4>
+<ul>
+<li><strong>Límite por divisa o factor:</strong> por ejemplo, riesgo abierto máximo en una misma divisa del 2 % del capital.</li>
+<li><strong>Límite de riesgo abierto total:</strong> por ejemplo, 4 % del capital sumando todas las posiciones.</li>
+<li><strong>Reducir el tamaño</strong> cuando varias estrategias coinciden en la misma dirección.</li>
+</ul>
+<p>En MetaTrader estos límites no vienen de serie en las estrategias exportadas: se controlan con la configuración del riesgo de cada estrategia y con la supervisión (semana 16).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Compra de AUD/USD y venta de USD/JPY: ¿qué exposición en dólares tienen juntas?</li>
+<li>¿Por qué comprar dos índices de acciones a la vez no es diversificar mucho?</li>
+<li>Propón un límite de riesgo abierto por divisa para tu cartera.</li>
+</ol><div class="answer"><label for="w14-s14-l2">Tus respuestas</label><textarea id="w14-s14-l2" data-store="w14-s14-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-s14-l2"> He terminado esta sección</label></section><section class="pane" id="s14-l3" hidden><header class="pane-head"><span class="kicker">Semana 14 · Lección L3</span><h2>Gestión conservadora, moderada y agresiva</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El mismo motor, tres velocidades</h4>
+<p>Con la misma cartera puedes elegir cuánto arriesgar. Escalar el riesgo multiplica a la vez la rentabilidad y el drawdown, pero el drawdown crece algo más deprisa por el lastre de la volatilidad (semana 3).</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Perfil</th>
+<th>Escala del riesgo</th>
+<th>Rentabilidad anual (simulación)</th>
+<th>Drawdown del backtest</th>
+<th>Drawdown del percentil 95 (Monte Carlo)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Conservador</td>
+<td>× 0,5</td>
+<td>6,1 %</td>
+<td>3,6 %</td>
+<td>4,5 %</td>
+</tr>
+<tr>
+<td>Moderado</td>
+<td>× 1</td>
+<td>12,3 %</td>
+<td>7,0 %</td>
+<td>8,8 %</td>
+</tr>
+<tr>
+<td>Agresivo</td>
+<td>× 2</td>
+<td>25,5 %</td>
+<td>13,7 %</td>
+<td>17,2 %</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Cartera simulada de la semana 13; las cifras son ilustrativas y no son una previsión.</em></p>
+<figure class="fig"><a href="img/s14-perfiles.svg" target="_blank" rel="noopener"><img src="img/s14-perfiles.svg" alt="Figura 14.3 · La misma cartera con tres niveles de riesgo. Datos simulados." loading="lazy"></a><figcaption>Figura 14.3 · La misma cartera con tres niveles de riesgo. Datos simulados.</figcaption></figure>
+<h4>Cómo elegir</h4>
+<p>Empieza por el <strong>drawdown que tolerarías sin abandonar</strong>, no por la rentabilidad que te gustaría. Después:</p>
+<ol>
+<li>Toma el drawdown del percentil 95 o 99 de tu cartera (Monte Carlo).</li>
+<li>Escala el riesgo para que ese drawdown quede por debajo de tu tolerancia.</li>
+<li>Aplica un margen de seguridad: el futuro puede ser peor que cualquier simulación.</li>
+</ol>
+<aside class="callout warn"><p><strong>Atención.</strong> Las rentabilidades de la tabla son de un backtest simulado. En real, con costes, cambios de mercado y estrategias que dejan de funcionar, lo habitual es obtener <strong>menos</strong>. Planifica con prudencia.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el drawdown crece algo más deprisa que la rentabilidad al escalar el riesgo?</li>
+<li>¿Por dónde se empieza a elegir el perfil?</li>
+<li>Tu tolerancia es un 10 % y el percentil 95 de tu cartera moderada es un 14 %. ¿Qué escala usarías?</li>
+</ol><div class="answer"><label for="w14-s14-l3">Tus respuestas</label><textarea id="w14-s14-l3" data-store="w14-s14-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-s14-l3"> He terminado esta sección</label></section><section class="pane" id="s14-l4" hidden><header class="pane-head"><span class="kicker">Semana 14 · Lección L4</span><h2>Riesgo de cartera, drawdown global y límites</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Límites a nivel de cartera</h4>
+<p>Además del riesgo por operación de cada estrategia, conviene fijar límites para el conjunto:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Límite</th>
+<th>Ejemplo</th>
+<th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Riesgo por operación</td>
+<td>0,25–0,5 % por estrategia</td>
+<td>Que ninguna operación haga daño grave</td>
+</tr>
+<tr>
+<td>Riesgo abierto total</td>
+<td>3–4 %</td>
+<td>Que muchas posiciones a la vez no sumen demasiado</td>
+</tr>
+<tr>
+<td>Pérdida diaria máxima</td>
+<td>2 %</td>
+<td>Parar en días anómalos (y cumplir reglas de fondeo)</td>
+</tr>
+<tr>
+<td>Drawdown de alerta</td>
+<td>Percentil 95 del Monte Carlo</td>
+<td>Revisar la cartera</td>
+</tr>
+<tr>
+<td>Drawdown de parada</td>
+<td>Percentil 99 o tu tolerancia máxima</td>
+<td>Detener la cartera y analizar</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s14-limites.svg" target="_blank" rel="noopener"><img src="img/s14-limites.svg" alt="Figura 14.4 · Niveles de alerta y de parada sobre la curva de la cartera. Datos simulados." loading="lazy"></a><figcaption>Figura 14.4 · Niveles de alerta y de parada sobre la curva de la cartera. Datos simulados.</figcaption></figure>
+<h4>Qué hacer al llegar a cada nivel</h4>
+<ul>
+<li><strong>Alerta:</strong> revisar si alguna estrategia se comporta fuera de lo esperado (semana 16). No cambiar nada por impulso.</li>
+<li><strong>Parada:</strong> detener la cartera, analizar con calma y decidir con los criterios escritos de antemano si se reanuda, se reduce o se retira.</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> Los límites se escriben antes de empezar, cuando estás tranquilo. Durante un drawdown, tu juicio es el peor posible.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre el riesgo por operación y el riesgo abierto total?</li>
+<li>¿Qué haces al llegar al drawdown de alerta?</li>
+<li>¿Por qué los límites se escriben antes?</li>
+</ol><div class="answer"><label for="w14-s14-l4">Tus respuestas</label><textarea id="w14-s14-l4" data-store="w14-s14-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-s14-l4"> He terminado esta sección</label></section><section class="pane" id="s14-l5" hidden><header class="pane-head"><span class="kicker">Semana 14 · Lección L5</span><h2>Interés compuesto, reinversión y retiradas</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Reinvertir</h4>
+<p>Con riesgo fijo por operación (semana 4), la reinversión es automática: si la cuenta crece, las posiciones crecen. Es el interés compuesto de la semana 3 aplicado a la cartera.</p>
+<h4>Retirar</h4>
+<p>Si vives o quieres vivir de la cartera, retirarás dinero. Cada retirada reduce la base que compone.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Con 10.000 € y un 1 % mensual constante durante 5 años (una hipótesis optimista y simplificada):
+- Reinvirtiendo todo, la cuenta llega a unos 18.170 €.
+- Retirando cada año la mitad de lo ganado por encima del capital inicial, la cuenta termina con unos 11.370 € y has retirado unos 5.490 €: en total, unos 16.860 €.</p></aside>
+<figure class="fig"><a href="img/s14-compuesto.svg" target="_blank" rel="noopener"><img src="img/s14-compuesto.svg" alt="Figura 14.5 · La misma cartera reinvirtiendo todo o retirando parte de los beneficios cada año. Rentabilidad constante e hipotética del 1 % mensual." loading="lazy"></a><figcaption>Figura 14.5 · La misma cartera reinvirtiendo todo o retirando parte de los beneficios cada año. Rentabilidad constante e hipotética del 1 % mensual.</figcaption></figure>
+<h4>Una política de retiradas</h4>
+<p>Define de antemano:</p>
+<ul>
+<li><strong>Cuándo:</strong> mensual, trimestral o anual. Cuanto menos frecuente, más compone.</li>
+<li><strong>Cuánto:</strong> un porcentaje de los beneficios, nunca del capital.</li>
+<li><strong>Condición:</strong> no retirar si la cartera está en drawdown; esperar a un nuevo máximo.</li>
+<li><strong>Escalado:</strong> aumentar el capital solo con evidencias (semanas 18 y 19).</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué con riesgo fijo por operación la reinversión es automática?</li>
+<li>¿Por qué no se retira durante un drawdown?</li>
+<li>Escribe una política de retiradas en tres frases.</li>
+</ol><div class="answer"><label for="w14-s14-l5">Tus respuestas</label><textarea id="w14-s14-l5" data-store="w14-s14-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-s14-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 14 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Correlación de drawdowns</td>
+<td>Drawdown correlation</td>
+<td>Grado en que varias estrategias están en drawdown a la vez</td>
+</tr>
+<tr>
+<td>Drawdown de alerta</td>
+<td>Warning drawdown</td>
+<td>Nivel de caída que obliga a revisar la cartera</td>
+</tr>
+<tr>
+<td>Drawdown de parada</td>
+<td>Stop drawdown</td>
+<td>Nivel de caída que obliga a detener la cartera</td>
+</tr>
+<tr>
+<td>Exposición duplicada</td>
+<td>Duplicated exposure</td>
+<td>Varias posiciones que apuestan a lo mismo</td>
+</tr>
+<tr>
+<td>Exposición neta</td>
+<td>Net exposure</td>
+<td>Suma de lo comprado y lo vendido en una divisa o factor</td>
+</tr>
+<tr>
+<td>Perfil de gestión</td>
+<td>Risk profile</td>
+<td>Nivel de riesgo elegido para operar una cartera</td>
+</tr>
+<tr>
+<td>Pérdida diaria máxima</td>
+<td>Daily loss limit</td>
+<td>Pérdida a partir de la cual se deja de operar ese día</td>
+</tr>
+<tr>
+<td>Política de retiradas</td>
+<td>Withdrawal policy</td>
+<td>Reglas sobre cuándo y cuánto retirar de los beneficios</td>
+</tr>
+<tr>
+<td>Riesgo abierto</td>
+<td>Open risk</td>
+<td>Suma del riesgo hasta el stop de las posiciones abiertas</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w14-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 14 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Solape de drawdowns.</strong> Con los datos de tu cartera, calcula el porcentaje de meses en que al menos dos estrategias están a la vez en un drawdown mayor que la mitad de su máximo.</p>
+<p><strong>E2 · Exposición en divisas.</strong> Calcula la exposición neta en EUR, USD, GBP y JPY de estas posiciones con el mismo tamaño: compra EUR/USD, venta GBP/USD, compra USD/JPY y compra EUR/JPY.</p>
+<p><strong>E3 · Riesgo abierto.</strong> Cinco estrategias tienen abiertas posiciones con un riesgo hasta el stop de 0,4 %, 0,5 %, 0,3 %, 0,5 % y 0,4 %. ¿Cuál es el riesgo abierto total? ¿Respeta un límite del 2 %?</p>
+<p><strong>E4 · Perfil.</strong> Con los datos de tu cartera, calcula la rentabilidad y el drawdown del percentil 95 a escalas de 0,5, 1 y 1,5.</p>
+<p><strong>E5 · Tolerancia.</strong> ¿Cuánto podrías ver caer tu cuenta sin abandonar? Escríbelo en euros y en porcentaje y elige la escala correspondiente.</p>
+<p><strong>E6 · Límites.</strong> Escribe tu tabla de límites de cartera con valores justificados.</p>
+<p><strong>E7 · Compuesto.</strong> Con 5.000 € y un 0,8 % mensual hipotético, calcula el capital a 3 años reinvirtiendo todo y retirando 50 € al mes.</p>
+<p><strong>E8 · Política de retiradas.</strong> Escribe tu política completa de retiradas.</p>
+<p><strong>E9 · Crisis.</strong> Elige un periodo de crisis de tus datos (por ejemplo, marzo de 2020) y analiza cómo se comportó cada estrategia de tu cartera.</p>
+<p><strong>E10 · Resumen.</strong> Redacta el plan de gestión del riesgo de tu cartera en una página.</p><div class="answer"><label for="w14-ejercicios-obligatorios">Tus respuestas</label><textarea id="w14-ejercicios-obligatorios" data-store="w14-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-14-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 14 · Sección</span><h2>Investigación I-14 y entrega práctica</h2></header><div class="read"><h3>Investigación I-14 · ¿Aumentan las correlaciones de mi cartera en los peores momentos?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «La correlación media entre mis estrategias en los meses en que la cartera pierde es mayor que en los meses en que gana».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente sobre el aumento de las correlaciones en las crisis.</p>
+<p><strong>Paso 3 · Datos.</strong> Resultados mensuales o diarios de las estrategias de tu cartera.</p>
+<p><strong>Paso 4 · Diseño.</strong> Define cómo separarás los periodos (cartera en positivo frente a negativo, o peor 20 % de los meses), qué correlación calcularás y el criterio de confirmación.</p>
+<p><strong>Pasos 5 y 6 · Generación y validación.</strong> Calcula las correlaciones en cada grupo.</p>
+<p><strong>Paso 7 · Comparación.</strong> Tabla con las correlaciones medias de cada grupo.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma? ¿Qué implica para tus límites de riesgo?</p>
+<h3>Entrega práctica · Plan de gestión del riesgo</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S14_ENT</code></td>
+<td>Plan de gestión del riesgo de la cartera: análisis de drawdowns simultáneos, exposición conjunta, perfil elegido con su justificación numérica, tabla de límites y política de retiradas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S14_HOJA</code></td>
+<td>Hoja con los cálculos</td>
+</tr>
+<tr>
+<td><code>CODIGO_S14_INV</code></td>
+<td>Investigación I-14</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que el perfil se elija a partir de la tolerancia y del Monte Carlo, que los límites sean coherentes entre sí y que la política de retiradas sea concreta. Un plan sin límites numéricos queda como NO EVALUABLE.</p><div class="answer"><label for="w14-investigacion-i-14-y-entrega-practica">Tus respuestas</label><textarea id="w14-investigacion-i-14-y-entrega-practica" data-store="w14-investigacion-i-14-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-investigacion-i-14-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-14" hidden><header class="pane-head"><span class="kicker">Semana 14 · Evaluación</span><h2>Examen de la semana 14 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> Dos estrategias con correlación baja de resultados pueden…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q1" value="a" data-store="w14-exam-q1"><span><b>a)</b> no perder nunca a la vez</span></label><label class="opt"><input type="radio" name="w14q1" value="b" data-store="w14-exam-q1"><span><b>b)</b> sufrir sus peores rachas en los mismos periodos</span></label><label class="opt"><input type="radio" name="w14q1" value="c" data-store="w14-exam-q1"><span><b>c)</b> tener correlación −1</span></label><label class="opt"><input type="radio" name="w14q1" value="d" data-store="w14-exam-q1"><span><b>d)</b> no tener drawdown</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> En las crisis, las correlaciones entre activos tienden a…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q2" value="a" data-store="w14-exam-q2"><span><b>a)</b> bajar</span></label><label class="opt"><input type="radio" name="w14q2" value="b" data-store="w14-exam-q2"><span><b>b)</b> desaparecer</span></label><label class="opt"><input type="radio" name="w14q2" value="c" data-store="w14-exam-q2"><span><b>c)</b> subir</span></label><label class="opt"><input type="radio" name="w14q2" value="d" data-store="w14-exam-q2"><span><b>d)</b> no cambiar</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Comprar EUR/USD equivale a…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q3" value="a" data-store="w14-exam-q3"><span><b>a)</b> comprar euros y vender dólares</span></label><label class="opt"><input type="radio" name="w14q3" value="b" data-store="w14-exam-q3"><span><b>b)</b> comprar dólares</span></label><label class="opt"><input type="radio" name="w14q3" value="c" data-store="w14-exam-q3"><span><b>c)</b> vender euros</span></label><label class="opt"><input type="radio" name="w14q3" value="d" data-store="w14-exam-q3"><span><b>d)</b> comprar oro</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Compra de EUR/USD, compra de GBP/USD y venta de USD/CHF tienen en común…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q4" value="a" data-store="w14-exam-q4"><span><b>a)</b> estar comprados en dólares</span></label><label class="opt"><input type="radio" name="w14q4" value="b" data-store="w14-exam-q4"><span><b>b)</b> estar vendidos en dólares</span></label><label class="opt"><input type="radio" name="w14q4" value="c" data-store="w14-exam-q4"><span><b>c)</b> no tener exposición al dólar</span></label><label class="opt"><input type="radio" name="w14q4" value="d" data-store="w14-exam-q4"><span><b>d)</b> estar comprados en francos</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> El riesgo abierto total es…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q5" value="a" data-store="w14-exam-q5"><span><b>a)</b> la suma del riesgo hasta el stop de las posiciones abiertas</span></label><label class="opt"><input type="radio" name="w14q5" value="b" data-store="w14-exam-q5"><span><b>b)</b> el margen</span></label><label class="opt"><input type="radio" name="w14q5" value="c" data-store="w14-exam-q5"><span><b>c)</b> el beneficio flotante</span></label><label class="opt"><input type="radio" name="w14q5" value="d" data-store="w14-exam-q5"><span><b>d)</b> el spread</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Al duplicar la escala del riesgo, el drawdown…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q6" value="a" data-store="w14-exam-q6"><span><b>a)</b> se reduce</span></label><label class="opt"><input type="radio" name="w14q6" value="b" data-store="w14-exam-q6"><span><b>b)</b> no cambia</span></label><label class="opt"><input type="radio" name="w14q6" value="c" data-store="w14-exam-q6"><span><b>c)</b> se duplica exactamente siempre</span></label><label class="opt"><input type="radio" name="w14q6" value="d" data-store="w14-exam-q6"><span><b>d)</b> crece aproximadamente el doble o algo más</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> El perfil de gestión se elige empezando por…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q7" value="a" data-store="w14-exam-q7"><span><b>a)</b> la rentabilidad deseada</span></label><label class="opt"><input type="radio" name="w14q7" value="b" data-store="w14-exam-q7"><span><b>b)</b> el drawdown que tolerarías sin abandonar</span></label><label class="opt"><input type="radio" name="w14q7" value="c" data-store="w14-exam-q7"><span><b>c)</b> el apalancamiento máximo</span></label><label class="opt"><input type="radio" name="w14q7" value="d" data-store="w14-exam-q7"><span><b>d)</b> la mejor estrategia</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Al llegar al drawdown de alerta, lo correcto es…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q8" value="a" data-store="w14-exam-q8"><span><b>a)</b> duplicar el riesgo</span></label><label class="opt"><input type="radio" name="w14q8" value="b" data-store="w14-exam-q8"><span><b>b)</b> revisar sin cambiar nada por impulso</span></label><label class="opt"><input type="radio" name="w14q8" value="c" data-store="w14-exam-q8"><span><b>c)</b> cerrar todo</span></label><label class="opt"><input type="radio" name="w14q8" value="d" data-store="w14-exam-q8"><span><b>d)</b> cambiar de broker</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El drawdown de parada se suele fijar en…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q9" value="a" data-store="w14-exam-q9"><span><b>a)</b> el drawdown del backtest</span></label><label class="opt"><input type="radio" name="w14q9" value="b" data-store="w14-exam-q9"><span><b>b)</b> el 1 %</span></label><label class="opt"><input type="radio" name="w14q9" value="c" data-store="w14-exam-q9"><span><b>c)</b> el percentil 99 del Monte Carlo o la tolerancia máxima</span></label><label class="opt"><input type="radio" name="w14q9" value="d" data-store="w14-exam-q9"><span><b>d)</b> el 50 %</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Los límites de riesgo se escriben…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q10" value="a" data-store="w14-exam-q10"><span><b>a)</b> durante el drawdown</span></label><label class="opt"><input type="radio" name="w14q10" value="b" data-store="w14-exam-q10"><span><b>b)</b> antes de empezar</span></label><label class="opt"><input type="radio" name="w14q10" value="c" data-store="w14-exam-q10"><span><b>c)</b> solo si se pierde</span></label><label class="opt"><input type="radio" name="w14q10" value="d" data-store="w14-exam-q10"><span><b>d)</b> nunca</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Con riesgo fijo por operación, la reinversión…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q11" value="a" data-store="w14-exam-q11"><span><b>a)</b> es automática</span></label><label class="opt"><input type="radio" name="w14q11" value="b" data-store="w14-exam-q11"><span><b>b)</b> es imposible</span></label><label class="opt"><input type="radio" name="w14q11" value="c" data-store="w14-exam-q11"><span><b>c)</b> requiere ingresar dinero</span></label><label class="opt"><input type="radio" name="w14q11" value="d" data-store="w14-exam-q11"><span><b>d)</b> reduce el tamaño</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Las retiradas conviene hacerlas…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q12" value="a" data-store="w14-exam-q12"><span><b>a)</b> durante los drawdowns</span></label><label class="opt"><input type="radio" name="w14q12" value="b" data-store="w14-exam-q12"><span><b>b)</b> del capital inicial</span></label><label class="opt"><input type="radio" name="w14q12" value="c" data-store="w14-exam-q12"><span><b>c)</b> de los beneficios y en máximos de la cuenta</span></label><label class="opt"><input type="radio" name="w14q12" value="d" data-store="w14-exam-q12"><span><b>d)</b> cada día</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Cuanto menos frecuentes son las retiradas…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q13" value="a" data-store="w14-exam-q13"><span><b>a)</b> menos compone la cuenta</span></label><label class="opt"><input type="radio" name="w14q13" value="b" data-store="w14-exam-q13"><span><b>b)</b> más compone la cuenta</span></label><label class="opt"><input type="radio" name="w14q13" value="c" data-store="w14-exam-q13"><span><b>c)</b> más riesgo hay</span></label><label class="opt"><input type="radio" name="w14q13" value="d" data-store="w14-exam-q13"><span><b>d)</b> más costes hay</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Un límite de pérdida diaria sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q14" value="a" data-store="w14-exam-q14"><span><b>a)</b> parar en días anómalos</span></label><label class="opt"><input type="radio" name="w14q14" value="b" data-store="w14-exam-q14"><span><b>b)</b> aumentar las operaciones</span></label><label class="opt"><input type="radio" name="w14q14" value="c" data-store="w14-exam-q14"><span><b>c)</b> reducir el spread</span></label><label class="opt"><input type="radio" name="w14q14" value="d" data-store="w14-exam-q14"><span><b>d)</b> optimizar parámetros</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Una estrategia mediocre que gana cuando las demás pierden…</legend><div class="opts"><label class="opt"><input type="radio" name="w14q15" value="a" data-store="w14-exam-q15"><span><b>a)</b> debe eliminarse</span></label><label class="opt"><input type="radio" name="w14q15" value="b" data-store="w14-exam-q15"><span><b>b)</b> puede ser muy valiosa para la cartera</span></label><label class="opt"><input type="radio" name="w14q15" value="c" data-store="w14-exam-q15"><span><b>c)</b> no aporta nada</span></label><label class="opt"><input type="radio" name="w14q15" value="d" data-store="w14-exam-q15"><span><b>d)</b> aumenta el drawdown</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Tienes abiertas, con 1 % de riesgo cada una: compra de EUR/USD, compra de AUD/USD, venta de USD/JPY y venta de EUR/GBP. a) Calcula la exposición neta en riesgo de USD, EUR, AUD, JPY y GBP (cada posición suma su riesgo a la divisa comprada y lo resta de la vendida). b) ¿Qué divisa concentra más riesgo? c) ¿Respeta un límite del 2 % por divisa?</p>
+<p><strong>B2.</strong> El drawdown del percentil 95 de tu cartera es del 9 % con escala 1. Tu tolerancia es del 12 % y quieres un margen de seguridad del 25 % (usar solo el 75 % de la tolerancia). a) ¿Qué drawdown máximo planificas? b) ¿Qué escala usarías, suponiendo proporcionalidad? c) Si la rentabilidad esperada con escala 1 es del 11 %, ¿cuál esperarías aproximadamente?</p>
+<p><strong>B3.</strong> Con 20.000 € y un 0,7 % mensual hipotético: a) calcula el capital a 2 años reinvirtiendo todo; b) calcula el capital a 2 años retirando 100 € al final de cada mes; c) ¿cuánto has retirado en total en el caso b?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: explica por qué una cartera con estrategias poco correlacionadas puede sufrir un drawdown mucho mayor que el previsto, y qué medidas de esta semana lo limitarían.</p><div class="answer"><label for="w14-examen-14">Tus respuestas a las partes B y C</label><textarea id="w14-examen-14" data-store="w14-examen-14" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w14-done-examen-14"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
