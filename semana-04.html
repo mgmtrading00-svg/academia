@@ -1,0 +1,591 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 4 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="4">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><span class="wk locked" title="En producción"><span class="n">S05</span><span class="t">Entorno y datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S06</span><span class="t">Primeras estrategias</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-04.svg)"><img src="img/cover-04.svg" alt=""></div><p class="eyebrow">SEMANA 04 · ETAPA 1 · FUNDAMENTOS</p><h1>Estadística y gestión del riesgo</h1><p class="meta">12 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="4" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w4-done-presentacion"></span>Presentación</a><a class="tab" href="#s04-l1" data-tab="s04-l1" title="Media, mediana, varianza y desviación estándar"><span class="dot" data-dot="w4-done-s04-l1"></span>L1</a><a class="tab" href="#s04-l2" data-tab="s04-l2" title="Muestras, tamaño de muestra y significación"><span class="dot" data-dot="w4-done-s04-l2"></span>L2</a><a class="tab" href="#s04-l3" data-tab="s04-l3" title="Correlación y regresión"><span class="dot" data-dot="w4-done-s04-l3"></span>L3</a><a class="tab" href="#s04-l4" data-tab="s04-l4" title="Métricas de trading: tasa de acierto, profit factor, esperanza, drawdown, Sharpe y Sortino"><span class="dot" data-dot="w4-done-s04-l4"></span>L4</a><a class="tab" href="#s04-l5" data-tab="s04-l5" title="Tamaño de posición y riesgo por operación"><span class="dot" data-dot="w4-done-s04-l5"></span>L5</a><a class="tab" href="#s04-l6" data-tab="s04-l6" title="Riesgo de ruina, rachas y el criterio de Kelly"><span class="dot" data-dot="w4-done-s04-l6"></span>L6</a><a class="tab" href="#s04-l7" data-tab="s04-l7" title="Taller con hoja de cálculo: métricas de una lista de operaciones"><span class="dot" data-dot="w4-done-s04-l7"></span>L7</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w4-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w4-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-04-y-entrega-practica" data-tab="investigacion-i-04-y-entrega-practica" title="Investigación I-04 y entrega práctica"><span class="dot" data-dot="w4-done-investigacion-i-04-y-entrega-practica"></span>Investigación I-04 y entrega práctica</a><a class="tab" href="#examen-4" data-tab="examen-4" title="Examen de la semana 4 · Variante A"><span class="dot" data-dot="w4-done-examen-4"></span>Examen  4</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 04 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s04-l1"><span class="dot" data-dot="w4-done-s04-l1"></span><span class="tk">Lección L1</span><b>Media, mediana, varianza y desviación estándar</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l2"><span class="dot" data-dot="w4-done-s04-l2"></span><span class="tk">Lección L2</span><b>Muestras, tamaño de muestra y significación</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l3"><span class="dot" data-dot="w4-done-s04-l3"></span><span class="tk">Lección L3</span><b>Correlación y regresión</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l4"><span class="dot" data-dot="w4-done-s04-l4"></span><span class="tk">Lección L4</span><b>Métricas de trading: tasa de acierto, profit factor, esperanza, drawdown, Sharpe y Sortino</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l5"><span class="dot" data-dot="w4-done-s04-l5"></span><span class="tk">Lección L5</span><b>Tamaño de posición y riesgo por operación</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l6"><span class="dot" data-dot="w4-done-s04-l6"></span><span class="tk">Lección L6</span><b>Riesgo de ruina, rachas y el criterio de Kelly</b><span class="tm">→</span></a><a class="toc-i" href="#s04-l7"><span class="dot" data-dot="w4-done-s04-l7"></span><span class="tk">Lección L7</span><b>Taller con hoja de cálculo: métricas de una lista de operaciones</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w4-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w4-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-04-y-entrega-practica"><span class="dot" data-dot="w4-done-investigacion-i-04-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-04 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-4"><span class="dot" data-dot="w4-done-examen-4"></span><span class="tk">Evaluación</span><b>Examen de la semana 4 · Variante A</b><span class="tm">→</span></a></nav><p>La semana pasada aprendiste a calcular la esperanza de una estrategia. Esta semana aprenderás a desconfiar de ella con método: a medir cuánto se dispersan los resultados, a saber si una muestra es suficiente, a leer las métricas que verás en cada informe de StrategyQuant X y, sobre todo, a decidir cuánto arriesgar para sobrevivir a las malas rachas. Es la última semana de fundamentos: al terminarla tendrás todas las herramientas para evaluar una estrategia antes de construir la primera.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Calcular e interpretar media, mediana, varianza y desviación estándar.</li>
+<li>Estimar la incertidumbre de una muestra y decidir si un resultado es significativo.</li>
+<li>Medir la relación entre dos series con la correlación y la regresión.</li>
+<li>Calcular e interpretar las métricas de trading: tasa de acierto, profit factor, esperanza, drawdown, Sharpe y Sortino.</li>
+<li>Calcular el tamaño de posición a partir del riesgo por operación.</li>
+<li>Explicar el riesgo de ruina, las rachas y el criterio de Kelly, y elegir un riesgo por operación prudente.</li>
+<li>Construir una hoja de cálculo que calcule todas estas métricas a partir de una lista de operaciones.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Taller de métricas, ejercicios y simulaciones</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-04, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno, repaso de la etapa 1 y plan de la semana 5</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Tu hoja de cálculo. Esta semana construirás una plantilla que reutilizarás en todo el curso.</li>
+<li>El archivo de operaciones del taller: <a href="data/s04-operaciones.csv">s04-operaciones.csv</a> (60 operaciones simuladas).</li>
+<li>Tu cuaderno de investigación y la hoja de la semana 3.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 5</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 4</li>
+<li>☐ Entrega práctica: plantilla de métricas con las 60 operaciones del taller</li>
+<li>☐ Investigación I-04: pasos 1 a 4, 7 y 8 documentados</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Esta semana cierra la etapa 1. Antes de pasar a StrategyQuant X, repasa las cuatro semanas: los conceptos de esta etapa aparecen en cada informe que leerás a partir de ahora.</p></aside></div><label class="check"><input type="checkbox" data-store="w4-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s04-l1" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L1</span><h2>Media, mediana, varianza y desviación estándar</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>Dos números para resumir una lista</h4>
+<p>Cuando tienes 200 operaciones, necesitas resumirlas. Hacen falta al menos dos números: uno que diga <strong>dónde está el centro</strong> y otro que diga <strong>cuánto se alejan</strong> los datos de ese centro.</p>
+<h4>Media y mediana</h4>
+<ul>
+<li>La <strong>media</strong> (o media aritmética) es la suma de los valores dividida entre su número.</li>
+<li>La <strong>mediana</strong> es el valor que queda en medio cuando los ordenas: la mitad de los datos está por debajo y la otra mitad por encima.</li>
+</ul>
+<p>Con los resultados 50, −30, −30, −30, 200 €, la media es 160 / 5 = 32 € y la mediana es −30 €. ¿Cuál describe mejor la estrategia? Las dos dicen algo: la media dice que, en conjunto, se gana; la mediana dice que la operación típica pierde. Es el retrato de una estrategia de tendencia: pierde a menudo y gana mucho de vez en cuando.</p>
+<figure class="fig"><a href="img/s04-media-mediana.svg" target="_blank" rel="noopener"><img src="img/s04-media-mediana.svg" alt="Figura 4.1 · En una distribución asimétrica, como la de las operaciones de una estrategia de tendencia, la media y la mediana se separan. Datos simulados." loading="lazy"></a><figcaption>Figura 4.1 · En una distribución asimétrica, como la de las operaciones de una estrategia de tendencia, la media y la mediana se separan. Datos simulados.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Si la media y la mediana de tus operaciones son muy distintas, la distribución es asimétrica. Mira siempre las dos.</p></aside>
+<h4>Varianza y desviación estándar</h4>
+<p>La <strong>varianza</strong> mide la dispersión: es la media de los cuadrados de las distancias a la media. Con una muestra de n datos se divide entre n − 1:</p>
+<div class="math">$$s^2 = \frac{\sum_{i=1}^{n} (x_i - \bar{x})^2}{n - 1}$$</div>
+
+<p>La <strong>desviación estándar</strong> es su raíz cuadrada, y tiene la ventaja de estar en las mismas unidades que los datos (euros, pips o porcentaje):</p>
+<div class="math">$$s = \sqrt{s^2}$$</div>
+
+<p>En la hoja de cálculo: <code>=PROMEDIO()</code>, <code>=MEDIANA()</code>, <code>=VAR.S()</code> y <code>=DESVEST.M()</code> (en inglés: <code>AVERAGE</code>, <code>MEDIAN</code>, <code>VAR.S</code>, <code>STDEV.S</code>).</p>
+<figure class="fig"><a href="img/s04-dispersion.svg" target="_blank" rel="noopener"><img src="img/s04-dispersion.svg" alt="Figura 4.2 · Dos estrategias con la misma media y distinta desviación estándar: la B tiene resultados mucho más irregulares. Datos simulados." loading="lazy"></a><figcaption>Figura 4.2 · Dos estrategias con la misma media y distinta desviación estándar: la B tiene resultados mucho más irregulares. Datos simulados.</figcaption></figure>
+<aside class="callout example"><p><strong>Ejemplo.</strong> La estrategia A gana de media 10 € por operación con una desviación de 20 €. La B también gana 10 € de media, pero con una desviación de 120 €. Las dos tienen la misma esperanza, pero con la B verás rachas mucho más profundas y necesitarás muchas más operaciones para saber si su ventaja es real.</p></aside>
+<h4>Valores atípicos</h4>
+<p>Una sola operación enorme puede mover mucho la media y la desviación. Si al quitar la mejor operación la estrategia pasa de ganar a perder, no tienes una estrategia: tienes un golpe de suerte. Es una comprobación sencilla que harás siempre.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Calcula la media y la mediana de: 30, −20, −20, 15, −20, 90.</li>
+<li>¿Por qué se divide entre n − 1 al calcular la varianza de una muestra?</li>
+<li>¿Qué te dice que la desviación estándar sea mucho mayor que la media?</li>
+</ol><div class="answer"><label for="w4-s04-l1">Tus respuestas</label><textarea id="w4-s04-l1" data-store="w4-s04-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l1"> He terminado esta sección</label></section><section class="pane" id="s04-l2" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L2</span><h2>Muestras, tamaño de muestra y significación</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 40 minutos</em></p>
+<h4>Tu backtest es una muestra</h4>
+<p>Las operaciones de un backtest son una <strong>muestra</strong> de todas las operaciones que la estrategia haría si funcionara siempre igual (la <strong>población</strong>). La media de tu muestra es solo una estimación de la media real, y tiene un error.</p>
+<h4>El error estándar</h4>
+<p>El <strong>error estándar de la media</strong> mide cuánto puede variar la media de una muestra a otra:</p>
+<div class="math">$$EE = \frac{s}{\sqrt{n}}$$</div>
+
+<p>Disminuye con la raíz del número de operaciones: para reducir el error a la mitad, necesitas <strong>cuatro veces</strong> más operaciones.</p>
+<h4>¿Es la ventaja distinta de cero?</h4>
+<p>Para saber si una media positiva puede deberse a la suerte, compara la media con su error estándar. El cociente se llama <strong>estadístico t</strong>:</p>
+<div class="math">$$t = \frac{\bar{x}}{s / \sqrt{n}}$$</div>
+
+<p>Como regla práctica, si t es mayor que 2, es poco probable (en torno a un 5 % o menos) que una estrategia sin ventaja hubiera dado un resultado así por azar. Decimos que el resultado es <strong>estadísticamente significativo</strong>. Si t es menor que 2, no puedes descartar que la ventaja sea suerte.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Una estrategia tiene 60 operaciones con una media de 18 € y una desviación de 93 €. EE = 93 / √60 = 12,0 €. t = 18 / 12,0 = 1,5. <strong>No es significativo</strong>: con esos datos, una estrategia sin ventaja podría haber dado ese resultado con bastante facilidad.</p></aside>
+<h4>¿Cuántas operaciones necesitas?</h4>
+<p>Despejando n de la fórmula de t, el número de operaciones necesario para que una ventaja dada sea significativa (t = 2) es aproximadamente:</p>
+<div class="math">$$n \approx \left(\frac{2 \times s}{\bar{x}}\right)^2$$</div>
+
+<p>En el ejemplo: (2 × 93 / 18)² ≈ 107 operaciones. Y eso si la media y la desviación reales son las que has medido, que tampoco lo sabes.</p>
+<h4>La incertidumbre de la tasa de acierto</h4>
+<p>Con la tasa de acierto ocurre lo mismo. Un intervalo aproximado al 95 % es:</p>
+<div class="math">$$p \pm 2 \sqrt{\frac{p(1-p)}{n}}$$</div>
+
+<p>Con un 45 % de acierto en 60 operaciones: 0,45 ± 2 × √(0,45 × 0,55 / 60) = 0,45 ± 0,128. La tasa real podría estar <strong>entre el 32 % y el 58 %</strong>. Con 600 operaciones, el intervalo se estrecha a ±4 puntos.</p>
+<figure class="fig"><a href="img/s04-muestra.svg" target="_blank" rel="noopener"><img src="img/s04-muestra.svg" alt="Figura 4.3 · Cuánto se estrecha el intervalo de la tasa de acierto (para un acierto del 45 %) al aumentar las operaciones." loading="lazy"></a><figcaption>Figura 4.3 · Cuánto se estrecha el intervalo de la tasa de acierto (para un acierto del 45 %) al aumentar las operaciones.</figcaption></figure>
+<aside class="callout warn"><p><strong>Error típico.</strong> Probar muchas estrategias y quedarse con la que dio t &gt; 2. Si pruebas 100 estrategias sin ventaja, unas cinco darán t &gt; 2 por pura suerte. Es el <strong>sesgo de selección</strong>, y StrategyQuant X, que genera miles de estrategias, lo produce a escala industrial. Lo combatirás en las semanas 10 a 12.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Una estrategia tiene 150 operaciones, media 6 € y desviación 60 €. Calcula el estadístico t. ¿Es significativa?</li>
+<li>¿Cuántas operaciones más necesitas para reducir el error estándar a la mitad?</li>
+<li>¿Por qué una t mayor que 2 no basta si has probado cientos de estrategias?</li>
+</ol><div class="answer"><label for="w4-s04-l2">Tus respuestas</label><textarea id="w4-s04-l2" data-store="w4-s04-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l2"> He terminado esta sección</label></section><section class="pane" id="s04-l3" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L3</span><h2>Correlación y regresión</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<h4>La correlación</h4>
+<p>La <strong>correlación</strong> (de Pearson) mide si dos series se mueven juntas. Va de −1 a +1:</p>
+<ul>
+<li><strong>+1:</strong> se mueven exactamente en la misma dirección.</li>
+<li><strong>0:</strong> no hay relación lineal.</li>
+<li><strong>−1:</strong> se mueven exactamente en direcciones opuestas.</li>
+</ul>
+<p>En la hoja de cálculo: <code>=COEF.DE.CORREL(A:A;B:B)</code> (<code>CORREL</code> en inglés).</p>
+<figure class="fig"><a href="img/s04-correlacion.svg" target="_blank" rel="noopener"><img src="img/s04-correlacion.svg" alt="Figura 4.4 · Tres nubes de puntos con correlaciones distintas. Datos simulados." loading="lazy"></a><figcaption>Figura 4.4 · Tres nubes de puntos con correlaciones distintas. Datos simulados.</figcaption></figure>
+<h4>Para qué la usarás</h4>
+<ul>
+<li><strong>Carteras (semanas 13 y 14):</strong> combinar estrategias poco correlacionadas reduce el drawdown conjunto. Dos estrategias con correlación 0,9 son casi la misma apuesta.</li>
+<li><strong>Exposición duplicada:</strong> EUR/USD y GBP/USD suelen estar muy correlacionados. Comprar los dos a la vez es casi doblar el riesgo.</li>
+<li><strong>Validar ideas:</strong> si una condición de tu estrategia apenas está correlacionada con el resultado, probablemente sobra.</li>
+</ul>
+<h4>Correlación no es causalidad</h4>
+<p>Que dos cosas se muevan juntas no significa que una cause la otra. Pueden depender de un tercer factor, o ser casualidad: si comparas suficientes series, encontrarás correlaciones altas sin ningún sentido.</p>
+<aside class="callout warn"><p><strong>Atención.</strong> La correlación cambia con el tiempo. En las crisis, muchos activos que normalmente se mueven de forma independiente caen a la vez: la correlación sube justo cuando más necesitas la diversificación.</p></aside>
+<h4>La regresión lineal</h4>
+<p>La <strong>regresión lineal</strong> busca la recta que mejor describe cómo cambia una serie (y) cuando cambia otra (x):</p>
+<div class="math">$$y = a + b \times x$$</div>
+
+<p>La <strong>pendiente</strong> b dice cuánto cambia y por cada unidad de x. Si comparas las rentabilidades diarias de una acción con las de su índice, b es la <strong>beta</strong>: con beta 1,5, la acción se mueve de media un 1,5 % por cada 1 % del índice. El <strong>coeficiente de determinación</strong> R² (la correlación al cuadrado) indica qué parte de la variación de y explica la recta.</p>
+<p>En la hoja: <code>=PENDIENTE()</code>, <code>=INTERSECCION.EJE()</code> y <code>=COEFICIENTE.R2()</code> (<code>SLOPE</code>, <code>INTERCEPT</code>, <code>RSQ</code>).</p>
+<h4>La regresión sobre la curva de capital</h4>
+<p>Un uso muy práctico: haz una regresión del saldo acumulado contra el número de operación. Una pendiente positiva con un R² alto indica una curva de capital <strong>estable</strong>; un R² bajo, una curva irregular aunque termine arriba. StrategyQuant X usa una idea parecida en su métrica de estabilidad.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué significa una correlación de −0,8 entre dos estrategias?</li>
+<li>Una acción tiene una beta de 0,6 respecto a su índice. Si el índice cae un 5 %, ¿cuánto cabe esperar que caiga la acción?</li>
+<li>Pon un ejemplo de correlación sin causalidad.</li>
+</ol><div class="answer"><label for="w4-s04-l3">Tus respuestas</label><textarea id="w4-s04-l3" data-store="w4-s04-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l3"> He terminado esta sección</label></section><section class="pane" id="s04-l4" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L4</span><h2>Métricas de trading: tasa de acierto, profit factor, esperanza, drawdown, Sharpe y Sortino</h2></header><div class="read"><p><em>Formato: clase de 45 minutos · Lectura: 45 minutos</em></p>
+<h4>Las métricas de un informe</h4>
+<p>Cada informe de StrategyQuant X, de MetaTrader o de una empresa de fondeo muestra decenas de métricas. Estas son las que más importan:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Métrica</th>
+<th>Fórmula</th>
+<th>Qué te dice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beneficio neto</td>
+<td>Suma de todas las operaciones</td>
+<td>Resultado total, sin contexto</td>
+</tr>
+<tr>
+<td>Tasa de acierto</td>
+<td>Ganadoras / total</td>
+<td>Con qué frecuencia gana (necesita el ratio para tener sentido)</td>
+</tr>
+<tr>
+<td>Ratio medio</td>
+<td>Ganancia media / pérdida media</td>
+<td>Cuánto gana cuando gana, frente a lo que pierde</td>
+</tr>
+<tr>
+<td>Profit factor</td>
+<td>Beneficio bruto / pérdida bruta</td>
+<td>Euros ganados por cada euro perdido</td>
+</tr>
+<tr>
+<td>Esperanza</td>
+<td>Beneficio neto / número de operaciones</td>
+<td>Resultado medio por operación</td>
+</tr>
+<tr>
+<td>Drawdown máximo</td>
+<td>Mayor caída desde un máximo</td>
+<td>El peor momento que habrías vivido</td>
+</tr>
+<tr>
+<td>Factor de recuperación</td>
+<td>Beneficio neto / drawdown máximo</td>
+<td>Cuánto ganas por cada euro de caída</td>
+</tr>
+<tr>
+<td>Sharpe</td>
+<td>Rentabilidad media / desviación</td>
+<td>Rentabilidad por unidad de variabilidad</td>
+</tr>
+<tr>
+<td>Sortino</td>
+<td>Rentabilidad media / desviación a la baja</td>
+<td>Igual, pero solo castiga la variabilidad negativa</td>
+</tr>
+</tbody>
+</table></div>
+<h4>El profit factor</h4>
+<div class="math">$$PF = \frac{\text{beneficio bruto}}{\text{pérdida bruta}}$$</div>
+
+<p>Un PF de 1 es no ganar nada. Como orientación para estrategias de StrategyQuant X, muchos investigadores exigen un PF de al menos 1,3–1,5 en el backtest con costes, porque fuera de muestra suele bajar. Un PF muy alto (por encima de 3) con pocas operaciones es una señal de alarma, no de calidad: suele indicar sobreoptimización.</p>
+<h4>El drawdown</h4>
+<p>El <strong>drawdown</strong> es la caída desde el último máximo del saldo. El <strong>drawdown máximo</strong> es la mayor de todas. Se expresa en dinero o en porcentaje del máximo anterior.</p>
+<figure class="fig"><a href="img/s04-drawdown.svg" target="_blank" rel="noopener"><img src="img/s04-drawdown.svg" alt="Figura 4.5 · Arriba, la curva de capital; abajo, el drawdown en cada momento («gráfico bajo el agua»). Datos simulados del taller." loading="lazy"></a><figcaption>Figura 4.5 · Arriba, la curva de capital; abajo, el drawdown en cada momento («gráfico bajo el agua»). Datos simulados del taller.</figcaption></figure>
+<p>Fíjate también en la <strong>duración</strong>: cuánto tiempo pasa desde un máximo hasta que se supera. Un drawdown del 10 % que dura un año es psicológicamente más duro que uno del 15 % que se recupera en un mes.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> El drawdown máximo de un backtest no es el peor que vivirás: es solo el peor que <strong>ya</strong> ocurrió en esos datos. En la semana 11, con Monte Carlo, verás que el drawdown real puede ser bastante mayor.</p></aside>
+<h4>Sharpe y Sortino</h4>
+<p>El <strong>ratio de Sharpe</strong> compara la rentabilidad con su variabilidad. Con rentabilidades periódicas (por ejemplo, mensuales):</p>
+<div class="math">$$\text{Sharpe} = \frac{\bar{r} - r_f}{s} \times \sqrt{k}$$</div>
+
+<p>donde r_f es la rentabilidad sin riesgo del periodo (puedes usar 0 para simplificar al comparar estrategias) y k el número de periodos por año: 12 si son meses, unos 252 si son días de bolsa. El factor √k <strong>anualiza</strong> el ratio.</p>
+<p>El <strong>ratio de Sortino</strong> es igual, pero en el denominador solo usa la <strong>desviación a la baja</strong>, que mide la dispersión de los resultados negativos:</p>
+<div class="math">$$\text{Sortino} = \frac{\bar{r} - r_f}{s_{\text{baja}}} \times \sqrt{k}, \qquad s_{\text{baja}} = \sqrt{\frac{\sum \min(r_i, 0)^2}{n}}$$</div>
+
+<p>El Sortino no castiga las ganancias grandes, que también son «variabilidad», así que es más justo con las estrategias de asimetría positiva.</p>
+<p>Como orientación con datos reales y costes, un Sharpe anual por encima de 1 es bueno y por encima de 2 es excepcional. En un backtest, cifras mucho mayores suelen indicar sobreoptimización o costes mal configurados.</p>
+<aside class="callout warn"><p><strong>Error típico.</strong> Comparar el Sharpe de dos estrategias calculado con periodos distintos (uno con días y otro con meses) o sin anualizar. Usa siempre la misma base.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Beneficio bruto 4.200 €, pérdida bruta 3.000 €. ¿Cuál es el profit factor?</li>
+<li>El saldo pasa de 10.000 € a un máximo de 12.500 €, cae a 10.600 € y sube a 13.000 €. ¿Cuál es el drawdown máximo en euros y en porcentaje?</li>
+<li>¿Por qué el Sortino puede ser mucho mayor que el Sharpe en una estrategia de tendencia?</li>
+</ol><div class="answer"><label for="w4-s04-l4">Tus respuestas</label><textarea id="w4-s04-l4" data-store="w4-s04-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l4"> He terminado esta sección</label></section><section class="pane" id="s04-l5" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L5</span><h2>Tamaño de posición y riesgo por operación</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>El riesgo lo decides tú</h4>
+<p>Ya sabes calcular un tamaño de posición con una regla de tres. Esta lección explica <strong>cuánto</strong> arriesgar. El método que usarás en todo el curso es el <strong>riesgo fijo por operación</strong> (<em>fixed fractional</em>): en cada operación arriesgas el mismo porcentaje del capital, y el tamaño se calcula a partir de la distancia del stop.</p>
+<div class="math">$$\text{Lotes} = \frac{\text{capital} \times \text{riesgo \%}}{\text{distancia del stop (pips)} \times \text{valor del pip por lote}}$$</div>
+
+<p>Ventajas del método:</p>
+<ul>
+<li><strong>Las pérdidas tienen tamaño conocido:</strong> cada operación perdedora cuesta lo mismo en porcentaje.</li>
+<li><strong>El tamaño se adapta solo:</strong> si la cuenta crece, las posiciones crecen; si cae, se reducen. Así es casi imposible llegar a cero, aunque no a sufrir caídas profundas.</li>
+<li><strong>El stop decide el tamaño, no al revés:</strong> si el stop es amplio, la posición es pequeña.</li>
+</ul>
+<h4>¿Cuánto arriesgar?</h4>
+<p>Una simulación con la estrategia de ejemplo de la semana 3 (40 % de acierto, ratio 1,875 y esperanza de 0,15 R) muestra qué pasa en 200 operaciones según el riesgo por operación:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Riesgo por operación</th>
+<th>Probabilidad de sufrir un drawdown del 30 % o más</th>
+<th>Del 50 % o más</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0,5 %</td>
+<td>Prácticamente 0 %</td>
+<td>Prácticamente 0 %</td>
+</tr>
+<tr>
+<td>1 %</td>
+<td>Alrededor del 1 %</td>
+<td>Prácticamente 0 %</td>
+</tr>
+<tr>
+<td>2 %</td>
+<td>Alrededor del 27 %</td>
+<td>Alrededor del 1 %</td>
+</tr>
+<tr>
+<td>3 %</td>
+<td>Alrededor del 70 %</td>
+<td>Alrededor del 12 %</td>
+</tr>
+<tr>
+<td>5 %</td>
+<td>Más del 99 %</td>
+<td>Alrededor del 60 %</td>
+</tr>
+<tr>
+<td>10 %</td>
+<td>Prácticamente seguro</td>
+<td>Prácticamente seguro</td>
+</tr>
+</tbody>
+</table></div>
+<p><em>Resultados de 5.000 simulaciones por fila con datos ficticios; con otra estrategia las cifras cambian.</em></p>
+<figure class="fig"><a href="img/s04-riesgo-dd.svg" target="_blank" rel="noopener"><img src="img/s04-riesgo-dd.svg" alt="Figura 4.6 · Con una estrategia que tiene ventaja, el riesgo por operación decide si sobrevives a las malas rachas. Datos simulados." loading="lazy"></a><figcaption>Figura 4.6 · Con una estrategia que tiene ventaja, el riesgo por operación decide si sobrevives a las malas rachas. Datos simulados.</figcaption></figure>
+<p>La misma estrategia, con la misma ventaja, es tranquila con un 1 % de riesgo y destructiva con un 5 %. <strong>El riesgo por operación es la decisión más importante que tomarás.</strong></p>
+<aside class="callout key"><p><strong>Idea clave.</strong> En este curso, el riesgo por operación de referencia es del 0,5 % al 1 % del capital, y nunca más del 2 %. En carteras con varias estrategias, el riesgo de cada una será todavía menor (semana 14).</p></aside>
+<h4>Las reglas de las empresas de fondeo</h4>
+<p>Las empresas de fondeo suelen limitar la pérdida diaria y la total (por ejemplo, un 5 % diario y un 10 % total). Con esos límites, un riesgo del 2 % por operación deja margen para solo dos o tres pérdidas en un día. Lo estudiarás en la semana 18.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Capital 8.000 €, riesgo 0,75 %, stop de 50 pips, pip de 1 lote 9,26 €. ¿Cuántos lotes?</li>
+<li>¿Por qué con riesgo fijo por operación es muy difícil llegar a cero?</li>
+<li>Explica con la tabla por qué pasar del 1 % al 3 % de riesgo no triplica el peligro, sino que lo multiplica mucho más.</li>
+</ol><div class="answer"><label for="w4-s04-l5">Tus respuestas</label><textarea id="w4-s04-l5" data-store="w4-s04-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l5"> He terminado esta sección</label></section><section class="pane" id="s04-l6" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L6</span><h2>Riesgo de ruina, rachas y el criterio de Kelly</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<h4>El riesgo de ruina</h4>
+<p>El <strong>riesgo de ruina</strong> es la probabilidad de perder tanto capital que ya no puedas (o no quieras) seguir. En la versión clásica, para apuestas de igual tamaño con ganancia igual a la pérdida:</p>
+<div class="math">$$\text{RdR} = \left(\frac{1 - A}{1 + A}\right)^{U}$$</div>
+
+<p>donde A es la ventaja (probabilidad de ganar menos probabilidad de perder) y U el número de unidades de riesgo que tiene tu capital.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Con un 55 % de acierto y ratio 1, la ventaja es A = 0,55 − 0,45 = 0,10. Si arriesgas el 10 % del capital en cada operación (U = 10): RdR = (0,9 / 1,1)^10 ≈ 13 %. Si arriesgas el 2 % (U = 50): RdR = (0,818)^50 ≈ 0,004 %. La misma ventaja, un riesgo de ruina 3.000 veces menor.</p></aside>
+<p>En la práctica, «ruina» no es llegar a cero: es la caída a partir de la cual abandonarías o la que te haría suspender una prueba de fondeo. Por eso, en el curso medirás el riesgo como <strong>probabilidad de un drawdown determinado</strong>, con simulaciones como la de la lección anterior.</p>
+<h4>Las rachas, otra vez</h4>
+<p>Recuerda la semana 3: con un 40 % de acierto, en 200 operaciones es normal una racha de 8 pérdidas o más. Con un 2 % de riesgo, 8 pérdidas seguidas son una caída de alrededor del 15 % (1 − 0,98⁸); con un 5 %, de un 34 %. Antes de elegir el riesgo, pregúntate: ¿cuánto caería mi cuenta con una racha de 10 pérdidas, y seguiría operando?</p>
+<h4>El criterio de Kelly</h4>
+<p>El <strong>criterio de Kelly</strong> calcula la fracción del capital que, arriesgada en cada operación, hace crecer la cuenta lo más rápido posible a largo plazo:</p>
+<div class="math">$$f^* = p - \frac{1 - p}{R}$$</div>
+
+<p>Con la estrategia de la semana 3 (p = 0,40, R = 1,875): f<em> = 0,40 − 0,60 / 1,875 = </em><em>0,08</em>*, es decir, un 8 % por operación.</p>
+<figure class="fig"><a href="img/s04-kelly.svg" target="_blank" rel="noopener"><img src="img/s04-kelly.svg" alt="Figura 4.7 · Crecimiento esperado por operación según la fracción arriesgada. Pasado Kelly, arriesgar más hace crecer menos; con el doble de Kelly, el crecimiento es casi nulo." loading="lazy"></a><figcaption>Figura 4.7 · Crecimiento esperado por operación según la fracción arriesgada. Pasado Kelly, arriesgar más hace crecer menos; con el doble de Kelly, el crecimiento es casi nulo.</figcaption></figure>
+<p>Pero un 8 % por operación, según la tabla de la lección anterior, garantiza caídas del 50 %. ¿Por qué? Porque Kelly:</p>
+<ul>
+<li><strong>Supone que conoces p y R exactamente,</strong> y solo los estimas (con mucho error, lección 2). Si sobreestimas la ventaja, apuestas de más, y apostar de más es peor que apostar de menos.</li>
+<li><strong>Maximiza el crecimiento, no la comodidad:</strong> acepta drawdowns enormes.</li>
+</ul>
+<p>Por eso los profesionales usan, como mucho, una <strong>fracción de Kelly</strong> (un cuarto o la mitad) y, en la práctica, límites fijos como los de este curso. Kelly sirve sobre todo como <strong>techo</strong>: si tu riesgo por operación se acerca a Kelly, estás arriesgando demasiado.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Kelly negativo significa que la estrategia no tiene ventaja: no hay que operarla con ningún tamaño.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Calcula Kelly para p = 0,55 y R = 1,2.</li>
+<li>¿Por qué apostar el doble de Kelly hace crecer la cuenta menos que apostar la mitad?</li>
+<li>Con un 1 % de riesgo, ¿cuánto cae tu cuenta tras 10 pérdidas seguidas?</li>
+</ol><div class="answer"><label for="w4-s04-l6">Tus respuestas</label><textarea id="w4-s04-l6" data-store="w4-s04-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l6"> He terminado esta sección</label></section><section class="pane" id="s04-l7" hidden><header class="pane-head"><span class="kicker">Semana 04 · Lección L7</span><h2>Taller con hoja de cálculo: métricas de una lista de operaciones</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 3–4 horas</em></p>
+<p>En este taller construirás tu <strong>plantilla de métricas</strong>, que usarás para evaluar estrategias el resto del curso. Trabajarás con 60 operaciones simuladas de EUR/USD con una cuenta inicial de 5.000 €.</p>
+<h4>Paso 1 · Importa los datos</h4>
+<ol>
+<li>Descarga <a href="data/s04-operaciones.csv">s04-operaciones.csv</a>. Está separado por punto y coma, con coma decimal.</li>
+<li>Ábrelo en tu hoja de cálculo. En Google Sheets: <strong>Archivo → Importar → Subir</strong>, con separador «punto y coma». En Excel: <strong>Datos → Desde texto/CSV</strong>.</li>
+<li>Comprueba que tienes 60 filas y que la columna <code>resultado_eur</code> se reconoce como número.</li>
+</ol>
+<h4>Paso 2 · Columnas auxiliares</h4>
+<p>Añade junto a los datos:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Columna</th>
+<th>Fórmula (fila 2)</th>
+<th>Para qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Saldo</td>
+<td><code>=5000+F2</code> en la primera; <code>=G2+F3</code> en las siguientes</td>
+<td>Curva de capital</td>
+</tr>
+<tr>
+<td>Máximo hasta aquí</td>
+<td><code>=MAX($G$2:G2)</code> (con 5.000 incluido)</td>
+<td>Referencia del drawdown</td>
+</tr>
+<tr>
+<td>Drawdown €</td>
+<td><code>=H2-G2</code></td>
+<td>Caída desde el máximo</td>
+</tr>
+<tr>
+<td>Drawdown %</td>
+<td><code>=I2/H2</code></td>
+<td>Caída en porcentaje</td>
+</tr>
+<tr>
+<td>Ganadora</td>
+<td><code>=SI(F2&gt;0;1;0)</code></td>
+<td>Para contar aciertos</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Paso 3 · Panel de métricas</h4>
+<p>En otra pestaña, calcula con fórmulas (nunca a mano):</p>
+<ul>
+<li>Número de operaciones, ganadoras y perdedoras.</li>
+<li>Tasa de acierto e intervalo aproximado al 95 %.</li>
+<li>Beneficio neto, beneficio bruto, pérdida bruta y profit factor.</li>
+<li>Ganancia media, pérdida media y ratio R.</li>
+<li>Esperanza en euros y en R.</li>
+<li>Media, mediana y desviación estándar de las operaciones.</li>
+<li>Error estándar y estadístico t.</li>
+<li>Drawdown máximo en euros y en porcentaje, y factor de recuperación.</li>
+<li>Racha de pérdidas más larga (pista: una columna que sume 1 si pierde y vuelva a 0 si gana, y su máximo).</li>
+<li>Kelly.</li>
+<li>Mejor y peor operación, y el beneficio neto sin la mejor operación.</li>
+</ul>
+<h4>Paso 4 · Gráficos</h4>
+<p>Crea dos gráficos: la curva de capital (saldo) y el drawdown en porcentaje. Compáralos con la figura 4.5.</p>
+<h4>Paso 5 · Interpreta</h4>
+<p>Responde en tu cuaderno: ¿Tiene esta lista de operaciones una ventaja significativa? ¿Cuántas operaciones harían falta para saberlo? ¿Con qué riesgo por operación la operarías, y por qué?</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Coincide tu drawdown máximo con el de la figura 4.5?</li>
+<li>¿Qué métrica te ha sorprendido más y por qué?</li>
+<li>¿Qué cambiarías en la plantilla para reutilizarla con cualquier lista de operaciones?</li>
+</ol><div class="answer"><label for="w4-s04-l7">Tus respuestas</label><textarea id="w4-s04-l7" data-store="w4-s04-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-s04-l7"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 04 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Beta</td>
+<td>Beta</td>
+<td>Pendiente de la regresión de un activo contra su índice de referencia</td>
+</tr>
+<tr>
+<td>Coeficiente de determinación</td>
+<td>R squared</td>
+<td>Parte de la variación de una serie que explica una regresión</td>
+</tr>
+<tr>
+<td>Correlación</td>
+<td>Correlation</td>
+<td>Medida de −1 a +1 de cuánto se mueven juntas dos series</td>
+</tr>
+<tr>
+<td>Criterio de Kelly</td>
+<td>Kelly criterion</td>
+<td>Fracción del capital que maximiza el crecimiento a largo plazo</td>
+</tr>
+<tr>
+<td>Desviación a la baja</td>
+<td>Downside deviation</td>
+<td>Dispersión calculada solo con los resultados negativos</td>
+</tr>
+<tr>
+<td>Drawdown</td>
+<td>Drawdown</td>
+<td>Caída del saldo desde su último máximo</td>
+</tr>
+<tr>
+<td>Error estándar</td>
+<td>Standard error</td>
+<td>Variabilidad esperada de la media de una muestra</td>
+</tr>
+<tr>
+<td>Estadístico t</td>
+<td>t statistic</td>
+<td>Media dividida entre su error estándar</td>
+</tr>
+<tr>
+<td>Factor de recuperación</td>
+<td>Recovery factor</td>
+<td>Beneficio neto dividido entre el drawdown máximo</td>
+</tr>
+<tr>
+<td>Media</td>
+<td>Mean</td>
+<td>Suma de los valores dividida entre su número</td>
+</tr>
+<tr>
+<td>Mediana</td>
+<td>Median</td>
+<td>Valor central de los datos ordenados</td>
+</tr>
+<tr>
+<td>Muestra</td>
+<td>Sample</td>
+<td>Parte de los datos con la que se estima el comportamiento de la población</td>
+</tr>
+<tr>
+<td>Población</td>
+<td>Population</td>
+<td>Conjunto completo de resultados posibles</td>
+</tr>
+<tr>
+<td>Profit factor</td>
+<td>Profit factor</td>
+<td>Beneficio bruto dividido entre pérdida bruta</td>
+</tr>
+<tr>
+<td>Ratio de Sharpe</td>
+<td>Sharpe ratio</td>
+<td>Rentabilidad media dividida entre su desviación estándar, anualizada</td>
+</tr>
+<tr>
+<td>Ratio de Sortino</td>
+<td>Sortino ratio</td>
+<td>Como el Sharpe, pero usando la desviación a la baja</td>
+</tr>
+<tr>
+<td>Regresión lineal</td>
+<td>Linear regression</td>
+<td>Recta que mejor describe la relación entre dos series</td>
+</tr>
+<tr>
+<td>Riesgo de ruina</td>
+<td>Risk of ruin</td>
+<td>Probabilidad de perder tanto capital que no se pueda seguir</td>
+</tr>
+<tr>
+<td>Riesgo fijo por operación</td>
+<td>Fixed fractional</td>
+<td>Arriesgar el mismo porcentaje del capital en cada operación</td>
+</tr>
+<tr>
+<td>Sesgo de selección</td>
+<td>Selection bias</td>
+<td>Error de elegir el mejor resultado entre muchos y creer que no es suerte</td>
+</tr>
+<tr>
+<td>Significación estadística</td>
+<td>Statistical significance</td>
+<td>Resultado poco probable si no hubiera ventaja real</td>
+</tr>
+<tr>
+<td>Varianza</td>
+<td>Variance</td>
+<td>Media de los cuadrados de las distancias a la media</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w4-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 04 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p>Resuélvelos en tu hoja de cálculo, mostrando las fórmulas. Se entregan con la práctica de la semana.</p>
+<p><strong>E1 · Centro y dispersión.</strong> Para las operaciones 40, −25, −25, 110, −25, −30, 65, −25, calcula la media, la mediana, la varianza y la desviación estándar muestrales. ¿Qué te dice la diferencia entre media y mediana?</p>
+<p><strong>E2 · Valor atípico.</strong> Repite la media del E1 sin la operación de 110 €. ¿Seguiría ganando la estrategia?</p>
+<p><strong>E3 · Significación.</strong> Una estrategia tiene 250 operaciones, una media de 9 € y una desviación de 70 €. Calcula el error estándar y el estadístico t. ¿Es significativa? ¿Cuántas operaciones necesitaría con una media de 5 € y la misma desviación?</p>
+<p><strong>E4 · Intervalo de acierto.</strong> Calcula el intervalo aproximado al 95 % de la tasa de acierto para: a) 38 % en 50 operaciones; b) 38 % en 500 operaciones.</p>
+<p><strong>E5 · Correlación.</strong> Dos estrategias tienen estos resultados mensuales (%): A: 2, −1, 3, 0, −2, 4; B: 1, −2, 2, 1, −3, 3. Calcula su correlación en la hoja. ¿Las combinarías para diversificar?</p>
+<p><strong>E6 · Drawdown.</strong> Con los saldos 10.000, 10.400, 10.900, 10.300, 9.800, 10.600, 11.200, 10.700, 11.500, calcula el drawdown máximo en euros y en porcentaje, y cuántos periodos tardó en recuperarse.</p>
+<p><strong>E7 · Sharpe y Sortino.</strong> Una estrategia tiene estas rentabilidades mensuales (%): 3, −1, 2, −2, 4, 1, −1, 2, 0, 3, −3, 2. Calcula el Sharpe y el Sortino anualizados con r_f = 0.</p>
+<p><strong>E8 · Tamaño.</strong> Calcula los lotes para una cuenta de 12.000 € con un riesgo del 0,5 % y un stop de 45 pips en EUR/USD (EUR/USD a 1,0800).</p>
+<p><strong>E9 · Rachas y riesgo.</strong> ¿Cuánto cae una cuenta tras 12 pérdidas seguidas con un riesgo del 0,5 %, del 1 %, del 2 % y del 5 % por operación?</p>
+<p><strong>E10 · Kelly.</strong> Calcula Kelly para: a) p = 0,35 y R = 2,5; b) p = 0,60 y R = 0,6; c) p = 0,50 y R = 1,5. ¿Cuál no debería operarse? ¿Qué riesgo por operación usarías en las demás?</p><div class="answer"><label for="w4-ejercicios-obligatorios">Tus respuestas</label><textarea id="w4-ejercicios-obligatorios" data-store="w4-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-04-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 04 · Sección</span><h2>Investigación I-04 y entrega práctica</h2></header><div class="read"><h3>Investigación I-04 · ¿Cuánto riesgo aguanta una estrategia?</h3>
+<p>Esta semana repites los pasos 1, 2, 3, 4, 7 y 8, ahora con simulación.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Con las 60 operaciones del taller, formula una hipótesis sobre el riesgo por operación. Ejemplo: «Con un riesgo del 1 % por operación, la probabilidad de sufrir un drawdown del 20 % en 200 operaciones es inferior al 5 %».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Busca y cita al menos una fuente sobre gestión del riesgo o el criterio de Kelly (un libro, un artículo académico o la documentación de una plataforma). Anota qué recomienda y si aporta datos.</p>
+<p><strong>Paso 3 · Datos.</strong> Usa la tasa de acierto y el ratio R que calculaste en el taller.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Antes de simular, escribe: qué riesgos vas a probar (al menos 0,5 %, 1 %, 2 % y 3 %), cuántas operaciones tiene cada simulación (200), cuántas simulaciones harás por riesgo (al menos 20) y qué drawdown consideras inaceptable.</p>
+<p><strong>Paso 7 · Comparación.</strong> En la hoja, simula cada operación con <code>=SI(ALEATORIO()&lt;p;1+riesgo*R;1-riesgo)</code> multiplicando el saldo, calcula el drawdown máximo de cada simulación y cuenta cuántas superan tu límite. Compara los riesgos en una tabla.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma tu hipótesis? ¿Qué riesgo elegirías? ¿Qué limitaciones tiene suponer que la tasa de acierto y el ratio del taller son los reales?</p>
+<h3>Entrega práctica · Plantilla de métricas</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S04_ENT</code></td>
+<td>La plantilla del taller con las 60 operaciones, el panel de métricas, los dos gráficos y tus respuestas del paso 5</td>
+</tr>
+<tr>
+<td><code>CODIGO_S04_EJ</code></td>
+<td>Ejercicios E1 a E10 con fórmulas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S04_INV</code></td>
+<td>Hoja de la investigación I-04 con las simulaciones y conclusiones</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sustituye <code>CODIGO</code> por tu código de alumno.</p>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que el panel calcule bien todas las métricas con fórmulas y que funcione si se cambian los datos. En la investigación, que el diseño (paso 4) esté escrito antes de simular y que la conclusión tenga en cuenta la incertidumbre de la muestra. Una plantilla con valores tecleados en lugar de fórmulas quedará como NO EVALUABLE.</p><div class="answer"><label for="w4-investigacion-i-04-y-entrega-practica">Tus respuestas</label><textarea id="w4-investigacion-i-04-y-entrega-practica" data-store="w4-investigacion-i-04-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-investigacion-i-04-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-4" hidden><header class="pane-head"><span class="kicker">Semana 04 · Evaluación</span><h2>Examen de la semana 4 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> La mediana de 10, −5, −5, −5, 40 es…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q1" value="a" data-store="w4-exam-q1"><span><b>a)</b> 7</span></label><label class="opt"><input type="radio" name="w4q1" value="b" data-store="w4-exam-q1"><span><b>b)</b> −5</span></label><label class="opt"><input type="radio" name="w4q1" value="c" data-store="w4-exam-q1"><span><b>c)</b> 10</span></label><label class="opt"><input type="radio" name="w4q1" value="d" data-store="w4-exam-q1"><span><b>d)</b> 0</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> La desviación estándar mide…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q2" value="a" data-store="w4-exam-q2"><span><b>a)</b> el resultado medio</span></label><label class="opt"><input type="radio" name="w4q2" value="b" data-store="w4-exam-q2"><span><b>b)</b> el valor central</span></label><label class="opt"><input type="radio" name="w4q2" value="c" data-store="w4-exam-q2"><span><b>c)</b> la dispersión de los datos alrededor de la media</span></label><label class="opt"><input type="radio" name="w4q2" value="d" data-store="w4-exam-q2"><span><b>d)</b> la mejor operación</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Para reducir el error estándar de la media a la mitad necesitas…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q3" value="a" data-store="w4-exam-q3"><span><b>a)</b> el doble de operaciones</span></label><label class="opt"><input type="radio" name="w4q3" value="b" data-store="w4-exam-q3"><span><b>b)</b> cuatro veces más operaciones</span></label><label class="opt"><input type="radio" name="w4q3" value="c" data-store="w4-exam-q3"><span><b>c)</b> la mitad de operaciones</span></label><label class="opt"><input type="radio" name="w4q3" value="d" data-store="w4-exam-q3"><span><b>d)</b> el mismo número de operaciones</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un estadístico t de 1,2 indica que…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q4" value="a" data-store="w4-exam-q4"><span><b>a)</b> la ventaja es segura</span></label><label class="opt"><input type="radio" name="w4q4" value="b" data-store="w4-exam-q4"><span><b>b)</b> la estrategia pierde</span></label><label class="opt"><input type="radio" name="w4q4" value="c" data-store="w4-exam-q4"><span><b>c)</b> el resultado es significativo</span></label><label class="opt"><input type="radio" name="w4q4" value="d" data-store="w4-exam-q4"><span><b>d)</b> no se puede descartar que el resultado sea suerte</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Si pruebas 100 estrategias sin ventaja, ¿cuántas darán t &gt; 2 por azar, aproximadamente?</legend><div class="opts"><label class="opt"><input type="radio" name="w4q5" value="a" data-store="w4-exam-q5"><span><b>a)</b> ninguna</span></label><label class="opt"><input type="radio" name="w4q5" value="b" data-store="w4-exam-q5"><span><b>b)</b> unas 50</span></label><label class="opt"><input type="radio" name="w4q5" value="c" data-store="w4-exam-q5"><span><b>c)</b> unas 5</span></label><label class="opt"><input type="radio" name="w4q5" value="d" data-store="w4-exam-q5"><span><b>d)</b> todas</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Una correlación de 0,95 entre dos estrategias significa que…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q6" value="a" data-store="w4-exam-q6"><span><b>a)</b> se mueven casi igual</span></label><label class="opt"><input type="radio" name="w4q6" value="b" data-store="w4-exam-q6"><span><b>b)</b> una causa a la otra</span></label><label class="opt"><input type="radio" name="w4q6" value="c" data-store="w4-exam-q6"><span><b>c)</b> no tienen relación</span></label><label class="opt"><input type="radio" name="w4q6" value="d" data-store="w4-exam-q6"><span><b>d)</b> se compensan</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Beta 2 respecto al índice significa que, de media, la acción…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q7" value="a" data-store="w4-exam-q7"><span><b>a)</b> se mueve la mitad que el índice</span></label><label class="opt"><input type="radio" name="w4q7" value="b" data-store="w4-exam-q7"><span><b>b)</b> se mueve el doble que el índice</span></label><label class="opt"><input type="radio" name="w4q7" value="c" data-store="w4-exam-q7"><span><b>c)</b> siempre sube</span></label><label class="opt"><input type="radio" name="w4q7" value="d" data-store="w4-exam-q7"><span><b>d)</b> no depende del índice</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Beneficio bruto 6.000 € y pérdida bruta 4.000 €. El profit factor es…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q8" value="a" data-store="w4-exam-q8"><span><b>a)</b> 2.000</span></label><label class="opt"><input type="radio" name="w4q8" value="b" data-store="w4-exam-q8"><span><b>b)</b> 0,67</span></label><label class="opt"><input type="radio" name="w4q8" value="c" data-store="w4-exam-q8"><span><b>c)</b> 1,5</span></label><label class="opt"><input type="radio" name="w4q8" value="d" data-store="w4-exam-q8"><span><b>d)</b> 10.000</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El saldo sube a 20.000 €, cae a 17.000 € y luego sube a 22.000 €. El drawdown máximo es…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q9" value="a" data-store="w4-exam-q9"><span><b>a)</b> 15 %</span></label><label class="opt"><input type="radio" name="w4q9" value="b" data-store="w4-exam-q9"><span><b>b)</b> 3.000 € y 17,6 %</span></label><label class="opt"><input type="radio" name="w4q9" value="c" data-store="w4-exam-q9"><span><b>c)</b> 5.000 €</span></label><label class="opt"><input type="radio" name="w4q9" value="d" data-store="w4-exam-q9"><span><b>d)</b> 10 %</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El ratio de Sortino se diferencia del de Sharpe en que…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q10" value="a" data-store="w4-exam-q10"><span><b>a)</b> usa la desviación a la baja</span></label><label class="opt"><input type="radio" name="w4q10" value="b" data-store="w4-exam-q10"><span><b>b)</b> no se anualiza</span></label><label class="opt"><input type="radio" name="w4q10" value="c" data-store="w4-exam-q10"><span><b>c)</b> usa la mediana</span></label><label class="opt"><input type="radio" name="w4q10" value="d" data-store="w4-exam-q10"><span><b>d)</b> solo vale para acciones</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Para anualizar un Sharpe calculado con rentabilidades mensuales se multiplica por…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q11" value="a" data-store="w4-exam-q11"><span><b>a)</b> 12</span></label><label class="opt"><input type="radio" name="w4q11" value="b" data-store="w4-exam-q11"><span><b>b)</b> √252</span></label><label class="opt"><input type="radio" name="w4q11" value="c" data-store="w4-exam-q11"><span><b>c)</b> 252</span></label><label class="opt"><input type="radio" name="w4q11" value="d" data-store="w4-exam-q11"><span><b>d)</b> √12</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Con riesgo fijo por operación, el tamaño de la posición depende de…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q12" value="a" data-store="w4-exam-q12"><span><b>a)</b> solo del capital</span></label><label class="opt"><input type="radio" name="w4q12" value="b" data-store="w4-exam-q12"><span><b>b)</b> del capital, el riesgo elegido y la distancia del stop</span></label><label class="opt"><input type="radio" name="w4q12" value="c" data-store="w4-exam-q12"><span><b>c)</b> solo del stop</span></label><label class="opt"><input type="radio" name="w4q12" value="d" data-store="w4-exam-q12"><span><b>d)</b> del último resultado</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Kelly para p = 0,50 y R = 2 es…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q13" value="a" data-store="w4-exam-q13"><span><b>a)</b> 25 %</span></label><label class="opt"><input type="radio" name="w4q13" value="b" data-store="w4-exam-q13"><span><b>b)</b> 50 %</span></label><label class="opt"><input type="radio" name="w4q13" value="c" data-store="w4-exam-q13"><span><b>c)</b> 0 %</span></label><label class="opt"><input type="radio" name="w4q13" value="d" data-store="w4-exam-q13"><span><b>d)</b> 100 %</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Un Kelly negativo significa que…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q14" value="a" data-store="w4-exam-q14"><span><b>a)</b> hay que arriesgar más</span></label><label class="opt"><input type="radio" name="w4q14" value="b" data-store="w4-exam-q14"><span><b>b)</b> la estrategia es muy buena</span></label><label class="opt"><input type="radio" name="w4q14" value="c" data-store="w4-exam-q14"><span><b>c)</b> la estrategia no tiene ventaja y no debe operarse</span></label><label class="opt"><input type="radio" name="w4q14" value="d" data-store="w4-exam-q14"><span><b>d)</b> hay que invertir la estrategia</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Con un 2 % de riesgo, tras 10 pérdidas seguidas la cuenta cae aproximadamente un…</legend><div class="opts"><label class="opt"><input type="radio" name="w4q15" value="a" data-store="w4-exam-q15"><span><b>a)</b> 18 %</span></label><label class="opt"><input type="radio" name="w4q15" value="b" data-store="w4-exam-q15"><span><b>b)</b> 20 %</span></label><label class="opt"><input type="radio" name="w4q15" value="c" data-store="w4-exam-q15"><span><b>c)</b> 10 %</span></label><label class="opt"><input type="radio" name="w4q15" value="d" data-store="w4-exam-q15"><span><b>d)</b> 2 %</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p>Muestra todos los pasos.</p>
+<p><strong>B1.</strong> Un backtest tiene 120 operaciones con una media de 14 € y una desviación de 110 €. a) Calcula el error estándar y el estadístico t. b) ¿Es significativo? c) ¿Cuántas operaciones necesitaría, con la misma media y desviación, para que t = 2?</p>
+<p><strong>B2.</strong> Saldos mensuales de una estrategia: 8.000, 8.300, 8.700, 8.200, 7.900, 8.500, 9.100, 8.800, 9.400. Calcula: a) el drawdown máximo en euros y en porcentaje; b) el factor de recuperación (beneficio neto / drawdown máximo en euros).</p>
+<p><strong>B3.</strong> Una estrategia tiene un 45 % de acierto y un ratio de 1,6. a) Calcula su esperanza en R y su Kelly. b) Con una cuenta de 10.000 €, un riesgo del 1 % y un stop de 40 pips en EUR/USD (EUR/USD a 1,0800), calcula el tamaño en lotes. c) ¿Cuánto caería la cuenta con 8 pérdidas seguidas?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: tienes una estrategia con 80 operaciones, un profit factor de 1,6 y un drawdown máximo del 9 %. Quieres operarla con dinero real. Explica qué riesgo por operación elegirías y por qué, usando al menos tres conceptos de esta semana (por ejemplo: significación, rachas, riesgo de ruina, Kelly o drawdown).</p><div class="answer"><label for="w4-examen-4">Tus respuestas a las partes B y C</label><textarea id="w4-examen-4" data-store="w4-examen-4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w4-done-examen-4"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
