@@ -1,0 +1,913 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 2 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head><body data-active="2">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><b>Trading Algorítmico Profesional</b><span>Aula de estudio · nombre provisional</span></a></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><span class="wk locked" title="En producción"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><span class="wk locked" title="En producción"><span class="n">S05</span><span class="t">Entorno y datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S06</span><span class="t">Primeras estrategias</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><p class="eyebrow">SEMANA 02</p><h1>Cuatro mercados, órdenes y operativa</h1><p class="meta">Trading Algorítmico Profesional (nombre provisional) · Etapa 1: Fundamentos · Material del alumno · Código S02 · Versión 0.1 · Nov 6, 2026 · Estado: BORRADOR</p><div class="bar" aria-hidden="true"><i data-progress="2" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion"><span class="dot" data-dot="w2-done-presentacion"></span>Presentación</a><a class="tab" href="#s02-l1" data-tab="s02-l1"><span class="dot" data-dot="w2-done-s02-l1"></span>S02-L1</a><a class="tab" href="#s02-l2" data-tab="s02-l2"><span class="dot" data-dot="w2-done-s02-l2"></span>S02-L2</a><a class="tab" href="#s02-l3" data-tab="s02-l3"><span class="dot" data-dot="w2-done-s02-l3"></span>S02-L3</a><a class="tab" href="#s02-l4" data-tab="s02-l4"><span class="dot" data-dot="w2-done-s02-l4"></span>S02-L4</a><a class="tab" href="#s02-l5" data-tab="s02-l5"><span class="dot" data-dot="w2-done-s02-l5"></span>S02-L5</a><a class="tab" href="#s02-l6" data-tab="s02-l6"><span class="dot" data-dot="w2-done-s02-l6"></span>S02-L6</a><a class="tab" href="#s02-l7" data-tab="s02-l7"><span class="dot" data-dot="w2-done-s02-l7"></span>S02-L7</a><a class="tab" href="#glosario" data-tab="glosario"><span class="dot" data-dot="w2-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios"><span class="dot" data-dot="w2-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-02-y-entrega-practica" data-tab="investigacion-i-02-y-entrega-practica"><span class="dot" data-dot="w2-done-investigacion-i-02-y-entrega-practica"></span>Investigación I-02 y entrega práctica</a><a class="tab" href="#examen-2" data-tab="examen-2"><span class="dot" data-dot="w2-done-examen-2"></span>Examen  2</a></nav><section class="pane" id="presentacion" hidden><h2>Presentación de la semana</h2><div class="read"><p>La semana pasada viste cómo funciona un mercado. Esta semana conocerás los cuatro mercados del curso, los instrumentos con los que se operan y las órdenes que usarás en todos tus algoritmos. Terminarás lanzando tus primeras órdenes en cuentas demo, sin arriesgar dinero.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Calcular pips, lotes y el valor del pip en Forex.</li>
+<li>Explicar qué es un índice y en qué se diferencian sus futuros y sus CFD.</li>
+<li>Describir cómo afectan los dividendos y los splits a los datos de una acción.</li>
+<li>Explicar los riesgos propios de las criptomonedas: exchanges, custodia y volatilidad.</li>
+<li>Distinguir contado, CFD y futuros, y calcular margen y apalancamiento.</li>
+<li>Elegir el tipo de orden adecuado para cada situación.</li>
+<li>Abrir cuentas demo en MT4 y MT5, lanzar órdenes y leer su historial.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Taller de MT4 y MT5, ejercicios y ficha del broker</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-02, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 3</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>MetaTrader 4 y MetaTrader 5 instalados, o la posibilidad de instalarlos.</li>
+<li>Una cuenta demo en un broker autorizado que ofrezca ambas plataformas (lección S02-L7).</li>
+<li>Tu hoja de cálculo y tu cuaderno de investigación.</li>
+</ul>
+<p>No necesitas StrategyQuant X todavía.</p>
+<h4>Criterio para desbloquear la semana 3</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 2</li>
+<li>☐ Entrega práctica: órdenes en demo y ficha del broker</li>
+<li>☐ Investigación I-02: pasos 1 a 3, 7 y 8 documentados</li>
+</ul>
+<p><strong>Advertencia de riesgo.</strong> Esta semana trabajas solo en cuentas demo. No deposites dinero real en ningún broker por este curso. Los productos apalancados como los CFD conllevan un riesgo alto de perder dinero con rapidez.</p></div><label class="check"><input type="checkbox" data-store="w2-done-presentacion"> Marcar como completada</label></section><section class="pane" id="s02-l1" hidden><h2>S02-L1 · Forex: pares, pips, lotes, sesiones y costes</h2><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 40 minutos</em></p>
+<p>Forex (<em>foreign exchange</em>) es el mercado de divisas y el mercado principal de especialización a corto plazo de este curso.</p>
+<h4>Los pares de divisas</h4>
+<p>Las divisas se cotizan por pares. En <strong>EUR/USD = 1,0850</strong>, la primera divisa es la <strong>base</strong> (EUR) y la segunda la <strong>cotizada</strong> (USD): un euro vale 1,0850 dólares.</p>
+<ul>
+<li><strong>Comprar (ir largo)</strong> EUR/USD es comprar euros y vender dólares: ganas si el euro sube.</li>
+<li><strong>Vender (ir corto)</strong> es lo contrario: ganas si el euro baja.</li>
+</ul>
+<p>En Forex puedes ir corto tan fácilmente como largo, y los algoritmos lo aprovechan.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Familia</th>
+<th>Ejemplos</th>
+<th>Características</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Principales (<em>majors</em>)</td>
+<td>EUR/USD, GBP/USD, USD/JPY, USD/CHF, USD/CAD, AUD/USD, NZD/USD</td>
+<td>Máxima liquidez, spreads más bajos</td>
+</tr>
+<tr>
+<td>Cruces</td>
+<td>EUR/GBP, EUR/JPY, GBP/JPY</td>
+<td>Sin dólar; spreads algo mayores</td>
+</tr>
+<tr>
+<td>Exóticos</td>
+<td>USD/TRY, USD/MXN</td>
+<td>Spreads altos y saltos bruscos; evítalos al empezar</td>
+</tr>
+</tbody>
+</table></div>
+<p>Los tres pares principales del curso son <strong>EUR/USD, GBP/USD y USD/JPY</strong>.</p>
+<h4>Pips y points</h4>
+<p>El <strong>pip</strong> es la unidad estándar de movimiento:</p>
+<ul>
+<li>0,0001 en la mayoría de los pares (EUR/USD de 1,0850 a 1,0851 = 1 pip).</li>
+<li>0,01 en los pares con yen (USD/JPY de 150,10 a 150,11 = 1 pip).</li>
+</ul>
+<p>Los brokers muestran un decimal más: la fracción de pip. En MetaTrader, la unidad mínima se llama <strong>point</strong>. En un broker de cinco decimales, <strong>1 pip = 10 points</strong>.</p>
+<p><strong>Error típico.</strong> Confundir pips y points al poner un stop: lo pondrías diez veces más cerca o más lejos de lo que querías.</p>
+<h4>Lotes y valor del pip</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Lote</th>
+<th>Unidades de la divisa base</th>
+<th>Valor del pip en EUR/USD</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estándar (1,00)</td>
+<td>100.000</td>
+<td>10 USD</td>
+</tr>
+<tr>
+<td>Mini (0,10)</td>
+<td>10.000</td>
+<td>1 USD</td>
+</tr>
+<tr>
+<td>Micro (0,01)</td>
+<td>1.000</td>
+<td>0,10 USD</td>
+</tr>
+</tbody>
+</table></div>
+<div class="math">$$\text{Valor del pip} = \text{tamaño del pip} \times \text{unidades} \times \text{conversión a la divisa de tu cuenta}$$</div>
+
+<p>Ejemplo con una cuenta en euros y el EUR/USD a 1,0850: el pip de un lote vale 0,0001 × 100.000 = 10 USD, que son 10 / 1,0850 = <strong>9,22 €</strong>.</p>
+<p>Con el capital orientativo del curso (500–1.000 €) operarás en <strong>microlotes</strong>: el pip de 0,01 lotes vale unos 0,09 €.</p>
+<h4>Las sesiones</h4>
+<p>Forex abre del domingo por la noche al viernes por la noche. La actividad se reparte en tres sesiones (hora peninsular, orientativa):</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Sesión</th>
+<th>Horario aproximado</th>
+<th>Qué esperar</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asia (Sídney y Tokio)</td>
+<td>23:00 – 10:00</td>
+<td>Rangos estrechos; más movimiento en JPY, AUD y NZD</td>
+</tr>
+<tr>
+<td>Europa (Londres)</td>
+<td>09:00 – 18:00</td>
+<td>Más volumen y rupturas</td>
+</tr>
+<tr>
+<td>América (Nueva York)</td>
+<td>14:00 – 23:00</td>
+<td>Datos de EE. UU.; de 14:00 a 18:00 se solapa con Londres</td>
+</tr>
+</tbody>
+</table></div>
+<p>Europa y EE. UU. cambian la hora en fechas distintas: durante unas semanas al año la diferencia es de cinco horas en vez de seis.</p>
+<h4>Los costes</h4>
+<ul>
+<li><strong>Spread:</strong> se estrecha en Londres y Nueva York y se dispara en Asia, en el cambio de día y en las noticias.</li>
+<li><strong>Comisión:</strong> en cuentas <em>raw</em> o ECN pagas un spread casi nulo más una comisión por lote.</li>
+<li><strong>Swap:</strong> interés que pagas o cobras por mantener una posición de un día a otro. Suele triplicarse el miércoles para cubrir el fin de semana.</li>
+<li><strong>Deslizamiento:</strong> diferencia entre el precio pedido y el obtenido.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Si compras GBP/USD, ¿qué divisa compras y cuál vendes?</li>
+<li>El USD/JPY pasa de 150,25 a 150,40. ¿Cuántos pips se ha movido?</li>
+<li>¿Cuánto vale un pip de 0,05 lotes de EUR/USD en dólares?</li>
+</ol><div class="answer"><label for="w2-s02-l1">Tus respuestas</label><textarea id="w2-s02-l1" data-store="w2-s02-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l1"> Marcar como completada</label></section><section class="pane" id="s02-l2" hidden><h2>S02-L2 · Índices: composición, futuros y CFD</h2><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<p>Un <strong>índice bursátil</strong> es un número que resume el precio de un grupo de acciones. No se compra directamente: se opera con productos que lo replican.</p>
+<h4>Los índices del curso</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Índice</th>
+<th>Qué agrupa</th>
+<th>Cómo se pondera</th>
+<th>Horario de su bolsa (hora peninsular)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>S&amp;P 500</td>
+<td>500 grandes empresas de EE. UU.</td>
+<td>Por capitalización</td>
+<td>15:30–22:00</td>
+</tr>
+<tr>
+<td>Nasdaq 100</td>
+<td>100 grandes empresas no financieras del Nasdaq, con mucho peso tecnológico</td>
+<td>Por capitalización, con límites</td>
+<td>15:30–22:00</td>
+</tr>
+<tr>
+<td>DAX 40</td>
+<td>40 grandes empresas alemanas</td>
+<td>Por capitalización</td>
+<td>9:00–17:30</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Ponderar por capitalización</strong> significa que las empresas más grandes pesan más. Unas pocas empresas muy grandes pueden mover todo el índice.</p>
+<p><strong>El DAX es un índice de rentabilidad total:</strong> incluye los dividendos reinvertidos. El S&amp;P 500 y el Nasdaq 100, en su versión habitual, solo reflejan precios. Importa al comparar resultados a largo plazo.</p>
+<h4>Cómo se operan: futuros y CFD</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Futuro</th>
+<th>CFD sobre índice</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Dónde se negocia</td>
+<td>En un mercado organizado (CME en EE. UU., Eurex en Europa)</td>
+<td>Con tu broker, fuera de bolsa (OTC)</td>
+</tr>
+<tr>
+<td>Tamaño</td>
+<td>Fijo por contrato, con un valor por punto</td>
+<td>Flexible: puedes operar fracciones</td>
+</tr>
+<tr>
+<td>Vencimiento</td>
+<td>Sí: suelen vencer cada trimestre y hay que renovar (<em>rollover</em>)</td>
+<td>Normalmente no; el broker cobra o paga financiación diaria</td>
+</tr>
+<tr>
+<td>Precio</td>
+<td>El del mercado central, igual para todos</td>
+<td>El que da tu broker, basado en el futuro o el contado</td>
+</tr>
+<tr>
+<td>Capital necesario</td>
+<td>Alto para contratos estándar; menor en micros</td>
+<td>Bajo</td>
+</tr>
+</tbody>
+</table></div>
+<p>Ejemplos de tamaño por punto, para hacerte una idea:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Contrato</th>
+<th>Valor de un punto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>E-mini S&amp;P 500</td>
+<td>50 $</td>
+</tr>
+<tr>
+<td>Micro E-mini S&amp;P 500</td>
+<td>5 $</td>
+</tr>
+<tr>
+<td>E-mini Nasdaq-100</td>
+<td>20 $</td>
+</tr>
+<tr>
+<td>Micro E-mini Nasdaq-100</td>
+<td>2 $</td>
+</tr>
+<tr>
+<td>Futuro DAX (FDAX)</td>
+<td>25 €</td>
+</tr>
+<tr>
+<td>Mini-DAX</td>
+<td>5 €</td>
+</tr>
+<tr>
+<td>Micro-DAX</td>
+<td>1 €</td>
+</tr>
+</tbody>
+</table></div>
+<p>Las especificaciones las fija cada mercado y pueden cambiar: compruébalas siempre en la web del exchange antes de usarlas.</p>
+<h4>Por qué importa para un algoritmo</h4>
+<ul>
+<li><strong>Huecos de apertura.</strong> Aunque el futuro cotiza casi 24 horas, la volatilidad se concentra en el horario de la bolsa. Las aperturas de 9:00 (DAX) y 15:30 (EE. UU.) son momentos clave.</li>
+<li><strong>Rollovers.</strong> Los datos históricos de futuros deben unir contratos sucesivos. Si se unen mal, aparecen saltos falsos (semana 9).</li>
+<li><strong>Diferencias entre CFD.</strong> Dos brokers pueden construir su CFD del DAX de forma distinta. Tus datos deben corresponder al producto que operarás.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué unas pocas empresas pueden mover todo el S&amp;P 500?</li>
+<li>Nombra dos diferencias entre un futuro y un CFD sobre el mismo índice.</li>
+<li>El Micro E-mini S&amp;P 500 sube 12 puntos. ¿Cuánto ganas con un contrato?</li>
+</ol><div class="answer"><label for="w2-s02-l2">Tus respuestas</label><textarea id="w2-s02-l2" data-store="w2-s02-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l2"> Marcar como completada</label></section><section class="pane" id="s02-l3" hidden><h2>S02-L3 · Acciones: dividendos, ajustes corporativos y universos</h2><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<p>Una <strong>acción</strong> es una parte de la propiedad de una empresa. En el curso, las acciones son el mercado de especialización a <strong>medio y largo plazo</strong>: estrategias que mantienen posiciones durante semanas o meses y reparten el riesgo entre muchas empresas.</p>
+<h4>Qué mueve el precio de una acción</h4>
+<ul>
+<li><strong>Resultados de la empresa:</strong> beneficios, ventas y previsiones, publicados cada trimestre.</li>
+<li><strong>El mercado en general:</strong> cuando cae el índice, la mayoría de las acciones caen con él.</li>
+<li><strong>El sector:</strong> las empresas de un mismo sector suelen moverse juntas.</li>
+<li><strong>Noticias concretas:</strong> compras, fusiones, cambios de directivos o problemas legales.</li>
+</ul>
+<p>Por eso una estrategia de acciones casi nunca opera una sola empresa: trabaja con un <strong>universo</strong>, una lista de empresas de las que elige las que cumplen sus reglas.</p>
+<h4>Los universos</h4>
+<p>Un universo es el conjunto de acciones entre las que una estrategia puede elegir. Ejemplos: las empresas del S&amp;P 500, las del DAX o las de una bolsa con un volumen mínimo diario. Elegir bien el universo es tan importante como las reglas: un universo de empresas pequeñas y poco líquidas tendrá costes y deslizamientos mucho mayores.</p>
+<h4>Dividendos</h4>
+<p>Un <strong>dividendo</strong> es una parte del beneficio que la empresa reparte a sus accionistas. El día en que la acción deja de dar derecho al dividendo (fecha <em>ex-dividendo</em>), su precio suele caer aproximadamente en el importe repartido.</p>
+<p>Esa caída no es una pérdida real: el accionista recibe el dividendo. Pero en un gráfico sin ajustar parece una bajada, y un algoritmo podría tomarla por una señal.</p>
+<p>Si operas con CFD sobre acciones, el broker te abona el dividendo si estás largo y te lo cobra si estás corto.</p>
+<h4>Splits y otros ajustes</h4>
+<p>En un <strong>split</strong> (desdoblamiento), la empresa divide cada acción en varias. En un split 4 por 1, quien tenía una acción de 400 $ pasa a tener cuatro de 100 $. El valor total no cambia, pero el gráfico muestra una caída del 75 % que no ocurrió.</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Dato</th>
+<th>Sin ajustar</th>
+<th>Ajustado</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Precio antes de un split 4×1</td>
+<td>400 $</td>
+<td>100 $</td>
+</tr>
+<tr>
+<td>Precio después</td>
+<td>100 $</td>
+<td>100 $</td>
+</tr>
+<tr>
+<td>Lo que ve el algoritmo</td>
+<td>Una caída del 75 %</td>
+<td>Ningún salto</td>
+</tr>
+</tbody>
+</table></div>
+<p>Por eso los datos de acciones para backtesting deben estar <strong>ajustados</strong> por dividendos y splits. Lo estudiarás a fondo en la semana 9.</p>
+<h4>El sesgo de supervivencia</h4>
+<p>Si pruebas una estrategia sobre las empresas que hoy forman el S&amp;P 500, estás usando solo las que sobrevivieron y crecieron. Las que quebraron o salieron del índice no aparecen. El resultado del backtest sale mejor de lo que habría sido en realidad. A esto se le llama <strong>sesgo de supervivencia</strong> (<em>survivorship bias</em>).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué una estrategia de acciones suele trabajar con un universo y no con una sola empresa?</li>
+<li>Una acción de 90 € reparte 2 € de dividendo. ¿A qué precio aproximado abrirá el día ex-dividendo si nada más cambia?</li>
+<li>Explica con tus palabras por qué el sesgo de supervivencia hace que un backtest parezca mejor.</li>
+</ol><div class="answer"><label for="w2-s02-l3">Tus respuestas</label><textarea id="w2-s02-l3" data-store="w2-s02-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l3"> Marcar como completada</label></section><section class="pane" id="s02-l4" hidden><h2>S02-L4 · Criptomonedas: mercado 24/7, exchanges, custodia y riesgos</h2><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<p>Una <strong>criptomoneda</strong> es una unidad digital registrada en una red informática compartida (<em>blockchain</em>). En el curso es un mercado de investigación especializada: lo estudiarás, pero con más cautelas que los demás.</p>
+<h4>Las más líquidas</h4>
+<ul>
+<li><strong>Bitcoin (BTC):</strong> la primera y la de mayor valor total.</li>
+<li><strong>Ethereum (ETH):</strong> la segunda, base de muchas otras aplicaciones.</li>
+<li>Otras con mucho volumen cambian con el tiempo: comprueba el volumen antes de investigar cualquiera.</li>
+</ul>
+<p>Muchas criptomonedas tienen poco volumen real. En ellas los precios saltan y los costes son altos.</p>
+<h4>Un mercado que no cierra</h4>
+<p>Las criptomonedas cotizan <strong>24 horas, 7 días a la semana</strong>. Consecuencias para un algoritmo:</p>
+<ul>
+<li><strong>No hay huecos de fin de semana</strong> en el exchange, pero sí pueden aparecer en los CFD de un broker que cierra el sábado.</li>
+<li><strong>La liquidez cambia mucho</strong> entre horas laborables y fines de semana.</li>
+<li><strong>El concepto de vela diaria depende de la hora elegida para cerrarla.</strong> Cada fuente puede usar una distinta.</li>
+</ul>
+<h4>Dónde se operan</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Forma</th>
+<th>Qué tienes</th>
+<th>Riesgos principales</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comprar en un <em>exchange</em></td>
+<td>La criptomoneda real, custodiada por el exchange o por ti</td>
+<td>Quiebra o hackeo del exchange; pérdida de tus claves</td>
+</tr>
+<tr>
+<td>CFD con un broker</td>
+<td>Un contrato sobre el precio, sin poseer la criptomoneda</td>
+<td>Apalancamiento; precios y costes del broker</td>
+</tr>
+<tr>
+<td>Futuros regulados (por ejemplo, en CME)</td>
+<td>Un contrato estandarizado</td>
+<td>Tamaños grandes; vencimientos</td>
+</tr>
+</tbody>
+</table></div>
+<p><strong>Custodia</strong> significa quién guarda la criptomoneda. Si la deja en un exchange y este quiebra, puedes perderla, como les ocurrió a muchos clientes de FTX en 2022.</p>
+<h4>Cada exchange tiene su precio</h4>
+<p>No hay un precio único de Bitcoin: cada exchange tiene el suyo, y pueden diferir ligeramente. Para un algoritmo, los datos deben ser <strong>del mismo exchange o del mismo broker en el que operará</strong>.</p>
+<h4>Regulación</h4>
+<p>En la Unión Europea, el Reglamento MiCA regula a los proveedores de servicios de criptoactivos y les exige autorización. En España, la autoridad competente es la CNMV. Comprueba siempre que la plataforma está autorizada en tu país.</p>
+<p>Para los CFD sobre criptomonedas, el apalancamiento máximo para minoristas en la UE es <strong>2:1</strong>: un 50 % de margen.</p>
+<h4>Riesgos específicos</h4>
+<ul>
+<li>Volatilidad muy alta: movimientos del 5 % o 10 % en un día no son raros.</li>
+<li>Caídas bruscas con poca liquidez.</li>
+<li>Riesgo del intermediario: quiebras, hackeos y fraudes.</li>
+<li>Errores irreversibles al enviar criptomonedas a una dirección equivocada.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre comprar Bitcoin en un exchange y operar un CFD sobre Bitcoin?</li>
+<li>¿Por qué los datos de un algoritmo de criptomonedas deben venir del mismo exchange en el que opera?</li>
+<li>¿Qué es la custodia y por qué es un riesgo?</li>
+</ol><div class="answer"><label for="w2-s02-l4">Tus respuestas</label><textarea id="w2-s02-l4" data-store="w2-s02-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l4"> Marcar como completada</label></section><section class="pane" id="s02-l5" hidden><h2>S02-L5 · Instrumentos: contado, CFD y futuros; apalancamiento y margen</h2><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 40 minutos</em></p>
+<p>El mismo mercado se puede operar con instrumentos distintos. Elegir el instrumento cambia los costes, el riesgo y los datos que necesitarás.</p>
+<h4>Los tres instrumentos</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Instrumento</th>
+<th>Qué tienes</th>
+<th>Ejemplo</th>
+<th>Ventaja</th>
+<th>Inconveniente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Contado (<em>spot</em>)</td>
+<td>El activo real</td>
+<td>Comprar acciones o Bitcoin y guardarlos</td>
+<td>Sencillo, sin vencimiento</td>
+<td>Hace falta todo el capital; ir corto es difícil</td>
+</tr>
+<tr>
+<td>CFD (contrato por diferencias)</td>
+<td>Un contrato con el broker por la diferencia de precio</td>
+<td>CFD sobre EUR/USD o sobre el DAX</td>
+<td>Tamaños pequeños, largo y corto, apalancamiento</td>
+<td>Contraparte el broker; costes de financiación; alto riesgo</td>
+</tr>
+<tr>
+<td>Futuro</td>
+<td>Un contrato estandarizado en un mercado organizado</td>
+<td>Micro E-mini S&amp;P 500</td>
+<td>Precio transparente y central</td>
+<td>Tamaños mayores; vencimientos</td>
+</tr>
+</tbody>
+</table></div>
+<p>En Forex minorista en la UE, lo que operas casi siempre es un <strong>CFD</strong> sobre la divisa: no recibes dólares, sino la diferencia de precio entre la apertura y el cierre.</p>
+<h4>Apalancamiento y margen</h4>
+<p>El <strong>apalancamiento</strong> te permite abrir posiciones mayores que tu dinero. El broker bloquea una parte como garantía: el <strong>margen</strong>.</p>
+<div class="math">$$\text{Margen} = \frac{\text{Valor de la posición}}{\text{Apalancamiento}}$$</div>
+
+<p>Ejemplo: 0,10 lotes de EUR/USD equivalen a 10.000 €. Con apalancamiento 30:1, el broker bloquea 10.000 / 30 = <strong>333,33 €</strong>.</p>
+<h4>Los límites para minoristas en la UE</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Subyacente</th>
+<th>Apalancamiento máximo</th>
+<th>Margen mínimo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pares formados solo por USD, EUR, JPY, GBP, CAD o CHF</td>
+<td>30:1</td>
+<td>3,33 %</td>
+</tr>
+<tr>
+<td>Resto de pares, oro e índices principales</td>
+<td>20:1</td>
+<td>5 %</td>
+</tr>
+<tr>
+<td>Materias primas (salvo oro) e índices no principales</td>
+<td>10:1</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Acciones individuales</td>
+<td>5:1</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Criptomonedas</td>
+<td>2:1</td>
+<td>50 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>Además, el broker debe cerrar tus posiciones si tus fondos caen por debajo del <strong>50 % del margen exigido</strong>, y no puedes perder más de lo que tienes en la cuenta (<a href="https://www.esma.europa.eu/sites/default/files/library/esma71-98-128_press_release_product_intervention_es.pdf" target="_blank" rel="noopener">ESMA</a>).</p>
+<h4>El apalancamiento no es tu riesgo</h4>
+<p>El riesgo de una operación depende del <strong>tamaño de la posición y de la distancia al stop</strong>, no del apalancamiento disponible. Con el mismo 30:1 puedes arriesgar un 0,5 % o un 50 % de tu cuenta. En la semana 4 aprenderás a calcular el tamaño correcto.</p>
+<p>Un ejemplo de por qué importa: con una cuenta de 500 €, una posición de 1 lote de EUR/USD (unos 100.000 €) exige unos 3.333 € de margen. No podrías abrirla. Pero con 0,10 lotes sí: bloquea 333 € y cada pip vale unos 0,92 €. Un movimiento de 100 pips en contra serían unos 92 €, casi un 20 % de tu cuenta.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre tener acciones al contado y tener un CFD sobre esas acciones?</li>
+<li>Calcula el margen de 0,20 lotes de GBP/USD (valor 20.000 £) con apalancamiento 30:1.</li>
+<li>¿Por qué el apalancamiento disponible no es lo mismo que el riesgo que asumes?</li>
+</ol><div class="answer"><label for="w2-s02-l5">Tus respuestas</label><textarea id="w2-s02-l5" data-store="w2-s02-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l5"> Marcar como completada</label></section><section class="pane" id="s02-l6" hidden><h2>S02-L6 · Tipos de órdenes</h2><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 35 minutos</em></p>
+<p>Un algoritmo no hace nada más que lanzar, modificar y cancelar órdenes. Elegir mal el tipo de orden puede convertir una buena idea en una estrategia perdedora.</p>
+<h4>Órdenes de entrada</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Orden</th>
+<th>Qué dice</th>
+<th>Se ejecuta cuando…</th>
+<th>Para qué se usa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A mercado (<em>market</em>)</td>
+<td>Compra o vende ya</td>
+<td>Al instante, al mejor precio disponible</td>
+<td>Entrar sin esperar</td>
+</tr>
+<tr>
+<td>Compra límite (<em>buy limit</em>)</td>
+<td>Compra si el precio <strong>baja</strong> hasta X</td>
+<td>El ask llega a X o menos</td>
+<td>Comprar más barato: reversión a la media</td>
+</tr>
+<tr>
+<td>Venta límite (<em>sell limit</em>)</td>
+<td>Vende si el precio <strong>sube</strong> hasta X</td>
+<td>El bid llega a X o más</td>
+<td>Vender más caro</td>
+</tr>
+<tr>
+<td>Compra stop (<em>buy stop</em>)</td>
+<td>Compra si el precio <strong>sube</strong> hasta X</td>
+<td>El ask llega a X o más</td>
+<td>Entrar en rupturas al alza</td>
+</tr>
+<tr>
+<td>Venta stop (<em>sell stop</em>)</td>
+<td>Vende si el precio <strong>baja</strong> hasta X</td>
+<td>El bid llega a X o menos</td>
+<td>Entrar en rupturas a la baja</td>
+</tr>
+</tbody>
+</table></div>
+<p>Una forma de recordarlo: <strong>las órdenes límite esperan un precio mejor; las stop esperan a que el precio confirme un movimiento.</strong></p>
+<h4>Órdenes de salida</h4>
+<ul>
+<li><strong>Stop loss (SL):</strong> cierra la posición si el precio va en tu contra hasta X. Limita la pérdida.</li>
+<li><strong>Take profit (TP):</strong> cierra la posición si el precio llega a tu objetivo.</li>
+<li><strong>Trailing stop:</strong> un stop loss que se mueve a tu favor cuando el precio avanza, y se queda quieto cuando retrocede.</li>
+</ul>
+<p>Toda posición de un algoritmo del curso llevará <strong>stop loss</strong>.</p>
+<h4>Lo que una orden no garantiza</h4>
+<ul>
+<li>Una <strong>orden stop</strong> se convierte en orden a mercado al tocar su precio. En un gap o una noticia, puede ejecutarse bastante más lejos. Lo viste en la semana 1.</li>
+<li>Una <strong>orden límite</strong> garantiza el precio, pero no la ejecución: si el precio llega justo a tu nivel y se da la vuelta, quizá no se ejecute.</li>
+</ul>
+<h4>Validez de las órdenes</h4>
+<p>Las órdenes pendientes pueden ser válidas hasta que las canceles o hasta una fecha y hora. Los algoritmos de ruptura suelen poner caducidad: por ejemplo, la orden solo vale durante la sesión de Londres.</p>
+<h4>Diferencias entre MT4 y MT5</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>MetaTrader 4</th>
+<th>MetaTrader 5</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Órdenes pendientes</td>
+<td>Buy/Sell Limit y Buy/Sell Stop</td>
+<td>Las mismas, más Buy/Sell Stop Limit</td>
+</tr>
+<tr>
+<td>Posiciones por símbolo</td>
+<td>Varias, independientes</td>
+<td>Depende de la cuenta: <em>hedging</em> (varias) o <em>netting</em> (una sola neta)</td>
+</tr>
+<tr>
+<td>Probador de estrategias</td>
+<td>Un solo hilo, ticks simulados</td>
+<td>Varios núcleos y ticks reales del broker</td>
+</tr>
+<tr>
+<td>Lenguaje</td>
+<td>MQL4</td>
+<td>MQL5</td>
+</tr>
+<tr>
+<td>Situación</td>
+<td>Fase final; algunos brokers ya fijan cierre</td>
+<td>Plataforma actual</td>
+</tr>
+</tbody>
+</table></div>
+<p>Para operar varios algoritmos en el mismo par con MT5, usarás cuentas de tipo <strong>hedging</strong>.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>El EUR/USD cotiza a 1,0850 y quieres comprar si rompe 1,0900. ¿Qué orden usas?</li>
+<li>Quieres comprar si el precio cae a 1,0800. ¿Qué orden usas?</li>
+<li>¿Por qué un stop loss no garantiza el precio de salida?</li>
+</ol><div class="answer"><label for="w2-s02-l6">Tus respuestas</label><textarea id="w2-s02-l6" data-store="w2-s02-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l6"> Marcar como completada</label></section><section class="pane" id="s02-l7" hidden><h2>S02-L7 · Taller: cuentas demo en MT4 y MT5 y primeras órdenes</h2><div class="read"><p><em>Formato: taller de 90 minutos · Práctica guiada</em></p>
+<p>Vas a lanzar tus primeras órdenes, siempre en <strong>cuentas demo</strong>: dinero ficticio, precios reales. Los nombres de los menús pueden variar un poco según la versión y el idioma de tu MetaTrader.</p>
+<h4>Paso 1 · Elige un broker y abre las demos</h4>
+<ol>
+<li>Elige un broker que ofrezca MT4 y MT5 y que esté autorizado en tu país. Compruébalo en el registro del supervisor, como en la semana 1.</li>
+<li>Abre una cuenta demo en MT4 y otra en MT5 desde la web del broker o desde el menú <strong>Archivo → Abrir una cuenta</strong> de cada plataforma.</li>
+<li>En MT5, si te lo pregunta, elige una cuenta de tipo <strong>hedging</strong>.</li>
+<li>Usa un saldo parecido al capital orientativo del curso, por ejemplo <strong>1.000 €</strong>, y la divisa EUR.</li>
+<li>Anota el nombre del servidor de cada demo.</li>
+</ol>
+<p><strong>Seguridad:</strong> nunca compartas la contraseña de una cuenta, tampoco la de la demo. Si alguna vez necesitas enseñar una cuenta a otra persona, se usa la contraseña de inversor, que es de solo lectura.</p>
+<h4>Paso 2 · Reúne los datos del símbolo</h4>
+<ol>
+<li>Abre la ventana <strong>Observación de mercado</strong> (Ctrl + M).</li>
+<li>Haz clic derecho sobre <strong>EURUSD</strong> y elige <strong>Especificación</strong>.</li>
+<li>Anota: dígitos, tamaño del contrato, nivel mínimo de stops, swap largo y swap corto.</li>
+<li>Haz lo mismo con <strong>USDJPY</strong> y con un índice o una acción si el broker los ofrece.</li>
+<li>Anota la hora del servidor y calcula su diferencia con tu hora local.</li>
+</ol>
+<h4>Paso 3 · Lanza las cinco órdenes en cada plataforma</h4>
+<p>Hazlo con <strong>0,01 lotes</strong> de EUR/USD:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Orden</th>
+<th>Cómo plantearla</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Compra a mercado con SL y TP</td>
+<td>Stop loss a 20 pips y take profit a 40 pips de la entrada</td>
+</tr>
+<tr>
+<td>2. Compra límite</td>
+<td>20 pips por debajo del precio actual</td>
+</tr>
+<tr>
+<td>3. Venta stop</td>
+<td>20 pips por debajo del precio actual</td>
+</tr>
+<tr>
+<td>4. Modificar</td>
+<td>Cambia el stop loss de la orden 1 a 15 pips</td>
+</tr>
+<tr>
+<td>5. Cerrar y cancelar</td>
+<td>Cierra la orden 1 y cancela las pendientes que no se hayan ejecutado</td>
+</tr>
+</tbody>
+</table></div>
+<p>Para abrir una orden, usa <strong>Nueva orden</strong> (tecla F9). Antes de confirmar cada una, anota el bid, el ask y el spread que ves.</p>
+<h4>Paso 4 · Exporta el historial</h4>
+<ol>
+<li>Abre la ventana de cuentas: <strong>Terminal</strong> en MT4 o <strong>Caja de herramientas</strong> en MT5 (Ctrl + T).</li>
+<li>Ve a la pestaña del historial, haz clic derecho y guárdalo como informe.</li>
+<li>Guarda los dos informes en tu carpeta de la semana 2.</li>
+</ol>
+<h4>Paso 5 · Compara</h4>
+<p>Anota en tu cuaderno qué diferencias has visto entre MT4 y MT5: en los menús, en los tipos de orden y en el historial. Si algo no funcionó como se describe aquí, anótalo también en tu registro de piloto.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué se usa la contraseña de inversor para enseñar una cuenta?</li>
+<li>¿Qué orden pendiente usaste para entrar si el precio cae, y cuál para entrar si rompe a la baja?</li>
+<li>¿Qué diferencia encontraste entre las cuentas de MT4 y MT5?</li>
+</ol><div class="answer"><label for="w2-s02-l7">Tus respuestas</label><textarea id="w2-s02-l7" data-store="w2-s02-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-s02-l7"> Marcar como completada</label></section><section class="pane" id="glosario" hidden><h2>Glosario de la semana</h2><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Apalancamiento</td>
+<td>Leverage</td>
+<td>Relación entre el tamaño de la posición y el margen que bloquea el broker</td>
+</tr>
+<tr>
+<td>Capitalización</td>
+<td>Market capitalization</td>
+<td>Valor total de las acciones de una empresa en bolsa</td>
+</tr>
+<tr>
+<td>CFD</td>
+<td>Contract for difference</td>
+<td>Contrato con el broker por la diferencia de precio de un activo, sin poseerlo</td>
+</tr>
+<tr>
+<td>Contado</td>
+<td>Spot</td>
+<td>Compra o venta del activo real con entrega inmediata</td>
+</tr>
+<tr>
+<td>Cruce</td>
+<td>Cross</td>
+<td>Par de divisas sin dólar, como EUR/GBP</td>
+</tr>
+<tr>
+<td>Cuenta demo</td>
+<td>Demo account</td>
+<td>Cuenta con dinero ficticio y precios reales para practicar</td>
+</tr>
+<tr>
+<td>Cuenta hedging</td>
+<td>Hedging account</td>
+<td>Cuenta de MT5 que permite varias posiciones independientes en el mismo símbolo</td>
+</tr>
+<tr>
+<td>Cuenta netting</td>
+<td>Netting account</td>
+<td>Cuenta de MT5 con una sola posición neta por símbolo</td>
+</tr>
+<tr>
+<td>Custodia</td>
+<td>Custody</td>
+<td>Quién guarda los activos, por ejemplo las criptomonedas</td>
+</tr>
+<tr>
+<td>Divisa base y cotizada</td>
+<td>Base and quote currency</td>
+<td>Primera y segunda divisa de un par</td>
+</tr>
+<tr>
+<td>Dividendo</td>
+<td>Dividend</td>
+<td>Parte del beneficio que una empresa reparte a sus accionistas</td>
+</tr>
+<tr>
+<td>Ex-dividendo</td>
+<td>Ex-dividend</td>
+<td>Fecha desde la que la acción ya no da derecho al dividendo</td>
+</tr>
+<tr>
+<td>Futuro</td>
+<td>Future</td>
+<td>Contrato estandarizado para comprar o vender un activo en una fecha futura</td>
+</tr>
+<tr>
+<td>Ir largo / ir corto</td>
+<td>Go long / go short</td>
+<td>Comprar para ganar si sube / vender para ganar si baja</td>
+</tr>
+<tr>
+<td>Lote</td>
+<td>Lot</td>
+<td>Unidad de tamaño; un lote estándar de Forex son 100.000 unidades</td>
+</tr>
+<tr>
+<td>Margen</td>
+<td>Margin</td>
+<td>Garantía que el broker bloquea para mantener una posición</td>
+</tr>
+<tr>
+<td>Orden límite</td>
+<td>Limit order</td>
+<td>Orden que espera un precio mejor que el actual</td>
+</tr>
+<tr>
+<td>Orden stop</td>
+<td>Stop order</td>
+<td>Orden que se activa cuando el precio confirma un movimiento</td>
+</tr>
+<tr>
+<td>Pip</td>
+<td>Pip</td>
+<td>Unidad estándar de movimiento: 0,0001, o 0,01 en pares con yen</td>
+</tr>
+<tr>
+<td>Point</td>
+<td>Point</td>
+<td>Unidad mínima de precio en MetaTrader; en brokers de cinco decimales, una décima de pip</td>
+</tr>
+<tr>
+<td>Rollover</td>
+<td>Rollover</td>
+<td>Paso de un contrato de futuros que vence al siguiente</td>
+</tr>
+<tr>
+<td>Sesgo de supervivencia</td>
+<td>Survivorship bias</td>
+<td>Error de usar solo los activos que siguen existiendo hoy</td>
+</tr>
+<tr>
+<td>Split</td>
+<td>Stock split</td>
+<td>División de cada acción en varias sin cambiar el valor total</td>
+</tr>
+<tr>
+<td>Stop loss</td>
+<td>Stop loss</td>
+<td>Orden que cierra la posición para limitar la pérdida</td>
+</tr>
+<tr>
+<td>Swap</td>
+<td>Swap</td>
+<td>Interés que se paga o cobra por mantener una posición de un día a otro</td>
+</tr>
+<tr>
+<td>Take profit</td>
+<td>Take profit</td>
+<td>Orden que cierra la posición al alcanzar el objetivo</td>
+</tr>
+<tr>
+<td>Trailing stop</td>
+<td>Trailing stop</td>
+<td>Stop loss que se mueve a favor cuando el precio avanza</td>
+</tr>
+<tr>
+<td>Universo</td>
+<td>Universe</td>
+<td>Conjunto de activos entre los que una estrategia puede elegir</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w2-done-glosario"> Marcar como completada</label></section><section class="pane" id="ejercicios-obligatorios" hidden><h2>Ejercicios obligatorios</h2><div class="read"><p>Resuélvelos en tu hoja de cálculo o en tu cuaderno, mostrando los cálculos. Se entregan con la práctica de la semana.</p>
+<p><strong>E1 · Pips.</strong> ¿Cuántos pips se mueve el precio en cada caso? a) EUR/USD de 1,08420 a 1,08765. b) USD/JPY de 149,820 a 150,455.</p>
+<p><strong>E2 · Valor del pip.</strong> Tu cuenta está en euros y el EUR/USD cotiza a 1,0800. Calcula el valor de un pip de 0,03 lotes de EUR/USD en dólares y en euros.</p>
+<p><strong>E3 · Pip con yenes.</strong> Calcula el valor de un pip de 0,10 lotes de USD/JPY en yenes, en dólares (con el USD/JPY a 150,00) y en euros (con el EUR/USD a 1,0800).</p>
+<p><strong>E4 · Margen.</strong> Con los límites europeos para minoristas, calcula el margen que bloquea cada posición:</p>
+<ol>
+<li>0,05 lotes de EUR/USD (valor: 5.000 €).</li>
+<li>Un CFD sobre el DAX de 1 € por punto, con el índice a 24.000 puntos.</li>
+<li>Un CFD sobre 0,01 BTC, con el Bitcoin a 90.000 €.</li>
+</ol>
+<p><strong>E5 · ¿Qué orden usarías?</strong> El EUR/USD está a 1,0850. Elige el tipo de orden para cada caso y explica por qué:</p>
+<ol>
+<li>Quieres comprar si el precio supera 1,0900.</li>
+<li>Quieres comprar si el precio baja a 1,0800.</li>
+<li>Quieres vender si el precio sube a 1,0920.</li>
+<li>Quieres vender si el precio cae por debajo de 1,0790.</li>
+<li>Quieres limitar la pérdida de una compra abierta a 1,0850 a 25 pips.</li>
+</ol>
+<p><strong>E6 · El riesgo real.</strong> Tienes 1.000 € y abres 0,10 lotes de EUR/USD (con el EUR/USD a 1,0800). El precio se mueve 100 pips en tu contra. ¿Cuánto pierdes en euros y qué porcentaje de tu cuenta es?</p>
+<p><strong>E7 · Ajustes de acciones.</strong> a) Una acción cotiza a 120 € y hace un split 3 por 1. ¿A qué precio quedará y cuántas acciones tendrá quien tenía 10? b) Otra acción de 60 € reparte un dividendo de 1,50 €. ¿A qué precio aproximado abrirá el día ex-dividendo?</p>
+<p><strong>E8 · Futuros.</strong> a) El Mini-DAX (5 € por punto) sube 80 puntos. ¿Cuánto gana un contrato comprado? b) El Micro E-mini Nasdaq-100 (2 $ por punto) baja 150 puntos. ¿Cuánto gana o pierde un contrato comprado?</p>
+<p><strong>E9 · Swap.</strong> Mantienes una compra de 0,20 lotes de un par con un swap largo de −6,50 $ por lote y noche. La abres el lunes y la cierras el viernes antes del cierre, así que pasa las noches del lunes, martes, miércoles y jueves. El swap del miércoles es triple. ¿Cuánto pagas en total?</p>
+<p><strong>E10 · Cripto y custodia.</strong> En un máximo de 150 palabras: explica qué riesgos tienes si compras Bitcoin y lo dejas en un exchange, y qué cambia si en lugar de eso operas un CFD sobre Bitcoin con un broker.</p><div class="answer"><label for="w2-ejercicios-obligatorios">Tus respuestas</label><textarea id="w2-ejercicios-obligatorios" data-store="w2-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-ejercicios-obligatorios"> Marcar como completada</label></section><section class="pane" id="investigacion-i-02-y-entrega-practica" hidden><h2>Investigación I-02 y entrega práctica</h2><div class="read"><h3>Investigación I-02 · ¿Cuánto cuesta realmente operar?</h3>
+<p>Esta semana practicas los pasos 1, 2, 3, 7 y 8 del ciclo: añades la <strong>comparación</strong>.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Elige un activo y dos formas de operarlo: dos brokers, o dos instrumentos (por ejemplo, el CFD del DAX frente al Micro-DAX, o EUR/USD en una cuenta estándar frente a una <em>raw</em>). Escribe una hipótesis comprobable, por ejemplo: «Operar EUR/USD en la cuenta <em>raw</em> cuesta menos por operación que en la estándar para posiciones de 0,10 lotes».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Reúne las condiciones publicadas de cada opción: spread típico, comisión, swap y margen. Cita cada fuente con enlace y fecha.</p>
+<p><strong>Paso 3 · Datos.</strong> Mide el spread real en tu demo (o en las dos) en tres momentos del día durante tres días, con captura y hora. Documenta el horario del servidor y si la cuenta es estándar o <em>raw</em>.</p>
+<p><strong>Paso 7 · Comparación.</strong> Calcula el coste total de una operación completa (abrir y cerrar) de cada opción, para el mismo tamaño:</p>
+<div class="math">$$\text{Coste por operación} = \text{spread (en dinero)} + \text{comisión} + \text{swap de las noches mantenidas}$$</div>
+
+<p>Compara también el coste con una estrategia que buscara 15 pips de beneficio medio: ¿qué porcentaje se come el coste en cada opción?</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma tu hipótesis? ¿En qué horas cambia la conclusión? ¿Qué limitaciones tienen tus datos?</p>
+<h3>Entrega práctica · Órdenes en demo y ficha del broker</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S02_ENT</code></td>
+<td>Ficha del broker: nombre legal, supervisor, número de registro, tipos de cuenta, plataformas, hora del servidor, y especificación de EURUSD y USDJPY (dígitos, tamaño de contrato, nivel mínimo de stops, swaps)</td>
+</tr>
+<tr>
+<td><code>CODIGO_S02_MT4</code> y <code>CODIGO_S02_MT5</code></td>
+<td>Informes del historial con las cinco órdenes del taller en cada plataforma</td>
+</tr>
+<tr>
+<td>Capturas</td>
+<td>De la ventana de nueva orden antes de confirmar cada orden, con bid, ask y hora visibles</td>
+</tr>
+<tr>
+<td><code>CODIGO_S02_INV</code></td>
+<td>Hoja de cálculo de la investigación I-02</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10 resueltos</td>
+</tr>
+</tbody>
+</table></div>
+<p>Sustituye <code>CODIGO</code> por tu código de alumno.</p>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que las órdenes estén bien planteadas y documentadas, que la ficha del broker sea exacta y verificable, y que la investigación compare con datos propios. Si falta el historial de alguna plataforma o las capturas, la entrega quedará como NO EVALUABLE hasta que la completes.</p>
+<p>No envíes nunca contraseñas ni números de cuenta completos: tapa esos datos en las capturas.</p><div class="answer"><label for="w2-investigacion-i-02-y-entrega-practica">Tus respuestas</label><textarea id="w2-investigacion-i-02-y-entrega-practica" data-store="w2-investigacion-i-02-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-investigacion-i-02-y-entrega-practica"> Marcar como completada</label></section><section class="pane" id="examen-2" hidden><h2>Examen de la semana 2 · Variante A</h2><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> En el par EUR/USD, la divisa base es…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q1" value="a" data-store="w2-exam-q1"><span><b>a)</b> el USD</span></label><label class="opt"><input type="radio" name="w2q1" value="b" data-store="w2-exam-q1"><span><b>b)</b> el EUR</span></label><label class="opt"><input type="radio" name="w2q1" value="c" data-store="w2-exam-q1"><span><b>c)</b> la de la cuenta del broker</span></label><label class="opt"><input type="radio" name="w2q1" value="d" data-store="w2-exam-q1"><span><b>d)</b> ninguna de las dos</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> En el USD/JPY, un pip equivale a…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q2" value="a" data-store="w2-exam-q2"><span><b>a)</b> 0,0001</span></label><label class="opt"><input type="radio" name="w2q2" value="b" data-store="w2-exam-q2"><span><b>b)</b> 0,1</span></label><label class="opt"><input type="radio" name="w2q2" value="c" data-store="w2-exam-q2"><span><b>c)</b> 1</span></label><label class="opt"><input type="radio" name="w2q2" value="d" data-store="w2-exam-q2"><span><b>d)</b> 0,01</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> En un broker de cinco decimales, un pip son…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q3" value="a" data-store="w2-exam-q3"><span><b>a)</b> 10 points</span></label><label class="opt"><input type="radio" name="w2q3" value="b" data-store="w2-exam-q3"><span><b>b)</b> 1 point</span></label><label class="opt"><input type="radio" name="w2q3" value="c" data-store="w2-exam-q3"><span><b>c)</b> 100 points</span></label><label class="opt"><input type="radio" name="w2q3" value="d" data-store="w2-exam-q3"><span><b>d)</b> 0,1 points</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un microlote de Forex son…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q4" value="a" data-store="w2-exam-q4"><span><b>a)</b> 100.000 unidades</span></label><label class="opt"><input type="radio" name="w2q4" value="b" data-store="w2-exam-q4"><span><b>b)</b> 10.000 unidades</span></label><label class="opt"><input type="radio" name="w2q4" value="c" data-store="w2-exam-q4"><span><b>c)</b> 1.000 unidades</span></label><label class="opt"><input type="radio" name="w2q4" value="d" data-store="w2-exam-q4"><span><b>d)</b> 100 unidades</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Ir corto significa…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q5" value="a" data-store="w2-exam-q5"><span><b>a)</b> mantener la posición poco tiempo</span></label><label class="opt"><input type="radio" name="w2q5" value="b" data-store="w2-exam-q5"><span><b>b)</b> vender para ganar si el precio baja</span></label><label class="opt"><input type="radio" name="w2q5" value="c" data-store="w2-exam-q5"><span><b>c)</b> operar con poco capital</span></label><label class="opt"><input type="radio" name="w2q5" value="d" data-store="w2-exam-q5"><span><b>d)</b> usar un stop cercano</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> A diferencia de un CFD, un futuro…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q6" value="a" data-store="w2-exam-q6"><span><b>a)</b> se negocia en un mercado organizado con un tamaño fijo</span></label><label class="opt"><input type="radio" name="w2q6" value="b" data-store="w2-exam-q6"><span><b>b)</b> no tiene vencimiento</span></label><label class="opt"><input type="radio" name="w2q6" value="c" data-store="w2-exam-q6"><span><b>c)</b> lo crea tu broker</span></label><label class="opt"><input type="radio" name="w2q6" value="d" data-store="w2-exam-q6"><span><b>d)</b> no tiene apalancamiento</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Que un índice se pondere por capitalización significa que…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q7" value="a" data-store="w2-exam-q7"><span><b>a)</b> todas las empresas pesan igual</span></label><label class="opt"><input type="radio" name="w2q7" value="b" data-store="w2-exam-q7"><span><b>b)</b> pesan más las que más suben</span></label><label class="opt"><input type="radio" name="w2q7" value="c" data-store="w2-exam-q7"><span><b>c)</b> pesan más las de más empleados</span></label><label class="opt"><input type="radio" name="w2q7" value="d" data-store="w2-exam-q7"><span><b>d)</b> pesan más las empresas de mayor valor en bolsa</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Tras un split 2 por 1, una acción que cotizaba a 50 € queda aproximadamente a…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q8" value="a" data-store="w2-exam-q8"><span><b>a)</b> 100 €</span></label><label class="opt"><input type="radio" name="w2q8" value="b" data-store="w2-exam-q8"><span><b>b)</b> 50 €</span></label><label class="opt"><input type="radio" name="w2q8" value="c" data-store="w2-exam-q8"><span><b>c)</b> 25 €</span></label><label class="opt"><input type="radio" name="w2q8" value="d" data-store="w2-exam-q8"><span><b>d)</b> 52 €</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El sesgo de supervivencia consiste en…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q9" value="a" data-store="w2-exam-q9"><span><b>a)</b> olvidar las comisiones</span></label><label class="opt"><input type="radio" name="w2q9" value="b" data-store="w2-exam-q9"><span><b>b)</b> usar solo los activos que siguen existiendo hoy</span></label><label class="opt"><input type="radio" name="w2q9" value="c" data-store="w2-exam-q9"><span><b>c)</b> operar demasiado</span></label><label class="opt"><input type="radio" name="w2q9" value="d" data-store="w2-exam-q9"><span><b>d)</b> tener miedo a perder</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El apalancamiento máximo para minoristas en CFD sobre criptomonedas en la UE es…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q10" value="a" data-store="w2-exam-q10"><span><b>a)</b> 2:1</span></label><label class="opt"><input type="radio" name="w2q10" value="b" data-store="w2-exam-q10"><span><b>b)</b> 5:1</span></label><label class="opt"><input type="radio" name="w2q10" value="c" data-store="w2-exam-q10"><span><b>c)</b> 20:1</span></label><label class="opt"><input type="radio" name="w2q10" value="d" data-store="w2-exam-q10"><span><b>d)</b> 30:1</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Quieres comprar solo si el precio sube y rompe un nivel. Usas una…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q11" value="a" data-store="w2-exam-q11"><span><b>a)</b> compra límite</span></label><label class="opt"><input type="radio" name="w2q11" value="b" data-store="w2-exam-q11"><span><b>b)</b> venta stop</span></label><label class="opt"><input type="radio" name="w2q11" value="c" data-store="w2-exam-q11"><span><b>c)</b> compra stop</span></label><label class="opt"><input type="radio" name="w2q11" value="d" data-store="w2-exam-q11"><span><b>d)</b> venta límite</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Quieres comprar si el precio baja hasta un nivel. Usas una…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q12" value="a" data-store="w2-exam-q12"><span><b>a)</b> compra stop</span></label><label class="opt"><input type="radio" name="w2q12" value="b" data-store="w2-exam-q12"><span><b>b)</b> venta stop</span></label><label class="opt"><input type="radio" name="w2q12" value="c" data-store="w2-exam-q12"><span><b>c)</b> venta límite</span></label><label class="opt"><input type="radio" name="w2q12" value="d" data-store="w2-exam-q12"><span><b>d)</b> compra límite</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> El margen de 0,10 lotes de EUR/USD (valor: 10.000 €) con apalancamiento 30:1 es…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q13" value="a" data-store="w2-exam-q13"><span><b>a)</b> 333,33 €</span></label><label class="opt"><input type="radio" name="w2q13" value="b" data-store="w2-exam-q13"><span><b>b)</b> 3.333,33 €</span></label><label class="opt"><input type="radio" name="w2q13" value="c" data-store="w2-exam-q13"><span><b>c)</b> 300.000 €</span></label><label class="opt"><input type="radio" name="w2q13" value="d" data-store="w2-exam-q13"><span><b>d)</b> 33,33 €</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> En MetaTrader 5, una cuenta *netting*…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q14" value="a" data-store="w2-exam-q14"><span><b>a)</b> permite varias posiciones independientes en el mismo símbolo</span></label><label class="opt"><input type="radio" name="w2q14" value="b" data-store="w2-exam-q14"><span><b>b)</b> mantiene una sola posición neta por símbolo</span></label><label class="opt"><input type="radio" name="w2q14" value="c" data-store="w2-exam-q14"><span><b>c)</b> no permite stop loss</span></label><label class="opt"><input type="radio" name="w2q14" value="d" data-store="w2-exam-q14"><span><b>d)</b> solo existe en demo</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> El swap es…</legend><div class="opts"><label class="opt"><input type="radio" name="w2q15" value="a" data-store="w2-exam-q15"><span><b>a)</b> una comisión fija por lote</span></label><label class="opt"><input type="radio" name="w2q15" value="b" data-store="w2-exam-q15"><span><b>b)</b> la diferencia entre bid y ask</span></label><label class="opt"><input type="radio" name="w2q15" value="c" data-store="w2-exam-q15"><span><b>c)</b> el interés por mantener una posición de un día a otro</span></label><label class="opt"><input type="radio" name="w2q15" value="d" data-store="w2-exam-q15"><span><b>d)</b> el margen bloqueado</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos)</h3>
+<p>Muestra todos los pasos.</p>
+<p><strong>B1 (15 puntos).</strong> Tu cuenta está en euros y el EUR/USD cotiza a 1,0800. Calcula el valor de un pip de 0,20 lotes de GBP/USD en dólares y en euros.</p>
+<p><strong>B2 (15 puntos).</strong> Tienes 600 € y quieres abrir 0,15 lotes de EUR/USD (valor: 15.000 €) con apalancamiento 30:1, con el EUR/USD a 1,0800. a) ¿Cuánto margen bloquea? b) Si el precio va 40 pips en tu contra, ¿cuánto pierdes en euros y qué porcentaje de la cuenta es?</p>
+<p><strong>B3 (15 puntos).</strong> Compras 2 contratos del Micro E-mini S&amp;P 500 (5 $ por punto). El índice sube 18,5 puntos y cierras. Pagas 1 $ de comisión por contrato al abrir y 1 $ al cerrar. Calcula el resultado neto.</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: quieres investigar una estrategia intradía sobre el DAX con 800 € de capital. Compara el CFD sobre el DAX con el Micro-DAX (1 € por punto) y explica cuál usarías para investigar y por qué. Incluye al menos un coste, un riesgo y una consecuencia para los datos históricos que necesitarías.</p><div class="answer"><label for="w2-examen-2">Tus respuestas a las partes B y C</label><textarea id="w2-examen-2" data-store="w2-examen-2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w2-done-examen-2"> Marcar como completada</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>

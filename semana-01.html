@@ -1,0 +1,788 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 1 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+</head><body data-active="1">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><b>Trading Algorítmico Profesional</b><span>Aula de estudio · nombre provisional</span></a></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><span class="wk locked" title="En producción"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><span class="wk locked" title="En producción"><span class="n">S05</span><span class="t">Entorno y datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S06</span><span class="t">Primeras estrategias</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><p class="eyebrow">SEMANA 01</p><h1>Cómo funcionan los mercados</h1><p class="meta">Trading Algorítmico Profesional (nombre provisional) · Etapa 1: Fundamentos · Material del alumno · Código S01 · Versión 0.1 · Nov 4, 2026 · Estado: BORRADOR</p><div class="bar" aria-hidden="true"><i data-progress="1" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion"><span class="dot" data-dot="w1-done-presentacion"></span>Presentación</a><a class="tab" href="#s01-l1" data-tab="s01-l1"><span class="dot" data-dot="w1-done-s01-l1"></span>S01-L1</a><a class="tab" href="#s01-l2" data-tab="s01-l2"><span class="dot" data-dot="w1-done-s01-l2"></span>S01-L2</a><a class="tab" href="#s01-l3" data-tab="s01-l3"><span class="dot" data-dot="w1-done-s01-l3"></span>S01-L3</a><a class="tab" href="#s01-l4" data-tab="s01-l4"><span class="dot" data-dot="w1-done-s01-l4"></span>S01-L4</a><a class="tab" href="#s01-l5" data-tab="s01-l5"><span class="dot" data-dot="w1-done-s01-l5"></span>S01-L5</a><a class="tab" href="#s01-l6" data-tab="s01-l6"><span class="dot" data-dot="w1-done-s01-l6"></span>S01-L6</a><a class="tab" href="#s01-l7" data-tab="s01-l7"><span class="dot" data-dot="w1-done-s01-l7"></span>S01-L7</a><a class="tab" href="#glosario" data-tab="glosario"><span class="dot" data-dot="w1-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios"><span class="dot" data-dot="w1-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-01-y-entrega-practica" data-tab="investigacion-i-01-y-entrega-practica"><span class="dot" data-dot="w1-done-investigacion-i-01-y-entrega-practica"></span>Investigación I-01 y entrega práctica</a><a class="tab" href="#examen-1" data-tab="examen-1"><span class="dot" data-dot="w1-done-examen-1"></span>Examen  1</a></nav><section class="pane" id="presentacion" hidden><h2>Presentación de la semana</h2><div class="read"><p>Bienvenido a la primera semana. Antes de construir algoritmos necesitas entender el terreno en el que van a trabajar: qué es un mercado, quién compra y vende en él, cómo se forma un precio y cuánto cuesta operar. Esta semana no necesitas StrategyQuant X ni haber operado nunca.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar qué es un mercado financiero y para qué sirve.</li>
+<li>Identificar a los participantes principales y sus motivos para operar.</li>
+<li>Describir cómo se forma el precio a partir de las órdenes, y qué son el bid, el ask y el spread.</li>
+<li>Explicar la liquidez y la volatilidad, y por qué cambian a lo largo del día.</li>
+<li>Distinguir broker, exchange y supervisor, y comprobar si una entidad está autorizada.</li>
+<li>Explicar qué es y qué no es el trading algorítmico, y los motivos por los que la mayoría de los minoristas pierde dinero.</li>
+<li>Organizar tu estudio con un cuaderno de investigación.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura del manual y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Ejercicios guiados y la práctica principal: el mapa de un mercado real</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-01, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 2</td>
+</tr>
+</tbody>
+</table></div>
+<p>Un reparto posible: lunes y martes, lecciones 1 a 4; miércoles, lecciones 5 a 7; jueves y viernes, ejercicios y práctica; fin de semana, investigación, examen y revisión.</p>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Un ordenador con conexión a internet.</li>
+<li>Una hoja de cálculo (Excel, LibreOffice Calc o Google Sheets).</li>
+<li>Un cuaderno de investigación, digital o en papel (lección 7).</li>
+</ul>
+<h4>Criterio para desbloquear la semana 2</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 1</li>
+<li>☐ Entrega práctica: el mapa de un mercado real</li>
+<li>☐ Investigación I-01: pasos 1 a 3 y 8 documentados</li>
+</ul>
+<p>Si algún componente queda en SUSPENSO, recibirás la corrección con los errores, las lecciones que revisar y cómo recuperarlo.</p>
+<p><strong>Advertencia de riesgo.</strong> Operar en los mercados financieros, y en especial con productos apalancados como los CFD, conlleva un riesgo alto de perder dinero. Este curso es formativo: no da recomendaciones de inversión ni promete resultados.</p></div><label class="check"><input type="checkbox" data-store="w1-done-presentacion"> Marcar como completada</label></section><section class="pane" id="s01-l1" hidden><h2>S01-L1 · Qué es un mercado financiero y para qué sirve</h2><div class="read"><p><em>Formato: clase de 25 minutos · Lectura: 30 minutos</em></p>
+<h4>Un mercado es un lugar de encuentro</h4>
+<p>Un mercado es cualquier lugar, físico o digital, donde se encuentran quienes quieren comprar algo y quienes quieren venderlo. En un mercado de frutas se intercambian naranjas por dinero. En un mercado financiero se intercambian <strong>activos financieros</strong>: derechos sobre algo que tiene valor, como una parte de una empresa, una deuda o una moneda.</p>
+<p>Los activos que estudiarás en el curso son cuatro:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Activo</th>
+<th>Qué compras en realidad</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Acción (<em>stock</em>)</td>
+<td>Una pequeña parte de la propiedad de una empresa</td>
+<td>Una acción de una empresa cotizada</td>
+</tr>
+<tr>
+<td>Divisa (<em>currency</em>)</td>
+<td>Una moneda a cambio de otra</td>
+<td>Comprar euros pagando con dólares</td>
+</tr>
+<tr>
+<td>Índice (<em>index</em>)</td>
+<td>Un número que resume el precio de un grupo de acciones; se opera con productos que lo replican</td>
+<td>El S&amp;P 500, que agrupa 500 grandes empresas de Estados Unidos</td>
+</tr>
+<tr>
+<td>Criptomoneda (<em>cryptocurrency</em>)</td>
+<td>Una unidad digital registrada en una red informática</td>
+<td>Bitcoin</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Para qué sirven los mercados</h4>
+<p>Los mercados financieros cumplen funciones útiles para la economía:</p>
+<ul>
+<li><strong>Financiar:</strong> una empresa vende acciones para conseguir dinero con el que crecer.</li>
+<li><strong>Intercambiar:</strong> una empresa española que vende en Estados Unidos cobra en dólares y necesita cambiarlos a euros.</li>
+<li><strong>Cubrir riesgos:</strong> esa misma empresa puede fijar hoy el tipo de cambio de un cobro futuro para no depender de lo que pase con el dólar.</li>
+<li><strong>Descubrir precios:</strong> millones de compradores y vendedores, con información distinta, acaban fijando un precio que refleja lo que el mercado piensa que vale algo.</li>
+<li><strong>Dar liquidez:</strong> permiten convertir una inversión en dinero con rapidez.</li>
+</ul>
+<h4>Mercado primario y secundario</h4>
+<p>Cuando una empresa emite acciones nuevas y las vende por primera vez, lo hace en el <strong>mercado primario</strong>. Cuando esas acciones cambian después de manos entre inversores, se negocian en el <strong>mercado secundario</strong>. El trading ocurre en el mercado secundario: tú no compras a la empresa, sino a otro participante.</p>
+<h4>Mercados organizados y OTC</h4>
+<ul>
+<li><strong>Mercados organizados (bolsas o <em>exchanges</em>):</strong> tienen un lugar central, reglas comunes y un registro único de las operaciones. Ejemplo: una bolsa de acciones.</li>
+<li><strong>Mercados OTC (<em>over the counter</em>, «sobre el mostrador»):</strong> las operaciones se cierran directamente entre las partes o a través de intermediarios, sin un libro central. Forex es el ejemplo principal: no tiene una sede única.</li>
+</ul>
+<p>La diferencia importa para un trader algorítmico: en un mercado OTC, el precio que ves depende de tu intermediario, y dos brokers pueden mostrar precios ligeramente distintos al mismo tiempo.</p>
+<h4>Un dato para dimensionar</h4>
+<p>El mercado de divisas es el mayor del mundo: en abril de 2025 movió una media de 9,6 billones de dólares al día, según el Banco de Pagos Internacionales (<a href="https://www.bis.org/press/p250930.htm" target="_blank" rel="noopener">BIS, 2025</a>).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre el mercado primario y el secundario?</li>
+<li>¿Por qué dos brokers de Forex pueden mostrar precios distintos en el mismo segundo?</li>
+<li>Pon un ejemplo propio de una empresa que use un mercado financiero para cubrir un riesgo.</li>
+</ol>
+<p>Si no puedes responder alguna, vuelve a leer la parte correspondiente antes de seguir.</p><div class="answer"><label for="w1-s01-l1">Tus respuestas</label><textarea id="w1-s01-l1" data-store="w1-s01-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l1"> Marcar como completada</label></section><section class="pane" id="s01-l2" hidden><h2>S01-L2 · Quién participa en los mercados</h2><div class="read"><p><em>Formato: cápsula de 15 minutos · Lectura: 20 minutos</em></p>
+<p>Cada operación tiene dos lados: alguien compra y alguien vende. Saber quién está al otro lado te ayuda a entender por qué los precios se mueven y por qué ciertos patrones se repiten.</p>
+<h4>Los participantes principales</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Participante</th>
+<th>Qué hace</th>
+<th>Por qué opera</th>
+<th>Horizonte típico</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bancos centrales</td>
+<td>Fijan los tipos de interés y a veces intervienen en su divisa</td>
+<td>Estabilidad de precios y del sistema financiero</td>
+<td>Meses o años</td>
+</tr>
+<tr>
+<td>Grandes bancos</td>
+<td>Dan precios a clientes y operan entre sí</td>
+<td>Servicio a clientes, cobertura y beneficio</td>
+<td>De segundos a meses</td>
+</tr>
+<tr>
+<td>Gestoras y fondos</td>
+<td>Invierten el dinero de sus clientes</td>
+<td>Rentabilidad a largo plazo, cobertura</td>
+<td>Meses o años</td>
+</tr>
+<tr>
+<td>Empresas</td>
+<td>Cambian divisas o cubren riesgos de su negocio</td>
+<td>Necesidades comerciales, no especulación</td>
+<td>Según su actividad</td>
+</tr>
+<tr>
+<td>Creadores de mercado (<em>market makers</em>)</td>
+<td>Ofrecen precios de compra y venta de forma continua</td>
+<td>Ganar la diferencia entre ambos precios</td>
+<td>Muy corto</td>
+</tr>
+<tr>
+<td>Fondos cuantitativos y de alta frecuencia</td>
+<td>Operan con algoritmos</td>
+<td>Explotar patrones estadísticos</td>
+<td>De milisegundos a meses</td>
+</tr>
+<tr>
+<td>Minoristas (<em>retail</em>)</td>
+<td>Particulares que operan con su dinero</td>
+<td>Especulación, ahorro o inversión</td>
+<td>Muy variable</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Por qué esto importa a un trader algorítmico</h4>
+<ul>
+<li><strong>No todos buscan ganar en cada operación.</strong> Una empresa que cambia dólares para pagar nóminas compra aunque el precio no le guste. Esos flujos obligados crean movimientos que pueden repetirse, por ejemplo en ciertas horas o fechas del mes.</li>
+<li><strong>Los grandes participantes mueven el precio.</strong> Un fondo que necesita comprar una cantidad enorme lo hace poco a poco, durante días. Esta es una de las explicaciones de que las tendencias persistan.</li>
+<li><strong>Compites con profesionales.</strong> Los participantes más rápidos y mejor informados son bancos y fondos con recursos muy superiores. Un minorista no puede competir en velocidad: su ventaja posible está en la disciplina, en horizontes que no interesan a los grandes y en el control del riesgo.</li>
+</ul>
+<h4>Una idea clave: el juego de suma cero</h4>
+<p>En los derivados, como los CFD y los futuros, lo que gana un lado lo pierde el otro antes de costes. Después de costes, el conjunto de participantes pierde dinero. Por eso una estrategia necesita una ventaja real y medible para ganar a largo plazo: operar por operar te lleva a pagar costes de forma sistemática.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué una empresa puede comprar una divisa aunque crea que su precio es alto?</li>
+<li>¿Qué gana un creador de mercado?</li>
+<li>¿Por qué un minorista no debería intentar competir en velocidad con un fondo de alta frecuencia?</li>
+</ol><div class="answer"><label for="w1-s01-l2">Tus respuestas</label><textarea id="w1-s01-l2" data-store="w1-s01-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l2"> Marcar como completada</label></section><section class="pane" id="s01-l3" hidden><h2>S01-L3 · Cómo se forma el precio: órdenes, libro, bid, ask y spread</h2><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 40 minutos</em></p>
+<h4>El precio es el resultado de las órdenes</h4>
+<p>El precio no lo fija nadie: es el punto en el que se cruzan las órdenes de compra y de venta. Una <strong>orden</strong> es una instrucción para comprar o vender una cantidad de un activo. Hay dos grandes tipos:</p>
+<ul>
+<li><strong>Orden límite (<em>limit order</em>):</strong> «compro como máximo a este precio» o «vendo como mínimo a este precio». Espera en el mercado hasta que alguien la acepta.</li>
+<li><strong>Orden a mercado (<em>market order</em>):</strong> «compro o vendo ya, al mejor precio disponible». Se ejecuta de inmediato contra las órdenes límite que esperan.</li>
+</ul>
+<h4>El libro de órdenes</h4>
+<p>Las órdenes límite que esperan forman el <strong>libro de órdenes</strong> (<em>order book</em>). Un ejemplo simplificado de una acción:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Compradores: cantidad</th>
+<th>Precio de compra (bid)</th>
+<th>Precio de venta (ask)</th>
+<th>Vendedores: cantidad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>300</td>
+<td>10,00 €</td>
+<td>10,02 €</td>
+<td>200</td>
+</tr>
+<tr>
+<td>500</td>
+<td>9,99 €</td>
+<td>10,03 €</td>
+<td>400</td>
+</tr>
+<tr>
+<td>800</td>
+<td>9,98 €</td>
+<td>10,04 €</td>
+<td>600</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li>El <strong>bid</strong> es el mejor precio al que alguien está dispuesto a comprar: 10,00 €. Si tú quieres vender ya, venderás a ese precio.</li>
+<li>El <strong>ask</strong> (u <em>offer</em>) es el mejor precio al que alguien está dispuesto a vender: 10,02 €. Si quieres comprar ya, comprarás a ese precio.</li>
+<li>El <strong>spread</strong> es la diferencia entre ambos: 10,02 − 10,00 = 0,02 €.</li>
+</ul>
+<h4>Por qué el spread es un coste</h4>
+<p>Si compras a 10,02 € y vendes un segundo después, sin que nada cambie, venderás a 10,00 €. Has perdido 0,02 € por acción sin que el precio se haya movido. Cada operación paga el spread: es el primer coste del trading.</p>
+<p>En porcentaje:</p>
+<div class="math">$$\text{Coste del spread} = \frac{\text{ask} - \text{bid}}{\text{precio medio}} = \frac{0{,}02}{10{,}01} \approx 0{,}2\,\%$$</div>
+
+<p>Un 0,2 % parece poco, pero una estrategia que opera 300 veces al año paga ese coste 300 veces.</p>
+<h4>Cómo se mueve el precio</h4>
+<p>Supón que llega una orden a mercado para comprar 500 acciones. Consume las 200 disponibles a 10,02 € y 300 de las 400 que hay a 10,03 €. El nuevo ask es 10,03 € y el precio ha subido.</p>
+<p>Esto muestra dos ideas importantes:</p>
+<ul>
+<li><strong>El precio sube cuando las órdenes de compra a mercado consumen la oferta, y baja cuando las ventas consumen la demanda.</strong></li>
+<li><strong>Una orden grande puede ejecutarse a varios precios.</strong> La diferencia entre el precio esperado y el obtenido se llama <strong>deslizamiento</strong> (<em>slippage</em>), y es otro coste.</li>
+</ul>
+<h4>El último precio y las velas</h4>
+<p>El precio que ves en un gráfico suele ser el último precio negociado o, en Forex, el bid. Los gráficos resumen el movimiento de cada periodo en una <strong>vela</strong> (<em>candlestick</em>) con cuatro valores: apertura, máximo, mínimo y cierre (<em>open, high, low, close</em>: <strong>OHLC</strong>). Trabajarás con velas durante todo el curso.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Si el bid es 1,0850 y el ask 1,0851, ¿cuál es el spread?</li>
+<li>Con el libro del ejemplo, ¿a qué precio venderías 300 acciones con una orden a mercado?</li>
+<li>¿Qué diferencia hay entre una orden límite y una a mercado en cuanto a la garantía de precio y de ejecución?</li>
+</ol><div class="answer"><label for="w1-s01-l3">Tus respuestas</label><textarea id="w1-s01-l3" data-store="w1-s01-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l3"> Marcar como completada</label></section><section class="pane" id="s01-l4" hidden><h2>S01-L4 · Liquidez, volatilidad y horarios</h2><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<h4>Liquidez</h4>
+<p>La <strong>liquidez</strong> es la facilidad para comprar o vender una cantidad sin mover mucho el precio. Un mercado líquido tiene muchas órdenes en el libro, spreads estrechos y poco deslizamiento. Un mercado poco líquido tiene spreads amplios y saltos de precio.</p>
+<p>Tres señales de liquidez que verás en la práctica:</p>
+<ul>
+<li><strong>Spread estrecho y estable.</strong></li>
+<li><strong>Volumen alto:</strong> muchas operaciones o mucho dinero negociado.</li>
+<li><strong>Profundidad:</strong> mucha cantidad disponible cerca del mejor precio.</li>
+</ul>
+<h4>Volatilidad</h4>
+<p>La <strong>volatilidad</strong> mide cuánto se mueve el precio. Un activo volátil recorre mucha distancia en poco tiempo, hacia arriba o hacia abajo.</p>
+<p>Una forma sencilla de medirla es el rango de cada vela: máximo menos mínimo. Si el EUR/USD recorre de media 70 pips al día y una criptomoneda recorre un 4 % diario, la segunda es mucho más volátil en términos relativos. En la semana 4 aprenderás a medirla con la desviación estándar y, más adelante, con el indicador ATR.</p>
+<p>La volatilidad no es buena ni mala: es oportunidad y riesgo a la vez. Un mismo stop de 20 pips puede ser amplio en una hora tranquila y ridículamente estrecho en una noticia.</p>
+<h4>Horarios: cuándo se mueve cada mercado</h4>
+<p>Cada mercado tiene su horario, y la liquidez y la volatilidad cambian mucho dentro del día. Horas peninsulares españolas, orientativas y sujetas a los cambios de horario de verano:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Mercado</th>
+<th>Horario</th>
+<th>Momento de más actividad</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forex</td>
+<td>Del domingo por la noche al viernes por la noche, 24 horas</td>
+<td>Solapamiento de Londres y Nueva York, aproximadamente de 14:00 a 18:00</td>
+</tr>
+<tr>
+<td>Bolsa española (BME)</td>
+<td>9:00–17:30</td>
+<td>Apertura y cierre</td>
+</tr>
+<tr>
+<td>Bolsa de Nueva York (NYSE y Nasdaq)</td>
+<td>15:30–22:00</td>
+<td>Apertura y última hora</td>
+</tr>
+<tr>
+<td>Futuros de índices</td>
+<td>Casi 24 horas en días laborables, con pausas diarias</td>
+<td>Coincidiendo con la sesión de su bolsa</td>
+</tr>
+<tr>
+<td>Criptomonedas</td>
+<td>24 horas, 7 días a la semana</td>
+<td>Variable; suele aumentar con la sesión de Estados Unidos</td>
+</tr>
+</tbody>
+</table></div>
+<p>En Forex, la actividad se reparte en tres sesiones: Asia (Sídney y Tokio), Europa (Londres) y América (Nueva York). Durante la sesión asiática, los pares europeos suelen moverse en rangos estrechos; con la apertura de Londres llegan el volumen y las rupturas.</p>
+<h4>Los momentos peligrosos</h4>
+<ul>
+<li><strong>Noticias macroeconómicas:</strong> datos de empleo, inflación o decisiones de tipos provocan saltos de precio y spreads muy amplios durante minutos.</li>
+<li><strong>Aperturas tras el fin de semana:</strong> el precio puede abrir lejos del cierre del viernes. Ese salto se llama <strong>gap</strong> (hueco).</li>
+<li><strong>Cambio de día y festivos:</strong> poca liquidez y spreads amplios.</li>
+</ul>
+<p>Un algoritmo que opera a ciegas en estos momentos puede pagar costes muy superiores a los de su backtest.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el spread suele ampliarse cuando hay poca liquidez?</li>
+<li>¿Qué es un gap y cuándo es más probable?</li>
+<li>Si vives en México, ¿a qué hora local abre la bolsa de Nueva York? Busca el dato y anota la fuente.</li>
+</ol><div class="answer"><label for="w1-s01-l4">Tus respuestas</label><textarea id="w1-s01-l4" data-store="w1-s01-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l4"> Marcar como completada</label></section><section class="pane" id="s01-l5" hidden><h2>S01-L5 · Intermediarios y regulación</h2><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 30 minutos</em></p>
+<h4>Tres figuras que no debes confundir</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Figura</th>
+<th>Qué es</th>
+<th>Ejemplo de función</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Exchange o bolsa</td>
+<td>El mercado organizado donde se cruzan las órdenes</td>
+<td>Registrar las operaciones de acciones o futuros</td>
+</tr>
+<tr>
+<td>Broker</td>
+<td>La empresa que te da acceso al mercado y ejecuta tus órdenes</td>
+<td>Abrir tu cuenta, custodiar tu dinero y darte una plataforma como MetaTrader</td>
+</tr>
+<tr>
+<td>Supervisor</td>
+<td>La autoridad pública que autoriza y vigila a los intermediarios</td>
+<td>Comprobar que el broker cumple las normas y protege a sus clientes</td>
+</tr>
+</tbody>
+</table></div>
+<p>En Forex y en los CFD, el broker no siempre envía tu orden a un mercado: a veces es la contraparte de tu operación. Lo estudiarás en la semana 2.</p>
+<h4>Los supervisores en los países de habla hispana</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>País</th>
+<th>Supervisor de valores e inversión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>España</td>
+<td>CNMV (Comisión Nacional del Mercado de Valores)</td>
+</tr>
+<tr>
+<td>México</td>
+<td>CNBV (Comisión Nacional Bancaria y de Valores)</td>
+</tr>
+<tr>
+<td>Colombia</td>
+<td>Superintendencia Financiera de Colombia</td>
+</tr>
+<tr>
+<td>Argentina</td>
+<td>CNV (Comisión Nacional de Valores)</td>
+</tr>
+<tr>
+<td>Chile</td>
+<td>CMF (Comisión para el Mercado Financiero)</td>
+</tr>
+<tr>
+<td>Perú</td>
+<td>SMV (Superintendencia del Mercado de Valores)</td>
+</tr>
+</tbody>
+</table></div>
+<p>En la Unión Europea, un broker autorizado en un país puede ofrecer sus servicios en otros mediante el llamado pasaporte europeo. La ficha fiscal y regulatoria de cada país se estudia en la semana 19.</p>
+<h4>Cómo comprobar si una entidad está autorizada</h4>
+<ol>
+<li>Busca el nombre legal completo de la empresa, no solo su marca comercial.</li>
+<li>Consulta el registro oficial del supervisor de tu país (en España, los registros de la <a href="https://www.cnmv.es" target="_blank" rel="noopener">CNMV</a>).</li>
+<li>Revisa también su lista de advertencias sobre entidades no autorizadas.</li>
+<li>Comprueba que la web y el dominio son los que figuran en el registro: los clones de entidades reales son un fraude frecuente.</li>
+</ol>
+<h4>Las protecciones para minoristas en la UE</h4>
+<p>Desde 2018, la normativa europea limita los productos más arriesgados para clientes minoristas: apalancamiento máximo en CFD (30:1 en los pares de divisas principales), cierre de posiciones cuando los fondos caen al 50 % del margen exigido, protección frente a saldos negativos y advertencias de riesgo obligatorias (<a href="https://www.esma.europa.eu/sites/default/files/library/esma71-98-128_press_release_product_intervention_es.pdf" target="_blank" rel="noopener">ESMA</a>).</p>
+<p>Una de esas advertencias obliga a cada broker a publicar qué porcentaje de sus cuentas minoristas pierde dinero con CFD. Búscala siempre antes de abrir una cuenta: suele ser la mayoría.</p>
+<p><strong>Señal de alarma.</strong> Si una entidad te ofrece un apalancamiento muy superior al permitido en tu país, garantiza rentabilidades o te presiona para depositar ya, desconfía y comprueba los registros.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre un broker y un exchange?</li>
+<li>¿Dónde comprobarías si un broker está autorizado en tu país?</li>
+<li>¿Qué es la protección frente a saldos negativos?</li>
+</ol><div class="answer"><label for="w1-s01-l5">Tus respuestas</label><textarea id="w1-s01-l5" data-store="w1-s01-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l5"> Marcar como completada</label></section><section class="pane" id="s01-l6" hidden><h2>S01-L6 · Qué es el trading algorítmico, qué no es y por qué la mayoría pierde</h2><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 40 minutos</em></p>
+<h4>Una definición precisa</h4>
+<p>El <strong>trading algorítmico</strong> consiste en operar con reglas exactas que un ordenador ejecuta sin intervención humana. Un <strong>algoritmo</strong> es una lista de instrucciones sin ambigüedad: si dos personas aplican las mismas reglas al mismo gráfico, obtienen exactamente las mismas operaciones.</p>
+<p>Una regla algorítmica dice siempre:</p>
+<ul>
+<li><strong>Cuándo entrar:</strong> por ejemplo, «compra si el precio cierra por encima del máximo de las últimas 20 velas».</li>
+<li><strong>Cuándo salir:</strong> con pérdidas (stop loss), con beneficios (objetivo) o por tiempo.</li>
+<li><strong>Cuánto arriesgar:</strong> el tamaño de cada operación.</li>
+<li><strong>Cuándo no operar:</strong> horarios, noticias o condiciones de mercado.</li>
+</ul>
+<p>El programa que ejecuta estas reglas en MetaTrader se llama <strong>asesor experto</strong> (<em>Expert Advisor</em>, EA).</p>
+<h4>Lo que no es</h4>
+<ul>
+<li><strong>No es trading de alta frecuencia.</strong> Ese negocio exige infraestructura de millones de euros y velocidades de microsegundos.</li>
+<li><strong>No es una máquina de predecir.</strong> Ninguna regla sabe qué hará el precio en la próxima operación; busca una ventaja que aparece tras muchas operaciones.</li>
+<li><strong>No es una renta pasiva.</strong> Un sistema necesita investigación, validación, supervisión y sustitución cuando deja de funcionar.</li>
+<li><strong>No es comprar un robot.</strong> Los robots que «nunca pierden» suelen esconder técnicas que acaban arruinando la cuenta.</li>
+</ul>
+<h4>La ventaja estadística</h4>
+<p>Un casino no sabe si ganará la próxima mano, pero sabe que ganará después de miles. Una estrategia útil funciona igual: tiene <strong>esperanza matemática positiva después de costes</strong>, es decir, el resultado medio por operación es mayor que cero tras pagar spread, comisiones y deslizamiento. En la semana 3 aprenderás a calcularla.</p>
+<h4>Por qué la mayoría de los minoristas pierde</h4>
+<p>Las advertencias que la normativa europea obliga a publicar a los brokers muestran que, en la mayoría de ellos, más de la mitad de las cuentas minoristas pierde dinero con CFD. Las causas más frecuentes son conocidas:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Causa</th>
+<th>Qué ocurre</th>
+<th>Dónde lo trabajarás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Riesgo excesivo</td>
+<td>Una racha de pérdidas normal destruye la cuenta</td>
+<td>Semanas 4, 14 y 19</td>
+</tr>
+<tr>
+<td>Costes ignorados</td>
+<td>La ventaja desaparece al pagar spread y comisiones</td>
+<td>Semanas 2, 5 y 10</td>
+</tr>
+<tr>
+<td>Sobreajuste</td>
+<td>Un backtest perfecto que falla en real</td>
+<td>Semanas 10 a 12</td>
+</tr>
+<tr>
+<td>Falta de método</td>
+<td>Decisiones impulsivas, sin reglas ni registro</td>
+<td>Todo el curso</td>
+</tr>
+<tr>
+<td>Expectativas irreales</td>
+<td>Se fuerza el riesgo para alcanzar objetivos imposibles</td>
+<td>Semanas 1, 18 y 19</td>
+</tr>
+<tr>
+<td>Intervenir a mano</td>
+<td>Se apaga el sistema en el peor momento</td>
+<td>Semana 16</td>
+</tr>
+</tbody>
+</table></div>
+<p>Este curso no puede cambiar esa estadística. Lo que sí puede es enseñarte a no cometer los errores que la producen.</p>
+<h4>Expectativas honestas</h4>
+<p>Desconfía de quien prometa rentabilidades mensuales altas y constantes. Al terminar este curso sabrás investigar, validar y gestionar sistemas; eso no garantiza ganar dinero. La profesionalización es un objetivo de desarrollo a dos años, no una promesa.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Escribe una regla de entrada que sea algorítmica y otra que no lo sea, y explica la diferencia.</li>
+<li>¿Por qué una estrategia necesita esperanza positiva <em>después</em> de costes?</li>
+<li>Elige dos causas de pérdida de la tabla y explica cómo crees que te podrían afectar a ti.</li>
+</ol><div class="answer"><label for="w1-s01-l6">Tus respuestas</label><textarea id="w1-s01-l6" data-store="w1-s01-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l6"> Marcar como completada</label></section><section class="pane" id="s01-l7" hidden><h2>S01-L7 · Cómo estudiar este curso</h2><div class="read"><p><em>Formato: cápsula de 15 minutos · Lectura: 15 minutos</em></p>
+<h4>El método: aprender haciendo</h4>
+<p>No vas a aprender a investigar mirando vídeos. Cada semana combina un poco de teoría con mucha práctica: el 50 % de tu tiempo está en las prácticas. Las lecciones te dan las herramientas; los ejercicios, la investigación y la entrega te obligan a usarlas.</p>
+<h4>Tu cuaderno de investigación</h4>
+<p>Desde hoy llevarás un cuaderno, digital o en papel, que te acompañará las 20 semanas. Es tu registro científico: si algo no está en el cuaderno, no ocurrió. Cada entrada tiene:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Ejemplo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Fecha</td>
+<td>4 de noviembre</td>
+</tr>
+<tr>
+<td>Pregunta o hipótesis</td>
+<td>¿En qué horas se mueve más el EUR/USD?</td>
+</tr>
+<tr>
+<td>Fuentes consultadas</td>
+<td>Enlace y fecha de consulta</td>
+</tr>
+<tr>
+<td>Datos o pasos</td>
+<td>Qué hiciste, con qué datos y con qué herramienta</td>
+</tr>
+<tr>
+<td>Resultado</td>
+<td>Lo que obtuviste, aunque no sea lo esperado</td>
+</tr>
+<tr>
+<td>Conclusión y dudas</td>
+<td>Qué aprendiste y qué queda por comprobar</td>
+</tr>
+</tbody>
+</table></div>
+<h4>El ciclo de investigación</h4>
+<p>Toda investigación del curso sigue ocho pasos: formular una hipótesis, buscar y documentar fuentes, seleccionar datos, diseñar el experimento, generar estrategias, validar, comparar y documentar conclusiones. Esta semana practicarás los pasos 1, 2, 3 y 8.</p>
+<h4>Cómo usar el tutor de IA</h4>
+<p>El tutor de IA te ayuda a entender, no a hacer tu trabajo. Úsalo para:</p>
+<ul>
+<li>Pedir otra explicación de un concepto o un ejemplo distinto.</li>
+<li>Comprobar tus razonamientos antes de entregar.</li>
+<li>Preguntar dónde buscar una fuente.</li>
+</ul>
+<p>No le pidas las respuestas del examen, ni que haga tu entrega, ni recomendaciones sobre qué operar: no te las dará, porque el curso es formativo y no asesora. Y recuerda que puede equivocarse: comprueba en las fuentes los datos importantes.</p>
+<h4>Cómo se evalúa</h4>
+<ul>
+<li>Cada semana: examen, entrega práctica y avance de la investigación. Cada uno debe llegar al 80 %.</li>
+<li>Los estados posibles son APROBADO, SUSPENSO y NO EVALUABLE (faltan evidencias).</li>
+<li>Un suspenso no es un castigo: viene con los errores concretos, las lecciones que repasar y cómo recuperarlo.</li>
+</ul>
+<h4>Tu expediente</h4>
+<p>Tu progreso se guarda en un expediente académico que puedes descargar. Al final de cada semana, guarda también el resumen de progreso: te permite retomar el curso en cualquier momento sin perder el contexto.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué seis campos tiene cada entrada de tu cuaderno?</li>
+<li>¿Qué diferencia hay entre SUSPENSO y NO EVALUABLE?</li>
+<li>Escribe tu primera entrada del cuaderno: tus objetivos personales para este curso.</li>
+</ol><div class="answer"><label for="w1-s01-l7">Tus respuestas</label><textarea id="w1-s01-l7" data-store="w1-s01-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-s01-l7"> Marcar como completada</label></section><section class="pane" id="glosario" hidden><h2>Glosario de la semana</h2><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activo financiero</td>
+<td>Financial asset</td>
+<td>Derecho sobre algo con valor económico: una acción, una deuda, una divisa</td>
+</tr>
+<tr>
+<td>Acción</td>
+<td>Stock, share</td>
+<td>Parte de la propiedad de una empresa</td>
+</tr>
+<tr>
+<td>Algoritmo</td>
+<td>Algorithm</td>
+<td>Lista de instrucciones exactas y sin ambigüedad</td>
+</tr>
+<tr>
+<td>Ask u oferta</td>
+<td>Ask, offer</td>
+<td>Mejor precio al que alguien está dispuesto a vender; al que tú compras</td>
+</tr>
+<tr>
+<td>Asesor experto</td>
+<td>Expert Advisor (EA)</td>
+<td>Programa que ejecuta una estrategia de forma automática en MetaTrader</td>
+</tr>
+<tr>
+<td>Bid o demanda</td>
+<td>Bid</td>
+<td>Mejor precio al que alguien está dispuesto a comprar; al que tú vendes</td>
+</tr>
+<tr>
+<td>Broker</td>
+<td>Broker</td>
+<td>Empresa que da acceso al mercado y ejecuta las órdenes de sus clientes</td>
+</tr>
+<tr>
+<td>Creador de mercado</td>
+<td>Market maker</td>
+<td>Participante que ofrece precios de compra y venta de forma continua</td>
+</tr>
+<tr>
+<td>Deslizamiento</td>
+<td>Slippage</td>
+<td>Diferencia entre el precio esperado y el obtenido al ejecutar una orden</td>
+</tr>
+<tr>
+<td>Divisa</td>
+<td>Currency</td>
+<td>Moneda de un país o zona, como el euro o el dólar</td>
+</tr>
+<tr>
+<td>Esperanza matemática</td>
+<td>Expected value, expectancy</td>
+<td>Resultado medio esperado por operación</td>
+</tr>
+<tr>
+<td>Exchange o bolsa</td>
+<td>Exchange</td>
+<td>Mercado organizado con reglas comunes y registro central de operaciones</td>
+</tr>
+<tr>
+<td>Gap o hueco</td>
+<td>Gap</td>
+<td>Salto del precio entre dos cotizaciones sin operaciones intermedias</td>
+</tr>
+<tr>
+<td>Índice</td>
+<td>Index</td>
+<td>Número que resume la evolución de un grupo de activos</td>
+</tr>
+<tr>
+<td>Libro de órdenes</td>
+<td>Order book</td>
+<td>Lista de órdenes límite de compra y venta que esperan en el mercado</td>
+</tr>
+<tr>
+<td>Liquidez</td>
+<td>Liquidity</td>
+<td>Facilidad para comprar o vender sin mover mucho el precio</td>
+</tr>
+<tr>
+<td>Mercado OTC</td>
+<td>Over the counter</td>
+<td>Mercado sin sede central en el que se opera a través de intermediarios</td>
+</tr>
+<tr>
+<td>Mercado primario y secundario</td>
+<td>Primary and secondary market</td>
+<td>Primera venta de un activo frente a su compraventa posterior entre inversores</td>
+</tr>
+<tr>
+<td>Minorista</td>
+<td>Retail trader</td>
+<td>Particular que opera con su propio dinero</td>
+</tr>
+<tr>
+<td>OHLC</td>
+<td>Open, high, low, close</td>
+<td>Apertura, máximo, mínimo y cierre de una vela</td>
+</tr>
+<tr>
+<td>Orden a mercado</td>
+<td>Market order</td>
+<td>Orden que se ejecuta de inmediato al mejor precio disponible</td>
+</tr>
+<tr>
+<td>Orden límite</td>
+<td>Limit order</td>
+<td>Orden que fija un precio máximo de compra o mínimo de venta</td>
+</tr>
+<tr>
+<td>Spread</td>
+<td>Spread</td>
+<td>Diferencia entre el ask y el bid</td>
+</tr>
+<tr>
+<td>Supervisor</td>
+<td>Regulator</td>
+<td>Autoridad pública que autoriza y vigila a los intermediarios</td>
+</tr>
+<tr>
+<td>Trading algorítmico</td>
+<td>Algorithmic trading</td>
+<td>Operar con reglas exactas que ejecuta un ordenador</td>
+</tr>
+<tr>
+<td>Vela</td>
+<td>Candlestick</td>
+<td>Representación gráfica del OHLC de un periodo</td>
+</tr>
+<tr>
+<td>Volatilidad</td>
+<td>Volatility</td>
+<td>Medida de cuánto se mueve el precio</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w1-done-glosario"> Marcar como completada</label></section><section class="pane" id="ejercicios-obligatorios" hidden><h2>Ejercicios obligatorios</h2><div class="read"><p>Resuélvelos en tu cuaderno o en una hoja de cálculo, mostrando los cálculos. Se entregan junto con la práctica de la semana.</p>
+<p><strong>E1 · Spread.</strong> El EUR/USD cotiza con un bid de 1,08500 y un ask de 1,08512. Calcula el spread en unidades de precio y en porcentaje del precio medio.</p>
+<p><strong>E2 · Compra a mercado.</strong> Con el libro de órdenes de la lección S01-L3, lanzas una orden a mercado para comprar 500 acciones. ¿A qué precios se ejecuta? ¿Cuál es el precio medio? ¿Cuánto has pagado de más respecto a comprarlas todas a 10,02 €?</p>
+<p><strong>E3 · Venta a mercado.</strong> Con el mismo libro, lanzas una orden a mercado para vender 1.000 acciones. Calcula el importe total recibido y el precio medio.</p>
+<p><strong>E4 · El coste de operar mucho.</strong> Una estrategia abre y cierra 300 operaciones al año, cada una de 1.000 € de valor, en un activo con un spread del 0,2 %. ¿Cuánto paga al año solo en spread? Exprésalo en euros y en porcentaje de 1.000 €.</p>
+<p><strong>E5 · Horarios.</strong> La bolsa de Nueva York abre a las 9:30 hora de Nueva York. ¿A qué hora local abre el 15 de diciembre de 2026 en Madrid, Ciudad de México, Bogotá, Buenos Aires, Santiago de Chile y Lima? Cita la fuente que uses para las diferencias horarias.</p>
+<p><strong>E6 · Participantes.</strong> Indica qué tipo de participante es cada uno y por qué opera:</p>
+<ol>
+<li>Una empresa chilena que importa maquinaria alemana y compra euros.</li>
+<li>Un fondo de pensiones que compra acciones para los próximos 20 años.</li>
+<li>Un banco que publica precios de compra y venta de forma continua.</li>
+<li>El banco central que sube los tipos de interés.</li>
+</ol>
+<p><strong>E7 · ¿Algorítmica o no?</strong> Indica si cada regla es algorítmica y, si no lo es, reescríbela para que lo sea:</p>
+<ol>
+<li>«Compra cuando el mercado parezca fuerte.»</li>
+<li>«Vende si el precio cierra por debajo del mínimo de las últimas 10 velas de una hora.»</li>
+<li>«Sal cuando ya hayas ganado bastante.»</li>
+<li>«No operes los días de noticias importantes.»</li>
+</ol>
+<p><strong>E8 · Gap.</strong> Compras 10.000 unidades de EUR/USD a 1,0850 con un stop de venta a 1,0820. El viernes el precio cierra a 1,0850 y el domingo abre a 1,0790. ¿A qué precio aproximado se ejecuta el stop? ¿Cuánto pierdes frente a lo previsto? (La pérdida en dólares es la diferencia de precio multiplicada por las unidades.)</p>
+<p><strong>E9 · Liquidez.</strong> Un activo A tiene un spread medio del 0,01 % y uno B del 0,5 %. Explica cuál es probablemente más líquido y qué consecuencias tiene para una estrategia que opera muchas veces al día.</p>
+<p><strong>E10 · Supervisión.</strong> Elige un broker que conozcas o encuentres en internet. Comprueba en el registro oficial del supervisor de tu país si está autorizado y anota el nombre legal de la entidad, el número de registro y la fecha de la consulta. Si no está autorizado, anótalo también.</p><div class="answer"><label for="w1-ejercicios-obligatorios">Tus respuestas</label><textarea id="w1-ejercicios-obligatorios" data-store="w1-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-ejercicios-obligatorios"> Marcar como completada</label></section><section class="pane" id="investigacion-i-01-y-entrega-practica" hidden><h2>Investigación I-01 y entrega práctica</h2><div class="read"><h3>Investigación I-01 · ¿En qué horas se concentra el movimiento de un activo?</h3>
+<p>Esta semana practicas los pasos 1, 2, 3 y 8 del ciclo de investigación. No necesitas programar ni usar StrategyQuant.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Elige un activo de uno de los cuatro mercados (por ejemplo, EUR/USD, el índice DAX, una acción o Bitcoin) y escribe una hipótesis concreta y comprobable. Ejemplo: «El EUR/USD recorre más distancia entre las 14:00 y las 18:00, hora de Madrid, que en cualquier otra franja de cuatro horas».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Busca y cita al menos dos fuentes que expliquen el horario y los momentos de actividad de tu activo. Para cada una, anota quién la publica, la fecha de consulta y por qué te parece fiable o no.</p>
+<p><strong>Paso 3 · Datos.</strong> Elige una fuente gratuita que muestre velas de una hora de tu activo (por ejemplo, la plataforma web de un broker en demo o una web de gráficos). Durante cinco días laborables, o con los cinco últimos días disponibles, anota para cada hora el rango de la vela (máximo menos mínimo) en una hoja de cálculo. Documenta: nombre de la fuente, zona horaria en la que muestra las velas, si los precios son bid, ask o último negociado y cualquier hueco o dato raro.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> Calcula el rango medio de cada hora y responde: ¿se confirma tu hipótesis? ¿Qué limitaciones tienen tus datos (cinco días, una sola fuente, zona horaria)? ¿Qué harías para comprobarlo mejor?</p>
+<p>Una conclusión que rechaza la hipótesis es tan válida como una que la confirma, si el método es correcto.</p>
+<h3>Entrega práctica · El mapa de un mercado real</h3>
+<p>Prepara una ficha de tu activo elegido, de una a dos páginas, con:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Apartado</th>
+<th>Qué incluir</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Activo y mercado</td>
+<td>Nombre, mercado y dónde se negocia (bolsa, OTC, exchanges)</td>
+</tr>
+<tr>
+<td>Participantes</td>
+<td>Quién suele operar este activo y por qué</td>
+</tr>
+<tr>
+<td>Horario</td>
+<td>Horario de negociación en tu hora local y momentos de más actividad, según tu investigación</td>
+</tr>
+<tr>
+<td>Liquidez y costes</td>
+<td>Spread observado en dos momentos distintos del día, con captura y hora</td>
+</tr>
+<tr>
+<td>Volatilidad</td>
+<td>Rango medio diario u horario de tus datos</td>
+</tr>
+<tr>
+<td>Riesgos especiales</td>
+<td>Noticias, gaps, cierres o particularidades del activo</td>
+</tr>
+<tr>
+<td>Regulación</td>
+<td>Quién supervisa a los intermediarios que lo ofrecen en tu país</td>
+</tr>
+<tr>
+<td>Fuentes</td>
+<td>Todas las fuentes, con enlace y fecha de consulta</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué entregar</h4>
+<ul>
+<li>La ficha en PDF o documento: <code>CODIGO_S01_ENT</code>.</li>
+<li>La hoja de cálculo de la investigación: <code>CODIGO_S01_INV</code>.</li>
+<li>Las capturas del spread, con la hora visible.</li>
+<li>Los ejercicios E1 a E10 resueltos.</li>
+</ul>
+<p>Sustituye <code>CODIGO</code> por tu código de alumno.</p>
+<h4>Cómo se evaluará</h4>
+<p>La entrega y la investigación se corrigen con rúbricas que valoran la exactitud, el uso de fuentes, la calidad de los datos documentados y la honestidad de las conclusiones. Si falta alguna evidencia, la entrega quedará como NO EVALUABLE hasta que la completes.</p><div class="answer"><label for="w1-investigacion-i-01-y-entrega-practica">Tus respuestas</label><textarea id="w1-investigacion-i-01-y-entrega-practica" data-store="w1-investigacion-i-01-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-investigacion-i-01-y-entrega-practica"> Marcar como completada</label></section><section class="pane" id="examen-1" hidden><h2>Examen de la semana 1 · Variante A</h2><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Preguntas de opción múltiple (30 puntos, 2 por pregunta)</h3>
+<p>Elige una sola respuesta.</p><fieldset class="q"><legend><b>1.</b> El mercado secundario es aquel en el que…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q1" value="a" data-store="w1-exam-q1"><span><b>a)</b> una empresa vende acciones nuevas por primera vez</span></label><label class="opt"><input type="radio" name="w1q1" value="b" data-store="w1-exam-q1"><span><b>b)</b> los inversores compran y venden entre sí activos ya emitidos</span></label><label class="opt"><input type="radio" name="w1q1" value="c" data-store="w1-exam-q1"><span><b>c)</b> solo operan bancos centrales</span></label><label class="opt"><input type="radio" name="w1q1" value="d" data-store="w1-exam-q1"><span><b>d)</b> se negocian únicamente divisas</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> El mercado de divisas (Forex) es principalmente…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q2" value="a" data-store="w1-exam-q2"><span><b>a)</b> un mercado OTC sin sede central</span></label><label class="opt"><input type="radio" name="w1q2" value="b" data-store="w1-exam-q2"><span><b>b)</b> un mercado organizado con una sede central</span></label><label class="opt"><input type="radio" name="w1q2" value="c" data-store="w1-exam-q2"><span><b>c)</b> un mercado que solo abre en horario europeo</span></label><label class="opt"><input type="radio" name="w1q2" value="d" data-store="w1-exam-q2"><span><b>d)</b> un mercado reservado a bancos</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> El bid es…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q3" value="a" data-store="w1-exam-q3"><span><b>a)</b> el mejor precio al que puedes comprar</span></label><label class="opt"><input type="radio" name="w1q3" value="b" data-store="w1-exam-q3"><span><b>b)</b> el último precio negociado</span></label><label class="opt"><input type="radio" name="w1q3" value="c" data-store="w1-exam-q3"><span><b>c)</b> el mejor precio al que puedes vender</span></label><label class="opt"><input type="radio" name="w1q3" value="d" data-store="w1-exam-q3"><span><b>d)</b> la media entre compra y venta</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Si el bid es 20,00 y el ask es 20,05, el spread es…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q4" value="a" data-store="w1-exam-q4"><span><b>a)</b> 20,025</span></label><label class="opt"><input type="radio" name="w1q4" value="b" data-store="w1-exam-q4"><span><b>b)</b> 0,25 %</span></label><label class="opt"><input type="radio" name="w1q4" value="c" data-store="w1-exam-q4"><span><b>c)</b> 40,05</span></label><label class="opt"><input type="radio" name="w1q4" value="d" data-store="w1-exam-q4"><span><b>d)</b> 0,05</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Una orden a mercado…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q5" value="a" data-store="w1-exam-q5"><span><b>a)</b> garantiza el precio pero no la ejecución</span></label><label class="opt"><input type="radio" name="w1q5" value="b" data-store="w1-exam-q5"><span><b>b)</b> garantiza la ejecución pero no el precio exacto</span></label><label class="opt"><input type="radio" name="w1q5" value="c" data-store="w1-exam-q5"><span><b>c)</b> garantiza ambos</span></label><label class="opt"><input type="radio" name="w1q5" value="d" data-store="w1-exam-q5"><span><b>d)</b> no garantiza ninguno</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Una orden límite de compra a 9,98 €, con el ask en 10,02 €…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q6" value="a" data-store="w1-exam-q6"><span><b>a)</b> se ejecuta de inmediato a 10,02 €</span></label><label class="opt"><input type="radio" name="w1q6" value="b" data-store="w1-exam-q6"><span><b>b)</b> se cancela</span></label><label class="opt"><input type="radio" name="w1q6" value="c" data-store="w1-exam-q6"><span><b>c)</b> espera en el libro hasta que alguien venda a 9,98 € o menos</span></label><label class="opt"><input type="radio" name="w1q6" value="d" data-store="w1-exam-q6"><span><b>d)</b> se ejecuta a 9,98 € al instante</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Un activo muy líquido suele tener…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q7" value="a" data-store="w1-exam-q7"><span><b>a)</b> spreads estrechos y poco deslizamiento</span></label><label class="opt"><input type="radio" name="w1q7" value="b" data-store="w1-exam-q7"><span><b>b)</b> spreads amplios y saltos de precio</span></label><label class="opt"><input type="radio" name="w1q7" value="c" data-store="w1-exam-q7"><span><b>c)</b> pocas operaciones al día</span></label><label class="opt"><input type="radio" name="w1q7" value="d" data-store="w1-exam-q7"><span><b>d)</b> horario reducido</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Un gap es…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q8" value="a" data-store="w1-exam-q8"><span><b>a)</b> la diferencia entre bid y ask</span></label><label class="opt"><input type="radio" name="w1q8" value="b" data-store="w1-exam-q8"><span><b>b)</b> el beneficio de una operación</span></label><label class="opt"><input type="radio" name="w1q8" value="c" data-store="w1-exam-q8"><span><b>c)</b> una orden pendiente</span></label><label class="opt"><input type="radio" name="w1q8" value="d" data-store="w1-exam-q8"><span><b>d)</b> un salto del precio sin operaciones intermedias</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> En España, la autoridad que autoriza y supervisa a las empresas de servicios de inversión es…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q9" value="a" data-store="w1-exam-q9"><span><b>a)</b> el Banco Central Europeo</span></label><label class="opt"><input type="radio" name="w1q9" value="b" data-store="w1-exam-q9"><span><b>b)</b> la CNMV</span></label><label class="opt"><input type="radio" name="w1q9" value="c" data-store="w1-exam-q9"><span><b>c)</b> la Agencia Tributaria</span></label><label class="opt"><input type="radio" name="w1q9" value="d" data-store="w1-exam-q9"><span><b>d)</b> la bolsa de Madrid</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> La protección frente a saldos negativos significa que un cliente minorista…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q10" value="a" data-store="w1-exam-q10"><span><b>a)</b> no puede perder dinero</span></label><label class="opt"><input type="radio" name="w1q10" value="b" data-store="w1-exam-q10"><span><b>b)</b> recupera sus pérdidas</span></label><label class="opt"><input type="radio" name="w1q10" value="c" data-store="w1-exam-q10"><span><b>c)</b> no puede perder más de lo que tiene en la cuenta</span></label><label class="opt"><input type="radio" name="w1q10" value="d" data-store="w1-exam-q10"><span><b>d)</b> no paga comisiones</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> ¿Cuál de estas reglas es algorítmica?</legend><div class="opts"><label class="opt"><input type="radio" name="w1q11" value="a" data-store="w1-exam-q11"><span><b>a)</b> «Compra si el cierre supera la media de los 50 cierres anteriores»</span></label><label class="opt"><input type="radio" name="w1q11" value="b" data-store="w1-exam-q11"><span><b>b)</b> «Compra cuando veas una buena oportunidad»</span></label><label class="opt"><input type="radio" name="w1q11" value="c" data-store="w1-exam-q11"><span><b>c)</b> «Vende si el mercado parece débil»</span></label><label class="opt"><input type="radio" name="w1q11" value="d" data-store="w1-exam-q11"><span><b>d)</b> «Opera solo cuando estés tranquilo»</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Una estrategia útil necesita…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q12" value="a" data-store="w1-exam-q12"><span><b>a)</b> acertar más del 90 % de las operaciones</span></label><label class="opt"><input type="radio" name="w1q12" value="b" data-store="w1-exam-q12"><span><b>b)</b> operar muchas veces al día</span></label><label class="opt"><input type="radio" name="w1q12" value="c" data-store="w1-exam-q12"><span><b>c)</b> no tener nunca pérdidas</span></label><label class="opt"><input type="radio" name="w1q12" value="d" data-store="w1-exam-q12"><span><b>d)</b> esperanza matemática positiva después de costes</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> El trading algorítmico minorista…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q13" value="a" data-store="w1-exam-q13"><span><b>a)</b> es lo mismo que la alta frecuencia</span></label><label class="opt"><input type="radio" name="w1q13" value="b" data-store="w1-exam-q13"><span><b>b)</b> predice el precio de la próxima operación</span></label><label class="opt"><input type="radio" name="w1q13" value="c" data-store="w1-exam-q13"><span><b>c)</b> busca una ventaja que aparece tras muchas operaciones</span></label><label class="opt"><input type="radio" name="w1q13" value="d" data-store="w1-exam-q13"><span><b>d)</b> funciona sin supervisión</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Un creador de mercado gana principalmente…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q14" value="a" data-store="w1-exam-q14"><span><b>a)</b> con la diferencia entre sus precios de compra y venta</span></label><label class="opt"><input type="radio" name="w1q14" value="b" data-store="w1-exam-q14"><span><b>b)</b> con las comisiones de los supervisores</span></label><label class="opt"><input type="radio" name="w1q14" value="c" data-store="w1-exam-q14"><span><b>c)</b> prediciendo tendencias largas</span></label><label class="opt"><input type="radio" name="w1q14" value="d" data-store="w1-exam-q14"><span><b>d)</b> con los dividendos</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> En los derivados, antes de costes, lo que gana un lado…</legend><div class="opts"><label class="opt"><input type="radio" name="w1q15" value="a" data-store="w1-exam-q15"><span><b>a)</b> lo paga el supervisor</span></label><label class="opt"><input type="radio" name="w1q15" value="b" data-store="w1-exam-q15"><span><b>b)</b> lo pierde el otro lado</span></label><label class="opt"><input type="radio" name="w1q15" value="c" data-store="w1-exam-q15"><span><b>c)</b> se reparte entre todos</span></label><label class="opt"><input type="radio" name="w1q15" value="d" data-store="w1-exam-q15"><span><b>d)</b> lo paga la bolsa</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p>Muestra todos los pasos.</p>
+<p><strong>B1.</strong> El GBP/USD cotiza con un bid de 1,25300 y un ask de 1,25318. Calcula el spread en unidades de precio y en porcentaje del precio medio, con tres decimales.</p>
+<p><strong>B2.</strong> El lado vendedor del libro de órdenes de una acción es: 200 acciones a 50,10 €, 300 a 50,12 € y 500 a 50,15 €. Compras 600 acciones con una orden a mercado. Calcula el importe total, el precio medio por acción y el sobrecoste total respecto a comprar las 600 a 50,10 €.</p>
+<p><strong>B3.</strong> Una estrategia hace 200 operaciones al año, cada una de 2.000 € de valor. Paga un spread del 0,05 % del valor y una comisión de 1 € por operación. Calcula el coste total anual.</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: explica tres causas por las que la mayoría de los minoristas pierde dinero y, para cada una, qué hábito o herramienta concreta usarías para evitarla. Tu respuesta debe distinguir entre lo que depende del mercado y lo que depende de ti.</p><div class="answer"><label for="w1-examen-1">Tus respuestas a las partes B y C</label><textarea id="w1-examen-1" data-store="w1-examen-1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w1-done-examen-1"> Marcar como completada</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
