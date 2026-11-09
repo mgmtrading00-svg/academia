@@ -1,0 +1,373 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 8 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="8">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-08.svg)"><img src="img/cover-08.svg" alt=""></div><p class="eyebrow">SEMANA 08 · ETAPA 2 · STRATEGYQUANT X</p><h1>Reversión, volatilidad, estacionalidad, acción del precio e híbridas</h1><p class="meta">12 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="8" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w8-done-presentacion"></span>Presentación</a><a class="tab" href="#s08-l1" data-tab="s08-l1" title="Mean reversion"><span class="dot" data-dot="w8-done-s08-l1"></span>L1</a><a class="tab" href="#s08-l2" data-tab="s08-l2" title="Estrategias de volatilidad"><span class="dot" data-dot="w8-done-s08-l2"></span>L2</a><a class="tab" href="#s08-l3" data-tab="s08-l3" title="Estacionalidad horaria y de calendario"><span class="dot" data-dot="w8-done-s08-l3"></span>L3</a><a class="tab" href="#s08-l4" data-tab="s08-l4" title="Price action y patrones de velas"><span class="dot" data-dot="w8-done-s08-l4"></span>L4</a><a class="tab" href="#s08-l5" data-tab="s08-l5" title="Híbridas: cuándo combinar lógicas aporta y cuándo sobreajusta"><span class="dot" data-dot="w8-done-s08-l5"></span>L5</a><a class="tab" href="#s08-l6" data-tab="s08-l6" title="AlgoWizard: construir una idea propia sin programar"><span class="dot" data-dot="w8-done-s08-l6"></span>L6</a><a class="tab" href="#s08-l7" data-tab="s08-l7" title="Taller: una estrategia propia de cada familia elegida"><span class="dot" data-dot="w8-done-s08-l7"></span>L7</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w8-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w8-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-08-y-entrega-practica" data-tab="investigacion-i-08-y-entrega-practica" title="Investigación I-08 y entrega práctica"><span class="dot" data-dot="w8-done-investigacion-i-08-y-entrega-practica"></span>Investigación I-08 y entrega práctica</a><a class="tab" href="#examen-8" data-tab="examen-8" title="Examen de la semana 8 · Variante A"><span class="dot" data-dot="w8-done-examen-8"></span>Examen  8</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 08 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s08-l1"><span class="dot" data-dot="w8-done-s08-l1"></span><span class="tk">Lección L1</span><b>Mean reversion</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l2"><span class="dot" data-dot="w8-done-s08-l2"></span><span class="tk">Lección L2</span><b>Estrategias de volatilidad</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l3"><span class="dot" data-dot="w8-done-s08-l3"></span><span class="tk">Lección L3</span><b>Estacionalidad horaria y de calendario</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l4"><span class="dot" data-dot="w8-done-s08-l4"></span><span class="tk">Lección L4</span><b>Price action y patrones de velas</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l5"><span class="dot" data-dot="w8-done-s08-l5"></span><span class="tk">Lección L5</span><b>Híbridas: cuándo combinar lógicas aporta y cuándo sobreajusta</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l6"><span class="dot" data-dot="w8-done-s08-l6"></span><span class="tk">Lección L6</span><b>AlgoWizard: construir una idea propia sin programar</b><span class="tm">→</span></a><a class="toc-i" href="#s08-l7"><span class="dot" data-dot="w8-done-s08-l7"></span><span class="tk">Lección L7</span><b>Taller: una estrategia propia de cada familia elegida</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w8-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w8-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-08-y-entrega-practica"><span class="dot" data-dot="w8-done-investigacion-i-08-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-08 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-8"><span class="dot" data-dot="w8-done-examen-8"></span><span class="tk">Evaluación</span><b>Examen de la semana 8 · Variante A</b><span class="tm">→</span></a></nav><p>La semana pasada estudiaste estrategias que apuestan a que el movimiento continúa. Esta semana estudiarás las que apuestan a lo contrario —la <strong>reversión a la media</strong>— y otras tres fuentes de ideas: la <strong>volatilidad</strong>, la <strong>estacionalidad</strong> y la <strong>acción del precio</strong>. Después verás cuándo tiene sentido combinarlas en <strong>estrategias híbridas</strong> y cuándo solo añade sobreajuste. Por último, aprenderás a construir una idea propia, regla a regla, con <strong>AlgoWizard</strong>. Cerrarás la etapa 2 con una estrategia propia de cada familia que elijas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar la lógica de la reversión a la media, sus indicadores y sus riesgos.</li>
+<li>Diseñar estrategias basadas en cambios de volatilidad.</li>
+<li>Investigar la estacionalidad horaria y de calendario sin caer en la minería de datos.</li>
+<li>Traducir patrones de velas a reglas exactas.</li>
+<li>Decidir cuándo combinar lógicas aporta y cuándo sobreajusta.</li>
+<li>Construir una estrategia propia en AlgoWizard sin programar.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>AlgoWizard, proyectos por familia y ejercicios</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-08, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno, repaso de la etapa 2 y plan de la semana 9</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX con tus datos de EUR/USD. AlgoWizard está incluido en todas las ediciones.</li>
+<li>Los tres proyectos de la semana 7.</li>
+<li>Tu plantilla de métricas.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> AlgoWizard se rediseñó en builds posteriores a la 140 (en la 143). Las capturas y los pasos de esta semana describen la lógica común; si tu versión tiene otra apariencia, sigue la misma secuencia y anota las diferencias.</p></aside>
+<h4>Criterio para desbloquear la semana 9</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 8</li>
+<li>☐ Entrega práctica: una estrategia propia por familia elegida, construida en AlgoWizard y probada</li>
+<li>☐ Investigación I-08: pasos 1 a 5, 7 y 8 documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w8-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s08-l1" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L1</span><h2>Mean reversion</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La lógica</h4>
+<p>La <strong>reversión a la media</strong> (<em>mean reversion</em>) apuesta a que, tras un movimiento exagerado, el precio tiende a volver hacia un valor «normal». Es lo contrario del momentum: compra lo que ha caído mucho y vende lo que ha subido mucho. Funciona en mercados o periodos laterales y, en general, en horizontes cortos.</p>
+<h4>Herramientas habituales</h4>
+<ul>
+<li><strong>Bandas de Bollinger:</strong> comprar al tocar la banda inferior (2 desviaciones estándar por debajo de la media) y salir en la media.</li>
+<li><strong>RSI en extremos:</strong> comprar con RSI(2) o RSI(14) muy bajo; vender muy alto.</li>
+<li><strong>Distancia a una media:</strong> comprar si el precio está más de N ATR por debajo de su media de 20 periodos.</li>
+<li><strong>Órdenes límite:</strong> entrar a un precio mejor, esperando que el precio venga a ti.</li>
+</ul>
+<figure class="fig"><a href="img/s08-reversion.svg" target="_blank" rel="noopener"><img src="img/s08-reversion.svg" alt="Figura 8.1 · Reversión a la media con Bandas de Bollinger: compra en la banda inferior y salida en la media. Datos simulados." loading="lazy"></a><figcaption>Figura 8.1 · Reversión a la media con Bandas de Bollinger: compra en la banda inferior y salida en la media. Datos simulados.</figcaption></figure>
+<h4>Su perfil</h4>
+<p>Es el espejo del seguimiento de tendencia:</p>
+<ul>
+<li>Tasa de acierto alta (a menudo del 60 % al 75 %) y ratio bajo.</li>
+<li><strong>Asimetría negativa:</strong> muchas ganancias pequeñas y, de vez en cuando, una pérdida grande cuando el mercado no vuelve y empieza una tendencia.</li>
+<li>Curvas muy suaves… hasta que dejan de serlo.</li>
+</ul>
+<aside class="callout warn"><p><strong>Error típico.</strong> Quitar el stop loss a una estrategia de reversión porque «siempre acaba volviendo». Mejora el backtest y garantiza el desastre: un día el precio no vuelve.</p></aside>
+<h4>Dónde funciona mejor</h4>
+<ul>
+<li>En <strong>índices de acciones</strong> a corto plazo, la reversión a la media ha sido una de las ideas más estudiadas.</li>
+<li>En <strong>pares de divisas</strong> que pasan mucho tiempo en rangos, como algunos cruces, en las horas tranquilas.</li>
+<li>Siempre con un <strong>filtro de régimen</strong>: evitar operar contra una tendencia fuerte (por ejemplo, solo comprar caídas si el precio está por encima de la media de 200 periodos).</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué la reversión a la media tiene asimetría negativa?</li>
+<li>Escribe una regla de reversión con RSI y un filtro de régimen.</li>
+<li>¿Por qué no se debe quitar el stop loss a una estrategia de reversión?</li>
+</ol><div class="answer"><label for="w8-s08-l1">Tus respuestas</label><textarea id="w8-s08-l1" data-store="w8-s08-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l1"> He terminado esta sección</label></section><section class="pane" id="s08-l2" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L2</span><h2>Estrategias de volatilidad</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>La volatilidad tiene memoria</h4>
+<p>La volatilidad no es constante: se agrupa. A los días tranquilos les siguen días tranquilos, y a los movimientos grandes, movimientos grandes. Además, tiende a <strong>alternar</strong> entre compresión y expansión. Las estrategias de volatilidad aprovechan estos ciclos.</p>
+<figure class="fig"><a href="img/s08-volatilidad.svg" target="_blank" rel="noopener"><img src="img/s08-volatilidad.svg" alt="Figura 8.2 · Ciclos de compresión y expansión de la volatilidad, medidos con el ATR. Datos simulados." loading="lazy"></a><figcaption>Figura 8.2 · Ciclos de compresión y expansión de la volatilidad, medidos con el ATR. Datos simulados.</figcaption></figure>
+<h4>Ideas habituales</h4>
+<ul>
+<li><strong>Compresión y expansión:</strong> si el ATR o el ancho de las Bandas de Bollinger están en su mínimo de N velas, preparar una ruptura (enlaza con la semana 7).</li>
+<li><strong>Filtro de volatilidad:</strong> no operar si la volatilidad es demasiado baja (los costes pesan más) o demasiado alta (los stops se disparan).</li>
+<li><strong>Stops y objetivos proporcionales:</strong> usar múltiplos del ATR para que la estrategia se adapte sola.</li>
+<li><strong>Tamaño según volatilidad:</strong> arriesgar lo mismo en dinero con stops más amplios en mercados agitados (lo aplicarás en las carteras).</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> La volatilidad es más predecible que la dirección. Muchas estrategias robustas no adivinan hacia dónde irá el precio, sino <strong>cuánto</strong> se moverá.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué significa que la volatilidad «se agrupa»?</li>
+<li>Escribe un filtro de volatilidad para una estrategia de H1.</li>
+<li>¿Qué ventaja tiene usar stops en múltiplos del ATR?</li>
+</ol><div class="answer"><label for="w8-s08-l2">Tus respuestas</label><textarea id="w8-s08-l2" data-store="w8-s08-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l2"> He terminado esta sección</label></section><section class="pane" id="s08-l3" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L3</span><h2>Estacionalidad horaria y de calendario</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Qué es</h4>
+<p>La <strong>estacionalidad</strong> es la tendencia de un mercado a comportarse de forma parecida en ciertos momentos: horas del día, días de la semana, días del mes o meses del año. Algunas tienen causas claras:</p>
+<ul>
+<li><strong>Horaria:</strong> la apertura de Londres y el solape con Nueva York concentran el volumen en Forex (semana 1).</li>
+<li><strong>De calendario:</strong> los flujos de fin de mes de fondos y empresas, la publicación de datos a hora fija o los vencimientos de futuros.</li>
+</ul>
+<figure class="fig"><a href="img/s08-estacionalidad.svg" target="_blank" rel="noopener"><img src="img/s08-estacionalidad.svg" alt="Figura 8.3 · Movimiento medio de EUR/USD por hora del servidor (GMT+2). Patrón ilustrativo con datos simulados; en la investigación calcularás el real." loading="lazy"></a><figcaption>Figura 8.3 · Movimiento medio de EUR/USD por hora del servidor (GMT+2). Patrón ilustrativo con datos simulados; en la investigación calcularás el real.</figcaption></figure>
+<h4>El peligro: la minería de datos</h4>
+<p>Si pruebas 24 horas × 5 días × 12 meses, encontrarás combinaciones que «funcionan» por casualidad. Es el mismo sesgo de selección de la semana 4. Para que una estacionalidad merezca confianza:</p>
+<ol>
+<li><strong>Debe tener una explicación</strong> que puedas escribir antes de mirar los datos.</li>
+<li><strong>Debe repetirse</strong> en distintos periodos y, si es posible, en mercados parecidos.</li>
+<li><strong>Debe sobrevivir a los costes.</strong></li>
+</ol>
+<aside class="callout warn"><p><strong>Atención.</strong> Recuerda alinear la zona horaria y el horario de verano. Un patrón «a las 15:00» que se desplaza una hora la mitad del año no es un patrón: es un error de datos.</p></aside>
+<h4>En SQX</h4>
+<p>La estacionalidad se usa sobre todo como <strong>filtro</strong>: limitar las horas de operación en las opciones de trading o añadir condiciones de hora y día de la semana a los bloques. Úsala con moderación: cada filtro horario es un parámetro más.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Pon un ejemplo de estacionalidad horaria con una explicación económica.</li>
+<li>¿Qué tres condiciones debe cumplir una estacionalidad para ser fiable?</li>
+<li>¿Por qué el horario de verano puede crear patrones falsos?</li>
+</ol><div class="answer"><label for="w8-s08-l3">Tus respuestas</label><textarea id="w8-s08-l3" data-store="w8-s08-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l3"> He terminado esta sección</label></section><section class="pane" id="s08-l4" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L4</span><h2>Price action y patrones de velas</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>De la intuición a la regla</h4>
+<p>La <strong>acción del precio</strong> (<em>price action</em>) analiza las velas sin indicadores. Muchos de sus patrones se describen de forma vaga («una vela de rechazo fuerte»). Para un algoritmo, hay que convertirlos en <strong>reglas exactas</strong>.</p>
+<figure class="fig"><a href="img/s08-patrones.svg" target="_blank" rel="noopener"><img src="img/s08-patrones.svg" alt="Figura 8.4 · Tres patrones de velas y su definición exacta." loading="lazy"></a><figcaption>Figura 8.4 · Tres patrones de velas y su definición exacta.</figcaption></figure>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Patrón</th>
+<th>Definición exacta (compra)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Vela interior (<em>inside bar</em>)</td>
+<td>Máximo de la vela 1 &lt; máximo de la vela 2 y mínimo de la vela 1 &gt; mínimo de la vela 2 (la 1 es la más reciente)</td>
+</tr>
+<tr>
+<td>Envolvente alcista (<em>bullish engulfing</em>)</td>
+<td>Vela 2 bajista; vela 1 alcista con apertura ≤ cierre de la 2 y cierre ≥ apertura de la 2</td>
+</tr>
+<tr>
+<td>Martillo (<em>pin bar</em>)</td>
+<td>Mecha inferior ≥ 2 veces el cuerpo y cierre en el tercio superior del rango</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo usarlos</h4>
+<p>Por sí solos, los patrones de velas rara vez tienen ventaja después de costes. Suelen funcionar mejor como <strong>disparador</strong> dentro de un contexto: una vela interior en dirección de la tendencia, un martillo en la banda inferior de Bollinger, etc. SQX incluye bloques de patrones y de comparaciones de velas que permiten construirlos.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Escribe la definición exacta de una envolvente bajista.</li>
+<li>¿Por qué un patrón de velas suele necesitar contexto?</li>
+<li>Define con números una «vela de rango grande».</li>
+</ol><div class="answer"><label for="w8-s08-l4">Tus respuestas</label><textarea id="w8-s08-l4" data-store="w8-s08-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l4"> He terminado esta sección</label></section><section class="pane" id="s08-l5" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L5</span><h2>Híbridas: cuándo combinar lógicas aporta y cuándo sobreajusta</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Qué es una híbrida</h4>
+<p>Una <strong>estrategia híbrida</strong> combina lógicas de familias distintas: una tendencia como filtro y una reversión como entrada, o una ruptura con un filtro estacional. Bien hecha, cada pieza tiene una función clara. Mal hecha, es una acumulación de condiciones que encaja con el pasado.</p>
+<h4>Cuándo aporta</h4>
+<ul>
+<li>Cuando <strong>cada parte tiene una razón</strong> que puedes explicar: «solo compro caídas (reversión) dentro de una tendencia alcista (filtro de tendencia)».</li>
+<li>Cuando cada condición <strong>mejora el resultado fuera de muestra</strong>, no solo dentro.</li>
+<li>Cuando el número total de parámetros sigue siendo pequeño.</li>
+</ul>
+<h4>Cuándo sobreajusta</h4>
+<ul>
+<li>Cuando las condiciones se añaden «porque mejoran el backtest».</li>
+<li>Cuando hay más de 4 o 5 condiciones de entrada.</li>
+<li>Cuando quitar cualquier condición destruye la estrategia: eso indica que el resultado depende de una combinación demasiado precisa.</li>
+</ul>
+<figure class="fig"><a href="img/s08-complejidad.svg" target="_blank" rel="noopener"><img src="img/s08-complejidad.svg" alt="Figura 8.5 · Al añadir condiciones, el resultado dentro de muestra mejora siempre; fuera de muestra, mejora un poco y luego empeora. Curva ilustrativa." loading="lazy"></a><figcaption>Figura 8.5 · Al añadir condiciones, el resultado dentro de muestra mejora siempre; fuera de muestra, mejora un poco y luego empeora. Curva ilustrativa.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Prueba de simplicidad: quita una a una las condiciones y mira qué pasa fuera de muestra. Si una condición no empeora el OOS al quitarla, sobra.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Pon un ejemplo de híbrida con sentido y explica la función de cada parte.</li>
+<li>¿Qué indica que quitar cualquier condición destruya la estrategia?</li>
+<li>¿Cómo comprobarías si una condición sobra?</li>
+</ol><div class="answer"><label for="w8-s08-l5">Tus respuestas</label><textarea id="w8-s08-l5" data-store="w8-s08-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l5"> He terminado esta sección</label></section><section class="pane" id="s08-l6" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L6</span><h2>AlgoWizard: construir una idea propia sin programar</h2></header><div class="read"><p><em>Formato: taller de 40 minutos · Práctica: 2 horas</em></p>
+<h4>Para qué sirve</h4>
+<p><strong>AlgoWizard</strong> es el editor de estrategias de SQX: en lugar de que el Builder genere reglas al azar, las defines tú, regla a regla, con menús y bloques. Sirve para:</p>
+<ul>
+<li>Probar <strong>tus propias hipótesis</strong> con una regla concreta.</li>
+<li>Reconstruir una estrategia que conoces (de un libro o un artículo) y comprobarla con tus datos y costes.</li>
+<li>Crear una <strong>plantilla</strong> cuya parte variable completará después el Builder.</li>
+</ul>
+<figure class="fig"><a href="img/s08-algowizard.svg" target="_blank" rel="noopener"><img src="img/s08-algowizard.svg" alt="Figura 8.6 · El flujo de trabajo con AlgoWizard: de la hipótesis escrita a la estrategia probada." loading="lazy"></a><figcaption>Figura 8.6 · El flujo de trabajo con AlgoWizard: de la hipótesis escrita a la estrategia probada.</figcaption></figure>
+<h4>El flujo de trabajo</h4>
+<ol>
+<li><strong>Escribe la regla en tu cuaderno</strong>, en lenguaje normal, antes de abrir el programa.</li>
+<li><strong>Crea una estrategia nueva</strong> en AlgoWizard y define: las condiciones de entrada en largo y en corto, el tipo de orden, el stop loss, el take profit u otras salidas, y las opciones de trading.</li>
+<li><strong>Comprueba el pseudocódigo</strong> que muestra el programa: debe decir exactamente lo que escribiste.</li>
+<li><strong>Haz el backtest</strong> con tus datos, costes y periodos IS y OOS.</li>
+<li><strong>Guarda</strong> la estrategia y envíala al Retester si quieres hacer más pruebas.</li>
+</ol>
+<aside class="callout tip"><p><strong>Consejo.</strong> Construye primero la versión más simple posible de tu idea, sin filtros. Añade filtros uno a uno, anotando el efecto de cada uno en IS y en OOS.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿En qué se diferencia AlgoWizard del Builder?</li>
+<li>¿Por qué se escribe la regla antes de abrir el programa?</li>
+<li>¿Para qué sirve revisar el pseudocódigo?</li>
+</ol><div class="answer"><label for="w8-s08-l6">Tus respuestas</label><textarea id="w8-s08-l6" data-store="w8-s08-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l6"> He terminado esta sección</label></section><section class="pane" id="s08-l7" hidden><header class="pane-head"><span class="kicker">Semana 08 · Lección L7</span><h2>Taller: una estrategia propia de cada familia elegida</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 6–8 horas</em></p>
+<p>Elige <strong>dos familias</strong> de las vistas en las semanas 7 y 8 (por ejemplo, ruptura y reversión) y construye en AlgoWizard una estrategia propia de cada una.</p>
+<h4>Paso 1 · Escribe las hipótesis</h4>
+<p>Para cada familia, escribe en tu cuaderno: la idea, por qué crees que podría funcionar en EUR/USD, la regla exacta y lo que esperas (tasa de acierto aproximada, ratio, número de operaciones al año).</p>
+<h4>Paso 2 · Construye la versión base</h4>
+<p>Crea cada estrategia en AlgoWizard con la regla mínima: entrada, stop y salida. Sin filtros.</p>
+<h4>Paso 3 · Prueba con la configuración común</h4>
+<p>Datos, costes, zona horaria, periodos IS y OOS y tamaño fijo, iguales que en la semana 7.</p>
+<h4>Paso 4 · Añade como máximo dos filtros</h4>
+<p>Añade los filtros uno a uno y anota el efecto en IS y en OOS. Quédate solo con los que mejoren ambos.</p>
+<h4>Paso 5 · Compara con el Builder</h4>
+<p>Compara tus estrategias con las mejores del Builder de la misma familia (semana 7): ¿son más simples? ¿Se comportan mejor o peor fuera de muestra?</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Se parecieron los resultados a lo que esperabas en el paso 1?</li>
+<li>¿Qué filtro aportó más fuera de muestra?</li>
+<li>¿Qué estrategia, tuya o del Builder, te parece más fiable y por qué?</li>
+</ol><div class="answer"><label for="w8-s08-l7">Tus respuestas</label><textarea id="w8-s08-l7" data-store="w8-s08-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-s08-l7"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 08 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlgoWizard</td>
+<td>AlgoWizard</td>
+<td>Editor de SQX para construir estrategias regla a regla</td>
+</tr>
+<tr>
+<td>Bandas de Bollinger</td>
+<td>Bollinger Bands</td>
+<td>Media móvil con bandas a N desviaciones estándar</td>
+</tr>
+<tr>
+<td>Compresión de volatilidad</td>
+<td>Volatility squeeze</td>
+<td>Periodo de volatilidad inusualmente baja</td>
+</tr>
+<tr>
+<td>Envolvente</td>
+<td>Engulfing</td>
+<td>Vela cuyo cuerpo envuelve el de la anterior</td>
+</tr>
+<tr>
+<td>Estacionalidad</td>
+<td>Seasonality</td>
+<td>Comportamiento repetido en ciertas horas, días o meses</td>
+</tr>
+<tr>
+<td>Estrategia híbrida</td>
+<td>Hybrid strategy</td>
+<td>Estrategia que combina lógicas de familias distintas</td>
+</tr>
+<tr>
+<td>Filtro de régimen</td>
+<td>Regime filter</td>
+<td>Condición que indica si el mercado está en tendencia o en rango</td>
+</tr>
+<tr>
+<td>Martillo</td>
+<td>Pin bar / hammer</td>
+<td>Vela con una mecha larga y un cuerpo pequeño en el otro extremo</td>
+</tr>
+<tr>
+<td>Minería de datos</td>
+<td>Data mining</td>
+<td>Búsqueda masiva de patrones que produce falsos hallazgos</td>
+</tr>
+<tr>
+<td>Price action</td>
+<td>Price action</td>
+<td>Análisis del precio y las velas sin indicadores</td>
+</tr>
+<tr>
+<td>Pseudocódigo</td>
+<td>Pseudocode</td>
+<td>Descripción legible de las reglas de una estrategia</td>
+</tr>
+<tr>
+<td>Reversión a la media</td>
+<td>Mean reversion</td>
+<td>Tendencia del precio a volver hacia un valor medio</td>
+</tr>
+<tr>
+<td>Vela interior</td>
+<td>Inside bar</td>
+<td>Vela cuyo rango queda dentro del de la anterior</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w8-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 08 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Reversión.</strong> Diseña una estrategia completa de reversión con Bandas de Bollinger para EUR/USD H1, con filtro de régimen, stop y salida.</p>
+<p><strong>E2 · Perfil.</strong> Una estrategia de reversión acierta el 70 % con una ganancia media de 0,5 R y una pérdida media de 1 R. Calcula su esperanza en R y su tasa de acierto de equilibrio. ¿Cuánto margen tiene?</p>
+<p><strong>E3 · Asimetría.</strong> Explica con un ejemplo numérico por qué una sola pérdida de 10 R puede borrar los beneficios de 20 operaciones de una estrategia de reversión.</p>
+<p><strong>E4 · Volatilidad.</strong> Escribe una regla que detecte compresión de volatilidad con el ATR y prepare una ruptura.</p>
+<p><strong>E5 · Estacionalidad.</strong> Propón dos hipótesis de estacionalidad para EUR/USD con su explicación económica, antes de mirar ningún dato.</p>
+<p><strong>E6 · Minería de datos.</strong> Si pruebas las 24 horas del día por separado y aceptas una hora como «buena» si su resultado tiene t &gt; 2, ¿cuántas horas esperas encontrar por azar aunque no haya ningún efecto real?</p>
+<p><strong>E7 · Patrones.</strong> Escribe la definición exacta de una vela bajista de rango grande y de un martillo invertido.</p>
+<p><strong>E8 · Híbrida.</strong> Analiza esta estrategia: «Comprar si RSI(3) &lt; 10, el precio está por encima de la SMA(200), es martes o jueves, la hora está entre 10:00 y 14:00, el ATR(14) está por encima de su media de 50 y la vela anterior es interior». ¿Qué condiciones mantendrías y cuáles quitarías primero? Justifícalo.</p>
+<p><strong>E9 · AlgoWizard.</strong> Escribe el pseudocódigo esperado de tu estrategia de reversión del E1, tal como debería aparecer en SQX.</p>
+<p><strong>E10 · Repaso de la etapa 2.</strong> Haz una tabla con las cinco familias vistas (tendencia, ruptura, momentum, reversión y volatilidad): perfil de acierto y ratio, asimetría, temporalidad habitual, mayor riesgo y tipo de orden más común.</p><div class="answer"><label for="w8-ejercicios-obligatorios">Tus respuestas</label><textarea id="w8-ejercicios-obligatorios" data-store="w8-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-08-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 08 · Sección</span><h2>Investigación I-08 y entrega práctica</h2></header><div class="read"><h3>Investigación I-08 · ¿Aporta un filtro de régimen a la reversión?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Añadir un filtro de tendencia (solo comprar por encima de la SMA(200) y vender por debajo) a una estrategia de reversión en EUR/USD H1 reduce el drawdown máximo fuera de muestra sin reducir el profit factor».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente sobre reversión a la media o filtros de régimen.</p>
+<p><strong>Paso 3 · Datos.</strong> Los de la etapa.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Define: la estrategia base exacta, el filtro exacto, las métricas que compararás (profit factor, drawdown, operaciones) y en qué periodos. Fija el criterio de éxito antes de probar.</p>
+<p><strong>Paso 5 · Generación.</strong> Construye en AlgoWizard la versión con y sin filtro. Si quieres, prueba también algunas variantes de parámetros, pero anótalas todas.</p>
+<p><strong>Paso 7 · Comparación.</strong> Tabla con ambas versiones en IS y OOS, y las curvas de capital superpuestas.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma? ¿Cuántas variantes probaste? ¿Cómo afecta eso a la confianza en el resultado?</p>
+<h3>Entrega práctica · Estrategias propias</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S08_ENT</code></td>
+<td>Para cada una de tus dos estrategias: hipótesis, regla en lenguaje normal, pseudocódigo de SQX, métricas IS y OOS, efecto de cada filtro y comparación con el Builder</td>
+</tr>
+<tr>
+<td><code>CODIGO_S08_SQX</code></td>
+<td>Las dos estrategias guardadas desde SQX</td>
+</tr>
+<tr>
+<td><code>CODIGO_S08_INV</code></td>
+<td>Hoja de la investigación I-08</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que la hipótesis esté escrita antes de construir, que el pseudocódigo coincida con la regla, que los filtros se hayan añadido uno a uno con su efecto documentado y que la conclusión sea honesta. Esta entrega cierra la etapa 2.</p><div class="answer"><label for="w8-investigacion-i-08-y-entrega-practica">Tus respuestas</label><textarea id="w8-investigacion-i-08-y-entrega-practica" data-store="w8-investigacion-i-08-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-investigacion-i-08-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-8" hidden><header class="pane-head"><span class="kicker">Semana 08 · Evaluación</span><h2>Examen de la semana 8 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> La reversión a la media apuesta a que…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q1" value="a" data-store="w8-exam-q1"><span><b>a)</b> el movimiento continúa</span></label><label class="opt"><input type="radio" name="w8q1" value="b" data-store="w8-exam-q1"><span><b>b)</b> tras un movimiento exagerado, el precio vuelve hacia un valor normal</span></label><label class="opt"><input type="radio" name="w8q1" value="c" data-store="w8-exam-q1"><span><b>c)</b> la volatilidad sube siempre</span></label><label class="opt"><input type="radio" name="w8q1" value="d" data-store="w8-exam-q1"><span><b>d)</b> los costes bajan</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> El perfil típico de la reversión es…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q2" value="a" data-store="w8-exam-q2"><span><b>a)</b> acierto alto, ratio bajo y asimetría negativa</span></label><label class="opt"><input type="radio" name="w8q2" value="b" data-store="w8-exam-q2"><span><b>b)</b> acierto bajo y ratio alto</span></label><label class="opt"><input type="radio" name="w8q2" value="c" data-store="w8-exam-q2"><span><b>c)</b> acierto del 50 %</span></label><label class="opt"><input type="radio" name="w8q2" value="d" data-store="w8-exam-q2"><span><b>d)</b> asimetría positiva</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Quitar el stop loss a una estrategia de reversión…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q3" value="a" data-store="w8-exam-q3"><span><b>a)</b> la hace más segura</span></label><label class="opt"><input type="radio" name="w8q3" value="b" data-store="w8-exam-q3"><span><b>b)</b> reduce los costes</span></label><label class="opt"><input type="radio" name="w8q3" value="c" data-store="w8-exam-q3"><span><b>c)</b> mejora el backtest y expone a una pérdida catastrófica</span></label><label class="opt"><input type="radio" name="w8q3" value="d" data-store="w8-exam-q3"><span><b>d)</b> no cambia nada</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un filtro de régimen sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q4" value="a" data-store="w8-exam-q4"><span><b>a)</b> elegir el broker</span></label><label class="opt"><input type="radio" name="w8q4" value="b" data-store="w8-exam-q4"><span><b>b)</b> calcular el spread</span></label><label class="opt"><input type="radio" name="w8q4" value="c" data-store="w8-exam-q4"><span><b>c)</b> cambiar la temporalidad</span></label><label class="opt"><input type="radio" name="w8q4" value="d" data-store="w8-exam-q4"><span><b>d)</b> evitar operar contra una tendencia fuerte</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Que la volatilidad «se agrupe» significa que…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q5" value="a" data-store="w8-exam-q5"><span><b>a)</b> a periodos agitados les suelen seguir periodos agitados</span></label><label class="opt"><input type="radio" name="w8q5" value="b" data-store="w8-exam-q5"><span><b>b)</b> siempre es constante</span></label><label class="opt"><input type="radio" name="w8q5" value="c" data-store="w8-exam-q5"><span><b>c)</b> solo existe en cripto</span></label><label class="opt"><input type="radio" name="w8q5" value="d" data-store="w8-exam-q5"><span><b>d)</b> depende del broker</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Una compresión de volatilidad suele preceder a…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q6" value="a" data-store="w8-exam-q6"><span><b>a)</b> un mercado cerrado</span></label><label class="opt"><input type="radio" name="w8q6" value="b" data-store="w8-exam-q6"><span><b>b)</b> una expansión del movimiento</span></label><label class="opt"><input type="radio" name="w8q6" value="c" data-store="w8-exam-q6"><span><b>c)</b> un dividendo</span></label><label class="opt"><input type="radio" name="w8q6" value="d" data-store="w8-exam-q6"><span><b>d)</b> una bajada del spread</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Una estacionalidad fiable debe…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q7" value="a" data-store="w8-exam-q7"><span><b>a)</b> tener explicación, repetirse y sobrevivir a los costes</span></label><label class="opt"><input type="radio" name="w8q7" value="b" data-store="w8-exam-q7"><span><b>b)</b> aparecer en un solo año</span></label><label class="opt"><input type="radio" name="w8q7" value="c" data-store="w8-exam-q7"><span><b>c)</b> encontrarse probando todas las horas</span></label><label class="opt"><input type="radio" name="w8q7" value="d" data-store="w8-exam-q7"><span><b>d)</b> depender del horario de verano</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Si pruebas 100 combinaciones sin efecto real con el criterio t &gt; 2, esperas encontrar por azar unas…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q8" value="a" data-store="w8-exam-q8"><span><b>a)</b> 0</span></label><label class="opt"><input type="radio" name="w8q8" value="b" data-store="w8-exam-q8"><span><b>b)</b> 50</span></label><label class="opt"><input type="radio" name="w8q8" value="c" data-store="w8-exam-q8"><span><b>c)</b> 5</span></label><label class="opt"><input type="radio" name="w8q8" value="d" data-store="w8-exam-q8"><span><b>d)</b> 100</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Una vela interior es aquella cuyo…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q9" value="a" data-store="w8-exam-q9"><span><b>a)</b> cuerpo es muy grande</span></label><label class="opt"><input type="radio" name="w8q9" value="b" data-store="w8-exam-q9"><span><b>b)</b> cierre es igual a la apertura</span></label><label class="opt"><input type="radio" name="w8q9" value="c" data-store="w8-exam-q9"><span><b>c)</b> mínimo es el más bajo de 20 velas</span></label><label class="opt"><input type="radio" name="w8q9" value="d" data-store="w8-exam-q9"><span><b>d)</b> rango queda dentro del de la vela anterior</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Los patrones de velas suelen funcionar mejor…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q10" value="a" data-store="w8-exam-q10"><span><b>a)</b> solos, sin contexto</span></label><label class="opt"><input type="radio" name="w8q10" value="b" data-store="w8-exam-q10"><span><b>b)</b> como disparador dentro de un contexto</span></label><label class="opt"><input type="radio" name="w8q10" value="c" data-store="w8-exam-q10"><span><b>c)</b> en M1</span></label><label class="opt"><input type="radio" name="w8q10" value="d" data-store="w8-exam-q10"><span><b>d)</b> sin stop loss</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Una señal de que una híbrida está sobreajustada es que…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q11" value="a" data-store="w8-exam-q11"><span><b>a)</b> quitar cualquier condición la destruye</span></label><label class="opt"><input type="radio" name="w8q11" value="b" data-store="w8-exam-q11"><span><b>b)</b> tiene dos condiciones</span></label><label class="opt"><input type="radio" name="w8q11" value="c" data-store="w8-exam-q11"><span><b>c)</b> funciona fuera de muestra</span></label><label class="opt"><input type="radio" name="w8q11" value="d" data-store="w8-exam-q11"><span><b>d)</b> cada parte tiene una explicación</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Al añadir condiciones a una estrategia, el resultado dentro de muestra…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q12" value="a" data-store="w8-exam-q12"><span><b>a)</b> empeora siempre</span></label><label class="opt"><input type="radio" name="w8q12" value="b" data-store="w8-exam-q12"><span><b>b)</b> no cambia</span></label><label class="opt"><input type="radio" name="w8q12" value="c" data-store="w8-exam-q12"><span><b>c)</b> suele mejorar siempre</span></label><label class="opt"><input type="radio" name="w8q12" value="d" data-store="w8-exam-q12"><span><b>d)</b> es igual al de fuera de muestra</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> AlgoWizard sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q13" value="a" data-store="w8-exam-q13"><span><b>a)</b> descargar datos</span></label><label class="opt"><input type="radio" name="w8q13" value="b" data-store="w8-exam-q13"><span><b>b)</b> construir estrategias regla a regla sin programar</span></label><label class="opt"><input type="radio" name="w8q13" value="c" data-store="w8-exam-q13"><span><b>c)</b> operar en real</span></label><label class="opt"><input type="radio" name="w8q13" value="d" data-store="w8-exam-q13"><span><b>d)</b> calcular impuestos</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Antes de abrir AlgoWizard, debes…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q14" value="a" data-store="w8-exam-q14"><span><b>a)</b> escribir la regla en tu cuaderno</span></label><label class="opt"><input type="radio" name="w8q14" value="b" data-store="w8-exam-q14"><span><b>b)</b> generar 100.000 estrategias</span></label><label class="opt"><input type="radio" name="w8q14" value="c" data-store="w8-exam-q14"><span><b>c)</b> optimizar los parámetros</span></label><label class="opt"><input type="radio" name="w8q14" value="d" data-store="w8-exam-q14"><span><b>d)</b> mirar el resultado OOS</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Una estrategia acierta el 70 % con ganancia media de 0,4 R y pérdida media de 1 R. Su esperanza es…</legend><div class="opts"><label class="opt"><input type="radio" name="w8q15" value="a" data-store="w8-exam-q15"><span><b>a)</b> 0,28 R</span></label><label class="opt"><input type="radio" name="w8q15" value="b" data-store="w8-exam-q15"><span><b>b)</b> −0,02 R</span></label><label class="opt"><input type="radio" name="w8q15" value="c" data-store="w8-exam-q15"><span><b>c)</b> 0,02 R</span></label><label class="opt"><input type="radio" name="w8q15" value="d" data-store="w8-exam-q15"><span><b>d)</b> 0,7 R</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una estrategia de reversión acierta el 72 % con una ganancia media de 18 pips y una pérdida media de 40 pips. a) Calcula la esperanza en pips. b) Calcula la tasa de acierto de equilibrio. c) Recalcula la esperanza con un coste de 1,5 pips por operación.</p>
+<p><strong>B2.</strong> El ATR(14) en H1 de EUR/USD vale ahora 8 pips, y su media de los últimos 100 valores es 13 pips. a) ¿En qué porcentaje está el ATR por debajo de su media? b) Propón una regla de compresión con estos datos. c) Si la ruptura se opera con un stop de 2 ATR actuales, ¿cuántos pips son? ¿Qué problema tiene usar el ATR actual?</p>
+<p><strong>B3.</strong> En una prueba de estacionalidad, la hora 15:00 tiene 520 observaciones con un movimiento medio a favor de 1,8 pips y una desviación estándar de 22 pips. a) Calcula el estadístico t. b) ¿Es significativo? c) Si esta hora era una de 24 probadas, ¿cambia tu conclusión?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: compara una estrategia de reversión con una de tendencia en cuanto a perfil de resultados, riesgos y psicología. Explica por qué combinarlas en una cartera podría tener sentido.</p><div class="answer"><label for="w8-examen-8">Tus respuestas a las partes B y C</label><textarea id="w8-examen-8" data-store="w8-examen-8" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w8-done-examen-8"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
