@@ -1,0 +1,381 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 11 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="11">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-11.svg)"><img src="img/cover-11.svg" alt=""></div><p class="eyebrow">SEMANA 11 · ETAPA 3 · INVESTIGACIÓN Y VALIDACIÓN</p><h1>Fuera de muestra, Walk-Forward y Monte Carlo</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="11" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w11-done-presentacion"></span>Presentación</a><a class="tab" href="#s11-l1" data-tab="s11-l1" title="Walk-Forward y matriz Walk-Forward"><span class="dot" data-dot="w11-done-s11-l1"></span>L1</a><a class="tab" href="#s11-l2" data-tab="s11-l2" title="Monte Carlo de operaciones"><span class="dot" data-dot="w11-done-s11-l2"></span>L2</a><a class="tab" href="#s11-l3" data-tab="s11-l3" title="Monte Carlo con nuevos backtests"><span class="dot" data-dot="w11-done-s11-l3"></span>L3</a><a class="tab" href="#s11-l4" data-tab="s11-l4" title="Límites de cada prueba"><span class="dot" data-dot="w11-done-s11-l4"></span>L4</a><a class="tab" href="#s11-l5" data-tab="s11-l5" title="Taller: validación de tres candidatas"><span class="dot" data-dot="w11-done-s11-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w11-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w11-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-11-y-entrega-practica" data-tab="investigacion-i-11-y-entrega-practica" title="Investigación I-11 y entrega práctica"><span class="dot" data-dot="w11-done-investigacion-i-11-y-entrega-practica"></span>Investigación I-11 y entrega práctica</a><a class="tab" href="#examen-11" data-tab="examen-11" title="Examen de la semana 11 · Variante A"><span class="dot" data-dot="w11-done-examen-11"></span>Examen  11</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 11 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s11-l1"><span class="dot" data-dot="w11-done-s11-l1"></span><span class="tk">Lección L1</span><b>Walk-Forward y matriz Walk-Forward</b><span class="tm">→</span></a><a class="toc-i" href="#s11-l2"><span class="dot" data-dot="w11-done-s11-l2"></span><span class="tk">Lección L2</span><b>Monte Carlo de operaciones</b><span class="tm">→</span></a><a class="toc-i" href="#s11-l3"><span class="dot" data-dot="w11-done-s11-l3"></span><span class="tk">Lección L3</span><b>Monte Carlo con nuevos backtests</b><span class="tm">→</span></a><a class="toc-i" href="#s11-l4"><span class="dot" data-dot="w11-done-s11-l4"></span><span class="tk">Lección L4</span><b>Límites de cada prueba</b><span class="tm">→</span></a><a class="toc-i" href="#s11-l5"><span class="dot" data-dot="w11-done-s11-l5"></span><span class="tk">Lección L5</span><b>Taller: validación de tres candidatas</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w11-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w11-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-11-y-entrega-practica"><span class="dot" data-dot="w11-done-investigacion-i-11-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-11 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-11"><span class="dot" data-dot="w11-done-examen-11"></span><span class="tk">Evaluación</span><b>Examen de la semana 11 · Variante A</b><span class="tm">→</span></a></nav><p>Las candidatas que superaron tu hoja de evaluación tienen ahora que pasar dos pruebas mucho más duras. El <strong>Walk-Forward</strong> comprueba si el <strong>proceso</strong> de optimizar la estrategia funciona cuando se repite muchas veces sobre datos que no ha visto. El <strong>Monte Carlo</strong> comprueba qué habría pasado si la historia hubiera sido un poco distinta: otro orden de operaciones, otros costes, otros parámetros. Al final de la semana sabrás qué te dice cada prueba, qué <strong>no</strong> te dice y habrás validado tres candidatas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar y configurar un Walk-Forward y una matriz Walk-Forward.</li>
+<li>Interpretar la eficiencia Walk-Forward y la estabilidad de la matriz.</li>
+<li>Hacer un Monte Carlo de operaciones y leer sus percentiles.</li>
+<li>Hacer un Monte Carlo con nuevos backtests variando costes, parámetros y datos.</li>
+<li>Conocer los límites de cada prueba y combinarlas en un protocolo.</li>
+<li>Validar tres candidatas con un protocolo documentado.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Walk-Forward, matriz y Monte Carlo de tres candidatas</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-11, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 12</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX <strong>Professional</strong> o <strong>Ultimate</strong>: el Optimizer con Walk-Forward y las pruebas de robustez avanzadas no están en la edición Starter (semana 5). Si tienes la Starter, la lección 2 incluye cómo hacer un Monte Carlo de operaciones en la hoja de cálculo.</li>
+<li>Las candidatas que superaron tu hoja de evaluación en la semana 10. Si tienes menos de tres, usa las tres mejor clasificadas aunque no pasaran todo, y anótalo.</li>
+<li>Tu plantilla de métricas.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 12</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 11</li>
+<li>☐ Entrega práctica: informe de validación de tres candidatas</li>
+<li>☐ Investigación I-11: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w11-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s11-l1" hidden><header class="pane-head"><span class="kicker">Semana 11 · Lección L1</span><h2>Walk-Forward y matriz Walk-Forward</h2></header><div class="read"><p><em>Formato: clase de 45 minutos · Lectura: 40 minutos</em></p>
+<h4>La idea</h4>
+<p>En la semana 10 usaste un único periodo fuera de muestra. El <strong>Walk-Forward</strong> (WF) repite esa idea muchas veces seguidas, imitando lo que harías en real: optimizar la estrategia con los datos pasados, operarla un tiempo con esos parámetros, volver a optimizar con los datos más recientes, operar otro tiempo, y así sucesivamente.</p>
+<figure class="fig"><a href="img/s11-walkforward.svg" target="_blank" rel="noopener"><img src="img/s11-walkforward.svg" alt="Figura 11.1 · Walk-Forward con 5 ventanas: cada ventana optimiza en su parte IS y se prueba en la OOS siguiente. Los tramos OOS unidos forman la curva Walk-Forward." loading="lazy"></a><figcaption>Figura 11.1 · Walk-Forward con 5 ventanas: cada ventana optimiza en su parte IS y se prueba en la OOS siguiente. Los tramos OOS unidos forman la curva Walk-Forward.</figcaption></figure>
+<ol>
+<li>Se divide la historia en <strong>ventanas</strong>. Cada ventana tiene una parte de optimización (IS) y una parte de prueba (OOS) inmediatamente posterior.</li>
+<li>En cada ventana, el Optimizer busca los mejores parámetros en la parte IS.</li>
+<li>Con esos parámetros, la estrategia opera la parte OOS.</li>
+<li>La ventana avanza y se repite.</li>
+<li>Se unen todos los tramos OOS: esa <strong>curva Walk-Forward</strong> es una simulación mucho más realista de cómo se comportaría la estrategia si la reoptimizaras periódicamente.</li>
+</ol>
+<h4>Qué se valida</h4>
+<p>El Walk-Forward no valida unos parámetros concretos: valida <strong>el proceso</strong> de optimizar. Si al reoptimizar periódicamente la estrategia sigue ganando fuera de muestra, su lógica se adapta al mercado. Si solo gana con los parámetros del backtest original, era un ajuste a esos datos.</p>
+<h4>Eficiencia Walk-Forward</h4>
+<p>La <strong>eficiencia Walk-Forward</strong> (WFE) compara el rendimiento fuera de muestra con el que se obtuvo en la optimización, ambos anualizados:</p>
+<div class="math">$$\text{WFE} = \frac{\text{rentabilidad anualizada OOS}}{\text{rentabilidad anualizada IS}}$$</div>
+
+<p>Como orientación, una WFE por encima del 50–60 % se considera aceptable. Una WFE muy baja indica que gran parte del rendimiento IS era sobreajuste.</p>
+<h4>La matriz Walk-Forward</h4>
+<p>El resultado de un WF depende de dos elecciones: <strong>cuántas ventanas</strong> (<em>runs</em>) y <strong>qué porcentaje</strong> de cada ventana es OOS. Si cambiando estas elecciones el resultado se derrumba, la conclusión no es fiable. La <strong>matriz Walk-Forward</strong> repite el WF con muchas combinaciones (por ejemplo, de 5 a 15 ventanas y del 10 % al 30 % OOS) y muestra cuáles pasan tus criterios.</p>
+<figure class="fig"><a href="img/s11-matriz.svg" target="_blank" rel="noopener"><img src="img/s11-matriz.svg" alt="Figura 11.2 · Matriz Walk-Forward: cada celda es un WF completo. Una estrategia robusta pasa en una zona amplia y continua, no en celdas sueltas. Ejemplo ilustrativo." loading="lazy"></a><figcaption>Figura 11.2 · Matriz Walk-Forward: cada celda es un WF completo. Una estrategia robusta pasa en una zona amplia y continua, no en celdas sueltas. Ejemplo ilustrativo.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Busca <strong>zonas</strong> verdes amplias en la matriz, no la mejor celda. Elegir la mejor celda es volver a sobreoptimizar, ahora sobre la configuración del WF.</p></aside>
+<h4>Qué parámetros optimizar</h4>
+<p>En el Walk-Forward solo deben optimizarse unos pocos parámetros (2 o 3) con rangos razonables. Optimizar todos los parámetros con rangos amplios convierte el WF en otra máquina de sobreajuste.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué valida el Walk-Forward: unos parámetros o un proceso?</li>
+<li>Una estrategia tiene una rentabilidad anual IS del 18 % y OOS del 7 %. ¿Cuál es su WFE? ¿Es aceptable?</li>
+<li>¿Por qué no se debe elegir la mejor celda de la matriz?</li>
+</ol><div class="answer"><label for="w11-s11-l1">Tus respuestas</label><textarea id="w11-s11-l1" data-store="w11-s11-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-s11-l1"> He terminado esta sección</label></section><section class="pane" id="s11-l2" hidden><header class="pane-head"><span class="kicker">Semana 11 · Lección L2</span><h2>Monte Carlo de operaciones</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>La idea</h4>
+<p>Tu backtest es <strong>una</strong> secuencia de operaciones. Si la historia se hubiera desarrollado de otra forma, el orden de esas operaciones —y alguna de ellas— habría sido distinto. El <strong>Monte Carlo de operaciones</strong> genera miles de secuencias alternativas a partir de las operaciones del backtest y mide cómo se reparten los resultados.</p>
+<h4>Tres variantes</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Variante</th>
+<th>Qué hace</th>
+<th>Qué mide</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Reordenar (<em>shuffle</em>)</td>
+<td>Cambia el orden de las mismas operaciones</td>
+<td>El drawdown: el beneficio final no cambia</td>
+</tr>
+<tr>
+<td>Remuestrear (<em>resampling</em>)</td>
+<td>Elige operaciones al azar con reemplazo</td>
+<td>Drawdown y beneficio: algunas operaciones se repiten y otras faltan</td>
+</tr>
+<tr>
+<td>Saltar operaciones (<em>skip trades</em>)</td>
+<td>Elimina un porcentaje de operaciones al azar</td>
+<td>Dependencia de operaciones concretas (por ejemplo, si fallara la conexión)</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s11-montecarlo.svg" target="_blank" rel="noopener"><img src="img/s11-montecarlo.svg" alt="Figura 11.3 · 200 secuencias alternativas de las 60 operaciones del taller de la semana 4, reordenadas al azar. Datos simulados." loading="lazy"></a><figcaption>Figura 11.3 · 200 secuencias alternativas de las 60 operaciones del taller de la semana 4, reordenadas al azar. Datos simulados.</figcaption></figure>
+<h4>Los percentiles</h4>
+<p>El resultado no es un número, sino una distribución. Se lee con <strong>percentiles</strong>: el percentil 95 del drawdown es el valor que solo se supera en el 5 % de las simulaciones.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Con las 60 operaciones del taller de la semana 4, el drawdown máximo del backtest fue del 7,9 %. Reordenando 2.000 veces, la mediana del drawdown es de alrededor del 7,3 % y el <strong>percentil 95, de alrededor del 12 %</strong>. Remuestreando, el percentil 95 sube a alrededor del 15 % y, en un 6–7 % de las simulaciones, el resultado final es <strong>negativo</strong>. El backtest no mintió, pero mostraba un solo caso, y no el peor.</p></aside>
+<figure class="fig"><a href="img/s11-dd-dist.svg" target="_blank" rel="noopener"><img src="img/s11-dd-dist.svg" alt="Figura 11.4 · Distribución del drawdown máximo en el Monte Carlo de la figura 11.3. La línea marca el del backtest; el percentil 95 es bastante mayor." loading="lazy"></a><figcaption>Figura 11.4 · Distribución del drawdown máximo en el Monte Carlo de la figura 11.3. La línea marca el del backtest; el percentil 95 es bastante mayor.</figcaption></figure>
+<h4>Para qué lo usarás</h4>
+<ul>
+<li><strong>Dimensionar el riesgo:</strong> usa el drawdown del percentil 95, no el del backtest, para decidir el riesgo por operación (semana 4).</li>
+<li><strong>Fijar el criterio de desactivación:</strong> si en real la estrategia supera el drawdown del percentil 95 o 99, algo ha cambiado (semana 16).</li>
+<li><strong>Comparar estrategias:</strong> dos estrategias con el mismo drawdown de backtest pueden tener distribuciones muy distintas.</li>
+</ul>
+<h4>Sin SQX Professional</h4>
+<p>Puedes hacer un reordenado en la hoja de cálculo: copia la columna de resultados, añade una columna con <code>=ALEATORIO()</code>, ordena por ella, calcula el drawdown y repite (o usa una macro sencilla). Con 100 repeticiones ya verás la distribución.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el reordenado no cambia el beneficio final?</li>
+<li>¿Qué significa que el percentil 95 del drawdown sea del 15 %?</li>
+<li>¿Qué drawdown usarías para dimensionar el riesgo: el del backtest o el del percentil 95? ¿Por qué?</li>
+</ol><div class="answer"><label for="w11-s11-l2">Tus respuestas</label><textarea id="w11-s11-l2" data-store="w11-s11-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-s11-l2"> He terminado esta sección</label></section><section class="pane" id="s11-l3" hidden><header class="pane-head"><span class="kicker">Semana 11 · Lección L3</span><h2>Monte Carlo con nuevos backtests</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Más allá de las operaciones</h4>
+<p>El Monte Carlo de operaciones supone que las operaciones serían las mismas. Pero si los costes, los datos o los parámetros fueran un poco distintos, la estrategia haría <strong>otras</strong> operaciones. El <strong>Monte Carlo con nuevos backtests</strong> repite el backtest completo cientos de veces cambiando algo en cada uno.</p>
+<h4>Qué se puede variar</h4>
+<ul>
+<li><strong>Costes:</strong> spread y deslizamiento aleatorios dentro de un rango (por ejemplo, entre el 100 % y el 200 % del configurado).</li>
+<li><strong>Parámetros:</strong> cada parámetro cambia un poco al azar (por ejemplo, ±10–20 %).</li>
+<li><strong>Datos:</strong> se añade un pequeño ruido a los precios históricos, o se cambia la hora de inicio de las velas.</li>
+<li><strong>Ejecución:</strong> se retrasa la entrada una vela o se rechaza un porcentaje de órdenes.</li>
+</ul>
+<figure class="fig"><a href="img/s11-mc-retest.svg" target="_blank" rel="noopener"><img src="img/s11-mc-retest.svg" alt="Figura 11.5 · Profit factor de 500 backtests con variaciones aleatorias de costes y parámetros: una estrategia robusta se queda por encima de 1 casi siempre. Datos simulados." loading="lazy"></a><figcaption>Figura 11.5 · Profit factor de 500 backtests con variaciones aleatorias de costes y parámetros: una estrategia robusta se queda por encima de 1 casi siempre. Datos simulados.</figcaption></figure>
+<h4>Cómo leerlo</h4>
+<p>Mira el <strong>porcentaje de simulaciones que siguen cumpliendo tus criterios</strong> (por ejemplo, profit factor &gt; 1,1) y el <strong>percentil 5</strong> del resultado. Una estrategia cuyo resultado se derrumba con cambios pequeños depende de detalles que no se repetirán.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Una estrategia robusta es como un puente bien hecho: aguanta aunque la carga sea algo mayor de la prevista. Una sobreajustada es un castillo de naipes: funciona solo si todo es exactamente igual.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre el Monte Carlo de operaciones y el de nuevos backtests?</li>
+<li>¿Por qué añadir ruido a los datos es una prueba útil?</li>
+<li>¿Qué dos números mirarías del resultado?</li>
+</ol><div class="answer"><label for="w11-s11-l3">Tus respuestas</label><textarea id="w11-s11-l3" data-store="w11-s11-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-s11-l3"> He terminado esta sección</label></section><section class="pane" id="s11-l4" hidden><header class="pane-head"><span class="kicker">Semana 11 · Lección L4</span><h2>Límites de cada prueba</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Ninguna prueba es suficiente</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Prueba</th>
+<th>Qué detecta</th>
+<th>Qué <strong>no</strong> detecta</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OOS simple</td>
+<td>Sobreajuste grosero</td>
+<td>Suerte en un único periodo; OOS contaminado</td>
+</tr>
+<tr>
+<td>Walk-Forward</td>
+<td>Si el proceso de optimización generaliza</td>
+<td>El sesgo de selección previo (si elegiste la estrategia entre miles)</td>
+</tr>
+<tr>
+<td>Matriz WF</td>
+<td>Dependencia de la configuración del WF</td>
+<td>Cambios futuros de régimen</td>
+</tr>
+<tr>
+<td>Monte Carlo de operaciones</td>
+<td>Riesgo de drawdown por el orden</td>
+<td>Si las operaciones mismas eran suerte</td>
+</tr>
+<tr>
+<td>Monte Carlo de backtests</td>
+<td>Fragilidad ante costes, parámetros y datos</td>
+<td>Una lógica sin ventaja pero estable</td>
+</tr>
+<tr>
+<td>Otros mercados (semana 12)</td>
+<td>Lógica demasiado específica</td>
+<td>Ventajas reales pero propias de un solo mercado</td>
+</tr>
+</tbody>
+</table></div>
+<h4>El protocolo</h4>
+<p>Por eso se combinan en un <strong>protocolo</strong>: una secuencia fija de pruebas con criterios definidos antes de empezar. Cada prueba elimina un tipo de falso positivo. Al final, las estrategias que pasan todo no tienen garantía de funcionar, pero sí muchas más probabilidades que las que no.</p>
+<figure class="fig"><a href="img/s11-protocolo.svg" target="_blank" rel="noopener"><img src="img/s11-protocolo.svg" alt="Figura 11.6 · El protocolo de validación del curso: cada prueba elimina un tipo de error." loading="lazy"></a><figcaption>Figura 11.6 · El protocolo de validación del curso: cada prueba elimina un tipo de error.</figcaption></figure>
+<aside class="callout warn"><p><strong>Atención.</strong> Si una estrategia falla una prueba y la ajustas para que la pase, la prueba ya no vale para ella: has usado su resultado para modificarla. Anótalo en tu registro y trata la nueva versión como una candidata nueva.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué no detecta el Walk-Forward?</li>
+<li>¿Por qué se fijan los criterios antes de empezar?</li>
+<li>¿Qué pasa si modificas una estrategia para que pase una prueba?</li>
+</ol><div class="answer"><label for="w11-s11-l4">Tus respuestas</label><textarea id="w11-s11-l4" data-store="w11-s11-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-s11-l4"> He terminado esta sección</label></section><section class="pane" id="s11-l5" hidden><header class="pane-head"><span class="kicker">Semana 11 · Lección L5</span><h2>Taller: validación de tres candidatas</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 8–10 horas</em></p>
+<h4>Paso 1 · Fija el protocolo</h4>
+<p>Escribe en tu cuaderno, antes de probar nada, los criterios de cada prueba. Propuesta de partida:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Prueba</th>
+<th>Configuración</th>
+<th>Criterio</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Walk-Forward</td>
+<td>10 ventanas, 20 % OOS, 2–3 parámetros optimizados</td>
+<td>Curva WF con profit factor ≥ 1,15 y WFE ≥ 50 %</td>
+</tr>
+<tr>
+<td>Matriz WF</td>
+<td>5–15 ventanas, 10–30 % OOS</td>
+<td>Al menos el 60 % de las celdas pasan, en zona continua</td>
+</tr>
+<tr>
+<td>Monte Carlo de operaciones</td>
+<td>1.000 simulaciones, remuestreo</td>
+<td>Beneficio en el percentil 5 &gt; 0; drawdown del percentil 95 aceptable</td>
+</tr>
+<tr>
+<td>Monte Carlo de backtests</td>
+<td>200 simulaciones; costes 100–200 %, parámetros ±15 %</td>
+<td>≥ 80 % de simulaciones con PF ≥ 1,1</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Paso 2 · Walk-Forward y matriz</h4>
+<p>En el Optimizer de SQX, configura el Walk-Forward de cada candidata y después la matriz. Guarda capturas de la curva WF y de la matriz.</p>
+<h4>Paso 3 · Monte Carlo</h4>
+<p>Configura las pruebas de robustez de Monte Carlo en el Retester (operaciones y backtests). Anota los percentiles.</p>
+<h4>Paso 4 · Veredicto</h4>
+<p>Para cada candidata: <strong>aceptada</strong>, <strong>rechazada</strong> (en qué prueba) o <strong>en duda</strong> (qué falta). Una estrategia rechazada no se modifica para que pase.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuántas de tus tres candidatas superaron todo el protocolo?</li>
+<li>¿Qué prueba fue la más exigente?</li>
+<li>¿Cuál es el drawdown del percentil 95 de tu mejor candidata, y con qué riesgo por operación la operarías?</li>
+</ol><div class="answer"><label for="w11-s11-l5">Tus respuestas</label><textarea id="w11-s11-l5" data-store="w11-s11-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-s11-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 11 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curva Walk-Forward</td>
+<td>Walk-Forward equity</td>
+<td>Unión de los tramos fuera de muestra de un Walk-Forward</td>
+</tr>
+<tr>
+<td>Eficiencia Walk-Forward</td>
+<td>Walk-Forward efficiency (WFE)</td>
+<td>Rentabilidad anualizada OOS dividida entre la IS</td>
+</tr>
+<tr>
+<td>Matriz Walk-Forward</td>
+<td>Walk-Forward matrix</td>
+<td>Conjunto de Walk-Forward con distintas ventanas y porcentajes OOS</td>
+</tr>
+<tr>
+<td>Monte Carlo</td>
+<td>Monte Carlo simulation</td>
+<td>Repetición de una prueba muchas veces con variaciones aleatorias</td>
+</tr>
+<tr>
+<td>Percentil</td>
+<td>Percentile</td>
+<td>Valor por debajo del cual queda un porcentaje dado de los resultados</td>
+</tr>
+<tr>
+<td>Protocolo de validación</td>
+<td>Validation protocol</td>
+<td>Secuencia fija de pruebas con criterios definidos de antemano</td>
+</tr>
+<tr>
+<td>Remuestreo</td>
+<td>Resampling</td>
+<td>Elección aleatoria de operaciones con reemplazo</td>
+</tr>
+<tr>
+<td>Reordenado</td>
+<td>Shuffle</td>
+<td>Cambio aleatorio del orden de las operaciones</td>
+</tr>
+<tr>
+<td>Ventana</td>
+<td>Run / window</td>
+<td>Cada tramo de optimización y prueba de un Walk-Forward</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w11-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 11 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Ventanas.</strong> Con datos de 2014 a 2025 (12 años), 6 ventanas y un 25 % OOS, calcula aproximadamente la duración de la parte IS y la OOS de cada ventana en un Walk-Forward anclado al final (sugerencia: la parte OOS total cubre las últimas 6 partes OOS consecutivas).</p>
+<p><strong>E2 · WFE.</strong> Calcula la WFE de: a) IS 22 % anual, OOS 13 %; b) IS 30 %, OOS 6 %; c) IS 12 %, OOS 10 %. ¿Cuáles aceptarías?</p>
+<p><strong>E3 · Matriz.</strong> Una matriz de 3 × 3 (5, 10 y 15 ventanas; 10 %, 20 % y 30 % OOS) tiene estos resultados (✓ pasa, ✗ no pasa): fila 5: ✓ ✗ ✗; fila 10: ✗ ✓ ✗; fila 15: ✗ ✗ ✓. ¿Es robusta? ¿Por qué?</p>
+<p><strong>E4 · Reordenado.</strong> Toma las 60 operaciones del taller de la semana 4 y haz 20 reordenados en la hoja. Anota el drawdown máximo de cada uno y calcula la mediana y el máximo.</p>
+<p><strong>E5 · Percentiles.</strong> De 1.000 simulaciones, 940 tienen un drawdown menor que el 14 % y 990, menor que el 19 %. ¿Cuáles son los percentiles 94 y 99?</p>
+<p><strong>E6 · Riesgo con Monte Carlo.</strong> Tu estrategia tiene, con un 1 % de riesgo, un drawdown del percentil 95 del 18 %. No quieres superar un 12 % en ese percentil. ¿Qué riesgo por operación usarías, suponiendo que el drawdown es aproximadamente proporcional al riesgo?</p>
+<p><strong>E7 · Monte Carlo de backtests.</strong> De 200 simulaciones, 148 tienen PF ≥ 1,1. ¿Pasa el criterio del 80 %? ¿Qué podrías mirar para entender los fallos?</p>
+<p><strong>E8 · Límites.</strong> Una estrategia elegida entre 300.000 supera el Walk-Forward. Explica qué riesgo sigue sin cubrir esa prueba.</p>
+<p><strong>E9 · Modificar o no.</strong> Una candidata falla el Monte Carlo de costes. Un compañero propone ampliar su take profit para que pase. ¿Qué le dices?</p>
+<p><strong>E10 · Protocolo propio.</strong> Escribe tu protocolo de validación definitivo con todas las pruebas de las semanas 10 y 11, en orden, con sus criterios.</p><div class="answer"><label for="w11-ejercicios-obligatorios">Tus respuestas</label><textarea id="w11-ejercicios-obligatorios" data-store="w11-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-11-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 11 · Sección</span><h2>Investigación I-11 y entrega práctica</h2></header><div class="read"><h3>Investigación I-11 · ¿Cuánto mayor es el drawdown real que el del backtest?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «En mis candidatas, el drawdown del percentil 95 del Monte Carlo de remuestreo es al menos 1,5 veces el drawdown del backtest».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente sobre Monte Carlo aplicado a estrategias de trading.</p>
+<p><strong>Paso 3 · Datos.</strong> Las operaciones de tus candidatas (IS y OOS) y, si quieres, las de la semana 4.</p>
+<p><strong>Paso 4 · Diseño.</strong> Número de simulaciones, tipo de Monte Carlo, percentiles y cómo calcularás el cociente.</p>
+<p><strong>Paso 5 · Generación.</strong> No generas nada: usas las candidatas.</p>
+<p><strong>Paso 6 · Validación.</strong> Ejecuta el Monte Carlo de cada candidata.</p>
+<p><strong>Paso 7 · Comparación.</strong> Tabla con el drawdown del backtest, la mediana, el percentil 95 y el 99, y el cociente percentil 95 / backtest.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma? ¿Qué factor multiplicarías al drawdown del backtest para planificar tu riesgo?</p>
+<h3>Entrega práctica · Informe de validación</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S11_ENT</code></td>
+<td>Informe de validación de tres candidatas: protocolo fijado de antemano (con fecha), resultados de cada prueba con capturas, veredicto y riesgo por operación propuesto para las aceptadas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S11_SQX</code></td>
+<td>Candidatas aceptadas exportadas desde SQX</td>
+</tr>
+<tr>
+<td><code>CODIGO_S11_INV</code></td>
+<td>Investigación I-11</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que el protocolo esté fijado antes de las pruebas, que los resultados se presenten completos (también los fallos) y que el veredicto sea coherente. Modificar una candidata para que pase una prueba sin declararlo es motivo de SUSPENSO.</p><div class="answer"><label for="w11-investigacion-i-11-y-entrega-practica">Tus respuestas</label><textarea id="w11-investigacion-i-11-y-entrega-practica" data-store="w11-investigacion-i-11-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-investigacion-i-11-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-11" hidden><header class="pane-head"><span class="kicker">Semana 11 · Evaluación</span><h2>Examen de la semana 11 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El Walk-Forward valida sobre todo…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q1" value="a" data-store="w11-exam-q1"><span><b>a)</b> unos parámetros concretos</span></label><label class="opt"><input type="radio" name="w11q1" value="b" data-store="w11-exam-q1"><span><b>b)</b> el proceso de optimizar y operar después</span></label><label class="opt"><input type="radio" name="w11q1" value="c" data-store="w11-exam-q1"><span><b>c)</b> los costes</span></label><label class="opt"><input type="radio" name="w11q1" value="d" data-store="w11-exam-q1"><span><b>d)</b> la zona horaria</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> La curva Walk-Forward se forma uniendo…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q2" value="a" data-store="w11-exam-q2"><span><b>a)</b> los tramos IS</span></label><label class="opt"><input type="radio" name="w11q2" value="b" data-store="w11-exam-q2"><span><b>b)</b> los mejores backtests</span></label><label class="opt"><input type="radio" name="w11q2" value="c" data-store="w11-exam-q2"><span><b>c)</b> los tramos OOS de cada ventana</span></label><label class="opt"><input type="radio" name="w11q2" value="d" data-store="w11-exam-q2"><span><b>d)</b> las simulaciones de Monte Carlo</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Una WFE del 30 % indica que…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q3" value="a" data-store="w11-exam-q3"><span><b>a)</b> la estrategia es excelente</span></label><label class="opt"><input type="radio" name="w11q3" value="b" data-store="w11-exam-q3"><span><b>b)</b> gran parte del rendimiento IS no se repite fuera de muestra</span></label><label class="opt"><input type="radio" name="w11q3" value="c" data-store="w11-exam-q3"><span><b>c)</b> los costes son bajos</span></label><label class="opt"><input type="radio" name="w11q3" value="d" data-store="w11-exam-q3"><span><b>d)</b> hay pocas ventanas</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> En la matriz Walk-Forward se busca…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q4" value="a" data-store="w11-exam-q4"><span><b>a)</b> una zona amplia y continua que pase</span></label><label class="opt"><input type="radio" name="w11q4" value="b" data-store="w11-exam-q4"><span><b>b)</b> la mejor celda</span></label><label class="opt"><input type="radio" name="w11q4" value="c" data-store="w11-exam-q4"><span><b>c)</b> una sola celda verde</span></label><label class="opt"><input type="radio" name="w11q4" value="d" data-store="w11-exam-q4"><span><b>d)</b> el mayor número de ventanas</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> En el Walk-Forward conviene optimizar…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q5" value="a" data-store="w11-exam-q5"><span><b>a)</b> todos los parámetros con rangos amplios</span></label><label class="opt"><input type="radio" name="w11q5" value="b" data-store="w11-exam-q5"><span><b>b)</b> ninguno</span></label><label class="opt"><input type="radio" name="w11q5" value="c" data-store="w11-exam-q5"><span><b>c)</b> pocos parámetros con rangos razonables</span></label><label class="opt"><input type="radio" name="w11q5" value="d" data-store="w11-exam-q5"><span><b>d)</b> solo los costes</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Reordenar las operaciones cambia…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q6" value="a" data-store="w11-exam-q6"><span><b>a)</b> el beneficio final</span></label><label class="opt"><input type="radio" name="w11q6" value="b" data-store="w11-exam-q6"><span><b>b)</b> el número de operaciones</span></label><label class="opt"><input type="radio" name="w11q6" value="c" data-store="w11-exam-q6"><span><b>c)</b> la tasa de acierto</span></label><label class="opt"><input type="radio" name="w11q6" value="d" data-store="w11-exam-q6"><span><b>d)</b> el drawdown</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> El remuestreo con reemplazo…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q7" value="a" data-store="w11-exam-q7"><span><b>a)</b> repite unas operaciones y omite otras</span></label><label class="opt"><input type="radio" name="w11q7" value="b" data-store="w11-exam-q7"><span><b>b)</b> cambia solo el orden</span></label><label class="opt"><input type="radio" name="w11q7" value="c" data-store="w11-exam-q7"><span><b>c)</b> elimina las perdedoras</span></label><label class="opt"><input type="radio" name="w11q7" value="d" data-store="w11-exam-q7"><span><b>d)</b> cambia los costes</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> El percentil 95 del drawdown es…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q8" value="a" data-store="w11-exam-q8"><span><b>a)</b> el drawdown medio</span></label><label class="opt"><input type="radio" name="w11q8" value="b" data-store="w11-exam-q8"><span><b>b)</b> el valor que solo se supera en el 5 % de las simulaciones</span></label><label class="opt"><input type="radio" name="w11q8" value="c" data-store="w11-exam-q8"><span><b>c)</b> el del backtest</span></label><label class="opt"><input type="radio" name="w11q8" value="d" data-store="w11-exam-q8"><span><b>d)</b> el mínimo</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Para dimensionar el riesgo conviene usar…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q9" value="a" data-store="w11-exam-q9"><span><b>a)</b> el drawdown del backtest</span></label><label class="opt"><input type="radio" name="w11q9" value="b" data-store="w11-exam-q9"><span><b>b)</b> el drawdown mínimo</span></label><label class="opt"><input type="radio" name="w11q9" value="c" data-store="w11-exam-q9"><span><b>c)</b> el drawdown de un percentil alto del Monte Carlo</span></label><label class="opt"><input type="radio" name="w11q9" value="d" data-store="w11-exam-q9"><span><b>d)</b> el beneficio medio</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El Monte Carlo con nuevos backtests puede variar…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q10" value="a" data-store="w11-exam-q10"><span><b>a)</b> solo el orden</span></label><label class="opt"><input type="radio" name="w11q10" value="b" data-store="w11-exam-q10"><span><b>b)</b> costes, parámetros y datos</span></label><label class="opt"><input type="radio" name="w11q10" value="c" data-store="w11-exam-q10"><span><b>c)</b> el broker</span></label><label class="opt"><input type="radio" name="w11q10" value="d" data-store="w11-exam-q10"><span><b>d)</b> la licencia</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Una estrategia cuyo resultado se derrumba con pequeños cambios…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q11" value="a" data-store="w11-exam-q11"><span><b>a)</b> es robusta</span></label><label class="opt"><input type="radio" name="w11q11" value="b" data-store="w11-exam-q11"><span><b>b)</b> depende de detalles que no se repetirán</span></label><label class="opt"><input type="radio" name="w11q11" value="c" data-store="w11-exam-q11"><span><b>c)</b> tiene pocos costes</span></label><label class="opt"><input type="radio" name="w11q11" value="d" data-store="w11-exam-q11"><span><b>d)</b> es de tendencia</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> El Walk-Forward no detecta bien…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q12" value="a" data-store="w11-exam-q12"><span><b>a)</b> el sesgo de selección previo</span></label><label class="opt"><input type="radio" name="w11q12" value="b" data-store="w11-exam-q12"><span><b>b)</b> el sobreajuste del proceso</span></label><label class="opt"><input type="radio" name="w11q12" value="c" data-store="w11-exam-q12"><span><b>c)</b> los parámetros inestables</span></label><label class="opt"><input type="radio" name="w11q12" value="d" data-store="w11-exam-q12"><span><b>d)</b> la degradación OOS</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Si modificas una estrategia para que pase una prueba…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q13" value="a" data-store="w11-exam-q13"><span><b>a)</b> la prueba sigue valiendo</span></label><label class="opt"><input type="radio" name="w11q13" value="b" data-store="w11-exam-q13"><span><b>b)</b> la estrategia es mejor</span></label><label class="opt"><input type="radio" name="w11q13" value="c" data-store="w11-exam-q13"><span><b>c)</b> la prueba ya no vale para ella</span></label><label class="opt"><input type="radio" name="w11q13" value="d" data-store="w11-exam-q13"><span><b>d)</b> puedes saltarte las demás</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una rentabilidad anual IS del 20 % y OOS del 12 % dan una WFE de…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q14" value="a" data-store="w11-exam-q14"><span><b>a)</b> 60 %</span></label><label class="opt"><input type="radio" name="w11q14" value="b" data-store="w11-exam-q14"><span><b>b)</b> 32 %</span></label><label class="opt"><input type="radio" name="w11q14" value="c" data-store="w11-exam-q14"><span><b>c)</b> 8 %</span></label><label class="opt"><input type="radio" name="w11q14" value="d" data-store="w11-exam-q14"><span><b>d)</b> 167 %</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Superar todo el protocolo de validación…</legend><div class="opts"><label class="opt"><input type="radio" name="w11q15" value="a" data-store="w11-exam-q15"><span><b>a)</b> garantiza beneficios</span></label><label class="opt"><input type="radio" name="w11q15" value="b" data-store="w11-exam-q15"><span><b>b)</b> aumenta la probabilidad de que la ventaja sea real</span></label><label class="opt"><input type="radio" name="w11q15" value="c" data-store="w11-exam-q15"><span><b>c)</b> permite arriesgar más del 5 %</span></label><label class="opt"><input type="radio" name="w11q15" value="d" data-store="w11-exam-q15"><span><b>d)</b> hace innecesaria la demo</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Un Walk-Forward de 8 ventanas da estos profit factor OOS: 1,32; 0,94; 1,21; 1,45; 1,08; 0,88; 1,26; 1,19. a) ¿En cuántas ventanas gana la estrategia? b) Calcula la media y la mediana. c) La rentabilidad anualizada OOS es del 9 % y la IS del 16 %: calcula la WFE. ¿Aceptarías la estrategia con los criterios del taller?</p>
+<p><strong>B2.</strong> Un Monte Carlo de 1.000 remuestreos da: drawdown del backtest 11 %, mediana 12 %, percentil 95 del 19 %, percentil 99 del 24 %, beneficio en el percentil 5 de +3 %. a) Calcula el cociente percentil 95 / backtest. b) ¿Cumple el criterio de beneficio del taller? c) Con un 1 % de riesgo, ¿qué riesgo usarías para que el percentil 95 no supere el 12 %?</p>
+<p><strong>B3.</strong> En una matriz Walk-Forward de 4 × 4 = 16 celdas, pasan 11, todas juntas salvo 2 sueltas en una esquina. a) ¿Qué porcentaje pasa? b) ¿Cumple el criterio del taller? c) ¿Cómo interpretas las 2 celdas sueltas?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: explica por qué ninguna prueba de esta semana basta por sí sola y cómo las combinarías para decidir si una estrategia pasa a la incubación en demo.</p><div class="answer"><label for="w11-examen-11">Tus respuestas a las partes B y C</label><textarea id="w11-examen-11" data-store="w11-examen-11" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w11-done-examen-11"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
