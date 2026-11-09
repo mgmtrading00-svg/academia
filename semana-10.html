@@ -1,0 +1,440 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 10 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="10">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-10.svg)"><img src="img/cover-10.svg" alt=""></div><p class="eyebrow">SEMANA 10 · ETAPA 3 · INVESTIGACIÓN Y VALIDACIÓN</p><h1>Backtesting y sobreoptimización</h1><p class="meta">11 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="10" data-total="11"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w10-done-presentacion"></span>Presentación</a><a class="tab" href="#s10-l1" data-tab="s10-l1" title="Diseño de un backtest honesto: precisión, costes y periodos"><span class="dot" data-dot="w10-done-s10-l1"></span>L1</a><a class="tab" href="#s10-l2" data-tab="s10-l2" title="In-sample y out-of-sample"><span class="dot" data-dot="w10-done-s10-l2"></span>L2</a><a class="tab" href="#s10-l3" data-tab="s10-l3" title="Sobreoptimización, grados de libertad y sesgo de anticipación"><span class="dot" data-dot="w10-done-s10-l3"></span>L3</a><a class="tab" href="#s10-l4" data-tab="s10-l4" title="Sesgo de selección y minería de datos"><span class="dot" data-dot="w10-done-s10-l4"></span>L4</a><a class="tab" href="#s10-l5" data-tab="s10-l5" title="Sensibilidad a costes"><span class="dot" data-dot="w10-done-s10-l5"></span>L5</a><a class="tab" href="#s10-l6" data-tab="s10-l6" title="Taller: criba de candidatas con hoja de evaluación"><span class="dot" data-dot="w10-done-s10-l6"></span>L6</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w10-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w10-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-10-y-entrega-practica" data-tab="investigacion-i-10-y-entrega-practica" title="Investigación I-10 y entrega práctica"><span class="dot" data-dot="w10-done-investigacion-i-10-y-entrega-practica"></span>Investigación I-10 y entrega práctica</a><a class="tab" href="#examen-10" data-tab="examen-10" title="Examen de la semana 10 · Variante A"><span class="dot" data-dot="w10-done-examen-10"></span>Examen  10</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 10 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s10-l1"><span class="dot" data-dot="w10-done-s10-l1"></span><span class="tk">Lección L1</span><b>Diseño de un backtest honesto: precisión, costes y periodos</b><span class="tm">→</span></a><a class="toc-i" href="#s10-l2"><span class="dot" data-dot="w10-done-s10-l2"></span><span class="tk">Lección L2</span><b>In-sample y out-of-sample</b><span class="tm">→</span></a><a class="toc-i" href="#s10-l3"><span class="dot" data-dot="w10-done-s10-l3"></span><span class="tk">Lección L3</span><b>Sobreoptimización, grados de libertad y sesgo de anticipación</b><span class="tm">→</span></a><a class="toc-i" href="#s10-l4"><span class="dot" data-dot="w10-done-s10-l4"></span><span class="tk">Lección L4</span><b>Sesgo de selección y minería de datos</b><span class="tm">→</span></a><a class="toc-i" href="#s10-l5"><span class="dot" data-dot="w10-done-s10-l5"></span><span class="tk">Lección L5</span><b>Sensibilidad a costes</b><span class="tm">→</span></a><a class="toc-i" href="#s10-l6"><span class="dot" data-dot="w10-done-s10-l6"></span><span class="tk">Lección L6</span><b>Taller: criba de candidatas con hoja de evaluación</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w10-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w10-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-10-y-entrega-practica"><span class="dot" data-dot="w10-done-investigacion-i-10-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-10 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-10"><span class="dot" data-dot="w10-done-examen-10"></span><span class="tk">Evaluación</span><b>Examen de la semana 10 · Variante A</b><span class="tm">→</span></a></nav><p>Un backtest no es una prueba de que una estrategia funcione: es una <strong>simulación</strong> con muchas suposiciones, y una herramienta que se puede engañar con facilidad. Esta semana aprenderás a diseñar backtests honestos, a separar de verdad los datos dentro y fuera de muestra, a reconocer la sobreoptimización y los sesgos que la producen, y a medir cuánto depende una estrategia de los costes. Terminarás construyendo tu <strong>hoja de evaluación</strong>: el primer filtro serio del protocolo de validación que completarás en las semanas 11 y 12.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Configurar un backtest honesto: precisión, costes y periodos.</li>
+<li>Usar correctamente los datos dentro y fuera de muestra.</li>
+<li>Reconocer la sobreoptimización, los grados de libertad excesivos y el sesgo de anticipación.</li>
+<li>Cuantificar el sesgo de selección cuando pruebas muchas estrategias.</li>
+<li>Medir la sensibilidad de una estrategia a los costes.</li>
+<li>Cribar candidatas con una hoja de evaluación objetiva.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Seis lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Retester, pruebas de costes y criba de candidatas</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-10, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 11</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX con las estrategias de las semanas 6 a 8 y tus datos revisados en la semana 9.</li>
+<li>Tu registro de pruebas.</li>
+<li>Tu plantilla de métricas.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 11</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 10</li>
+<li>☐ Entrega práctica: hoja de evaluación aplicada a 20 candidatas</li>
+<li>☐ Investigación I-10: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w10-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s10-l1" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L1</span><h2>Diseño de un backtest honesto: precisión, costes y periodos</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué es honesto</h4>
+<p>Un backtest es honesto cuando <strong>todo lo que la estrategia usa para decidir estaba disponible en ese momento</strong> y <strong>todo lo que paga en real está incluido</strong>. Las tres decisiones clave son la precisión, los costes y los periodos.</p>
+<h4>Precisión</h4>
+<p>La precisión dice con qué detalle simula el programa lo que pasa dentro de cada vela. En SQX hay varios niveles, de más rápido a más preciso: solo la temporalidad seleccionada, simulación con datos de 1 minuto, y datos de tick reales (con spread fijo o con el spread real, si los datos lo incluyen).</p>
+<ul>
+<li><strong>Para generar:</strong> una precisión rápida está bien, siempre que la confirmes después.</li>
+<li><strong>Para validar:</strong> usa siempre la máxima precisión que tengas disponible (M1 o tick). Si una estrategia cambia mucho al subir la precisión, depende de lo que pasa dentro de la vela y es sospechosa (semana 9).</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Las estrategias con stops y objetivos muy cercanos, o con muchas operaciones que se abren y cierran en la misma vela, son las más sensibles a la precisión. Revísalas siempre con datos M1 o de tick.</p></aside>
+<h4>Costes</h4>
+<p>Configura los cuatro costes de la semana 5 (spread, comisión, deslizamiento y swap) con valores <strong>conservadores</strong>: un 20–50 % por encima de lo que mediste. En la lección 5 medirás cuánto aguanta cada estrategia.</p>
+<h4>Periodos</h4>
+<ul>
+<li><strong>Lo más largo posible</strong>, con distintas situaciones de mercado: tendencias, rangos, crisis, volatilidad alta y baja.</li>
+<li><strong>Sin cortar a medida:</strong> no elijas el inicio o el final del periodo según el resultado.</li>
+<li><strong>Con un periodo fuera de muestra</strong> que el proceso de selección no toque (lección 2).</li>
+</ul>
+<h4>La lista de comprobación</h4>
+<p>Antes de dar por bueno un backtest, comprueba: datos revisados y alineados con el broker, precisión de M1 o superior, costes conservadores, tamaño fijo, periodo completo y periodo OOS sin tocar.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué dos condiciones hacen honesto un backtest?</li>
+<li>¿Qué estrategias son más sensibles a la precisión del backtest?</li>
+<li>¿Por qué no se debe elegir el periodo de prueba según el resultado?</li>
+</ol><div class="answer"><label for="w10-s10-l1">Tus respuestas</label><textarea id="w10-s10-l1" data-store="w10-s10-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l1"> He terminado esta sección</label></section><section class="pane" id="s10-l2" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L2</span><h2>In-sample y out-of-sample</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La regla de oro</h4>
+<p>Los datos <strong>fuera de muestra</strong> solo son fuera de muestra si <strong>no influyen en ninguna decisión</strong> antes de la prueba final. En cuanto miras el resultado OOS para elegir, cambiar o descartar estrategias, ese periodo pasa a ser dentro de muestra, aunque el programa lo siga llamando OOS.</p>
+<h4>Lo que suele pasar fuera de muestra</h4>
+<p>Si generas miles de estrategias y comparas sus resultados IS con los OOS, verás un patrón muy constante: <strong>las mejores en IS empeoran fuera de muestra</strong>, y muchas pasan a perder. Es la regresión a la media: parte de su resultado IS era suerte, y la suerte no se repite.</p>
+<figure class="fig"><a href="img/s10-is-oos.svg" target="_blank" rel="noopener"><img src="img/s10-is-oos.svg" alt="Figura 10.1 · Profit factor dentro y fuera de muestra de 400 estrategias generadas: las mejores en IS caen fuera de muestra. Datos simulados." loading="lazy"></a><figcaption>Figura 10.1 · Profit factor dentro y fuera de muestra de 400 estrategias generadas: las mejores en IS caen fuera de muestra. Datos simulados.</figcaption></figure>
+<h4>Cómo dividir los datos</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Esquema</th>
+<th>Cómo</th>
+<th>Ventaja</th>
+<th>Inconveniente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>OOS al final</td>
+<td>IS antiguo, OOS reciente</td>
+<td>Prueba en el mercado más parecido al actual</td>
+<td>Un solo periodo de prueba</td>
+</tr>
+<tr>
+<td>OOS al principio</td>
+<td>OOS antiguo, IS reciente</td>
+<td>Construye con los datos más actuales</td>
+<td>Prueba en un mercado que quizá ya no existe</td>
+</tr>
+<tr>
+<td>Varios bloques OOS</td>
+<td>Alterna bloques IS y OOS</td>
+<td>Prueba en varias situaciones</td>
+<td>Más complejo de gestionar</td>
+</tr>
+</tbody>
+</table></div>
+<p>Una proporción habitual es un 70–80 % IS y un 20–30 % OOS. En la semana 11 verás el Walk-Forward, que lleva esta idea mucho más lejos.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Decide de antemano qué resultado OOS aceptarás (por ejemplo, profit factor OOS ≥ 1,2 y al menos el 60 % del profit factor IS) y no lo cambies después de verlo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuándo deja un periodo OOS de serlo?</li>
+<li>¿Por qué las mejores estrategias IS empeoran fuera de muestra?</li>
+<li>Propón un criterio OOS de aceptación y explica por qué lo fijas antes.</li>
+</ol><div class="answer"><label for="w10-s10-l2">Tus respuestas</label><textarea id="w10-s10-l2" data-store="w10-s10-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l2"> He terminado esta sección</label></section><section class="pane" id="s10-l3" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L3</span><h2>Sobreoptimización, grados de libertad y sesgo de anticipación</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Sobreoptimización</h4>
+<p><strong>Sobreoptimizar</strong> (<em>overfitting</em> o <em>curve fitting</em>) es ajustar una estrategia tanto a los datos históricos que acaba describiendo su <strong>ruido</strong> en lugar de su patrón. Es como memorizar las respuestas de un examen en lugar de aprender la materia: sacas un 10 en ese examen y suspendes cualquier otro.</p>
+<figure class="fig"><a href="img/s10-sobreajuste.svg" target="_blank" rel="noopener"><img src="img/s10-sobreajuste.svg" alt="Figura 10.2 · Un modelo simple captura la tendencia; uno demasiado complejo pasa por todos los puntos y no sirve para predecir el siguiente. Datos simulados." loading="lazy"></a><figcaption>Figura 10.2 · Un modelo simple captura la tendencia; uno demasiado complejo pasa por todos los puntos y no sirve para predecir el siguiente. Datos simulados.</figcaption></figure>
+<h4>Grados de libertad</h4>
+<p>Cada parámetro, condición o filtro es un <strong>grado de libertad</strong>: una forma más que tiene la estrategia para adaptarse a los datos. Reglas prácticas:</p>
+<ul>
+<li>Pocas condiciones de entrada (2 o 3) y pocos parámetros.</li>
+<li>Muchas operaciones por cada grado de libertad: como orientación, al menos 30–50 operaciones por parámetro.</li>
+<li>Parámetros «redondos» y razonables: una media de 50 es más creíble que una de 47 si el resultado apenas cambia.</li>
+</ul>
+<h4>Señales de sobreoptimización</h4>
+<ul>
+<li>Una curva demasiado perfecta.</li>
+<li>Parámetros muy precisos y extraños.</li>
+<li>Mucha diferencia entre IS y OOS.</li>
+<li>El resultado cambia mucho al mover un parámetro un poco (semana 12).</li>
+<li>Reglas sin explicación lógica.</li>
+</ul>
+<h4>El sesgo de anticipación</h4>
+<p>El <strong>sesgo de anticipación</strong> (<em>look-ahead bias</em>) aparece cuando el backtest usa información que en el momento de decidir <strong>todavía no existía</strong>. Ejemplos:</p>
+<ul>
+<li>Usar el <strong>cierre</strong> de la vela actual para decidir entrar a su <strong>apertura</strong>.</li>
+<li>Usar el máximo del día para una decisión tomada a mediodía.</li>
+<li>Usar datos revisados (por ejemplo, un dato económico corregido meses después) como si se conocieran el día de su publicación.</li>
+<li>Usar la composición actual de un índice para el pasado (que también es sesgo de supervivencia).</li>
+</ul>
+<figure class="fig"><a href="img/s10-anticipacion.svg" target="_blank" rel="noopener"><img src="img/s10-anticipacion.svg" alt="Figura 10.3 · Sesgo de anticipación: la decisión se toma con un dato que solo se conocerá más tarde." loading="lazy"></a><figcaption>Figura 10.3 · Sesgo de anticipación: la decisión se toma con un dato que solo se conocerá más tarde.</figcaption></figure>
+<p>SQX evita la mayoría de estos errores en las estrategias que genera, pero puedes introducirlos tú con datos mal preparados, con indicadores externos o al traducir una idea a mano. Si una estrategia parece demasiado buena, busca primero un sesgo de anticipación.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Explica la sobreoptimización con un ejemplo que no sea de trading.</li>
+<li>Una estrategia tiene 8 parámetros y 240 operaciones. ¿Qué opinas?</li>
+<li>Pon un ejemplo de sesgo de anticipación.</li>
+</ol><div class="answer"><label for="w10-s10-l3">Tus respuestas</label><textarea id="w10-s10-l3" data-store="w10-s10-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l3"> He terminado esta sección</label></section><section class="pane" id="s10-l4" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L4</span><h2>Sesgo de selección y minería de datos</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>El problema</h4>
+<p>En la semana 4 viste que, si pruebas 100 estrategias sin ventaja, unas 5 tendrán t &gt; 2 por azar. El Builder no prueba 100: prueba <strong>cientos de miles</strong>. Y tú eliges la mejor. La pregunta correcta no es «¿es bueno este resultado?», sino «<strong>¿es bueno este resultado para ser el mejor de todos los que probé?</strong>».</p>
+<h4>El máximo del azar</h4>
+<p>Si pruebas N estrategias sin ninguna ventaja, el mejor estadístico t que encontrarás crece con N. Una aproximación sencilla (algo por encima del valor real, así que prudente) es:</p>
+<div class="math">$$t_{\max} \approx \sqrt{2 \ln N}$$</div>
+
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Estrategias probadas</th>
+<th>Mejor t esperado solo por azar (valor medio)</th>
+<th>Aproximación √(2 ln N)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>10</td>
+<td>≈ 1,5</td>
+<td>2,1</td>
+</tr>
+<tr>
+<td>100</td>
+<td>≈ 2,5</td>
+<td>3,0</td>
+</tr>
+<tr>
+<td>10.000</td>
+<td>≈ 3,9</td>
+<td>4,3</td>
+</tr>
+<tr>
+<td>1.000.000</td>
+<td>≈ 4,9</td>
+<td>5,3</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s10-maximo-azar.svg" target="_blank" rel="noopener"><img src="img/s10-maximo-azar.svg" alt="Figura 10.4 · El mejor resultado esperado por puro azar crece con el número de estrategias probadas. Simulación con estrategias sin ventaja." loading="lazy"></a><figcaption>Figura 10.4 · El mejor resultado esperado por puro azar crece con el número de estrategias probadas. Simulación con estrategias sin ventaja.</figcaption></figure>
+<p>Por eso un t de 3 en la mejor de 100.000 estrategias <strong>no significa nada</strong>: es menos de lo que daría el puro azar. Investigadores académicos como Harvey, Liu y Zhu (2016) propusieron exigir, en finanzas, un t mayor que 3 incluso con pocas pruebas, y Bailey y López de Prado (2014) desarrollaron el <em>Sharpe deflactado</em>, que corrige el Sharpe por el número de pruebas.</p>
+<h4>Qué hacer en la práctica</h4>
+<p>No puedes evitar probar muchas estrategias: es como funciona el Builder. Lo que sí puedes hacer:</p>
+<ol>
+<li><strong>Anotar cuántas pruebas haces</strong> (registro de pruebas, semana 9).</li>
+<li><strong>Exigir más</strong> cuantas más pruebas haces: filtros IS más duros y OOS obligatorio.</li>
+<li><strong>Validar con pruebas independientes</strong> del proceso de selección: OOS, Walk-Forward, Monte Carlo, otros mercados (semanas 11 y 12).</li>
+<li><strong>Preferir lógicas con explicación</strong> a hallazgos sin sentido.</li>
+</ol>
+<aside class="callout key"><p><strong>Idea clave.</strong> El Builder es una máquina de producir falsos positivos. El protocolo de validación existe para separarlos de las pocas estrategias con ventaja real.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué mejor t esperarías por azar si pruebas 1.000 estrategias?</li>
+<li>¿Por qué hay que exigir más cuantas más estrategias pruebas?</li>
+<li>Nombra dos formas prácticas de combatir el sesgo de selección.</li>
+</ol><div class="answer"><label for="w10-s10-l4">Tus respuestas</label><textarea id="w10-s10-l4" data-store="w10-s10-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l4"> He terminado esta sección</label></section><section class="pane" id="s10-l5" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L5</span><h2>Sensibilidad a costes</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Práctica: 1 hora</em></p>
+<h4>La prueba</h4>
+<p>Vuelve a probar la estrategia en el Retester aumentando los costes: el spread y el deslizamiento al 150 % y al 200 % de lo configurado, por ejemplo. Una estrategia robusta pierde algo de rendimiento; una frágil se hunde.</p>
+<figure class="fig"><a href="img/s10-costes.svg" target="_blank" rel="noopener"><img src="img/s10-costes.svg" alt="Figura 10.5 · Profit factor de dos estrategias al aumentar los costes: la frágil deja de ser rentable con un 50 % más de coste. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 10.5 · Profit factor de dos estrategias al aumentar los costes: la frágil deja de ser rentable con un 50 % más de coste. Datos ilustrativos.</figcaption></figure>
+<h4>Cómo interpretarla</h4>
+<ul>
+<li>Calcula el <strong>coste de equilibrio</strong>: el coste por operación a partir del cual la estrategia deja de ganar.</li>
+<li>Compáralo con el coste real: si el margen es menor del doble, la estrategia es frágil.</li>
+<li>Mira el <strong>beneficio medio por operación en pips</strong>: por debajo de 3–5 veces el coste, cualquier empeoramiento de la ejecución la destruye.</li>
+</ul>
+<aside class="callout warn"><p><strong>Error típico.</strong> Elegir estrategias de muchas operaciones con beneficios medios de 2 o 3 pips. En el backtest parecen sólidas por su gran muestra; en real, el deslizamiento se las come.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué es el coste de equilibrio?</li>
+<li>Una estrategia gana de media 4 pips por operación y paga 1,5. ¿Es robusta a los costes?</li>
+<li>¿Por qué las estrategias de muchas operaciones pequeñas son peligrosas?</li>
+</ol><div class="answer"><label for="w10-s10-l5">Tus respuestas</label><textarea id="w10-s10-l5" data-store="w10-s10-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l5"> He terminado esta sección</label></section><section class="pane" id="s10-l6" hidden><header class="pane-head"><span class="kicker">Semana 10 · Lección L6</span><h2>Taller: criba de candidatas con hoja de evaluación</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 6–8 horas</em></p>
+<h4>La hoja de evaluación</h4>
+<p>Una <strong>hoja de evaluación</strong> aplica criterios fijos a cada estrategia y decide si pasa o no, sin opiniones. Construye la tuya en la hoja de cálculo con esta estructura:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Umbral de partida</th>
+<th>¿Pasa?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operaciones IS</td>
+<td>≥ 200</td>
+<td>Sí / No</td>
+</tr>
+<tr>
+<td>Profit factor IS (costes conservadores)</td>
+<td>≥ 1,3</td>
+<td></td>
+</tr>
+<tr>
+<td>Profit factor OOS</td>
+<td>≥ 1,15</td>
+<td></td>
+</tr>
+<tr>
+<td>PF OOS / PF IS</td>
+<td>≥ 0,6</td>
+<td></td>
+</tr>
+<tr>
+<td>Ratio beneficio / drawdown IS</td>
+<td>≥ 3</td>
+<td></td>
+</tr>
+<tr>
+<td>Beneficio medio por operación</td>
+<td>≥ 4 veces el coste</td>
+<td></td>
+</tr>
+<tr>
+<td>Profit factor con costes al 200 %</td>
+<td>≥ 1,05</td>
+<td></td>
+</tr>
+<tr>
+<td>Cambio de PF al subir la precisión a M1 o tick</td>
+<td>≤ 10 %</td>
+<td></td>
+</tr>
+<tr>
+<td>Condiciones de entrada</td>
+<td>≤ 3</td>
+<td></td>
+</tr>
+<tr>
+<td>Reglas explicables en dos frases</td>
+<td>Sí</td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s10-hoja.svg" target="_blank" rel="noopener"><img src="img/s10-hoja.svg" alt="Figura 10.6 · La hoja de evaluación como filtro: cada criterio elimina candidatas y solo las que pasan todos siguen al Walk-Forward." loading="lazy"></a><figcaption>Figura 10.6 · La hoja de evaluación como filtro: cada criterio elimina candidatas y solo las que pasan todos siguen al Walk-Forward.</figcaption></figure>
+<p>Los umbrales son <strong>tuyos</strong>: puedes ajustarlos con argumentos, pero <strong>antes</strong> de evaluar y anotándolo en tu cuaderno.</p>
+<h4>Paso 1 · Reúne 20 candidatas</h4>
+<p>De tus proyectos de las semanas 6 a 8, toma las 20 mejores por tu fitness (sin mirar el OOS para elegirlas).</p>
+<h4>Paso 2 · Pruebas</h4>
+<p>Para cada una, en el Retester: precisión máxima disponible, costes conservadores, costes al 200 %, y anota las métricas IS y OOS.</p>
+<h4>Paso 3 · Evalúa</h4>
+<p>Rellena la hoja. Cuenta cuántas candidatas superan todos los criterios.</p>
+<h4>Paso 4 · Analiza</h4>
+<p>¿Qué criterio eliminó a más candidatas? ¿Alguna estrategia que te gustaba cayó? ¿Por qué?</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuántas de tus 20 candidatas pasaron todos los criterios?</li>
+<li>¿Qué criterio fue el más exigente?</li>
+<li>¿Cambiarías algún umbral para la próxima vez? ¿Con qué argumento?</li>
+</ol><div class="answer"><label for="w10-s10-l6">Tus respuestas</label><textarea id="w10-s10-l6" data-store="w10-s10-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-s10-l6"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 10 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Coste de equilibrio</td>
+<td>Breakeven cost</td>
+<td>Coste por operación a partir del cual la estrategia deja de ganar</td>
+</tr>
+<tr>
+<td>Falso positivo</td>
+<td>False positive</td>
+<td>Estrategia que parece tener ventaja sin tenerla</td>
+</tr>
+<tr>
+<td>Hoja de evaluación</td>
+<td>Scorecard</td>
+<td>Tabla de criterios fijos para aceptar o rechazar estrategias</td>
+</tr>
+<tr>
+<td>Precisión del backtest</td>
+<td>Backtest precision</td>
+<td>Detalle con el que se simula lo que ocurre dentro de cada vela</td>
+</tr>
+<tr>
+<td>Regresión a la media</td>
+<td>Regression to the mean</td>
+<td>Tendencia de los resultados extremos a acercarse a la media al repetirse</td>
+</tr>
+<tr>
+<td>Sensibilidad a costes</td>
+<td>Cost sensitivity</td>
+<td>Cambio del resultado al aumentar los costes</td>
+</tr>
+<tr>
+<td>Sesgo de anticipación</td>
+<td>Look-ahead bias</td>
+<td>Uso de información que no estaba disponible al decidir</td>
+</tr>
+<tr>
+<td>Sharpe deflactado</td>
+<td>Deflated Sharpe ratio</td>
+<td>Sharpe corregido por el número de pruebas realizadas</td>
+</tr>
+<tr>
+<td>Sobreoptimización</td>
+<td>Overfitting / curve fitting</td>
+<td>Ajuste de una estrategia al ruido de los datos históricos</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w10-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 10 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Lista de comprobación.</strong> Aplica la lista de comprobación de la lección 1 a tu mejor estrategia de la semana 8 y anota qué falla.</p>
+<p><strong>E2 · Precisión.</strong> Prueba una estrategia con la precisión más rápida y con la más alta disponible. Anota el cambio en profit factor, operaciones y drawdown.</p>
+<p><strong>E3 · OOS contaminado.</strong> Explica en 100 palabras por qué, si descartas las estrategias que van mal en OOS y te quedas con las demás, ya no tienes un resultado fuera de muestra.</p>
+<p><strong>E4 · Grados de libertad.</strong> Una estrategia tiene 4 condiciones con 2 parámetros cada una, un stop y un objetivo con 1 parámetro cada uno. ¿Cuántos grados de libertad tiene? ¿Cuántas operaciones pedirías como mínimo con la orientación de la lección?</p>
+<p><strong>E5 · Anticipación.</strong> Busca el sesgo de anticipación en cada regla: a) «Comprar a la apertura si el cierre de hoy es mayor que el de ayer». b) «Vender a las 12:00 si el mínimo del día está por debajo del de ayer». c) «Comprar si el PIB del trimestre (dato revisado) creció».</p>
+<p><strong>E6 · Máximo del azar.</strong> Calcula con la aproximación √(2 ln N) el t máximo esperado por azar para 50, 5.000 y 500.000 estrategias. ¿Qué t exigirías a la mejor estrategia de un proyecto de 300.000?</p>
+<p><strong>E7 · Costes.</strong> Una estrategia tiene 600 operaciones, un beneficio medio de 3,2 pips con un coste de 1,1 pips incluido. ¿Cuál es su coste de equilibrio? ¿Es robusta?</p>
+<p><strong>E8 · Umbrales.</strong> Justifica cada umbral de tu hoja de evaluación en una frase.</p>
+<p><strong>E9 · Regresión a la media.</strong> En tus proyectos, toma las 10 mejores estrategias por profit factor IS y calcula la media de su PF IS y de su PF OOS. ¿Cuánto cae?</p>
+<p><strong>E10 · Registro.</strong> Actualiza tu registro de pruebas con el número total de estrategias probadas en el curso hasta ahora y calcula el t máximo esperado por azar para ese número.</p><div class="answer"><label for="w10-ejercicios-obligatorios">Tus respuestas</label><textarea id="w10-ejercicios-obligatorios" data-store="w10-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-10-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 10 · Sección</span><h2>Investigación I-10 y entrega práctica</h2></header><div class="read"><h3>Investigación I-10 · ¿Predice el profit factor IS el resultado OOS?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Entre las estrategias que pasan los filtros, la correlación entre el profit factor IS y el OOS es menor que 0,3».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita una fuente sobre sobreajuste o sesgo de selección en estrategias generadas (por ejemplo, los trabajos citados en la lección 4).</p>
+<p><strong>Paso 3 · Datos.</strong> Los de tus proyectos.</p>
+<p><strong>Paso 4 · Diseño.</strong> Define cuántas estrategias tomarás (al menos 100), cómo (todas las del databank o una muestra al azar) y qué medirás: correlación, pendiente de la regresión y porcentaje con PF OOS &gt; 1 por grupos de PF IS.</p>
+<p><strong>Paso 5 · Generación.</strong> Usa un proyecto existente o lanza uno nuevo con OOS reservado.</p>
+<p><strong>Paso 6 · Validación.</strong> Exporta las métricas IS y OOS de todas las estrategias del databank sin seleccionar.</p>
+<p><strong>Paso 7 · Comparación.</strong> Gráfico de dispersión PF IS frente a PF OOS, con la recta de regresión y la correlación.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Qué te dice el resultado sobre elegir estrategias por su PF IS? ¿Qué criterio usarías en su lugar?</p>
+<h3>Entrega práctica · Hoja de evaluación aplicada</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S10_ENT</code></td>
+<td>Hoja de evaluación con los umbrales justificados y las 20 candidatas evaluadas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S10_SQX</code></td>
+<td>Las candidatas que pasan todos los criterios, exportadas desde SQX</td>
+</tr>
+<tr>
+<td><code>CODIGO_S10_INV</code></td>
+<td>Investigación I-10 con el gráfico de dispersión</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que los umbrales se fijen y justifiquen antes de evaluar, que las pruebas se hagan con la precisión y los costes indicados y que el análisis del paso 4 sea honesto. No se penaliza que ninguna candidata pase: se penaliza relajar los criterios para que pase alguna.</p><div class="answer"><label for="w10-investigacion-i-10-y-entrega-practica">Tus respuestas</label><textarea id="w10-investigacion-i-10-y-entrega-practica" data-store="w10-investigacion-i-10-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-investigacion-i-10-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-10" hidden><header class="pane-head"><span class="kicker">Semana 10 · Evaluación</span><h2>Examen de la semana 10 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> Un backtest es honesto si…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q1" value="a" data-store="w10-exam-q1"><span><b>a)</b> da beneficios</span></label><label class="opt"><input type="radio" name="w10q1" value="b" data-store="w10-exam-q1"><span><b>b)</b> usa solo información disponible al decidir e incluye todos los costes reales</span></label><label class="opt"><input type="radio" name="w10q1" value="c" data-store="w10-exam-q1"><span><b>c)</b> usa el periodo más rentable</span></label><label class="opt"><input type="radio" name="w10q1" value="d" data-store="w10-exam-q1"><span><b>d)</b> usa precisión rápida</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Para validar una estrategia se usa…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q2" value="a" data-store="w10-exam-q2"><span><b>a)</b> la máxima precisión disponible</span></label><label class="opt"><input type="radio" name="w10q2" value="b" data-store="w10-exam-q2"><span><b>b)</b> la precisión más rápida</span></label><label class="opt"><input type="radio" name="w10q2" value="c" data-store="w10-exam-q2"><span><b>c)</b> solo velas diarias</span></label><label class="opt"><input type="radio" name="w10q2" value="d" data-store="w10-exam-q2"><span><b>d)</b> cualquier precisión</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Un periodo OOS deja de serlo cuando…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q3" value="a" data-store="w10-exam-q3"><span><b>a)</b> es muy corto</span></label><label class="opt"><input type="radio" name="w10q3" value="b" data-store="w10-exam-q3"><span><b>b)</b> es antiguo</span></label><label class="opt"><input type="radio" name="w10q3" value="c" data-store="w10-exam-q3"><span><b>c)</b> se usa para tomar decisiones antes de la prueba final</span></label><label class="opt"><input type="radio" name="w10q3" value="d" data-store="w10-exam-q3"><span><b>d)</b> tiene pocas operaciones</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Que las mejores estrategias IS empeoren fuera de muestra se debe sobre todo a…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q4" value="a" data-store="w10-exam-q4"><span><b>a)</b> la regresión a la media</span></label><label class="opt"><input type="radio" name="w10q4" value="b" data-store="w10-exam-q4"><span><b>b)</b> los costes</span></label><label class="opt"><input type="radio" name="w10q4" value="c" data-store="w10-exam-q4"><span><b>c)</b> el broker</span></label><label class="opt"><input type="radio" name="w10q4" value="d" data-store="w10-exam-q4"><span><b>d)</b> la zona horaria</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Sobreoptimizar es…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q5" value="a" data-store="w10-exam-q5"><span><b>a)</b> usar pocos parámetros</span></label><label class="opt"><input type="radio" name="w10q5" value="b" data-store="w10-exam-q5"><span><b>b)</b> ajustar la estrategia al ruido de los datos</span></label><label class="opt"><input type="radio" name="w10q5" value="c" data-store="w10-exam-q5"><span><b>c)</b> probar con costes altos</span></label><label class="opt"><input type="radio" name="w10q5" value="d" data-store="w10-exam-q5"><span><b>d)</b> usar datos de tick</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Cada parámetro o condición añade…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q6" value="a" data-store="w10-exam-q6"><span><b>a)</b> un coste</span></label><label class="opt"><input type="radio" name="w10q6" value="b" data-store="w10-exam-q6"><span><b>b)</b> una operación</span></label><label class="opt"><input type="radio" name="w10q6" value="c" data-store="w10-exam-q6"><span><b>c)</b> un grado de libertad</span></label><label class="opt"><input type="radio" name="w10q6" value="d" data-store="w10-exam-q6"><span><b>d)</b> un periodo OOS</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Usar el cierre de la vela para entrar a su apertura es…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q7" value="a" data-store="w10-exam-q7"><span><b>a)</b> sesgo de anticipación</span></label><label class="opt"><input type="radio" name="w10q7" value="b" data-store="w10-exam-q7"><span><b>b)</b> sesgo de supervivencia</span></label><label class="opt"><input type="radio" name="w10q7" value="c" data-store="w10-exam-q7"><span><b>c)</b> deslizamiento</span></label><label class="opt"><input type="radio" name="w10q7" value="d" data-store="w10-exam-q7"><span><b>d)</b> correcto</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Si pruebas 100 estrategias sin ventaja, el mejor t esperado por azar está aproximadamente entre…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q8" value="a" data-store="w10-exam-q8"><span><b>a)</b> 0 y 1</span></label><label class="opt"><input type="radio" name="w10q8" value="b" data-store="w10-exam-q8"><span><b>b)</b> 2,5 y 3</span></label><label class="opt"><input type="radio" name="w10q8" value="c" data-store="w10-exam-q8"><span><b>c)</b> 5 y 6</span></label><label class="opt"><input type="radio" name="w10q8" value="d" data-store="w10-exam-q8"><span><b>d)</b> 9 y 10</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Cuantas más estrategias pruebas…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q9" value="a" data-store="w10-exam-q9"><span><b>a)</b> menos hay que exigir</span></label><label class="opt"><input type="radio" name="w10q9" value="b" data-store="w10-exam-q9"><span><b>b)</b> más hay que exigir</span></label><label class="opt"><input type="radio" name="w10q9" value="c" data-store="w10-exam-q9"><span><b>c)</b> igual</span></label><label class="opt"><input type="radio" name="w10q9" value="d" data-store="w10-exam-q9"><span><b>d)</b> menos importa el OOS</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El Sharpe deflactado corrige…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q10" value="a" data-store="w10-exam-q10"><span><b>a)</b> los costes</span></label><label class="opt"><input type="radio" name="w10q10" value="b" data-store="w10-exam-q10"><span><b>b)</b> la zona horaria</span></label><label class="opt"><input type="radio" name="w10q10" value="c" data-store="w10-exam-q10"><span><b>c)</b> el tamaño de la posición</span></label><label class="opt"><input type="radio" name="w10q10" value="d" data-store="w10-exam-q10"><span><b>d)</b> el número de pruebas realizadas</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Una estrategia frágil a los costes…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q11" value="a" data-store="w10-exam-q11"><span><b>a)</b> mejora al subirlos</span></label><label class="opt"><input type="radio" name="w10q11" value="b" data-store="w10-exam-q11"><span><b>b)</b> se hunde al subirlos un poco</span></label><label class="opt"><input type="radio" name="w10q11" value="c" data-store="w10-exam-q11"><span><b>c)</b> no cambia</span></label><label class="opt"><input type="radio" name="w10q11" value="d" data-store="w10-exam-q11"><span><b>d)</b> solo cambia en D1</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> El coste de equilibrio es…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q12" value="a" data-store="w10-exam-q12"><span><b>a)</b> el coste mínimo del broker</span></label><label class="opt"><input type="radio" name="w10q12" value="b" data-store="w10-exam-q12"><span><b>b)</b> el coste por operación a partir del cual deja de ganar</span></label><label class="opt"><input type="radio" name="w10q12" value="c" data-store="w10-exam-q12"><span><b>c)</b> el spread medio</span></label><label class="opt"><input type="radio" name="w10q12" value="d" data-store="w10-exam-q12"><span><b>d)</b> la comisión</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Los umbrales de la hoja de evaluación se fijan…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q13" value="a" data-store="w10-exam-q13"><span><b>a)</b> antes de evaluar</span></label><label class="opt"><input type="radio" name="w10q13" value="b" data-store="w10-exam-q13"><span><b>b)</b> después de ver los resultados</span></label><label class="opt"><input type="radio" name="w10q13" value="c" data-store="w10-exam-q13"><span><b>c)</b> según la mejor estrategia</span></label><label class="opt"><input type="radio" name="w10q13" value="d" data-store="w10-exam-q13"><span><b>d)</b> al azar</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una estrategia con beneficio medio de 2 pips y coste de 1 pip…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q14" value="a" data-store="w10-exam-q14"><span><b>a)</b> es robusta</span></label><label class="opt"><input type="radio" name="w10q14" value="b" data-store="w10-exam-q14"><span><b>b)</b> tiene un margen muy pequeño frente a los costes</span></label><label class="opt"><input type="radio" name="w10q14" value="c" data-store="w10-exam-q14"><span><b>c)</b> no tiene costes</span></label><label class="opt"><input type="radio" name="w10q14" value="d" data-store="w10-exam-q14"><span><b>d)</b> siempre gana</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Si ninguna candidata pasa la hoja de evaluación, lo correcto es…</legend><div class="opts"><label class="opt"><input type="radio" name="w10q15" value="a" data-store="w10-exam-q15"><span><b>a)</b> bajar los umbrales</span></label><label class="opt"><input type="radio" name="w10q15" value="b" data-store="w10-exam-q15"><span><b>b)</b> quitar los costes</span></label><label class="opt"><input type="radio" name="w10q15" value="c" data-store="w10-exam-q15"><span><b>c)</b> documentarlo y revisar la investigación</span></label><label class="opt"><input type="radio" name="w10q15" value="d" data-store="w10-exam-q15"><span><b>d)</b> elegir la menos mala</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una estrategia tiene un profit factor IS de 1,72 y un OOS de 1,18. Tus criterios son PF OOS ≥ 1,15 y PF OOS / PF IS ≥ 0,6. a) ¿Cumple cada criterio? b) ¿Cuál es el PF OOS mínimo que habría necesitado para cumplir el segundo? c) Comenta el resultado.</p>
+<p><strong>B2.</strong> Un proyecto probó 250.000 estrategias. a) Calcula con la aproximación √(2 ln N) el t máximo esperado por azar. b) La mejor estrategia tiene 400 operaciones, una media de 6 $ y una desviación de 80 $: calcula su t. c) ¿Es convincente? Justifícalo.</p>
+<p><strong>B3.</strong> Una estrategia hace 500 operaciones con un beneficio neto de 2.400 pips después de un coste de 1,2 pips por operación. a) Calcula el beneficio medio por operación neto y bruto. b) Calcula el coste de equilibrio. c) ¿Cuántas veces el coste actual es el beneficio bruto medio? ¿Es robusta según la lección 5?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: explica a alguien que nunca ha usado SQX por qué una estrategia con un backtest espectacular, elegida entre 200.000, probablemente no funcionará en real, y qué pasos le pedirías antes de creerla.</p><div class="answer"><label for="w10-examen-10">Tus respuestas a las partes B y C</label><textarea id="w10-examen-10" data-store="w10-examen-10" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w10-done-examen-10"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
