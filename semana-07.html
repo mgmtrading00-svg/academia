@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 7 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="7">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-07.svg)"><img src="img/cover-07.svg" alt=""></div><p class="eyebrow">SEMANA 07 · ETAPA 2 · STRATEGYQUANT X</p><h1>Tendencia, ruptura y momentum</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="7" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w7-done-presentacion"></span>Presentación</a><a class="tab" href="#s07-l1" data-tab="s07-l1" title="Trend following: lógica, indicadores y riesgos"><span class="dot" data-dot="w7-done-s07-l1"></span>L1</a><a class="tab" href="#s07-l2" data-tab="s07-l2" title="Breakout: rangos, sesiones y órdenes stop"><span class="dot" data-dot="w7-done-s07-l2"></span>L2</a><a class="tab" href="#s07-l3" data-tab="s07-l3" title="Momentum: fuerza relativa y persistencia"><span class="dot" data-dot="w7-done-s07-l3"></span>L3</a><a class="tab" href="#s07-l4" data-tab="s07-l4" title="Estilos: scalping, intradía, swing, medio y largo plazo; costes y temporalidades"><span class="dot" data-dot="w7-done-s07-l4"></span>L4</a><a class="tab" href="#s07-l5" data-tab="s07-l5" title="Taller: tres familias, tres proyectos comparados"><span class="dot" data-dot="w7-done-s07-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w7-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w7-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-07-y-entrega-practica" data-tab="investigacion-i-07-y-entrega-practica" title="Investigación I-07 y entrega práctica"><span class="dot" data-dot="w7-done-investigacion-i-07-y-entrega-practica"></span>Investigación I-07 y entrega práctica</a><a class="tab" href="#examen-7" data-tab="examen-7" title="Examen de la semana 7 · Variante A"><span class="dot" data-dot="w7-done-examen-7"></span>Examen  7</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 07 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s07-l1"><span class="dot" data-dot="w7-done-s07-l1"></span><span class="tk">Lección L1</span><b>Trend following: lógica, indicadores y riesgos</b><span class="tm">→</span></a><a class="toc-i" href="#s07-l2"><span class="dot" data-dot="w7-done-s07-l2"></span><span class="tk">Lección L2</span><b>Breakout: rangos, sesiones y órdenes stop</b><span class="tm">→</span></a><a class="toc-i" href="#s07-l3"><span class="dot" data-dot="w7-done-s07-l3"></span><span class="tk">Lección L3</span><b>Momentum: fuerza relativa y persistencia</b><span class="tm">→</span></a><a class="toc-i" href="#s07-l4"><span class="dot" data-dot="w7-done-s07-l4"></span><span class="tk">Lección L4</span><b>Estilos: scalping, intradía, swing, medio y largo plazo; costes y temporalidades</b><span class="tm">→</span></a><a class="toc-i" href="#s07-l5"><span class="dot" data-dot="w7-done-s07-l5"></span><span class="tk">Lección L5</span><b>Taller: tres familias, tres proyectos comparados</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w7-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w7-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-07-y-entrega-practica"><span class="dot" data-dot="w7-done-investigacion-i-07-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-07 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-7"><span class="dot" data-dot="w7-done-examen-7"></span><span class="tk">Evaluación</span><b>Examen de la semana 7 · Variante A</b><span class="tm">→</span></a></nav><p>La semana pasada dejaste que el Builder combinara piezas casi sin guía. Esta semana empiezas a <strong>investigar con una idea</strong>: estudiarás tres familias de estrategias que buscan aprovechar que los movimientos tienden a continuar —la tendencia, la ruptura y el momentum—, verás qué estilo y qué temporalidad encajan con cada una y terminarás comparando tres proyectos, uno por familia. Dar al Builder una lógica concreta produce estrategias más sencillas, más comprensibles y, en general, menos sobreajustadas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar la lógica del seguimiento de tendencia, sus indicadores y sus riesgos.</li>
+<li>Diseñar estrategias de ruptura de rangos y de sesiones con órdenes stop.</li>
+<li>Distinguir el momentum temporal del momentum relativo.</li>
+<li>Elegir estilo y temporalidad teniendo en cuenta los costes.</li>
+<li>Configurar en SQX proyectos orientados a una familia y comparar sus resultados.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Tres proyectos en SQX y su comparación</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-07, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 8</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX con los datos de EUR/USD de la semana 5. Para el momentum relativo, opcionalmente, datos de otros pares (GBP/USD, USD/JPY, AUD/USD).</li>
+<li>El proyecto de la semana 6 como plantilla.</li>
+<li>Tu plantilla de métricas.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 8</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 7</li>
+<li>☐ Entrega práctica: comparación de tres familias</li>
+<li>☐ Investigación I-07: pasos 1 a 5, 7 y 8 documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w7-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s07-l1" hidden><header class="pane-head"><span class="kicker">Semana 07 · Lección L1</span><h2>Trend following: lógica, indicadores y riesgos</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>La lógica</h4>
+<p>El <strong>seguimiento de tendencia</strong> (<em>trend following</em>) no intenta predecir. Espera a que el precio ya se esté moviendo en una dirección, se sube al movimiento y se queda mientras dure. Su hipótesis es que los mercados tienen periodos de tendencia más largos de lo que cabría esperar por azar, porque la información y los flujos de dinero llegan poco a poco.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> El seguimiento de tendencia gana poco a menudo y mucho de vez en cuando. Acepta muchas pérdidas pequeñas a cambio de no perderse los grandes movimientos.</p></aside>
+<h4>Herramientas habituales</h4>
+<ul>
+<li><strong>Medias móviles:</strong> comprar cuando el precio o una media rápida cruza por encima de una media lenta.</li>
+<li><strong>Canales de Donchian:</strong> comprar si el precio supera el máximo de las últimas N velas. Es la base de sistemas históricos como el de los llamados <em>Turtle Traders</em> de los años ochenta.</li>
+<li><strong>ADX:</strong> mide la fuerza de la tendencia, sin dirección; sirve como filtro («solo operar si ADX &gt; 25»).</li>
+<li><strong>Salidas con trailing stop</strong> o con el cruce contrario, para dejar correr las ganancias.</li>
+</ul>
+<figure class="fig"><a href="img/s07-tendencia.svg" target="_blank" rel="noopener"><img src="img/s07-tendencia.svg" alt="Figura 7.1 · Un sistema de cruce de medias: entra tarde, sale tarde y captura el centro del movimiento. Datos simulados." loading="lazy"></a><figcaption>Figura 7.1 · Un sistema de cruce de medias: entra tarde, sale tarde y captura el centro del movimiento. Datos simulados.</figcaption></figure>
+<h4>Su perfil</h4>
+<ul>
+<li>Tasa de acierto baja (con frecuencia del 30 % al 45 %) y ratio alto.</li>
+<li>Asimetría positiva: pocas operaciones muy grandes explican casi todo el beneficio.</li>
+<li>Rachas largas de pérdidas en mercados laterales.</li>
+<li>Funciona mejor en temporalidades altas (H4, D1) y en carteras de muchos mercados, porque en un solo mercado las tendencias buenas son escasas.</li>
+</ul>
+<figure class="fig"><a href="img/s07-perfil-tendencia.svg" target="_blank" rel="noopener"><img src="img/s07-perfil-tendencia.svg" alt="Figura 7.2 · Distribución típica de las operaciones de una estrategia de tendencia: muchas pérdidas pequeñas y unas pocas ganancias grandes. Datos simulados." loading="lazy"></a><figcaption>Figura 7.2 · Distribución típica de las operaciones de una estrategia de tendencia: muchas pérdidas pequeñas y unas pocas ganancias grandes. Datos simulados.</figcaption></figure>
+<h4>Sus riesgos</h4>
+<ul>
+<li><strong>Mercados laterales:</strong> el precio cruza las medias arriba y abajo y cada cruce es una pérdida.</li>
+<li><strong>Dependencia de pocas operaciones:</strong> si te pierdes la gran tendencia del año, el año sale negativo.</li>
+<li><strong>Psicología:</strong> pocas personas aguantan diez pérdidas seguidas esperando la buena.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el seguimiento de tendencia tiene asimetría positiva?</li>
+<li>¿Qué papel tiene el ADX en una estrategia de tendencia?</li>
+<li>¿En qué tipo de mercado sufre más esta familia?</li>
+</ol><div class="answer"><label for="w7-s07-l1">Tus respuestas</label><textarea id="w7-s07-l1" data-store="w7-s07-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-s07-l1"> He terminado esta sección</label></section><section class="pane" id="s07-l2" hidden><header class="pane-head"><span class="kicker">Semana 07 · Lección L2</span><h2>Breakout: rangos, sesiones y órdenes stop</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>La lógica</h4>
+<p>Una <strong>ruptura</strong> (<em>breakout</em>) aprovecha el momento en que el precio sale de una zona en la que estaba contenido. La idea es que, tras un periodo de calma, la volatilidad tiende a aumentar, y la primera salida del rango indica hacia dónde irá el movimiento.</p>
+<h4>Qué rango romper</h4>
+<ul>
+<li><strong>Rango de N velas:</strong> máximo y mínimo de las últimas 20 velas, por ejemplo.</li>
+<li><strong>Rango de sesión:</strong> máximo y mínimo de la sesión asiática; se opera su ruptura al abrir Europa. Es una de las ideas más estudiadas en Forex intradía.</li>
+<li><strong>Rango de apertura:</strong> máximo y mínimo de los primeros minutos de la sesión de un índice (<em>opening range breakout</em>).</li>
+<li><strong>Volatilidad comprimida:</strong> Bandas de Bollinger muy estrechas o ATR bajo antes de romper.</li>
+</ul>
+<figure class="fig"><a href="img/s07-ruptura.svg" target="_blank" rel="noopener"><img src="img/s07-ruptura.svg" alt="Figura 7.3 · Ruptura del rango de Asia con órdenes stop por encima y por debajo. Datos simulados." loading="lazy"></a><figcaption>Figura 7.3 · Ruptura del rango de Asia con órdenes stop por encima y por debajo. Datos simulados.</figcaption></figure>
+<h4>Por qué con órdenes stop</h4>
+<p>Las órdenes stop entran <strong>solo si el precio confirma</strong> el movimiento. En SQX, una ruptura típica se construye con una orden stop de compra en el máximo del rango más un margen (por ejemplo, 0,2 ATR) y una de venta en el mínimo menos el margen, con stop loss en el lado opuesto o en un múltiplo del ATR.</p>
+<h4>Las falsas rupturas</h4>
+<p>El enemigo de esta familia es la <strong>falsa ruptura</strong>: el precio sale del rango, activa tu orden y vuelve dentro. Formas de reducirla:</p>
+<ul>
+<li>Exigir un <strong>margen</strong> por encima del máximo, no entrar justo en él.</li>
+<li>Filtrar por <strong>horario</strong>: las rupturas en horas de poca liquidez fallan más.</li>
+<li>Filtrar por <strong>volatilidad</strong>: romper un rango muy estrecho suele ser más fiable que romper uno ya muy amplio.</li>
+<li><strong>Cancelar</strong> las órdenes no ejecutadas al cabo de unas horas.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Las órdenes stop son las que más <strong>deslizamiento</strong> sufren, porque se activan justo cuando el precio se mueve rápido. Configura en SQX un deslizamiento realista para estas estrategias.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Diseña una ruptura del rango de Asia: rango, órdenes, stop y cancelación.</li>
+<li>¿Por qué las órdenes stop sufren más deslizamiento?</li>
+<li>Nombra dos filtros contra las falsas rupturas.</li>
+</ol><div class="answer"><label for="w7-s07-l2">Tus respuestas</label><textarea id="w7-s07-l2" data-store="w7-s07-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-s07-l2"> He terminado esta sección</label></section><section class="pane" id="s07-l3" hidden><header class="pane-head"><span class="kicker">Semana 07 · Lección L3</span><h2>Momentum: fuerza relativa y persistencia</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Dos tipos de momentum</h4>
+<ul>
+<li><strong>Momentum temporal</strong> (<em>time-series momentum</em>): un activo que ha subido en los últimos meses tiende a seguir subiendo un tiempo, y al revés. Se compara el activo <strong>consigo mismo</strong>. Está documentado en la literatura académica para futuros de muchos mercados (por ejemplo, el trabajo de Moskowitz, Ooi y Pedersen de 2012).</li>
+<li><strong>Momentum relativo</strong> (<em>cross-sectional momentum</em>): entre varios activos, los que más han subido tienden a seguir haciéndolo mejor que los que menos. Se compara un activo <strong>con los demás</strong>. El estudio clásico, sobre acciones, es el de Jegadeesh y Titman de 1993.</li>
+</ul>
+<figure class="fig"><a href="img/s07-momentum.svg" target="_blank" rel="noopener"><img src="img/s07-momentum.svg" alt="Figura 7.4 · Momentum relativo: se ordenan los activos por su rentabilidad pasada y se compran los más fuertes. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 7.4 · Momentum relativo: se ordenan los activos por su rentabilidad pasada y se compran los más fuertes. Datos ilustrativos.</figcaption></figure>
+<h4>Cómo se mide</h4>
+<ul>
+<li><strong>Rentabilidad de N periodos:</strong> cierre de hoy entre cierre de hace N periodos, menos 1.</li>
+<li><strong>Indicador de momentum o ROC</strong> (<em>rate of change</em>): la misma idea en forma de indicador.</li>
+<li><strong>RSI alto</strong> como señal de fuerza, no como «sobrecompra». El mismo indicador puede usarse en sentido contrario según la familia.</li>
+</ul>
+<h4>Momentum en SQX</h4>
+<p>El Builder trabaja con un símbolo por estrategia, así que el momentum temporal es el natural: «comprar si el cierre está por encima del de hace 100 velas y el RSI(14) &gt; 55». El momentum relativo entre varios activos se aplica mejor a nivel de cartera (semana 13) o con herramientas externas.</p>
+<h4>Persistencia y horizonte</h4>
+<p>El momentum no dura para siempre. En los estudios, suele aparecer en horizontes de semanas a meses y puede invertirse a horizontes muy cortos o muy largos. Por eso, en la investigación, <strong>el horizonte es un parámetro que hay que justificar</strong>, no uno que el Builder deba elegir libremente.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre momentum temporal y relativo?</li>
+<li>¿Cómo puede el RSI servir a la vez para una estrategia de momentum y para una de reversión?</li>
+<li>¿Por qué el horizonte del momentum debe justificarse?</li>
+</ol><div class="answer"><label for="w7-s07-l3">Tus respuestas</label><textarea id="w7-s07-l3" data-store="w7-s07-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-s07-l3"> He terminado esta sección</label></section><section class="pane" id="s07-l4" hidden><header class="pane-head"><span class="kicker">Semana 07 · Lección L4</span><h2>Estilos: scalping, intradía, swing, medio y largo plazo; costes y temporalidades</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Los estilos</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Estilo</th>
+<th>Duración típica</th>
+<th>Temporalidad</th>
+<th>Operaciones al año</th>
+<th>Lo que más pesa</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Scalping</td>
+<td>Segundos a minutos</td>
+<td>M1–M5</td>
+<td>Miles</td>
+<td>Costes y ejecución</td>
+</tr>
+<tr>
+<td>Intradía</td>
+<td>Minutos a horas, cierre en el día</td>
+<td>M5–H1</td>
+<td>Cientos</td>
+<td>Costes y horario</td>
+</tr>
+<tr>
+<td>Swing</td>
+<td>Días</td>
+<td>H1–H4</td>
+<td>50–200</td>
+<td>Gaps de fin de semana y swap</td>
+</tr>
+<tr>
+<td>Medio plazo</td>
+<td>Semanas</td>
+<td>H4–D1</td>
+<td>20–60</td>
+<td>Tamaño de muestra</td>
+</tr>
+<tr>
+<td>Largo plazo</td>
+<td>Meses</td>
+<td>D1–W1</td>
+<td>Pocas</td>
+<td>Muestra muy pequeña</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Los costes deciden la temporalidad</h4>
+<p>El coste de una operación es casi fijo en pips (spread más comisión), pero el movimiento que capturas crece con la temporalidad. Por eso, en temporalidades bajas, los costes se comen una parte enorme del beneficio.</p>
+<figure class="fig"><a href="img/s07-costes-temporalidad.svg" target="_blank" rel="noopener"><img src="img/s07-costes-temporalidad.svg" alt="Figura 7.5 · Lo que representa un coste de 1 pip frente al rango medio de una vela de EUR/USD en cada temporalidad. Cifras orientativas." loading="lazy"></a><figcaption>Figura 7.5 · Lo que representa un coste de 1 pip frente al rango medio de una vela de EUR/USD en cada temporalidad. Cifras orientativas.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Para un minorista con costes de minorista, el scalping casi nunca compensa. En el curso trabajarás sobre todo entre H1 y D1.</p></aside>
+<h4>Y la muestra decide la fiabilidad</h4>
+<p>Al otro extremo, una estrategia D1 de largo plazo puede hacer solo 20 operaciones al año: en 10 años, 200. Con tan pocas operaciones, es muy difícil distinguir ventaja de suerte. La temporalidad es siempre un equilibrio entre <strong>costes</strong> (que castigan lo rápido) y <strong>muestra</strong> (que castiga lo lento).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el scalping es tan difícil para un minorista?</li>
+<li>¿Qué problema tienen las estrategias de largo plazo en un backtest?</li>
+<li>¿Qué temporalidad elegirías para una ruptura de la sesión de Asia y por qué?</li>
+</ol><div class="answer"><label for="w7-s07-l4">Tus respuestas</label><textarea id="w7-s07-l4" data-store="w7-s07-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-s07-l4"> He terminado esta sección</label></section><section class="pane" id="s07-l5" hidden><header class="pane-head"><span class="kicker">Semana 07 · Lección L5</span><h2>Taller: tres familias, tres proyectos comparados</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 8–10 horas, con generación nocturna</em></p>
+<p>En este taller crearás tres proyectos en SQX, uno por familia, con los mismos datos, costes y filtros, y compararás lo que produce cada uno.</p>
+<h4>Paso 1 · Plantilla común</h4>
+<p>Duplica el proyecto de la semana 6. Mantén: EUR/USD, zona horaria del broker, IS 2014–2021, OOS 2022 en adelante, costes de tu ficha, tamaño fijo y los filtros de partida.</p>
+<h4>Paso 2 · Proyecto de tendencia (<code>S07_TREND_H4</code>)</h4>
+<ul>
+<li>Temporalidad H4.</li>
+<li>Bloques: medias móviles, canales de Donchian (máximos y mínimos de N velas), ADX y ATR.</li>
+<li>Entradas: a mercado o stop.</li>
+<li>Salidas: stop loss en ATR, trailing stop o salida por condición contraria; sin take profit cercano.</li>
+</ul>
+<h4>Paso 3 · Proyecto de ruptura (<code>S07_BREAKOUT_H1</code>)</h4>
+<ul>
+<li>Temporalidad H1.</li>
+<li>Bloques: máximos y mínimos de N velas o de la sesión, Bandas de Bollinger y ATR.</li>
+<li>Entradas: solo órdenes stop, con cancelación tras unas velas.</li>
+<li>Opción de trading: operar solo en el horario de Europa y Estados Unidos; cerrar al final del día.</li>
+<li>Deslizamiento algo mayor que en los otros proyectos.</li>
+</ul>
+<h4>Paso 4 · Proyecto de momentum (<code>S07_MOM_H4</code>)</h4>
+<ul>
+<li>Temporalidad H4.</li>
+<li>Bloques: ROC o momentum, RSI y medias de largo plazo.</li>
+<li>Entradas a mercado; salidas en ATR o por pérdida de momentum.</li>
+</ul>
+<h4>Paso 5 · Compara</h4>
+<p>Lanza los tres proyectos el mismo tiempo (por ejemplo, 6 horas cada uno). Rellena una tabla con: estrategias probadas, estrategias guardadas, y para las 10 mejores de cada proyecto, la media de profit factor IS y OOS, la tasa de acierto media y el número medio de operaciones.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué familia produjo más estrategias que superaran los filtros? ¿Y cuál mantuvo mejor el profit factor OOS?</li>
+<li>¿Coincide la tasa de acierto de cada familia con lo que esperabas por la teoría?</li>
+<li>¿Con qué familia seguirías investigando y por qué?</li>
+</ol><div class="answer"><label for="w7-s07-l5">Tus respuestas</label><textarea id="w7-s07-l5" data-store="w7-s07-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-s07-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 07 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ADX</td>
+<td>Average Directional Index</td>
+<td>Indicador de la fuerza de una tendencia, sin dirección</td>
+</tr>
+<tr>
+<td>Canal de Donchian</td>
+<td>Donchian channel</td>
+<td>Máximo y mínimo de las últimas N velas</td>
+</tr>
+<tr>
+<td>Falsa ruptura</td>
+<td>False breakout</td>
+<td>Salida del rango que se revierte enseguida</td>
+</tr>
+<tr>
+<td>Intradía</td>
+<td>Intraday</td>
+<td>Operativa que abre y cierra dentro del mismo día</td>
+</tr>
+<tr>
+<td>Momentum relativo</td>
+<td>Cross-sectional momentum</td>
+<td>Tendencia de los activos más fuertes a seguir superando a los demás</td>
+</tr>
+<tr>
+<td>Momentum temporal</td>
+<td>Time-series momentum</td>
+<td>Tendencia de un activo a continuar su movimiento reciente</td>
+</tr>
+<tr>
+<td>Rango de apertura</td>
+<td>Opening range</td>
+<td>Máximo y mínimo de los primeros minutos de una sesión</td>
+</tr>
+<tr>
+<td>ROC</td>
+<td>Rate of change</td>
+<td>Variación porcentual del precio en N periodos</td>
+</tr>
+<tr>
+<td>Ruptura</td>
+<td>Breakout</td>
+<td>Salida del precio de una zona en la que estaba contenido</td>
+</tr>
+<tr>
+<td>Scalping</td>
+<td>Scalping</td>
+<td>Operativa de muy corta duración con objetivos pequeños</td>
+</tr>
+<tr>
+<td>Seguimiento de tendencia</td>
+<td>Trend following</td>
+<td>Estrategia que entra a favor de un movimiento ya iniciado</td>
+</tr>
+<tr>
+<td>Swing</td>
+<td>Swing trading</td>
+<td>Operativa que mantiene posiciones durante días</td>
+</tr>
+<tr>
+<td>Temporalidad</td>
+<td>Timeframe</td>
+<td>Duración de cada vela del gráfico</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w7-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 07 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Reglas de tendencia.</strong> Escribe una estrategia completa de tendencia en D1 con medias móviles y ADX: entrada, stop, salida y filtro.</p>
+<p><strong>E2 · Donchian.</strong> Explica en qué se diferencia «comprar si el cierre supera el máximo de 20 velas» de «comprar con una orden stop en el máximo de 20 velas».</p>
+<p><strong>E3 · Perfil.</strong> Una estrategia de tendencia acierta el 35 % con un ratio de 2,6. Calcula su esperanza en R y la racha de pérdidas más larga que cabe esperar en 300 operaciones (fórmula de la semana 3).</p>
+<p><strong>E4 · Ruptura de Asia.</strong> Con un rango de Asia de 1,0820–1,0845, un ATR(14) H1 de 12 pips y un margen de 0,25 ATR, calcula los precios de las dos órdenes stop y propón un stop loss para cada una.</p>
+<p><strong>E5 · Falsas rupturas.</strong> En tu demo, observa durante 5 días la ruptura del rango de Asia en EUR/USD y anota si fue válida (siguió al menos 20 pips) o falsa. Presenta los resultados en una tabla.</p>
+<p><strong>E6 · Momentum.</strong> Calcula la rentabilidad de 3 meses de cuatro pares (EUR/USD, GBP/USD, USD/JPY y AUD/USD) con datos reales del último trimestre y ordénalos por momentum relativo. Indica la fuente y la fecha.</p>
+<p><strong>E7 · Costes y temporalidad.</strong> Con un coste de 1,2 pips, calcula qué porcentaje del rango medio supone en M5 (5 pips), H1 (13 pips), H4 (28 pips) y D1 (75 pips).</p>
+<p><strong>E8 · Muestra.</strong> Una estrategia D1 hace 18 operaciones al año. ¿Cuántas tendrá en un backtest de 12 años? Con lo visto en la semana 4, ¿te parece suficiente?</p>
+<p><strong>E9 · Estilo propio.</strong> ¿Qué estilo encaja con tu tiempo, tu capital y tu carácter? Justifícalo en 150 palabras con los criterios de esta semana.</p>
+<p><strong>E10 · Lectura de reglas.</strong> Escribe en lenguaje normal las reglas de la mejor estrategia de cada proyecto del taller y clasifícalas: ¿son realmente de la familia que pretendías?</p><div class="answer"><label for="w7-ejercicios-obligatorios">Tus respuestas</label><textarea id="w7-ejercicios-obligatorios" data-store="w7-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-07-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 07 · Sección</span><h2>Investigación I-07 y entrega práctica</h2></header><div class="read"><h3>Investigación I-07 · ¿Qué familia funciona mejor en EUR/USD?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «En EUR/USD, las estrategias de ruptura en H1 mantienen fuera de muestra un porcentaje mayor de su profit factor que las de tendencia en H4».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente académica o profesional sobre tendencia, ruptura o momentum en divisas, y resume qué encontró y con qué datos.</p>
+<p><strong>Paso 3 · Datos.</strong> Los del taller.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Define antes de lanzar: el mismo tiempo de generación para los tres proyectos, cuántas estrategias de cada uno analizarás y cómo las eliges, y qué medida usarás para comparar (por ejemplo, el cociente entre profit factor OOS e IS).</p>
+<p><strong>Paso 5 · Generación.</strong> Los tres proyectos del taller.</p>
+<p><strong>Paso 7 · Comparación.</strong> Tabla comparativa y un gráfico con el profit factor IS frente al OOS de las estrategias de cada familia, con un color por familia.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma la hipótesis? ¿Es la diferencia lo bastante grande como para no deberse al azar? ¿Qué cambiarías para comprobarlo mejor?</p>
+<h3>Entrega práctica · Comparación de tres familias</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S07_ENT</code></td>
+<td>Documento con la configuración de los tres proyectos, la tabla comparativa del paso 5 y las reglas de la mejor estrategia de cada familia en lenguaje normal</td>
+</tr>
+<tr>
+<td><code>CODIGO_S07_SQX</code></td>
+<td>Archivos de los tres proyectos o de las tres mejores estrategias</td>
+</tr>
+<tr>
+<td><code>CODIGO_S07_INV</code></td>
+<td>Hoja y gráfico de la investigación I-07</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que los tres proyectos sean comparables (mismos datos, costes y filtros), que la comparación use métricas fuera de muestra y que las reglas estén bien explicadas. Si los proyectos no comparten configuración base, la comparación no es válida y la entrega queda como SUSPENSO.</p><div class="answer"><label for="w7-investigacion-i-07-y-entrega-practica">Tus respuestas</label><textarea id="w7-investigacion-i-07-y-entrega-practica" data-store="w7-investigacion-i-07-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-investigacion-i-07-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-7" hidden><header class="pane-head"><span class="kicker">Semana 07 · Evaluación</span><h2>Examen de la semana 7 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El seguimiento de tendencia suele tener…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q1" value="a" data-store="w7-exam-q1"><span><b>a)</b> acierto alto y ratio bajo</span></label><label class="opt"><input type="radio" name="w7q1" value="b" data-store="w7-exam-q1"><span><b>b)</b> acierto bajo y ratio alto</span></label><label class="opt"><input type="radio" name="w7q1" value="c" data-store="w7-exam-q1"><span><b>c)</b> acierto y ratio altos</span></label><label class="opt"><input type="radio" name="w7q1" value="d" data-store="w7-exam-q1"><span><b>d)</b> siempre un 50 % de acierto</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> El mayor enemigo del seguimiento de tendencia es…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q2" value="a" data-store="w7-exam-q2"><span><b>a)</b> el mercado lateral</span></label><label class="opt"><input type="radio" name="w7q2" value="b" data-store="w7-exam-q2"><span><b>b)</b> la tendencia fuerte</span></label><label class="opt"><input type="radio" name="w7q2" value="c" data-store="w7-exam-q2"><span><b>c)</b> el ADX alto</span></label><label class="opt"><input type="radio" name="w7q2" value="d" data-store="w7-exam-q2"><span><b>d)</b> la temporalidad D1</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> El ADX mide…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q3" value="a" data-store="w7-exam-q3"><span><b>a)</b> la dirección de la tendencia</span></label><label class="opt"><input type="radio" name="w7q3" value="b" data-store="w7-exam-q3"><span><b>b)</b> el volumen</span></label><label class="opt"><input type="radio" name="w7q3" value="c" data-store="w7-exam-q3"><span><b>c)</b> el spread</span></label><label class="opt"><input type="radio" name="w7q3" value="d" data-store="w7-exam-q3"><span><b>d)</b> la fuerza de la tendencia, sin dirección</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un canal de Donchian de 20 velas está formado por…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q4" value="a" data-store="w7-exam-q4"><span><b>a)</b> la media de 20 velas</span></label><label class="opt"><input type="radio" name="w7q4" value="b" data-store="w7-exam-q4"><span><b>b)</b> el máximo y el mínimo de las últimas 20 velas</span></label><label class="opt"><input type="radio" name="w7q4" value="c" data-store="w7-exam-q4"><span><b>c)</b> dos desviaciones estándar</span></label><label class="opt"><input type="radio" name="w7q4" value="d" data-store="w7-exam-q4"><span><b>d)</b> el cierre de hace 20 velas</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Una ruptura del rango de Asia se opera normalmente con…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q5" value="a" data-store="w7-exam-q5"><span><b>a)</b> órdenes límite dentro del rango</span></label><label class="opt"><input type="radio" name="w7q5" value="b" data-store="w7-exam-q5"><span><b>b)</b> órdenes a mercado a medianoche</span></label><label class="opt"><input type="radio" name="w7q5" value="c" data-store="w7-exam-q5"><span><b>c)</b> órdenes stop por encima y por debajo del rango</span></label><label class="opt"><input type="radio" name="w7q5" value="d" data-store="w7-exam-q5"><span><b>d)</b> sin stop loss</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Una falsa ruptura es…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q6" value="a" data-store="w7-exam-q6"><span><b>a)</b> una ruptura con mucho volumen</span></label><label class="opt"><input type="radio" name="w7q6" value="b" data-store="w7-exam-q6"><span><b>b)</b> una salida del rango que se revierte enseguida</span></label><label class="opt"><input type="radio" name="w7q6" value="c" data-store="w7-exam-q6"><span><b>c)</b> una ruptura en D1</span></label><label class="opt"><input type="radio" name="w7q6" value="d" data-store="w7-exam-q6"><span><b>d)</b> una orden mal enviada</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Las órdenes stop sufren más deslizamiento porque…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q7" value="a" data-store="w7-exam-q7"><span><b>a)</b> se activan cuando el precio se mueve rápido</span></label><label class="opt"><input type="radio" name="w7q7" value="b" data-store="w7-exam-q7"><span><b>b)</b> son más grandes</span></label><label class="opt"><input type="radio" name="w7q7" value="c" data-store="w7-exam-q7"><span><b>c)</b> el broker las penaliza</span></label><label class="opt"><input type="radio" name="w7q7" value="d" data-store="w7-exam-q7"><span><b>d)</b> no tienen precio</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> El momentum temporal compara un activo…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q8" value="a" data-store="w7-exam-q8"><span><b>a)</b> con otros activos</span></label><label class="opt"><input type="radio" name="w7q8" value="b" data-store="w7-exam-q8"><span><b>b)</b> con su índice</span></label><label class="opt"><input type="radio" name="w7q8" value="c" data-store="w7-exam-q8"><span><b>c)</b> con su propio pasado</span></label><label class="opt"><input type="radio" name="w7q8" value="d" data-store="w7-exam-q8"><span><b>d)</b> con su volumen</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El momentum relativo…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q9" value="a" data-store="w7-exam-q9"><span><b>a)</b> compra los activos que más han subido frente a los demás</span></label><label class="opt"><input type="radio" name="w7q9" value="b" data-store="w7-exam-q9"><span><b>b)</b> compra los que más han bajado</span></label><label class="opt"><input type="radio" name="w7q9" value="c" data-store="w7-exam-q9"><span><b>c)</b> solo funciona en Forex</span></label><label class="opt"><input type="radio" name="w7q9" value="d" data-store="w7-exam-q9"><span><b>d)</b> no se puede medir</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El ROC mide…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q10" value="a" data-store="w7-exam-q10"><span><b>a)</b> la volatilidad</span></label><label class="opt"><input type="radio" name="w7q10" value="b" data-store="w7-exam-q10"><span><b>b)</b> la variación porcentual del precio en N periodos</span></label><label class="opt"><input type="radio" name="w7q10" value="c" data-store="w7-exam-q10"><span><b>c)</b> el rango de la sesión</span></label><label class="opt"><input type="radio" name="w7q10" value="d" data-store="w7-exam-q10"><span><b>d)</b> el spread medio</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> El scalping es difícil para un minorista sobre todo por…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q11" value="a" data-store="w7-exam-q11"><span><b>a)</b> la falta de datos</span></label><label class="opt"><input type="radio" name="w7q11" value="b" data-store="w7-exam-q11"><span><b>b)</b> los gaps</span></label><label class="opt"><input type="radio" name="w7q11" value="c" data-store="w7-exam-q11"><span><b>c)</b> el swap</span></label><label class="opt"><input type="radio" name="w7q11" value="d" data-store="w7-exam-q11"><span><b>d)</b> los costes y la ejecución</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> El principal problema de una estrategia de largo plazo en D1 es…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q12" value="a" data-store="w7-exam-q12"><span><b>a)</b> los costes</span></label><label class="opt"><input type="radio" name="w7q12" value="b" data-store="w7-exam-q12"><span><b>b)</b> el deslizamiento</span></label><label class="opt"><input type="radio" name="w7q12" value="c" data-store="w7-exam-q12"><span><b>c)</b> la muestra pequeña de operaciones</span></label><label class="opt"><input type="radio" name="w7q12" value="d" data-store="w7-exam-q12"><span><b>d)</b> el spread</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Con un coste de 1 pip y un rango medio de 10 pips, el coste supone…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q13" value="a" data-store="w7-exam-q13"><span><b>a)</b> 1 %</span></label><label class="opt"><input type="radio" name="w7q13" value="b" data-store="w7-exam-q13"><span><b>b)</b> 10 %</span></label><label class="opt"><input type="radio" name="w7q13" value="c" data-store="w7-exam-q13"><span><b>c)</b> 0,1 %</span></label><label class="opt"><input type="radio" name="w7q13" value="d" data-store="w7-exam-q13"><span><b>d)</b> 100 %</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Para comparar tres familias en SQX, los proyectos deben compartir…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q14" value="a" data-store="w7-exam-q14"><span><b>a)</b> datos, costes y filtros</span></label><label class="opt"><input type="radio" name="w7q14" value="b" data-store="w7-exam-q14"><span><b>b)</b> los mismos bloques</span></label><label class="opt"><input type="radio" name="w7q14" value="c" data-store="w7-exam-q14"><span><b>c)</b> la misma temporalidad obligatoriamente</span></label><label class="opt"><input type="radio" name="w7q14" value="d" data-store="w7-exam-q14"><span><b>d)</b> el mismo fitness genético y nada más</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> En una estrategia de tendencia, un take profit muy cercano…</legend><div class="opts"><label class="opt"><input type="radio" name="w7q15" value="a" data-store="w7-exam-q15"><span><b>a)</b> mejora siempre los resultados</span></label><label class="opt"><input type="radio" name="w7q15" value="b" data-store="w7-exam-q15"><span><b>b)</b> corta las grandes ganancias que explican su beneficio</span></label><label class="opt"><input type="radio" name="w7q15" value="c" data-store="w7-exam-q15"><span><b>c)</b> reduce los costes</span></label><label class="opt"><input type="radio" name="w7q15" value="d" data-store="w7-exam-q15"><span><b>d)</b> es obligatorio</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una estrategia de tendencia acierta el 32 % con una ganancia media de 3,1 R y una pérdida media de 1 R. a) Calcula su esperanza en R. b) Calcula la probabilidad de perder 8 operaciones seguidas. c) Calcula la racha de pérdidas más larga esperable en 250 operaciones.</p>
+<p><strong>B2.</strong> El rango de Asia de hoy es 1,0905–1,0931. El ATR(14) en H1 es de 10 pips. Usas un margen de 0,3 ATR y un stop loss de 1,5 ATR desde la entrada. Calcula: a) el precio de la orden de compra stop y su stop loss; b) el precio de la orden de venta stop y su stop loss; c) el riesgo en pips de cada orden.</p>
+<p><strong>B3.</strong> Una estrategia de ruptura en M15 tiene un beneficio medio bruto de 6 pips por operación ganadora, una pérdida media de 5 pips y un 52 % de acierto, sin costes. a) Calcula su esperanza en pips. b) Recalcúlala con 1,3 pips de coste por operación. c) ¿Qué conclusión sacas?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: elige una de las tres familias de esta semana para seguir investigando en EUR/USD. Justifica la elección con argumentos de costes, temporalidad, tamaño de muestra, perfil de resultados y tolerancia psicológica.</p><div class="answer"><label for="w7-examen-7">Tus respuestas a las partes B y C</label><textarea id="w7-examen-7" data-store="w7-examen-7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w7-done-examen-7"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
