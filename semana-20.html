@@ -1,0 +1,295 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 20 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="20">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><a class="wk" href="semana-15.html" data-week="15"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span></a><a class="wk" href="semana-16.html" data-week="16"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span></a></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><a class="wk" href="semana-17.html" data-week="17"><span class="n">S17</span><span class="t">Investigación especializada</span></a><a class="wk" href="semana-18.html" data-week="18"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span></a><a class="wk" href="semana-19.html" data-week="19"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span></a><a class="wk" href="semana-20.html" data-week="20"><span class="n">S20</span><span class="t">Proyecto final</span></a></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-20.svg)"><img src="img/cover-20.svg" alt=""></div><p class="eyebrow">SEMANA 20 · ETAPA 5 · PROFESIONALIZACIÓN</p><h1>Proyecto final</h1><p class="meta">7 secciones · 2 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="20" data-total="7"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w20-done-presentacion"></span>Presentación</a><a class="tab" href="#s20-l1" data-tab="s20-l1" title="Cómo presentar una investigación cuantitativa"><span class="dot" data-dot="w20-done-s20-l1"></span>L1</a><a class="tab" href="#s20-l2" data-tab="s20-l2" title="Entrega y defensa escrita del proyecto final"><span class="dot" data-dot="w20-done-s20-l2"></span>L2</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w20-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w20-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-20-y-entrega-practica" data-tab="investigacion-i-20-y-entrega-practica" title="Investigación I-20 y entrega práctica"><span class="dot" data-dot="w20-done-investigacion-i-20-y-entrega-practica"></span>Investigación I-20 y entrega práctica</a><a class="tab" href="#examen-final-del-curso" data-tab="examen-final-del-curso" title="Examen final del curso · Variante A"><span class="dot" data-dot="w20-done-examen-final-del-curso"></span>Examen final del curso</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 20 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s20-l1"><span class="dot" data-dot="w20-done-s20-l1"></span><span class="tk">Lección L1</span><b>Cómo presentar una investigación cuantitativa</b><span class="tm">→</span></a><a class="toc-i" href="#s20-l2"><span class="dot" data-dot="w20-done-s20-l2"></span><span class="tk">Lección L2</span><b>Entrega y defensa escrita del proyecto final</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w20-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w20-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-20-y-entrega-practica"><span class="dot" data-dot="w20-done-investigacion-i-20-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-20 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-final-del-curso"><span class="dot" data-dot="w20-done-examen-final-del-curso"></span><span class="tk">Evaluación</span><b>Examen final del curso · Variante A</b><span class="tm">→</span></a></nav><p>Última semana. Vas a reunir todo lo aprendido en un <strong>proyecto final</strong>: una investigación cuantitativa completa sobre el mercado que elegiste en la semana 17, que termina en una cartera candidata (o en la conclusión justificada de que no la hay), con su plan de riesgo, de ejecución y de supervisión. No se evalúa si encuentras una estrategia rentable, sino si <strong>investigas como un profesional</strong>: con hipótesis claras, datos revisados, un protocolo fijado de antemano, decisiones coherentes y conclusiones honestas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Presentar una investigación cuantitativa de forma clara, completa y verificable.</li>
+<li>Defender por escrito tus decisiones y sus limitaciones.</li>
+<li>Entregar un expediente que otra persona pueda revisar y reproducir.</li>
+</ol>
+<h4>Plan de la semana (25–30 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>2</td>
+<td>Dos lecciones</td>
+</tr>
+<tr>
+<td>Proyecto</td>
+<td>20–24</td>
+<td>Completar, redactar y revisar el proyecto final</td>
+</tr>
+<tr>
+<td>Examen final</td>
+<td>2</td>
+<td>Examen de todo el curso</td>
+</tr>
+<tr>
+<td>Defensa escrita</td>
+<td>2</td>
+<td>Respuestas a las preguntas del tribunal</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>La propuesta de proyecto de la semana 17 y la investigación I-17.</li>
+<li>Todo tu expediente: cuaderno, registro de pruebas, protocolos, fichas y hojas de cálculo.</li>
+</ul>
+<h4>Criterio para obtener el certificado del curso</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Todas las semanas anteriores</li>
+<li>☐ Proyecto final</li>
+<li>☐ Examen final</li>
+<li>☐ Defensa escrita</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w20-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s20-l1" hidden><header class="pane-head"><span class="kicker">Semana 20 · Lección L1</span><h2>Cómo presentar una investigación cuantitativa</h2></header><div class="read"><p><em>Formato: clase de 45 minutos · Lectura: 40 minutos</em></p>
+<h4>La estructura</h4>
+<p>Una investigación cuantitativa profesional sigue una estructura reconocible. Úsala en tu proyecto:</p>
+<figure class="fig"><a href="img/s20-estructura.svg" target="_blank" rel="noopener"><img src="img/s20-estructura.svg" alt="Figura 20.1 · La estructura del informe del proyecto final." loading="lazy"></a><figcaption>Figura 20.1 · La estructura del informe del proyecto final.</figcaption></figure>
+<ol>
+<li><strong>Resumen ejecutivo</strong> (una página): pregunta, método, resultado principal, decisión y riesgos. Quien solo lea esto debe entender lo esencial.</li>
+<li><strong>Pregunta e hipótesis:</strong> qué querías saber y por qué podría ser cierto (explicación económica).</li>
+<li><strong>Datos:</strong> fuentes, licencias, periodo, zona horaria, informe de calidad y limitaciones.</li>
+<li><strong>Método:</strong> configuración de la generación, protocolo de validación con sus criterios <strong>fechados antes</strong> de evaluar, registro de pruebas.</li>
+<li><strong>Resultados:</strong> todas las pruebas, también las que fallaron. Tablas y gráficos claros.</li>
+<li><strong>Cartera y riesgo:</strong> composición, correlaciones, perfil, límites, Monte Carlo.</li>
+<li><strong>Ejecución y supervisión:</strong> verificación en MetaTrader, registro de ejecución, criterios de desactivación.</li>
+<li><strong>Conclusiones y limitaciones:</strong> qué sabes, qué no y qué harías después.</li>
+<li><strong>Anexos:</strong> fichas, hojas de cálculo, archivos de SQX y EA.</li>
+</ol>
+<h4>Reglas de presentación</h4>
+<ul>
+<li><strong>Cada cifra con su fuente:</strong> de qué prueba, con qué datos y qué periodo.</li>
+<li><strong>Gráficos que se entiendan solos:</strong> título, ejes con unidades, leyenda y una frase de conclusión.</li>
+<li><strong>Separar hechos de opiniones:</strong> «el PF OOS fue 1,21» es un hecho; «creo que seguirá funcionando» es una opinión, y debe decirse así.</li>
+<li><strong>Lenguaje prudente:</strong> «superó el protocolo» y no «es rentable»; «resultado del backtest» y no «rentabilidad».</li>
+<li><strong>Reproducibilidad:</strong> otra persona con tus archivos debería obtener los mismos resultados.</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> El lector de tu informe debe poder encontrar el punto más débil de tu investigación sin buscarlo: señálalo tú en las limitaciones.</p></aside>
+<h4>Errores que restan credibilidad</h4>
+<ul>
+<li>Mostrar solo la mejor estrategia y ocultar cuántas probaste.</li>
+<li>Cifras de rentabilidad anualizada sin drawdown ni periodo.</li>
+<li>Gráficos sin ejes ni unidades.</li>
+<li>Conclusiones más fuertes que los datos.</li>
+<li>Cambiar criterios a mitad de la investigación sin declararlo.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué debe contener el resumen ejecutivo?</li>
+<li>Escribe la versión prudente de «mi estrategia gana un 25 % al año».</li>
+<li>¿Por qué se señalan los puntos débiles uno mismo?</li>
+</ol><div class="answer"><label for="w20-s20-l1">Tus respuestas</label><textarea id="w20-s20-l1" data-store="w20-s20-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w20-done-s20-l1"> He terminado esta sección</label></section><section class="pane" id="s20-l2" hidden><header class="pane-head"><span class="kicker">Semana 20 · Lección L2</span><h2>Entrega y defensa escrita del proyecto final</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Proyecto: 20–24 horas</em></p>
+<h4>El calendario de la semana</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Día</th>
+<th>Tarea</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>Revisar el expediente y completar las pruebas pendientes</td>
+</tr>
+<tr>
+<td>2–3</td>
+<td>Redactar los apartados 2 a 7</td>
+</tr>
+<tr>
+<td>4</td>
+<td>Redactar el resumen ejecutivo, las conclusiones y las limitaciones</td>
+</tr>
+<tr>
+<td>5</td>
+<td>Revisión completa con la lista de comprobación y entrega</td>
+</tr>
+<tr>
+<td>6</td>
+<td>Examen final</td>
+</tr>
+<tr>
+<td>7</td>
+<td>Defensa escrita</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Lista de comprobación antes de entregar</h4>
+<ul>
+<li>☐ El resumen ejecutivo cabe en una página y responde a pregunta, método, resultado, decisión y riesgos.</li>
+<li>☐ La hipótesis y el protocolo tienen fecha anterior a los resultados.</li>
+<li>☐ El registro de pruebas indica cuántas estrategias y variantes se probaron.</li>
+<li>☐ Todas las pruebas del protocolo aparecen, también las fallidas.</li>
+<li>☐ Cada gráfico tiene título, ejes, unidades y conclusión.</li>
+<li>☐ La cartera tiene plan de riesgo, límites y criterios de desactivación.</li>
+<li>☐ La verificación en MetaTrader está documentada.</li>
+<li>☐ Las limitaciones están escritas con honestidad.</li>
+<li>☐ Los anexos permiten reproducir los resultados.</li>
+<li>☐ No hay recomendaciones de inversión ni promesas de resultados.</li>
+</ul>
+<h4>La defensa escrita</h4>
+<p>Tras la entrega recibirás entre <strong>cinco y ocho preguntas</strong> del tribunal sobre tu proyecto. Ejemplos del tipo de pregunta:</p>
+<ul>
+<li>«¿Qué pasaría con tu cartera si los costes reales fueran el doble?»</li>
+<li>«¿Por qué fijaste ese umbral de PF OOS y no otro?»</li>
+<li>«¿Qué prueba de tu protocolo crees que es más débil y por qué?»</li>
+<li>«Si tuvieras que eliminar una estrategia de la cartera, ¿cuál sería?»</li>
+</ul>
+<p>Tendrás 48 horas para responder por escrito, con un máximo de 300 palabras por pregunta. Se valora que las respuestas se apoyen en tus datos y en los conceptos del curso.</p>
+<h4>La rúbrica del proyecto</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Pregunta, hipótesis y fuentes</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Datos e informe de calidad</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Método y protocolo fijado de antemano</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Ejecución de las pruebas y registro</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Cartera, riesgo y supervisión</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Conclusiones y limitaciones</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Presentación y reproducibilidad</td>
+<td>10 %</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s20-rubrica.svg" target="_blank" rel="noopener"><img src="img/s20-rubrica.svg" alt="Figura 20.2 · Pesos de la rúbrica del proyecto final." loading="lazy"></a><figcaption>Figura 20.2 · Pesos de la rúbrica del proyecto final.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Un proyecto que concluye, con un proceso impecable, que no hay ninguna estrategia aceptable puede obtener la máxima nota. Un proyecto con una cartera espectacular y criterios relajados a posteriori no aprueba.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué bloque de la rúbrica pesa más?</li>
+<li>¿Qué tipo de preguntas tendrá la defensa?</li>
+<li>¿Qué elemento de la lista de comprobación te parece más difícil de cumplir?</li>
+</ol><div class="answer"><label for="w20-s20-l2">Tus respuestas</label><textarea id="w20-s20-l2" data-store="w20-s20-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w20-done-s20-l2"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 20 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Anexo</td>
+<td>Appendix</td>
+<td>Material de apoyo que permite verificar el informe</td>
+</tr>
+<tr>
+<td>Defensa escrita</td>
+<td>Written defense</td>
+<td>Respuestas por escrito a las preguntas de un tribunal sobre el proyecto</td>
+</tr>
+<tr>
+<td>Limitaciones</td>
+<td>Limitations</td>
+<td>Puntos débiles conocidos de una investigación</td>
+</tr>
+<tr>
+<td>Reproducibilidad</td>
+<td>Reproducibility</td>
+<td>Posibilidad de obtener los mismos resultados con los mismos datos y métodos</td>
+</tr>
+<tr>
+<td>Resumen ejecutivo</td>
+<td>Executive summary</td>
+<td>Síntesis de una página con lo esencial del informe</td>
+</tr>
+<tr>
+<td>Rúbrica</td>
+<td>Rubric</td>
+<td>Tabla de criterios y pesos de evaluación</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w20-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 20 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Resumen.</strong> Escribe el resumen ejecutivo de tu proyecto en una página.</p>
+<p><strong>E2 · Lenguaje prudente.</strong> Reescribe con lenguaje prudente cinco frases de tus entregas anteriores que fueran demasiado afirmativas.</p>
+<p><strong>E3 · Gráficos.</strong> Revisa los gráficos de tu proyecto con las reglas de la lección 1 y corrige los que no las cumplan.</p>
+<p><strong>E4 · Limitaciones.</strong> Escribe las cinco principales limitaciones de tu investigación, ordenadas por importancia.</p>
+<p><strong>E5 · Preguntas del tribunal.</strong> Escribe las cinco preguntas más difíciles que crees que te hará el tribunal y respóndelas.</p><div class="answer"><label for="w20-ejercicios-obligatorios">Tus respuestas</label><textarea id="w20-ejercicios-obligatorios" data-store="w20-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w20-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-20-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 20 · Sección</span><h2>Investigación I-20 y entrega práctica</h2></header><div class="read"><h3>Investigación I-20 · Proyecto final</h3>
+<p>El proyecto final es la investigación de esta semana. Sigue los ocho pasos completos, el protocolo de validación y la estructura de la lección 1.</p>
+<h3>Entrega práctica · Proyecto final</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S20_INFORME</code></td>
+<td>Informe completo con la estructura de la lección 1</td>
+</tr>
+<tr>
+<td><code>CODIGO_S20_ANEXOS</code></td>
+<td>Carpeta con fichas, hojas de cálculo, registro de pruebas, protocolos fechados, archivos de SQX y EA</td>
+</tr>
+<tr>
+<td><code>CODIGO_S20_DEFENSA</code></td>
+<td>Respuestas a las preguntas del tribunal (tras recibirlas)</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Con la rúbrica de la lección 2. Se aprueba con un 80 %. Si faltan el protocolo fechado o el registro de pruebas, el proyecto queda como NO EVALUABLE.</p><div class="answer"><label for="w20-investigacion-i-20-y-entrega-practica">Tus respuestas</label><textarea id="w20-investigacion-i-20-y-entrega-practica" data-store="w20-investigacion-i-20-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w20-done-investigacion-i-20-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-final-del-curso" hidden><header class="pane-head"><span class="kicker">Semana 20 · Evaluación</span><h2>Examen final del curso · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 90 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El spread es un coste porque…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q1" value="a" data-store="w20-exam-q1"><span><b>a)</b> lo cobra el Estado</span></label><label class="opt"><input type="radio" name="w20q1" value="b" data-store="w20-exam-q1"><span><b>b)</b> comprar y vender al instante sin que se mueva el precio produce una pérdida</span></label><label class="opt"><input type="radio" name="w20q1" value="c" data-store="w20-exam-q1"><span><b>c)</b> solo existe en cripto</span></label><label class="opt"><input type="radio" name="w20q1" value="d" data-store="w20-exam-q1"><span><b>d)</b> depende del swap</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Perder un 50 % exige ganar después…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q2" value="a" data-store="w20-exam-q2"><span><b>a)</b> 50 %</span></label><label class="opt"><input type="radio" name="w20q2" value="b" data-store="w20-exam-q2"><span><b>b)</b> 75 %</span></label><label class="opt"><input type="radio" name="w20q2" value="c" data-store="w20-exam-q2"><span><b>c)</b> 100 %</span></label><label class="opt"><input type="radio" name="w20q2" value="d" data-store="w20-exam-q2"><span><b>d)</b> 150 %</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Una estrategia con un 35 % de acierto y un ratio de 2,5 tiene una esperanza de…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q3" value="a" data-store="w20-exam-q3"><span><b>a)</b> 0,225 R</span></label><label class="opt"><input type="radio" name="w20q3" value="b" data-store="w20-exam-q3"><span><b>b)</b> −0,125 R</span></label><label class="opt"><input type="radio" name="w20q3" value="c" data-store="w20-exam-q3"><span><b>c)</b> 0,875 R</span></label><label class="opt"><input type="radio" name="w20q3" value="d" data-store="w20-exam-q3"><span><b>d)</b> 0 R</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Con 60 operaciones, una media de 18 € y una desviación de 93 €, el estadístico t es aproximadamente…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q4" value="a" data-store="w20-exam-q4"><span><b>a)</b> 0,2</span></label><label class="opt"><input type="radio" name="w20q4" value="b" data-store="w20-exam-q4"><span><b>b)</b> 1,5</span></label><label class="opt"><input type="radio" name="w20q4" value="c" data-store="w20-exam-q4"><span><b>c)</b> 3,0</span></label><label class="opt"><input type="radio" name="w20q4" value="d" data-store="w20-exam-q4"><span><b>d)</b> 5,8</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Con datos en GMT+0 y un broker en GMT+2/+3, la semana de Forex tiene…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q5" value="a" data-store="w20-exam-q5"><span><b>a)</b> 5 velas diarias en ambos</span></label><label class="opt"><input type="radio" name="w20q5" value="b" data-store="w20-exam-q5"><span><b>b)</b> 6 velas diarias en los datos y 5 en el broker</span></label><label class="opt"><input type="radio" name="w20q5" value="c" data-store="w20-exam-q5"><span><b>c)</b> 7 velas en el broker</span></label><label class="opt"><input type="radio" name="w20q5" value="d" data-store="w20-exam-q5"><span><b>d)</b> 4 velas en los datos</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> La evolución genética del Builder…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q6" value="a" data-store="w20-exam-q6"><span><b>a)</b> elimina el sobreajuste</span></label><label class="opt"><input type="radio" name="w20q6" value="b" data-store="w20-exam-q6"><span><b>b)</b> tiende a sobreajustar si no se valida</span></label><label class="opt"><input type="radio" name="w20q6" value="c" data-store="w20-exam-q6"><span><b>c)</b> no usa los datos</span></label><label class="opt"><input type="radio" name="w20q6" value="d" data-store="w20-exam-q6"><span><b>d)</b> siempre genera estrategias rentables</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Un periodo fuera de muestra deja de serlo cuando…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q7" value="a" data-store="w20-exam-q7"><span><b>a)</b> es corto</span></label><label class="opt"><input type="radio" name="w20q7" value="b" data-store="w20-exam-q7"><span><b>b)</b> se usa para elegir o modificar estrategias</span></label><label class="opt"><input type="radio" name="w20q7" value="c" data-store="w20-exam-q7"><span><b>c)</b> es reciente</span></label><label class="opt"><input type="radio" name="w20q7" value="d" data-store="w20-exam-q7"><span><b>d)</b> tiene pocos datos</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> El mejor t esperado por puro azar entre 10.000 estrategias es aproximadamente…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q8" value="a" data-store="w20-exam-q8"><span><b>a)</b> 1</span></label><label class="opt"><input type="radio" name="w20q8" value="b" data-store="w20-exam-q8"><span><b>b)</b> 2</span></label><label class="opt"><input type="radio" name="w20q8" value="c" data-store="w20-exam-q8"><span><b>c)</b> 4</span></label><label class="opt"><input type="radio" name="w20q8" value="d" data-store="w20-exam-q8"><span><b>d)</b> 10</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> En la matriz Walk-Forward se busca…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q9" value="a" data-store="w20-exam-q9"><span><b>a)</b> la mejor celda</span></label><label class="opt"><input type="radio" name="w20q9" value="b" data-store="w20-exam-q9"><span><b>b)</b> una zona amplia y continua que pase</span></label><label class="opt"><input type="radio" name="w20q9" value="c" data-store="w20-exam-q9"><span><b>c)</b> una sola celda verde</span></label><label class="opt"><input type="radio" name="w20q9" value="d" data-store="w20-exam-q9"><span><b>d)</b> el máximo de ventanas</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Para dimensionar el riesgo se usa el drawdown…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q10" value="a" data-store="w20-exam-q10"><span><b>a)</b> del backtest</span></label><label class="opt"><input type="radio" name="w20q10" value="b" data-store="w20-exam-q10"><span><b>b)</b> del percentil alto del Monte Carlo</span></label><label class="opt"><input type="radio" name="w20q10" value="c" data-store="w20-exam-q10"><span><b>c)</b> mínimo</span></label><label class="opt"><input type="radio" name="w20q10" value="d" data-store="w20-exam-q10"><span><b>d)</b> del mejor año</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> En una meseta de parámetros, el valor elegido debe estar…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q11" value="a" data-store="w20-exam-q11"><span><b>a)</b> en el borde</span></label><label class="opt"><input type="radio" name="w20q11" value="b" data-store="w20-exam-q11"><span><b>b)</b> en el centro</span></label><label class="opt"><input type="radio" name="w20q11" value="c" data-store="w20-exam-q11"><span><b>c)</b> en el pico</span></label><label class="opt"><input type="radio" name="w20q11" value="d" data-store="w20-exam-q11"><span><b>d)</b> fuera del rango</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Dos estrategias al 50 % con una desviación del 10 % y correlación 0 dan una cartera con una desviación de…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q12" value="a" data-store="w20-exam-q12"><span><b>a)</b> 10 %</span></label><label class="opt"><input type="radio" name="w20q12" value="b" data-store="w20-exam-q12"><span><b>b)</b> 5 %</span></label><label class="opt"><input type="radio" name="w20q12" value="c" data-store="w20-exam-q12"><span><b>c)</b> 7,1 %</span></label><label class="opt"><input type="radio" name="w20q12" value="d" data-store="w20-exam-q12"><span><b>d)</b> 14,1 %</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Para verificar un EA en MT5 se usa el modelo…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q13" value="a" data-store="w20-exam-q13"><span><b>a)</b> cálculos matemáticos</span></label><label class="opt"><input type="radio" name="w20q13" value="b" data-store="w20-exam-q13"><span><b>b)</b> solo apertura</span></label><label class="opt"><input type="radio" name="w20q13" value="c" data-store="w20-exam-q13"><span><b>c)</b> cada tick basado en ticks reales</span></label><label class="opt"><input type="radio" name="w20q13" value="d" data-store="w20-exam-q13"><span><b>d)</b> un minuto OHLC</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una estrategia se desactiva cuando…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q14" value="a" data-store="w20-exam-q14"><span><b>a)</b> lleva un mes perdiendo</span></label><label class="opt"><input type="radio" name="w20q14" value="b" data-store="w20-exam-q14"><span><b>b)</b> se sale de lo que su simulación consideraba normal según criterios escritos</span></label><label class="opt"><input type="radio" name="w20q14" value="c" data-store="w20-exam-q14"><span><b>c)</b> gana mucho</span></label><label class="opt"><input type="radio" name="w20q14" value="d" data-store="w20-exam-q14"><span><b>d)</b> cambia el spread un día</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Gestionar el dinero de otras personas…</legend><div class="opts"><label class="opt"><input type="radio" name="w20q15" value="a" data-store="w20-exam-q15"><span><b>a)</b> es libre</span></label><label class="opt"><input type="radio" name="w20q15" value="b" data-store="w20-exam-q15"><span><b>b)</b> es un servicio reservado a entidades autorizadas</span></label><label class="opt"><input type="radio" name="w20q15" value="c" data-store="w20-exam-q15"><span><b>c)</b> solo exige un curso</span></label><label class="opt"><input type="radio" name="w20q15" value="d" data-store="w20-exam-q15"><span><b>d)</b> solo requiere su permiso verbal</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Cuenta de 8.000 €, riesgo del 0,5 %, stop de 35 pips en EUR/USD con el EUR/USD a 1,0800. a) Calcula el lote. b) Si el drawdown del percentil 95 de tu cartera es del 14 % con un riesgo del 1 % por operación y tu tolerancia es del 8 %, ¿qué riesgo por operación usarías? c) Con 10 pérdidas seguidas a ese riesgo, ¿cuánto caería la cuenta?</p>
+<p><strong>B2.</strong> Una estrategia tiene en IS un PF de 1,65 y en OOS de 1,12; con los costes al 200 %, un PF de 0,98; y supera al 91 % de sus versiones con entradas aleatorias. Tus criterios son: PF OOS ≥ 1,15; PF con costes al 200 % ≥ 1,05; superar al 95 % de las aleatorias. a) ¿Qué criterios cumple? b) ¿Cuál es tu decisión: aceptar, rechazar o repetir? c) Justifícala.</p>
+<p><strong>B3.</strong> Tres estrategias de una cartera tienen, con pesos iguales, un Sharpe conjunto de 1,4. Quitando A: 1,25; quitando B: 1,47; quitando C: 1,31. a) Ordena su aportación. b) ¿Qué harías con B? c) ¿Por qué no optimizarías los pesos para maximizar el Sharpe histórico?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 300 palabras: explica, como si se lo contaras a alguien que empieza, por qué la mayoría de las estrategias generadas automáticamente fracasan en real y cuál es el método que has aprendido en este curso para aumentar las probabilidades de éxito, sin prometer resultados.</p><div class="answer"><label for="w20-examen-final-del-curso">Tus respuestas a las partes B y C</label><textarea id="w20-examen-final-del-curso" data-store="w20-examen-final-del-curso" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w20-done-examen-final-del-curso"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
