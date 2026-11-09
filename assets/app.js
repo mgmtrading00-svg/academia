@@ -10,6 +10,12 @@ var mb=$("#menuBtn");if(mb)mb.onclick=function(){document.body.classList.toggle(
 $$("main").forEach(function(m){m.addEventListener("click",function(){document.body.classList.remove("nav-open")})});
 var act=document.body.dataset.active;$$(".wk[data-week]").forEach(function(a){if(a.dataset.week===act)a.classList.add("on")});
 
+// tema claro/oscuro
+var tb=$("#themeBtn");if(tb)tb.onclick=function(){var d=document.documentElement,cur=d.dataset.theme||(matchMedia("(prefers-color-scheme: dark)").matches?"dark":"light"),nx=cur==="dark"?"light":"dark";d.dataset.theme=nx;try{localStorage.setItem("academia-theme",nx)}catch(e){}};
+// continuar donde lo dejé
+var rb=$("#resumeBtn");if(rb&&st.f._lastWeek){rb.href="semana-"+("0"+st.f._lastWeek).slice(-2)+".html";rb.textContent="Continuar con la semana "+st.f._lastWeek+" →"}
+if(/^\d+$/.test(document.body.dataset.active||"")){st.f._lastWeek=+document.body.dataset.active;save()}
+
 // campos guardados
 var timers={};
 $$("[data-store]").forEach(function(el){
@@ -36,11 +42,11 @@ if(panes.length){
  function show(id){
   if(ids.indexOf(id)<0)id=ids[0];
   panes.forEach(function(p){p.hidden=p.id!==id});
-  $$(".tab").forEach(function(t){t.classList.toggle("on",t.dataset.tab===id);if(t.dataset.tab===id)t.scrollIntoView({block:"nearest",inline:"center"})});
+  $$(".tab").forEach(function(t){t.classList.toggle("on",t.dataset.tab===id);if(t.dataset.tab===id){var bar=t.parentNode;bar.scrollLeft=t.offsetLeft-bar.clientWidth/2+t.clientWidth/2}});
   var i=ids.indexOf(id);$("#prevSec").disabled=i===0;$("#nextSec").textContent=i===ids.length-1?"Fin de la semana":"Siguiente →";
   st.f["_last"+act]=id;save();
  }
- window.addEventListener("hashchange",function(){show(location.hash.slice(1));window.scrollTo(0,0)});
+ window.addEventListener("hashchange",function(){show(location.hash.slice(1));var tabs=$(".tabs");window.scrollTo(0,tabs?tabs.offsetTop-70:0)});
  $("#prevSec").onclick=function(){var i=ids.indexOf(location.hash.slice(1)||ids[0]);if(i>0)location.hash=ids[i-1]};
  $("#nextSec").onclick=function(){var i=ids.indexOf(location.hash.slice(1)||ids[0]);if(i<ids.length-1)location.hash=ids[i+1];else location.href="progreso.html"};
  show(location.hash.slice(1)||st.f["_last"+act]);
