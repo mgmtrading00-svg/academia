@@ -1,0 +1,380 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 18 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="18">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><a class="wk" href="semana-15.html" data-week="15"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span></a><a class="wk" href="semana-16.html" data-week="16"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span></a></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><a class="wk" href="semana-17.html" data-week="17"><span class="n">S17</span><span class="t">Investigación especializada</span></a><a class="wk" href="semana-18.html" data-week="18"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span></a><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-18.svg)"><img src="img/cover-18.svg" alt=""></div><p class="eyebrow">SEMANA 18 · ETAPA 5 · PROFESIONALIZACIÓN</p><h1>Capital propio, Darwinex y fondeo</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="18" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w18-done-presentacion"></span>Presentación</a><a class="tab" href="#s18-l1" data-tab="s18-l1" title="Capital propio de 500 a 1.000 €: protegerlo y escalar con evidencias"><span class="dot" data-dot="w18-done-s18-l1"></span>L1</a><a class="tab" href="#s18-l2" data-tab="s18-l2" title="Darwinex y Darwinex Zero"><span class="dot" data-dot="w18-done-s18-l2"></span>L2</a><a class="tab" href="#s18-l3" data-tab="s18-l3" title="Empresas de fondeo: reglas firma por firma"><span class="dot" data-dot="w18-done-s18-l3"></span>L3</a><a class="tab" href="#s18-l4" data-tab="s18-l4" title="Diferencias jurídicas y operativas entre las tres vías"><span class="dot" data-dot="w18-done-s18-l4"></span>L4</a><a class="tab" href="#s18-l5" data-tab="s18-l5" title="Taller: adaptar la cartera a las reglas de una firma"><span class="dot" data-dot="w18-done-s18-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w18-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w18-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-18-y-entrega-practica" data-tab="investigacion-i-18-y-entrega-practica" title="Investigación I-18 y entrega práctica"><span class="dot" data-dot="w18-done-investigacion-i-18-y-entrega-practica"></span>Investigación I-18 y entrega práctica</a><a class="tab" href="#examen-18" data-tab="examen-18" title="Examen de la semana 18 · Variante A"><span class="dot" data-dot="w18-done-examen-18"></span>Examen  18</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 18 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s18-l1"><span class="dot" data-dot="w18-done-s18-l1"></span><span class="tk">Lección L1</span><b>Capital propio de 500 a 1.000 €: protegerlo y escalar con evidencias</b><span class="tm">→</span></a><a class="toc-i" href="#s18-l2"><span class="dot" data-dot="w18-done-s18-l2"></span><span class="tk">Lección L2</span><b>Darwinex y Darwinex Zero</b><span class="tm">→</span></a><a class="toc-i" href="#s18-l3"><span class="dot" data-dot="w18-done-s18-l3"></span><span class="tk">Lección L3</span><b>Empresas de fondeo: reglas firma por firma</b><span class="tm">→</span></a><a class="toc-i" href="#s18-l4"><span class="dot" data-dot="w18-done-s18-l4"></span><span class="tk">Lección L4</span><b>Diferencias jurídicas y operativas entre las tres vías</b><span class="tm">→</span></a><a class="toc-i" href="#s18-l5"><span class="dot" data-dot="w18-done-s18-l5"></span><span class="tk">Lección L5</span><b>Taller: adaptar la cartera a las reglas de una firma</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w18-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w18-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-18-y-entrega-practica"><span class="dot" data-dot="w18-done-investigacion-i-18-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-18 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-18"><span class="dot" data-dot="w18-done-examen-18"></span><span class="tk">Evaluación</span><b>Examen de la semana 18 · Variante A</b><span class="tm">→</span></a></nav><p>Con una cartera validada e incubada, aparecen tres caminos para operar con dinero: tu <strong>capital propio</strong>, plataformas como <strong>Darwinex</strong> (con su versión <strong>Darwinex Zero</strong>) y las <strong>empresas de fondeo</strong>. Cada uno tiene ventajas, costes, riesgos y una naturaleza jurídica distinta. Esta semana los estudiarás con detalle y con números, para que puedas decidir con criterio si das el paso, cuándo y por dónde. Terminarás adaptando tu cartera a las reglas de una firma concreta.</p>
+<aside class="callout warn"><p><strong>Advertencia de riesgo.</strong> Nada de esta semana es una recomendación de usar ninguna de estas vías ni ninguna empresa concreta. Operar con dinero real conlleva riesgo de perderlo. Las condiciones comerciales cambian con frecuencia: consulta siempre las condiciones oficiales vigentes y anota la fecha.</p></aside>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Empezar con 500–1.000 € de capital propio protegiéndolo y escalar solo con evidencias.</li>
+<li>Explicar cómo funcionan Darwinex y Darwinex Zero.</li>
+<li>Analizar las reglas de una empresa de fondeo y su efecto en una cartera.</li>
+<li>Comparar las tres vías en lo jurídico y en lo operativo.</li>
+<li>Adaptar tu cartera a las reglas de una firma.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Análisis de condiciones y adaptación de la cartera</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-18, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 19</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Tu cartera incubada y su plan de riesgo (semanas 14 y 16).</li>
+<li>Las condiciones oficiales vigentes de Darwinex o Darwinex Zero y de una empresa de fondeo. <strong>No contrates ni pagues nada para esta semana.</strong></li>
+</ul>
+<h4>Criterio para desbloquear la semana 19</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 18</li>
+<li>☐ Entrega práctica: cartera adaptada a las reglas de una firma</li>
+<li>☐ Investigación I-18: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w18-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s18-l1" hidden><header class="pane-head"><span class="kicker">Semana 18 · Lección L1</span><h2>Capital propio de 500 a 1.000 €: protegerlo y escalar con evidencias</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El objetivo no es ganar, es medir</h4>
+<p>Con 500–1.000 €, el beneficio esperable en euros es pequeño. El objetivo de esta fase es otro: <strong>medir la ejecución real</strong> (semana 16) y comprobar que tú y tu cartera funcionáis con dinero de verdad. Por eso, el capital debe ser dinero cuya pérdida total <strong>no afecte a tu vida</strong>.</p>
+<h4>El problema del lote mínimo</h4>
+<p>Con poco capital, el <strong>lote mínimo</strong> (0,01 lotes en Forex) limita el riesgo que puedes fijar.</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Con 800 € y un riesgo del 0,5 %, arriesgas 4 € por operación. Un stop de 30 pips con 0,01 lotes de EUR/USD (pip ≈ 0,093 €) arriesga unos 2,78 €: cabe. Pero si tu cartera tiene 4 estrategias y quieres que cada una arriesgue un 0,25 % (2 €), esa operación arriesgaría casi el 0,35 %, por encima de lo previsto. Con stops más amplios, el problema crece.</p></aside>
+<figure class="fig"><a href="img/s18-lote-minimo.svg" target="_blank" rel="noopener"><img src="img/s18-lote-minimo.svg" alt="Figura 18.1 · Riesgo mínimo posible por operación con 0,01 lotes según el stop y el capital: con poco capital, los stops amplios obligan a arriesgar más de lo deseado. EUR/USD a 1,08." loading="lazy"></a><figcaption>Figura 18.1 · Riesgo mínimo posible por operación con 0,01 lotes según el stop y el capital: con poco capital, los stops amplios obligan a arriesgar más de lo deseado. EUR/USD a 1,08.</figcaption></figure>
+<p>Soluciones: una <strong>cuenta cent</strong> (semana 16), menos estrategias a la vez o aceptar temporalmente un riesgo algo mayor, pero <strong>documentándolo</strong>.</p>
+<h4>Escalar con evidencias</h4>
+<p>Define de antemano los <strong>hitos</strong> para aumentar el capital. Ejemplo:</p>
+<ol>
+<li><strong>3 meses</strong> en real sin incidencias técnicas graves.</li>
+<li><strong>Ejecución dentro de lo previsto:</strong> coste real ≤ coste de la hoja de evaluación.</li>
+<li><strong>Resultado dentro de las bandas</strong> del Monte Carlo (no hace falta ganar mucho).</li>
+<li>Solo entonces, aumentar el capital en un escalón moderado (por ejemplo, ×2) y repetir.</li>
+</ol>
+<aside class="callout key"><p><strong>Idea clave.</strong> Se escala por evidencias, no por resultados. Tres meses muy buenos pueden ser suerte; tres meses dentro de lo esperado, con una ejecución correcta, son evidencia.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuál es el objetivo de la fase con 500–1.000 €?</li>
+<li>¿Por qué el lote mínimo es un problema con poco capital?</li>
+<li>Escribe tus tres primeros hitos para escalar.</li>
+</ol><div class="answer"><label for="w18-s18-l1">Tus respuestas</label><textarea id="w18-s18-l1" data-store="w18-s18-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-s18-l1"> He terminado esta sección</label></section><section class="pane" id="s18-l2" hidden><header class="pane-head"><span class="kicker">Semana 18 · Lección L2</span><h2>Darwinex y Darwinex Zero</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué es Darwinex</h4>
+<p>Darwinex es la marca comercial de varias entidades reguladas. Según su web (consulta de noviembre de 2026): <strong>Tradeslide Trading Tech Ltd</strong>, autorizada por la FCA del Reino Unido; <strong>Sapiens Markets EU Sociedad de Valores SA</strong>, autorizada por la CNMV española; y <strong>Tradeslide Global Ltd</strong>, autorizada por la FSA de Seychelles. Comprueba siempre en el registro del supervisor con qué entidad contratarías (semana 1).</p>
+<p>Su idea central: además de ser un broker, convierte la operativa de un trader en un <strong>DARWIN</strong>, un índice que replica su estrategia con un control de riesgo propio y en el que pueden invertir terceros. El trader cobra una <strong>comisión de éxito</strong> sobre los beneficios que obtienen los inversores o el capital asignado.</p>
+<h4>Darwinex Zero</h4>
+<p><strong>Darwinex Zero</strong> permite crear un DARWIN <strong>sin depositar capital propio</strong>: pagas una <strong>suscripción mensual</strong> y operas una cuenta con capital virtual. Tu DARWIN acumula historial y recibe una <strong>valoración</strong>. Si alcanza los niveles exigidos, puede recibir <strong>asignaciones</strong> de capital del programa de la propia Darwinex (DarwinIA), y tú cobras una parte de los beneficios que ese capital genere. Según un artículo de un participante de agosto de 2026, esa parte era del 15 % y el umbral de valoración para optar a asignación, de 75; <strong>comprueba ambas cifras en las condiciones oficiales</strong>, porque cambian.</p>
+<figure class="fig"><a href="img/s18-darwinex.svg" target="_blank" rel="noopener"><img src="img/s18-darwinex.svg" alt="Figura 18.2 · Cómo funciona Darwinex Zero: suscripción, cuenta virtual, DARWIN con valoración y posibles asignaciones." loading="lazy"></a><figcaption>Figura 18.2 · Cómo funciona Darwinex Zero: suscripción, cuenta virtual, DARWIN con valoración y posibles asignaciones.</figcaption></figure>
+<h4>Qué valora</h4>
+<p>La valoración de un DARWIN da mucho peso a la <strong>relación entre beneficio y drawdown</strong> y a la <strong>estabilidad del riesgo</strong>, no a la rentabilidad bruta. Encaja bien con lo aprendido en el curso: carteras diversificadas, riesgo controlado y pocas sorpresas.</p>
+<h4>Ventajas e inconvenientes</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Ventajas</th>
+<th>Inconvenientes</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Entidades reguladas</td>
+<td>Suscripción mensual (coste fijo)</td>
+</tr>
+<tr>
+<td>No arriesgas capital propio en Darwinex Zero</td>
+<td>Las asignaciones no están garantizadas</td>
+</tr>
+<tr>
+<td>Historial público y verificable</td>
+<td>La valoración tarda meses en construirse</td>
+</tr>
+<tr>
+<td>Encaja con carteras de riesgo controlado</td>
+<td>Las condiciones cambian con el tiempo</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué es un DARWIN?</li>
+<li>¿Qué pagas y qué arriesgas en Darwinex Zero?</li>
+<li>¿Qué tipo de estrategia favorece la valoración de un DARWIN?</li>
+</ol><div class="answer"><label for="w18-s18-l2">Tus respuestas</label><textarea id="w18-s18-l2" data-store="w18-s18-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-s18-l2"> He terminado esta sección</label></section><section class="pane" id="s18-l3" hidden><header class="pane-head"><span class="kicker">Semana 18 · Lección L3</span><h2>Empresas de fondeo: reglas firma por firma</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>El modelo</h4>
+<p>Una <strong>empresa de fondeo</strong> (<em>prop firm</em>) te vende una <strong>evaluación</strong>: si cumples sus objetivos sin romper sus reglas, te da acceso a una cuenta «financiada» y te paga una parte de los beneficios. En muchas de ellas, las cuentas son <strong>simuladas</strong> y los pagos se hacen con cargo a los ingresos de la empresa. El precio de la evaluación es la principal fuente de ingresos de muchas firmas.</p>
+<h4>Reglas típicas</h4>
+<p>Como ejemplo, las reglas descritas públicamente para la evaluación en dos fases de FTMO, una de las firmas más conocidas (resumen de terceros consultado en noviembre de 2026; <strong>verifícalo en la web oficial</strong>):</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Regla</th>
+<th>Fase 1</th>
+<th>Fase 2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Objetivo de beneficio</td>
+<td>10 %</td>
+<td>5 %</td>
+</tr>
+<tr>
+<td>Pérdida diaria máxima</td>
+<td>5 %</td>
+<td>5 %</td>
+</tr>
+<tr>
+<td>Pérdida total máxima</td>
+<td>10 %</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Días mínimos de operativa</td>
+<td>4</td>
+<td>4</td>
+</tr>
+</tbody>
+</table></div>
+<p>Cada firma tiene reglas distintas: pérdida máxima fija o «arrastrada» (<em>trailing</em>), límites diarios calculados sobre el saldo o sobre el patrimonio, reglas de consistencia (ningún día puede aportar más de un porcentaje del beneficio), restricciones en noticias o fines de semana, y condiciones para los EA (algunas prohíben ciertos tipos de estrategias automáticas o de copia).</p>
+<figure class="fig"><a href="img/s18-fondeo.svg" target="_blank" rel="noopener"><img src="img/s18-fondeo.svg" alt="Figura 18.3 · Una cartera dentro de los límites de una evaluación: el riesgo diario y total deciden más que la rentabilidad. Datos simulados." loading="lazy"></a><figcaption>Figura 18.3 · Una cartera dentro de los límites de una evaluación: el riesgo diario y total deciden más que la rentabilidad. Datos simulados.</figcaption></figure>
+<h4>Las reglas cambian tu estrategia</h4>
+<ul>
+<li><strong>La pérdida diaria máxima</strong> limita el riesgo abierto: con un 5 % diario, un riesgo del 2 % por operación deja margen para dos pérdidas.</li>
+<li><strong>La pérdida total máxima</strong> es tu drawdown máximo absoluto: compárala con el percentil 99 del Monte Carlo de tu cartera.</li>
+<li><strong>El objetivo de beneficio</strong> sin límite de tiempo favorece la paciencia; con límite de tiempo, empuja a arriesgar más, que es justo lo que suele hacer fracasar.</li>
+</ul>
+<aside class="callout warn"><p><strong>Error típico.</strong> Subir el riesgo para «pasar rápido» la evaluación. La probabilidad de tocar la pérdida máxima crece mucho más deprisa que la de alcanzar el objetivo (semana 4).</p></aside>
+<h4>Cómo analizar una firma</h4>
+<ol>
+<li>Lee las <strong>condiciones oficiales completas</strong> y guárdalas con fecha.</li>
+<li>Comprueba quién es la empresa, dónde está registrada y si aparece en las <strong>advertencias de la CNMV</strong> u otros supervisores.</li>
+<li>Busca reglas sobre <strong>EA</strong>, noticias, fines de semana y copia de operaciones.</li>
+<li>Busca opiniones con <strong>pruebas de pago</strong> verificables, desconfiando del marketing.</li>
+</ol>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿De dónde salen los ingresos de muchas empresas de fondeo?</li>
+<li>¿Qué regla de una evaluación limita más tu riesgo abierto?</li>
+<li>¿Por qué subir el riesgo para pasar rápido suele fracasar?</li>
+</ol><div class="answer"><label for="w18-s18-l3">Tus respuestas</label><textarea id="w18-s18-l3" data-store="w18-s18-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-s18-l3"> He terminado esta sección</label></section><section class="pane" id="s18-l4" hidden><header class="pane-head"><span class="kicker">Semana 18 · Lección L4</span><h2>Diferencias jurídicas y operativas entre las tres vías</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Aspecto</th>
+<th>Capital propio</th>
+<th>Darwinex / Darwinex Zero</th>
+<th>Empresa de fondeo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Qué arriesgas</td>
+<td>Tu capital</td>
+<td>Tu capital (Darwinex) o la suscripción (Zero)</td>
+<td>El precio de la evaluación</td>
+</tr>
+<tr>
+<td>Entidad</td>
+<td>Broker autorizado</td>
+<td>Entidades autorizadas (FCA, CNMV…)</td>
+<td>Normalmente no es una empresa de servicios de inversión autorizada</td>
+</tr>
+<tr>
+<td>Tus operaciones</td>
+<td>Reales</td>
+<td>Reales o virtuales replicadas</td>
+<td>Habitualmente simuladas</td>
+</tr>
+<tr>
+<td>Lo que cobras</td>
+<td>Tu beneficio</td>
+<td>Comisión de éxito</td>
+<td>Parte del beneficio, según contrato</td>
+</tr>
+<tr>
+<td>Protección del inversor</td>
+<td>La del broker (semana 1)</td>
+<td>La de las entidades reguladas</td>
+<td>La del contrato de servicios</td>
+</tr>
+<tr>
+<td>Fiscalidad</td>
+<td>Rendimientos de tus inversiones</td>
+<td>Depende del tipo de ingreso</td>
+<td>Ingreso por la prestación de un servicio (semana 19)</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s18-vias.svg" target="_blank" rel="noopener"><img src="img/s18-vias.svg" alt="Figura 18.4 · Las tres vías: qué arriesgas y qué puedes ganar. Esquema." loading="lazy"></a><figcaption>Figura 18.4 · Las tres vías: qué arriesgas y qué puedes ganar. Esquema.</figcaption></figure>
+<h4>Lo jurídico importa</h4>
+<ul>
+<li>Con un <strong>broker</strong> o <strong>Darwinex</strong> tienes una relación de inversión con una entidad supervisada.</li>
+<li>Con una <strong>empresa de fondeo</strong> sueles tener un <strong>contrato de prestación de servicios</strong>: no hay protección del inversor y las condiciones las fija la empresa. Lee el contrato, en especial los motivos por los que pueden negarse a pagar.</li>
+<li>La <strong>fiscalidad</strong> es distinta en cada caso: lo verás en la semana 19.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> El curso no te recomienda ninguna de las tres vías. Es una decisión personal, que depende de tu situación, y que debes tomar informándote en las fuentes oficiales y, si hace falta, con un profesional.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué arriesgas en cada vía?</li>
+<li>¿Qué diferencia jurídica hay entre una empresa de fondeo y un broker autorizado?</li>
+<li>¿Por qué es importante leer los motivos de denegación de pago?</li>
+</ol><div class="answer"><label for="w18-s18-l4">Tus respuestas</label><textarea id="w18-s18-l4" data-store="w18-s18-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-s18-l4"> He terminado esta sección</label></section><section class="pane" id="s18-l5" hidden><header class="pane-head"><span class="kicker">Semana 18 · Lección L5</span><h2>Taller: adaptar la cartera a las reglas de una firma</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 8–10 horas</em></p>
+<h4>Paso 1 · Elige y documenta</h4>
+<p>Elige una firma de fondeo o el programa de Darwinex Zero. Descarga o copia sus <strong>condiciones oficiales</strong> vigentes con la fecha. No contrates nada.</p>
+<h4>Paso 2 · Traduce las reglas a límites</h4>
+<p>Convierte cada regla en un límite de tu plan de riesgo (semana 14): riesgo por operación, riesgo abierto máximo, pérdida diaria, drawdown de parada, horarios prohibidos.</p>
+<h4>Paso 3 · Simula</h4>
+<p>Con el Monte Carlo de tu cartera (semana 11), calcula para tu escala de riesgo: la probabilidad de alcanzar el objetivo antes de tocar la pérdida máxima, y la probabilidad de romper la pérdida diaria en algún día.</p>
+<h4>Paso 4 · Ajusta</h4>
+<p>Busca la escala de riesgo que maximice la probabilidad de cumplir las reglas, no la de alcanzar el objetivo rápido.</p>
+<h4>Paso 5 · Decide</h4>
+<p>Escribe tu conclusión: ¿encaja tu cartera con esa firma o programa? ¿Con qué riesgo? ¿Qué te preocupa del contrato?</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué probabilidad tiene tu cartera de superar la evaluación con tu escala elegida?</li>
+<li>¿Qué regla te limitó más?</li>
+<li>¿Darías el paso? ¿Por qué?</li>
+</ol><div class="answer"><label for="w18-s18-l5">Tus respuestas</label><textarea id="w18-s18-l5" data-store="w18-s18-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-s18-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 18 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asignación</td>
+<td>Allocation</td>
+<td>Capital que una plataforma asigna a una estrategia</td>
+</tr>
+<tr>
+<td>Comisión de éxito</td>
+<td>Performance fee</td>
+<td>Parte de los beneficios que cobra el gestor o trader</td>
+</tr>
+<tr>
+<td>DARWIN</td>
+<td>DARWIN</td>
+<td>Índice de Darwinex que replica la estrategia de un trader con control de riesgo</td>
+</tr>
+<tr>
+<td>Darwinex Zero</td>
+<td>Darwinex Zero</td>
+<td>Programa de Darwinex para crear un DARWIN con capital virtual mediante suscripción</td>
+</tr>
+<tr>
+<td>Empresa de fondeo</td>
+<td>Prop firm</td>
+<td>Empresa que vende evaluaciones y paga una parte de los beneficios a quien las supera</td>
+</tr>
+<tr>
+<td>Evaluación</td>
+<td>Challenge / evaluation</td>
+<td>Prueba con objetivos y límites para acceder a una cuenta financiada</td>
+</tr>
+<tr>
+<td>Hito de escalado</td>
+<td>Scaling milestone</td>
+<td>Condición previa para aumentar el capital</td>
+</tr>
+<tr>
+<td>Pérdida máxima arrastrada</td>
+<td>Trailing drawdown</td>
+<td>Límite de pérdida que sube con el máximo de la cuenta</td>
+</tr>
+<tr>
+<td>Regla de consistencia</td>
+<td>Consistency rule</td>
+<td>Límite al peso de un solo día en el beneficio total</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w18-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 18 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Lote mínimo.</strong> Con 600 € y un riesgo del 0,5 %, ¿cuál es el stop máximo en pips que puedes usar con 0,01 lotes de EUR/USD (EUR/USD a 1,08)?</p>
+<p><strong>E2 · Hitos.</strong> Escribe tus hitos completos de escalado desde 500–1.000 € hasta el capital objetivo.</p>
+<p><strong>E3 · Darwinex.</strong> Consulta las condiciones oficiales vigentes de Darwinex Zero: precio de la suscripción, requisitos para optar a asignaciones y porcentaje de la comisión de éxito. Cita la página y la fecha.</p>
+<p><strong>E4 · Supervisión.</strong> Comprueba en el registro de la CNMV o de la FCA la entidad de Darwinex con la que contratarías desde tu país.</p>
+<p><strong>E5 · Firma.</strong> Elige una empresa de fondeo y resume sus reglas en una tabla, con la fecha de consulta.</p>
+<p><strong>E6 · Advertencias.</strong> Busca la empresa del E5 en la lista de advertencias de la CNMV y en la del supervisor de su país de origen. Anota el resultado.</p>
+<p><strong>E7 · Riesgo y evaluación.</strong> Con una pérdida diaria máxima del 5 % y una pérdida total del 10 %, ¿qué riesgo por operación máximo permitiría encadenar 8 pérdidas sin romper la pérdida total? ¿Y sin romper la diaria, si se pueden dar 3 pérdidas en un día?</p>
+<p><strong>E8 · Simulación.</strong> Simula 200 veces tu cartera con las reglas de la firma del E5 y calcula el porcentaje de éxitos.</p>
+<p><strong>E9 · Comparación.</strong> Rellena la tabla de la lección 4 con los datos concretos de las tres opciones que analizarías tú.</p>
+<p><strong>E10 · Decisión.</strong> Escribe en 200 palabras qué vía elegirías hoy, o por qué ninguna todavía.</p><div class="answer"><label for="w18-ejercicios-obligatorios">Tus respuestas</label><textarea id="w18-ejercicios-obligatorios" data-store="w18-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-18-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 18 · Sección</span><h2>Investigación I-18 y entrega práctica</h2></header><div class="read"><h3>Investigación I-18 · ¿Qué riesgo maximiza la probabilidad de superar una evaluación?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Con mi cartera, un riesgo de 0,25 % por estrategia da una probabilidad de superar la evaluación mayor que uno de 0,75 %».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Condiciones oficiales de la firma y al menos una fuente sobre la gestión del riesgo en evaluaciones.</p>
+<p><strong>Paso 3 · Datos.</strong> Resultados de tu cartera (operaciones o días).</p>
+<p><strong>Paso 4 · Diseño.</strong> Escalas a probar, número de simulaciones, reglas que aplicarás y criterio de éxito.</p>
+<p><strong>Pasos 5 y 6.</strong> Simulaciones de Monte Carlo con las reglas de la firma.</p>
+<p><strong>Paso 7 · Comparación.</strong> Probabilidad de éxito, de romper la pérdida diaria y de romper la total para cada escala, y tiempo medio hasta el objetivo.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Qué riesgo elegirías? ¿Qué limitaciones tiene la simulación?</p>
+<h3>Entrega práctica · Cartera adaptada a una firma</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S18_ENT</code></td>
+<td>Condiciones oficiales con fecha, tabla de reglas traducidas a límites, simulación y decisión razonada</td>
+</tr>
+<tr>
+<td><code>CODIGO_S18_INV</code></td>
+<td>Investigación I-18</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que las condiciones se citen de la fuente oficial con fecha, que las reglas se traduzcan correctamente a límites y que la decisión se apoye en la simulación. No se valora si decides dar el paso o no: se valora cómo lo decides.</p><div class="answer"><label for="w18-investigacion-i-18-y-entrega-practica">Tus respuestas</label><textarea id="w18-investigacion-i-18-y-entrega-practica" data-store="w18-investigacion-i-18-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-investigacion-i-18-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-18" hidden><header class="pane-head"><span class="kicker">Semana 18 · Evaluación</span><h2>Examen de la semana 18 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El objetivo principal de operar con 500–1.000 € es…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q1" value="a" data-store="w18-exam-q1"><span><b>a)</b> hacerse rico</span></label><label class="opt"><input type="radio" name="w18q1" value="b" data-store="w18-exam-q1"><span><b>b)</b> medir la ejecución real y la disciplina</span></label><label class="opt"><input type="radio" name="w18q1" value="c" data-store="w18-exam-q1"><span><b>c)</b> pasar una evaluación</span></label><label class="opt"><input type="radio" name="w18q1" value="d" data-store="w18-exam-q1"><span><b>d)</b> pagar impuestos</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Con poco capital, el lote mínimo…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q2" value="a" data-store="w18-exam-q2"><span><b>a)</b> no importa</span></label><label class="opt"><input type="radio" name="w18q2" value="b" data-store="w18-exam-q2"><span><b>b)</b> puede obligar a arriesgar más de lo previsto con stops amplios</span></label><label class="opt"><input type="radio" name="w18q2" value="c" data-store="w18-exam-q2"><span><b>c)</b> elimina el riesgo</span></label><label class="opt"><input type="radio" name="w18q2" value="d" data-store="w18-exam-q2"><span><b>d)</b> reduce los costes</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Se escala el capital…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q3" value="a" data-store="w18-exam-q3"><span><b>a)</b> tras un mes con grandes beneficios</span></label><label class="opt"><input type="radio" name="w18q3" value="b" data-store="w18-exam-q3"><span><b>b)</b> por evidencias definidas de antemano</span></label><label class="opt"><input type="radio" name="w18q3" value="c" data-store="w18-exam-q3"><span><b>c)</b> cuando se pierde, para recuperar</span></label><label class="opt"><input type="radio" name="w18q3" value="d" data-store="w18-exam-q3"><span><b>d)</b> nunca</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un DARWIN es…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q4" value="a" data-store="w18-exam-q4"><span><b>a)</b> un indicador técnico</span></label><label class="opt"><input type="radio" name="w18q4" value="b" data-store="w18-exam-q4"><span><b>b)</b> un índice que replica la estrategia de un trader con control de riesgo</span></label><label class="opt"><input type="radio" name="w18q4" value="c" data-store="w18-exam-q4"><span><b>c)</b> una criptomoneda</span></label><label class="opt"><input type="radio" name="w18q4" value="d" data-store="w18-exam-q4"><span><b>d)</b> un tipo de orden</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> En Darwinex Zero se paga…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q5" value="a" data-store="w18-exam-q5"><span><b>a)</b> una suscripción mensual</span></label><label class="opt"><input type="radio" name="w18q5" value="b" data-store="w18-exam-q5"><span><b>b)</b> un depósito de 10.000 €</span></label><label class="opt"><input type="radio" name="w18q5" value="c" data-store="w18-exam-q5"><span><b>c)</b> nada</span></label><label class="opt"><input type="radio" name="w18q5" value="d" data-store="w18-exam-q5"><span><b>d)</b> una comisión por operación al inversor</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> La valoración de un DARWIN da mucho peso a…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q6" value="a" data-store="w18-exam-q6"><span><b>a)</b> la rentabilidad bruta</span></label><label class="opt"><input type="radio" name="w18q6" value="b" data-store="w18-exam-q6"><span><b>b)</b> la relación entre beneficio y drawdown</span></label><label class="opt"><input type="radio" name="w18q6" value="c" data-store="w18-exam-q6"><span><b>c)</b> el número de operaciones</span></label><label class="opt"><input type="radio" name="w18q6" value="d" data-store="w18-exam-q6"><span><b>d)</b> el apalancamiento</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Una entidad de Darwinex está autorizada en España por…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q7" value="a" data-store="w18-exam-q7"><span><b>a)</b> el Banco de España</span></label><label class="opt"><input type="radio" name="w18q7" value="b" data-store="w18-exam-q7"><span><b>b)</b> la CNMV</span></label><label class="opt"><input type="radio" name="w18q7" value="c" data-store="w18-exam-q7"><span><b>c)</b> la Agencia Tributaria</span></label><label class="opt"><input type="radio" name="w18q7" value="d" data-store="w18-exam-q7"><span><b>d)</b> ninguna</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Muchas empresas de fondeo obtienen sus ingresos sobre todo de…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q8" value="a" data-store="w18-exam-q8"><span><b>a)</b> las comisiones de los inversores</span></label><label class="opt"><input type="radio" name="w18q8" value="b" data-store="w18-exam-q8"><span><b>b)</b> el precio de las evaluaciones</span></label><label class="opt"><input type="radio" name="w18q8" value="c" data-store="w18-exam-q8"><span><b>c)</b> los intereses</span></label><label class="opt"><input type="radio" name="w18q8" value="d" data-store="w18-exam-q8"><span><b>d)</b> la publicidad</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> En una evaluación con pérdida diaria máxima del 5 %, un riesgo del 2 % por operación…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q9" value="a" data-store="w18-exam-q9"><span><b>a)</b> es muy prudente</span></label><label class="opt"><input type="radio" name="w18q9" value="b" data-store="w18-exam-q9"><span><b>b)</b> deja margen para unas dos pérdidas en el día</span></label><label class="opt"><input type="radio" name="w18q9" value="c" data-store="w18-exam-q9"><span><b>c)</b> no tiene efecto</span></label><label class="opt"><input type="radio" name="w18q9" value="d" data-store="w18-exam-q9"><span><b>d)</b> está prohibido siempre</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Subir el riesgo para pasar rápido una evaluación…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q10" value="a" data-store="w18-exam-q10"><span><b>a)</b> aumenta mucho más la probabilidad de tocar la pérdida máxima</span></label><label class="opt"><input type="radio" name="w18q10" value="b" data-store="w18-exam-q10"><span><b>b)</b> garantiza el éxito</span></label><label class="opt"><input type="radio" name="w18q10" value="c" data-store="w18-exam-q10"><span><b>c)</b> reduce el riesgo</span></label><label class="opt"><input type="radio" name="w18q10" value="d" data-store="w18-exam-q10"><span><b>d)</b> es lo recomendado</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Con una empresa de fondeo sueles tener…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q11" value="a" data-store="w18-exam-q11"><span><b>a)</b> una relación de inversión protegida</span></label><label class="opt"><input type="radio" name="w18q11" value="b" data-store="w18-exam-q11"><span><b>b)</b> un contrato de prestación de servicios</span></label><label class="opt"><input type="radio" name="w18q11" value="c" data-store="w18-exam-q11"><span><b>c)</b> una cuenta en el Banco de España</span></label><label class="opt"><input type="radio" name="w18q11" value="d" data-store="w18-exam-q11"><span><b>d)</b> un fondo de garantía</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> En las empresas de fondeo, las cuentas suelen ser…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q12" value="a" data-store="w18-exam-q12"><span><b>a)</b> siempre reales</span></label><label class="opt"><input type="radio" name="w18q12" value="b" data-store="w18-exam-q12"><span><b>b)</b> habitualmente simuladas</span></label><label class="opt"><input type="radio" name="w18q12" value="c" data-store="w18-exam-q12"><span><b>c)</b> de criptomonedas</span></label><label class="opt"><input type="radio" name="w18q12" value="d" data-store="w18-exam-q12"><span><b>d)</b> del Estado</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Antes de contratar una firma de fondeo conviene…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q13" value="a" data-store="w18-exam-q13"><span><b>a)</b> consultar las advertencias de la CNMV</span></label><label class="opt"><input type="radio" name="w18q13" value="b" data-store="w18-exam-q13"><span><b>b)</b> pagar la evaluación más cara</span></label><label class="opt"><input type="radio" name="w18q13" value="c" data-store="w18-exam-q13"><span><b>c)</b> usar el máximo riesgo</span></label><label class="opt"><input type="radio" name="w18q13" value="d" data-store="w18-exam-q13"><span><b>d)</b> ignorar el contrato</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una pérdida máxima arrastrada (trailing)…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q14" value="a" data-store="w18-exam-q14"><span><b>a)</b> es fija desde el inicio</span></label><label class="opt"><input type="radio" name="w18q14" value="b" data-store="w18-exam-q14"><span><b>b)</b> sube con el máximo de la cuenta</span></label><label class="opt"><input type="radio" name="w18q14" value="c" data-store="w18-exam-q14"><span><b>c)</b> no existe</span></label><label class="opt"><input type="radio" name="w18q14" value="d" data-store="w18-exam-q14"><span><b>d)</b> baja con las pérdidas</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> El curso, respecto a las tres vías…</legend><div class="opts"><label class="opt"><input type="radio" name="w18q15" value="a" data-store="w18-exam-q15"><span><b>a)</b> recomienda el fondeo</span></label><label class="opt"><input type="radio" name="w18q15" value="b" data-store="w18-exam-q15"><span><b>b)</b> recomienda Darwinex</span></label><label class="opt"><input type="radio" name="w18q15" value="c" data-store="w18-exam-q15"><span><b>c)</b> no recomienda ninguna: la decisión es personal e informada</span></label><label class="opt"><input type="radio" name="w18q15" value="d" data-store="w18-exam-q15"><span><b>d)</b> recomienda el capital propio</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Tienes 900 €. Quieres un riesgo de 0,4 % por operación con 0,01 lotes de EUR/USD (pip ≈ 0,0926 € por 0,01 lotes con el EUR/USD a 1,08). a) ¿Cuánto arriesgas en euros? b) ¿Qué stop máximo en pips puedes usar? c) Si tu estrategia usa stops de 50 pips, ¿qué riesgo real asumes?</p>
+<p><strong>B2.</strong> Una evaluación tiene un objetivo del 10 %, pérdida diaria máxima del 5 % y pérdida total del 10 %. Tu cartera tiene una esperanza de 0,15 R por operación y hace 4 operaciones por semana con un riesgo de 0,5 % cada una. a) ¿Cuántas operaciones necesitas de media para alcanzar el objetivo (sin composición)? b) ¿Cuántas semanas? c) ¿Cuántas pérdidas seguidas puedes encadenar antes de tocar la pérdida total?</p>
+<p><strong>B3.</strong> Un programa paga al trader el 15 % de los beneficios del capital asignado. Te asignan 30.000 € y la estrategia gana un 8 % en el periodo. a) ¿Cuánto cobras? b) Si la suscripción cuesta 40 € al mes durante 12 meses, ¿cuál es tu resultado neto en el año? c) ¿Qué rentabilidad del capital asignado necesitarías para cubrir solo la suscripción?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: compara las tres vías (capital propio, Darwinex Zero y una empresa de fondeo) para una persona con 1.000 € y una cartera recién incubada, en cuanto a riesgo, coste, protección jurídica y encaje con lo aprendido en el curso.</p><div class="answer"><label for="w18-examen-18">Tus respuestas a las partes B y C</label><textarea id="w18-examen-18" data-store="w18-examen-18" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w18-done-examen-18"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
