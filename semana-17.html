@@ -1,0 +1,332 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 17 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="17">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><a class="wk" href="semana-15.html" data-week="15"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span></a><a class="wk" href="semana-16.html" data-week="16"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span></a></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><a class="wk" href="semana-17.html" data-week="17"><span class="n">S17</span><span class="t">Investigación especializada</span></a><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-17.svg)"><img src="img/cover-17.svg" alt=""></div><p class="eyebrow">SEMANA 17 · ETAPA 5 · PROFESIONALIZACIÓN</p><h1>Investigación especializada</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="17" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w17-done-presentacion"></span>Presentación</a><a class="tab" href="#s17-l1" data-tab="s17-l1" title="Forex a corto plazo"><span class="dot" data-dot="w17-done-s17-l1"></span>L1</a><a class="tab" href="#s17-l2" data-tab="s17-l2" title="Acciones a medio y largo plazo"><span class="dot" data-dot="w17-done-s17-l2"></span>L2</a><a class="tab" href="#s17-l3" data-tab="s17-l3" title="Índices: intradía y swing"><span class="dot" data-dot="w17-done-s17-l3"></span>L3</a><a class="tab" href="#s17-l4" data-tab="s17-l4" title="Criptomonedas: horizontes y riesgos"><span class="dot" data-dot="w17-done-s17-l4"></span>L4</a><a class="tab" href="#s17-l5" data-tab="s17-l5" title="Taller: investigación del mercado elegido"><span class="dot" data-dot="w17-done-s17-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w17-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w17-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-17-y-entrega-practica" data-tab="investigacion-i-17-y-entrega-practica" title="Investigación I-17 y entrega práctica"><span class="dot" data-dot="w17-done-investigacion-i-17-y-entrega-practica"></span>Investigación I-17 y entrega práctica</a><a class="tab" href="#examen-17" data-tab="examen-17" title="Examen de la semana 17 · Variante A"><span class="dot" data-dot="w17-done-examen-17"></span>Examen  17</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 17 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s17-l1"><span class="dot" data-dot="w17-done-s17-l1"></span><span class="tk">Lección L1</span><b>Forex a corto plazo</b><span class="tm">→</span></a><a class="toc-i" href="#s17-l2"><span class="dot" data-dot="w17-done-s17-l2"></span><span class="tk">Lección L2</span><b>Acciones a medio y largo plazo</b><span class="tm">→</span></a><a class="toc-i" href="#s17-l3"><span class="dot" data-dot="w17-done-s17-l3"></span><span class="tk">Lección L3</span><b>Índices: intradía y swing</b><span class="tm">→</span></a><a class="toc-i" href="#s17-l4"><span class="dot" data-dot="w17-done-s17-l4"></span><span class="tk">Lección L4</span><b>Criptomonedas: horizontes y riesgos</b><span class="tm">→</span></a><a class="toc-i" href="#s17-l5"><span class="dot" data-dot="w17-done-s17-l5"></span><span class="tk">Lección L5</span><b>Taller: investigación del mercado elegido</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w17-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w17-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-17-y-entrega-practica"><span class="dot" data-dot="w17-done-investigacion-i-17-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-17 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-17"><span class="dot" data-dot="w17-done-examen-17"></span><span class="tk">Evaluación</span><b>Examen de la semana 17 · Variante A</b><span class="tm">→</span></a></nav><p>Empieza la última etapa. Ya dominas el proceso completo: datos, generación, validación, cartera y ejecución. Esta semana lo aplicarás de forma <strong>especializada</strong> a cada uno de los cuatro mercados del curso, cada uno con su horizonte natural: Forex a corto plazo, acciones a medio y largo plazo, índices en intradía y <em>swing</em>, y criptomonedas. Verás qué funciona razonablemente en cada uno, qué trampas tiene y cómo adaptar el protocolo. Terminarás eligiendo <strong>un mercado</strong> para tu proyecto final y haciendo una primera investigación a fondo.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Investigar Forex a corto plazo con especial atención a costes, sesiones y noticias.</li>
+<li>Plantear estrategias de acciones a medio y largo plazo y sus particularidades.</li>
+<li>Investigar índices en intradía y <em>swing</em> con sus horarios y gaps.</li>
+<li>Tratar los horizontes y riesgos específicos de las criptomonedas.</li>
+<li>Elegir el mercado de tu proyecto final con criterios objetivos.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Investigación a fondo del mercado elegido</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-17, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan del proyecto final</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX y datos revisados del mercado que elijas (semana 9).</li>
+<li>Tu protocolo de validación (semana 12) y tu plantilla de cartera.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 18</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 17</li>
+<li>☐ Entrega práctica: ficha de mercado y propuesta de proyecto final</li>
+<li>☐ Investigación I-17: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w17-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s17-l1" hidden><header class="pane-head"><span class="kicker">Semana 17 · Lección L1</span><h2>Forex a corto plazo</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Lo que lo hace especial</h4>
+<ul>
+<li><strong>Costes muy bajos en los pares principales</strong>, pero que pesan mucho a corto plazo (semana 7).</li>
+<li><strong>Sesiones muy marcadas:</strong> la liquidez y la volatilidad cambian con la hora (semanas 1 y 8).</li>
+<li><strong>Noticias macroeconómicas a hora fija:</strong> empleo de EE. UU., decisiones de bancos centrales, inflación. En esos minutos, el spread se abre y el deslizamiento se dispara.</li>
+<li><strong>Mercado OTC:</strong> cada broker tiene sus precios (semana 9).</li>
+</ul>
+<figure class="fig"><a href="img/s17-spread-hora.svg" target="_blank" rel="noopener"><img src="img/s17-spread-hora.svg" alt="Figura 17.1 · Spread medio de EUR/USD por hora del servidor: se dispara en el cambio de día y en las horas de poca liquidez. Patrón ilustrativo." loading="lazy"></a><figcaption>Figura 17.1 · Spread medio de EUR/USD por hora del servidor: se dispara en el cambio de día y en las horas de poca liquidez. Patrón ilustrativo.</figcaption></figure>
+<h4>Cómo adaptar el protocolo</h4>
+<ul>
+<li><strong>Temporalidad mínima razonable: M15–H1.</strong> Por debajo, los costes deciden.</li>
+<li><strong>Spread variable:</strong> si tus datos lo permiten, haz el backtest con el spread real de cada momento, no con uno fijo.</li>
+<li><strong>Filtro de noticias:</strong> decide si la estrategia opera o no en las horas de noticias importantes y pruébalo; no lo añadas después de ver el resultado.</li>
+<li><strong>Evita el cambio de día</strong> (alrededor de las 00:00 del servidor), cuando el spread suele ampliarse.</li>
+<li><strong>Prueba en varios pares principales</strong> (semana 12).</li>
+</ul>
+<h4>Ideas habituales</h4>
+<p>Rupturas de la sesión de Asia al abrir Europa, reversión en horas tranquilas, momentum en H1–H4 tras datos importantes. Todas ellas muy estudiadas: si funcionan, su ventaja suele ser pequeña.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué se evita operar alrededor del cambio de día?</li>
+<li>¿Cómo tratarías las noticias en una estrategia de M15?</li>
+<li>¿Qué temporalidad mínima usarías en Forex y por qué?</li>
+</ol><div class="answer"><label for="w17-s17-l1">Tus respuestas</label><textarea id="w17-s17-l1" data-store="w17-s17-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-s17-l1"> He terminado esta sección</label></section><section class="pane" id="s17-l2" hidden><header class="pane-head"><span class="kicker">Semana 17 · Lección L2</span><h2>Acciones a medio y largo plazo</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Lo que lo hace especial</h4>
+<ul>
+<li><strong>Miles de activos:</strong> la investigación suele hacerse sobre un <strong>universo</strong> (por ejemplo, las acciones de un índice), no sobre un activo.</li>
+<li><strong>Ajustes y sesgo de supervivencia</strong> (semanas 2 y 9).</li>
+<li><strong>Resultados empresariales trimestrales:</strong> gaps fuertes en las fechas de publicación.</li>
+<li><strong>Horario limitado y gaps diarios.</strong></li>
+<li><strong>Tendencia alcista de largo plazo</strong> de los índices: cualquier estrategia solo compradora parece buena; compárala siempre con comprar y mantener (semana 12).</li>
+</ul>
+<h4>Estrategias habituales</h4>
+<ul>
+<li><strong>Rotación por momentum relativo:</strong> comprar cada mes las acciones con mejor rentabilidad de los últimos meses de un universo (semana 7).</li>
+<li><strong>Reversión a corto plazo en acciones grandes:</strong> comprar caídas fuertes de pocos días dentro de una tendencia alcista.</li>
+<li><strong>Filtros de régimen del índice:</strong> solo comprar si el índice está por encima de su media de 200 sesiones.</li>
+</ul>
+<figure class="fig"><a href="img/s17-rotacion.svg" target="_blank" rel="noopener"><img src="img/s17-rotacion.svg" alt="Figura 17.2 · Rotación mensual por momentum en un universo de acciones: cada mes se ordenan y se compran las más fuertes. Esquema." loading="lazy"></a><figcaption>Figura 17.2 · Rotación mensual por momentum en un universo de acciones: cada mes se ordenan y se compran las más fuertes. Esquema.</figcaption></figure>
+<h4>Limitaciones de SQX</h4>
+<p>SQX trabaja con un símbolo por estrategia. Las estrategias de <strong>rotación</strong> entre muchas acciones se adaptan mal a ese esquema: suelen investigarse con otro software, con la hoja de cálculo o con programación. En SQX puedes investigar estrategias de una acción concreta o de un índice, y combinarlas en cartera.</p>
+<aside class="callout warn"><p><strong>Atención.</strong> Operar acciones como CFD implica financiación diaria y ajustes por dividendos que cambian el resultado a medio y largo plazo. Inclúyelos en los costes.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué una estrategia solo compradora de acciones debe compararse con comprar y mantener?</li>
+<li>¿Qué problema tienen las fechas de resultados para una estrategia de <em>swing</em>?</li>
+<li>¿Por qué SQX se adapta mal a una rotación entre muchas acciones?</li>
+</ol><div class="answer"><label for="w17-s17-l2">Tus respuestas</label><textarea id="w17-s17-l2" data-store="w17-s17-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-s17-l2"> He terminado esta sección</label></section><section class="pane" id="s17-l3" hidden><header class="pane-head"><span class="kicker">Semana 17 · Lección L3</span><h2>Índices: intradía y swing</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Lo que lo hace especial</h4>
+<ul>
+<li><strong>Apertura y cierre del mercado de contado</strong> concentran la volatilidad, aunque el CFD o el futuro coticen casi todo el día.</li>
+<li><strong>Gaps</strong> entre el cierre y la apertura del día siguiente, mayores en los fines de semana.</li>
+<li><strong>Sesgo alcista</strong> de largo plazo y <strong>caídas rápidas</strong> (la volatilidad sube cuando el mercado cae).</li>
+</ul>
+<figure class="fig"><a href="img/s17-indices.svg" target="_blank" rel="noopener"><img src="img/s17-indices.svg" alt="Figura 17.3 · Horario del mercado de contado de dos índices en hora peninsular (con el horario de verano coordinado; hay semanas al año en que se desplaza una hora)." loading="lazy"></a><figcaption>Figura 17.3 · Horario del mercado de contado de dos índices en hora peninsular (con el horario de verano coordinado; hay semanas al año en que se desplaza una hora).</figcaption></figure>
+<h4>Estrategias habituales</h4>
+<ul>
+<li><strong>Ruptura del rango de apertura</strong> (semana 7) en la primera hora del contado.</li>
+<li><strong>Reversión intradía</strong> tras movimientos fuertes en índices muy líquidos.</li>
+<li><strong>Swing con filtro de régimen:</strong> comprar retrocesos en tendencia alcista, con stops amplios.</li>
+</ul>
+<h4>Cómo adaptar el protocolo</h4>
+<ul>
+<li><strong>Sesión correcta en SQX</strong> (semana 5): la del contado o la del CFD, según la lógica.</li>
+<li><strong>Gaps:</strong> cierra las posiciones intradía antes del cierre del contado; en <em>swing</em>, incluye el riesgo de gap en el Monte Carlo.</li>
+<li><strong>Costes de financiación</strong> en CFD para posiciones de varios días.</li>
+<li><strong>Compara con comprar y mantener el índice.</strong></li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué la apertura del contado es importante aunque el CFD cotice casi todo el día?</li>
+<li>¿Qué riesgo añade mantener una posición de índice durante el fin de semana?</li>
+<li>¿Con qué <em>benchmark</em> compararías una estrategia de <em>swing</em> solo compradora en el DAX?</li>
+</ol><div class="answer"><label for="w17-s17-l3">Tus respuestas</label><textarea id="w17-s17-l3" data-store="w17-s17-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-s17-l3"> He terminado esta sección</label></section><section class="pane" id="s17-l4" hidden><header class="pane-head"><span class="kicker">Semana 17 · Lección L4</span><h2>Criptomonedas: horizontes y riesgos</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Lo que lo hace especial</h4>
+<ul>
+<li><strong>24 horas, 7 días:</strong> no hay cierre ni gaps de fin de semana, pero sí horas de muy poca liquidez.</li>
+<li><strong>Volatilidad muy alta:</strong> movimientos diarios que en Forex serían excepcionales.</li>
+<li><strong>Historia corta y cambiante</strong> (semana 9).</li>
+<li><strong>Riesgos de contraparte y de custodia</strong> (semana 2), y regulación en evolución (por ejemplo, el reglamento europeo MiCA).</li>
+<li><strong>Costes:</strong> comisiones y spreads mayores que en Forex; en CFD, financiación elevada.</li>
+</ul>
+<figure class="fig"><a href="img/s17-volatilidad.svg" target="_blank" rel="noopener"><img src="img/s17-volatilidad.svg" alt="Figura 17.4 · Volatilidad diaria comparada (desviación de las rentabilidades diarias) de un par de divisas, un índice y Bitcoin. Valores ilustrativos de orden de magnitud." loading="lazy"></a><figcaption>Figura 17.4 · Volatilidad diaria comparada (desviación de las rentabilidades diarias) de un par de divisas, un índice y Bitcoin. Valores ilustrativos de orden de magnitud.</figcaption></figure>
+<h4>Cómo adaptar el protocolo</h4>
+<ul>
+<li><strong>Tamaño de posición:</strong> con stops en ATR, la posición sale mucho más pequeña que en Forex. Respétalo.</li>
+<li><strong>Monte Carlo con colas gruesas:</strong> los movimientos extremos son frecuentes (semana 3).</li>
+<li><strong>Periodos de prueba:</strong> separa los distintos regímenes (euforias y caídas largas) y comprueba que la estrategia no depende de uno solo.</li>
+<li><strong>Exchange o broker de ejecución:</strong> investiga con sus datos o con un índice compuesto.</li>
+</ul>
+<h4>Horizontes</h4>
+<p>Las estrategias de tendencia y momentum en H4–D1 son las más estudiadas en cripto. A corto plazo, los costes y la calidad del dato son un obstáculo mayor que en Forex.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué implica la alta volatilidad para el tamaño de posición?</li>
+<li>¿Por qué hay que separar regímenes al probar en cripto?</li>
+<li>Nombra dos riesgos de las criptomonedas que no existen en Forex.</li>
+</ol><div class="answer"><label for="w17-s17-l4">Tus respuestas</label><textarea id="w17-s17-l4" data-store="w17-s17-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-s17-l4"> He terminado esta sección</label></section><section class="pane" id="s17-l5" hidden><header class="pane-head"><span class="kicker">Semana 17 · Lección L5</span><h2>Taller: investigación del mercado elegido</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 10–12 horas</em></p>
+<h4>Paso 1 · Elige el mercado</h4>
+<p>Puntúa del 1 al 5 los cuatro mercados con estos criterios y elige el de mayor puntuación (o justifica otra elección):</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Criterio</th>
+<th>Forex</th>
+<th>Acciones</th>
+<th>Índices</th>
+<th>Cripto</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Calidad y coste de los datos que tienes</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Costes de operar con tu broker</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Horario compatible con tu vida</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Encaje con tu perfil de riesgo</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr>
+<td>Resultados de tus investigaciones previas</td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table></div>
+<h4>Paso 2 · Ficha de mercado</h4>
+<p>Redacta la ficha: instrumentos, horario, costes, datos, riesgos específicos y particularidades para el protocolo.</p>
+<h4>Paso 3 · Hipótesis</h4>
+<p>Escribe tres hipótesis para ese mercado y elige una para la investigación I-17.</p>
+<h4>Paso 4 · Investigación</h4>
+<p>Aplica los ocho pasos y el protocolo completo a la hipótesis elegida.</p>
+<h4>Paso 5 · Propuesta de proyecto final</h4>
+<p>Redacta en una página la propuesta de tu proyecto final (semana 20): mercado, pregunta de investigación, datos, estrategias candidatas y calendario.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué mercado elegiste y con qué puntuación?</li>
+<li>¿Qué particularidad de ese mercado cambia más tu protocolo?</li>
+<li>¿Cuál es la pregunta de investigación de tu proyecto final?</li>
+</ol><div class="answer"><label for="w17-s17-l5">Tus respuestas</label><textarea id="w17-s17-l5" data-store="w17-s17-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-s17-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 17 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cambio de día</td>
+<td>Rollover / daily close</td>
+<td>Momento en que el broker cierra el día y suele ampliar el spread</td>
+</tr>
+<tr>
+<td>Contado (índices)</td>
+<td>Cash market</td>
+<td>Mercado de las acciones que componen el índice, con su horario oficial</td>
+</tr>
+<tr>
+<td>Ficha de mercado</td>
+<td>Market profile</td>
+<td>Documento con las características de un mercado para investigarlo</td>
+</tr>
+<tr>
+<td>Filtro de noticias</td>
+<td>News filter</td>
+<td>Regla que evita operar en torno a publicaciones importantes</td>
+</tr>
+<tr>
+<td>MiCA</td>
+<td>Markets in Crypto-Assets</td>
+<td>Reglamento europeo sobre criptoactivos</td>
+</tr>
+<tr>
+<td>Publicación de resultados</td>
+<td>Earnings release</td>
+<td>Presentación trimestral de las cuentas de una empresa</td>
+</tr>
+<tr>
+<td>Rotación</td>
+<td>Rotation</td>
+<td>Estrategia que cambia periódicamente los activos de la cartera</td>
+</tr>
+<tr>
+<td>Spread variable</td>
+<td>Variable spread</td>
+<td>Spread que cambia con la hora y las condiciones del mercado</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w17-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 17 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Spread por hora.</strong> Mide durante tres días el spread de EUR/USD en tu demo a seis horas distintas, incluida la del cambio de día. Presenta la tabla.</p>
+<p><strong>E2 · Calendario.</strong> Consulta un calendario económico y anota las cinco publicaciones más importantes para EUR/USD de la próxima semana, con su hora peninsular.</p>
+<p><strong>E3 · Benchmark de acciones.</strong> Compara el resultado de 5 años de una estrategia solo compradora en un índice (de tus proyectos) con comprar y mantener el índice.</p>
+<p><strong>E4 · Resultados.</strong> Elige una acción y anota las cuatro últimas fechas de publicación de resultados y el gap de apertura de cada una.</p>
+<p><strong>E5 · Horario de índices.</strong> Comprueba en tu broker el horario del CFD del DAX y del S&amp;P 500 y compáralo con el del contado.</p>
+<p><strong>E6 · Gaps de fin de semana.</strong> Calcula el gap medio entre el cierre del viernes y la apertura del lunes de un índice durante las últimas 20 semanas.</p>
+<p><strong>E7 · Volatilidad.</strong> Calcula la desviación estándar de las rentabilidades diarias de los últimos 90 días de EUR/USD, un índice y Bitcoin. Compara con la figura 17.4.</p>
+<p><strong>E8 · Tamaño en cripto.</strong> Con 10.000 €, un riesgo del 0,5 % y un stop de 2 ATR, calcula el tamaño de una posición en Bitcoin con un ATR diario de 2.500 $ (EUR/USD a 1,08).</p>
+<p><strong>E9 · Matriz de elección.</strong> Rellena la matriz del taller con tus puntuaciones justificadas.</p>
+<p><strong>E10 · Propuesta.</strong> Redacta la propuesta de proyecto final.</p><div class="answer"><label for="w17-ejercicios-obligatorios">Tus respuestas</label><textarea id="w17-ejercicios-obligatorios" data-store="w17-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-17-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 17 · Sección</span><h2>Investigación I-17 y entrega práctica</h2></header><div class="read"><h3>Investigación I-17 · Primera investigación especializada</h3>
+<p>Aplica los ocho pasos y el protocolo completo a la hipótesis elegida en el paso 3 del taller, con las adaptaciones de tu mercado.</p>
+<h3>Entrega práctica · Ficha de mercado y propuesta de proyecto</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S17_ENT</code></td>
+<td>Matriz de elección, ficha de mercado, tres hipótesis y propuesta de proyecto final</td>
+</tr>
+<tr>
+<td><code>CODIGO_S17_INV</code></td>
+<td>Investigación I-17 completa</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que la elección del mercado esté justificada con criterios, que la ficha recoja sus particularidades y que la investigación adapte el protocolo a ellas.</p><div class="answer"><label for="w17-investigacion-i-17-y-entrega-practica">Tus respuestas</label><textarea id="w17-investigacion-i-17-y-entrega-practica" data-store="w17-investigacion-i-17-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-investigacion-i-17-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-17" hidden><header class="pane-head"><span class="kicker">Semana 17 · Evaluación</span><h2>Examen de la semana 17 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> En Forex, el spread suele ampliarse…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q1" value="a" data-store="w17-exam-q1"><span><b>a)</b> en el solape Londres–Nueva York</span></label><label class="opt"><input type="radio" name="w17q1" value="b" data-store="w17-exam-q1"><span><b>b)</b> alrededor del cambio de día del servidor</span></label><label class="opt"><input type="radio" name="w17q1" value="c" data-store="w17-exam-q1"><span><b>c)</b> a mediodía</span></label><label class="opt"><input type="radio" name="w17q1" value="d" data-store="w17-exam-q1"><span><b>d)</b> nunca</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> En las noticias macroeconómicas importantes…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q2" value="a" data-store="w17-exam-q2"><span><b>a)</b> el spread se abre y aumenta el deslizamiento</span></label><label class="opt"><input type="radio" name="w17q2" value="b" data-store="w17-exam-q2"><span><b>b)</b> baja la volatilidad</span></label><label class="opt"><input type="radio" name="w17q2" value="c" data-store="w17-exam-q2"><span><b>c)</b> el mercado cierra</span></label><label class="opt"><input type="radio" name="w17q2" value="d" data-store="w17-exam-q2"><span><b>d)</b> no cambia nada</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Una temporalidad mínima razonable para Forex en el curso es…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q3" value="a" data-store="w17-exam-q3"><span><b>a)</b> M1</span></label><label class="opt"><input type="radio" name="w17q3" value="b" data-store="w17-exam-q3"><span><b>b)</b> tick</span></label><label class="opt"><input type="radio" name="w17q3" value="c" data-store="w17-exam-q3"><span><b>c)</b> M15–H1</span></label><label class="opt"><input type="radio" name="w17q3" value="d" data-store="w17-exam-q3"><span><b>d)</b> MN</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Una estrategia solo compradora de acciones se compara con…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q4" value="a" data-store="w17-exam-q4"><span><b>a)</b> comprar y mantener</span></label><label class="opt"><input type="radio" name="w17q4" value="b" data-store="w17-exam-q4"><span><b>b)</b> EUR/USD</span></label><label class="opt"><input type="radio" name="w17q4" value="c" data-store="w17-exam-q4"><span><b>c)</b> una estrategia de cripto</span></label><label class="opt"><input type="radio" name="w17q4" value="d" data-store="w17-exam-q4"><span><b>d)</b> nada</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Las fechas de publicación de resultados provocan…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q5" value="a" data-store="w17-exam-q5"><span><b>a)</b> menos volatilidad</span></label><label class="opt"><input type="radio" name="w17q5" value="b" data-store="w17-exam-q5"><span><b>b)</b> gaps fuertes</span></label><label class="opt"><input type="radio" name="w17q5" value="c" data-store="w17-exam-q5"><span><b>c)</b> cierres del mercado</span></label><label class="opt"><input type="radio" name="w17q5" value="d" data-store="w17-exam-q5"><span><b>d)</b> dividendos</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> La rotación por momentum entre muchas acciones en SQX…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q6" value="a" data-store="w17-exam-q6"><span><b>a)</b> es su uso principal</span></label><label class="opt"><input type="radio" name="w17q6" value="b" data-store="w17-exam-q6"><span><b>b)</b> se adapta mal porque SQX trabaja con un símbolo por estrategia</span></label><label class="opt"><input type="radio" name="w17q6" value="c" data-store="w17-exam-q6"><span><b>c)</b> es imposible de investigar</span></label><label class="opt"><input type="radio" name="w17q6" value="d" data-store="w17-exam-q6"><span><b>d)</b> no tiene costes</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> En índices, la volatilidad se concentra en…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q7" value="a" data-store="w17-exam-q7"><span><b>a)</b> la apertura y el cierre del contado</span></label><label class="opt"><input type="radio" name="w17q7" value="b" data-store="w17-exam-q7"><span><b>b)</b> la madrugada</span></label><label class="opt"><input type="radio" name="w17q7" value="c" data-store="w17-exam-q7"><span><b>c)</b> los fines de semana</span></label><label class="opt"><input type="radio" name="w17q7" value="d" data-store="w17-exam-q7"><span><b>d)</b> los festivos</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Mantener un índice el fin de semana añade…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q8" value="a" data-store="w17-exam-q8"><span><b>a)</b> riesgo de gap</span></label><label class="opt"><input type="radio" name="w17q8" value="b" data-store="w17-exam-q8"><span><b>b)</b> menos costes</span></label><label class="opt"><input type="radio" name="w17q8" value="c" data-store="w17-exam-q8"><span><b>c)</b> liquidez</span></label><label class="opt"><input type="radio" name="w17q8" value="d" data-store="w17-exam-q8"><span><b>d)</b> dividendos seguros</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El horario del contado del S&amp;P 500 en hora peninsular es normalmente…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q9" value="a" data-store="w17-exam-q9"><span><b>a)</b> 9:00–17:30</span></label><label class="opt"><input type="radio" name="w17q9" value="b" data-store="w17-exam-q9"><span><b>b)</b> 15:30–22:00</span></label><label class="opt"><input type="radio" name="w17q9" value="c" data-store="w17-exam-q9"><span><b>c)</b> 0:00–24:00</span></label><label class="opt"><input type="radio" name="w17q9" value="d" data-store="w17-exam-q9"><span><b>d)</b> 8:00–12:00</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Las criptomonedas cotizan…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q10" value="a" data-store="w17-exam-q10"><span><b>a)</b> solo en horario europeo</span></label><label class="opt"><input type="radio" name="w17q10" value="b" data-store="w17-exam-q10"><span><b>b)</b> de lunes a viernes</span></label><label class="opt"><input type="radio" name="w17q10" value="c" data-store="w17-exam-q10"><span><b>c)</b> 24 horas, 7 días</span></label><label class="opt"><input type="radio" name="w17q10" value="d" data-store="w17-exam-q10"><span><b>d)</b> solo de noche</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Con una volatilidad mucho mayor, el tamaño de posición con riesgo fijo…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q11" value="a" data-store="w17-exam-q11"><span><b>a)</b> sale más pequeño</span></label><label class="opt"><input type="radio" name="w17q11" value="b" data-store="w17-exam-q11"><span><b>b)</b> sale más grande</span></label><label class="opt"><input type="radio" name="w17q11" value="c" data-store="w17-exam-q11"><span><b>c)</b> no cambia</span></label><label class="opt"><input type="radio" name="w17q11" value="d" data-store="w17-exam-q11"><span><b>d)</b> es cero</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> MiCA es…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q12" value="a" data-store="w17-exam-q12"><span><b>a)</b> un indicador</span></label><label class="opt"><input type="radio" name="w17q12" value="b" data-store="w17-exam-q12"><span><b>b)</b> un exchange</span></label><label class="opt"><input type="radio" name="w17q12" value="c" data-store="w17-exam-q12"><span><b>c)</b> un reglamento europeo sobre criptoactivos</span></label><label class="opt"><input type="radio" name="w17q12" value="d" data-store="w17-exam-q12"><span><b>d)</b> un broker</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> En cripto, al probar estrategias conviene…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q13" value="a" data-store="w17-exam-q13"><span><b>a)</b> usar solo el último año</span></label><label class="opt"><input type="radio" name="w17q13" value="b" data-store="w17-exam-q13"><span><b>b)</b> separar los distintos regímenes</span></label><label class="opt"><input type="radio" name="w17q13" value="c" data-store="w17-exam-q13"><span><b>c)</b> quitar los costes</span></label><label class="opt"><input type="radio" name="w17q13" value="d" data-store="w17-exam-q13"><span><b>d)</b> no hacer Monte Carlo</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Las ventajas de las ideas más estudiadas en Forex suelen ser…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q14" value="a" data-store="w17-exam-q14"><span><b>a)</b> enormes</span></label><label class="opt"><input type="radio" name="w17q14" value="b" data-store="w17-exam-q14"><span><b>b)</b> pequeñas</span></label><label class="opt"><input type="radio" name="w17q14" value="c" data-store="w17-exam-q14"><span><b>c)</b> inexistentes siempre</span></label><label class="opt"><input type="radio" name="w17q14" value="d" data-store="w17-exam-q14"><span><b>d)</b> garantizadas</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Para elegir el mercado del proyecto final se usa…</legend><div class="opts"><label class="opt"><input type="radio" name="w17q15" value="a" data-store="w17-exam-q15"><span><b>a)</b> el más popular</span></label><label class="opt"><input type="radio" name="w17q15" value="b" data-store="w17-exam-q15"><span><b>b)</b> una matriz de criterios objetivos</span></label><label class="opt"><input type="radio" name="w17q15" value="c" data-store="w17-exam-q15"><span><b>c)</b> el de mayor volatilidad</span></label><label class="opt"><input type="radio" name="w17q15" value="d" data-store="w17-exam-q15"><span><b>d)</b> el azar</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una estrategia de EUR/USD M15 gana de media 6 pips brutos por operación. El spread medio es de 0,8 pips, pero a la hora del cambio de día sube a 3 pips, y el 10 % de sus operaciones se abren a esa hora. a) Calcula el spread medio ponderado de sus operaciones. b) Calcula el beneficio neto medio (solo spread). c) ¿Cuánto mejoraría si evitara esa hora (suponiendo que las demás operaciones no cambian)?</p>
+<p><strong>B2.</strong> Con 10.000 €, un riesgo del 0,5 % y un stop de 2 ATR, calcula el tamaño en Bitcoin si el ATR diario es de 2.500 $ y el EUR/USD está a 1,08. Compáralo con el tamaño en euros nominales que supone si el Bitcoin cotiza a 90.000 $.</p>
+<p><strong>B3.</strong> Un índice tuvo en 20 fines de semana estos gaps (en %, valor absoluto): 0,3; 0,8; 0,2; 1,5; 0,4; 0,6; 0,1; 2,1; 0,5; 0,3; 0,7; 0,2; 0,9; 0,4; 3,2; 0,6; 0,2; 0,5; 0,3; 1,1. a) Calcula el gap medio y la mediana. b) ¿Qué porcentaje de fines de semana superó el 1 %? c) Si tu stop está a un 1,2 % del precio, ¿en cuántos fines de semana se habría saltado el stop por el gap?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: justifica el mercado que has elegido para tu proyecto final con los criterios de esta semana, y explica qué dos particularidades de ese mercado incorporarás a tu protocolo.</p><div class="answer"><label for="w17-examen-17">Tus respuestas a las partes B y C</label><textarea id="w17-examen-17" data-store="w17-examen-17" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w17-done-examen-17"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
