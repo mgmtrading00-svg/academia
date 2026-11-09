@@ -1,0 +1,362 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 13 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="13">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-13.svg)"><img src="img/cover-13.svg" alt=""></div><p class="eyebrow">SEMANA 13 · ETAPA 4 · CARTERAS Y EJECUCIÓN</p><h1>Construcción de carteras</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="13" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w13-done-presentacion"></span>Presentación</a><a class="tab" href="#s13-l1" data-tab="s13-l1" title="Por qué una cartera y no una estrategia"><span class="dot" data-dot="w13-done-s13-l1"></span>L1</a><a class="tab" href="#s13-l2" data-tab="s13-l2" title="Combinar lógicas dentro de un algoritmo frente a combinar algoritmos"><span class="dot" data-dot="w13-done-s13-l2"></span>L2</a><a class="tab" href="#s13-l3" data-tab="s13-l3" title="Portfolio Master y QuantAnalyzer"><span class="dot" data-dot="w13-done-s13-l3"></span>L3</a><a class="tab" href="#s13-l4" data-tab="s13-l4" title="Por qué cada estrategia merece su lugar"><span class="dot" data-dot="w13-done-s13-l4"></span>L4</a><a class="tab" href="#s13-l5" data-tab="s13-l5" title="Taller: primera cartera"><span class="dot" data-dot="w13-done-s13-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w13-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w13-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-13-y-entrega-practica" data-tab="investigacion-i-13-y-entrega-practica" title="Investigación I-13 y entrega práctica"><span class="dot" data-dot="w13-done-investigacion-i-13-y-entrega-practica"></span>Investigación I-13 y entrega práctica</a><a class="tab" href="#examen-13" data-tab="examen-13" title="Examen de la semana 13 · Variante A"><span class="dot" data-dot="w13-done-examen-13"></span>Examen  13</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 13 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s13-l1"><span class="dot" data-dot="w13-done-s13-l1"></span><span class="tk">Lección L1</span><b>Por qué una cartera y no una estrategia</b><span class="tm">→</span></a><a class="toc-i" href="#s13-l2"><span class="dot" data-dot="w13-done-s13-l2"></span><span class="tk">Lección L2</span><b>Combinar lógicas dentro de un algoritmo frente a combinar algoritmos</b><span class="tm">→</span></a><a class="toc-i" href="#s13-l3"><span class="dot" data-dot="w13-done-s13-l3"></span><span class="tk">Lección L3</span><b>Portfolio Master y QuantAnalyzer</b><span class="tm">→</span></a><a class="toc-i" href="#s13-l4"><span class="dot" data-dot="w13-done-s13-l4"></span><span class="tk">Lección L4</span><b>Por qué cada estrategia merece su lugar</b><span class="tm">→</span></a><a class="toc-i" href="#s13-l5"><span class="dot" data-dot="w13-done-s13-l5"></span><span class="tk">Lección L5</span><b>Taller: primera cartera</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w13-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w13-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-13-y-entrega-practica"><span class="dot" data-dot="w13-done-investigacion-i-13-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-13 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-13"><span class="dot" data-dot="w13-done-examen-13"></span><span class="tk">Evaluación</span><b>Examen de la semana 13 · Variante A</b><span class="tm">→</span></a></nav><p>Empieza la etapa 4. Hasta ahora has evaluado estrategias de una en una. Pero ninguna estrategia funciona siempre: todas pasan por rachas malas. La forma más sólida de suavizar esas rachas no es buscar la estrategia perfecta, sino combinar <strong>varias estrategias que fallen en momentos distintos</strong>. Esta semana aprenderás por qué una cartera es mejor que una estrategia, cómo combinar lógicas, qué herramientas tienes en SQX y fuera de él, y cómo justificar el lugar de cada estrategia. Terminarás construyendo tu primera cartera.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar con números por qué una cartera reduce el riesgo.</li>
+<li>Distinguir entre combinar lógicas dentro de un algoritmo y combinar algoritmos.</li>
+<li>Usar las herramientas de cartera de SQX y QuantAnalyzer, o su equivalente en hoja de cálculo.</li>
+<li>Medir la aportación de cada estrategia a la cartera.</li>
+<li>Construir y documentar una cartera de tres a cinco estrategias.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>13</td>
+<td>Construcción y análisis de la primera cartera</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-13, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 14</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Las estrategias aceptadas en la etapa 3. Si tienes menos de tres, completa con las mejores «en duda» y anótalo; puedes añadir estrategias de otros mercados o temporalidades que hayas validado.</li>
+<li>SQX y, si tu edición lo incluye, Portfolio Master o QuantAnalyzer. Si no, la plantilla de hoja de cálculo de la lección 3.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 14</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 13</li>
+<li>☐ Entrega práctica: primera cartera documentada</li>
+<li>☐ Investigación I-13: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w13-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s13-l1" hidden><header class="pane-head"><span class="kicker">Semana 13 · Lección L1</span><h2>Por qué una cartera y no una estrategia</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El único almuerzo gratis</h4>
+<p>Se suele decir que la diversificación es «el único almuerzo gratis» de las finanzas: combinar activos o estrategias que no se mueven igual reduce el riesgo <strong>sin reducir</strong> la rentabilidad media. La razón es matemática.</p>
+<h4>La varianza de dos estrategias</h4>
+<p>Si combinas dos estrategias con pesos w₁ y w₂, desviaciones σ₁ y σ₂ y correlación ρ, la desviación de la cartera es:</p>
+<div class="math">$$\sigma_c = \sqrt{w_1^2\sigma_1^2 + w_2^2\sigma_2^2 + 2\,w_1 w_2\,\rho\,\sigma_1\sigma_2}$$</div>
+
+<p>Con dos estrategias al 50 %, ambas con una desviación anual del 10 %:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Correlación</th>
+<th>Desviación de la cartera</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>+1</td>
+<td>10,0 %</td>
+</tr>
+<tr>
+<td>+0,5</td>
+<td>8,7 %</td>
+</tr>
+<tr>
+<td>0</td>
+<td>7,1 %</td>
+</tr>
+<tr>
+<td>−0,5</td>
+<td>5,0 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>La rentabilidad media es la misma en los cuatro casos (la media de las dos), pero el riesgo baja con la correlación.</p>
+<h4>Muchas estrategias</h4>
+<p>Con N estrategias independientes, de igual riesgo y con el mismo peso, la desviación de la cartera se divide por √N. Con 4 estrategias, a la mitad. Por eso los profesionales operan carteras de muchas estrategias pequeñas, no una grande.</p>
+<figure class="fig"><a href="img/s13-cartera.svg" target="_blank" rel="noopener"><img src="img/s13-cartera.svg" alt="Figura 13.1 · Cuatro estrategias con poca correlación entre sí y su cartera al 25 % cada una: la cartera crece de forma mucho más regular. Datos simulados." loading="lazy"></a><figcaption>Figura 13.1 · Cuatro estrategias con poca correlación entre sí y su cartera al 25 % cada una: la cartera crece de forma mucho más regular. Datos simulados.</figcaption></figure>
+<aside class="callout example"><p><strong>Ejemplo.</strong> En la simulación de la figura, cada estrategia por separado tiene un drawdown máximo de entre el 13 % y el 27 %, y un Sharpe de entre 0,7 y 1,2. La cartera, con una rentabilidad parecida a la media, tiene un drawdown del 7 % y un Sharpe de 1,8.</p></aside>
+<h4>Por qué importa más en trading algorítmico</h4>
+<ul>
+<li><strong>Ninguna validación es perfecta:</strong> alguna estrategia de tu cartera dejará de funcionar. En una cartera, eso es un problema; en una estrategia única, es el final.</li>
+<li><strong>Las rachas se compensan:</strong> mientras una estrategia de tendencia sufre en un mercado lateral, una de reversión gana.</li>
+<li><strong>La psicología mejora:</strong> una curva más suave es más fácil de seguir sin abandonar.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Calcula la desviación de una cartera al 50 % de dos estrategias del 12 % con correlación 0,2.</li>
+<li>¿Por qué la rentabilidad media no cambia pero el riesgo sí?</li>
+<li>¿Qué pasa con la desviación de 9 estrategias independientes de igual riesgo?</li>
+</ol><div class="answer"><label for="w13-s13-l1">Tus respuestas</label><textarea id="w13-s13-l1" data-store="w13-s13-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-s13-l1"> He terminado esta sección</label></section><section class="pane" id="s13-l2" hidden><header class="pane-head"><span class="kicker">Semana 13 · Lección L2</span><h2>Combinar lógicas dentro de un algoritmo frente a combinar algoritmos</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Dos formas de diversificar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th></th>
+<th>Dentro de un algoritmo (híbrida)</th>
+<th>Varios algoritmos (cartera)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cómo</td>
+<td>Una estrategia con varias lógicas o filtros</td>
+<td>Varias estrategias independientes</td>
+</tr>
+<tr>
+<td>Ventaja</td>
+<td>Una sola pieza que gestionar</td>
+<td>Cada estrategia se valida y se apaga por separado</td>
+</tr>
+<tr>
+<td>Riesgo</td>
+<td>Más grados de libertad, más sobreajuste</td>
+<td>Exposición duplicada si se parecen</td>
+</tr>
+<tr>
+<td>Validación</td>
+<td>Hay que validar el conjunto</td>
+<td>Se valida cada una y después la cartera</td>
+</tr>
+</tbody>
+</table></div>
+<p>En la semana 8 viste que las híbridas sobreajustan con facilidad. Por eso, en este curso, la diversificación se hace sobre todo <strong>entre algoritmos</strong>, cada uno simple y validado por separado.</p>
+<h4>Dimensiones de diversificación</h4>
+<p>Para que las estrategias fallen en momentos distintos, diversifica en varias dimensiones:</p>
+<ul>
+<li><strong>Lógica:</strong> tendencia, ruptura, reversión, volatilidad.</li>
+<li><strong>Mercado:</strong> varios pares de divisas, índices, materias primas o cripto.</li>
+<li><strong>Temporalidad:</strong> H1, H4, D1.</li>
+<li><strong>Dirección:</strong> estrategias solo largas y solo cortas, o simétricas.</li>
+<li><strong>Horario:</strong> sesiones distintas.</li>
+</ul>
+<figure class="fig"><a href="img/s13-dimensiones.svg" target="_blank" rel="noopener"><img src="img/s13-dimensiones.svg" alt="Figura 13.2 · Dimensiones de diversificación: una cartera robusta combina varias, no solo varias estrategias del mismo tipo." loading="lazy"></a><figcaption>Figura 13.2 · Dimensiones de diversificación: una cartera robusta combina varias, no solo varias estrategias del mismo tipo.</figcaption></figure>
+<aside class="callout warn"><p><strong>Error típico.</strong> Una «cartera» de cinco estrategias de tendencia en EUR/USD H1. Son cinco versiones de la misma apuesta: cuando una falla, fallan todas.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el curso prefiere diversificar entre algoritmos?</li>
+<li>Nombra cuatro dimensiones de diversificación.</li>
+<li>¿Qué problema tiene una cartera de cinco estrategias de la misma familia y mercado?</li>
+</ol><div class="answer"><label for="w13-s13-l2">Tus respuestas</label><textarea id="w13-s13-l2" data-store="w13-s13-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-s13-l2"> He terminado esta sección</label></section><section class="pane" id="s13-l3" hidden><header class="pane-head"><span class="kicker">Semana 13 · Lección L3</span><h2>Portfolio Master y QuantAnalyzer</h2></header><div class="read"><p><em>Formato: taller de 40 minutos · Práctica: 2 horas</em></p>
+<h4>Las herramientas</h4>
+<ul>
+<li><strong>Portfolio Master</strong> (en SQX): combina estrategias de un databank y muestra la curva conjunta, el drawdown y las correlaciones. Según la web oficial, en las ediciones Starter y Professional actuales está limitado a un número pequeño de estrategias; en la Ultimate, sin límite. El <strong>Portfolio Composer</strong>, que busca automáticamente combinaciones, se añadió en builds posteriores a la 140.</li>
+<li><strong>QuantAnalyzer</strong> (programa independiente de StrategyQuant; la versión Pro está incluida en la Ultimate): analiza y combina resultados de estrategias, incluidos los informes de MetaTrader, con herramientas de cartera y de Monte Carlo.</li>
+<li><strong>Hoja de cálculo:</strong> con los resultados diarios o mensuales de cada estrategia, puedes calcular todo lo esencial.</li>
+</ul>
+<h4>La plantilla en hoja de cálculo</h4>
+<ol>
+<li>Exporta de cada estrategia sus operaciones o su curva y agrúpalas en resultados <strong>mensuales</strong> (en porcentaje del capital de referencia), una columna por estrategia.</li>
+<li>Añade una columna «Cartera» con la media ponderada: <code>=SUMAPRODUCTO(B2:E2;$B$1:$E$1)</code> con los pesos en la fila 1.</li>
+<li>Calcula para cada columna: rentabilidad anualizada, desviación, Sharpe, drawdown máximo y meses positivos.</li>
+<li>Calcula la <strong>matriz de correlaciones</strong> entre estrategias (<code>COEF.DE.CORREL</code> de cada par).</li>
+<li>Dibuja las curvas acumuladas.</li>
+</ol>
+<figure class="fig"><a href="img/s13-correlaciones.svg" target="_blank" rel="noopener"><img src="img/s13-correlaciones.svg" alt="Figura 13.3 · Matriz de correlaciones de los resultados mensuales de la simulación: valores bajos indican buena diversificación." loading="lazy"></a><figcaption>Figura 13.3 · Matriz de correlaciones de los resultados mensuales de la simulación: valores bajos indican buena diversificación.</figcaption></figure>
+<aside class="callout tip"><p><strong>Consejo.</strong> Usa resultados mensuales o diarios, no por operación: las estrategias operan en momentos distintos y solo así se pueden comparar en el tiempo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué herramienta de cartera tienes disponible en tu edición?</li>
+<li>¿Por qué se agrupan los resultados por meses o días?</li>
+<li>¿Qué fórmula usas para la columna de la cartera?</li>
+</ol><div class="answer"><label for="w13-s13-l3">Tus respuestas</label><textarea id="w13-s13-l3" data-store="w13-s13-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-s13-l3"> He terminado esta sección</label></section><section class="pane" id="s13-l4" hidden><header class="pane-head"><span class="kicker">Semana 13 · Lección L4</span><h2>Por qué cada estrategia merece su lugar</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La prueba de quitar</h4>
+<p>La pregunta no es si una estrategia es buena, sino si <strong>mejora la cartera</strong>. La forma más directa de saberlo es quitarla y ver qué pasa:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Si al quitarla…</th>
+<th>Conclusión</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>El drawdown sube y el Sharpe baja</td>
+<td>Aporta diversificación: se queda</td>
+</tr>
+<tr>
+<td>El Sharpe sube</td>
+<td>Resta: revísala o sácala</td>
+</tr>
+<tr>
+<td>Casi nada cambia</td>
+<td>Probablemente duplica a otra: sobra</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s13-aportacion.svg" target="_blank" rel="noopener"><img src="img/s13-aportacion.svg" alt="Figura 13.4 · Aportación de cada estrategia: Sharpe de la cartera con todas y quitando cada una. Datos simulados." loading="lazy"></a><figcaption>Figura 13.4 · Aportación de cada estrategia: Sharpe de la cartera con todas y quitando cada una. Datos simulados.</figcaption></figure>
+<h4>Criterios de entrada en la cartera</h4>
+<p>Para entrar, cada estrategia debe:</p>
+<ol>
+<li>Haber superado el protocolo de validación (etapa 3).</li>
+<li>Tener una correlación baja con las demás (por ejemplo, menor que 0,5 en resultados mensuales).</li>
+<li>Mejorar al menos una métrica de la cartera (Sharpe, drawdown o ratio beneficio/drawdown) sin empeorar otra de forma importante.</li>
+<li>Aportar una dimensión de diversificación nueva o reforzar una débil.</li>
+</ol>
+<h4>Pesos</h4>
+<p>Para empezar, usa <strong>pesos iguales en riesgo</strong>: cada estrategia arriesga lo mismo por operación. Optimizar los pesos con los datos históricos es otra forma de sobreajuste: los pesos «óptimos» del pasado rara vez lo son en el futuro.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Una cartera sencilla, con pesos iguales y estrategias de lógicas distintas, suele comportarse mejor fuera de muestra que una cartera con pesos optimizados.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Al quitar una estrategia, el Sharpe de la cartera sube. ¿Qué haces?</li>
+<li>¿Por qué no se optimizan los pesos?</li>
+<li>Escribe tus cuatro criterios de entrada en la cartera.</li>
+</ol><div class="answer"><label for="w13-s13-l4">Tus respuestas</label><textarea id="w13-s13-l4" data-store="w13-s13-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-s13-l4"> He terminado esta sección</label></section><section class="pane" id="s13-l5" hidden><header class="pane-head"><span class="kicker">Semana 13 · Lección L5</span><h2>Taller: primera cartera</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 8–10 horas</em></p>
+<h4>Paso 1 · Reúne las candidatas</h4>
+<p>Lista tus estrategias validadas con: mercado, temporalidad, familia, dirección, operaciones al año y métricas del Walk-Forward.</p>
+<h4>Paso 2 · Resultados mensuales</h4>
+<p>Exporta de cada una sus resultados con <strong>tamaño fijo</strong> sobre el mismo periodo y conviértelos en rentabilidades mensuales con un mismo capital de referencia.</p>
+<h4>Paso 3 · Correlaciones</h4>
+<p>Calcula la matriz de correlaciones y marca los pares con correlación mayor que 0,5.</p>
+<h4>Paso 4 · Construye la cartera</h4>
+<p>Elige entre 3 y 5 estrategias aplicando los criterios de la lección 4. Usa pesos iguales.</p>
+<h4>Paso 5 · Prueba de quitar</h4>
+<p>Haz la prueba de quitar con cada estrategia y documenta el resultado.</p>
+<h4>Paso 6 · Monte Carlo de la cartera</h4>
+<p>Haz un reordenado de los resultados mensuales de la cartera (lección 2 de la semana 11) y calcula el drawdown del percentil 95.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuánto bajó el drawdown de la cartera frente a la media de sus estrategias?</li>
+<li>¿Qué estrategia aporta más? ¿Y cuál menos?</li>
+<li>¿Qué dimensión de diversificación le falta a tu cartera?</li>
+</ol><div class="answer"><label for="w13-s13-l5">Tus respuestas</label><textarea id="w13-s13-l5" data-store="w13-s13-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-s13-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 13 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Aportación marginal</td>
+<td>Marginal contribution</td>
+<td>Cambio en la cartera al añadir o quitar una estrategia</td>
+</tr>
+<tr>
+<td>Cartera</td>
+<td>Portfolio</td>
+<td>Conjunto de estrategias operadas a la vez</td>
+</tr>
+<tr>
+<td>Diversificación</td>
+<td>Diversification</td>
+<td>Reducción del riesgo combinando elementos que no se mueven igual</td>
+</tr>
+<tr>
+<td>Matriz de correlaciones</td>
+<td>Correlation matrix</td>
+<td>Tabla con la correlación de cada par de estrategias</td>
+</tr>
+<tr>
+<td>Peso</td>
+<td>Weight</td>
+<td>Parte del riesgo o del capital asignada a cada estrategia</td>
+</tr>
+<tr>
+<td>Pesos iguales en riesgo</td>
+<td>Equal risk weights</td>
+<td>Cada estrategia arriesga lo mismo por operación</td>
+</tr>
+<tr>
+<td>Portfolio Master</td>
+<td>Portfolio Master</td>
+<td>Herramienta de SQX para combinar estrategias</td>
+</tr>
+<tr>
+<td>QuantAnalyzer</td>
+<td>QuantAnalyzer</td>
+<td>Programa de StrategyQuant para analizar resultados y carteras</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w13-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 13 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Dos estrategias.</strong> Calcula la desviación de una cartera al 50 % de dos estrategias con desviaciones del 8 % y del 14 % para correlaciones de 0,8, 0,2 y −0,3.</p>
+<p><strong>E2 · Raíz de N.</strong> ¿Cuántas estrategias independientes de igual riesgo necesitas para reducir la desviación a un tercio?</p>
+<p><strong>E3 · Correlación no constante.</strong> Busca en tus datos dos estrategias y calcula su correlación en cada año. ¿Es estable?</p>
+<p><strong>E4 · Dimensiones.</strong> Clasifica tus estrategias validadas por las cinco dimensiones de la lección 2 y señala qué dimensiones faltan.</p>
+<p><strong>E5 · Plantilla.</strong> Construye la plantilla de cartera en hoja de cálculo de la lección 3 con tus estrategias.</p>
+<p><strong>E6 · Prueba de quitar.</strong> Aplícala a tu cartera y presenta la tabla.</p>
+<p><strong>E7 · Pesos.</strong> Compara tu cartera con pesos iguales y con los pesos que habrían maximizado el Sharpe en la primera mitad de los datos, evaluadas en la segunda mitad. ¿Qué observas?</p>
+<p><strong>E8 · Duplicados.</strong> Dos de tus estrategias tienen una correlación de 0,75. Explica qué harías y por qué.</p>
+<p><strong>E9 · Monte Carlo.</strong> Calcula el drawdown del percentil 95 de tu cartera con 200 reordenados mensuales.</p>
+<p><strong>E10 · Informe.</strong> Redacta en 200 palabras el resumen ejecutivo de tu cartera: composición, métricas, riesgos y qué la haría fallar.</p><div class="answer"><label for="w13-ejercicios-obligatorios">Tus respuestas</label><textarea id="w13-ejercicios-obligatorios" data-store="w13-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-13-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 13 · Sección</span><h2>Investigación I-13 y entrega práctica</h2></header><div class="read"><h3>Investigación I-13 · ¿Cuánto reduce el drawdown la diversificación por lógica frente a la diversificación por mercado?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Una cartera de tres estrategias de lógicas distintas en EUR/USD reduce más el drawdown que una de tres estrategias de la misma lógica en tres pares distintos».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente sobre diversificación de estrategias.</p>
+<p><strong>Paso 3 · Datos.</strong> Tus estrategias validadas y, si hace falta, otras de tus databanks probadas con el mismo protocolo mínimo (hoja de evaluación y OOS).</p>
+<p><strong>Paso 4 · Diseño.</strong> Define las dos carteras, el periodo, los pesos (iguales) y la métrica principal.</p>
+<p><strong>Pasos 5 y 6 · Generación y validación.</strong> Construye las dos carteras y su Monte Carlo.</p>
+<p><strong>Paso 7 · Comparación.</strong> Drawdown, Sharpe y correlaciones medias de cada cartera.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Qué tipo de diversificación aporta más con tus datos? ¿Qué limitaciones tiene la comparación?</p>
+<h3>Entrega práctica · Primera cartera</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S13_ENT</code></td>
+<td>Documento de la cartera: composición, criterios de entrada aplicados, matriz de correlaciones, curvas, métricas, prueba de quitar, Monte Carlo y resumen ejecutivo</td>
+</tr>
+<tr>
+<td><code>CODIGO_S13_HOJA</code></td>
+<td>Plantilla de cartera con fórmulas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S13_INV</code></td>
+<td>Investigación I-13</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que cada estrategia tenga una razón documentada para estar en la cartera, que los resultados se combinen en el tiempo (mensuales o diarios) y que el análisis sea crítico. Una cartera sin matriz de correlaciones ni prueba de quitar queda como NO EVALUABLE.</p><div class="answer"><label for="w13-investigacion-i-13-y-entrega-practica">Tus respuestas</label><textarea id="w13-investigacion-i-13-y-entrega-practica" data-store="w13-investigacion-i-13-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-investigacion-i-13-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-13" hidden><header class="pane-head"><span class="kicker">Semana 13 · Evaluación</span><h2>Examen de la semana 13 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> Combinar estrategias poco correlacionadas…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q1" value="a" data-store="w13-exam-q1"><span><b>a)</b> reduce el riesgo sin reducir la rentabilidad media</span></label><label class="opt"><input type="radio" name="w13q1" value="b" data-store="w13-exam-q1"><span><b>b)</b> reduce la rentabilidad media</span></label><label class="opt"><input type="radio" name="w13q1" value="c" data-store="w13-exam-q1"><span><b>c)</b> aumenta el drawdown</span></label><label class="opt"><input type="radio" name="w13q1" value="d" data-store="w13-exam-q1"><span><b>d)</b> no cambia nada</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Con dos estrategias al 50 % de igual desviación, la cartera tiene menos riesgo cuando la correlación es…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q2" value="a" data-store="w13-exam-q2"><span><b>a)</b> +1</span></label><label class="opt"><input type="radio" name="w13q2" value="b" data-store="w13-exam-q2"><span><b>b)</b> +0,5</span></label><label class="opt"><input type="radio" name="w13q2" value="c" data-store="w13-exam-q2"><span><b>c)</b> 0</span></label><label class="opt"><input type="radio" name="w13q2" value="d" data-store="w13-exam-q2"><span><b>d)</b> −0,5</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Con N estrategias independientes de igual riesgo, la desviación se divide por…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q3" value="a" data-store="w13-exam-q3"><span><b>a)</b> N</span></label><label class="opt"><input type="radio" name="w13q3" value="b" data-store="w13-exam-q3"><span><b>b)</b> √N</span></label><label class="opt"><input type="radio" name="w13q3" value="c" data-store="w13-exam-q3"><span><b>c)</b> N²</span></label><label class="opt"><input type="radio" name="w13q3" value="d" data-store="w13-exam-q3"><span><b>d)</b> 2</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> En el curso se prefiere diversificar…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q4" value="a" data-store="w13-exam-q4"><span><b>a)</b> dentro de una estrategia híbrida</span></label><label class="opt"><input type="radio" name="w13q4" value="b" data-store="w13-exam-q4"><span><b>b)</b> con una sola estrategia muy optimizada</span></label><label class="opt"><input type="radio" name="w13q4" value="c" data-store="w13-exam-q4"><span><b>c)</b> entre algoritmos simples validados por separado</span></label><label class="opt"><input type="radio" name="w13q4" value="d" data-store="w13-exam-q4"><span><b>d)</b> solo por mercado</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Una cartera de cinco estrategias de tendencia en EUR/USD H1…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q5" value="a" data-store="w13-exam-q5"><span><b>a)</b> está muy diversificada</span></label><label class="opt"><input type="radio" name="w13q5" value="b" data-store="w13-exam-q5"><span><b>b)</b> es casi la misma apuesta repetida</span></label><label class="opt"><input type="radio" name="w13q5" value="c" data-store="w13-exam-q5"><span><b>c)</b> tiene correlación negativa</span></label><label class="opt"><input type="radio" name="w13q5" value="d" data-store="w13-exam-q5"><span><b>d)</b> no tiene riesgo</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Para combinar estrategias en el tiempo se usan resultados…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q6" value="a" data-store="w13-exam-q6"><span><b>a)</b> por operación</span></label><label class="opt"><input type="radio" name="w13q6" value="b" data-store="w13-exam-q6"><span><b>b)</b> mensuales o diarios</span></label><label class="opt"><input type="radio" name="w13q6" value="c" data-store="w13-exam-q6"><span><b>c)</b> anuales únicamente</span></label><label class="opt"><input type="radio" name="w13q6" value="d" data-store="w13-exam-q6"><span><b>d)</b> del mejor año</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> El Portfolio Composer…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q7" value="a" data-store="w13-exam-q7"><span><b>a)</b> está en todas las builds</span></label><label class="opt"><input type="radio" name="w13q7" value="b" data-store="w13-exam-q7"><span><b>b)</b> se añadió en builds posteriores a la 140</span></label><label class="opt"><input type="radio" name="w13q7" value="c" data-store="w13-exam-q7"><span><b>c)</b> es parte de MetaTrader</span></label><label class="opt"><input type="radio" name="w13q7" value="d" data-store="w13-exam-q7"><span><b>d)</b> es una hoja de cálculo</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Al quitar una estrategia, el Sharpe de la cartera sube. Esto indica que…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q8" value="a" data-store="w13-exam-q8"><span><b>a)</b> aporta mucho</span></label><label class="opt"><input type="radio" name="w13q8" value="b" data-store="w13-exam-q8"><span><b>b)</b> resta a la cartera</span></label><label class="opt"><input type="radio" name="w13q8" value="c" data-store="w13-exam-q8"><span><b>c)</b> duplica a otra</span></label><label class="opt"><input type="radio" name="w13q8" value="d" data-store="w13-exam-q8"><span><b>d)</b> debe tener más peso</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Al quitar una estrategia, casi nada cambia. Probablemente…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q9" value="a" data-store="w13-exam-q9"><span><b>a)</b> duplica a otra</span></label><label class="opt"><input type="radio" name="w13q9" value="b" data-store="w13-exam-q9"><span><b>b)</b> es la mejor</span></label><label class="opt"><input type="radio" name="w13q9" value="c" data-store="w13-exam-q9"><span><b>c)</b> diversifica mucho</span></label><label class="opt"><input type="radio" name="w13q9" value="d" data-store="w13-exam-q9"><span><b>d)</b> tiene correlación negativa</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Para empezar, los pesos de la cartera deben ser…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q10" value="a" data-store="w13-exam-q10"><span><b>a)</b> los que maximizan el Sharpe histórico</span></label><label class="opt"><input type="radio" name="w13q10" value="b" data-store="w13-exam-q10"><span><b>b)</b> iguales en riesgo</span></label><label class="opt"><input type="radio" name="w13q10" value="c" data-store="w13-exam-q10"><span><b>c)</b> proporcionales al beneficio</span></label><label class="opt"><input type="radio" name="w13q10" value="d" data-store="w13-exam-q10"><span><b>d)</b> al azar</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Optimizar los pesos con datos históricos…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q11" value="a" data-store="w13-exam-q11"><span><b>a)</b> es otra forma de sobreajuste</span></label><label class="opt"><input type="radio" name="w13q11" value="b" data-store="w13-exam-q11"><span><b>b)</b> siempre mejora el futuro</span></label><label class="opt"><input type="radio" name="w13q11" value="c" data-store="w13-exam-q11"><span><b>c)</b> elimina el riesgo</span></label><label class="opt"><input type="radio" name="w13q11" value="d" data-store="w13-exam-q11"><span><b>d)</b> es obligatorio</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Un criterio razonable de correlación máxima entre estrategias de la cartera es…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q12" value="a" data-store="w13-exam-q12"><span><b>a)</b> 0,99</span></label><label class="opt"><input type="radio" name="w13q12" value="b" data-store="w13-exam-q12"><span><b>b)</b> 0,9</span></label><label class="opt"><input type="radio" name="w13q12" value="c" data-store="w13-exam-q12"><span><b>c)</b> 0,5</span></label><label class="opt"><input type="radio" name="w13q12" value="d" data-store="w13-exam-q12"><span><b>d)</b> cualquiera</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Una estrategia entra en la cartera si…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q13" value="a" data-store="w13-exam-q13"><span><b>a)</b> es la más rentable</span></label><label class="opt"><input type="radio" name="w13q13" value="b" data-store="w13-exam-q13"><span><b>b)</b> ha superado la validación y mejora la cartera</span></label><label class="opt"><input type="radio" name="w13q13" value="c" data-store="w13-exam-q13"><span><b>c)</b> tiene más operaciones</span></label><label class="opt"><input type="radio" name="w13q13" value="d" data-store="w13-exam-q13"><span><b>d)</b> es de tendencia</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Dos estrategias del 10 % al 50 % con correlación 0 dan una desviación de…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q14" value="a" data-store="w13-exam-q14"><span><b>a)</b> 10 %</span></label><label class="opt"><input type="radio" name="w13q14" value="b" data-store="w13-exam-q14"><span><b>b)</b> 5 %</span></label><label class="opt"><input type="radio" name="w13q14" value="c" data-store="w13-exam-q14"><span><b>c)</b> 7,1 %</span></label><label class="opt"><input type="radio" name="w13q14" value="d" data-store="w13-exam-q14"><span><b>d)</b> 14,1 %</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> La diversificación es más necesaria en trading algorítmico porque…</legend><div class="opts"><label class="opt"><input type="radio" name="w13q15" value="a" data-store="w13-exam-q15"><span><b>a)</b> alguna estrategia validada dejará de funcionar</span></label><label class="opt"><input type="radio" name="w13q15" value="b" data-store="w13-exam-q15"><span><b>b)</b> los costes son cero</span></label><label class="opt"><input type="radio" name="w13q15" value="c" data-store="w13-exam-q15"><span><b>c)</b> las estrategias nunca fallan</span></label><label class="opt"><input type="radio" name="w13q15" value="d" data-store="w13-exam-q15"><span><b>d)</b> MT5 lo exige</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Dos estrategias con desviaciones anuales del 9 % y del 15 % y correlación 0,1 se combinan al 60 % y 40 %. Calcula la desviación de la cartera. Si sus rentabilidades anuales son del 7 % y del 12 %, calcula la rentabilidad de la cartera y su cociente rentabilidad/desviación, y compáralo con el de cada estrategia.</p>
+<p><strong>B2.</strong> Una cartera de 4 estrategias tiene un Sharpe de 1,6. Quitando cada una: sin A, 1,35; sin B, 1,52; sin C, 1,71; sin D, 1,58. a) Ordena las estrategias por su aportación. b) ¿Cuál revisarías o sacarías? c) ¿Cuál es la más valiosa?</p>
+<p><strong>B3.</strong> Tienes 6 estrategias independientes de igual riesgo con una desviación anual del 18 % cada una. a) ¿Qué desviación tiene la cartera con pesos iguales? b) ¿Cuántas estrategias necesitarías para bajar al 6 %? c) ¿Por qué en la realidad la reducción será menor?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: un compañero quiere construir su cartera con las cinco estrategias de mayor beneficio de su databank, todas de EUR/USD H1, con pesos optimizados para maximizar el Sharpe histórico. Explica qué problemas tiene su plan y cómo lo harías tú.</p><div class="answer"><label for="w13-examen-13">Tus respuestas a las partes B y C</label><textarea id="w13-examen-13" data-store="w13-examen-13" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w13-done-examen-13"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
