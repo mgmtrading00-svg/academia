@@ -1,0 +1,474 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 6 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="6">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-06.svg)"><img src="img/cover-06.svg" alt=""></div><p class="eyebrow">SEMANA 06 · ETAPA 2 · STRATEGYQUANT X</p><h1>Primeras estrategias</h1><p class="meta">11 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="6" data-total="11"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w6-done-presentacion"></span>Presentación</a><a class="tab" href="#s06-l1" data-tab="s06-l1" title="Cómo genera el Builder: aleatoria y evolución genética"><span class="dot" data-dot="w6-done-s06-l1"></span>L1</a><a class="tab" href="#s06-l2" data-tab="s06-l2" title="Bloques e indicadores; condiciones de entrada y salida"><span class="dot" data-dot="w6-done-s06-l2"></span>L2</a><a class="tab" href="#s06-l3" data-tab="s06-l3" title="Gestión de operaciones, reglas y money management"><span class="dot" data-dot="w6-done-s06-l3"></span>L3</a><a class="tab" href="#s06-l4" data-tab="s06-l4" title="Ranking, filtros y databanks"><span class="dot" data-dot="w6-done-s06-l4"></span>L4</a><a class="tab" href="#s06-l5" data-tab="s06-l5" title="Leer un resultado: pestañas, métricas y curva"><span class="dot" data-dot="w6-done-s06-l5"></span>L5</a><a class="tab" href="#s06-l6" data-tab="s06-l6" title="Taller: primer proyecto en EUR/USD H1"><span class="dot" data-dot="w6-done-s06-l6"></span>L6</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w6-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w6-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-06-y-entrega-practica" data-tab="investigacion-i-06-y-entrega-practica" title="Investigación I-06 y entrega práctica"><span class="dot" data-dot="w6-done-investigacion-i-06-y-entrega-practica"></span>Investigación I-06 y entrega práctica</a><a class="tab" href="#examen-6" data-tab="examen-6" title="Examen de la semana 6 · Variante A"><span class="dot" data-dot="w6-done-examen-6"></span>Examen  6</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 06 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s06-l1"><span class="dot" data-dot="w6-done-s06-l1"></span><span class="tk">Lección L1</span><b>Cómo genera el Builder: aleatoria y evolución genética</b><span class="tm">→</span></a><a class="toc-i" href="#s06-l2"><span class="dot" data-dot="w6-done-s06-l2"></span><span class="tk">Lección L2</span><b>Bloques e indicadores; condiciones de entrada y salida</b><span class="tm">→</span></a><a class="toc-i" href="#s06-l3"><span class="dot" data-dot="w6-done-s06-l3"></span><span class="tk">Lección L3</span><b>Gestión de operaciones, reglas y money management</b><span class="tm">→</span></a><a class="toc-i" href="#s06-l4"><span class="dot" data-dot="w6-done-s06-l4"></span><span class="tk">Lección L4</span><b>Ranking, filtros y databanks</b><span class="tm">→</span></a><a class="toc-i" href="#s06-l5"><span class="dot" data-dot="w6-done-s06-l5"></span><span class="tk">Lección L5</span><b>Leer un resultado: pestañas, métricas y curva</b><span class="tm">→</span></a><a class="toc-i" href="#s06-l6"><span class="dot" data-dot="w6-done-s06-l6"></span><span class="tk">Lección L6</span><b>Taller: primer proyecto en EUR/USD H1</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w6-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w6-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-06-y-entrega-practica"><span class="dot" data-dot="w6-done-investigacion-i-06-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-06 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-6"><span class="dot" data-dot="w6-done-examen-6"></span><span class="tk">Evaluación</span><b>Examen de la semana 6 · Variante A</b><span class="tm">→</span></a></nav><p>Con los datos preparados, esta semana generarás tus primeras estrategias. Aprenderás cómo las construye el Builder, qué piezas usa, cómo se gestionan las operaciones y el riesgo, cómo se filtran y ordenan los resultados y cómo leer el informe de una estrategia. Terminarás con tu primer proyecto completo en EUR/USD H1. Un aviso desde el principio: <strong>de lo que generes esta semana, casi nada servirá para operar.</strong> El objetivo es aprender la herramienta y entrenar el ojo, no encontrar ya una estrategia.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Explicar cómo genera estrategias el Builder: de forma aleatoria y por evolución genética.</li>
+<li>Elegir bloques e indicadores y entender las condiciones de entrada y salida.</li>
+<li>Configurar la gestión de operaciones y el money management.</li>
+<li>Definir el ranking, los filtros y los databanks de un proyecto.</li>
+<li>Leer el informe de una estrategia: métricas, curva y lista de operaciones.</li>
+<li>Lanzar, vigilar y documentar un proyecto completo.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Seis lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Primer proyecto, análisis de resultados y ejercicios</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-06, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 7</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX con los datos de EUR/USD de la semana 5, alineados con tu broker.</li>
+<li>Tu ficha de datos (costes y zona horaria).</li>
+<li>Tu plantilla de métricas de la semana 4.</li>
+<li>Tiempo de ordenador: un proyecto puede estar varias horas generando. Planifica dejarlo funcionando de noche.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Las pestañas y opciones citadas se basan en la build 140 y en la documentación pública de StrategyQuant. Si en tu programa algo cambia, anótalo en el registro de piloto.</p></aside>
+<h4>Criterio para desbloquear la semana 7</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 6</li>
+<li>☐ Entrega práctica: primer proyecto documentado y análisis de tres estrategias</li>
+<li>☐ Investigación I-06: pasos 1 a 5, 7 y 8 documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w6-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s06-l1" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L1</span><h2>Cómo genera el Builder: aleatoria y evolución genética</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>La idea</h4>
+<p>El Builder construye estrategias combinando piezas (indicadores, condiciones, tipos de orden, stops y objetivos) y las prueba una a una con tus datos. Las que cumplen tus filtros se guardan; las demás se descartan. Puede hacerlo de dos formas.</p>
+<h4>Generación aleatoria</h4>
+<p>En el modo <strong>aleatorio</strong> (<em>random generation</em>), cada estrategia se construye eligiendo piezas al azar dentro de lo que permites. Ventajas: explora mucho espacio y no se «encariña» con ninguna idea. Inconveniente: la mayoría de las combinaciones son malas, así que necesita muchas pruebas para encontrar algo que pase los filtros.</p>
+<h4>Evolución genética</h4>
+<p>En el modo <strong>genético</strong> (<em>genetic evolution</em>), el Builder imita la selección natural:</p>
+<ol>
+<li>Crea una <strong>población</strong> inicial de estrategias aleatorias.</li>
+<li>Las evalúa y las ordena por una medida de calidad (el <strong>fitness</strong>).</li>
+<li>Las mejores se <strong>cruzan</strong> (<em>crossover</em>), combinando partes de dos estrategias, y algunas <strong>mutan</strong> (<em>mutation</em>), cambiando una pieza al azar.</li>
+<li>Se repite durante varias <strong>generaciones</strong>.</li>
+</ol>
+<p>Para evitar que toda la población acabe siendo variaciones de una misma estrategia, el Builder puede usar varias <strong>islas</strong> que evolucionan por separado e intercambian de vez en cuando algunos individuos.</p>
+<figure class="fig"><a href="img/s06-genetica.svg" target="_blank" rel="noopener"><img src="img/s06-genetica.svg" alt="Figura 6.1 · Generación aleatoria frente a evolución genética." loading="lazy"></a><figcaption>Figura 6.1 · Generación aleatoria frente a evolución genética.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> La evolución genética encuentra estrategias que encajan muy bien con tus datos históricos… y por eso mismo <strong>sobreajusta</strong> con mucha facilidad. Cuantas más generaciones, mejor se ve el backtest y más desconfianza merece. Lo combatirás con datos fuera de muestra desde el primer proyecto.</p></aside>
+<h4>Cuántas estrategias son «muchas»</h4>
+<p>Un proyecto normal prueba decenas o cientos de miles de estrategias. Recuerda el sesgo de selección de la semana 4: si pruebas 100.000 estrategias, encontrarás cientos que «funcionan» por casualidad. Por eso el Builder es solo el primer filtro de un embudo muy estrecho.</p>
+<figure class="fig"><a href="img/s06-embudo.svg" target="_blank" rel="noopener"><img src="img/s06-embudo.svg" alt="Figura 6.2 · El embudo de la investigación: de cientos de miles de estrategias probadas a muy pocas candidatas. Cifras ilustrativas." loading="lazy"></a><figcaption>Figura 6.2 · El embudo de la investigación: de cientos de miles de estrategias probadas a muy pocas candidatas. Cifras ilustrativas.</figcaption></figure>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre cruce y mutación?</li>
+<li>¿Para qué sirven las islas?</li>
+<li>¿Por qué la evolución genética aumenta el riesgo de sobreajuste?</li>
+</ol><div class="answer"><label for="w6-s06-l1">Tus respuestas</label><textarea id="w6-s06-l1" data-store="w6-s06-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l1"> He terminado esta sección</label></section><section class="pane" id="s06-l2" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L2</span><h2>Bloques e indicadores; condiciones de entrada y salida</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Los bloques</h4>
+<p>Los <strong>bloques</strong> (<em>building blocks</em>) son las piezas con las que el Builder construye. Se agrupan en:</p>
+<ul>
+<li><strong>Indicadores:</strong> medias móviles, RSI, ATR, Bandas de Bollinger, MACD, estocástico, ADX y muchos más.</li>
+<li><strong>Valores de precio:</strong> apertura, máximo, mínimo y cierre de velas anteriores, máximos y mínimos de N velas.</li>
+<li><strong>Comparaciones y señales:</strong> «es mayor que», «cruza por encima», «sube durante N velas».</li>
+<li><strong>Tipos de orden de entrada:</strong> a mercado, stop o límite.</li>
+<li><strong>Salidas:</strong> stop loss, take profit, trailing stop, salida tras N velas y salidas por condición.</li>
+</ul>
+<p>En el Builder decides qué bloques puede usar el programa. <strong>Menos bloques = menos combinaciones = menos sobreajuste</strong>, pero también menos posibilidades.</p>
+<h4>Una regla de entrada</h4>
+<p>Una regla de entrada combina condiciones con «Y» (<em>AND</em>) u «O» (<em>OR</em>). Por ejemplo:</p>
+<aside class="callout example"><p><strong>Ejemplo.</strong> Entrar en largo con una orden stop 0,5 ATR por encima del máximo de la vela anterior <strong>si</strong> la media móvil de 50 periodos está subiendo <strong>y</strong> el RSI de 14 periodos es mayor que 50.</p></aside>
+<p>Cada condición tiene <strong>parámetros</strong> (50, 14, 0,5…). El Builder los elige y los ajusta. Cuantos más parámetros tiene una estrategia, más <strong>grados de libertad</strong> tiene para adaptarse a los datos, y más fácil es que se adapte al ruido (semana 10).</p>
+<h4>Tipos de orden de entrada</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Cuándo entra</th>
+<th>Lógica habitual</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>A mercado</td>
+<td>Al cumplirse la condición, en la siguiente vela</td>
+<td>Cualquiera</td>
+</tr>
+<tr>
+<td>Stop</td>
+<td>Si el precio llega a un nivel por encima (compra) o por debajo (venta)</td>
+<td>Ruptura y tendencia</td>
+</tr>
+<tr>
+<td>Límite</td>
+<td>Si el precio vuelve a un nivel mejor</td>
+<td>Reversión</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Las salidas</h4>
+<p>Las salidas deciden tanto como las entradas. Las más usadas:</p>
+<ul>
+<li><strong>Stop loss:</strong> fijo en pips, en múltiplos del ATR o en un nivel del precio. El ATR adapta el stop a la volatilidad.</li>
+<li><strong>Take profit:</strong> objetivo de beneficio, con las mismas opciones.</li>
+<li><strong>Trailing stop:</strong> se mueve a favor cuando el precio avanza.</li>
+<li><strong>Salida temporal:</strong> cerrar tras N velas o al final del día o de la semana.</li>
+<li><strong>Salida por condición:</strong> cerrar cuando se cumple una regla, por ejemplo un cruce contrario.</li>
+</ul>
+<aside class="callout tip"><p><strong>Consejo.</strong> Para empezar, exige que toda estrategia tenga un <strong>stop loss</strong>. Una estrategia sin stop puede tener un backtest precioso y una pérdida catastrófica pendiente.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Escribe una regla de entrada con dos condiciones y un tipo de orden.</li>
+<li>¿Por qué reducir los bloques disponibles ayuda contra el sobreajuste?</li>
+<li>¿Qué ventaja tiene un stop en múltiplos del ATR frente a uno fijo en pips?</li>
+</ol><div class="answer"><label for="w6-s06-l2">Tus respuestas</label><textarea id="w6-s06-l2" data-store="w6-s06-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l2"> He terminado esta sección</label></section><section class="pane" id="s06-l3" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L3</span><h2>Gestión de operaciones, reglas y money management</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Opciones de trading</h4>
+<p>Además de las reglas que genera el Builder, puedes imponer <strong>opciones de trading</strong> comunes a todas las estrategias del proyecto. Las más útiles:</p>
+<ul>
+<li><strong>Limitar el horario:</strong> operar solo en ciertas horas (recuerda alinear la zona horaria).</li>
+<li><strong>Cerrar al final del día o del viernes:</strong> evita mantener posiciones durante el fin de semana y sus gaps.</li>
+<li><strong>Número máximo de operaciones por día.</strong></li>
+<li><strong>Stop loss y take profit mínimos y máximos:</strong> evitan estrategias con stops ridículamente pequeños (que el broker no permitiría o que se comerían los costes) o enormes.</li>
+</ul>
+<h4>El money management</h4>
+<p>El <strong>money management</strong> decide el tamaño de cada operación. En el Builder hay varios métodos; los dos esenciales:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Cómo calcula el tamaño</th>
+<th>Cuándo usarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamaño fijo</td>
+<td>Siempre los mismos lotes</td>
+<td><strong>Para generar y comparar estrategias</strong></td>
+</tr>
+<tr>
+<td>Riesgo fijo (% del capital)</td>
+<td>Lotes según el capital y la distancia del stop</td>
+<td>Para simular cómo crecería una cuenta real</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout key"><p><strong>Idea clave.</strong> Genera y compara estrategias con <strong>tamaño fijo</strong>. Con riesgo porcentual, el interés compuesto hace que las operaciones recientes pesen más que las antiguas, y las métricas se distorsionan. El riesgo porcentual lo aplicarás al final, al construir la cartera.</p></aside>
+<h4>Capital inicial</h4>
+<p>Usa un capital inicial coherente con el tamaño: por ejemplo, 10.000 $ y 0,10 lotes. Así el drawdown en porcentaje tiene sentido. Lo importante no es la cifra, sino usar <strong>siempre la misma</strong> para poder comparar proyectos.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué conviene fijar un stop loss mínimo en pips?</li>
+<li>¿Por qué se generan las estrategias con tamaño fijo?</li>
+<li>¿Qué riesgo evitas cerrando las posiciones el viernes?</li>
+</ol><div class="answer"><label for="w6-s06-l3">Tus respuestas</label><textarea id="w6-s06-l3" data-store="w6-s06-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l3"> He terminado esta sección</label></section><section class="pane" id="s06-l4" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L4</span><h2>Ranking, filtros y databanks</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Los filtros</h4>
+<p>Los <strong>filtros</strong> deciden qué estrategias se guardan en el databank. Unos filtros de partida razonables para H1:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Filtro</th>
+<th>Valor de partida</th>
+<th>Por qué</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Número de operaciones</td>
+<td>≥ 200 en el periodo de prueba</td>
+<td>Muestra suficiente (semana 4)</td>
+</tr>
+<tr>
+<td>Profit factor</td>
+<td>≥ 1,3</td>
+<td>Ventaja mínima tras costes</td>
+</tr>
+<tr>
+<td>Drawdown máximo</td>
+<td>Limitado a un valor razonable para el capital</td>
+<td>Evita estrategias inaguantables</td>
+</tr>
+<tr>
+<td>Ratio beneficio / drawdown</td>
+<td>≥ 2–3</td>
+<td>Rentabilidad respecto al dolor</td>
+</tr>
+<tr>
+<td>Estabilidad</td>
+<td>Positiva y alta</td>
+<td>Curva regular, no un golpe de suerte</td>
+</tr>
+</tbody>
+</table></div>
+<p>No son números mágicos: son un punto de partida. En la investigación de esta semana comprobarás cómo cambian los resultados al endurecerlos.</p>
+<h4>El ranking y el fitness</h4>
+<p>En el modo genético, el <strong>fitness</strong> es la medida que el Builder intenta mejorar. Si eliges el beneficio neto, el Builder buscará beneficio a cualquier precio; si eliges una medida que combine beneficio, drawdown y estabilidad, buscará curvas más equilibradas. Elegir el fitness es elegir qué tipo de estrategia quieres.</p>
+<h4>Datos dentro y fuera de muestra</h4>
+<p>Desde este primer proyecto, reserva una parte de los datos que el Builder <strong>no</strong> use para elegir estrategias: el periodo <strong>fuera de muestra</strong> (<em>out of sample</em>, OOS). Por ejemplo, genera con 2014–2021 (dentro de muestra, <em>in sample</em>, IS) y guarda 2022 en adelante para comprobar. Una estrategia que solo funciona en el periodo IS es, casi seguro, un ajuste al ruido. Lo verás en profundidad en la semana 10.</p>
+<figure class="fig"><a href="img/s06-is-oos.svg" target="_blank" rel="noopener"><img src="img/s06-is-oos.svg" alt="Figura 6.3 · División de los datos: el Builder solo ve el periodo dentro de muestra; el de fuera de muestra sirve para comprobar." loading="lazy"></a><figcaption>Figura 6.3 · División de los datos: el Builder solo ve el periodo dentro de muestra; el de fuera de muestra sirve para comprobar.</figcaption></figure>
+<h4>Los databanks del proyecto</h4>
+<p>Un proyecto del Builder suele tener varios databanks: uno con los <strong>resultados</strong> que pasan los filtros y otros que puedes crear para separar candidatas. Desde el databank puedes ordenar por cualquier columna, añadir columnas de métricas y enviar estrategias al Retester.</p>
+<aside class="callout warn"><p><strong>Error típico.</strong> Relajar los filtros cuando el databank sale vacío. Si con filtros razonables no aparece nada, la conclusión no es «bajar el listón», sino que <strong>ese mercado, esa temporalidad o esos bloques no dan para más</strong>, y eso también es un resultado de investigación.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué pasaría si usaras el beneficio neto como único fitness?</li>
+<li>¿Por qué se reserva un periodo fuera de muestra desde el primer proyecto?</li>
+<li>Tu databank sale vacío. ¿Qué haces?</li>
+</ol><div class="answer"><label for="w6-s06-l4">Tus respuestas</label><textarea id="w6-s06-l4" data-store="w6-s06-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l4"> He terminado esta sección</label></section><section class="pane" id="s06-l5" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L5</span><h2>Leer un resultado: pestañas, métricas y curva</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>El informe de una estrategia</h4>
+<p>Al abrir una estrategia del databank, SQX muestra un informe con varias secciones: resumen de métricas, curva de capital, lista de operaciones, estadísticas por meses o años y las reglas de la estrategia (en pseudocódigo legible). Revísalas siempre en este orden:</p>
+<ol>
+<li><strong>Las reglas.</strong> ¿Entiendes qué hace? ¿Tiene sentido? Una estrategia con 9 condiciones y parámetros raros es sospechosa.</li>
+<li><strong>El número de operaciones.</strong> Por debajo de 200 en H1, desconfía.</li>
+<li><strong>La curva de capital.</strong> ¿Sube de forma regular o depende de un periodo concreto?</li>
+<li><strong>IS frente a OOS.</strong> ¿Mantiene el comportamiento en el periodo fuera de muestra?</li>
+<li><strong>Las métricas.</strong> Profit factor, drawdown, ratio beneficio/drawdown, esperanza, tasa de acierto y R.</li>
+<li><strong>La distribución en el tiempo.</strong> ¿Gana en la mayoría de los años o solo en uno?</li>
+</ol>
+<figure class="fig"><a href="img/s06-curvas.svg" target="_blank" rel="noopener"><img src="img/s06-curvas.svg" alt="Figura 6.4 · Tres curvas con el mismo beneficio final: regular, dependiente de un periodo y deteriorada fuera de muestra. Datos simulados." loading="lazy"></a><figcaption>Figura 6.4 · Tres curvas con el mismo beneficio final: regular, dependiente de un periodo y deteriorada fuera de muestra. Datos simulados.</figcaption></figure>
+<h4>Señales de alarma</h4>
+<ul>
+<li>Un profit factor muy alto (por encima de 3) con pocas operaciones.</li>
+<li>Una curva casi perfecta, sin ningún drawdown.</li>
+<li>Casi todo el beneficio en unas pocas operaciones o en un solo año.</li>
+<li>Un comportamiento muy distinto entre IS y OOS.</li>
+<li>Stops o take profits de pocos pips, en los que los costes deciden el resultado.</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> Lee una estrategia como un abogado del diablo: tu trabajo es encontrar por qué <strong>no</strong> funcionaría.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿En qué orden revisas el informe de una estrategia y por qué empiezas por las reglas?</li>
+<li>Nombra tres señales de alarma.</li>
+<li>Una estrategia gana todo su beneficio en 2020. ¿Qué piensas?</li>
+</ol><div class="answer"><label for="w6-s06-l5">Tus respuestas</label><textarea id="w6-s06-l5" data-store="w6-s06-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l5"> He terminado esta sección</label></section><section class="pane" id="s06-l6" hidden><header class="pane-head"><span class="kicker">Semana 06 · Lección L6</span><h2>Taller: primer proyecto en EUR/USD H1</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 6–8 horas, con generación nocturna</em></p>
+<h4>Paso 1 · Crea el proyecto</h4>
+<p>En el Builder, crea un proyecto nuevo y llámalo <code>S06_EURUSD_H1_v1</code>. Anota en tu cuaderno la fecha, la build de SQX y el objetivo: «aprender el flujo del Builder con una configuración estándar».</p>
+<h4>Paso 2 · Qué construir</h4>
+<ul>
+<li>Tipo de estrategia: simple, con lógica de entrada en largo y en corto simétrica.</li>
+<li>Modo: <strong>evolución genética</strong> con islas (deja los valores por defecto la primera vez y anótalos).</li>
+<li>Temporalidad: H1.</li>
+</ul>
+<h4>Paso 3 · Datos</h4>
+<ul>
+<li>Símbolo EURUSD de la semana 5, en la zona horaria de tu broker.</li>
+<li>Periodo IS: de 2014 al final de 2021. Periodo OOS: de 2022 hasta el último dato.</li>
+<li>Precisión del backtest: la de datos M1 que tengas disponible.</li>
+<li>Costes: los de tu ficha de datos, algo pesimistas.</li>
+</ul>
+<h4>Paso 4 · Bloques, opciones y money management</h4>
+<ul>
+<li>Bloques: deja los indicadores por defecto, pero activa solo órdenes a mercado y stop.</li>
+<li>Obligatorio un stop loss; stop mínimo de 15 pips.</li>
+<li>Cerrar posiciones el viernes antes del cierre.</li>
+<li>Money management: tamaño fijo de 0,10 lotes con un capital de 10.000 $.</li>
+</ul>
+<h4>Paso 5 · Filtros y ranking</h4>
+<p>Usa los filtros de partida de la lección 4, aplicados al periodo IS. Como fitness, usa una medida que combine beneficio y drawdown o la estabilidad.</p>
+<h4>Paso 6 · Lanza y vigila</h4>
+<p>Lanza el proyecto y déjalo al menos 4–6 horas. Anota cuántas estrategias ha probado y cuántas han pasado los filtros.</p>
+<h4>Paso 7 · Analiza tres estrategias</h4>
+<p>Elige tres estrategias del databank: la primera por tu fitness, una al azar y la que te parezca más sencilla. Para cada una, rellena en tu plantilla de métricas los datos IS y OOS y escribe un párrafo de abogado del diablo.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuántas estrategias probó tu proyecto y cuántas pasaron los filtros? ¿Qué porcentaje es?</li>
+<li>¿Cuántas de tus tres estrategias mantuvieron un profit factor ≥ 1,2 fuera de muestra?</li>
+<li>¿Qué cambiarías en la configuración para el siguiente proyecto?</li>
+</ol><div class="answer"><label for="w6-s06-l6">Tus respuestas</label><textarea id="w6-s06-l6" data-store="w6-s06-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-s06-l6"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 06 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bloques</td>
+<td>Building blocks</td>
+<td>Piezas con las que el Builder construye estrategias</td>
+</tr>
+<tr>
+<td>Condición</td>
+<td>Condition</td>
+<td>Comparación que debe cumplirse para entrar o salir</td>
+</tr>
+<tr>
+<td>Cruce (genético)</td>
+<td>Crossover</td>
+<td>Combinación de partes de dos estrategias para crear una nueva</td>
+</tr>
+<tr>
+<td>Dentro de muestra</td>
+<td>In sample (IS)</td>
+<td>Datos que se usan para construir o elegir la estrategia</td>
+</tr>
+<tr>
+<td>Evolución genética</td>
+<td>Genetic evolution</td>
+<td>Generación que mejora una población de estrategias por selección, cruce y mutación</td>
+</tr>
+<tr>
+<td>Filtro</td>
+<td>Filter</td>
+<td>Requisito que una estrategia debe cumplir para guardarse</td>
+</tr>
+<tr>
+<td>Fitness</td>
+<td>Fitness</td>
+<td>Medida de calidad que la evolución genética intenta mejorar</td>
+</tr>
+<tr>
+<td>Fuera de muestra</td>
+<td>Out of sample (OOS)</td>
+<td>Datos reservados que no se usan para construir ni elegir</td>
+</tr>
+<tr>
+<td>Generación</td>
+<td>Generation</td>
+<td>Cada ciclo de la evolución genética</td>
+</tr>
+<tr>
+<td>Generación aleatoria</td>
+<td>Random generation</td>
+<td>Construcción de estrategias eligiendo piezas al azar</td>
+</tr>
+<tr>
+<td>Grados de libertad</td>
+<td>Degrees of freedom</td>
+<td>Número de parámetros y decisiones que puede ajustar una estrategia</td>
+</tr>
+<tr>
+<td>Isla</td>
+<td>Island</td>
+<td>Población que evoluciona por separado dentro de un proyecto genético</td>
+</tr>
+<tr>
+<td>Money management</td>
+<td>Money management</td>
+<td>Método que decide el tamaño de cada operación</td>
+</tr>
+<tr>
+<td>Mutación</td>
+<td>Mutation</td>
+<td>Cambio aleatorio de una pieza de una estrategia</td>
+</tr>
+<tr>
+<td>Población</td>
+<td>Population</td>
+<td>Conjunto de estrategias de cada generación</td>
+</tr>
+<tr>
+<td>Salida temporal</td>
+<td>Time exit</td>
+<td>Cierre de la operación tras un número de velas o a una hora</td>
+</tr>
+<tr>
+<td>Sobreajuste</td>
+<td>Overfitting</td>
+<td>Adaptación de una estrategia al ruido de los datos históricos</td>
+</tr>
+<tr>
+<td>Tamaño fijo</td>
+<td>Fixed size</td>
+<td>Mismo número de lotes en todas las operaciones</td>
+</tr>
+<tr>
+<td>Trailing stop</td>
+<td>Trailing stop</td>
+<td>Stop que se mueve a favor cuando el precio avanza</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w6-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 06 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Genética.</strong> Explica con un ejemplo inventado cómo dos estrategias «padres» podrían cruzarse para dar una «hija», y cómo podría mutar esa hija.</p>
+<p><strong>E2 · Sesgo de selección.</strong> Si el Builder prueba 200.000 estrategias y una de cada 2.000 pasa los filtros por pura casualidad, ¿cuántas estrategias «falsas» tendrás en el databank?</p>
+<p><strong>E3 · Reglas.</strong> Escribe en lenguaje normal dos reglas de entrada: una de ruptura con orden stop y otra de reversión con orden límite, con su stop loss y su take profit.</p>
+<p><strong>E4 · Grados de libertad.</strong> Cuenta los parámetros de esta estrategia: «Comprar si la EMA(20) cruza por encima de la EMA(80) y el ADX(14) &gt; 25; stop de 2 × ATR(14); take profit de 3 × ATR(14); salir tras 30 velas».</p>
+<p><strong>E5 · Tamaño fijo frente a riesgo fijo.</strong> Explica en 100 palabras por qué comparar dos estrategias con riesgo porcentual puede ser engañoso.</p>
+<p><strong>E6 · Filtros.</strong> Propón filtros para una estrategia D1 de EUR/USD con 10 años de datos. ¿Cuántas operaciones mínimas pedirías y por qué?</p>
+<p><strong>E7 · División de datos.</strong> Con datos de 2014 a 2025, propón dos formas distintas de separar IS y OOS y explica una ventaja de cada una.</p>
+<p><strong>E8 · Lectura de un informe.</strong> Una estrategia tiene: 160 operaciones, profit factor 3,4, drawdown 2 %, tasa de acierto 81 %, stop medio de 60 pips y take profit medio de 12 pips. Enumera todas las señales de alarma que encuentres.</p>
+<p><strong>E9 · Costes.</strong> Una estrategia tiene un take profit de 8 pips y un stop de 8 pips, y paga 1,2 pips de coste por operación. Calcula su tasa de acierto de equilibrio.</p>
+<p><strong>E10 · Diario del proyecto.</strong> Escribe la entrada de tu cuaderno del taller: configuración completa, resultados y qué cambiarías.</p><div class="answer"><label for="w6-ejercicios-obligatorios">Tus respuestas</label><textarea id="w6-ejercicios-obligatorios" data-store="w6-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-06-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 06 · Sección</span><h2>Investigación I-06 y entrega práctica</h2></header><div class="read"><h3>Investigación I-06 · ¿Endurecer los filtros mejora el comportamiento fuera de muestra?</h3>
+<p>Esta semana añades el <strong>paso 5: generar estrategias</strong>.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Las estrategias que pasan filtros más estrictos en IS (profit factor ≥ 1,5 y estabilidad alta) mantienen un profit factor fuera de muestra mayor que las que pasan los filtros de partida».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Cita al menos una fuente sobre sobreajuste o selección de estrategias generadas (documentación de StrategyQuant, un libro o un artículo).</p>
+<p><strong>Paso 3 · Datos.</strong> Los del taller: EUR/USD H1, IS 2014–2021, OOS 2022 en adelante.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Define antes de generar: los dos conjuntos de filtros, cuántas estrategias analizarás de cada grupo (al menos 20), cómo las elegirás (las 20 primeras por fitness, por ejemplo) y qué métrica OOS compararás.</p>
+<p><strong>Paso 5 · Generación.</strong> Usa el proyecto del taller con los filtros de partida y crea un databank o una vista con los filtros estrictos. Exporta las métricas IS y OOS de ambos grupos a tu hoja.</p>
+<p><strong>Paso 7 · Comparación.</strong> Compara la media y la mediana del profit factor OOS de los dos grupos, y el porcentaje de estrategias de cada grupo con profit factor OOS mayor que 1.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma la hipótesis? ¿Qué porcentaje de estrategias «buenas» en IS lo siguieron siendo en OOS? ¿Qué te dice eso sobre el Builder?</p>
+<h3>Entrega práctica · Primer proyecto documentado</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S06_ENT</code></td>
+<td>Documento con la configuración completa del proyecto (capturas de cada pestaña), estrategias probadas y guardadas, y el análisis de las tres estrategias con sus métricas IS y OOS</td>
+</tr>
+<tr>
+<td><code>CODIGO_S06_SQX</code></td>
+<td>El archivo del proyecto o de las tres estrategias exportadas desde SQX</td>
+</tr>
+<tr>
+<td><code>CODIGO_S06_INV</code></td>
+<td>Hoja de la investigación I-06</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que la configuración sea reproducible, que los costes y la zona horaria sean los de tu ficha y que el análisis sea crítico. No se valora encontrar una estrategia rentable: se valora saber explicar por qué no te fiarías de ella.</p><div class="answer"><label for="w6-investigacion-i-06-y-entrega-practica">Tus respuestas</label><textarea id="w6-investigacion-i-06-y-entrega-practica" data-store="w6-investigacion-i-06-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-investigacion-i-06-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-6" hidden><header class="pane-head"><span class="kicker">Semana 06 · Evaluación</span><h2>Examen de la semana 6 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> En la evolución genética, el cruce consiste en…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q1" value="a" data-store="w6-exam-q1"><span><b>a)</b> cambiar una pieza al azar</span></label><label class="opt"><input type="radio" name="w6q1" value="b" data-store="w6-exam-q1"><span><b>b)</b> combinar partes de dos estrategias</span></label><label class="opt"><input type="radio" name="w6q1" value="c" data-store="w6-exam-q1"><span><b>c)</b> borrar las peores</span></label><label class="opt"><input type="radio" name="w6q1" value="d" data-store="w6-exam-q1"><span><b>d)</b> cambiar de datos</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Las islas sirven para…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q2" value="a" data-store="w6-exam-q2"><span><b>a)</b> mantener diversidad en la población</span></label><label class="opt"><input type="radio" name="w6q2" value="b" data-store="w6-exam-q2"><span><b>b)</b> acelerar el backtest</span></label><label class="opt"><input type="radio" name="w6q2" value="c" data-store="w6-exam-q2"><span><b>c)</b> reducir los costes</span></label><label class="opt"><input type="radio" name="w6q2" value="d" data-store="w6-exam-q2"><span><b>d)</b> operar en varios mercados</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> El fitness es…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q3" value="a" data-store="w6-exam-q3"><span><b>a)</b> el beneficio de la mejor estrategia</span></label><label class="opt"><input type="radio" name="w6q3" value="b" data-store="w6-exam-q3"><span><b>b)</b> el número de generaciones</span></label><label class="opt"><input type="radio" name="w6q3" value="c" data-store="w6-exam-q3"><span><b>c)</b> la medida que la evolución intenta mejorar</span></label><label class="opt"><input type="radio" name="w6q3" value="d" data-store="w6-exam-q3"><span><b>d)</b> el capital inicial</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Cuantas más generaciones genéticas…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q4" value="a" data-store="w6-exam-q4"><span><b>a)</b> menos sobreajuste</span></label><label class="opt"><input type="radio" name="w6q4" value="b" data-store="w6-exam-q4"><span><b>b)</b> peor backtest</span></label><label class="opt"><input type="radio" name="w6q4" value="c" data-store="w6-exam-q4"><span><b>c)</b> más operaciones</span></label><label class="opt"><input type="radio" name="w6q4" value="d" data-store="w6-exam-q4"><span><b>d)</b> mejor backtest y más riesgo de sobreajuste</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Reducir los bloques disponibles…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q5" value="a" data-store="w6-exam-q5"><span><b>a)</b> reduce las combinaciones y el sobreajuste</span></label><label class="opt"><input type="radio" name="w6q5" value="b" data-store="w6-exam-q5"><span><b>b)</b> aumenta los grados de libertad</span></label><label class="opt"><input type="radio" name="w6q5" value="c" data-store="w6-exam-q5"><span><b>c)</b> impide generar</span></label><label class="opt"><input type="radio" name="w6q5" value="d" data-store="w6-exam-q5"><span><b>d)</b> sube los costes</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Una orden stop de compra entra…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q6" value="a" data-store="w6-exam-q6"><span><b>a)</b> si el precio baja a un nivel</span></label><label class="opt"><input type="radio" name="w6q6" value="b" data-store="w6-exam-q6"><span><b>b)</b> si el precio sube hasta un nivel</span></label><label class="opt"><input type="radio" name="w6q6" value="c" data-store="w6-exam-q6"><span><b>c)</b> inmediatamente</span></label><label class="opt"><input type="radio" name="w6q6" value="d" data-store="w6-exam-q6"><span><b>d)</b> al cierre del día</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Un stop en múltiplos del ATR…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q7" value="a" data-store="w6-exam-q7"><span><b>a)</b> es siempre igual en pips</span></label><label class="opt"><input type="radio" name="w6q7" value="b" data-store="w6-exam-q7"><span><b>b)</b> elimina el riesgo</span></label><label class="opt"><input type="radio" name="w6q7" value="c" data-store="w6-exam-q7"><span><b>c)</b> se adapta a la volatilidad</span></label><label class="opt"><input type="radio" name="w6q7" value="d" data-store="w6-exam-q7"><span><b>d)</b> solo sirve en acciones</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Para generar y comparar estrategias se usa…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q8" value="a" data-store="w6-exam-q8"><span><b>a)</b> tamaño fijo</span></label><label class="opt"><input type="radio" name="w6q8" value="b" data-store="w6-exam-q8"><span><b>b)</b> riesgo fijo del 5 %</span></label><label class="opt"><input type="radio" name="w6q8" value="c" data-store="w6-exam-q8"><span><b>c)</b> Kelly</span></label><label class="opt"><input type="radio" name="w6q8" value="d" data-store="w6-exam-q8"><span><b>d)</b> martingala</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> El periodo fuera de muestra…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q9" value="a" data-store="w6-exam-q9"><span><b>a)</b> se usa para elegir la estrategia</span></label><label class="opt"><input type="radio" name="w6q9" value="b" data-store="w6-exam-q9"><span><b>b)</b> no lo usa el Builder para elegir</span></label><label class="opt"><input type="radio" name="w6q9" value="c" data-store="w6-exam-q9"><span><b>c)</b> es siempre el más antiguo</span></label><label class="opt"><input type="radio" name="w6q9" value="d" data-store="w6-exam-q9"><span><b>d)</b> es opcional</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Si el databank sale vacío con filtros razonables, lo correcto es…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q10" value="a" data-store="w6-exam-q10"><span><b>a)</b> bajar los filtros hasta que salga algo</span></label><label class="opt"><input type="radio" name="w6q10" value="b" data-store="w6-exam-q10"><span><b>b)</b> quitar los costes</span></label><label class="opt"><input type="radio" name="w6q10" value="c" data-store="w6-exam-q10"><span><b>c)</b> aceptar que esa configuración no da resultados y documentarlo</span></label><label class="opt"><input type="radio" name="w6q10" value="d" data-store="w6-exam-q10"><span><b>d)</b> usar menos datos</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Una señal de alarma en un informe es…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q11" value="a" data-store="w6-exam-q11"><span><b>a)</b> 500 operaciones</span></label><label class="opt"><input type="radio" name="w6q11" value="b" data-store="w6-exam-q11"><span><b>b)</b> un profit factor de 1,4</span></label><label class="opt"><input type="radio" name="w6q11" value="c" data-store="w6-exam-q11"><span><b>c)</b> una curva con drawdowns</span></label><label class="opt"><input type="radio" name="w6q11" value="d" data-store="w6-exam-q11"><span><b>d)</b> casi todo el beneficio en un solo año</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Lo primero que revisas al abrir una estrategia es…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q12" value="a" data-store="w6-exam-q12"><span><b>a)</b> sus reglas</span></label><label class="opt"><input type="radio" name="w6q12" value="b" data-store="w6-exam-q12"><span><b>b)</b> el beneficio neto</span></label><label class="opt"><input type="radio" name="w6q12" value="c" data-store="w6-exam-q12"><span><b>c)</b> la última operación</span></label><label class="opt"><input type="radio" name="w6q12" value="d" data-store="w6-exam-q12"><span><b>d)</b> el número de mutaciones</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Un filtro de número de operaciones ≥ 200 sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q13" value="a" data-store="w6-exam-q13"><span><b>a)</b> aumentar el beneficio</span></label><label class="opt"><input type="radio" name="w6q13" value="b" data-store="w6-exam-q13"><span><b>b)</b> tener una muestra suficiente</span></label><label class="opt"><input type="radio" name="w6q13" value="c" data-store="w6-exam-q13"><span><b>c)</b> reducir el drawdown</span></label><label class="opt"><input type="radio" name="w6q13" value="d" data-store="w6-exam-q13"><span><b>d)</b> acelerar la generación</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una estrategia con take profit de 10 pips, stop de 10 pips y 1 pip de coste necesita acertar al menos…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q14" value="a" data-store="w6-exam-q14"><span><b>a)</b> 50 %</span></label><label class="opt"><input type="radio" name="w6q14" value="b" data-store="w6-exam-q14"><span><b>b)</b> 45 %</span></label><label class="opt"><input type="radio" name="w6q14" value="c" data-store="w6-exam-q14"><span><b>c)</b> 60 %</span></label><label class="opt"><input type="radio" name="w6q14" value="d" data-store="w6-exam-q14"><span><b>d)</b> 55 %</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Exigir un stop loss mínimo de 15 pips evita sobre todo…</legend><div class="opts"><label class="opt"><input type="radio" name="w6q15" value="a" data-store="w6-exam-q15"><span><b>a)</b> estrategias sin operaciones</span></label><label class="opt"><input type="radio" name="w6q15" value="b" data-store="w6-exam-q15"><span><b>b)</b> estrategias cuyo resultado deciden los costes</span></label><label class="opt"><input type="radio" name="w6q15" value="c" data-store="w6-exam-q15"><span><b>c)</b> estrategias de tendencia</span></label><label class="opt"><input type="radio" name="w6q15" value="d" data-store="w6-exam-q15"><span><b>d)</b> el sobreajuste por completo</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Un proyecto probó 350.000 estrategias y guardó 420. a) ¿Qué porcentaje pasó los filtros? b) Si de las 420, 30 mantienen un profit factor ≥ 1,2 fuera de muestra, ¿qué porcentaje de las guardadas es eso, y qué porcentaje de las probadas?</p>
+<p><strong>B2.</strong> Una estrategia tiene en IS 400 operaciones con profit factor 1,6, y en OOS 90 operaciones con beneficio bruto 2.100 $ y pérdida bruta 1.900 $. a) Calcula el profit factor OOS. b) ¿Cuánto ha caído respecto al IS en porcentaje? c) ¿Te parece suficiente la muestra OOS? Justifícalo con la semana 4.</p>
+<p><strong>B3.</strong> Una estrategia tiene un take profit medio de 25 pips, un stop medio de 18 pips y paga 1,5 pips de coste. a) Calcula el ratio R después de costes. b) Calcula la tasa de acierto de equilibrio. c) Si acierta el 44 %, ¿cuál es su esperanza en pips por operación?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: tu primer proyecto ha encontrado una estrategia con una curva IS casi perfecta (profit factor 2,8, 230 operaciones), pero en OOS pierde dinero. Explica las causas más probables y qué cambiarías en el siguiente proyecto.</p><div class="answer"><label for="w6-examen-6">Tus respuestas a las partes B y C</label><textarea id="w6-examen-6" data-store="w6-examen-6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w6-done-examen-6"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
