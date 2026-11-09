@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 16 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="16">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><a class="wk" href="semana-15.html" data-week="15"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span></a><a class="wk" href="semana-16.html" data-week="16"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span></a></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-16.svg)"><img src="img/cover-16.svg" alt=""></div><p class="eyebrow">SEMANA 16 · ETAPA 4 · CARTERAS Y EJECUCIÓN</p><h1>Varias cuentas y ejecución</h1><p class="meta">11 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="16" data-total="11"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w16-done-presentacion"></span>Presentación</a><a class="tab" href="#s16-l1" data-tab="s16-l1" title="Cuentas demo y reales; tipos de cuenta"><span class="dot" data-dot="w16-done-s16-l1"></span>L1</a><a class="tab" href="#s16-l2" data-tab="s16-l2" title="Deslizamiento, spreads y fallos de conexión"><span class="dot" data-dot="w16-done-s16-l2"></span>L2</a><a class="tab" href="#s16-l3" data-tab="s16-l3" title="VPS y seguridad operativa"><span class="dot" data-dot="w16-done-s16-l3"></span>L3</a><a class="tab" href="#s16-l4" data-tab="s16-l4" title="Supervisión y criterios de desactivación"><span class="dot" data-dot="w16-done-s16-l4"></span>L4</a><a class="tab" href="#s16-l5" data-tab="s16-l5" title="Varias cuentas y control de exposición duplicada"><span class="dot" data-dot="w16-done-s16-l5"></span>L5</a><a class="tab" href="#s16-l6" data-tab="s16-l6" title="Evaluación integradora de la etapa 4"><span class="dot" data-dot="w16-done-s16-l6"></span>L6</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w16-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w16-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-16-y-entrega-practica" data-tab="investigacion-i-16-y-entrega-practica" title="Investigación I-16 y entrega práctica"><span class="dot" data-dot="w16-done-investigacion-i-16-y-entrega-practica"></span>Investigación I-16 y entrega práctica</a><a class="tab" href="#examen-16" data-tab="examen-16" title="Examen de la semana 16 · Variante A"><span class="dot" data-dot="w16-done-examen-16"></span>Examen  16</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 16 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s16-l1"><span class="dot" data-dot="w16-done-s16-l1"></span><span class="tk">Lección L1</span><b>Cuentas demo y reales; tipos de cuenta</b><span class="tm">→</span></a><a class="toc-i" href="#s16-l2"><span class="dot" data-dot="w16-done-s16-l2"></span><span class="tk">Lección L2</span><b>Deslizamiento, spreads y fallos de conexión</b><span class="tm">→</span></a><a class="toc-i" href="#s16-l3"><span class="dot" data-dot="w16-done-s16-l3"></span><span class="tk">Lección L3</span><b>VPS y seguridad operativa</b><span class="tm">→</span></a><a class="toc-i" href="#s16-l4"><span class="dot" data-dot="w16-done-s16-l4"></span><span class="tk">Lección L4</span><b>Supervisión y criterios de desactivación</b><span class="tm">→</span></a><a class="toc-i" href="#s16-l5"><span class="dot" data-dot="w16-done-s16-l5"></span><span class="tk">Lección L5</span><b>Varias cuentas y control de exposición duplicada</b><span class="tm">→</span></a><a class="toc-i" href="#s16-l6"><span class="dot" data-dot="w16-done-s16-l6"></span><span class="tk">Lección L6</span><b>Evaluación integradora de la etapa 4</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w16-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w16-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-16-y-entrega-practica"><span class="dot" data-dot="w16-done-investigacion-i-16-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-16 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-16"><span class="dot" data-dot="w16-done-examen-16"></span><span class="tk">Evaluación</span><b>Examen de la semana 16 · Variante A</b><span class="tm">→</span></a></nav><p>Última semana de la etapa 4. Tu cartera ya opera en demo. Esta semana aprenderás a llevarla a la práctica con disciplina profesional: qué tipo de cuenta elegir, cómo medir la ejecución real frente al backtest, cómo montar un entorno fiable con un VPS, cómo <strong>supervisar</strong> la cartera y cuándo <strong>desactivar</strong> una estrategia, y cómo gestionar varias cuentas sin duplicar el riesgo. Terminarás con la <strong>evaluación integradora de la etapa 4</strong>: tu cartera en incubación, con su plan de supervisión completo.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Elegir el tipo de cuenta adecuado y entender las diferencias entre demo y real.</li>
+<li>Medir el deslizamiento, el spread y los fallos reales frente a lo previsto.</li>
+<li>Montar un entorno de ejecución fiable y seguro con un VPS.</li>
+<li>Supervisar una cartera con bandas de Monte Carlo y aplicar criterios de desactivación.</li>
+<li>Gestionar varias cuentas y controlar la exposición duplicada.</li>
+<li>Integrar todo lo de la etapa 4 en un plan de incubación.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>9</td>
+<td>VPS, registro de ejecución y plan de supervisión</td>
+</tr>
+<tr>
+<td>Evaluación integradora</td>
+<td>8</td>
+<td>Plan de incubación de la cartera</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la etapa 5</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Tu cartera en demo (semana 15) con al menos una semana de operaciones.</li>
+<li>El análisis de Monte Carlo de la cartera (semanas 11 y 14).</li>
+<li>Opcional: un VPS de prueba. Muchos proveedores ofrecen periodos gratuitos; <strong>no contrates nada de pago</strong> sin decidirlo con calma.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 17</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 16</li>
+<li>☐ Evaluación integradora de la etapa 4 (plan de incubación)</li>
+<li>☐ Investigación I-16 documentada dentro de la evaluación integradora</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w16-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s16-l1" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L1</span><h2>Cuentas demo y reales; tipos de cuenta</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Demo no es real</h4>
+<p>La demo usa precios reales, pero la <strong>ejecución</strong> puede ser mejor que en real: menos deslizamiento, sin recotizaciones y, en algunos brokers, sin el mismo servidor. Por eso la incubación en demo comprueba que la estrategia <strong>funciona técnicamente</strong>, pero no garantiza la misma ejecución en real.</p>
+<h4>Tipos de cuenta habituales</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Tipo</th>
+<th>Coste</th>
+<th>Para quién</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Estándar</td>
+<td>Spread más amplio, sin comisión</td>
+<td>Estrategias con objetivos amplios</td>
+</tr>
+<tr>
+<td><em>Raw</em> / ECN</td>
+<td>Spread muy bajo más comisión por lote</td>
+<td>Estrategias con muchas operaciones u objetivos pequeños</td>
+</tr>
+<tr>
+<td>Cent o micro</td>
+<td>Cuenta en céntimos, lotes muy pequeños</td>
+<td>Probar en real con poquísimo dinero</td>
+</tr>
+<tr>
+<td>Sin swap (<em>swap-free</em>)</td>
+<td>Sin swap, a veces con otras comisiones</td>
+<td>Quien no puede o no quiere pagar o cobrar intereses</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s16-cuentas.svg" target="_blank" rel="noopener"><img src="img/s16-cuentas.svg" alt="Figura 16.1 · Coste total de una operación de 1 lote en una cuenta estándar y en una raw, según el spread y la comisión. Cifras ilustrativas." loading="lazy"></a><figcaption>Figura 16.1 · Coste total de una operación de 1 lote en una cuenta estándar y en una raw, según el spread y la comisión. Cifras ilustrativas.</figcaption></figure>
+<aside class="callout tip"><p><strong>Consejo.</strong> Calcula el coste total por operación de cada tipo de cuenta con tus propias estrategias (semana 5) antes de elegir. La cuenta con el spread más bajo no siempre es la más barata.</p></aside>
+<h4>El paso a real, más adelante</h4>
+<p>Una cuenta real pequeña o una cuenta cent es la forma de medir la ejecución real sin arriesgar mucho. Lo verás en la etapa 5, con el capital propio (semana 18). En esta semana trabajas en demo.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué la demo no garantiza la misma ejecución que la real?</li>
+<li>¿Cuándo compensa una cuenta raw frente a una estándar?</li>
+<li>¿Para qué sirve una cuenta cent?</li>
+</ol><div class="answer"><label for="w16-s16-l1">Tus respuestas</label><textarea id="w16-s16-l1" data-store="w16-s16-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l1"> He terminado esta sección</label></section><section class="pane" id="s16-l2" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L2</span><h2>Deslizamiento, spreads y fallos de conexión</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Medir la ejecución</h4>
+<p>Para cada operación de tu demo (y después de tu real), anota en un <strong>registro de ejecución</strong>:</p>
+<ul>
+<li>Precio que la estrategia «esperaba» (el del backtest o el de la señal) y precio obtenido.</li>
+<li>Spread en el momento de la entrada y de la salida.</li>
+<li>Hora de la señal y hora de la ejecución.</li>
+<li>Cualquier rechazo, recotización o error.</li>
+</ul>
+<p>La diferencia entre lo esperado y lo obtenido, sumada a lo largo de las operaciones, es el <strong>coste de implementación</strong>.</p>
+<figure class="fig"><a href="img/s16-deslizamiento.svg" target="_blank" rel="noopener"><img src="img/s16-deslizamiento.svg" alt="Figura 16.2 · Distribución del deslizamiento real de 120 operaciones frente al configurado en el backtest. Datos simulados." loading="lazy"></a><figcaption>Figura 16.2 · Distribución del deslizamiento real de 120 operaciones frente al configurado en el backtest. Datos simulados.</figcaption></figure>
+<h4>Cómo interpretarlo</h4>
+<ul>
+<li>Si el deslizamiento medio real es mayor que el configurado, <strong>vuelve a probar</strong> la estrategia con el valor real (semana 10): ¿sigue cumpliendo tu hoja de evaluación?</li>
+<li>Mira las <strong>colas</strong>: unos pocos deslizamientos grandes (en noticias, aperturas) pueden pesar más que muchos pequeños.</li>
+<li>Compara por tipo de orden: las órdenes stop sufren más.</li>
+</ul>
+<h4>Los fallos técnicos</h4>
+<p>Cortes de internet, reinicios del ordenador, actualizaciones automáticas o la plataforma cerrada por error hacen que una estrategia <strong>no abra</strong> o <strong>no cierre</strong> una operación. Cada uno de estos fallos rompe la equivalencia con el backtest. La solución es un entorno dedicado (lección 3) y supervisión diaria (lección 4).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué anotas en el registro de ejecución?</li>
+<li>¿Qué haces si el deslizamiento real supera el del backtest?</li>
+<li>¿Por qué importan las colas del deslizamiento?</li>
+</ol><div class="answer"><label for="w16-s16-l2">Tus respuestas</label><textarea id="w16-s16-l2" data-store="w16-s16-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l2"> He terminado esta sección</label></section><section class="pane" id="s16-l3" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L3</span><h2>VPS y seguridad operativa</h2></header><div class="read"><p><em>Formato: taller de 35 minutos · Práctica: 2 horas</em></p>
+<h4>Qué es un VPS</h4>
+<p>Un <strong>VPS</strong> (<em>Virtual Private Server</em>) es un ordenador virtual en un centro de datos que está encendido y conectado todo el tiempo. Instalas en él MetaTrader y tus EA, y operan aunque tu ordenador esté apagado.</p>
+<figure class="fig"><a href="img/s16-vps.svg" target="_blank" rel="noopener"><img src="img/s16-vps.svg" alt="Figura 16.3 · Tu ordenador solo se conecta para supervisar; el VPS opera las 24 horas cerca del servidor del broker." loading="lazy"></a><figcaption>Figura 16.3 · Tu ordenador solo se conecta para supervisar; el VPS opera las 24 horas cerca del servidor del broker.</figcaption></figure>
+<h4>Cómo elegirlo</h4>
+<ul>
+<li><strong>Ubicación cercana al servidor del broker</strong> (por ejemplo, Londres o Nueva York): menos latencia.</li>
+<li><strong>Recursos suficientes:</strong> 2–4 GB de RAM suelen bastar para varias plataformas con pocos EA.</li>
+<li><strong>Fiabilidad y soporte:</strong> disponibilidad garantizada, copias de seguridad.</li>
+<li><strong>Alternativa integrada:</strong> MetaTrader ofrece su propio servicio de alojamiento virtual de pago, que migra los EA del gráfico. Es cómodo, pero conviene entender qué se migra y qué no.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> El curso no exige contratar un VPS. Si decides hacerlo, compara opciones y precios con calma: es un gasto recurrente.</p></aside>
+<h4>Seguridad operativa</h4>
+<ul>
+<li><strong>Contraseñas fuertes y únicas</strong> para el broker, el VPS y el correo, y <strong>verificación en dos pasos</strong> donde exista.</li>
+<li><strong>Contraseña de inversor</strong> (solo lectura) para enseñar tu cuenta a otros; nunca la contraseña principal (semana 2).</li>
+<li><strong>Actualizaciones</strong> del sistema del VPS en horario sin mercado y <strong>reinicio controlado</strong> de las plataformas.</li>
+<li><strong>Copia de seguridad</strong> de los EA, sus parámetros y tu ficha de configuración.</li>
+<li><strong>Acceso remoto</strong> solo desde tus dispositivos.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué ventaja tiene un VPS cerca del servidor del broker?</li>
+<li>¿Qué contraseña compartes para enseñar tu cuenta?</li>
+<li>¿Cuándo actualizas el sistema del VPS?</li>
+</ol><div class="answer"><label for="w16-s16-l3">Tus respuestas</label><textarea id="w16-s16-l3" data-store="w16-s16-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l3"> He terminado esta sección</label></section><section class="pane" id="s16-l4" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L4</span><h2>Supervisión y criterios de desactivación</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>La incubación</h4>
+<p>La <strong>incubación</strong> es un periodo en el que la cartera opera en demo (o en real con tamaño mínimo) antes de recibir el capital previsto. Su objetivo es comprobar que <strong>se comporta dentro de lo esperado</strong>. Como orientación, dura al menos 3 meses o un número de operaciones que permita comparar (por ejemplo, 30–50 por estrategia).</p>
+<h4>Las bandas de Monte Carlo</h4>
+<p>Con el Monte Carlo de cada estrategia (semana 11), dibuja las <strong>bandas</strong> entre las que debería moverse su resultado acumulado: por ejemplo, los percentiles 5 y 95 operación a operación. En la incubación, compara la curva real con esas bandas.</p>
+<figure class="fig"><a href="img/s16-bandas.svg" target="_blank" rel="noopener"><img src="img/s16-bandas.svg" alt="Figura 16.4 · Resultado real de la incubación frente a las bandas del Monte Carlo: mientras esté dentro, la estrategia se comporta como se esperaba. Datos simulados." loading="lazy"></a><figcaption>Figura 16.4 · Resultado real de la incubación frente a las bandas del Monte Carlo: mientras esté dentro, la estrategia se comporta como se esperaba. Datos simulados.</figcaption></figure>
+<h4>Criterios de desactivación</h4>
+<p>Escríbelos antes de empezar. Ejemplos:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Señal</th>
+<th>Umbral orientativo</th>
+<th>Acción</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Curva real por debajo del percentil 5</td>
+<td>Durante N operaciones seguidas</td>
+<td>Revisar</td>
+</tr>
+<tr>
+<td>Drawdown</td>
+<td>Mayor que el percentil 99 del Monte Carlo</td>
+<td>Desactivar</td>
+</tr>
+<tr>
+<td>Racha de pérdidas</td>
+<td>Mayor que la máxima esperable (semana 3)</td>
+<td>Revisar</td>
+</tr>
+<tr>
+<td>Ejecución</td>
+<td>Coste real mayor que el coste de equilibrio de la semana 10</td>
+<td>Desactivar</td>
+</tr>
+<tr>
+<td>Error técnico</td>
+<td>Diferencia con la verificación sin explicación</td>
+<td>Desactivar hasta resolver</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout key"><p><strong>Idea clave.</strong> Una estrategia no se desactiva porque «lleva un mes perdiendo», sino porque se sale de lo que su propia simulación consideraba normal. Y no se reactiva porque «ya debería volver a ganar».</p></aside>
+<h4>La rutina de supervisión</h4>
+<ul>
+<li><strong>Diaria (5 minutos):</strong> plataformas conectadas, EA activos, errores en los registros, riesgo abierto.</li>
+<li><strong>Semanal (30 minutos):</strong> registro de ejecución, curva frente a bandas, exposición por divisa.</li>
+<li><strong>Mensual (2 horas):</strong> métricas de cada estrategia y de la cartera, criterios de desactivación, informe en el cuaderno.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué es la incubación y cuánto dura como mínimo?</li>
+<li>¿Qué indican las bandas de Monte Carlo?</li>
+<li>¿Por qué no se desactiva una estrategia solo porque lleva un mes perdiendo?</li>
+</ol><div class="answer"><label for="w16-s16-l4">Tus respuestas</label><textarea id="w16-s16-l4" data-store="w16-s16-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l4"> He terminado esta sección</label></section><section class="pane" id="s16-l5" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L5</span><h2>Varias cuentas y control de exposición duplicada</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Por qué varias cuentas</h4>
+<ul>
+<li>Separar <strong>estrategias en incubación</strong> de estrategias <strong>en producción</strong>.</li>
+<li>Repartir el riesgo entre <strong>brokers</strong> (por si uno falla).</li>
+<li>Operar en <strong>empresas de fondeo</strong> o en Darwinex además de en una cuenta propia (semana 18).</li>
+</ul>
+<h4>El riesgo de duplicar</h4>
+<p>Si la misma estrategia opera en tres cuentas, <strong>no son tres estrategias</strong>: es una estrategia con el triple de riesgo. Y si estrategias distintas de distintas cuentas apuestan a lo mismo (semana 14), la exposición total puede ser mucho mayor que la de cada cuenta.</p>
+<figure class="fig"><a href="img/s16-cuentas-multiples.svg" target="_blank" rel="noopener"><img src="img/s16-cuentas-multiples.svg" alt="Figura 16.5 · Tres cuentas con la misma estrategia y una exposición conjunta al dólar: el riesgo real es la suma." loading="lazy"></a><figcaption>Figura 16.5 · Tres cuentas con la misma estrategia y una exposición conjunta al dólar: el riesgo real es la suma.</figcaption></figure>
+<h4>Cómo controlarlo</h4>
+<ul>
+<li><strong>Una ficha global</strong> con todas las cuentas, estrategias, números mágicos y riesgos.</li>
+<li><strong>Riesgo por estrategia a nivel global:</strong> si una estrategia opera en dos cuentas, su riesgo total es la suma.</li>
+<li><strong>Límite de exposición por divisa o factor</strong> sumando todas las cuentas.</li>
+<li><strong>Revisión semanal</strong> de la exposición conjunta.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué tres cuentas con la misma estrategia no diversifican?</li>
+<li>¿Qué incluye la ficha global?</li>
+<li>Una estrategia arriesga un 0,5 % en una cuenta de 10.000 € y un 0,5 % en otra de 20.000 €. ¿Cuál es su riesgo total en euros?</li>
+</ol><div class="answer"><label for="w16-s16-l5">Tus respuestas</label><textarea id="w16-s16-l5" data-store="w16-s16-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l5"> He terminado esta sección</label></section><section class="pane" id="s16-l6" hidden><header class="pane-head"><span class="kicker">Semana 16 · Lección L6</span><h2>Evaluación integradora de la etapa 4</h2></header><div class="read"><p><em>Formato: proyecto autónomo · Trabajo: 8 horas</em></p>
+<p>La evaluación integradora sustituye a la entrega práctica de esta semana. Entregarás el <strong>plan de incubación</strong> de tu cartera, con todo lo de la etapa 4.</p>
+<h4>Requisitos</h4>
+<ol>
+<li><strong>Cartera:</strong> composición, justificación de cada estrategia, correlaciones de resultados y de drawdowns (semanas 13 y 14).</li>
+<li><strong>Plan de riesgo:</strong> perfil elegido a partir del Monte Carlo y tu tolerancia, límites de cartera y por divisa (semana 14).</li>
+<li><strong>Ejecución:</strong> fichas de configuración de cada EA, verificación en MT4 o MT5 y registro de ejecución de al menos dos semanas en demo (semana 15 y lección 2).</li>
+<li><strong>Entorno:</strong> cómo y dónde se ejecuta (ordenador propio o VPS) y medidas de seguridad (lección 3).</li>
+<li><strong>Supervisión:</strong> bandas de Monte Carlo de cada estrategia, criterios de desactivación escritos y fechados, y rutina diaria, semanal y mensual (lección 4).</li>
+<li><strong>Varias cuentas:</strong> ficha global, aunque de momento solo uses una (lección 5).</li>
+<li><strong>Investigación I-16:</strong> compara el deslizamiento y el spread reales de tu demo con los configurados en SQX y recalcula, si hace falta, tu hoja de evaluación.</li>
+</ol><div class="answer"><label for="w16-s16-l6">Tus respuestas</label><textarea id="w16-s16-l6" data-store="w16-s16-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-s16-l6"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 16 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Bandas de Monte Carlo</td>
+<td>Monte Carlo bands</td>
+<td>Rango esperado del resultado según la simulación</td>
+</tr>
+<tr>
+<td>Contraseña de inversor</td>
+<td>Investor password</td>
+<td>Contraseña de solo lectura de una cuenta de MetaTrader</td>
+</tr>
+<tr>
+<td>Coste de implementación</td>
+<td>Implementation shortfall</td>
+<td>Diferencia entre el resultado esperado y el obtenido al ejecutar</td>
+</tr>
+<tr>
+<td>Criterio de desactivación</td>
+<td>Deactivation criterion</td>
+<td>Condición escrita que obliga a detener una estrategia</td>
+</tr>
+<tr>
+<td>Cuenta cent</td>
+<td>Cent account</td>
+<td>Cuenta denominada en céntimos para operar tamaños muy pequeños</td>
+</tr>
+<tr>
+<td>Cuenta raw / ECN</td>
+<td>Raw / ECN account</td>
+<td>Cuenta con spread muy bajo y comisión por lote</td>
+</tr>
+<tr>
+<td>Incubación</td>
+<td>Incubation</td>
+<td>Periodo de prueba de una estrategia antes de asignarle el capital previsto</td>
+</tr>
+<tr>
+<td>Registro de ejecución</td>
+<td>Execution log</td>
+<td>Anotación de precios esperados y obtenidos de cada operación</td>
+</tr>
+<tr>
+<td>VPS</td>
+<td>Virtual Private Server</td>
+<td>Servidor virtual siempre encendido en un centro de datos</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w16-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 16 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Coste por tipo de cuenta.</strong> Para tu estrategia principal, calcula el coste medio por operación en una cuenta estándar (spread 1,2 pips) y en una raw (spread 0,2 pips más 7 $ por lote ida y vuelta) con su tamaño típico.</p>
+<p><strong>E2 · Registro de ejecución.</strong> Presenta el registro de ejecución de tus operaciones en demo de las últimas dos semanas.</p>
+<p><strong>E3 · Deslizamiento.</strong> Calcula el deslizamiento medio, la mediana y el percentil 95 de tu registro.</p>
+<p><strong>E4 · Recalcular.</strong> Vuelve a probar tu estrategia principal con el deslizamiento real medido. ¿Sigue cumpliendo tu hoja de evaluación?</p>
+<p><strong>E5 · VPS.</strong> Compara tres opciones de VPS (o el alojamiento virtual de MetaTrader): ubicación, recursos, precio y periodo de prueba. Indica fuente y fecha. No contrates nada para este ejercicio.</p>
+<p><strong>E6 · Seguridad.</strong> Haz una lista de comprobación de seguridad de tus cuentas y marca qué tienes ya y qué te falta.</p>
+<p><strong>E7 · Bandas.</strong> Dibuja las bandas de los percentiles 5 y 95 de tu estrategia principal para sus próximas 50 operaciones.</p>
+<p><strong>E8 · Desactivación.</strong> Escribe los criterios de desactivación de cada estrategia de tu cartera.</p>
+<p><strong>E9 · Ficha global.</strong> Construye la ficha global de cuentas, aunque solo tengas una.</p>
+<p><strong>E10 · Rutina.</strong> Escribe tu rutina de supervisión diaria, semanal y mensual con horarios concretos.</p><div class="answer"><label for="w16-ejercicios-obligatorios">Tus respuestas</label><textarea id="w16-ejercicios-obligatorios" data-store="w16-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-16-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 16 · Sección</span><h2>Investigación I-16 y entrega práctica</h2></header><div class="read"><h3>Investigación I-16 · ¿Cuánto me cuesta de verdad ejecutar?</h3>
+<p>Forma parte de la evaluación integradora (requisito 7). Sigue los ocho pasos: hipótesis sobre el coste real, fuentes sobre deslizamiento y costes de ejecución, datos de tu registro, diseño de la medición, comparación con lo configurado en SQX y conclusión sobre la hoja de evaluación.</p>
+<h3>Entrega práctica · Evaluación integradora de la etapa 4</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S16_INT</code></td>
+<td>Plan de incubación con los siete requisitos</td>
+</tr>
+<tr>
+<td><code>CODIGO_S16_REG</code></td>
+<td>Registro de ejecución</td>
+</tr>
+<tr>
+<td><code>CODIGO_S16_FICHA</code></td>
+<td>Ficha global de cuentas y fichas de configuración</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Cartera y riesgo</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>Ejecución y verificación</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Entorno y seguridad</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Supervisión y desactivación</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>Investigación I-16</td>
+<td>20 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>Se aprueba con un 80 %. Un plan sin criterios de desactivación escritos y fechados queda como NO EVALUABLE.</p><div class="answer"><label for="w16-investigacion-i-16-y-entrega-practica">Tus respuestas</label><textarea id="w16-investigacion-i-16-y-entrega-practica" data-store="w16-investigacion-i-16-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-investigacion-i-16-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-16" hidden><header class="pane-head"><span class="kicker">Semana 16 · Evaluación</span><h2>Examen de la semana 16 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> La demo sirve sobre todo para comprobar…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q1" value="a" data-store="w16-exam-q1"><span><b>a)</b> la ejecución real exacta</span></label><label class="opt"><input type="radio" name="w16q1" value="b" data-store="w16-exam-q1"><span><b>b)</b> que la estrategia funciona técnicamente</span></label><label class="opt"><input type="radio" name="w16q1" value="c" data-store="w16-exam-q1"><span><b>c)</b> la rentabilidad futura</span></label><label class="opt"><input type="radio" name="w16q1" value="d" data-store="w16-exam-q1"><span><b>d)</b> la fiscalidad</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Una cuenta raw o ECN tiene…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q2" value="a" data-store="w16-exam-q2"><span><b>a)</b> spread muy bajo y comisión por lote</span></label><label class="opt"><input type="radio" name="w16q2" value="b" data-store="w16-exam-q2"><span><b>b)</b> spread alto sin comisión</span></label><label class="opt"><input type="radio" name="w16q2" value="c" data-store="w16-exam-q2"><span><b>c)</b> sin costes</span></label><label class="opt"><input type="radio" name="w16q2" value="d" data-store="w16-exam-q2"><span><b>d)</b> solo swap</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Una cuenta cent sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q3" value="a" data-store="w16-exam-q3"><span><b>a)</b> apalancarse más</span></label><label class="opt"><input type="radio" name="w16q3" value="b" data-store="w16-exam-q3"><span><b>b)</b> operar sin swap</span></label><label class="opt"><input type="radio" name="w16q3" value="c" data-store="w16-exam-q3"><span><b>c)</b> probar en real con muy poco dinero</span></label><label class="opt"><input type="radio" name="w16q3" value="d" data-store="w16-exam-q3"><span><b>d)</b> evitar impuestos</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> El coste de implementación es…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q4" value="a" data-store="w16-exam-q4"><span><b>a)</b> el precio del VPS</span></label><label class="opt"><input type="radio" name="w16q4" value="b" data-store="w16-exam-q4"><span><b>b)</b> la diferencia entre el resultado esperado y el obtenido al ejecutar</span></label><label class="opt"><input type="radio" name="w16q4" value="c" data-store="w16-exam-q4"><span><b>c)</b> la comisión</span></label><label class="opt"><input type="radio" name="w16q4" value="d" data-store="w16-exam-q4"><span><b>d)</b> el margen</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Si el deslizamiento real supera al del backtest…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q5" value="a" data-store="w16-exam-q5"><span><b>a)</b> se ignora</span></label><label class="opt"><input type="radio" name="w16q5" value="b" data-store="w16-exam-q5"><span><b>b)</b> se vuelve a probar la estrategia con el valor real</span></label><label class="opt"><input type="radio" name="w16q5" value="c" data-store="w16-exam-q5"><span><b>c)</b> se sube el riesgo</span></label><label class="opt"><input type="radio" name="w16q5" value="d" data-store="w16-exam-q5"><span><b>d)</b> se cambia el número mágico</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Un VPS es…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q6" value="a" data-store="w16-exam-q6"><span><b>a)</b> un tipo de cuenta</span></label><label class="opt"><input type="radio" name="w16q6" value="b" data-store="w16-exam-q6"><span><b>b)</b> un indicador</span></label><label class="opt"><input type="radio" name="w16q6" value="c" data-store="w16-exam-q6"><span><b>c)</b> un servidor virtual siempre encendido</span></label><label class="opt"><input type="radio" name="w16q6" value="d" data-store="w16-exam-q6"><span><b>d)</b> un broker</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Conviene que el VPS esté…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q7" value="a" data-store="w16-exam-q7"><span><b>a)</b> cerca del servidor del broker</span></label><label class="opt"><input type="radio" name="w16q7" value="b" data-store="w16-exam-q7"><span><b>b)</b> en tu casa</span></label><label class="opt"><input type="radio" name="w16q7" value="c" data-store="w16-exam-q7"><span><b>c)</b> en cualquier lugar</span></label><label class="opt"><input type="radio" name="w16q7" value="d" data-store="w16-exam-q7"><span><b>d)</b> apagado por la noche</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Para enseñar tu cuenta a otra persona usas…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q8" value="a" data-store="w16-exam-q8"><span><b>a)</b> la contraseña principal</span></label><label class="opt"><input type="radio" name="w16q8" value="b" data-store="w16-exam-q8"><span><b>b)</b> la contraseña de inversor</span></label><label class="opt"><input type="radio" name="w16q8" value="c" data-store="w16-exam-q8"><span><b>c)</b> la del VPS</span></label><label class="opt"><input type="radio" name="w16q8" value="d" data-store="w16-exam-q8"><span><b>d)</b> la del correo</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> La incubación dura, como orientación, al menos…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q9" value="a" data-store="w16-exam-q9"><span><b>a)</b> un día</span></label><label class="opt"><input type="radio" name="w16q9" value="b" data-store="w16-exam-q9"><span><b>b)</b> una semana</span></label><label class="opt"><input type="radio" name="w16q9" value="c" data-store="w16-exam-q9"><span><b>c)</b> 3 meses o 30–50 operaciones por estrategia</span></label><label class="opt"><input type="radio" name="w16q9" value="d" data-store="w16-exam-q9"><span><b>d)</b> 5 años</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Las bandas de Monte Carlo indican…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q10" value="a" data-store="w16-exam-q10"><span><b>a)</b> el beneficio garantizado</span></label><label class="opt"><input type="radio" name="w16q10" value="b" data-store="w16-exam-q10"><span><b>b)</b> el rango esperado del resultado</span></label><label class="opt"><input type="radio" name="w16q10" value="c" data-store="w16-exam-q10"><span><b>c)</b> el spread</span></label><label class="opt"><input type="radio" name="w16q10" value="d" data-store="w16-exam-q10"><span><b>d)</b> la hora de las noticias</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Una estrategia se desactiva cuando…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q11" value="a" data-store="w16-exam-q11"><span><b>a)</b> lleva un mes perdiendo</span></label><label class="opt"><input type="radio" name="w16q11" value="b" data-store="w16-exam-q11"><span><b>b)</b> se sale de lo que su simulación consideraba normal</span></label><label class="opt"><input type="radio" name="w16q11" value="c" data-store="w16-exam-q11"><span><b>c)</b> gana demasiado</span></label><label class="opt"><input type="radio" name="w16q11" value="d" data-store="w16-exam-q11"><span><b>d)</b> cambia el spread un día</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Un drawdown mayor que el percentil 99 del Monte Carlo indica…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q12" value="a" data-store="w16-exam-q12"><span><b>a)</b> que hay que desactivar</span></label><label class="opt"><input type="radio" name="w16q12" value="b" data-store="w16-exam-q12"><span><b>b)</b> que hay que duplicar el riesgo</span></label><label class="opt"><input type="radio" name="w16q12" value="c" data-store="w16-exam-q12"><span><b>c)</b> un comportamiento normal</span></label><label class="opt"><input type="radio" name="w16q12" value="d" data-store="w16-exam-q12"><span><b>d)</b> un error del VPS</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> La misma estrategia en tres cuentas…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q13" value="a" data-store="w16-exam-q13"><span><b>a)</b> diversifica</span></label><label class="opt"><input type="radio" name="w16q13" value="b" data-store="w16-exam-q13"><span><b>b)</b> triplica el riesgo de esa estrategia</span></label><label class="opt"><input type="radio" name="w16q13" value="c" data-store="w16-exam-q13"><span><b>c)</b> reduce el riesgo</span></label><label class="opt"><input type="radio" name="w16q13" value="d" data-store="w16-exam-q13"><span><b>d)</b> no cambia nada</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> La revisión de la exposición conjunta de todas las cuentas debe ser al menos…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q14" value="a" data-store="w16-exam-q14"><span><b>a)</b> anual</span></label><label class="opt"><input type="radio" name="w16q14" value="b" data-store="w16-exam-q14"><span><b>b)</b> semanal</span></label><label class="opt"><input type="radio" name="w16q14" value="c" data-store="w16-exam-q14"><span><b>c)</b> nunca</span></label><label class="opt"><input type="radio" name="w16q14" value="d" data-store="w16-exam-q14"><span><b>d)</b> solo en drawdown</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Los criterios de desactivación se escriben…</legend><div class="opts"><label class="opt"><input type="radio" name="w16q15" value="a" data-store="w16-exam-q15"><span><b>a)</b> cuando la estrategia pierde</span></label><label class="opt"><input type="radio" name="w16q15" value="b" data-store="w16-exam-q15"><span><b>b)</b> antes de empezar</span></label><label class="opt"><input type="radio" name="w16q15" value="c" data-store="w16-exam-q15"><span><b>c)</b> al final del año</span></label><label class="opt"><input type="radio" name="w16q15" value="d" data-store="w16-exam-q15"><span><b>d)</b> solo si hay errores</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una estrategia opera 0,30 lotes de EUR/USD. Cuenta estándar: spread 1,1 pips. Cuenta raw: spread 0,2 pips y 7 $ por lote ida y vuelta. a) Calcula el coste por operación en cada cuenta en dólares. b) ¿Cuál es más barata y cuánto se ahorra en 300 operaciones al año?</p>
+<p><strong>B2.</strong> En 40 operaciones de demo, el deslizamiento total fue de 26 pips en contra; el backtest suponía 0,3 pips por operación. a) Calcula el deslizamiento medio real. b) ¿Cuánto mayor es que el supuesto? c) Si el beneficio medio bruto del backtest es de 5,5 pips y el coste supuesto total era de 1,3 pips por operación, recalcula el beneficio medio neto con el deslizamiento real.</p>
+<p><strong>B3.</strong> Una estrategia arriesga el 0,4 % en tres cuentas de 8.000 €, 15.000 € y 25.000 €. a) Calcula su riesgo por operación en euros en cada cuenta y en total. b) ¿Qué porcentaje del capital total de las tres cuentas arriesga? c) Si tu límite global por estrategia es de 150 € por operación, ¿lo cumple? ¿Qué harías?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: tu mejor estrategia lleva dos meses de incubación por debajo del percentil 5 de sus bandas, pero sin superar el drawdown del percentil 99. Explica qué analizarías, qué decidirías según tus criterios y qué errores evitarías.</p><div class="answer"><label for="w16-examen-16">Tus respuestas a las partes B y C</label><textarea id="w16-examen-16" data-store="w16-examen-16" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w16-done-examen-16"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
