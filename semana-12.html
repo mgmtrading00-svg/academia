@@ -1,0 +1,393 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 12 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="12">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-12.svg)"><img src="img/cover-12.svg" alt=""></div><p class="eyebrow">SEMANA 12 · ETAPA 3 · INVESTIGACIÓN Y VALIDACIÓN</p><h1>Robustez y selección</h1><p class="meta">12 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="12" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w12-done-presentacion"></span>Presentación</a><a class="tab" href="#s12-l1" data-tab="s12-l1" title="Robustez de parámetros: perfil de optimización y SPP"><span class="dot" data-dot="w12-done-s12-l1"></span>L1</a><a class="tab" href="#s12-l2" data-tab="s12-l2" title="Otras fuentes de datos, otros periodos y otros mercados"><span class="dot" data-dot="w12-done-s12-l2"></span>L2</a><a class="tab" href="#s12-l3" data-tab="s12-l3" title="Benchmarks adecuados"><span class="dot" data-dot="w12-done-s12-l3"></span>L3</a><a class="tab" href="#s12-l4" data-tab="s12-l4" title="Riesgos de ejecución"><span class="dot" data-dot="w12-done-s12-l4"></span>L4</a><a class="tab" href="#s12-l5" data-tab="s12-l5" title="Criterios de aceptación, rechazo y repetición"><span class="dot" data-dot="w12-done-s12-l5"></span>L5</a><a class="tab" href="#s12-l6" data-tab="s12-l6" title="Custom Projects: automatizar el protocolo"><span class="dot" data-dot="w12-done-s12-l6"></span>L6</a><a class="tab" href="#s12-l7" data-tab="s12-l7" title="Evaluación integradora de la etapa 3"><span class="dot" data-dot="w12-done-s12-l7"></span>L7</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w12-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w12-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-12-y-entrega-practica" data-tab="investigacion-i-12-y-entrega-practica" title="Investigación I-12 y entrega práctica"><span class="dot" data-dot="w12-done-investigacion-i-12-y-entrega-practica"></span>Investigación I-12 y entrega práctica</a><a class="tab" href="#examen-12" data-tab="examen-12" title="Examen de la semana 12 · Variante A"><span class="dot" data-dot="w12-done-examen-12"></span>Examen  12</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 12 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s12-l1"><span class="dot" data-dot="w12-done-s12-l1"></span><span class="tk">Lección L1</span><b>Robustez de parámetros: perfil de optimización y SPP</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l2"><span class="dot" data-dot="w12-done-s12-l2"></span><span class="tk">Lección L2</span><b>Otras fuentes de datos, otros periodos y otros mercados</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l3"><span class="dot" data-dot="w12-done-s12-l3"></span><span class="tk">Lección L3</span><b>Benchmarks adecuados</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l4"><span class="dot" data-dot="w12-done-s12-l4"></span><span class="tk">Lección L4</span><b>Riesgos de ejecución</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l5"><span class="dot" data-dot="w12-done-s12-l5"></span><span class="tk">Lección L5</span><b>Criterios de aceptación, rechazo y repetición</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l6"><span class="dot" data-dot="w12-done-s12-l6"></span><span class="tk">Lección L6</span><b>Custom Projects: automatizar el protocolo</b><span class="tm">→</span></a><a class="toc-i" href="#s12-l7"><span class="dot" data-dot="w12-done-s12-l7"></span><span class="tk">Lección L7</span><b>Evaluación integradora de la etapa 3</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w12-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w12-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-12-y-entrega-practica"><span class="dot" data-dot="w12-done-investigacion-i-12-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-12 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-12"><span class="dot" data-dot="w12-done-examen-12"></span><span class="tk">Evaluación</span><b>Examen de la semana 12 · Variante A</b><span class="tm">→</span></a></nav><p>Última semana de la etapa 3. Completarás el protocolo de validación con las pruebas que faltan —robustez de parámetros, otros datos y mercados, comparación con <em>benchmarks</em> y riesgos de ejecución—, fijarás tus <strong>criterios de aceptación, rechazo y repetición</strong> y aprenderás a <strong>automatizar</strong> el protocolo con los <em>custom projects</em> de SQX. Terminarás con la <strong>evaluación integradora</strong> de la etapa: una investigación completa, de la hipótesis a la decisión.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Evaluar la robustez de los parámetros con el perfil de optimización y el análisis SPP.</li>
+<li>Probar una estrategia con otros datos, otros periodos y otros mercados.</li>
+<li>Compararla con <em>benchmarks</em> adecuados, incluida una estrategia aleatoria.</li>
+<li>Identificar los riesgos de ejecución que el backtest no ve.</li>
+<li>Aplicar criterios explícitos de aceptación, rechazo y repetición.</li>
+<li>Automatizar el protocolo con <em>custom projects</em>.</li>
+<li>Llevar a cabo una investigación completa de forma autónoma.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>5</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>9</td>
+<td>Pruebas de robustez y <em>custom project</em></td>
+</tr>
+<tr>
+<td>Evaluación integradora</td>
+<td>8</td>
+<td>Investigación completa de la etapa 3</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la etapa 4</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX Professional o Ultimate (Optimizer y <em>custom projects</em>).</li>
+<li>Las candidatas aceptadas o en duda de la semana 11.</li>
+<li>Datos de otro proveedor (semana 9) y de al menos dos mercados parecidos a EUR/USD (por ejemplo, GBP/USD y AUD/USD).</li>
+</ul>
+<h4>Criterio para desbloquear la semana 13</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 12</li>
+<li>☐ Evaluación integradora de la etapa 3 (sustituye a la entrega práctica de esta semana)</li>
+<li>☐ Investigación I-12 documentada dentro de la evaluación integradora</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w12-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s12-l1" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L1</span><h2>Robustez de parámetros: perfil de optimización y SPP</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Mesetas y picos</h4>
+<p>Si cambias un parámetro de tu estrategia un poco (la media de 50 a 45 o a 55), el resultado debería cambiar un poco. Si se derrumba, la estrategia estaba encajada en un <strong>pico</strong>: una combinación concreta que funcionó por casualidad. Lo que buscas es una <strong>meseta</strong>: una zona amplia de parámetros donde la estrategia funciona de forma parecida.</p>
+<figure class="fig"><a href="img/s12-meseta.svg" target="_blank" rel="noopener"><img src="img/s12-meseta.svg" alt="Figura 12.1 · Perfil de optimización de un parámetro: la estrategia A tiene una meseta; la B, un pico aislado. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 12.1 · Perfil de optimización de un parámetro: la estrategia A tiene una meseta; la B, un pico aislado. Datos ilustrativos.</figcaption></figure>
+<h4>El perfil de optimización</h4>
+<p>En el Optimizer de SQX, optimiza uno o dos parámetros en un rango amplio (por ejemplo, del 50 % al 150 % de su valor) y mira el resultado de todas las combinaciones, no solo la mejor. Con dos parámetros se ve como un <strong>mapa de calor</strong>.</p>
+<figure class="fig"><a href="img/s12-mapa.svg" target="_blank" rel="noopener"><img src="img/s12-mapa.svg" alt="Figura 12.2 · Mapa de calor de dos parámetros: la estrategia robusta tiene una zona amplia de colores parecidos. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 12.2 · Mapa de calor de dos parámetros: la estrategia robusta tiene una zona amplia de colores parecidos. Datos ilustrativos.</figcaption></figure>
+<p>Criterios orientativos:</p>
+<ul>
+<li>Al menos el 60–70 % de las combinaciones cercanas al valor elegido son rentables.</li>
+<li>El valor elegido está <strong>en el centro</strong> de la meseta, no en un borde.</li>
+<li>No hay saltos bruscos entre combinaciones vecinas.</li>
+</ul>
+<h4>SPP: permutación de parámetros</h4>
+<p>El análisis <strong>SPP</strong> (<em>System Parameter Permutation</em>, propuesto por Dave Walton) lleva la idea más lejos: en lugar de quedarse con la mejor combinación, toma <strong>todas</strong> las combinaciones razonables de parámetros y mira la distribución de sus resultados. La <strong>mediana</strong> de esa distribución es una estimación mucho más prudente del rendimiento esperado que el resultado de la mejor combinación, que siempre está inflado por la selección.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Planifica con el resultado típico de la meseta (la mediana del SPP), no con el de la mejor combinación. La mejor combinación es la que más suerte tuvo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre una meseta y un pico?</li>
+<li>¿Por qué el valor elegido debe estar en el centro de la meseta?</li>
+<li>¿Qué número usa el SPP como estimación del rendimiento y por qué?</li>
+</ol><div class="answer"><label for="w12-s12-l1">Tus respuestas</label><textarea id="w12-s12-l1" data-store="w12-s12-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l1"> He terminado esta sección</label></section><section class="pane" id="s12-l2" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L2</span><h2>Otras fuentes de datos, otros periodos y otros mercados</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Tres pruebas de generalización</h4>
+<ol>
+<li><strong>Otro proveedor de datos</strong> (semana 9): si el resultado cambia mucho, la estrategia depende de detalles de los datos.</li>
+<li><strong>Otros periodos:</strong> prueba la estrategia en años que no se usaron en ningún momento (por ejemplo, datos anteriores a 2014, si los tienes) y analiza su resultado <strong>año a año</strong>. Una estrategia que gana en 9 de 12 años es más fiable que una que gana mucho en 3 y pierde en los demás.</li>
+<li><strong>Otros mercados:</strong> prueba la estrategia, <strong>sin cambiar nada</strong>, en mercados parecidos (otros pares de divisas principales, otros índices). Si su lógica es real, debería funcionar al menos razonablemente en algunos de ellos.</li>
+</ol>
+<figure class="fig"><a href="img/s12-mercados.svg" target="_blank" rel="noopener"><img src="img/s12-mercados.svg" alt="Figura 12.3 · Profit factor de una misma estrategia de EUR/USD en otros pares sin modificar: la lógica generaliza en parte. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 12.3 · Profit factor de una misma estrategia de EUR/USD en otros pares sin modificar: la lógica generaliza en parte. Datos ilustrativos.</figcaption></figure>
+<h4>Cómo interpretar otros mercados</h4>
+<ul>
+<li>No exijas el mismo resultado: cada mercado tiene su volatilidad, sus costes y sus horarios.</li>
+<li>Exige que <strong>no se hunda</strong> en la mayoría de los mercados parecidos.</li>
+<li>Si solo funciona en EUR/USD y pierde en todos los demás pares, sospecha: su ventaja puede ser un ajuste a la historia de EUR/USD.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Usa los costes de cada mercado. Un spread de GBP/JPY no es el de EUR/USD.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué se analiza el resultado año a año?</li>
+<li>Una estrategia de EUR/USD gana en GBP/USD y AUD/USD pero pierde en USD/JPY. ¿Qué piensas?</li>
+<li>¿Qué no debes hacer al probar en otro mercado?</li>
+</ol><div class="answer"><label for="w12-s12-l2">Tus respuestas</label><textarea id="w12-s12-l2" data-store="w12-s12-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l2"> He terminado esta sección</label></section><section class="pane" id="s12-l3" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L3</span><h2>Benchmarks adecuados</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Comparar con algo</h4>
+<p>Un resultado no es bueno o malo en abstracto: es bueno o malo <strong>comparado con algo</strong>. Un <em>benchmark</em> es esa referencia. Los útiles para ti:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Benchmark</th>
+<th>Qué responde</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comprar y mantener el activo</td>
+<td>¿Mi estrategia aporta algo frente a no hacer nada? (útil en índices y acciones)</td>
+</tr>
+<tr>
+<td>Activo sin riesgo (letras del Tesoro, depósitos)</td>
+<td>¿Compensa el riesgo que asumo?</td>
+</tr>
+<tr>
+<td>Estrategia aleatoria con las mismas salidas</td>
+<td>¿Mis entradas tienen ventaja, o el resultado viene de las salidas y del mercado?</td>
+</tr>
+<tr>
+<td>Otras estrategias de tu databank</td>
+<td>¿Es mejor que una típica del mismo proceso?</td>
+</tr>
+</tbody>
+</table></div>
+<h4>La prueba de la entrada aleatoria</h4>
+<p>Esta prueba es especialmente reveladora: sustituye la regla de entrada por entradas <strong>al azar</strong> (con la misma frecuencia y dirección), mantén las salidas y repítelo cientos de veces. Si tu estrategia no está claramente por encima de la mayoría de esas versiones aleatorias, <strong>tus entradas no aportan nada</strong>.</p>
+<figure class="fig"><a href="img/s12-aleatoria.svg" target="_blank" rel="noopener"><img src="img/s12-aleatoria.svg" alt="Figura 12.4 · Profit factor de 500 versiones con entradas aleatorias y el de la estrategia real. Aquí la estrategia supera al 97 % de las aleatorias. Datos simulados." loading="lazy"></a><figcaption>Figura 12.4 · Profit factor de 500 versiones con entradas aleatorias y el de la estrategia real. Aquí la estrategia supera al 97 % de las aleatorias. Datos simulados.</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Si una estrategia no supera claramente a su versión aleatoria, su resultado no viene de su lógica. Puede venir del mercado (por ejemplo, una tendencia general alcista en un índice) o de la suerte.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué benchmark usarías para una estrategia de compra en el S&amp;P 500? ¿Por qué?</li>
+<li>¿Qué te dice la prueba de la entrada aleatoria?</li>
+<li>Tu estrategia supera solo al 60 % de las aleatorias. ¿Qué concluyes?</li>
+</ol><div class="answer"><label for="w12-s12-l3">Tus respuestas</label><textarea id="w12-s12-l3" data-store="w12-s12-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l3"> He terminado esta sección</label></section><section class="pane" id="s12-l4" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L4</span><h2>Riesgos de ejecución</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Lo que el backtest no ve</h4>
+<p>El backtest supone una ejecución ideal con los costes que configuraste. En real aparecen:</p>
+<ul>
+<li><strong>Latencia:</strong> la orden tarda en llegar al broker. En estrategias intradía, unos cientos de milisegundos pueden cambiar el precio.</li>
+<li><strong>Deslizamiento variable:</strong> mayor en noticias, aperturas y órdenes stop (semana 7).</li>
+<li><strong>Recotizaciones y rechazos:</strong> el broker no acepta la orden al precio pedido.</li>
+<li><strong>Ejecuciones parciales:</strong> en mercados con poca liquidez, solo se ejecuta una parte.</li>
+<li><strong>Reglas del broker:</strong> distancia mínima de stops, horarios de negociación del símbolo, tamaño mínimo y paso del lote.</li>
+<li><strong>Diferencias de plataforma:</strong> cómo calculan MT4 y MT5 las velas, los indicadores o los stops (semana 15).</li>
+<li><strong>Fallos técnicos:</strong> cortes de conexión o reinicios del ordenador (lo resolverás con un VPS en la semana 16).</li>
+</ul>
+<h4>Cómo probarlo antes de operar</h4>
+<ul>
+<li><strong>Retrasar la entrada una vela</strong> en el Retester: si la estrategia se hunde, depende de entrar en el instante exacto.</li>
+<li><strong>Monte Carlo de ejecución:</strong> deslizamiento aleatorio y rechazo de un porcentaje de órdenes (semana 11).</li>
+<li><strong>Comprobar las reglas del broker</strong> para el símbolo: distancia mínima de stops frente a los stops de la estrategia.</li>
+</ul>
+<figure class="fig"><a href="img/s12-retraso.svg" target="_blank" rel="noopener"><img src="img/s12-retraso.svg" alt="Figura 12.5 · Efecto de retrasar la entrada una vela: una estrategia robusta pierde poco; una que depende del instante exacto se hunde. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 12.5 · Efecto de retrasar la entrada una vela: una estrategia robusta pierde poco; una que depende del instante exacto se hunde. Datos ilustrativos.</figcaption></figure>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Nombra cuatro riesgos de ejecución.</li>
+<li>¿Qué te dice que una estrategia se hunda al retrasar la entrada una vela?</li>
+<li>¿Qué regla del broker compruebas antes de operar una estrategia con stops de 8 pips?</li>
+</ol><div class="answer"><label for="w12-s12-l4">Tus respuestas</label><textarea id="w12-s12-l4" data-store="w12-s12-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l4"> He terminado esta sección</label></section><section class="pane" id="s12-l5" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L5</span><h2>Criterios de aceptación, rechazo y repetición</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Tres decisiones posibles</h4>
+<p>Al final del protocolo, cada estrategia recibe una de tres decisiones:</p>
+<ul>
+<li><strong>Aceptar:</strong> supera todas las pruebas con sus criterios. Pasa a la cartera candidata y a incubación en demo (etapa 4).</li>
+<li><strong>Rechazar:</strong> falla una prueba esencial (OOS, Walk-Forward, Monte Carlo de costes, entrada aleatoria). Se archiva con el motivo.</li>
+<li><strong>Repetir:</strong> el resultado es dudoso por falta de información (muestra OOS pequeña, datos dudosos). Se define <strong>qué</strong> información falta y <strong>cuándo</strong> se volverá a evaluar. Repetir no es «retocar hasta que pase».</li>
+</ul>
+<figure class="fig"><a href="img/s12-decision.svg" target="_blank" rel="noopener"><img src="img/s12-decision.svg" alt="Figura 12.6 · El árbol de decisión del protocolo." loading="lazy"></a><figcaption>Figura 12.6 · El árbol de decisión del protocolo.</figcaption></figure>
+<h4>Escríbelo antes</h4>
+<p>Tus criterios deben estar escritos <strong>antes</strong> de evaluar, en un documento con fecha. Ejemplo de estructura:</p>
+<ol>
+<li>Pruebas obligatorias y su orden.</li>
+<li>Criterio numérico de cada una.</li>
+<li>Qué fallos son eliminatorios y cuáles permiten «repetir».</li>
+<li>Cuántas veces como máximo puede repetirse una evaluación.</li>
+<li>Cómo se registran las decisiones.</li>
+</ol>
+<aside class="callout warn"><p><strong>Error típico.</strong> Aceptar una estrategia que falla una prueba «porque en las demás es muy buena». Si la prueba no es eliminatoria, decláralo de antemano; si lo es, cúmplelo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre repetir y retocar?</li>
+<li>¿Qué pruebas considerarías eliminatorias?</li>
+<li>¿Por qué se limita el número de repeticiones?</li>
+</ol><div class="answer"><label for="w12-s12-l5">Tus respuestas</label><textarea id="w12-s12-l5" data-store="w12-s12-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l5"> He terminado esta sección</label></section><section class="pane" id="s12-l6" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L6</span><h2>Custom Projects: automatizar el protocolo</h2></header><div class="read"><p><em>Formato: taller de 40 minutos · Práctica: 2–3 horas</em></p>
+<h4>Para qué sirven</h4>
+<p>Los <strong>custom projects</strong> de SQX encadenan tareas: generar con el Builder, filtrar el databank, pasar las estrategias por el Retester con varias pruebas, optimizar con Walk-Forward y guardar las supervivientes, todo sin intervención. Ventajas:</p>
+<ul>
+<li><strong>Reproducibilidad:</strong> el mismo protocolo exacto cada vez.</li>
+<li><strong>Disciplina:</strong> no puedes saltarte una prueba porque te guste una estrategia.</li>
+<li><strong>Escala:</strong> puedes procesar miles de candidatas mientras duermes.</li>
+</ul>
+<figure class="fig"><a href="img/s12-custom.svg" target="_blank" rel="noopener"><img src="img/s12-custom.svg" alt="Figura 12.7 · Un custom project que automatiza el protocolo de validación." loading="lazy"></a><figcaption>Figura 12.7 · Un custom project que automatiza el protocolo de validación.</figcaption></figure>
+<h4>Cómo construir uno</h4>
+<ol>
+<li>Crea un <em>custom project</em> nuevo y añade las tareas en orden: Builder → filtro de databank → Retester con precisión alta y costes conservadores → Retester con Monte Carlo → Optimizer con Walk-Forward → databank final.</li>
+<li>En cada tarea, configura los criterios de tu protocolo como filtros para pasar a la siguiente.</li>
+<li>Usa databanks distintos para cada etapa, para ver cuántas estrategias elimina cada prueba.</li>
+<li>Ejecuta primero con pocas estrategias para comprobar que funciona; después, déjalo trabajando.</li>
+</ol>
+<aside class="callout warn"><p><strong>Atención.</strong> Automatizar no elimina el sesgo de selección: un custom project que procesa un millón de estrategias producirá más falsos positivos que uno que procesa diez mil. Sigue anotando cuántas estrategias entran en el embudo.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Nombra dos ventajas de automatizar el protocolo.</li>
+<li>¿Para qué sirve usar un databank distinto por etapa?</li>
+<li>¿Por qué automatizar no elimina el sesgo de selección?</li>
+</ol><div class="answer"><label for="w12-s12-l6">Tus respuestas</label><textarea id="w12-s12-l6" data-store="w12-s12-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l6"> He terminado esta sección</label></section><section class="pane" id="s12-l7" hidden><header class="pane-head"><span class="kicker">Semana 12 · Lección L7</span><h2>Evaluación integradora de la etapa 3</h2></header><div class="read"><p><em>Formato: proyecto autónomo · Trabajo: 8 horas</em></p>
+<p>La evaluación integradora sustituye a la entrega práctica de esta semana. Llevarás a cabo <strong>una investigación completa</strong> con los ocho pasos y el protocolo completo, de forma autónoma.</p>
+<h4>El encargo</h4>
+<p>Investiga si una <strong>lógica concreta</strong> (de las familias de las semanas 7 y 8) tiene ventaja en <strong>un mercado</strong> de tu elección y entrega, como resultado, entre cero y tres estrategias aceptadas.</p>
+<h4>Requisitos</h4>
+<ol>
+<li><strong>Hipótesis</strong> con explicación económica, escrita antes de generar.</li>
+<li><strong>Informe de calidad</strong> de los datos utilizados (semana 9).</li>
+<li><strong>Protocolo</strong> con criterios fijados y fechados antes de evaluar (lecciones 5 de esta semana y de la semana 11).</li>
+<li><strong>Registro de pruebas</strong> completo: proyectos, estrategias generadas, variantes.</li>
+<li><strong>Resultados de todas las pruebas</strong>: hoja de evaluación, OOS, Walk-Forward y matriz, Monte Carlo, parámetros, otros mercados, entrada aleatoria y retraso de una vela.</li>
+<li><strong>Decisión</strong> para cada candidata: aceptar, rechazar o repetir, con el motivo.</li>
+<li><strong>Conclusión</strong> sobre la hipótesis, con sus limitaciones.</li>
+</ol>
+<aside class="callout key"><p><strong>Idea clave.</strong> Una evaluación integradora con cero estrategias aceptadas y un proceso impecable obtiene mejor nota que una con tres estrategias aceptadas tras relajar los criterios.</p></aside><div class="answer"><label for="w12-s12-l7">Tus respuestas</label><textarea id="w12-s12-l7" data-store="w12-s12-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-s12-l7"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 12 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Comprar y mantener</td>
+<td>Buy and hold</td>
+<td>Comprar un activo y conservarlo sin operar</td>
+</tr>
+<tr>
+<td>Custom project</td>
+<td>Custom project</td>
+<td>Flujo automático de tareas en SQX</td>
+</tr>
+<tr>
+<td>Ejecución parcial</td>
+<td>Partial fill</td>
+<td>Orden que solo se ejecuta en parte</td>
+</tr>
+<tr>
+<td>Entrada aleatoria</td>
+<td>Random entry</td>
+<td>Prueba que sustituye la regla de entrada por entradas al azar</td>
+</tr>
+<tr>
+<td>Latencia</td>
+<td>Latency</td>
+<td>Tiempo que tarda una orden en llegar y ejecutarse</td>
+</tr>
+<tr>
+<td>Mapa de calor</td>
+<td>Heat map</td>
+<td>Gráfico que muestra con colores el resultado de cada combinación de dos parámetros</td>
+</tr>
+<tr>
+<td>Meseta</td>
+<td>Plateau</td>
+<td>Zona amplia de parámetros con resultados parecidos</td>
+</tr>
+<tr>
+<td>Perfil de optimización</td>
+<td>Optimization profile</td>
+<td>Resultado de la estrategia para todo un rango de valores de un parámetro</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Peak</td>
+<td>Combinación aislada de parámetros con un resultado excepcional</td>
+</tr>
+<tr>
+<td>Recotización</td>
+<td>Requote</td>
+<td>Rechazo de una orden con una oferta a otro precio</td>
+</tr>
+<tr>
+<td>SPP</td>
+<td>System Parameter Permutation</td>
+<td>Análisis de la distribución de resultados de todas las combinaciones razonables de parámetros</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w12-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 12 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Perfil.</strong> Optimiza un parámetro de tu mejor candidata en un rango del 50 % al 150 % de su valor y dibuja el perfil. ¿Meseta o pico?</p>
+<p><strong>E2 · Mapa de calor.</strong> Haz el mapa de calor de dos parámetros y calcula el porcentaje de combinaciones rentables en el entorno de ±20 % del valor elegido.</p>
+<p><strong>E3 · SPP.</strong> Con los resultados del E2, calcula la mediana del beneficio de todas las combinaciones y compárala con la de la combinación elegida.</p>
+<p><strong>E4 · Año a año.</strong> Haz una tabla con el beneficio de tu candidata en cada año. ¿En cuántos años gana?</p>
+<p><strong>E5 · Otros mercados.</strong> Prueba tu candidata, sin cambios y con los costes de cada mercado, en dos pares más. Presenta los resultados.</p>
+<p><strong>E6 · Entrada aleatoria.</strong> Si tu versión de SQX lo permite, haz la prueba de entrada aleatoria; si no, simula en la hoja de cálculo 50 secuencias de entradas aleatorias con las mismas salidas sobre tu lista de operaciones y compara.</p>
+<p><strong>E7 · Retraso.</strong> Prueba tu candidata retrasando la entrada una vela. ¿Cuánto cambia el profit factor?</p>
+<p><strong>E8 · Reglas del broker.</strong> Anota la distancia mínima de stops, el lote mínimo y el horario del símbolo en tu broker, y comprueba si tu candidata los respeta.</p>
+<p><strong>E9 · Criterios.</strong> Escribe tu documento de criterios de aceptación, rechazo y repetición, con fecha.</p>
+<p><strong>E10 · Custom project.</strong> Construye un custom project con al menos cuatro tareas encadenadas y documenta cuántas estrategias elimina cada etapa en una ejecución de prueba.</p><div class="answer"><label for="w12-ejercicios-obligatorios">Tus respuestas</label><textarea id="w12-ejercicios-obligatorios" data-store="w12-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-12-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 12 · Sección</span><h2>Investigación I-12 y entrega práctica</h2></header><div class="read"><h3>Investigación I-12 · Evaluación integradora</h3>
+<p>Esta semana, la investigación <strong>es</strong> la evaluación integradora (lección 7). Sigue los ocho pasos con el protocolo completo.</p>
+<h3>Entrega práctica · Evaluación integradora de la etapa 3</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S12_INT</code></td>
+<td>Informe de la investigación completa con los siete requisitos de la lección 7</td>
+</tr>
+<tr>
+<td><code>CODIGO_S12_CRIT</code></td>
+<td>Documento de criterios fechado</td>
+</tr>
+<tr>
+<td><code>CODIGO_S12_SQX</code></td>
+<td>Custom project y estrategias aceptadas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S12_REG</code></td>
+<td>Registro de pruebas de toda la etapa</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Peso</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hipótesis y diseño previos</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Calidad de datos</td>
+<td>10 %</td>
+</tr>
+<tr>
+<td>Protocolo y criterios fijados antes</td>
+<td>20 %</td>
+</tr>
+<tr>
+<td>Ejecución completa de las pruebas</td>
+<td>25 %</td>
+</tr>
+<tr>
+<td>Coherencia de las decisiones</td>
+<td>15 %</td>
+</tr>
+<tr>
+<td>Conclusiones y limitaciones</td>
+<td>15 %</td>
+</tr>
+</tbody>
+</table></div>
+<p>Se aprueba con un 80 %. Si falta el documento de criterios fechado o el registro de pruebas, la evaluación queda como NO EVALUABLE.</p><div class="answer"><label for="w12-investigacion-i-12-y-entrega-practica">Tus respuestas</label><textarea id="w12-investigacion-i-12-y-entrega-practica" data-store="w12-investigacion-i-12-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-investigacion-i-12-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-12" hidden><header class="pane-head"><span class="kicker">Semana 12 · Evaluación</span><h2>Examen de la semana 12 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> Una meseta de parámetros es…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q1" value="a" data-store="w12-exam-q1"><span><b>a)</b> una combinación aislada con un gran resultado</span></label><label class="opt"><input type="radio" name="w12q1" value="b" data-store="w12-exam-q1"><span><b>b)</b> una zona amplia de parámetros con resultados parecidos</span></label><label class="opt"><input type="radio" name="w12q1" value="c" data-store="w12-exam-q1"><span><b>c)</b> un parámetro sin efecto</span></label><label class="opt"><input type="radio" name="w12q1" value="d" data-store="w12-exam-q1"><span><b>d)</b> un periodo sin operaciones</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> El valor elegido de un parámetro debe estar…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q2" value="a" data-store="w12-exam-q2"><span><b>a)</b> en el centro de la meseta</span></label><label class="opt"><input type="radio" name="w12q2" value="b" data-store="w12-exam-q2"><span><b>b)</b> en el borde del rango</span></label><label class="opt"><input type="radio" name="w12q2" value="c" data-store="w12-exam-q2"><span><b>c)</b> en el mejor resultado aunque esté aislado</span></label><label class="opt"><input type="radio" name="w12q2" value="d" data-store="w12-exam-q2"><span><b>d)</b> en el mínimo</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> El SPP estima el rendimiento esperado con…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q3" value="a" data-store="w12-exam-q3"><span><b>a)</b> la mejor combinación</span></label><label class="opt"><input type="radio" name="w12q3" value="b" data-store="w12-exam-q3"><span><b>b)</b> la peor combinación</span></label><label class="opt"><input type="radio" name="w12q3" value="c" data-store="w12-exam-q3"><span><b>c)</b> la mediana de todas las combinaciones razonables</span></label><label class="opt"><input type="radio" name="w12q3" value="d" data-store="w12-exam-q3"><span><b>d)</b> el resultado OOS</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Analizar el resultado año a año sirve para ver…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q4" value="a" data-store="w12-exam-q4"><span><b>a)</b> si el beneficio depende de unos pocos años</span></label><label class="opt"><input type="radio" name="w12q4" value="b" data-store="w12-exam-q4"><span><b>b)</b> los costes</span></label><label class="opt"><input type="radio" name="w12q4" value="c" data-store="w12-exam-q4"><span><b>c)</b> el broker</span></label><label class="opt"><input type="radio" name="w12q4" value="d" data-store="w12-exam-q4"><span><b>d)</b> la zona horaria</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Al probar en otro mercado se debe…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q5" value="a" data-store="w12-exam-q5"><span><b>a)</b> reoptimizar todo</span></label><label class="opt"><input type="radio" name="w12q5" value="b" data-store="w12-exam-q5"><span><b>b)</b> cambiar las reglas</span></label><label class="opt"><input type="radio" name="w12q5" value="c" data-store="w12-exam-q5"><span><b>c)</b> mantener la estrategia sin cambios y usar los costes de ese mercado</span></label><label class="opt"><input type="radio" name="w12q5" value="d" data-store="w12-exam-q5"><span><b>d)</b> usar los costes de EUR/USD</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> La prueba de entrada aleatoria indica si…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q6" value="a" data-store="w12-exam-q6"><span><b>a)</b> los costes son correctos</span></label><label class="opt"><input type="radio" name="w12q6" value="b" data-store="w12-exam-q6"><span><b>b)</b> las entradas aportan ventaja</span></label><label class="opt"><input type="radio" name="w12q6" value="c" data-store="w12-exam-q6"><span><b>c)</b> el broker es fiable</span></label><label class="opt"><input type="radio" name="w12q6" value="d" data-store="w12-exam-q6"><span><b>d)</b> los datos tienen huecos</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Un benchmark adecuado para una estrategia de compra en un índice es…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q7" value="a" data-store="w12-exam-q7"><span><b>a)</b> comprar y mantener el índice</span></label><label class="opt"><input type="radio" name="w12q7" value="b" data-store="w12-exam-q7"><span><b>b)</b> una estrategia de EUR/USD</span></label><label class="opt"><input type="radio" name="w12q7" value="c" data-store="w12-exam-q7"><span><b>c)</b> el spread</span></label><label class="opt"><input type="radio" name="w12q7" value="d" data-store="w12-exam-q7"><span><b>d)</b> ninguno</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Si una estrategia se hunde al retrasar la entrada una vela…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q8" value="a" data-store="w12-exam-q8"><span><b>a)</b> es robusta</span></label><label class="opt"><input type="radio" name="w12q8" value="b" data-store="w12-exam-q8"><span><b>b)</b> depende de entrar en el instante exacto</span></label><label class="opt"><input type="radio" name="w12q8" value="c" data-store="w12-exam-q8"><span><b>c)</b> tiene costes bajos</span></label><label class="opt"><input type="radio" name="w12q8" value="d" data-store="w12-exam-q8"><span><b>d)</b> debe operarse con más riesgo</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Una recotización es…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q9" value="a" data-store="w12-exam-q9"><span><b>a)</b> un cambio de broker</span></label><label class="opt"><input type="radio" name="w12q9" value="b" data-store="w12-exam-q9"><span><b>b)</b> un nuevo backtest</span></label><label class="opt"><input type="radio" name="w12q9" value="c" data-store="w12-exam-q9"><span><b>c)</b> un rechazo de la orden con una oferta a otro precio</span></label><label class="opt"><input type="radio" name="w12q9" value="d" data-store="w12-exam-q9"><span><b>d)</b> un dividendo</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> «Repetir» una evaluación significa…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q10" value="a" data-store="w12-exam-q10"><span><b>a)</b> retocar la estrategia hasta que pase</span></label><label class="opt"><input type="radio" name="w12q10" value="b" data-store="w12-exam-q10"><span><b>b)</b> volver a evaluarla cuando haya la información que falta</span></label><label class="opt"><input type="radio" name="w12q10" value="c" data-store="w12-exam-q10"><span><b>c)</b> aceptarla</span></label><label class="opt"><input type="radio" name="w12q10" value="d" data-store="w12-exam-q10"><span><b>d)</b> cambiar los criterios</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Los criterios de aceptación se escriben…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q11" value="a" data-store="w12-exam-q11"><span><b>a)</b> antes de evaluar, con fecha</span></label><label class="opt"><input type="radio" name="w12q11" value="b" data-store="w12-exam-q11"><span><b>b)</b> después de ver los resultados</span></label><label class="opt"><input type="radio" name="w12q11" value="c" data-store="w12-exam-q11"><span><b>c)</b> solo si la estrategia pasa</span></label><label class="opt"><input type="radio" name="w12q11" value="d" data-store="w12-exam-q11"><span><b>d)</b> en la cabeza</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Una ventaja de los custom projects es…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q12" value="a" data-store="w12-exam-q12"><span><b>a)</b> eliminar el sesgo de selección</span></label><label class="opt"><input type="radio" name="w12q12" value="b" data-store="w12-exam-q12"><span><b>b)</b> la reproducibilidad del protocolo</span></label><label class="opt"><input type="radio" name="w12q12" value="c" data-store="w12-exam-q12"><span><b>c)</b> que no necesitan datos</span></label><label class="opt"><input type="radio" name="w12q12" value="d" data-store="w12-exam-q12"><span><b>d)</b> que garantizan beneficios</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Usar un databank distinto por etapa del custom project sirve para…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q13" value="a" data-store="w12-exam-q13"><span><b>a)</b> ahorrar memoria</span></label><label class="opt"><input type="radio" name="w12q13" value="b" data-store="w12-exam-q13"><span><b>b)</b> ver cuántas estrategias elimina cada prueba</span></label><label class="opt"><input type="radio" name="w12q13" value="c" data-store="w12-exam-q13"><span><b>c)</b> cambiar los costes</span></label><label class="opt"><input type="radio" name="w12q13" value="d" data-store="w12-exam-q13"><span><b>d)</b> exportar a MT5</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Si una estrategia de EUR/USD gana solo en EUR/USD y pierde en todos los pares parecidos…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q14" value="a" data-store="w12-exam-q14"><span><b>a)</b> es más fiable</span></label><label class="opt"><input type="radio" name="w12q14" value="b" data-store="w12-exam-q14"><span><b>b)</b> hay que sospechar de un ajuste a la historia de EUR/USD</span></label><label class="opt"><input type="radio" name="w12q14" value="c" data-store="w12-exam-q14"><span><b>c)</b> hay que subir el riesgo</span></label><label class="opt"><input type="radio" name="w12q14" value="d" data-store="w12-exam-q14"><span><b>d)</b> es de reversión</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> En la evaluación integradora, un proceso impecable con cero estrategias aceptadas…</legend><div class="opts"><label class="opt"><input type="radio" name="w12q15" value="a" data-store="w12-exam-q15"><span><b>a)</b> suspende</span></label><label class="opt"><input type="radio" name="w12q15" value="b" data-store="w12-exam-q15"><span><b>b)</b> es NO EVALUABLE</span></label><label class="opt"><input type="radio" name="w12q15" value="c" data-store="w12-exam-q15"><span><b>c)</b> puede obtener mejor nota que relajar criterios</span></label><label class="opt"><input type="radio" name="w12q15" value="d" data-store="w12-exam-q15"><span><b>d)</b> obliga a repetir la etapa</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> El perfil de un parámetro (valores 30 a 70, de 5 en 5) da estos profit factor: 0,96; 1,08; 1,21; 1,29; 1,33; 1,31; 1,26; 1,14; 1,02. El valor elegido es 50. a) ¿Qué porcentaje de valores tiene PF ≥ 1,1? b) ¿Está el valor elegido en el centro de la meseta? c) Calcula la mediana de los nueve PF y compárala con el del valor elegido.</p>
+<p><strong>B2.</strong> Tu estrategia tiene un PF de 1,38. De 500 versiones con entradas aleatorias, 470 tienen un PF menor que 1,38. a) ¿A qué porcentaje de las aleatorias supera? b) ¿Qué percentil ocupa? c) ¿Aceptarías que sus entradas tienen ventaja con un criterio del 95 %?</p>
+<p><strong>B3.</strong> Una candidata gana en 7 de 11 años. Su PF es 1,42 en EUR/USD, 1,18 en GBP/USD, 0,97 en AUD/USD y 1,09 en USD/CAD (sin cambios y con sus costes). a) ¿Qué porcentaje de años es ganador? b) ¿En cuántos de los otros pares supera PF 1? c) Con el criterio «ganar en al menos el 60 % de los años y no hundirse (PF ≥ 0,9) en ningún mercado parecido», ¿la aceptas?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: describe tu protocolo completo de validación, de la generación a la decisión, y explica qué tipo de error elimina cada prueba.</p><div class="answer"><label for="w12-examen-12">Tus respuestas a las partes B y C</label><textarea id="w12-examen-12" data-store="w12-examen-12" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w12-done-examen-12"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
