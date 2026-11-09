@@ -1,0 +1,532 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 5 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="5">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><span class="wk locked" title="En producción"><span class="n">S06</span><span class="t">Primeras estrategias</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><span class="wk locked" title="En producción"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-05.svg)"><img src="img/cover-05.svg" alt=""></div><p class="eyebrow">SEMANA 05 · ETAPA 2 · STRATEGYQUANT X</p><h1>Entorno y datos</h1><p class="meta">12 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="5" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w5-done-presentacion"></span>Presentación</a><a class="tab" href="#s05-l1" data-tab="s05-l1" title="Ediciones, licencia y requisitos del equipo"><span class="dot" data-dot="w5-done-s05-l1"></span>L1</a><a class="tab" href="#s05-l2" data-tab="s05-l2" title="Instalación, configuración y memoria"><span class="dot" data-dot="w5-done-s05-l2"></span>L2</a><a class="tab" href="#s05-l3" data-tab="s05-l3" title="Interfaz, módulos y databanks"><span class="dot" data-dot="w5-done-s05-l3"></span>L3</a><a class="tab" href="#s05-l4" data-tab="s05-l4" title="Data Manager: fuentes, descarga e importación"><span class="dot" data-dot="w5-done-s05-l4"></span>L4</a><a class="tab" href="#s05-l5" data-tab="s05-l5" title="Instrumentos: tamaño de pip, valor del tick, spread, comisión, swap y deslizamiento"><span class="dot" data-dot="w5-done-s05-l5"></span>L5</a><a class="tab" href="#s05-l6" data-tab="s05-l6" title="Zona horaria del broker y sesiones"><span class="dot" data-dot="w5-done-s05-l6"></span>L6</a><a class="tab" href="#s05-l7" data-tab="s05-l7" title="Taller: datos de EUR/USD alineados con el broker y comprobados en MT4 y MT5"><span class="dot" data-dot="w5-done-s05-l7"></span>L7</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w5-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w5-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-05-y-entrega-practica" data-tab="investigacion-i-05-y-entrega-practica" title="Investigación I-05 y entrega práctica"><span class="dot" data-dot="w5-done-investigacion-i-05-y-entrega-practica"></span>Investigación I-05 y entrega práctica</a><a class="tab" href="#examen-5" data-tab="examen-5" title="Examen de la semana 5 · Variante A"><span class="dot" data-dot="w5-done-examen-5"></span>Examen  5</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 05 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s05-l1"><span class="dot" data-dot="w5-done-s05-l1"></span><span class="tk">Lección L1</span><b>Ediciones, licencia y requisitos del equipo</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l2"><span class="dot" data-dot="w5-done-s05-l2"></span><span class="tk">Lección L2</span><b>Instalación, configuración y memoria</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l3"><span class="dot" data-dot="w5-done-s05-l3"></span><span class="tk">Lección L3</span><b>Interfaz, módulos y databanks</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l4"><span class="dot" data-dot="w5-done-s05-l4"></span><span class="tk">Lección L4</span><b>Data Manager: fuentes, descarga e importación</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l5"><span class="dot" data-dot="w5-done-s05-l5"></span><span class="tk">Lección L5</span><b>Instrumentos: tamaño de pip, valor del tick, spread, comisión, swap y deslizamiento</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l6"><span class="dot" data-dot="w5-done-s05-l6"></span><span class="tk">Lección L6</span><b>Zona horaria del broker y sesiones</b><span class="tm">→</span></a><a class="toc-i" href="#s05-l7"><span class="dot" data-dot="w5-done-s05-l7"></span><span class="tk">Lección L7</span><b>Taller: datos de EUR/USD alineados con el broker y comprobados en MT4 y MT5</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w5-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w5-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-05-y-entrega-practica"><span class="dot" data-dot="w5-done-investigacion-i-05-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-05 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-5"><span class="dot" data-dot="w5-done-examen-5"></span><span class="tk">Evaluación</span><b>Examen de la semana 5 · Variante A</b><span class="tm">→</span></a></nav><p>Empieza la etapa 2. Durante cuatro semanas trabajarás con <strong>StrategyQuant X</strong> (SQX), el programa que genera, prueba y exporta estrategias sin que tengas que programar. Esta primera semana no generarás ninguna estrategia: prepararás el terreno. Instalarás el programa, aprenderás a moverte por él y, sobre todo, conseguirás unos <strong>datos limpios y alineados con tu broker</strong>. Es la semana menos vistosa de la etapa y la que más errores evita: una estrategia generada con datos mal configurados es una estrategia falsa, por buena que parezca.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Elegir la edición y la licencia de SQX que necesitas y comprobar que tu equipo es suficiente.</li>
+<li>Instalar y configurar SQX, incluida la memoria disponible.</li>
+<li>Moverte por la interfaz: módulos, proyectos, resultados y databanks.</li>
+<li>Descargar e importar datos históricos con el Data Manager.</li>
+<li>Configurar un instrumento: tamaño del pip, valor del punto, spread, comisión, swap y deslizamiento.</li>
+<li>Alinear la zona horaria de los datos con la de tu broker y definir sesiones.</li>
+<li>Comprobar que los datos de SQX coinciden con los de MT4 y MT5.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Instalación, descarga de datos, configuración y comprobación</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-05, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 6</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>Un ordenador con Windows, macOS o Linux de 64 bits y al menos 8 GB de RAM (lección 1).</li>
+<li>StrategyQuant X instalado. El curso usa la <strong>build 140</strong> para las demostraciones; si tienes otra, los menús pueden variar un poco.</li>
+<li>Tu demo de MT4 y MT5 de la semana 2.</li>
+<li>Tu plantilla de métricas de la semana 4.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Las rutas de menú de esta semana se basan en la documentación pública de StrategyQuant y en la build 140. Si en tu programa algo tiene otro nombre o está en otro sitio, anótalo en tu registro de piloto: nos sirve para corregir el material.</p></aside>
+<h4>Criterio para desbloquear la semana 6</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 5</li>
+<li>☐ Entrega práctica: ficha de datos de EUR/USD alineada con el broker</li>
+<li>☐ Investigación I-05: pasos 1 a 4, 7 y 8 documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w5-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s05-l1" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L1</span><h2>Ediciones, licencia y requisitos del equipo</h2></header><div class="read"><p><em>Formato: clase de 25 minutos · Lectura: 20 minutos</em></p>
+<h4>Qué es StrategyQuant X</h4>
+<p>StrategyQuant X es un programa de escritorio para <strong>generar estrategias de trading de forma automática</strong>, probarlas con datos históricos, someterlas a pruebas de robustez y exportarlas como código para plataformas como MetaTrader 4 y 5. Lo desarrolla la empresa checa StrategyQuant. Su idea central es la de este curso: no adivinar una estrategia, sino generar muchas y <strong>descartar con método</strong> las que no resisten.</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> SQX no encuentra estrategias rentables: encuentra estrategias que <strong>fueron</strong> rentables en tus datos. Separar las que tienen una ventaja real de las que solo encajaron con el pasado es el trabajo de las semanas 9 a 12, y es tu trabajo, no del programa.</p></aside>
+<h4>Ediciones</h4>
+<p>SQX se vende en tres ediciones. A fecha de consulta (noviembre de 2026), la web oficial las describe así:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Edición</th>
+<th>Para qué sirve</th>
+<th>Lo que no incluye</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Starter</td>
+<td>Builder, Retester, Improver, editor de estrategias y backtest con precisión de tick</td>
+<td>Pruebas de robustez avanzadas, Optimizer y proyectos personalizados (<em>custom projects</em>)</td>
+</tr>
+<tr>
+<td>Professional</td>
+<td>Todo lo anterior, más pruebas de robustez avanzadas, Optimizer (incluido Walk-Forward) y <em>custom projects</em></td>
+<td>Herramientas de cartera completas, QuantAnalyzer Pro y módulos premium</td>
+</tr>
+<tr>
+<td>Ultimate</td>
+<td>Todo lo anterior, más QuantAnalyzer Pro, Portfolio Master y Composer sin límite, y módulos premium</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<p>Los precios cambian con frecuencia y hay promociones; consúltalos siempre en la <a href="https://strategyquant.com/pricing" target="_blank" rel="noopener">web oficial</a>. Las licencias son de por vida para la versión adquirida, con un periodo de actualizaciones y soporte que depende de la edición, y cada licencia es para <strong>un ordenador</strong>.</p>
+<p>Para este curso, <strong>la edición Professional es la mínima recomendada</strong>, porque las semanas 10 a 12 usan Walk-Forward y pruebas de robustez que la Starter no incluye. Si tienes la Starter, podrás seguir la etapa 2, pero tendrás que hacer parte de la validación de la etapa 3 de otra forma.</p>
+<aside class="callout warn"><p><strong>Atención.</strong> La web oficial anuncia funciones de inteligencia artificial y otras novedades de builds posteriores a la 140 (por ejemplo, perfiles de broker o el filtro por correlación). En el curso las mencionaremos cuando aparezcan, indicando que no están en la build 140.</p></aside>
+<h4>Requisitos del equipo</h4>
+<p>Los requisitos mínimos publicados son: sistema operativo Windows de 64 bits, macOS o Linux; procesador de 2 GHz y 2 núcleos; <strong>8 GB de RAM</strong>; y 10 GB de disco. SQX usa todos los núcleos del procesador, así que, con más núcleos, genera y prueba más estrategias por hora.</p>
+<p>Recomendaciones prácticas del curso:</p>
+<ul>
+<li><strong>RAM:</strong> 16 GB o más. Los datos de tick y los databanks grandes consumen mucha memoria.</li>
+<li><strong>Disco:</strong> un SSD con 50 GB libres, porque los datos de varios años de varios símbolos ocupan mucho.</li>
+<li><strong>Procesador:</strong> cuantos más núcleos, mejor. Un portátil de 4 núcleos sirve para aprender; para investigar a fondo, un sobremesa con 8 o más.</li>
+<li><strong>Energía:</strong> desactiva la suspensión mientras genera; un proyecto puede estar horas en marcha.</li>
+</ul>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué edición necesitas como mínimo para seguir la etapa 3 completa y por qué?</li>
+<li>¿Por qué SQX no «encuentra» estrategias rentables?</li>
+<li>Revisa tu ordenador: ¿cuántos núcleos y cuánta RAM tiene? ¿Cumple el mínimo?</li>
+</ol><div class="answer"><label for="w5-s05-l1">Tus respuestas</label><textarea id="w5-s05-l1" data-store="w5-s05-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l1"> He terminado esta sección</label></section><section class="pane" id="s05-l2" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L2</span><h2>Instalación, configuración y memoria</h2></header><div class="read"><p><em>Formato: taller de 30 minutos · Práctica: 1 hora</em></p>
+<h4>Instalación</h4>
+<ol>
+<li>Descarga el instalador desde tu cuenta en la web de StrategyQuant (en <strong>Downloads</strong> o la sección equivalente de tu área de cliente).</li>
+<li>Instálalo en una carpeta con permisos de escritura y espacio suficiente. En Windows, evita <code>Archivos de programa</code> si te da problemas de permisos: una carpeta como <code>C:\StrategyQuantX</code> funciona bien.</li>
+<li>Abre el programa e introduce tu licencia cuando te la pida.</li>
+<li>La interfaz de SQX está construida con tecnología web y corre en tu ordenador; según la versión y el sistema, se abre en su propia ventana o en el navegador. Si no se abre, consulta la guía de instalación de tu build en la documentación oficial.</li>
+</ol>
+<h4>La carpeta del usuario</h4>
+<p>SQX guarda en su carpeta de instalación (o en la de usuario) los datos históricos, los proyectos, los databanks y las estrategias. Localízala desde el primer día y:</p>
+<ul>
+<li><strong>Haz copias de seguridad</strong> de tus proyectos y estrategias en otra unidad o en la nube.</li>
+<li><strong>No la sincronices en vivo</strong> con servicios como Dropbox o OneDrive mientras SQX trabaja: la sincronización de miles de archivos pequeños puede ralentizar o bloquear el programa.</li>
+</ul>
+<h4>La memoria</h4>
+<p>SQX funciona sobre Java y solo puede usar la memoria que tiene asignada. Si la asignación es pequeña, verás el programa lento o mensajes de falta de memoria con databanks grandes. Como orientación, asigna entre la mitad y dos tercios de la RAM de tu equipo, dejando el resto para el sistema y para MetaTrader.</p>
+<p>El ajuste de memoria está en la configuración de la aplicación (en la build 140, en los ajustes generales del programa). Después de cambiarlo, reinicia SQX.</p>
+<h4>Ajustes que conviene revisar</h4>
+<ul>
+<li><strong>Idioma y formato numérico.</strong> El programa está en inglés; los nombres de este curso aparecen en inglés entre paréntesis la primera vez.</li>
+<li><strong>Núcleos que usa.</strong> Puedes limitar los núcleos si quieres seguir usando el ordenador mientras genera.</li>
+<li><strong>Actualizaciones.</strong> Antes de actualizar de build, termina los proyectos en curso: un cambio de build puede cambiar resultados o configuraciones.</li>
+</ul>
+<aside class="callout tip"><p><strong>Consejo.</strong> Anota en tu cuaderno la build exacta que usas y la fecha en que la instalaste. Si comparas resultados semanas después, necesitarás saber si cambió el programa o cambiaron los datos.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué no conviene sincronizar en vivo la carpeta de SQX con la nube?</li>
+<li>Tu ordenador tiene 16 GB de RAM. ¿Cuánta memoria asignarías a SQX?</li>
+<li>¿Qué anotarás en tu cuaderno sobre la instalación?</li>
+</ol><div class="answer"><label for="w5-s05-l2">Tus respuestas</label><textarea id="w5-s05-l2" data-store="w5-s05-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l2"> He terminado esta sección</label></section><section class="pane" id="s05-l3" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L3</span><h2>Interfaz, módulos y databanks</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Los módulos</h4>
+<p>SQX se organiza en <strong>módulos</strong>, cada uno con una función. Los verás en la barra principal:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Módulo</th>
+<th>Para qué sirve</th>
+<th>Semana</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Builder</td>
+<td>Genera estrategias nuevas a partir de bloques, de forma aleatoria o genética</td>
+<td>6</td>
+</tr>
+<tr>
+<td>Retester</td>
+<td>Vuelve a probar estrategias con otros datos, costes o pruebas de robustez</td>
+<td>6 y 10</td>
+</tr>
+<tr>
+<td>Optimizer</td>
+<td>Optimiza parámetros y hace Walk-Forward</td>
+<td>11</td>
+</tr>
+<tr>
+<td>Improver</td>
+<td>Intenta mejorar una estrategia existente</td>
+<td>8</td>
+</tr>
+<tr>
+<td>AlgoWizard</td>
+<td>Construye a mano una estrategia con reglas propias, sin programar</td>
+<td>8</td>
+</tr>
+<tr>
+<td>Custom projects</td>
+<td>Encadena tareas en un flujo automático</td>
+<td>12</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>El Data Manager: datos históricos, instrumentos y sesiones</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Code editor</td>
+<td>Edita bloques y código (no lo usarás en el curso)</td>
+<td>—</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s05-modulos.svg" target="_blank" rel="noopener"><img src="img/s05-modulos.svg" alt="Figura 5.1 · El recorrido de una estrategia por los módulos de StrategyQuant X." loading="lazy"></a><figcaption>Figura 5.1 · El recorrido de una estrategia por los módulos de StrategyQuant X.</figcaption></figure>
+<h4>Proyectos, tareas y resultados</h4>
+<p>En el Builder y los demás módulos trabajas con <strong>proyectos</strong>: cada proyecto guarda su configuración (qué datos, qué bloques, qué costes, qué filtros). Al lanzarlo, el programa muestra el progreso y va guardando estrategias en sus resultados.</p>
+<h4>Los databanks</h4>
+<p>Un <strong>databank</strong> es una tabla de estrategias con sus métricas. Cada proyecto tiene uno o varios databanks; por ejemplo, el Builder guarda en un databank las estrategias que pasan los filtros. Desde un databank puedes:</p>
+<ul>
+<li><strong>Ordenar y filtrar</strong> por cualquier métrica: profit factor, número de operaciones, drawdown, etc.</li>
+<li><strong>Abrir una estrategia</strong> y ver sus resultados detallados, su curva y sus reglas.</li>
+<li><strong>Enviarla a otro módulo,</strong> por ejemplo al Retester.</li>
+<li><strong>Exportarla</strong> a MT4 o MT5 (semana 15).</li>
+</ul>
+<aside class="callout warn"><p><strong>Error típico.</strong> Ordenar el databank por beneficio neto y quedarse con la primera. Es la forma más directa de elegir la estrategia más sobreoptimizada. A partir de la semana 10 usarás criterios de selección mucho más estrictos.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué módulo usarías para volver a probar una estrategia con un spread mayor?</li>
+<li>¿Qué es un databank y qué puedes hacer desde él?</li>
+<li>¿Por qué no debes elegir una estrategia por su beneficio neto?</li>
+</ol><div class="answer"><label for="w5-s05-l3">Tus respuestas</label><textarea id="w5-s05-l3" data-store="w5-s05-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l3"> He terminado esta sección</label></section><section class="pane" id="s05-l4" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L4</span><h2>Data Manager: fuentes, descarga e importación</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Práctica: 1 hora</em></p>
+<h4>Por qué los datos son lo primero</h4>
+<p>Todo lo que haga SQX depende de los datos históricos. Si faltan días, si hay precios erróneos o si la hora no coincide con la de tu broker, el programa generará estrategias que aprovechan esos errores y que fallarán en real. <strong>Basura entra, basura sale.</strong></p>
+<h4>Tipos de datos</h4>
+<ul>
+<li><strong>Datos de tick:</strong> cada cambio de precio, con su bid y su ask. Son los más precisos y los que más ocupan.</li>
+<li><strong>Datos de minuto (M1):</strong> una vela por minuto con apertura, máximo, mínimo y cierre. Son el estándar para generar estrategias en SQX: a partir de ellos, el programa construye cualquier temporalidad mayor (M5, H1, D1…).</li>
+<li><strong>Datos de temporalidad mayor (H1, D1):</strong> útiles para análisis rápidos, pero insuficientes para simular bien dónde se ejecutaron los stops dentro de una vela.</li>
+</ul>
+<figure class="fig"><a href="img/s05-ticks-velas.svg" target="_blank" rel="noopener"><img src="img/s05-ticks-velas.svg" alt="Figura 5.2 · De los ticks a las velas: el programa construye las temporalidades mayores a partir de los datos más finos." loading="lazy"></a><figcaption>Figura 5.2 · De los ticks a las velas: el programa construye las temporalidades mayores a partir de los datos más finos.</figcaption></figure>
+<h4>Fuentes</h4>
+<ol>
+<li><strong>Datos gratuitos incluidos.</strong> SQX permite descargar datos de Forex, CFD y criptomonedas desde el propio Data Manager. Son una buena base para aprender y para investigar Forex. Infórmate de qué proveedor los genera y en qué zona horaria vienen (lección 6).</li>
+<li><strong>Datos de tu broker.</strong> Puedes exportar el historial de MT4 o MT5 e importarlo. Tienen la ventaja de ser <strong>los precios de tu broker</strong>, pero suelen tener menos historia y, a veces, huecos.</li>
+<li><strong>Proveedores de pago.</strong> Para acciones y futuros, SQX ofrece datos premium en algunas ediciones, y existen otros proveedores comerciales. Lo verás en la semana 9.</li>
+</ol>
+<h4>Descargar e importar</h4>
+<p>En la build 140, el Data Manager está en la pestaña <strong>Data</strong>. El proceso general es:</p>
+<ol>
+<li><strong>Elegir o crear el símbolo</strong> (por ejemplo, EURUSD) y su instrumento asociado (lección 5).</li>
+<li><strong>Descargar</strong> los datos del proveedor gratuito o <strong>importar</strong> un archivo (CSV) con el asistente de importación, indicando el formato de fecha, el separador y la zona horaria.</li>
+<li><strong>Revisar</strong> los datos: rango de fechas, número de velas, huecos y precios anómalos.</li>
+</ol>
+<p>Al importar un CSV, fíjate en el formato de fecha (día/mes o mes/día), en el separador decimal y en si los precios son bid o ask. Un error en cualquiera de ellos estropea los datos sin que el programa avise.</p>
+<aside class="callout tip"><p><strong>Consejo.</strong> Descarga al menos 10 años de datos M1 de EUR/USD. Una estrategia generada con 2 o 3 años no habrá pasado por suficientes situaciones de mercado.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué SQX trabaja normalmente con datos M1 aunque generes estrategias en H1?</li>
+<li>Nombra una ventaja y un inconveniente de usar los datos de tu broker.</li>
+<li>¿Qué tres cosas revisas en un CSV antes de importarlo?</li>
+</ol><div class="answer"><label for="w5-s05-l4">Tus respuestas</label><textarea id="w5-s05-l4" data-store="w5-s05-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l4"> He terminado esta sección</label></section><section class="pane" id="s05-l5" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L5</span><h2>Instrumentos: tamaño de pip, valor del tick, spread, comisión, swap y deslizamiento</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué es un instrumento en SQX</h4>
+<p>Los datos son solo precios. Para convertir un movimiento de precio en dinero, SQX necesita saber las <strong>características del instrumento</strong>. Se definen en el Data Manager, y los campos principales son:</p>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Campo</th>
+<th>Qué es</th>
+<th>EUR/USD (5 decimales)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Tamaño del pip o tick (<em>pip/tick size</em>)</td>
+<td>Lo que vale un pip en precio</td>
+<td>0,0001</td>
+</tr>
+<tr>
+<td>Paso del pip o tick (<em>pip/tick step</em>)</td>
+<td>El movimiento mínimo de precio de tu broker</td>
+<td>0,00001</td>
+</tr>
+<tr>
+<td>Valor del punto (<em>point value</em>)</td>
+<td>Dinero, en dólares, que gana 1 lote si el precio se mueve una unidad entera</td>
+<td>100.000 $</td>
+</tr>
+<tr>
+<td>Spread por defecto</td>
+<td>Spread que se usará si el proyecto no indica otro, en pips</td>
+<td>Según tu broker</td>
+</tr>
+<tr>
+<td>Tipo de datos</td>
+<td>Forex, CFD, futuros, acciones, cripto…</td>
+<td>Forex</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s05-instrumento.svg" target="_blank" rel="noopener"><img src="img/s05-instrumento.svg" alt="Figura 5.3 · Ficha de un instrumento: cómo se traduce el movimiento del precio en dinero." loading="lazy"></a><figcaption>Figura 5.3 · Ficha de un instrumento: cómo se traduce el movimiento del precio en dinero.</figcaption></figure>
+<p>El <strong>valor del punto</strong> confunde al principio. Con EUR/USD, si el precio pasara de 1,0000 a 2,0000 (una unidad entera), 1 lote de 100.000 euros ganaría 100.000 $. Por eso el valor del punto es 100.000. Y un pip (0,0001) de 1 lote vale 100.000 × 0,0001 = 10 $, que es lo que ya conocías.</p>
+<aside class="callout warn"><p><strong>Atención.</strong> En los pares en los que el dólar no es la divisa cotizada (como USD/JPY o EUR/GBP), el valor del punto en dólares cambia con el tipo de cambio. SQX usa un valor fijo, así que el resultado en dinero es una aproximación. Lo que importa es que el resultado en pips y en R sea correcto.</p></aside>
+<h4>Los costes</h4>
+<p>En SQX, los costes se configuran sobre todo en cada <strong>proyecto</strong> (en su pestaña de datos o de opciones de trading), no solo en el instrumento. Son cuatro:</p>
+<ul>
+<li><strong>Spread:</strong> en pips. Usa un valor realista o algo pesimista: el spread medio de tu broker en las horas en que operará la estrategia, no el mínimo que anuncia.</li>
+<li><strong>Comisión:</strong> por lote y operación. En cuentas <em>raw</em> o ECN, la comisión es la parte principal del coste.</li>
+<li><strong>Swap:</strong> el interés por mantener posiciones de un día a otro, distinto para compras y ventas.</li>
+<li><strong>Deslizamiento (<em>slippage</em>):</strong> pips de peor ejecución que añades a cada entrada o salida a mercado.</li>
+</ul>
+<figure class="fig"><a href="img/s05-costes.svg" target="_blank" rel="noopener"><img src="img/s05-costes.svg" alt="Figura 5.4 · Lo que cuesta de verdad una operación: los cuatro costes de una operación de EUR/USD de 1 lote (cifras ilustrativas)." loading="lazy"></a><figcaption>Figura 5.4 · Lo que cuesta de verdad una operación: los cuatro costes de una operación de EUR/USD de 1 lote (cifras ilustrativas).</figcaption></figure>
+<aside class="callout key"><p><strong>Idea clave.</strong> Configura los costes <strong>antes</strong> de generar estrategias, y algo por encima de los reales. Si una estrategia solo es rentable con costes optimistas, no es rentable.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuál es el valor del punto de un instrumento cuyo lote es de 100.000 unidades y cotiza en dólares?</li>
+<li>¿Por qué el valor del punto de USD/JPY es solo una aproximación?</li>
+<li>Tu broker anuncia un spread «desde 0,1 pips» en EUR/USD. ¿Qué valor pondrías en SQX y por qué?</li>
+</ol><div class="answer"><label for="w5-s05-l5">Tus respuestas</label><textarea id="w5-s05-l5" data-store="w5-s05-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l5"> He terminado esta sección</label></section><section class="pane" id="s05-l6" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L6</span><h2>Zona horaria del broker y sesiones</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Por qué importa la hora</h4>
+<p>Las estrategias usan la hora: «no operar antes de las 8:00», «cerrar el viernes», «usar el máximo de ayer». Si la hora de tus datos no coincide con la de tu broker, la estrategia hará en real algo distinto de lo que hizo en el backtest. Y hay un efecto menos evidente: <strong>las velas diarias cambian</strong>.</p>
+<h4>Zonas horarias habituales</h4>
+<ul>
+<li><strong>Datos gratuitos de Forex:</strong> suelen venir en <strong>GMT/UTC</strong> (GMT+0).</li>
+<li><strong>Muchos brokers de MetaTrader:</strong> usan <strong>GMT+2 en invierno y GMT+3 en verano</strong>. Así, la vela diaria cierra a las 17:00 de Nueva York, el cierre habitual del mercado de divisas, y la semana tiene exactamente <strong>5 velas diarias</strong>.</li>
+<li><strong>Si usas datos en GMT+0:</strong> la semana tiene <strong>6 velas diarias</strong>, porque aparece una vela corta el domingo con las horas de apertura de Asia.</li>
+</ul>
+<figure class="fig"><a href="img/s05-zona-horaria.svg" target="_blank" rel="noopener"><img src="img/s05-zona-horaria.svg" alt="Figura 5.5 · La misma semana con datos en GMT+0 (6 velas diarias, con una vela corta el domingo) y en GMT+2/+3 con cierre de Nueva York (5 velas)." loading="lazy"></a><figcaption>Figura 5.5 · La misma semana con datos en GMT+0 (6 velas diarias, con una vela corta el domingo) y en GMT+2/+3 con cierre de Nueva York (5 velas).</figcaption></figure>
+<p>Con 6 velas, «el máximo de ayer» un lunes es el máximo de unas pocas horas del domingo. Una estrategia diaria generada así no se parece a la que ejecutará tu broker.</p>
+<h4>Cómo averiguar la zona horaria de tu broker</h4>
+<ol>
+<li>Abre MT4 o MT5 y mira la hora del servidor en la ventana <strong>Observación del mercado</strong> (<em>Market Watch</em>).</li>
+<li>Compárala con la hora UTC actual (búscala en internet). La diferencia es el desfase del servidor.</li>
+<li>Comprueba si cambia con el horario de verano. Muchos brokers lo indican en su web o en sus especificaciones.</li>
+<li>Cuenta las velas diarias de una semana en el gráfico D1: 5 velas confirman el cierre de Nueva York.</li>
+</ol>
+<h4>Alinear los datos en SQX</h4>
+<p>Al descargar o importar datos, el Data Manager permite indicar o convertir la zona horaria. La regla del curso:</p>
+<aside class="callout key"><p><strong>Idea clave.</strong> Genera y prueba siempre con los datos <strong>en la zona horaria de tu broker</strong>, incluido el cambio de horario de verano. Anota en tu cuaderno qué zona usaste en cada proyecto.</p></aside>
+<h4>Las sesiones</h4>
+<p>En SQX, una <strong>sesión</strong> define en qué horas y días hay mercado para un símbolo, y se usa para construir las velas y para las reglas que dependen del horario. Para Forex basta normalmente con una sesión continua de domingo a viernes; para índices o acciones necesitarás la sesión de su mercado, con sus festivos y cierres.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Tus datos están en GMT+0 y tu broker en GMT+2/+3. ¿Qué pasará con las velas diarias?</li>
+<li>¿Cómo comprobarías en MT5 la zona horaria de tu broker?</li>
+<li>Una estrategia «solo opera de 9:00 a 12:00». ¿Qué hora es esa si los datos están en GMT+0 y la ejecutas en un broker en GMT+2?</li>
+</ol><div class="answer"><label for="w5-s05-l6">Tus respuestas</label><textarea id="w5-s05-l6" data-store="w5-s05-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l6"> He terminado esta sección</label></section><section class="pane" id="s05-l7" hidden><header class="pane-head"><span class="kicker">Semana 05 · Lección L7</span><h2>Taller: datos de EUR/USD alineados con el broker y comprobados en MT4 y MT5</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 4–5 horas</em></p>
+<p>En este taller prepararás los datos que usarás en las semanas 6 a 8: EUR/USD en M1, alineado con tu broker y comprobado.</p>
+<h4>Paso 1 · Ficha del broker</h4>
+<p>Recupera la ficha de la semana 2 y añade: zona horaria del servidor en invierno y en verano, spread medio que mediste en las horas de Europa y comisión por lote de tu cuenta.</p>
+<h4>Paso 2 · Descarga los datos</h4>
+<p>En el Data Manager, descarga al menos 10 años de datos M1 de EUR/USD (por ejemplo, de 2014 a hoy) con la zona horaria de tu broker. Si el programa no permite convertirla al descargar, anota en qué zona vienen y cómo lo resolverás.</p>
+<h4>Paso 3 · Configura el instrumento</h4>
+<p>Revisa los campos del instrumento EURUSD: tamaño del pip 0,0001, paso 0,00001, valor del punto 100.000 $, tipo Forex y spread por defecto igual al medio que mediste.</p>
+<h4>Paso 4 · Revisa la calidad</h4>
+<ul>
+<li>Rango de fechas y número de velas.</li>
+<li>Huecos: ¿faltan días laborables? Una semana normal de Forex tiene unas 7.200 velas M1 (5 días × 24 horas × 60 minutos).</li>
+<li>Precios anómalos: velas con un máximo o un mínimo absurdos.</li>
+<li>Número de velas diarias por semana en una semana cualquiera: deberían ser 5.</li>
+</ul>
+<h4>Paso 5 · Compara con MT4 y MT5</h4>
+<p>Elige 5 velas H1 de días distintos del último mes y anota apertura, máximo, mínimo y cierre en SQX, en MT4 y en MT5. Calcula la diferencia en pips. Diferencias de 1 o 2 pips son normales entre proveedores; diferencias mayores, o velas desplazadas una o varias horas, indican un problema de zona horaria.</p>
+<h4>Paso 6 · Documenta</h4>
+<p>Rellena la ficha de datos de la entrega: fuente, zona horaria, rango, huecos encontrados, configuración del instrumento y resultado de la comparación.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuántas velas diarias por semana tienen tus datos?</li>
+<li>¿Qué diferencia media en pips encontraste con tu broker?</li>
+<li>Si encontraste velas desplazadas una hora en verano, ¿qué significa?</li>
+</ol><div class="answer"><label for="w5-s05-l7">Tus respuestas</label><textarea id="w5-s05-l7" data-store="w5-s05-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-s05-l7"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 05 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>AlgoWizard</td>
+<td>AlgoWizard</td>
+<td>Módulo de SQX para construir estrategias propias sin programar</td>
+</tr>
+<tr>
+<td>Build</td>
+<td>Build</td>
+<td>Versión concreta del programa</td>
+</tr>
+<tr>
+<td>Builder</td>
+<td>Builder</td>
+<td>Módulo de SQX que genera estrategias nuevas</td>
+</tr>
+<tr>
+<td>Comisión</td>
+<td>Commission</td>
+<td>Pago al broker por lote y operación</td>
+</tr>
+<tr>
+<td>Custom project</td>
+<td>Custom project</td>
+<td>Flujo de tareas encadenadas en SQX</td>
+</tr>
+<tr>
+<td>Databank</td>
+<td>Databank</td>
+<td>Tabla de estrategias con sus métricas dentro de SQX</td>
+</tr>
+<tr>
+<td>Data Manager</td>
+<td>Data Manager</td>
+<td>Parte de SQX que gestiona datos, instrumentos y sesiones</td>
+</tr>
+<tr>
+<td>Datos de tick</td>
+<td>Tick data</td>
+<td>Cada cambio de precio con su bid y su ask</td>
+</tr>
+<tr>
+<td>Datos M1</td>
+<td>M1 data</td>
+<td>Velas de un minuto</td>
+</tr>
+<tr>
+<td>Deslizamiento</td>
+<td>Slippage</td>
+<td>Diferencia entre el precio esperado y el ejecutado</td>
+</tr>
+<tr>
+<td>Desfase horario</td>
+<td>Time zone offset</td>
+<td>Horas de diferencia entre una zona horaria y GMT/UTC</td>
+</tr>
+<tr>
+<td>GMT / UTC</td>
+<td>GMT / UTC</td>
+<td>Hora de referencia mundial</td>
+</tr>
+<tr>
+<td>Instrumento</td>
+<td>Instrument</td>
+<td>Definición de un símbolo con sus características de precio y valor</td>
+</tr>
+<tr>
+<td>Paso del tick</td>
+<td>Tick step</td>
+<td>Movimiento mínimo de precio que permite el broker</td>
+</tr>
+<tr>
+<td>Retester</td>
+<td>Retester</td>
+<td>Módulo de SQX que vuelve a probar estrategias</td>
+</tr>
+<tr>
+<td>Sesión</td>
+<td>Session</td>
+<td>Horas y días en que hay mercado para un símbolo</td>
+</tr>
+<tr>
+<td>Spread por defecto</td>
+<td>Default spread</td>
+<td>Spread que usa SQX si el proyecto no indica otro</td>
+</tr>
+<tr>
+<td>Tamaño del pip</td>
+<td>Pip size</td>
+<td>Lo que vale un pip en precio</td>
+</tr>
+<tr>
+<td>Valor del punto</td>
+<td>Point value</td>
+<td>Dinero que gana 1 lote por un movimiento de una unidad entera de precio</td>
+</tr>
+<tr>
+<td>Zona horaria del broker</td>
+<td>Broker time zone</td>
+<td>Hora del servidor de tu broker respecto a GMT</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w5-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 05 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Edición.</strong> Elige la edición de SQX que necesitas para el curso. Consulta la web oficial y anota el precio actual, la fecha de consulta y qué incluye. Explica tu elección en 100 palabras.</p>
+<p><strong>E2 · Tu equipo.</strong> Anota el procesador, los núcleos, la RAM y el disco libre de tu ordenador. ¿Cumple el mínimo? ¿Cuánta memoria asignarías a SQX?</p>
+<p><strong>E3 · Valor del punto.</strong> Calcula el valor del punto en dólares para 1 lote de: a) GBP/USD (100.000 libras); b) un CFD del DAX de 1 € por punto, con el EUR/USD a 1,0800 (un punto entero del índice); c) USD/JPY (100.000 dólares), con el USD/JPY a 150,00.</p>
+<p><strong>E4 · Pip en dinero.</strong> Con un valor del punto de 100.000 $ y un tamaño de pip de 0,0001, ¿cuánto vale un pip de 0,25 lotes?</p>
+<p><strong>E5 · Costes.</strong> Una operación de 1 lote de EUR/USD paga un spread de 0,9 pips, una comisión de 7 $ ida y vuelta, 0,3 pips de deslizamiento y ninguna noche de swap. Calcula el coste total en dólares y en pips.</p>
+<p><strong>E6 · Coste y objetivo.</strong> Con el coste del E5, ¿qué porcentaje del beneficio se lleva el coste si la estrategia busca 10 pips? ¿Y si busca 40?</p>
+<p><strong>E7 · Velas M1.</strong> ¿Cuántas velas M1 tiene, aproximadamente, un año de Forex? ¿Y 10 años?</p>
+<p><strong>E8 · Zona horaria.</strong> Tu broker está en GMT+2 en invierno y GMT+3 en verano. Una noticia sale a las 14:30 de Madrid. ¿Qué hora marca el servidor en invierno y en verano? (Madrid: GMT+1 en invierno, GMT+2 en verano.)</p>
+<p><strong>E9 · Velas diarias.</strong> Explica con un ejemplo por qué una estrategia que compra «si el precio supera el máximo de ayer» puede comportarse distinto con datos en GMT+0 que con datos en GMT+2/+3.</p>
+<p><strong>E10 · Importación.</strong> Un CSV tiene la línea <code>03/04/2025 14:00,1.08215,1.08290,1.08190,1.08240,1520</code>. Escribe qué dudas tendrías antes de importarlo y cómo las resolverías.</p><div class="answer"><label for="w5-ejercicios-obligatorios">Tus respuestas</label><textarea id="w5-ejercicios-obligatorios" data-store="w5-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-05-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 05 · Sección</span><h2>Investigación I-05 y entrega práctica</h2></header><div class="read"><h3>Investigación I-05 · ¿Coinciden mis datos con los de mi broker?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Los datos M1 de EUR/USD descargados en SQX, convertidos a la zona horaria de mi broker, difieren de los de mi broker en menos de 1 pip de media en apertura y cierre de las velas H1».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Busca y cita información oficial o del foro de StrategyQuant sobre la zona horaria de los datos gratuitos y sobre cómo alinearlos con un broker. Anota la fecha y si es documentación oficial u opinión de usuarios.</p>
+<p><strong>Paso 3 · Datos.</strong> Datos de SQX del taller y datos de tu broker de MT4 o MT5 (exporta el historial H1 o anótalo a mano) de al menos 20 velas H1 de días y horas distintas, incluido algún lunes por la mañana y algún viernes por la tarde.</p>
+<p><strong>Paso 4 · Diseño del experimento.</strong> Antes de comparar, define: qué velas vas a elegir y cómo (al azar o con un criterio fijado de antemano), qué precio comparas (apertura, máximo, mínimo y cierre), cómo mides la diferencia (en pips, en valor absoluto) y qué diferencia media consideras aceptable.</p>
+<p><strong>Paso 7 · Comparación.</strong> Calcula la diferencia media y máxima de cada precio. Busca patrones: ¿son mayores en ciertos horarios? ¿Hay velas desplazadas?</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma tu hipótesis? ¿Usarías estos datos para generar estrategias? ¿Qué limitaciones tiene comparar solo 20 velas?</p>
+<h3>Entrega práctica · Ficha de datos de EUR/USD</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S05_ENT</code></td>
+<td>Ficha de datos: build de SQX, fuente de los datos, zona horaria, rango de fechas, número de velas, huecos, configuración completa del instrumento y costes que usarás</td>
+</tr>
+<tr>
+<td>Capturas</td>
+<td>Del Data Manager con el símbolo y el rango de datos, de la configuración del instrumento y del gráfico D1 de una semana con sus velas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S05_INV</code></td>
+<td>Hoja de la investigación I-05</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10 resueltos</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que los datos estén alineados con el broker y que la ficha permita a otra persona reproducir tu configuración. Si falta la zona horaria o la comparación con el broker, la entrega queda como NO EVALUABLE.</p><div class="answer"><label for="w5-investigacion-i-05-y-entrega-practica">Tus respuestas</label><textarea id="w5-investigacion-i-05-y-entrega-practica" data-store="w5-investigacion-i-05-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-investigacion-i-05-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-5" hidden><header class="pane-head"><span class="kicker">Semana 05 · Evaluación</span><h2>Examen de la semana 5 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> StrategyQuant X sirve principalmente para…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q1" value="a" data-store="w5-exam-q1"><span><b>a)</b> ejecutar órdenes en el mercado</span></label><label class="opt"><input type="radio" name="w5q1" value="b" data-store="w5-exam-q1"><span><b>b)</b> generar y probar estrategias sin programar</span></label><label class="opt"><input type="radio" name="w5q1" value="c" data-store="w5-exam-q1"><span><b>c)</b> dar señales de inversión</span></label><label class="opt"><input type="radio" name="w5q1" value="d" data-store="w5-exam-q1"><span><b>d)</b> gestionar cuentas de terceros</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> La edición mínima recomendada en el curso para la etapa 3 es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q2" value="a" data-store="w5-exam-q2"><span><b>a)</b> Professional</span></label><label class="opt"><input type="radio" name="w5q2" value="b" data-store="w5-exam-q2"><span><b>b)</b> Starter</span></label><label class="opt"><input type="radio" name="w5q2" value="c" data-store="w5-exam-q2"><span><b>c)</b> cualquiera</span></label><label class="opt"><input type="radio" name="w5q2" value="d" data-store="w5-exam-q2"><span><b>d)</b> Ultimate</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> La RAM mínima publicada para SQX es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q3" value="a" data-store="w5-exam-q3"><span><b>a)</b> 2 GB</span></label><label class="opt"><input type="radio" name="w5q3" value="b" data-store="w5-exam-q3"><span><b>b)</b> 4 GB</span></label><label class="opt"><input type="radio" name="w5q3" value="c" data-store="w5-exam-q3"><span><b>c)</b> 32 GB</span></label><label class="opt"><input type="radio" name="w5q3" value="d" data-store="w5-exam-q3"><span><b>d)</b> 8 GB</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> Un databank es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q4" value="a" data-store="w5-exam-q4"><span><b>a)</b> una copia de seguridad</span></label><label class="opt"><input type="radio" name="w5q4" value="b" data-store="w5-exam-q4"><span><b>b)</b> un archivo de datos de tick</span></label><label class="opt"><input type="radio" name="w5q4" value="c" data-store="w5-exam-q4"><span><b>c)</b> una tabla de estrategias con sus métricas</span></label><label class="opt"><input type="radio" name="w5q4" value="d" data-store="w5-exam-q4"><span><b>d)</b> una cuenta del broker</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> El módulo que genera estrategias nuevas es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q5" value="a" data-store="w5-exam-q5"><span><b>a)</b> el Retester</span></label><label class="opt"><input type="radio" name="w5q5" value="b" data-store="w5-exam-q5"><span><b>b)</b> el Builder</span></label><label class="opt"><input type="radio" name="w5q5" value="c" data-store="w5-exam-q5"><span><b>c)</b> el Data Manager</span></label><label class="opt"><input type="radio" name="w5q5" value="d" data-store="w5-exam-q5"><span><b>d)</b> el Optimizer</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> SQX suele generar estrategias a partir de datos…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q6" value="a" data-store="w5-exam-q6"><span><b>a)</b> M1</span></label><label class="opt"><input type="radio" name="w5q6" value="b" data-store="w5-exam-q6"><span><b>b)</b> mensuales</span></label><label class="opt"><input type="radio" name="w5q6" value="c" data-store="w5-exam-q6"><span><b>c)</b> semanales</span></label><label class="opt"><input type="radio" name="w5q6" value="d" data-store="w5-exam-q6"><span><b>d)</b> de noticias</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> En EUR/USD, el valor del punto de 1 lote es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q7" value="a" data-store="w5-exam-q7"><span><b>a)</b> 10 $</span></label><label class="opt"><input type="radio" name="w5q7" value="b" data-store="w5-exam-q7"><span><b>b)</b> 1 $</span></label><label class="opt"><input type="radio" name="w5q7" value="c" data-store="w5-exam-q7"><span><b>c)</b> 100.000 $</span></label><label class="opt"><input type="radio" name="w5q7" value="d" data-store="w5-exam-q7"><span><b>d)</b> 0,0001 $</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> En un broker de 5 decimales, el paso del tick de EUR/USD es…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q8" value="a" data-store="w5-exam-q8"><span><b>a)</b> 0,0001</span></label><label class="opt"><input type="radio" name="w5q8" value="b" data-store="w5-exam-q8"><span><b>b)</b> 0,00001</span></label><label class="opt"><input type="radio" name="w5q8" value="c" data-store="w5-exam-q8"><span><b>c)</b> 0,01</span></label><label class="opt"><input type="radio" name="w5q8" value="d" data-store="w5-exam-q8"><span><b>d)</b> 1</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Los costes conviene configurarlos…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q9" value="a" data-store="w5-exam-q9"><span><b>a)</b> algo por encima de los reales, antes de generar</span></label><label class="opt"><input type="radio" name="w5q9" value="b" data-store="w5-exam-q9"><span><b>b)</b> a cero para ver el potencial</span></label><label class="opt"><input type="radio" name="w5q9" value="c" data-store="w5-exam-q9"><span><b>c)</b> después de elegir la estrategia</span></label><label class="opt"><input type="radio" name="w5q9" value="d" data-store="w5-exam-q9"><span><b>d)</b> con el spread mínimo anunciado</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> Muchos brokers de MetaTrader usan como zona horaria…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q10" value="a" data-store="w5-exam-q10"><span><b>a)</b> GMT+0 todo el año</span></label><label class="opt"><input type="radio" name="w5q10" value="b" data-store="w5-exam-q10"><span><b>b)</b> la hora de Madrid</span></label><label class="opt"><input type="radio" name="w5q10" value="c" data-store="w5-exam-q10"><span><b>c)</b> GMT+2 en invierno y GMT+3 en verano</span></label><label class="opt"><input type="radio" name="w5q10" value="d" data-store="w5-exam-q10"><span><b>d)</b> GMT−5</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> Con datos en GMT+0, una semana de Forex tiene…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q11" value="a" data-store="w5-exam-q11"><span><b>a)</b> 5 velas diarias</span></label><label class="opt"><input type="radio" name="w5q11" value="b" data-store="w5-exam-q11"><span><b>b)</b> 6 velas diarias</span></label><label class="opt"><input type="radio" name="w5q11" value="c" data-store="w5-exam-q11"><span><b>c)</b> 7 velas diarias</span></label><label class="opt"><input type="radio" name="w5q11" value="d" data-store="w5-exam-q11"><span><b>d)</b> 4 velas diarias</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> Si la zona horaria de los datos no coincide con la del broker…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q12" value="a" data-store="w5-exam-q12"><span><b>a)</b> no pasa nada</span></label><label class="opt"><input type="radio" name="w5q12" value="b" data-store="w5-exam-q12"><span><b>b)</b> solo cambian los costes</span></label><label class="opt"><input type="radio" name="w5q12" value="c" data-store="w5-exam-q12"><span><b>c)</b> el programa lo corrige solo</span></label><label class="opt"><input type="radio" name="w5q12" value="d" data-store="w5-exam-q12"><span><b>d)</b> cambian las velas diarias y las reglas horarias</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Una sesión en SQX define…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q13" value="a" data-store="w5-exam-q13"><span><b>a)</b> las horas y días en que hay mercado</span></label><label class="opt"><input type="radio" name="w5q13" value="b" data-store="w5-exam-q13"><span><b>b)</b> el capital de la cuenta</span></label><label class="opt"><input type="radio" name="w5q13" value="c" data-store="w5-exam-q13"><span><b>c)</b> el número de estrategias</span></label><label class="opt"><input type="radio" name="w5q13" value="d" data-store="w5-exam-q13"><span><b>d)</b> el spread</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> Una semana normal de Forex tiene aproximadamente…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q14" value="a" data-store="w5-exam-q14"><span><b>a)</b> 720 velas M1</span></label><label class="opt"><input type="radio" name="w5q14" value="b" data-store="w5-exam-q14"><span><b>b)</b> 7.200 velas M1</span></label><label class="opt"><input type="radio" name="w5q14" value="c" data-store="w5-exam-q14"><span><b>c)</b> 72.000 velas M1</span></label><label class="opt"><input type="radio" name="w5q14" value="d" data-store="w5-exam-q14"><span><b>d)</b> 1.440 velas M1</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Al importar un CSV, un error en el formato de fecha…</legend><div class="opts"><label class="opt"><input type="radio" name="w5q15" value="a" data-store="w5-exam-q15"><span><b>a)</b> siempre da un aviso</span></label><label class="opt"><input type="radio" name="w5q15" value="b" data-store="w5-exam-q15"><span><b>b)</b> no afecta</span></label><label class="opt"><input type="radio" name="w5q15" value="c" data-store="w5-exam-q15"><span><b>c)</b> puede estropear los datos sin aviso</span></label><label class="opt"><input type="radio" name="w5q15" value="d" data-store="w5-exam-q15"><span><b>d)</b> solo afecta a los gráficos</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Una operación de 0,50 lotes de EUR/USD paga 1,1 pips de spread, una comisión de 3,50 $ por lote y lado (abrir y cerrar) y 0,4 pips de deslizamiento total. Calcula el coste total en dólares y en pips, y qué parte del beneficio se lleva si la operación gana 15 pips.</p>
+<p><strong>B2.</strong> Tu broker está en GMT+2 (invierno). Tus datos están en GMT+0. a) Una regla dice «entrar a las 08:00» con los datos sin convertir: ¿a qué hora del servidor entraría en real? b) ¿Y a qué hora de Madrid (GMT+1)? c) ¿Cuántas velas diarias por semana verías en cada caso?</p>
+<p><strong>B3.</strong> Un instrumento cotiza en dólares con lotes de 10 unidades (como algunos CFD sobre índices). a) ¿Cuál es su valor del punto? b) ¿Cuánto gana 1 lote si el precio sube 35,5 puntos? c) ¿Y 0,3 lotes?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: un compañero ha generado una estrategia diaria de EUR/USD con datos en GMT+0, con el spread a cero, y dice que tiene un profit factor de 2,4. Explica qué problemas tiene su configuración y qué pasos debería seguir para que el resultado sea fiable.</p><div class="answer"><label for="w5-examen-5">Tus respuestas a las partes B y C</label><textarea id="w5-examen-5" data-store="w5-examen-5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w5-done-examen-5"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
