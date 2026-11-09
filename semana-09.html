@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 9 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="9">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><span class="wk locked" title="En producción"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S12</span><span class="t">Robustez y selección</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><span class="wk locked" title="En producción"><span class="n">S13</span><span class="t">Construcción de carteras</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span><span class="lk">en producción</span></span></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><span class="wk locked" title="En producción"><span class="n">S17</span><span class="t">Investigación especializada</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span><span class="lk">en producción</span></span><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-09.svg)"><img src="img/cover-09.svg" alt=""></div><p class="eyebrow">SEMANA 09 · ETAPA 3 · INVESTIGACIÓN Y VALIDACIÓN</p><h1>Investigación de mercado y calidad de datos</h1><p class="meta">12 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="9" data-total="12"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w9-done-presentacion"></span>Presentación</a><a class="tab" href="#s09-l1" data-tab="s09-l1" title="El ciclo de investigación en ocho pasos"><span class="dot" data-dot="w9-done-s09-l1"></span>L1</a><a class="tab" href="#s09-l2" data-tab="s09-l2" title="Datos tick, OHLC, bid y ask; continuidad, huecos y duplicados"><span class="dot" data-dot="w9-done-s09-l2"></span>L2</a><a class="tab" href="#s09-l3" data-tab="s09-l3" title="Diferencias entre proveedores; licencias y derechos de uso"><span class="dot" data-dot="w9-done-s09-l3"></span>L3</a><a class="tab" href="#s09-l4" data-tab="s09-l4" title="Acciones: ajustes por dividendos y splits, sesgo de supervivencia"><span class="dot" data-dot="w9-done-s09-l4"></span>L4</a><a class="tab" href="#s09-l5" data-tab="s09-l5" title="Futuros e índices: rollovers y contratos continuos"><span class="dot" data-dot="w9-done-s09-l5"></span>L5</a><a class="tab" href="#s09-l6" data-tab="s09-l6" title="Criptomonedas: diferencias entre exchanges y calidad del dato"><span class="dot" data-dot="w9-done-s09-l6"></span>L6</a><a class="tab" href="#s09-l7" data-tab="s09-l7" title="Taller: informe de calidad de datos"><span class="dot" data-dot="w9-done-s09-l7"></span>L7</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w9-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w9-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-09-y-entrega-practica" data-tab="investigacion-i-09-y-entrega-practica" title="Investigación I-09 y entrega práctica"><span class="dot" data-dot="w9-done-investigacion-i-09-y-entrega-practica"></span>Investigación I-09 y entrega práctica</a><a class="tab" href="#examen-9" data-tab="examen-9" title="Examen de la semana 9 · Variante A"><span class="dot" data-dot="w9-done-examen-9"></span>Examen  9</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 09 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s09-l1"><span class="dot" data-dot="w9-done-s09-l1"></span><span class="tk">Lección L1</span><b>El ciclo de investigación en ocho pasos</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l2"><span class="dot" data-dot="w9-done-s09-l2"></span><span class="tk">Lección L2</span><b>Datos tick, OHLC, bid y ask; continuidad, huecos y duplicados</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l3"><span class="dot" data-dot="w9-done-s09-l3"></span><span class="tk">Lección L3</span><b>Diferencias entre proveedores; licencias y derechos de uso</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l4"><span class="dot" data-dot="w9-done-s09-l4"></span><span class="tk">Lección L4</span><b>Acciones: ajustes por dividendos y splits, sesgo de supervivencia</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l5"><span class="dot" data-dot="w9-done-s09-l5"></span><span class="tk">Lección L5</span><b>Futuros e índices: rollovers y contratos continuos</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l6"><span class="dot" data-dot="w9-done-s09-l6"></span><span class="tk">Lección L6</span><b>Criptomonedas: diferencias entre exchanges y calidad del dato</b><span class="tm">→</span></a><a class="toc-i" href="#s09-l7"><span class="dot" data-dot="w9-done-s09-l7"></span><span class="tk">Lección L7</span><b>Taller: informe de calidad de datos</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w9-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w9-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-09-y-entrega-practica"><span class="dot" data-dot="w9-done-investigacion-i-09-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-09 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-9"><span class="dot" data-dot="w9-done-examen-9"></span><span class="tk">Evaluación</span><b>Examen de la semana 9 · Variante A</b><span class="tm">→</span></a></nav><p>Empieza la etapa 3, el corazón del curso. En la etapa 2 aprendiste a generar estrategias; en esta aprenderás a <strong>no creértelas</strong> hasta que superen un protocolo de validación serio. Esta primera semana trabajarás dos cimientos: el <strong>ciclo de investigación completo</strong> y la <strong>calidad de los datos</strong> de los cuatro mercados. Una investigación brillante con datos defectuosos es una investigación inútil, y cada mercado tiene sus trampas: ajustes en acciones, vencimientos en futuros, diferencias entre exchanges en criptomonedas.</p>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Aplicar el ciclo de investigación completo de ocho pasos.</li>
+<li>Detectar huecos, duplicados, picos y otros defectos en los datos.</li>
+<li>Comparar proveedores de datos y respetar sus licencias.</li>
+<li>Tratar los ajustes por dividendos y splits y evitar el sesgo de supervivencia.</li>
+<li>Construir y entender contratos continuos de futuros.</li>
+<li>Evaluar la calidad de los datos de criptomonedas.</li>
+<li>Elaborar un informe de calidad de datos.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Siete lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Revisión de datos de dos mercados e informe de calidad</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-09, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan de la semana 10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Qué necesitas</h4>
+<ul>
+<li>SQX y tus datos de EUR/USD.</li>
+<li>Datos de un segundo mercado: un índice (por ejemplo, el DAX o el S&amp;P 500 en CFD o futuro), una acción o Bitcoin.</li>
+<li>Tu hoja de cálculo.</li>
+</ul>
+<h4>Criterio para desbloquear la semana 10</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 9</li>
+<li>☐ Entrega práctica: informe de calidad de datos de dos mercados</li>
+<li>☐ Investigación I-09: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w9-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s09-l1" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L1</span><h2>El ciclo de investigación en ocho pasos</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El ciclo completo</h4>
+<p>Desde la semana 1 has practicado algunos pasos del ciclo. A partir de ahora lo aplicarás entero en cada investigación:</p>
+<figure class="fig"><a href="img/s09-ciclo.svg" target="_blank" rel="noopener"><img src="img/s09-ciclo.svg" alt="Figura 9.1 · El ciclo de investigación completo. Cada vuelta deja un registro en el cuaderno, aunque el resultado sea negativo." loading="lazy"></a><figcaption>Figura 9.1 · El ciclo de investigación completo. Cada vuelta deja un registro en el cuaderno, aunque el resultado sea negativo.</figcaption></figure>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Paso</th>
+<th>Qué haces</th>
+<th>Error que evita</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1. Hipótesis</td>
+<td>Escribir una afirmación concreta y comprobable, con su explicación</td>
+<td>Buscar sin saber qué buscas</td>
+</tr>
+<tr>
+<td>2. Fuentes</td>
+<td>Leer lo que ya se sabe y citarlo</td>
+<td>Reinventar lo conocido o ignorar lo refutado</td>
+</tr>
+<tr>
+<td>3. Datos</td>
+<td>Elegir y revisar los datos adecuados</td>
+<td>Conclusiones sobre datos defectuosos</td>
+</tr>
+<tr>
+<td>4. Diseño</td>
+<td>Fijar qué medirás, cómo y qué resultado confirmaría o refutaría la hipótesis</td>
+<td>Cambiar el criterio después de ver los resultados</td>
+</tr>
+<tr>
+<td>5. Generación</td>
+<td>Construir o generar las estrategias según el diseño</td>
+<td>Probar sin control</td>
+</tr>
+<tr>
+<td>6. Validación</td>
+<td>Aplicar el protocolo de robustez (semanas 10 a 12)</td>
+<td>Aceptar resultados por azar</td>
+</tr>
+<tr>
+<td>7. Comparación</td>
+<td>Comparar con alternativas y con un <em>benchmark</em></td>
+<td>Creer bueno lo que solo es normal</td>
+</tr>
+<tr>
+<td>8. Conclusiones</td>
+<td>Decidir: aceptar, rechazar o repetir; documentar limitaciones</td>
+<td>Olvidar lo aprendido</td>
+</tr>
+</tbody>
+</table></div>
+<aside class="callout key"><p><strong>Idea clave.</strong> Un resultado negativo bien documentado vale tanto como uno positivo: te ahorra repetir el mismo error y estrecha la búsqueda. Los investigadores profesionales descartan la gran mayoría de sus ideas.</p></aside>
+<h4>El registro de pruebas</h4>
+<p>Para combatir el sesgo de selección, anota <strong>todas</strong> las pruebas que haces, no solo las que salen bien: cuántos proyectos, cuántas variantes, cuántas estrategias miraste. Si probaste 50 variantes para encontrar una buena, la confianza que merece es mucho menor que si la primera ya funcionó. En la semana 10 usarás este número.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué el paso 4 debe hacerse antes del 5?</li>
+<li>¿Para qué sirve anotar las pruebas que fallan?</li>
+<li>Escribe una hipótesis completa (afirmación, explicación y criterio de refutación) sobre EUR/USD.</li>
+</ol><div class="answer"><label for="w9-s09-l1">Tus respuestas</label><textarea id="w9-s09-l1" data-store="w9-s09-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l1"> He terminado esta sección</label></section><section class="pane" id="s09-l2" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L2</span><h2>Datos tick, OHLC, bid y ask; continuidad, huecos y duplicados</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Qué precio guardan tus datos</h4>
+<ul>
+<li><strong>Bid, ask o medio:</strong> la mayoría de los datos de Forex son <strong>bid</strong>. Si tus datos son bid, las compras en el backtest se ejecutan con el bid más el spread que configures. Si mezclas datos bid con un spread que ya está incluido, contarás el coste dos veces o ninguna.</li>
+<li><strong>Último negociado:</strong> en acciones y futuros, las velas suelen construirse con los precios de las operaciones realizadas.</li>
+<li><strong>OHLC frente a tick:</strong> con velas OHLC, el programa no sabe en qué orden se tocaron el máximo y el mínimo dentro de la vela. Si una vela toca a la vez tu stop y tu objetivo, el resultado depende de una suposición. Con datos más finos (M1 o tick), la suposición importa mucho menos.</li>
+</ul>
+<figure class="fig"><a href="img/s09-intravela.svg" target="_blank" rel="noopener"><img src="img/s09-intravela.svg" alt="Figura 9.2 · Dentro de una vela H1, el precio pudo tocar primero el stop o primero el objetivo. Solo los datos más finos lo resuelven." loading="lazy"></a><figcaption>Figura 9.2 · Dentro de una vela H1, el precio pudo tocar primero el stop o primero el objetivo. Solo los datos más finos lo resuelven.</figcaption></figure>
+<h4>Los defectos más comunes</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Defecto</th>
+<th>Cómo se ve</th>
+<th>Cómo detectarlo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hueco (<em>gap</em> de datos)</td>
+<td>Faltan velas o días enteros</td>
+<td>Contar velas por día y buscar días con muchas menos</td>
+</tr>
+<tr>
+<td>Duplicado</td>
+<td>La misma vela dos veces</td>
+<td>Buscar fechas y horas repetidas</td>
+</tr>
+<tr>
+<td>Pico (<em>spike</em>)</td>
+<td>Un precio absurdo durante una vela</td>
+<td>Buscar velas con rango mayor que N veces el ATR</td>
+</tr>
+<tr>
+<td>Velas planas</td>
+<td>Apertura = máximo = mínimo = cierre muchas veces seguidas</td>
+<td>Contar velas sin rango en horas de mercado</td>
+</tr>
+<tr>
+<td>Desplazamiento horario</td>
+<td>Todo el patrón movido una hora en parte del año</td>
+<td>Revisar el horario de verano y comparar con el broker</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s09-defectos.svg" target="_blank" rel="noopener"><img src="img/s09-defectos.svg" alt="Figura 9.3 · Tres defectos de datos: un hueco, un pico y velas planas. Datos simulados." loading="lazy"></a><figcaption>Figura 9.3 · Tres defectos de datos: un hueco, un pico y velas planas. Datos simulados.</figcaption></figure>
+<aside class="callout warn"><p><strong>Atención.</strong> Un pico en los datos puede crear una operación ganadora espectacular que no existió. El Builder la encontrará y construirá estrategias que dependan de ella. Revisa siempre las mejores operaciones de una estrategia: si coinciden con un pico, desconfía.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué importa saber si tus datos son bid o ask?</li>
+<li>¿Qué problema tienen los datos OHLC con los stops y objetivos dentro de una vela?</li>
+<li>¿Cómo detectarías un pico en la hoja de cálculo?</li>
+</ol><div class="answer"><label for="w9-s09-l2">Tus respuestas</label><textarea id="w9-s09-l2" data-store="w9-s09-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l2"> He terminado esta sección</label></section><section class="pane" id="s09-l3" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L3</span><h2>Diferencias entre proveedores; licencias y derechos de uso</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>No existe «el precio»</h4>
+<p>En Forex no hay un mercado central (semana 1): cada proveedor construye sus precios con las cotizaciones de sus fuentes. Por eso, dos proveedores dan velas ligeramente distintas. En acciones y futuros hay un mercado oficial, pero también hay diferencias según qué operaciones se incluyen, cómo se tratan los ajustes y la hora de cierre.</p>
+<h4>Cómo comparar proveedores</h4>
+<ol>
+<li>Elige un mismo periodo y una temporalidad (H1 o D1).</li>
+<li>Compara apertura, máximo, mínimo y cierre vela a vela, en pips o en porcentaje.</li>
+<li>Compara el número de velas por día y los huecos.</li>
+<li>Haz un backtest de la misma estrategia con ambos: si el resultado cambia mucho, <strong>la estrategia depende de detalles de los datos</strong> y no es robusta (lo usarás en la semana 12).</li>
+</ol>
+<h4>Licencias y derechos de uso</h4>
+<p>Los datos tienen dueño. Antes de usarlos:</p>
+<ul>
+<li><strong>Lee las condiciones de uso</strong> del proveedor: muchos permiten el uso personal y prohíben redistribuir los datos.</li>
+<li><strong>No compartas archivos de datos</strong> con otras personas si la licencia no lo permite, ni siquiera con compañeros del curso.</li>
+<li><strong>Para un uso comercial</strong> (por ejemplo, vender señales o gestionar dinero de otros), la licencia suele ser distinta y de pago.</li>
+</ul>
+<aside class="callout warn"><p><strong>Error típico.</strong> Descargar datos de una web cualquiera y usarlos sin comprobar su procedencia ni su licencia. Si no sabes de dónde vienen, no sabes qué contienen.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué dos proveedores de Forex dan velas distintas?</li>
+<li>¿Qué indica que el resultado de una estrategia cambie mucho al cambiar de proveedor?</li>
+<li>¿Qué debes comprobar antes de compartir un archivo de datos?</li>
+</ol><div class="answer"><label for="w9-s09-l3">Tus respuestas</label><textarea id="w9-s09-l3" data-store="w9-s09-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l3"> He terminado esta sección</label></section><section class="pane" id="s09-l4" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L4</span><h2>Acciones: ajustes por dividendos y splits, sesgo de supervivencia</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Precios ajustados</h4>
+<p>En la semana 2 viste que un split o un dividendo hacen saltar el precio sin que cambie el valor de tu inversión. Para investigar, hay que usar <strong>precios ajustados</strong>: el proveedor corrige los precios anteriores al evento para que la serie sea continua.</p>
+<ul>
+<li><strong>Ajuste por splits:</strong> imprescindible siempre.</li>
+<li><strong>Ajuste por dividendos:</strong> necesario si quieres medir la rentabilidad total. Si tu estrategia opera CFD que pagan o cobran el dividendo como ajuste, piensa qué serie representa mejor lo que cobrarías.</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Con precios ajustados, los precios antiguos no son los que se veían en su momento. Una regla como «comprar si el precio está por debajo de 10 $» da resultados distintos con precios ajustados y sin ajustar. Usa reglas relativas (porcentajes, medias, ATR), no niveles absolutos.</p></aside>
+<h4>El sesgo de supervivencia</h4>
+<p>Si pruebas una estrategia sobre las empresas que <strong>hoy</strong> forman el S&amp;P 500, solo pruebas sobre las ganadoras: las que quebraron, fueron compradas o salieron del índice no están. El resultado sale mejor de lo que habría sido. Para evitarlo, necesitas datos <strong>libres de sesgo de supervivencia</strong>: con las empresas que estaban en el índice en cada fecha, incluidas las que ya no existen.</p>
+<figure class="fig"><a href="img/s09-supervivencia.svg" target="_blank" rel="noopener"><img src="img/s09-supervivencia.svg" alt="Figura 9.4 · El sesgo de supervivencia: probar solo con las empresas que siguen hoy en el índice deja fuera a las que fracasaron." loading="lazy"></a><figcaption>Figura 9.4 · El sesgo de supervivencia: probar solo con las empresas que siguen hoy en el índice deja fuera a las que fracasaron.</figcaption></figure>
+<p>Este tipo de datos suele ser de pago. Si no los tienes, documenta la limitación y sé prudente con las conclusiones.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué no debes usar niveles de precio absolutos con precios ajustados?</li>
+<li>Explica el sesgo de supervivencia con un ejemplo.</li>
+<li>¿Qué datos necesitas para evitarlo?</li>
+</ol><div class="answer"><label for="w9-s09-l4">Tus respuestas</label><textarea id="w9-s09-l4" data-store="w9-s09-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l4"> He terminado esta sección</label></section><section class="pane" id="s09-l5" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L5</span><h2>Futuros e índices: rollovers y contratos continuos</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El problema del vencimiento</h4>
+<p>Un futuro vence (semana 2). Para hacer un backtest de varios años, necesitas unir los contratos sucesivos en una serie <strong>continua</strong>. En el momento del cambio (el <strong>rollover</strong>), el contrato nuevo cotiza a un precio distinto del viejo, por los intereses y los dividendos esperados. Si unes las series sin más, aparece un salto falso.</p>
+<h4>Tres formas de construir la serie</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Método</th>
+<th>Cómo funciona</th>
+<th>Ventaja</th>
+<th>Inconveniente</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Sin ajustar</td>
+<td>Se encadenan los precios tal cual</td>
+<td>Precios reales</td>
+<td>Saltos falsos en cada rollover</td>
+</tr>
+<tr>
+<td>Ajuste por diferencia (<em>back-adjusted</em>, «método Panamá»)</td>
+<td>Se suma o resta el salto a todos los precios anteriores</td>
+<td>Sin saltos; las variaciones en puntos son reales</td>
+<td>Los precios antiguos no son reales y pueden ser negativos</td>
+</tr>
+<tr>
+<td>Ajuste proporcional (<em>ratio-adjusted</em>)</td>
+<td>Se multiplican los precios anteriores por el cociente</td>
+<td>Sin saltos; las variaciones en porcentaje son reales</td>
+<td>Las variaciones en puntos de los precios antiguos cambian</td>
+</tr>
+</tbody>
+</table></div>
+<figure class="fig"><a href="img/s09-rollover.svg" target="_blank" rel="noopener"><img src="img/s09-rollover.svg" alt="Figura 9.5 · Contrato continuo: sin ajustar aparece un salto falso en el rollover; con ajuste por diferencia, la serie es continua. Datos ilustrativos." loading="lazy"></a><figcaption>Figura 9.5 · Contrato continuo: sin ajustar aparece un salto falso en el rollover; con ajuste por diferencia, la serie es continua. Datos ilustrativos.</figcaption></figure>
+<h4>Cuándo hacer el rollover</h4>
+<p>Los proveedores cambian de contrato con reglas distintas: un número fijo de días antes del vencimiento, o cuando el volumen o el interés abierto del contrato siguiente supera al actual. Anota qué regla usa tu serie.</p>
+<h4>Los CFD sobre índices</h4>
+<p>Muchos CFD sobre índices replican el futuro o el contado con su propio ajuste. Si generas con datos del futuro y operas un CFD (o al revés), comprueba que se parecen: niveles, horarios y costes de financiación.</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué aparece un salto en el rollover?</li>
+<li>¿Qué método de ajuste conserva las variaciones en puntos? ¿Y en porcentaje?</li>
+<li>¿Qué comprobarías antes de operar un CFD con una estrategia generada con datos del futuro?</li>
+</ol><div class="answer"><label for="w9-s09-l5">Tus respuestas</label><textarea id="w9-s09-l5" data-store="w9-s09-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l5"> He terminado esta sección</label></section><section class="pane" id="s09-l6" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L6</span><h2>Criptomonedas: diferencias entre exchanges y calidad del dato</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Muchos mercados para un mismo activo</h4>
+<p>Bitcoin cotiza en decenas de exchanges, cada uno con su libro de órdenes. Los precios se parecen, pero no son iguales, sobre todo en momentos de pánico (semana 2).</p>
+<h4>Problemas típicos</h4>
+<ul>
+<li><strong>Mechas extremas:</strong> en un exchange con poca liquidez, una orden grande puede producir una mecha enorme que no existió en los demás.</li>
+<li><strong>Caídas del exchange:</strong> periodos sin datos cuando el exchange se colapsa por exceso de tráfico, justo en los momentos más volátiles.</li>
+<li><strong>Pares contra <em>stablecoins</em>:</strong> BTC/USDT no es exactamente BTC/USD; si la <em>stablecoin</em> pierde su paridad, el precio cambia sin que Bitcoin se mueva.</li>
+<li><strong>Historia corta y cambiante:</strong> el mercado de hace ocho años no se parece al actual en liquidez, participantes ni regulación.</li>
+</ul>
+<figure class="fig"><a href="img/s09-cripto.svg" target="_blank" rel="noopener"><img src="img/s09-cripto.svg" alt="Figura 9.6 · El mismo minuto en tres exchanges: uno con poca liquidez muestra una mecha que no existió en los demás. Datos simulados." loading="lazy"></a><figcaption>Figura 9.6 · El mismo minuto en tres exchanges: uno con poca liquidez muestra una mecha que no existió en los demás. Datos simulados.</figcaption></figure>
+<aside class="callout tip"><p><strong>Consejo.</strong> Para investigar, usa los datos del exchange o del broker en el que vas a operar, o un índice compuesto de varios exchanges. Y elimina o marca las mechas que no aparecen en los demás.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué una mecha en un exchange pequeño puede engañar al Builder?</li>
+<li>¿Qué diferencia hay entre BTC/USD y BTC/USDT?</li>
+<li>¿Qué datos usarías para investigar una estrategia de Bitcoin que operarás en un CFD?</li>
+</ol><div class="answer"><label for="w9-s09-l6">Tus respuestas</label><textarea id="w9-s09-l6" data-store="w9-s09-l6" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l6"> He terminado esta sección</label></section><section class="pane" id="s09-l7" hidden><header class="pane-head"><span class="kicker">Semana 09 · Lección L7</span><h2>Taller: informe de calidad de datos</h2></header><div class="read"><p><em>Formato: taller guiado de 60 minutos · Práctica: 6–8 horas</em></p>
+<p>Elaborarás un <strong>informe de calidad</strong> de dos conjuntos de datos: tu EUR/USD y un segundo mercado (un índice, una acción o Bitcoin). Ese informe será el anexo de datos de tu proyecto final.</p>
+<h4>Paso 1 · Ficha de cada conjunto</h4>
+<p>Proveedor, licencia, tipo de precio (bid, ask, último), zona horaria, sesión, rango de fechas, temporalidad, número de velas y, si aplica, método de ajuste o de rollover.</p>
+<h4>Paso 2 · Pruebas de calidad</h4>
+<p>Exporta los datos H1 a tu hoja (o usa los resúmenes de SQX) y calcula:</p>
+<ol>
+<li><strong>Velas por día:</strong> número de velas de cada día; marca los días con menos del 80 % de lo normal.</li>
+<li><strong>Duplicados:</strong> fechas y horas repetidas.</li>
+<li><strong>Picos:</strong> velas con un rango mayor que 5 veces el ATR(14).</li>
+<li><strong>Velas planas:</strong> velas con rango cero en horas de mercado.</li>
+<li><strong>Fines de semana y festivos:</strong> que no haya velas cuando el mercado está cerrado (o que sí las haya en cripto).</li>
+<li><strong>Horario de verano:</strong> que la primera vela de la semana empiece a la misma hora del servidor todo el año.</li>
+</ol>
+<h4>Paso 3 · Comparación con otra fuente</h4>
+<p>Compara 20 velas D1 de cada conjunto con otra fuente (tu broker u otro proveedor). Calcula la diferencia media en porcentaje.</p>
+<h4>Paso 4 · Veredicto</h4>
+<p>Para cada conjunto: <strong>apto</strong>, <strong>apto con limitaciones</strong> (cuáles) o <strong>no apto</strong>. Explica qué harías con los defectos encontrados (corregir, eliminar el periodo o cambiar de fuente).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuántos defectos encontraste en cada conjunto?</li>
+<li>¿Algún defecto podría haber cambiado el resultado de una estrategia?</li>
+<li>¿Qué conjunto usarías para tu proyecto final?</li>
+</ol><div class="answer"><label for="w9-s09-l7">Tus respuestas</label><textarea id="w9-s09-l7" data-store="w9-s09-l7" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-s09-l7"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 09 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ajuste por diferencia</td>
+<td>Back adjustment</td>
+<td>Corrección de un contrato continuo sumando o restando el salto del rollover</td>
+</tr>
+<tr>
+<td>Ajuste proporcional</td>
+<td>Ratio adjustment</td>
+<td>Corrección de un contrato continuo multiplicando por el cociente del rollover</td>
+</tr>
+<tr>
+<td>Benchmark</td>
+<td>Benchmark</td>
+<td>Referencia con la que se compara un resultado</td>
+</tr>
+<tr>
+<td>Contrato continuo</td>
+<td>Continuous contract</td>
+<td>Serie que une contratos de futuros sucesivos</td>
+</tr>
+<tr>
+<td>Datos libres de supervivencia</td>
+<td>Survivorship-free data</td>
+<td>Datos que incluyen los activos que dejaron de existir</td>
+</tr>
+<tr>
+<td>Duplicado</td>
+<td>Duplicate</td>
+<td>Registro repetido en los datos</td>
+</tr>
+<tr>
+<td>Hueco de datos</td>
+<td>Data gap</td>
+<td>Periodo en el que faltan datos</td>
+</tr>
+<tr>
+<td>Interés abierto</td>
+<td>Open interest</td>
+<td>Número de contratos de futuros abiertos</td>
+</tr>
+<tr>
+<td>Licencia de datos</td>
+<td>Data license</td>
+<td>Condiciones de uso de unos datos</td>
+</tr>
+<tr>
+<td>Pico</td>
+<td>Spike</td>
+<td>Precio anómalo durante un instante o una vela</td>
+</tr>
+<tr>
+<td>Precio ajustado</td>
+<td>Adjusted price</td>
+<td>Precio corregido por splits, dividendos u otros eventos</td>
+</tr>
+<tr>
+<td>Registro de pruebas</td>
+<td>Test log</td>
+<td>Lista de todas las pruebas realizadas, incluidas las fallidas</td>
+</tr>
+<tr>
+<td>Stablecoin</td>
+<td>Stablecoin</td>
+<td>Criptomoneda diseñada para mantener la paridad con una divisa</td>
+</tr>
+<tr>
+<td>Vela plana</td>
+<td>Flat bar</td>
+<td>Vela sin rango: apertura, máximo, mínimo y cierre iguales</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w9-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 09 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Hipótesis completa.</strong> Escribe dos hipótesis completas (afirmación, explicación y criterio de refutación) para el segundo mercado que hayas elegido.</p>
+<p><strong>E2 · Bid y ask.</strong> Tus datos son bid y configuras 1 pip de spread. Una estrategia compra a la apertura de una vela que abre en 1,08500. ¿A qué precio entra en el backtest? ¿Y si vendiera?</p>
+<p><strong>E3 · Dentro de la vela.</strong> Una vela H1 tiene apertura 1,0850, máximo 1,0880 y mínimo 1,0825. Tienes una compra a 1,0850 con stop en 1,0830 y objetivo en 1,0875. ¿Qué resultados son posibles? ¿Qué datos necesitas para saberlo?</p>
+<p><strong>E4 · Picos.</strong> Diseña las fórmulas de hoja de cálculo para marcar las velas cuyo rango supere 5 veces el ATR(14).</p>
+<p><strong>E5 · Precios ajustados.</strong> Una acción cotizaba a 200 $ e hizo un split 4 por 1. En la serie ajustada, ¿a qué precio aparece una vela anterior que cerró a 180 $? ¿Qué pasaría con la regla «comprar si el precio &lt; 100 $»?</p>
+<p><strong>E6 · Supervivencia.</strong> Busca un ejemplo real de empresa que saliera del S&amp;P 500 o del IBEX 35 por quiebra o mala evolución. Explica cómo afectaría su ausencia a un backtest.</p>
+<p><strong>E7 · Rollover.</strong> El contrato viejo cierra en 5.000 puntos y el nuevo cotiza a 5.040 el mismo día. Construye la serie ajustada por diferencia y por proporción para un precio anterior de 4.800.</p>
+<p><strong>E8 · Licencia.</strong> Busca las condiciones de uso de tu proveedor de datos principal. ¿Permiten la redistribución? ¿Y el uso comercial? Cita el texto relevante con la fecha de consulta.</p>
+<p><strong>E9 · Cripto.</strong> Compara el máximo y el mínimo diarios de Bitcoin de un mismo día en dos exchanges o fuentes distintas. Calcula la diferencia en porcentaje.</p>
+<p><strong>E10 · Registro de pruebas.</strong> Reconstruye tu registro de pruebas de las semanas 6 a 8: cuántos proyectos, cuántas variantes y cuántas estrategias examinaste.</p><div class="answer"><label for="w9-ejercicios-obligatorios">Tus respuestas</label><textarea id="w9-ejercicios-obligatorios" data-store="w9-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-09-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 09 · Sección</span><h2>Investigación I-09 y entrega práctica</h2></header><div class="read"><h3>Investigación I-09 · ¿Cambian mis estrategias con otro proveedor de datos?</h3>
+<p>Esta semana aplicas <strong>los ocho pasos</strong>. El paso 6 (validación) será sencillo: la comparación entre proveedores es en sí una prueba de robustez.</p>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Las dos estrategias propias de la semana 8 mantienen un profit factor dentro de un ±15 % al probarlas con datos de mi broker en lugar de los del proveedor gratuito».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Busca y cita al menos una fuente sobre diferencias entre proveedores de datos y su efecto en los backtests.</p>
+<p><strong>Paso 3 · Datos.</strong> Dos conjuntos de EUR/USD del mismo periodo: los de SQX y los de tu broker, ambos en la zona horaria del broker. Revisa ambos con el taller.</p>
+<p><strong>Paso 4 · Diseño.</strong> Define el periodo común, las estrategias, las métricas y la tolerancia aceptable antes de probar.</p>
+<p><strong>Paso 5 · Generación.</strong> No generas nada nuevo: usas las estrategias de la semana 8.</p>
+<p><strong>Paso 6 · Validación.</strong> Prueba cada estrategia con ambos conjuntos en el Retester con la misma configuración.</p>
+<p><strong>Paso 7 · Comparación.</strong> Tabla con las métricas en cada conjunto y su diferencia en porcentaje.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Se confirma? Si alguna estrategia cambia mucho, ¿qué parte de sus reglas crees que depende de los datos?</p>
+<h3>Entrega práctica · Informe de calidad de datos</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S09_ENT</code></td>
+<td>Informe de calidad de los dos conjuntos: fichas, resultados de las seis pruebas, comparación con otra fuente y veredicto</td>
+</tr>
+<tr>
+<td><code>CODIGO_S09_HOJA</code></td>
+<td>Hoja con las pruebas de calidad y sus fórmulas</td>
+</tr>
+<tr>
+<td><code>CODIGO_S09_INV</code></td>
+<td>Investigación I-09 con los ocho pasos</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que las pruebas se apliquen con fórmulas, que los defectos se documenten con ejemplos concretos (fecha y hora) y que el veredicto sea coherente con lo encontrado. Un informe sin pruebas cuantitativas queda como NO EVALUABLE.</p><div class="answer"><label for="w9-investigacion-i-09-y-entrega-practica">Tus respuestas</label><textarea id="w9-investigacion-i-09-y-entrega-practica" data-store="w9-investigacion-i-09-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-investigacion-i-09-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-9" hidden><header class="pane-head"><span class="kicker">Semana 09 · Evaluación</span><h2>Examen de la semana 9 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El paso del ciclo que evita cambiar el criterio tras ver los resultados es…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q1" value="a" data-store="w9-exam-q1"><span><b>a)</b> la hipótesis</span></label><label class="opt"><input type="radio" name="w9q1" value="b" data-store="w9-exam-q1"><span><b>b)</b> las fuentes</span></label><label class="opt"><input type="radio" name="w9q1" value="c" data-store="w9-exam-q1"><span><b>c)</b> el diseño del experimento</span></label><label class="opt"><input type="radio" name="w9q1" value="d" data-store="w9-exam-q1"><span><b>d)</b> la generación</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Un resultado negativo bien documentado…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q2" value="a" data-store="w9-exam-q2"><span><b>a)</b> no sirve para nada</span></label><label class="opt"><input type="radio" name="w9q2" value="b" data-store="w9-exam-q2"><span><b>b)</b> tiene valor porque evita repetir errores</span></label><label class="opt"><input type="radio" name="w9q2" value="c" data-store="w9-exam-q2"><span><b>c)</b> se debe borrar</span></label><label class="opt"><input type="radio" name="w9q2" value="d" data-store="w9-exam-q2"><span><b>d)</b> indica que el método es malo</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> El registro de pruebas sirve sobre todo para…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q3" value="a" data-store="w9-exam-q3"><span><b>a)</b> medir el sesgo de selección</span></label><label class="opt"><input type="radio" name="w9q3" value="b" data-store="w9-exam-q3"><span><b>b)</b> acelerar el Builder</span></label><label class="opt"><input type="radio" name="w9q3" value="c" data-store="w9-exam-q3"><span><b>c)</b> reducir los costes</span></label><label class="opt"><input type="radio" name="w9q3" value="d" data-store="w9-exam-q3"><span><b>d)</b> elegir el broker</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> La mayoría de los datos de Forex son…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q4" value="a" data-store="w9-exam-q4"><span><b>a)</b> precios del último negociado</span></label><label class="opt"><input type="radio" name="w9q4" value="b" data-store="w9-exam-q4"><span><b>b)</b> precios medios</span></label><label class="opt"><input type="radio" name="w9q4" value="c" data-store="w9-exam-q4"><span><b>c)</b> ask</span></label><label class="opt"><input type="radio" name="w9q4" value="d" data-store="w9-exam-q4"><span><b>d)</b> bid</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Con datos OHLC no se sabe…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q5" value="a" data-store="w9-exam-q5"><span><b>a)</b> el cierre</span></label><label class="opt"><input type="radio" name="w9q5" value="b" data-store="w9-exam-q5"><span><b>b)</b> el orden en que se tocaron el máximo y el mínimo</span></label><label class="opt"><input type="radio" name="w9q5" value="c" data-store="w9-exam-q5"><span><b>c)</b> la apertura</span></label><label class="opt"><input type="radio" name="w9q5" value="d" data-store="w9-exam-q5"><span><b>d)</b> la fecha</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> Un pico en los datos puede…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q6" value="a" data-store="w9-exam-q6"><span><b>a)</b> crear operaciones ganadoras que nunca existieron</span></label><label class="opt"><input type="radio" name="w9q6" value="b" data-store="w9-exam-q6"><span><b>b)</b> reducir el spread</span></label><label class="opt"><input type="radio" name="w9q6" value="c" data-store="w9-exam-q6"><span><b>c)</b> mejorar la robustez</span></label><label class="opt"><input type="radio" name="w9q6" value="d" data-store="w9-exam-q6"><span><b>d)</b> acelerar el backtest</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Si una estrategia cambia mucho al cambiar de proveedor, probablemente…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q7" value="a" data-store="w9-exam-q7"><span><b>a)</b> es muy robusta</span></label><label class="opt"><input type="radio" name="w9q7" value="b" data-store="w9-exam-q7"><span><b>b)</b> el broker es malo</span></label><label class="opt"><input type="radio" name="w9q7" value="c" data-store="w9-exam-q7"><span><b>c)</b> depende de detalles de los datos</span></label><label class="opt"><input type="radio" name="w9q7" value="d" data-store="w9-exam-q7"><span><b>d)</b> tiene pocos costes</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> Antes de compartir datos con otras personas debes…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q8" value="a" data-store="w9-exam-q8"><span><b>a)</b> comprimirlos</span></label><label class="opt"><input type="radio" name="w9q8" value="b" data-store="w9-exam-q8"><span><b>b)</b> comprobar que la licencia lo permite</span></label><label class="opt"><input type="radio" name="w9q8" value="c" data-store="w9-exam-q8"><span><b>c)</b> ajustarlos</span></label><label class="opt"><input type="radio" name="w9q8" value="d" data-store="w9-exam-q8"><span><b>d)</b> convertirlos a H1</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> Con precios ajustados conviene usar…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q9" value="a" data-store="w9-exam-q9"><span><b>a)</b> reglas relativas, no niveles absolutos</span></label><label class="opt"><input type="radio" name="w9q9" value="b" data-store="w9-exam-q9"><span><b>b)</b> niveles absolutos</span></label><label class="opt"><input type="radio" name="w9q9" value="c" data-store="w9-exam-q9"><span><b>c)</b> solo datos sin ajustar</span></label><label class="opt"><input type="radio" name="w9q9" value="d" data-store="w9-exam-q9"><span><b>d)</b> solo el cierre</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> El sesgo de supervivencia hace que el backtest salga…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q10" value="a" data-store="w9-exam-q10"><span><b>a)</b> peor de lo real</span></label><label class="opt"><input type="radio" name="w9q10" value="b" data-store="w9-exam-q10"><span><b>b)</b> igual</span></label><label class="opt"><input type="radio" name="w9q10" value="c" data-store="w9-exam-q10"><span><b>c)</b> mejor de lo real</span></label><label class="opt"><input type="radio" name="w9q10" value="d" data-store="w9-exam-q10"><span><b>d)</b> imposible de calcular</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> El salto en el rollover de un futuro se debe a…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q11" value="a" data-store="w9-exam-q11"><span><b>a)</b> un error del proveedor</span></label><label class="opt"><input type="radio" name="w9q11" value="b" data-store="w9-exam-q11"><span><b>b)</b> la diferencia de precio entre el contrato viejo y el nuevo</span></label><label class="opt"><input type="radio" name="w9q11" value="c" data-store="w9-exam-q11"><span><b>c)</b> los dividendos del día</span></label><label class="opt"><input type="radio" name="w9q11" value="d" data-store="w9-exam-q11"><span><b>d)</b> el cambio de hora</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> El ajuste por diferencia («método Panamá») conserva…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q12" value="a" data-store="w9-exam-q12"><span><b>a)</b> las variaciones en puntos</span></label><label class="opt"><input type="radio" name="w9q12" value="b" data-store="w9-exam-q12"><span><b>b)</b> las variaciones en porcentaje</span></label><label class="opt"><input type="radio" name="w9q12" value="c" data-store="w9-exam-q12"><span><b>c)</b> los precios reales antiguos</span></label><label class="opt"><input type="radio" name="w9q12" value="d" data-store="w9-exam-q12"><span><b>d)</b> el volumen</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> Una mecha extrema en un exchange de poca liquidez…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q13" value="a" data-store="w9-exam-q13"><span><b>a)</b> debe usarse siempre</span></label><label class="opt"><input type="radio" name="w9q13" value="b" data-store="w9-exam-q13"><span><b>b)</b> es igual en todos los exchanges</span></label><label class="opt"><input type="radio" name="w9q13" value="c" data-store="w9-exam-q13"><span><b>c)</b> mejora los datos</span></label><label class="opt"><input type="radio" name="w9q13" value="d" data-store="w9-exam-q13"><span><b>d)</b> puede no haber existido en los demás exchanges</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> BTC/USDT se diferencia de BTC/USD en que…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q14" value="a" data-store="w9-exam-q14"><span><b>a)</b> son idénticos</span></label><label class="opt"><input type="radio" name="w9q14" value="b" data-store="w9-exam-q14"><span><b>b)</b> depende también de que la stablecoin mantenga su paridad</span></label><label class="opt"><input type="radio" name="w9q14" value="c" data-store="w9-exam-q14"><span><b>c)</b> no tiene volumen</span></label><label class="opt"><input type="radio" name="w9q14" value="d" data-store="w9-exam-q14"><span><b>d)</b> solo cotiza de día</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Un informe de calidad de datos debe terminar con…</legend><div class="opts"><label class="opt"><input type="radio" name="w9q15" value="a" data-store="w9-exam-q15"><span><b>a)</b> la mejor estrategia</span></label><label class="opt"><input type="radio" name="w9q15" value="b" data-store="w9-exam-q15"><span><b>b)</b> el precio de los datos</span></label><label class="opt"><input type="radio" name="w9q15" value="c" data-store="w9-exam-q15"><span><b>c)</b> un veredicto: apto, apto con limitaciones o no apto</span></label><label class="opt"><input type="radio" name="w9q15" value="d" data-store="w9-exam-q15"><span><b>d)</b> el beneficio esperado</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Un conjunto de datos H1 de Forex debería tener 24 velas por día laborable. En un año de 260 días encuentras 5.950 velas, 12 días con menos de 19 velas, 30 velas duplicadas y 4 velas con rango mayor que 5 ATR. a) ¿Qué porcentaje de velas falta respecto a lo esperado (sin contar duplicados)? b) ¿Qué porcentaje de días tiene huecos importantes? c) ¿Lo calificarías como apto? Justifícalo.</p>
+<p><strong>B2.</strong> Un contrato de futuros viejo cierra en 18.200 puntos y el nuevo cotiza a 18.290 en el rollover. Un precio anterior es 17.500. Calcula ese precio en la serie: a) ajustada por diferencia; b) ajustada proporcionalmente. c) ¿Qué variación porcentual entre 17.500 y 18.200 conserva cada método?</p>
+<p><strong>B3.</strong> Pruebas una estrategia con dos proveedores: con el A obtiene un profit factor de 1,52 y 310 operaciones; con el B, 1,21 y 296 operaciones. a) Calcula la diferencia en profit factor en porcentaje respecto al A. b) Si tu tolerancia era del ±15 %, ¿pasa la prueba? c) ¿Qué investigarías a continuación?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: quieres investigar una estrategia de reversión en acciones del S&amp;P 500 con datos diarios gratuitos. Explica qué problemas de datos esperas encontrar y cómo los tratarías o documentarías.</p><div class="answer"><label for="w9-examen-9">Tus respuestas a las partes B y C</label><textarea id="w9-examen-9" data-store="w9-examen-9" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w9-done-examen-9"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
