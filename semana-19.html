@@ -1,0 +1,369 @@
+<!doctype html>
+<html lang="es"><head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Semana 19 · Trading Algorítmico Profesional</title>
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&family=JetBrains+Mono:wght@400;600&display=swap">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.css">
+<link rel="stylesheet" href="assets/style.css">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='7' fill='%230f766e'/%3E%3Cpath d='M5 23 L12 15 L17 19 L27 8' stroke='white' stroke-width='3' fill='none' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E">
+<script>try{var t=localStorage.getItem("academia-theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+</head><body data-active="19">
+<header class="top"><button class="menu" id="menuBtn" aria-label="Abrir el índice">Índice</button>
+<a class="brand" href="index.html"><span class="logo" aria-hidden="true"><svg viewBox="0 0 32 32"><rect width="32" height="32" rx="7" fill="currentColor"/><path d="M5 23 L12 15 L17 19 L27 8" stroke="#fff" stroke-width="3" fill="none" stroke-linecap="round" stroke-linejoin="round"/></svg></span><span><b>Trading Algorítmico Profesional</b><small>Aula de estudio · beta</small></span></a>
+<button class="theme" id="themeBtn" aria-label="Cambiar entre modo claro y oscuro"><svg viewBox="0 0 24 24" width="18" height="18"><circle cx="12" cy="12" r="9" fill="none" stroke="currentColor" stroke-width="2"/><path d="M12 3a9 9 0 0 1 0 18z" fill="currentColor"/></svg></button></header>
+<div class="app">
+<aside id="side"><nav aria-label="Semanas del curso"><div class="stage"><h3>Etapa 1 · Fundamentos</h3><a class="wk" href="semana-01.html" data-week="1"><span class="n">S01</span><span class="t">Cómo funcionan los mercados</span></a><a class="wk" href="semana-02.html" data-week="2"><span class="n">S02</span><span class="t">Cuatro mercados, órdenes y operativa</span></a><a class="wk" href="semana-03.html" data-week="3"><span class="n">S03</span><span class="t">Matemáticas y probabilidad</span></a><a class="wk" href="semana-04.html" data-week="4"><span class="n">S04</span><span class="t">Estadística y gestión del riesgo</span></a></div><div class="stage"><h3>Etapa 2 · StrategyQuant X</h3><a class="wk" href="semana-05.html" data-week="5"><span class="n">S05</span><span class="t">Entorno y datos</span></a><a class="wk" href="semana-06.html" data-week="6"><span class="n">S06</span><span class="t">Primeras estrategias</span></a><a class="wk" href="semana-07.html" data-week="7"><span class="n">S07</span><span class="t">Tendencia, ruptura y momentum</span></a><a class="wk" href="semana-08.html" data-week="8"><span class="n">S08</span><span class="t">Reversión, volatilidad e híbridas</span></a></div><div class="stage"><h3>Etapa 3 · Investigación y validación</h3><a class="wk" href="semana-09.html" data-week="9"><span class="n">S09</span><span class="t">Investigación y calidad de datos</span></a><a class="wk" href="semana-10.html" data-week="10"><span class="n">S10</span><span class="t">Backtesting y sobreoptimización</span></a><a class="wk" href="semana-11.html" data-week="11"><span class="n">S11</span><span class="t">Walk-Forward y Monte Carlo</span></a><a class="wk" href="semana-12.html" data-week="12"><span class="n">S12</span><span class="t">Robustez y selección</span></a></div><div class="stage"><h3>Etapa 4 · Carteras y ejecución</h3><a class="wk" href="semana-13.html" data-week="13"><span class="n">S13</span><span class="t">Construcción de carteras</span></a><a class="wk" href="semana-14.html" data-week="14"><span class="n">S14</span><span class="t">Correlación e interés compuesto</span></a><a class="wk" href="semana-15.html" data-week="15"><span class="n">S15</span><span class="t">MetaTrader 4 y MetaTrader 5</span></a><a class="wk" href="semana-16.html" data-week="16"><span class="n">S16</span><span class="t">Varias cuentas y ejecución</span></a></div><div class="stage"><h3>Etapa 5 · Profesionalización</h3><a class="wk" href="semana-17.html" data-week="17"><span class="n">S17</span><span class="t">Investigación especializada</span></a><a class="wk" href="semana-18.html" data-week="18"><span class="n">S18</span><span class="t">Capital propio, Darwinex y fondeo</span></a><a class="wk" href="semana-19.html" data-week="19"><span class="n">S19</span><span class="t">Gestión financiera y fiscalidad</span></a><span class="wk locked" title="En producción"><span class="n">S20</span><span class="t">Proyecto final</span><span class="lk">en producción</span></span></div></nav>
+<div class="navx"><a class="wk" href="progreso.html" data-week="p"><span class="n">◎</span><span class="t">Mi progreso y cuaderno</span></a></div></aside>
+<main><div class="wrap"><div class="cover" style="--cv:url(../img/cover-19.svg)"><img src="img/cover-19.svg" alt=""></div><p class="eyebrow">SEMANA 19 · ETAPA 5 · PROFESIONALIZACIÓN</p><h1>Gestión financiera, escalado y fiscalidad</h1><p class="meta">10 secciones · 7 lecciones · 22–25 horas de trabajo</p><div class="bar" aria-hidden="true"><i data-progress="19" data-total="10"></i></div><nav class="tabs" aria-label="Secciones de la semana"><a class="tab" href="#presentacion" data-tab="presentacion" title="Presentación de la semana"><span class="dot" data-dot="w19-done-presentacion"></span>Presentación</a><a class="tab" href="#s19-l1" data-tab="s19-l1" title="Plan de capital, retiradas y reinversión"><span class="dot" data-dot="w19-done-s19-l1"></span>L1</a><a class="tab" href="#s19-l2" data-tab="s19-l2" title="Gestión de varias cuentas y escalado"><span class="dot" data-dot="w19-done-s19-l2"></span>L2</a><a class="tab" href="#s19-l3" data-tab="s19-l3" title="Regulación: formación, asesoramiento y gestión de terceros"><span class="dot" data-dot="w19-done-s19-l3"></span>L3</a><a class="tab" href="#s19-l4" data-tab="s19-l4" title="Fiscalidad: módulo común"><span class="dot" data-dot="w19-done-s19-l4"></span>L4</a><a class="tab" href="#s19-l5" data-tab="s19-l5" title="Fichas por país: España, México, Colombia, Argentina, Chile y Perú"><span class="dot" data-dot="w19-done-s19-l5"></span>L5</a><a class="tab" href="#glosario" data-tab="glosario" title="Glosario de la semana"><span class="dot" data-dot="w19-done-glosario"></span>Glosario</a><a class="tab" href="#ejercicios-obligatorios" data-tab="ejercicios-obligatorios" title="Ejercicios obligatorios"><span class="dot" data-dot="w19-done-ejercicios-obligatorios"></span>Ejercicios obligatorios</a><a class="tab" href="#investigacion-i-19-y-entrega-practica" data-tab="investigacion-i-19-y-entrega-practica" title="Investigación I-19 y entrega práctica"><span class="dot" data-dot="w19-done-investigacion-i-19-y-entrega-practica"></span>Investigación I-19 y entrega práctica</a><a class="tab" href="#examen-19" data-tab="examen-19" title="Examen de la semana 19 · Variante A"><span class="dot" data-dot="w19-done-examen-19"></span>Examen  19</a></nav><section class="pane" id="presentacion" hidden><header class="pane-head"><span class="kicker">Semana 19 · Sección</span><h2>Presentación de la semana</h2></header><div class="read"><nav class="toc" aria-label="Contenido de la semana"><a class="toc-i" href="#s19-l1"><span class="dot" data-dot="w19-done-s19-l1"></span><span class="tk">Lección L1</span><b>Plan de capital, retiradas y reinversión</b><span class="tm">→</span></a><a class="toc-i" href="#s19-l2"><span class="dot" data-dot="w19-done-s19-l2"></span><span class="tk">Lección L2</span><b>Gestión de varias cuentas y escalado</b><span class="tm">→</span></a><a class="toc-i" href="#s19-l3"><span class="dot" data-dot="w19-done-s19-l3"></span><span class="tk">Lección L3</span><b>Regulación: formación, asesoramiento y gestión de terceros</b><span class="tm">→</span></a><a class="toc-i" href="#s19-l4"><span class="dot" data-dot="w19-done-s19-l4"></span><span class="tk">Lección L4</span><b>Fiscalidad: módulo común</b><span class="tm">→</span></a><a class="toc-i" href="#s19-l5"><span class="dot" data-dot="w19-done-s19-l5"></span><span class="tk">Lección L5</span><b>Fichas por país: España, México, Colombia, Argentina, Chile y Perú</b><span class="tm">→</span></a><a class="toc-i" href="#glosario"><span class="dot" data-dot="w19-done-glosario"></span><span class="tk">Sección</span><b>Glosario de la semana</b><span class="tm">→</span></a><a class="toc-i" href="#ejercicios-obligatorios"><span class="dot" data-dot="w19-done-ejercicios-obligatorios"></span><span class="tk">Sección</span><b>Ejercicios obligatorios</b><span class="tm">→</span></a><a class="toc-i" href="#investigacion-i-19-y-entrega-practica"><span class="dot" data-dot="w19-done-investigacion-i-19-y-entrega-practica"></span><span class="tk">Sección</span><b>Investigación I-19 y entrega práctica</b><span class="tm">→</span></a><a class="toc-i" href="#examen-19"><span class="dot" data-dot="w19-done-examen-19"></span><span class="tk">Evaluación</span><b>Examen de la semana 19 · Variante A</b><span class="tm">→</span></a></nav><p>Operar con dinero real no termina en el mercado: también hay que <strong>planificar el capital</strong>, <strong>escalar con orden</strong>, conocer <strong>qué puedes hacer y qué no</strong> según la regulación, y cumplir con <strong>Hacienda</strong>. Esta semana verás un plan de capital completo, cómo escalar varias cuentas, los límites legales entre formarse, asesorar y gestionar dinero ajeno, y los fundamentos de la fiscalidad del trading, con una ficha de cada país hispanohablante del curso.</p>
+<aside class="callout note"><p><strong>Advertencia importante.</strong> Esta semana es <strong>formativa</strong>: no es asesoramiento fiscal ni jurídico. Las normas cambian, dependen de tu situación personal y de tu país de residencia fiscal, y tienen matices que aquí no se recogen. Antes de declarar o de tomar decisiones, consulta la normativa oficial vigente y a un asesor fiscal colegiado.</p></aside>
+<h4>Objetivos</h4>
+<p>Al terminar la semana sabrás:</p>
+<ol>
+<li>Redactar un plan de capital con aportaciones, retiradas y reinversión.</li>
+<li>Escalar varias cuentas con criterios y límites.</li>
+<li>Distinguir formación, asesoramiento y gestión de terceros, y saber qué exige autorización.</li>
+<li>Entender los conceptos fiscales básicos del trading: tipo de renta, compensación de pérdidas y obligaciones informativas.</li>
+<li>Localizar la autoridad fiscal y el supervisor de tu país y las preguntas que debes hacerle a tu asesor.</li>
+</ol>
+<h4>Plan de la semana (22–25 horas)</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Bloque</th>
+<th>Horas</th>
+<th>Qué harás</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Clases</td>
+<td>6</td>
+<td>Cinco lecciones: lectura y vídeos</td>
+</tr>
+<tr>
+<td>Prácticas</td>
+<td>12</td>
+<td>Plan de capital, registro fiscal y ficha de tu país</td>
+</tr>
+<tr>
+<td>Investigación y evaluación</td>
+<td>4</td>
+<td>Investigación I-19, entrega y examen</td>
+</tr>
+<tr>
+<td>Revisión y planificación</td>
+<td>2</td>
+<td>Glosario, cuaderno y plan del proyecto final</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Criterio para desbloquear la semana 20</h4>
+<p>Tener en estado APROBADO, con un 80 % o más cada uno:</p>
+<ul>
+<li>☐ Examen de la semana 19</li>
+<li>☐ Entrega práctica: plan financiero y ficha fiscal de tu país</li>
+<li>☐ Investigación I-19: los ocho pasos documentados</li>
+</ul></div><label class="check"><input type="checkbox" data-store="w19-done-presentacion"> He terminado esta sección</label></section><section class="pane" id="s19-l1" hidden><header class="pane-head"><span class="kicker">Semana 19 · Lección L1</span><h2>Plan de capital, retiradas y reinversión</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>El plan de capital</h4>
+<p>Un plan de capital responde por escrito a cinco preguntas:</p>
+<ol>
+<li><strong>¿Cuánto capital dedico</strong> y de dónde sale? Solo dinero que puedas perder sin afectar a tu vida, a tus deudas ni a tu fondo de emergencia.</li>
+<li><strong>¿Cuánto aportaré</strong> en el futuro y cuándo?</li>
+<li><strong>¿Qué haré con los beneficios?</strong> Reinvertir, retirar o ambas (semana 14).</li>
+<li><strong>¿Qué caída máxima acepto</strong> antes de parar (drawdown de parada)?</li>
+<li><strong>¿Cuándo reviso</strong> el plan? Por ejemplo, cada trimestre.</li>
+</ol>
+<figure class="fig"><a href="img/s19-plan.svg" target="_blank" rel="noopener"><img src="img/s19-plan.svg" alt="Figura 19.1 · Un plan de capital por fases: cada aumento de capital exige superar los hitos de la fase anterior. Esquema." loading="lazy"></a><figcaption>Figura 19.1 · Un plan de capital por fases: cada aumento de capital exige superar los hitos de la fase anterior. Esquema.</figcaption></figure>
+<h4>Reservar para impuestos</h4>
+<p>Si tu cartera gana, parte de ese beneficio será de Hacienda. Un error habitual es reinvertirlo todo y no tener liquidez al declarar. Regla práctica: aparta en una cuenta separada un porcentaje de cada beneficio realizado (por ejemplo, el tipo marginal que te correspondería, lección 4).</p>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué cinco preguntas responde el plan de capital?</li>
+<li>¿Por qué se reserva una parte de los beneficios?</li>
+<li>¿Qué dinero nunca debe formar parte del capital de trading?</li>
+</ol><div class="answer"><label for="w19-s19-l1">Tus respuestas</label><textarea id="w19-s19-l1" data-store="w19-s19-l1" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-s19-l1"> He terminado esta sección</label></section><section class="pane" id="s19-l2" hidden><header class="pane-head"><span class="kicker">Semana 19 · Lección L2</span><h2>Gestión de varias cuentas y escalado</h2></header><div class="read"><p><em>Formato: clase de 30 minutos · Lectura: 25 minutos</em></p>
+<h4>Escalar por capas</h4>
+<p>Escalar no es solo aumentar el capital de una cuenta. Puede ser:</p>
+<ul>
+<li><strong>Más capital</strong> en la misma cartera (hitos de la semana 18).</li>
+<li><strong>Más estrategias</strong> en la cartera, validadas con el mismo protocolo (semana 13).</li>
+<li><strong>Más cuentas:</strong> otro broker, Darwinex o una empresa de fondeo (semana 18).</li>
+</ul>
+<p>Cada capa añade riesgo operativo. Escala <strong>una capa cada vez</strong> y espera a tener evidencias antes de la siguiente.</p>
+<h4>Control global</h4>
+<p>Con varias cuentas, mantén la <strong>ficha global</strong> (semana 16) y añade:</p>
+<ul>
+<li><strong>Capital total</strong> y riesgo total por estrategia, sumando cuentas.</li>
+<li><strong>Resultado consolidado</strong> mensual.</li>
+<li><strong>Registro fiscal</strong> por cuenta (lección 4): fechas, importes, divisa y tipo de cuenta.</li>
+</ul>
+<figure class="fig"><a href="img/s19-capas.svg" target="_blank" rel="noopener"><img src="img/s19-capas.svg" alt="Figura 19.2 · Escalado por capas: capital, estrategias y cuentas, una capa cada vez. Esquema." loading="lazy"></a><figcaption>Figura 19.2 · Escalado por capas: capital, estrategias y cuentas, una capa cada vez. Esquema.</figcaption></figure>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>Nombra tres formas de escalar.</li>
+<li>¿Por qué se escala una capa cada vez?</li>
+<li>¿Qué añades a la ficha global al tener varias cuentas?</li>
+</ol><div class="answer"><label for="w19-s19-l2">Tus respuestas</label><textarea id="w19-s19-l2" data-store="w19-s19-l2" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-s19-l2"> He terminado esta sección</label></section><section class="pane" id="s19-l3" hidden><header class="pane-head"><span class="kicker">Semana 19 · Lección L3</span><h2>Regulación: formación, asesoramiento y gestión de terceros</h2></header><div class="read"><p><em>Formato: clase de 35 minutos · Lectura: 30 minutos</em></p>
+<h4>Tres actividades distintas</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Actividad</th>
+<th>Qué es</th>
+<th>¿Requiere autorización?</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Operar tu propio dinero</td>
+<td>Inviertes por tu cuenta</td>
+<td>No, salvo que sea tu actividad profesional en ciertos casos (fiscalmente puede tener consecuencias)</td>
+</tr>
+<tr>
+<td>Formación</td>
+<td>Enseñar conceptos y métodos de forma general</td>
+<td>En general no, siempre que no se convierta en recomendaciones personalizadas</td>
+</tr>
+<tr>
+<td>Asesoramiento de inversión</td>
+<td>Recomendaciones personalizadas a una persona sobre instrumentos concretos</td>
+<td><strong>Sí</strong>: en la UE, es un servicio de inversión reservado a entidades autorizadas</td>
+</tr>
+<tr>
+<td>Gestión de carteras de terceros</td>
+<td>Decidir y operar con dinero de otros</td>
+<td><strong>Sí</strong>: servicio de inversión reservado a entidades autorizadas</td>
+</tr>
+</tbody>
+</table></div>
+<p>En España, el supervisor es la <strong>CNMV</strong>; en los demás países del curso, los supervisores de la lección 5.</p>
+<h4>Zonas grises frecuentes</h4>
+<ul>
+<li><strong>Vender señales</strong> u operativa para copiar puede considerarse asesoramiento o gestión según cómo se haga.</li>
+<li><strong>Operar la cuenta de un familiar o amigo</strong> con su dinero es gestionar dinero ajeno.</li>
+<li><strong>Promocionar un broker o una firma</strong> a cambio de comisiones tiene sus propias normas y obligaciones de transparencia.</li>
+<li><strong>Darwinex</strong> permite que terceros inviertan en tu DARWIN porque es Darwinex, una entidad autorizada, quien presta el servicio (semana 18).</li>
+</ul>
+<aside class="callout warn"><p><strong>Atención.</strong> Si quieres dedicarte profesionalmente a gestionar dinero de otros o a asesorar, infórmate en el supervisor de tu país y con un abogado especializado. Hacerlo sin autorización puede ser una infracción grave.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Qué diferencia hay entre formación y asesoramiento?</li>
+<li>¿Por qué operar la cuenta de un amigo con su dinero es un problema?</li>
+<li>¿Por qué un inversor puede invertir en tu DARWIN sin que tú estés autorizado?</li>
+</ol><div class="answer"><label for="w19-s19-l3">Tus respuestas</label><textarea id="w19-s19-l3" data-store="w19-s19-l3" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-s19-l3"> He terminado esta sección</label></section><section class="pane" id="s19-l4" hidden><header class="pane-head"><span class="kicker">Semana 19 · Lección L4</span><h2>Fiscalidad: módulo común</h2></header><div class="read"><p><em>Formato: clase de 40 minutos · Lectura: 35 minutos</em></p>
+<h4>Las preguntas que hay que hacerse</h4>
+<p>En todos los países, la fiscalidad del trading depende de cuatro preguntas:</p>
+<ol>
+<li><strong>¿Dónde eres residente fiscal?</strong> Normalmente tributas allí por todas tus rentas, también las obtenidas en brokers extranjeros.</li>
+<li><strong>¿Qué tipo de renta es?</strong> Una ganancia por vender un activo, un rendimiento de una actividad económica (si es tu profesión), un ingreso por un servicio (como el pago de una empresa de fondeo)… Cada tipo tributa distinto.</li>
+<li><strong>¿Cómo se compensan las pérdidas?</strong> Con qué otras rentas y durante cuántos años.</li>
+<li><strong>¿Qué obligaciones informativas tienes?</strong> Declarar cuentas o activos en el extranjero, criptomonedas, etc.</li>
+</ol>
+<figure class="fig"><a href="img/s19-preguntas.svg" target="_blank" rel="noopener"><img src="img/s19-preguntas.svg" alt="Figura 19.3 · Las cuatro preguntas fiscales del trading." loading="lazy"></a><figcaption>Figura 19.3 · Las cuatro preguntas fiscales del trading.</figcaption></figure>
+<h4>El registro fiscal</h4>
+<p>Sea cual sea tu país, lleva desde el primer día un <strong>registro fiscal</strong>:</p>
+<ul>
+<li>Cada operación cerrada: fecha, instrumento, resultado en la divisa de la cuenta y su contravalor en tu moneda, con el tipo de cambio usado.</li>
+<li>Swaps, comisiones y otros costes.</li>
+<li>Ingresos y retiradas de cada cuenta.</li>
+<li>Pagos de empresas de fondeo, comisiones de éxito y suscripciones o evaluaciones pagadas.</li>
+<li>Los <strong>informes anuales</strong> que te dé cada broker o plataforma.</li>
+</ul>
+<aside class="callout key"><p><strong>Idea clave.</strong> Hacienda no acepta «no sé cuánto gané». Un registro ordenado te ahorra errores, sanciones y el coste de reconstruirlo todo a final de año.</p></aside>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Por qué importa la residencia fiscal?</li>
+<li>¿Qué anotas en el registro fiscal de cada operación?</li>
+<li>¿Por qué el pago de una empresa de fondeo puede tributar distinto que la ganancia de tu propia cuenta?</li>
+</ol><div class="answer"><label for="w19-s19-l4">Tus respuestas</label><textarea id="w19-s19-l4" data-store="w19-s19-l4" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-s19-l4"> He terminado esta sección</label></section><section class="pane" id="s19-l5" hidden><header class="pane-head"><span class="kicker">Semana 19 · Lección L5</span><h2>Fichas por país: España, México, Colombia, Argentina, Chile y Perú</h2></header><div class="read"><p><em>Formato: clase de 45 minutos · Lectura: 40 minutos</em></p>
+<p>Estas fichas resumen <strong>dónde informarte</strong> y <strong>qué preguntar</strong>. Los datos de España se han consultado en noviembre de 2026; los de los demás países se limitan a las instituciones y a las preguntas clave, porque sus reglas para derivados, divisas y criptomonedas tienen muchos matices. Consulta siempre la fuente oficial y a un asesor de tu país.</p>
+<h4>España</h4>
+<ul>
+<li><strong>Agencia Tributaria:</strong> <a href="https://sede.agenciatributaria.gob.es" target="_blank" rel="noopener">sede.agenciatributaria.gob.es</a> · <strong>Supervisor:</strong> CNMV.</li>
+<li><strong>Tipo de renta habitual del particular:</strong> las ganancias y pérdidas por operaciones con acciones, CFD, Forex o criptomonedas de tu propia cuenta suelen tributar como <strong>ganancias y pérdidas patrimoniales</strong> en la <strong>base del ahorro</strong>.</li>
+<li><strong>Escala de la base del ahorro (territorio común, desde 2025):</strong></li>
+</ul>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Base del ahorro</th>
+<th>Tipo</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Hasta 6.000 €</td>
+<td>19 %</td>
+</tr>
+<tr>
+<td>De 6.000 a 50.000 €</td>
+<td>21 %</td>
+</tr>
+<tr>
+<td>De 50.000 a 200.000 €</td>
+<td>23 %</td>
+</tr>
+<tr>
+<td>De 200.000 a 300.000 €</td>
+<td>27 %</td>
+</tr>
+<tr>
+<td>Más de 300.000 €</td>
+<td>30 %</td>
+</tr>
+</tbody>
+</table></div>
+<ul>
+<li><strong>Compensación:</strong> las pérdidas patrimoniales se compensan con ganancias patrimoniales; el saldo negativo puede compensar hasta el <strong>25 %</strong> del saldo positivo de rendimientos del capital mobiliario (y al revés), y lo que sobre se arrastra <strong>4 años</strong>.</li>
+<li><strong>Regla de los dos meses:</strong> no se computa una pérdida al vender valores admitidos a negociación si recompras valores homogéneos dos meses antes o después; consulta con tu asesor si afecta a tus instrumentos.</li>
+<li><strong>Empresas de fondeo:</strong> no hay un criterio único y sencillo; según el caso, los pagos pueden tratarse como ganancias o como rendimientos de una actividad económica. <strong>Consulta a un asesor.</strong></li>
+<li><strong>Obligaciones informativas:</strong> el modelo <strong>720</strong> (bienes en el extranjero, como saldos en brokers extranjeros por encima de 50.000 €) y el modelo <strong>721</strong> (criptomonedas custodiadas en el extranjero por encima de 50.000 €). Además, desde 2026 se aplica en la UE la directiva <strong>DAC8</strong>, por la que los proveedores de criptoactivos informan a Hacienda.</li>
+<li><strong>País Vasco y Navarra</strong> tienen normativa propia.</li>
+</ul>
+<h4>México</h4>
+<ul>
+<li><strong>Autoridad fiscal:</strong> SAT (<a href="https://www.sat.gob.mx" target="_blank" rel="noopener">sat.gob.mx</a>) · <strong>Supervisor:</strong> CNBV.</li>
+<li><strong>Preguntas para tu asesor:</strong> cómo tributan las ganancias con un broker extranjero y con derivados (CFD, Forex), si existen tratamientos distintos para acciones cotizadas en bolsa mexicana, cómo se declaran las criptomonedas y las cuentas en el extranjero, y cómo se tratan los pagos de empresas de fondeo.</li>
+</ul>
+<h4>Colombia</h4>
+<ul>
+<li><strong>Autoridad fiscal:</strong> DIAN (<a href="https://www.dian.gov.co" target="_blank" rel="noopener">dian.gov.co</a>) · <strong>Supervisor:</strong> Superintendencia Financiera de Colombia.</li>
+<li><strong>Preguntas:</strong> tratamiento de las ganancias con brokers extranjeros y derivados, ganancias ocasionales frente a renta ordinaria, declaración de activos en el exterior, criptomonedas y pagos de empresas de fondeo.</li>
+</ul>
+<h4>Argentina</h4>
+<ul>
+<li><strong>Autoridad fiscal:</strong> ARCA, antes AFIP (<a href="https://www.arca.gob.ar" target="_blank" rel="noopener">arca.gob.ar</a>) · <strong>Supervisor:</strong> CNV.</li>
+<li><strong>Preguntas:</strong> impuesto a las ganancias sobre operaciones en el exterior y con derivados, bienes personales sobre saldos en brokers extranjeros, régimen cambiario para transferir fondos, criptomonedas y pagos de empresas de fondeo.</li>
+</ul>
+<h4>Chile</h4>
+<ul>
+<li><strong>Autoridad fiscal:</strong> SII (<a href="https://www.sii.cl" target="_blank" rel="noopener">sii.cl</a>) · <strong>Supervisor:</strong> CMF.</li>
+<li><strong>Preguntas:</strong> tratamiento de las ganancias de capital y de derivados con brokers extranjeros, global complementario, criptomonedas y pagos de empresas de fondeo.</li>
+</ul>
+<h4>Perú</h4>
+<ul>
+<li><strong>Autoridad fiscal:</strong> SUNAT (<a href="https://www.sunat.gob.pe" target="_blank" rel="noopener">sunat.gob.pe</a>) · <strong>Supervisor:</strong> SMV.</li>
+<li><strong>Preguntas:</strong> rentas de capital frente a rentas de fuente extranjera, tratamiento de derivados y criptomonedas, y pagos de empresas de fondeo.</li>
+</ul>
+<figure class="fig"><a href="img/s19-paises.svg" target="_blank" rel="noopener"><img src="img/s19-paises.svg" alt="Figura 19.4 · Autoridad fiscal y supervisor financiero de cada país del curso." loading="lazy"></a><figcaption>Figura 19.4 · Autoridad fiscal y supervisor financiero de cada país del curso.</figcaption></figure>
+<h4>Comprueba que lo has entendido</h4>
+<ol>
+<li>¿Cuál es el tipo de la base del ahorro en España para los primeros 6.000 €?</li>
+<li>¿Durante cuántos años se arrastran las pérdidas patrimoniales en España?</li>
+<li>¿Qué autoridad fiscal y qué supervisor corresponden a tu país?</li>
+</ol><div class="answer"><label for="w19-s19-l5">Tus respuestas</label><textarea id="w19-s19-l5" data-store="w19-s19-l5" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-s19-l5"> He terminado esta sección</label></section><section class="pane" id="glosario" hidden><header class="pane-head"><span class="kicker">Semana 19 · Sección</span><h2>Glosario de la semana</h2></header><div class="read"><div class="tbl"><table>
+<thead>
+<tr>
+<th>Término</th>
+<th>Inglés</th>
+<th>Definición</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Asesoramiento de inversión</td>
+<td>Investment advice</td>
+<td>Recomendaciones personalizadas sobre instrumentos financieros</td>
+</tr>
+<tr>
+<td>Base del ahorro</td>
+<td>Savings tax base</td>
+<td>Parte de la base del IRPF español donde tributan, entre otras, las ganancias patrimoniales</td>
+</tr>
+<tr>
+<td>Compensación de pérdidas</td>
+<td>Loss offsetting</td>
+<td>Uso de las pérdidas para reducir la tributación de otras rentas</td>
+</tr>
+<tr>
+<td>DAC8</td>
+<td>DAC8</td>
+<td>Directiva europea de intercambio de información sobre criptoactivos</td>
+</tr>
+<tr>
+<td>Ganancia patrimonial</td>
+<td>Capital gain</td>
+<td>Diferencia positiva entre el precio de venta y el de compra de un activo</td>
+</tr>
+<tr>
+<td>Gestión de carteras</td>
+<td>Portfolio management</td>
+<td>Gestión de dinero de terceros con capacidad de decisión</td>
+</tr>
+<tr>
+<td>Modelo 720 / 721</td>
+<td>Form 720 / 721</td>
+<td>Declaraciones informativas españolas de bienes y criptomonedas en el extranjero</td>
+</tr>
+<tr>
+<td>Plan de capital</td>
+<td>Capital plan</td>
+<td>Documento con el capital, las aportaciones, las retiradas y los límites</td>
+</tr>
+<tr>
+<td>Registro fiscal</td>
+<td>Tax log</td>
+<td>Registro de operaciones e ingresos para declarar impuestos</td>
+</tr>
+<tr>
+<td>Residencia fiscal</td>
+<td>Tax residence</td>
+<td>País en el que tributas por tus rentas mundiales</td>
+</tr>
+</tbody>
+</table></div></div><label class="check"><input type="checkbox" data-store="w19-done-glosario"> He terminado esta sección</label></section><section class="pane" id="ejercicios-obligatorios" hidden><header class="pane-head"><span class="kicker">Semana 19 · Sección</span><h2>Ejercicios obligatorios</h2></header><div class="read"><p><strong>E1 · Plan de capital.</strong> Redacta tu plan de capital respondiendo a las cinco preguntas de la lección 1.</p>
+<p><strong>E2 · Reserva fiscal.</strong> Si residieras en España y tu cartera ganara 4.000 € en un año (como ganancia patrimonial, sin otras rentas del ahorro), ¿cuánto pagarías? ¿Y si ganara 9.000 €?</p>
+<p><strong>E3 · Compensación.</strong> En España, un año pierdes 1.500 € en CFD (ganancias patrimoniales netas negativas) y cobras 2.000 € de intereses (rendimientos del capital mobiliario). ¿Cuánto de la pérdida puedes compensar ese año y cuánto se arrastra?</p>
+<p><strong>E4 · Escalado.</strong> Escribe tu plan de escalado por capas con sus hitos.</p>
+<p><strong>E5 · Regulación.</strong> Para cada caso, indica si podría requerir autorización: a) publicas en un blog cómo funciona el Walk-Forward; b) cobras por decirle a un amigo qué comprar cada semana con su dinero; c) operas la cuenta de tu hermano con su dinero; d) tu DARWIN recibe inversores en Darwinex.</p>
+<p><strong>E6 · Registro fiscal.</strong> Construye la plantilla de tu registro fiscal con todas las columnas de la lección 4 y rellénala con tus operaciones de demo como práctica.</p>
+<p><strong>E7 · Tu país.</strong> Visita el portal de la autoridad fiscal de tu país de residencia y localiza la información oficial sobre ganancias por inversiones. Cita la página y la fecha.</p>
+<p><strong>E8 · Preguntas al asesor.</strong> Escribe la lista de preguntas que harías a un asesor fiscal sobre tu situación concreta.</p>
+<p><strong>E9 · Obligaciones informativas.</strong> Averigua si en tu país hay que declarar las cuentas en brokers extranjeros o las criptomonedas y a partir de qué importe. Cita la fuente oficial.</p>
+<p><strong>E10 · Supervisor.</strong> Busca en el registro del supervisor de tu país la lista de advertencias sobre entidades no autorizadas y comprueba tu broker y cualquier firma que estés considerando.</p><div class="answer"><label for="w19-ejercicios-obligatorios">Tus respuestas</label><textarea id="w19-ejercicios-obligatorios" data-store="w19-ejercicios-obligatorios" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-ejercicios-obligatorios"> He terminado esta sección</label></section><section class="pane" id="investigacion-i-19-y-entrega-practica" hidden><header class="pane-head"><span class="kicker">Semana 19 · Sección</span><h2>Investigación I-19 y entrega práctica</h2></header><div class="read"><h3>Investigación I-19 · ¿Cuánto cambia el resultado neto según cómo tributa?</h3>
+<p><strong>Paso 1 · Hipótesis.</strong> Ejemplo: «Con un resultado bruto anual de 3.000 €, el resultado neto después de impuestos y costes es al menos un 20 % menor si se obtiene a través de una empresa de fondeo (pagando evaluaciones) que en una cuenta propia».</p>
+<p><strong>Paso 2 · Fuentes.</strong> Normativa oficial de tu país y al menos una fuente profesional sobre la tributación de cada vía.</p>
+<p><strong>Paso 3 · Datos.</strong> Los resultados de tu cartera escalados a un capital hipotético.</p>
+<p><strong>Paso 4 · Diseño.</strong> Escenarios (cuenta propia, Darwinex Zero, fondeo), supuestos fiscales explícitos y costes de cada vía.</p>
+<p><strong>Pasos 5 a 7.</strong> Cálculo del neto en cada escenario y comparación.</p>
+<p><strong>Paso 8 · Conclusiones.</strong> ¿Qué escenario es más eficiente con tus supuestos? ¿Qué supuestos debes confirmar con un asesor?</p>
+<h3>Entrega práctica · Plan financiero y ficha fiscal</h3>
+<h4>Qué entregar</h4>
+<div class="tbl"><table>
+<thead>
+<tr>
+<th>Archivo</th>
+<th>Contenido</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>CODIGO_S19_ENT</code></td>
+<td>Plan de capital, plan de escalado, plantilla de registro fiscal y ficha fiscal de tu país con fuentes oficiales y fecha</td>
+</tr>
+<tr>
+<td><code>CODIGO_S19_INV</code></td>
+<td>Investigación I-19</td>
+</tr>
+<tr>
+<td>Ejercicios</td>
+<td>E1 a E10</td>
+</tr>
+</tbody>
+</table></div>
+<h4>Cómo se evaluará</h4>
+<p>Se valora que el plan sea concreto y prudente, que la ficha fiscal cite fuentes oficiales con fecha y que distinga claramente lo comprobado de lo que debe confirmarse con un asesor.</p><div class="answer"><label for="w19-investigacion-i-19-y-entrega-practica">Tus respuestas</label><textarea id="w19-investigacion-i-19-y-entrega-practica" data-store="w19-investigacion-i-19-y-entrega-practica" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-investigacion-i-19-y-entrega-practica"> He terminado esta sección</label></section><section class="pane" id="examen-19" hidden><header class="pane-head"><span class="kicker">Semana 19 · Evaluación</span><h2>Examen de la semana 19 · Variante A</h2></header><div class="read"><p><em>Tiempo orientativo: 60 minutos · Puntuación: 100 puntos · Aprobado: 80 puntos · Puedes usar calculadora, pero no el material del curso ni el tutor de IA. Si suspendes, repetirás con otra variante.</em></p>
+<h3>Parte A · Opción múltiple (30 puntos, 2 por pregunta)</h3><fieldset class="q"><legend><b>1.</b> El capital de trading debe ser…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q1" value="a" data-store="w19-exam-q1"><span><b>a)</b> el fondo de emergencia</span></label><label class="opt"><input type="radio" name="w19q1" value="b" data-store="w19-exam-q1"><span><b>b)</b> dinero cuya pérdida no afecte a tu vida</span></label><label class="opt"><input type="radio" name="w19q1" value="c" data-store="w19-exam-q1"><span><b>c)</b> un préstamo</span></label><label class="opt"><input type="radio" name="w19q1" value="d" data-store="w19-exam-q1"><span><b>d)</b> todo tu ahorro</span></label></div></fieldset><fieldset class="q"><legend><b>2.</b> Se reserva parte de los beneficios para…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q2" value="a" data-store="w19-exam-q2"><span><b>a)</b> pagar impuestos</span></label><label class="opt"><input type="radio" name="w19q2" value="b" data-store="w19-exam-q2"><span><b>b)</b> aumentar el riesgo</span></label><label class="opt"><input type="radio" name="w19q2" value="c" data-store="w19-exam-q2"><span><b>c)</b> la próxima evaluación</span></label><label class="opt"><input type="radio" name="w19q2" value="d" data-store="w19-exam-q2"><span><b>d)</b> nada</span></label></div></fieldset><fieldset class="q"><legend><b>3.</b> Escalar conviene hacerlo…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q3" value="a" data-store="w19-exam-q3"><span><b>a)</b> en todas las capas a la vez</span></label><label class="opt"><input type="radio" name="w19q3" value="b" data-store="w19-exam-q3"><span><b>b)</b> una capa cada vez, con evidencias</span></label><label class="opt"><input type="radio" name="w19q3" value="c" data-store="w19-exam-q3"><span><b>c)</b> tras un mes bueno</span></label><label class="opt"><input type="radio" name="w19q3" value="d" data-store="w19-exam-q3"><span><b>d)</b> tras una pérdida</span></label></div></fieldset><fieldset class="q"><legend><b>4.</b> El asesoramiento de inversión en la UE…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q4" value="a" data-store="w19-exam-q4"><span><b>a)</b> es libre</span></label><label class="opt"><input type="radio" name="w19q4" value="b" data-store="w19-exam-q4"><span><b>b)</b> está reservado a entidades autorizadas</span></label><label class="opt"><input type="radio" name="w19q4" value="c" data-store="w19-exam-q4"><span><b>c)</b> solo exige un curso</span></label><label class="opt"><input type="radio" name="w19q4" value="d" data-store="w19-exam-q4"><span><b>d)</b> está prohibido</span></label></div></fieldset><fieldset class="q"><legend><b>5.</b> Operar la cuenta de un amigo con su dinero es…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q5" value="a" data-store="w19-exam-q5"><span><b>a)</b> formación</span></label><label class="opt"><input type="radio" name="w19q5" value="b" data-store="w19-exam-q5"><span><b>b)</b> operar tu dinero</span></label><label class="opt"><input type="radio" name="w19q5" value="c" data-store="w19-exam-q5"><span><b>c)</b> gestionar dinero ajeno</span></label><label class="opt"><input type="radio" name="w19q5" value="d" data-store="w19-exam-q5"><span><b>d)</b> educación financiera</span></label></div></fieldset><fieldset class="q"><legend><b>6.</b> La formación general sobre métodos…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q6" value="a" data-store="w19-exam-q6"><span><b>a)</b> siempre exige autorización</span></label><label class="opt"><input type="radio" name="w19q6" value="b" data-store="w19-exam-q6"><span><b>b)</b> en general no la exige si no son recomendaciones personalizadas</span></label><label class="opt"><input type="radio" name="w19q6" value="c" data-store="w19-exam-q6"><span><b>c)</b> es asesoramiento</span></label><label class="opt"><input type="radio" name="w19q6" value="d" data-store="w19-exam-q6"><span><b>d)</b> es gestión</span></label></div></fieldset><fieldset class="q"><legend><b>7.</b> Normalmente tributas por todas tus rentas en…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q7" value="a" data-store="w19-exam-q7"><span><b>a)</b> el país del broker</span></label><label class="opt"><input type="radio" name="w19q7" value="b" data-store="w19-exam-q7"><span><b>b)</b> tu país de residencia fiscal</span></label><label class="opt"><input type="radio" name="w19q7" value="c" data-store="w19-exam-q7"><span><b>c)</b> el país de la moneda</span></label><label class="opt"><input type="radio" name="w19q7" value="d" data-store="w19-exam-q7"><span><b>d)</b> ninguno</span></label></div></fieldset><fieldset class="q"><legend><b>8.</b> En España, las ganancias de CFD de tu cuenta propia suelen tributar en…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q8" value="a" data-store="w19-exam-q8"><span><b>a)</b> la base general como trabajo</span></label><label class="opt"><input type="radio" name="w19q8" value="b" data-store="w19-exam-q8"><span><b>b)</b> la base del ahorro como ganancias patrimoniales</span></label><label class="opt"><input type="radio" name="w19q8" value="c" data-store="w19-exam-q8"><span><b>c)</b> el IVA</span></label><label class="opt"><input type="radio" name="w19q8" value="d" data-store="w19-exam-q8"><span><b>d)</b> no tributan</span></label></div></fieldset><fieldset class="q"><legend><b>9.</b> En España, el tipo de la base del ahorro hasta 6.000 € es…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q9" value="a" data-store="w19-exam-q9"><span><b>a)</b> 15 %</span></label><label class="opt"><input type="radio" name="w19q9" value="b" data-store="w19-exam-q9"><span><b>b)</b> 21 %</span></label><label class="opt"><input type="radio" name="w19q9" value="c" data-store="w19-exam-q9"><span><b>c)</b> 19 %</span></label><label class="opt"><input type="radio" name="w19q9" value="d" data-store="w19-exam-q9"><span><b>d)</b> 23 %</span></label></div></fieldset><fieldset class="q"><legend><b>10.</b> En España, las pérdidas patrimoniales no compensadas se arrastran…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q10" value="a" data-store="w19-exam-q10"><span><b>a)</b> 1 año</span></label><label class="opt"><input type="radio" name="w19q10" value="b" data-store="w19-exam-q10"><span><b>b)</b> 4 años</span></label><label class="opt"><input type="radio" name="w19q10" value="c" data-store="w19-exam-q10"><span><b>c)</b> 10 años</span></label><label class="opt"><input type="radio" name="w19q10" value="d" data-store="w19-exam-q10"><span><b>d)</b> para siempre</span></label></div></fieldset><fieldset class="q"><legend><b>11.</b> El modelo 721 en España informa de…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q11" value="a" data-store="w19-exam-q11"><span><b>a)</b> criptomonedas en el extranjero por encima de 50.000 €</span></label><label class="opt"><input type="radio" name="w19q11" value="b" data-store="w19-exam-q11"><span><b>b)</b> cuentas bancarias españolas</span></label><label class="opt"><input type="radio" name="w19q11" value="c" data-store="w19-exam-q11"><span><b>c)</b> el IVA</span></label><label class="opt"><input type="radio" name="w19q11" value="d" data-store="w19-exam-q11"><span><b>d)</b> las nóminas</span></label></div></fieldset><fieldset class="q"><legend><b>12.</b> La DAC8 se refiere a…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q12" value="a" data-store="w19-exam-q12"><span><b>a)</b> los CFD</span></label><label class="opt"><input type="radio" name="w19q12" value="b" data-store="w19-exam-q12"><span><b>b)</b> el intercambio de información sobre criptoactivos en la UE</span></label><label class="opt"><input type="radio" name="w19q12" value="c" data-store="w19-exam-q12"><span><b>c)</b> el apalancamiento</span></label><label class="opt"><input type="radio" name="w19q12" value="d" data-store="w19-exam-q12"><span><b>d)</b> la regla de los dos meses</span></label></div></fieldset><fieldset class="q"><legend><b>13.</b> La autoridad fiscal de Argentina es…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q13" value="a" data-store="w19-exam-q13"><span><b>a)</b> SAT</span></label><label class="opt"><input type="radio" name="w19q13" value="b" data-store="w19-exam-q13"><span><b>b)</b> DIAN</span></label><label class="opt"><input type="radio" name="w19q13" value="c" data-store="w19-exam-q13"><span><b>c)</b> ARCA (antes AFIP)</span></label><label class="opt"><input type="radio" name="w19q13" value="d" data-store="w19-exam-q13"><span><b>d)</b> SII</span></label></div></fieldset><fieldset class="q"><legend><b>14.</b> El supervisor financiero de Chile es…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q14" value="a" data-store="w19-exam-q14"><span><b>a)</b> la CMF</span></label><label class="opt"><input type="radio" name="w19q14" value="b" data-store="w19-exam-q14"><span><b>b)</b> la CNBV</span></label><label class="opt"><input type="radio" name="w19q14" value="c" data-store="w19-exam-q14"><span><b>c)</b> la SMV</span></label><label class="opt"><input type="radio" name="w19q14" value="d" data-store="w19-exam-q14"><span><b>d)</b> la CNV</span></label></div></fieldset><fieldset class="q"><legend><b>15.</b> Ante dudas fiscales concretas, lo correcto es…</legend><div class="opts"><label class="opt"><input type="radio" name="w19q15" value="a" data-store="w19-exam-q15"><span><b>a)</b> seguir lo que dice un foro</span></label><label class="opt"><input type="radio" name="w19q15" value="b" data-store="w19-exam-q15"><span><b>b)</b> consultar la normativa oficial y a un asesor colegiado</span></label><label class="opt"><input type="radio" name="w19q15" value="c" data-store="w19-exam-q15"><span><b>c)</b> no declarar</span></label><label class="opt"><input type="radio" name="w19q15" value="d" data-store="w19-exam-q15"><span><b>d)</b> preguntar al broker</span></label></div></fieldset><h3>Parte B · Cálculo (45 puntos, 15 por ejercicio)</h3>
+<p><strong>B1.</strong> Residente en España (territorio común), sin otras rentas del ahorro. Calcula la cuota de la base del ahorro para unas ganancias patrimoniales netas de: a) 5.000 €; b) 12.000 €; c) 60.000 €.</p>
+<p><strong>B2.</strong> En España, un año tienes ganancias patrimoniales de 3.000 € y pérdidas patrimoniales de 5.200 €, y rendimientos del capital mobiliario de 1.600 €. a) ¿Cuál es el saldo de ganancias y pérdidas patrimoniales? b) ¿Cuánto puedes compensar con los rendimientos del capital mobiliario ese año? c) ¿Cuánto se arrastra a los años siguientes?</p>
+<p><strong>B3.</strong> Tu cartera gana 6.000 € brutos en un año en tu cuenta propia, pagando 400 € de costes ya incluidos en ese resultado. Si tributaras en España con la escala de la base del ahorro y sin otras rentas, ¿cuánto pagarías y cuál sería tu resultado neto? ¿Qué porcentaje del bruto debiste reservar?</p>
+<h3>Parte C · Razonamiento (25 puntos)</h3>
+<p>En un máximo de 250 palabras: un compañero quiere empezar a cobrar por compartir las operaciones de su cartera en un grupo privado y gestionar la cuenta de un familiar. Explica qué riesgos regulatorios y fiscales tiene y qué debería hacer antes.</p><div class="answer"><label for="w19-examen-19">Tus respuestas a las partes B y C</label><textarea id="w19-examen-19" data-store="w19-examen-19" placeholder="Escribe aquí. Se guarda en este dispositivo."></textarea></div></div><label class="check"><input type="checkbox" data-store="w19-done-examen-19"> He terminado esta sección</label></section><div class="pager"><button class="btn ghost" id="prevSec">← Anterior</button><button class="btn" id="nextSec">Siguiente →</button></div></div>
+<footer class="foot">Formación educativa. No ofrece recomendaciones de inversión ni promete resultados. Operar en los mercados, en especial con productos apalancados, conlleva un riesgo alto de perder dinero.</footer></main>
+</div>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/katex.min.js"></script>
+<script defer src="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.16.9/contrib/auto-render.min.js"></script>
+<script defer src="assets/app.js"></script>
+</body></html>
