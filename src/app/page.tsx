@@ -3,6 +3,10 @@ import TopBar from '@/components/TopBar';
 import OfficeScene from '@/components/OfficeScene';
 import Avatar from '@/components/Avatar';
 import { AGENTS, type AgentState } from '@/lib/agents';
+import BeforeAfter from '@/components/landing/BeforeAfter';
+import Advantages from '@/components/landing/Advantages';
+import Faq from '@/components/landing/Faq';
+import BetaForm from '@/components/landing/BetaForm';
 
 // Escena de la portada: ilustrativa, no son datos de ninguna tienda.
 const HERO: AgentState[] = [
@@ -35,8 +39,8 @@ export default function Home() {
           <div>
             <p className="lead">Un equipo de empleados digitales que pone tus prendas en modelo, las sube a tu web, a Amazon y a Vinted, controla el stock y prepara la publicidad. Tú solo apruebas desde el móvil.</p>
             <div className="ctas">
-              <Link className="btn sun" href="/acceso">Entrar en la oficina de ejemplo</Link>
-              <Link className="btn ghost" href="#precios">Ver precios</Link>
+              <Link className="btn sun" href="#beta">Pedir plaza en la beta</Link>
+              <Link className="btn ghost" href="/acceso">Ver la oficina de ejemplo</Link>
             </div>
             <p className="note">Beta privada: las 10 primeras tiendas no pagan el alta y tienen precio de fundador.</p>
           </div>
@@ -53,6 +57,13 @@ export default function Home() {
           <div><span className="n">2</span><h3>Mandas fotos por WhatsApp o aquí</h3><p>La prenda colgada o en el mostrador, como te salga. Talla, precio y unidades en un mensaje de voz si quieres.</p></div>
           <div><span className="n">3</span><h3>Apruebas y se publica</h3><p>Te llega la ficha lista con foto en modelo. Un toque y está en tu web, Instagram, Amazon y Vinted.</p></div>
         </div>
+      </div></section>
+
+      <section className="block"><div className="wrap">
+        <p className="eyebrow">De la percha a la venta</p>
+        <h2 style={{ marginTop: 10 }}>Una foto tuya, una ficha profesional</h2>
+        <p className="sub">Así queda una prenda cuando pasa por tu oficina. Ejemplo ilustrativo.</p>
+        <BeforeAfter />
       </div></section>
 
       <section className="block" id="equipo"><div className="wrap">
@@ -72,6 +83,12 @@ export default function Home() {
         </div>
       </div></section>
 
+      <section className="block"><div className="wrap">
+        <p className="eyebrow">Lo que no encontrarás en otro sitio</p>
+        <h2 style={{ marginTop: 10 }}>Pensado para tiendas de barrio que quieren vender como las grandes</h2>
+        <Advantages />
+      </div></section>
+
       <section className="block" id="precios"><div className="wrap">
         <p className="eyebrow">Precios</p>
         <h2 style={{ marginTop: 10 }}>Un equipo entero por menos que un sueldo</h2>
@@ -87,11 +104,28 @@ export default function Home() {
         </div>
         <div className="beta">
           <div><b>Beta privada, 10 plazas por invitación.</b> <span className="muted">Sin alta, 50 % de descuento los 3 primeros meses y precio de fundador congelado para siempre.</span></div>
-          <Link className="btn" href="/acceso">Pedir plaza</Link>
+          <Link className="btn" href="#beta">Pedir plaza</Link>
         </div>
       </div></section>
 
-      <footer><div className="wrap">© {new Date().getFullYear()} Oficina Virtual (nombre provisional).</div></footer>
+      <section className="block" id="preguntas"><div className="wrap faq-wrap">
+        <div>
+          <p className="eyebrow">Preguntas frecuentes</p>
+          <h2 style={{ marginTop: 10 }}>Lo que nos preguntan las tiendas</h2>
+        </div>
+        <Faq />
+      </div></section>
+
+      <section className="block beta-band" id="beta"><div className="wrap beta-wrap">
+        <div>
+          <p className="eyebrow">Beta privada · 10 plazas</p>
+          <h2 style={{ marginTop: 10 }}>Pide tu plaza</h2>
+          <p className="sub">Sin coste de alta, 50 % de descuento los tres primeros meses y precio de fundador para siempre. A cambio, nos cuentas qué mejorarías cada dos semanas.</p>
+        </div>
+        <BetaForm />
+      </div></section>
+
+      <footer><div className="wrap foot"><span className="logo small-logo"><i />Oficina Virtual</span><span>Hecho en España para tiendas de ropa.</span><span>© {new Date().getFullYear()} · nombre provisional</span></div></footer>
     </>
   );
 }

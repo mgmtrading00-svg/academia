@@ -10,6 +10,7 @@ export default function TopBar({ variant }: { variant: 'public' | 'app' }) {
             <>
               <Link href="/#equipo">Equipo</Link>
               <Link href="/#precios">Precios</Link>
+              <Link href="/#preguntas">Preguntas</Link>
               <Link className="btn" href="/acceso">Acceso clientes</Link>
             </>
           ) : (

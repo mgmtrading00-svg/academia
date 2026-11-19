@@ -15,6 +15,7 @@ interface DemoDb {
   photos: Photo[];
   survey: SurveyAnswers;
   kpis: Kpis;
+  betaRequests: Record<string, string>[];
 }
 
 function seed(): DemoDb {
@@ -49,6 +50,7 @@ function seed(): DemoDb {
     photos: [],
     survey: {},
     kpis: { published: 34, marketplaceSales: 11, lowStock: 3, adsRoas: 4.2 },
+    betaRequests: [],
   };
 }
 
@@ -56,6 +58,9 @@ const g = globalThis as unknown as { __ovDemo?: DemoDb };
 const db = () => (g.__ovDemo ??= seed());
 
 export const demo = {
+  addBetaRequest(r: Record<string, string>) {
+    db().betaRequests.push({ ...r, at: new Date().toISOString() });
+  },
   snapshot(): OfficeSnapshot {
     const d = db();
     return { shop: d.shop, agents: d.agents, tasks: d.tasks, activity: [...d.activity].sort((a, b) => b.at.localeCompare(a.at)), kpis: d.kpis };

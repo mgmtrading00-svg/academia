@@ -93,6 +93,23 @@ export async function uploadPhotos(_prev: FormState, form: FormData): Promise<Fo
   return { ok: files.length === 1 ? 'Foto recibida. Teo ya la tiene en su cola.' : `${files.length} fotos recibidas. Teo ya las tiene en su cola.` };
 }
 
+// ---------- Solicitud de plaza en la beta (portada, sin sesión) ----------
+export async function requestBeta(_prev: FormState, form: FormData): Promise<FormState> {
+  const get = (k: string, max: number) => String(form.get(k) ?? '').trim().slice(0, max);
+  const req = { nombre: get('nombre', 80), tienda: get('tienda', 80), ciudad: get('ciudad', 60), contacto: get('contacto', 120), canal: get('canal', 60), mensaje: get('mensaje', 600) };
+  if (!req.nombre || !req.tienda || !req.ciudad || !req.contacto) return { error: 'Rellena tu nombre, la tienda, la ciudad y cómo contactarte.' };
+  const email = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(req.contacto);
+  const phone = /^\+?[\d\s]{9,15}$/.test(req.contacto);
+  if (!email && !phone) return { error: 'Escribe un correo o un móvil válido.' };
+  if (form.get('acepto') !== 'on') return { error: 'Necesitamos tu permiso para contactarte.' };
+  if (IS_DEMO) demo.addBetaRequest(req);
+  else {
+    const { error } = await (await supabaseServer()).from('beta_requests').insert(req);
+    if (error) return { error: 'No se ha podido enviar. Inténtalo de nuevo en un momento.' };
+  }
+  return { ok: `Gracias, ${req.nombre.split(' ')[0]}. Te escribiremos para contarte los siguientes pasos.` };
+}
+
 // ---------- Encuesta ----------
 export async function saveSurvey(answers: SurveyAnswers, completed: boolean): Promise<FormState> {
   const shopId = await requireShop();
