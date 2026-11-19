@@ -248,3 +248,11 @@ input,select,textarea{font:16px var(--body);color:var(--ink);background:var(--bg
   .adv{grid-template-columns:1fr}
 }
 .ba-thumb{aspect-ratio:auto;background:linear-gradient(#F1F3F7,#DFE4EC)}
+
+/* Lo que ya no necesitas */
+.save-list{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:28px}
+.save-list div{display:grid;gap:8px;align-content:start;border-top:2px solid var(--accent);padding-top:14px}
+.save-list s{font:700 19px/1.2 var(--display);color:var(--muted);text-decoration-color:var(--accent);text-decoration-thickness:2px}
+.save-list span{color:var(--ink);font-size:15.5px}
+@media (max-width:900px){.save-list{grid-template-columns:1fr 1fr}}
+@media (max-width:640px){.save-list{grid-template-columns:1fr}}

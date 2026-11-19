@@ -12,8 +12,8 @@ const ITEMS: { icon: keyof typeof I; title: string; text: string }[] = [
   { icon: 'mic', title: 'Hablas por audio de WhatsApp', text: 'Le cuentas a Lola lo que necesitas como se lo contarías a una empleada. Ella lo reparte y te confirma.' },
   { icon: 'hanger', title: 'Probador para tus clientas', text: 'Tus clientas suben una foto suya y ven cómo les queda la prenda antes de comprar.' },
   { icon: 'box', title: 'Un solo stock para todo', text: 'Lo que vendes en la tienda física se descuenta en la web, Amazon y Vinted. Nada se vende dos veces.' },
-  { icon: 'chart', title: 'Un informe que se entiende', text: 'Cada lunes, en un mensaje: qué se vendió, qué funcionó en redes y qué hacemos esta semana.' },
-  { icon: 'shield', title: 'Garantía de 30 días', text: 'Si en el primer mes no notas que trabajas menos, te devolvemos la cuota.' },
+  { icon: 'chart', title: 'Tus ofertas salen solas en redes', text: 'Llegan rebajas o pones una oferta y Sara la publica en Instagram, TikTok y Pinterest con tus fotos y tu tono. Sin que escribas nada.' },
+  { icon: 'shield', title: 'Garantía «tú solo mandas»', text: 'Si en el primer mes tienes que hacer algo más que enviar fotos y stock, te devolvemos la cuota.' },
 ];
 
 export default function Advantages() {

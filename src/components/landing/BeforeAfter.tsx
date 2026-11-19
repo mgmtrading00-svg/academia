@@ -55,7 +55,7 @@ export default function BeforeAfter() {
     <div className="ba">
       <figure className="ba-step">
         <div className="ba-img"><PhonePhoto /></div>
-        <figcaption><span className="n">1</span><b>Lo que mandas</b><span className="muted">Una foto con el móvil, como te salga.</span></figcaption>
+        <figcaption><span className="n">1</span><b>Lo que mandas</b><span className="muted">Una foto con el móvil, aunque esté mal hecha.</span></figcaption>
       </figure>
       <span className="ba-arrow" aria-hidden="true" />
       <figure className="ba-step">

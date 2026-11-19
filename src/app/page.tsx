@@ -16,14 +16,14 @@ const HERO: AgentState[] = [
   { id: 'bruno', status: 'warn', task: 'Stock bajo', short: 'Lino talla M: queda 1' },
   { id: 'vera', status: 'ok', task: 'Informe enviado', short: 'Informe del día enviado' },
   { id: 'marco', status: 'busy', task: 'Subiendo a Vinted', short: 'Vinted: 2 de 4 subidas' },
-  { id: 'sara', status: 'ok', task: 'Publicación programada', short: 'Publicación a las 19:00' },
+  { id: 'sara', status: 'busy', task: 'Publicando la oferta de abrigos', short: 'Oferta subida a TikTok' },
   { id: 'leo', status: 'off', task: 'Fase 2', short: 'Disponible en fase 2' },
 ];
 
 const PLANS = [
   { name: 'Esencial', price: 149, star: false, items: ['Jefa de oficina por WhatsApp', 'Hasta 60 prendas al mes con foto en modelo', 'Publicación en tu web'] },
   { name: 'Profesional', price: 299, star: true, items: ['Todo lo de Esencial', 'Hasta 200 prendas al mes', 'Amazon y Vinted', 'Control de stock entre canales'] },
-  { name: 'Élite', price: 499, star: false, items: ['Todo lo de Profesional', 'Prendas ilimitadas (uso razonable)', 'Agente de publicidad con informe diario', 'Instagram y Pinterest gestionados'] },
+  { name: 'Élite', price: 499, star: false, items: ['Todo lo de Profesional', 'Prendas ilimitadas (uso razonable)', 'Agente de publicidad con informe diario', 'Instagram, TikTok y Pinterest gestionados'] },
 ];
 
 export default function Home() {
@@ -34,10 +34,10 @@ export default function Home() {
         <div className="hero-copy">
           <div>
             <p className="eyebrow">Para tiendas de ropa · España</p>
-            <h1 style={{ marginTop: 14 }}>Tu tienda manda las fotos. <em>Tu oficina hace el resto.</em></h1>
+            <h1 style={{ marginTop: 14 }}>Tú solo mandas. <em>Tu oficina hace todo lo demás.</em></h1>
           </div>
           <div>
-            <p className="lead">Un equipo de empleados digitales que pone tus prendas en modelo, las sube a tu web, a Amazon y a Vinted, controla el stock y prepara la publicidad. Tú solo apruebas desde el móvil.</p>
+            <p className="lead">Envía a tu jefa de oficina las fotos, aunque estén mal hechas, y el stock que te llega. Ella y su equipo ponen las prendas en modelo, las publican en tu web, Amazon y Vinted, suben novedades y ofertas a Instagram y TikTok, llevan el stock y hacen la publicidad. Sin fotógrafos y sin nadie en la oficina.</p>
             <div className="ctas">
               <Link className="btn sun" href="#beta">Pedir plaza en la beta</Link>
               <Link className="btn ghost" href="/acceso">Ver la oficina de ejemplo</Link>
@@ -46,16 +46,27 @@ export default function Home() {
           </div>
         </div>
         <OfficeScene id="hero" states={HERO} />
-        <p className="stage-cap">Lola atiende en recepción y el resto del equipo trabaja en sus puestos. En tu panel, cada puesto muestra en tiempo real lo que está haciendo.</p>
+        <p className="stage-cap">Lola recibe lo que mandas y reparte el trabajo. Si te apetece mirar, en tu panel ves en tiempo real qué hace cada uno. Si no, no hace falta.</p>
       </div></div>
 
       <section className="block"><div className="wrap">
         <p className="eyebrow">Cómo funciona</p>
-        <h2 style={{ marginTop: 10 }}>Tres pasos y te olvidas</h2>
+        <h2 style={{ marginTop: 10 }}>Tú mandas. Nosotros trabajamos.</h2>
         <div className="steps">
-          <div><span className="n">1</span><h3>Rellenas la encuesta de alta</h3><p>Diez minutos. Nos cuentas qué vendes, dónde vendes y cómo hablas a tus clientas. Tu oficina se configura con eso.</p></div>
-          <div><span className="n">2</span><h3>Mandas fotos por WhatsApp o aquí</h3><p>La prenda colgada o en el mostrador, como te salga. Talla, precio y unidades en un mensaje de voz si quieres.</p></div>
-          <div><span className="n">3</span><h3>Apruebas y se publica</h3><p>Te llega la ficha lista con foto en modelo. Un toque y está en tu web, Instagram, Amazon y Vinted.</p></div>
+          <div><span className="n">1</span><h3>Nos conocemos una vez</h3><p>Una llamada de quince minutos o una encuesta corta. Nos cuentas qué vendes y cómo es tu tienda, y nosotros lo configuramos todo.</p></div>
+          <div><span className="n">2</span><h3>Mandas fotos y stock a Lola</h3><p>Por WhatsApp, como te salga: la prenda colgada o encima del mostrador, y un audio con tallas, precio y unidades. Eso es todo lo que haces.</p></div>
+          <div><span className="n">3</span><h3>La oficina hace el resto</h3><p>Fotos en modelo, fichas, publicación en todos tus canales, stock, redes y anuncios. Solo te pregunta si algo necesita de verdad tu decisión.</p></div>
+        </div>
+      </div></section>
+
+      <section className="block saves"><div className="wrap">
+        <p className="eyebrow">Lo que ya no necesitas</p>
+        <h2 style={{ marginTop: 10 }}>Todo el trabajo de oficina, sin pagar a nadie más</h2>
+        <div className="save-list">
+          <div><s>Fotógrafo y estudio</s><span>Teo pone tus prendas en modelo a partir de una foto de móvil.</span></div>
+          <div><s>Horas subiendo productos</s><span>Nuria escribe las fichas y las publica en todos tus canales.</span></div>
+          <div><s>Llevar el stock a mano</s><span>Bruno descuenta cada venta en la tienda, la web, Amazon y Vinted.</span></div>
+          <div><s>Community manager y anuncios</s><span>Sara publica sola en Instagram y TikTok, también tus ofertas, y Vera lleva tu publicidad.</span></div>
         </div>
       </div></section>
 
@@ -79,7 +90,7 @@ export default function Home() {
           ))}
         </div>
         <div className="channels">
-          {['Tu web (Shopify / WooCommerce)', 'Amazon', 'Vinted', 'Instagram', 'Pinterest', 'Facebook Ads', 'WhatsApp'].map((c) => <span key={c}>{c}</span>)}
+          {['Tu web (Shopify / WooCommerce)', 'Amazon', 'Vinted', 'Instagram', 'TikTok', 'Pinterest', 'Facebook Ads', 'WhatsApp'].map((c) => <span key={c}>{c}</span>)}
         </div>
       </div></section>
 
