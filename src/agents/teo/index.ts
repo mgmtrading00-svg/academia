@@ -9,7 +9,7 @@ import { checkResult, inspectGarment, type Garment } from './vision';
  *      Si no sirve, Lola le pide otra a la tienda (lo único que la tienda tendría que hacer).
  *   2. La pone en una modelo con Gemini (o solo producto con fondo limpio, según la encuesta).
  *      Si la generación de fotos no está activada (es de pago en Google), mejora la foto él
- *      mismo: la endereza, corrige la luz y la encuadra, sin coste.
+ *      mismo: la gira según el móvil, corrige la luz y la encuadra, sin coste.
  *   3. Compara el resultado con la original. Si no es fiel, lo repite una vez con indicaciones.
  *      Si sigue sin ser fiel, lo revisa nuestro equipo: a la tienda no le llega nada malo.
  *   4. Según la autonomía elegida, la aprueba solo o deja al cliente un «Sí, adelante».
@@ -90,7 +90,7 @@ async function generate(original: StoredImage, g: Garment, p: ShopProfile, packs
   return { image: await generateImage({ images: [product], prompt, aspectRatio: '3:4' }), provider: 'gemini' };
 }
 
-/** Sin generación de fotos: endereza, corrige luz y encuadra en 3:4 sobre fondo claro. Sirve para probar el flujo. */
+/** Sin generación de fotos: corrige la luz y encuadra en 3:4 sobre fondo claro. Gratis. */
 async function enhanceLocally(input: Buffer): Promise<StoredImage> {
   const W = 1200, H = 1600;
   const item = await sharp(input).normalise().modulate({ brightness: 1.06, saturation: 1.05 }).resize(Math.round(W * 0.86), Math.round(H * 0.86), { fit: 'inside' }).toBuffer();
