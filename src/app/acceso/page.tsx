@@ -2,7 +2,7 @@ import { redirect } from 'next/navigation';
 import Link from 'next/link';
 import TopBar from '@/components/TopBar';
 import AccessForm from '@/components/AccessForm';
-import { IS_DEMO } from '@/lib/config';
+import { IS_DEMO, WHATSAPP_LOGIN } from '@/lib/config';
 import { hasSession } from '@/lib/data';
 
 export const dynamic = 'force-dynamic';
@@ -18,7 +18,7 @@ export default async function Acceso({ searchParams }: { searchParams: Promise<{
           <p className="eyebrow">Área de clientes</p>
           <h1>Entra en tu oficina</h1>
           {error === 'enlace' && <p className="err" role="alert">El enlace ha caducado o ya se usó. Pide uno nuevo.</p>}
-          <AccessForm demo={IS_DEMO} />
+          <AccessForm demo={IS_DEMO} whatsapp={WHATSAPP_LOGIN} />
         </div>
         <aside className="acc-side">
           <p className="eyebrow">Recuerda</p>

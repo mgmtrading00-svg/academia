@@ -5,6 +5,8 @@ import { currentShopId, getPhotos } from '@/lib/data';
 import type { Listing, Photo } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
+// Los empleados trabajan justo después de subir fotos o decidir; les damos hasta un minuto.
+export const maxDuration = 60;
 
 const LABEL: Record<Photo['status'], [string, string]> = {
   en_cola: ['Teo está con ella', 'busy'],

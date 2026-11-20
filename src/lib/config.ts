@@ -7,3 +7,5 @@ export const SUPABASE_ANON_KEY = process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY ?? ''
 export const IS_DEMO = !SUPABASE_URL || !SUPABASE_ANON_KEY;
 export const DEMO_COOKIE = 'ov_demo';
 export const PHOTO_BUCKET = 'fotos';
+/** El acceso por WhatsApp necesita un proveedor de SMS/WhatsApp en Supabase (de pago). */
+export const WHATSAPP_LOGIN = IS_DEMO || process.env.NEXT_PUBLIC_WHATSAPP_LOGIN === 'si';

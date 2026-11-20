@@ -65,16 +65,18 @@ function WhatsappFlow() {
   );
 }
 
-export default function AccessForm({ demo }: { demo: boolean }) {
-  const [mode, setMode] = useState<Mode>('whatsapp');
+export default function AccessForm({ demo, whatsapp }: { demo: boolean; whatsapp: boolean }) {
+  const [mode, setMode] = useState<Mode>(whatsapp ? 'whatsapp' : 'email');
   return (
     <div className="acc">
-      <div className="seg" role="tablist" aria-label="Cómo quieres entrar">
-        <button type="button" role="tab" aria-selected={mode === 'whatsapp'} className={mode === 'whatsapp' ? 'on' : ''} onClick={() => setMode('whatsapp')}>WhatsApp</button>
-        <button type="button" role="tab" aria-selected={mode === 'email'} className={mode === 'email' ? 'on' : ''} onClick={() => setMode('email')}>Correo</button>
-      </div>
+      {whatsapp && (
+        <div className="seg" role="tablist" aria-label="Cómo quieres entrar">
+          <button type="button" role="tab" aria-selected={mode === 'whatsapp'} className={mode === 'whatsapp' ? 'on' : ''} onClick={() => setMode('whatsapp')}>WhatsApp</button>
+          <button type="button" role="tab" aria-selected={mode === 'email'} className={mode === 'email' ? 'on' : ''} onClick={() => setMode('email')}>Correo</button>
+        </div>
+      )}
       {mode === 'whatsapp' ? <WhatsappFlow /> : <EmailFlow />}
-      <p className="small muted">Sin contraseñas. Solo entran el correo y el móvil que nos diste en el alta.</p>
+      <p className="small muted">Sin contraseñas. Solo entran {whatsapp ? 'el correo y el móvil' : 'el correo'} que nos diste en el alta.</p>
       {demo && (
         <>
           <hr className="sep" />

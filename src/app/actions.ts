@@ -14,6 +14,24 @@ export type FormState = { ok?: string; error?: string };
 const MAX_FILES = 20;
 const MAX_BYTES = 10 * 1024 * 1024;
 
+/**
+ * Los empleados trabajan justo después de responder a la tienda, en el propio servidor.
+ * En la demostración, sobre la tienda de ejemplo; en la web real, con la clave de servicio.
+ * (En producción también puede correr aparte con `npm run empleados`.)
+ */
+function runAgentsSoon() {
+  after(async () => {
+    const { drain } = await import('@/agents/runner');
+    if (IS_DEMO) {
+      const { demoStore } = await import('@/agents/stores/demo');
+      await drain(demoStore);
+    } else if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
+      const { supabaseStore } = await import('@/agents/stores/supabase');
+      await drain(supabaseStore(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY));
+    }
+  });
+}
+
 async function requireShop() {
   const shopId = await currentShopId();
   if (!shopId) redirect('/acceso');
@@ -97,6 +115,7 @@ export async function decideTask(taskId: string, approve: boolean): Promise<Form
   } catch (e) {
     return { error: e instanceof Error ? e.message : 'No se ha podido guardar.' };
   }
+  if (!approve) runAgentsSoon();
   revalidatePath('/panel');
   return { ok: approve ? 'Aprobado' : 'Hemos pedido los cambios' };
 }
@@ -119,11 +138,6 @@ export async function uploadPhotos(_prev: FormState, form: FormData): Promise<Fo
       return { name: f.name, data, mediaType: f.type, dataUrl: f.size < 2_000_000 ? `data:${f.type};base64,${data.toString('base64')}` : null };
     }));
     demo.addPhotos(items, note);
-    // En la demostración los empleados trabajan dentro del propio servidor, justo después de responder.
-    after(async () => {
-      const [{ drain }, { demoStore }] = await Promise.all([import('@/agents/runner'), import('@/agents/stores/demo')]);
-      await drain(demoStore);
-    });
   } else {
     const sb = await supabaseServer();
     for (const f of files) {
@@ -135,6 +149,7 @@ export async function uploadPhotos(_prev: FormState, form: FormData): Promise<Fo
       if (ins.error) return { error: `No se ha podido registrar ${f.name}.` };
     }
   }
+  runAgentsSoon();
   revalidatePath('/panel/fotos');
   revalidatePath('/panel');
   return { ok: files.length === 1 ? 'Foto recibida. Teo ya la tiene en su cola.' : `${files.length} fotos recibidas. Teo ya las tiene en su cola.` };

@@ -22,6 +22,10 @@ Los datos viven en memoria y se reinician al reiniciar el servidor.
 
 ## Conectar la base de datos (Supabase)
 
+Guía paso a paso, sin conocimientos técnicos: [docs/PUESTA-EN-MARCHA.md](docs/PUESTA-EN-MARCHA.md).
+La base de datos se instala de una vez con `supabase/instalar.sql` y cada tienda se da de alta con `supabase/alta-tienda.sql`.
+
+
 1. Crear un proyecto en Supabase (región UE).
 2. Ejecutar `supabase/migrations/0001_init.sql` en el editor SQL.
 3. Copiar `.env.example` a `.env.local` y rellenar URL y clave anónima.
