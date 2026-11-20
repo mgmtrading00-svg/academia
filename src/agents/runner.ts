@@ -1,5 +1,5 @@
-import { AgentRefusal } from './claude';
-import { FashnError } from './teo/fashn';
+import { ApiError } from '@google/genai';
+import { AgentRefusal } from './gemini';
 import { runTeo } from './teo';
 import type { OfficeStore, QueuedTask, TaskOutcome } from './store';
 import type { AgentId } from '../lib/agents';
@@ -29,7 +29,8 @@ export async function tick(store: OfficeStore): Promise<number> {
       }
     } catch (e) {
       const msg = e instanceof Error ? e.message : String(e);
-      const retryable = !(e instanceof AgentRefusal) && !(e instanceof FashnError && !e.retryable) && !(e instanceof SyntaxError);
+      // Reintentar solo fallos pasajeros: red, saturación (429) o error del servidor (5xx).
+      const retryable = !(e instanceof AgentRefusal) && !(e instanceof SyntaxError) && !(e instanceof ApiError && e.status < 500 && e.status !== 429);
       if (retryable && task.attempts + 1 < MAX_ATTEMPTS) await store.retryLater(task, msg);
       else await store.finish(task, { status: 'revision', reason: msg });
       await store.setAgent(task.shopId, agentId, { status: 'ok', task: 'Al día', short: 'Al día' }).catch(() => {});

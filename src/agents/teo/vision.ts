@@ -1,11 +1,11 @@
 import sharp from 'sharp';
-import { askJson, hasClaude, type ImageInput } from '../claude';
+import { askJson, hasGemini, type ImageInput } from '../gemini';
 import type { StoredImage } from '../store';
 
-/** Reduce y normaliza la foto (gira según EXIF, máx. 1568 px, JPEG) para enviarla a Claude. */
+/** Reduce y normaliza la foto (gira según EXIF, máx. 1568 px, JPEG) para enviarla a Gemini. */
 export async function forVision(img: StoredImage): Promise<ImageInput> {
   const out = await sharp(img.data).rotate().resize(1568, 1568, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 85 }).toBuffer();
-  return { mediaType: 'image/jpeg', base64: out.toString('base64') };
+  return { mimeType: 'image/jpeg', base64: out.toString('base64') };
 }
 
 // ---------- 1. Revisión de entrada: ¿qué prenda es y sirve la foto? ----------
@@ -53,13 +53,12 @@ Marca usable=false solo si con esta foto es imposible sacar una buena foto en mo
 En defects anota manchas, roturas, hilos o arrugas fuertes que se vean en la prenda (no los defectos de la foto). Los colores, en palabras normales de tienda («verde botella», «crudo»). Todo en español de España.`;
 
 export async function inspectGarment(img: StoredImage, ctx: { fileName: string; note: string }): Promise<Garment> {
-  if (!hasClaude()) return demoGarment(ctx.fileName);
+  if (!hasGemini()) return demoGarment(ctx.fileName);
   return askJson<Garment>({
     system: INSPECT_SYSTEM,
     images: [await forVision(img)],
     text: `Nombre del archivo: ${ctx.fileName}${ctx.note ? `\nNota de la tienda: ${ctx.note}` : ''}`,
     schema: GARMENT_SCHEMA,
-    effort: 'medium',
   });
 }
 
@@ -91,17 +90,16 @@ La tienda va a vender esa prenda con la segunda foto, así que tiene que ser fie
 Si falla, lista los problemas en problems (en español) y escribe en retry_prompt una indicación breve en inglés para el generador que ayude a corregirlos (por ejemplo «keep the exact emerald green colour and the six front buttons»).`;
 
 export async function checkResult(original: StoredImage, result: StoredImage, g: Garment): Promise<QaResult> {
-  if (!hasClaude()) return { pass: true, problems: [], retry_prompt: '' };
+  if (!hasGemini()) return { pass: true, problems: [], retry_prompt: '' };
   return askJson<QaResult>({
     system: QA_SYSTEM,
     images: [await forVision(original), await forVision(result)],
     text: `Prenda según la revisión de entrada: ${g.title}. Color: ${g.color}. Estampado: ${g.pattern}. Detalles: ${g.details.join(', ') || 'ninguno'}.`,
     schema: QA_SCHEMA,
-    effort: 'high',
   });
 }
 
-// ---------- Modo demostración (sin clave de Claude) ----------
+// ---------- Modo demostración (sin clave de Gemini) ----------
 
 function demoGarment(fileName: string): Garment {
   const n = fileName.toLowerCase();

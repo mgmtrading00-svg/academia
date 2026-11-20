@@ -10,7 +10,7 @@
     "empleados": "tsx --env-file-if-exists=.env.local scripts/empleados.ts"
   },
   "dependencies": {
-    "@anthropic-ai/sdk": "^1.11.0",
+    "@google/genai": "^3.6.1",
     "@supabase/ssr": "^0.7.0",
     "@supabase/supabase-js": "^2.119.1",
     "next": "15.5.4",

@@ -50,7 +50,7 @@ export interface PhotoAttributes {
   qa?: { pass: boolean; problems: string[] };
   tries?: number;
   mode?: 'modelo' | 'producto';
-  provider?: 'fashn' | 'simulado';
+  provider?: 'gemini' | 'local';
 }
 
 export interface Kpis {

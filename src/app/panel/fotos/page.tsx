@@ -26,7 +26,7 @@ function PhotoCard({ p }: { p: Photo }) {
         {p.modelUrl && (
           <figure>
             <div className="img"><img src={p.modelUrl} alt={`Foto de Teo: ${g?.title ?? p.fileName}`} /></div>
-            <figcaption>De Teo{p.attributes?.provider === 'simulado' ? ' · simulación' : ''}</figcaption>
+            <figcaption>De Teo{p.attributes?.provider === 'local' ? ' · mejorada' : ''}</figcaption>
           </figure>
         )}
       </div>
