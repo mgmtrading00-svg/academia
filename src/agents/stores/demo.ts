@@ -32,7 +32,7 @@ export const demoStore: OfficeStore = {
   },
   async shopProfile() {
     const d = demoInternals.db();
-    return { name: d.shop.name, modelo: d.survey.modelo, autonomia: d.survey.autonomia, tono: d.survey.tono };
+    return { name: d.survey.nombre || d.shop.name, modelo: d.survey.modelo, autonomia: d.survey.autonomia, tono: d.survey.tono, evitar: d.survey.evitar, canales: d.survey.canales };
   },
   async getPhoto(photoId) {
     const p = demoInternals.db().photos.find((x) => x.id === photoId);
@@ -47,6 +47,10 @@ export const demoStore: OfficeStore = {
   async markPhoto(photoId, status, attributes) {
     const p = demoInternals.db().photos.find((x) => x.id === photoId);
     if (p) Object.assign(p, { status, attributes });
+  },
+  async saveListing(photoId, listing) {
+    const p = demoInternals.db().photos.find((x) => x.id === photoId);
+    if (p) p.listing = listing;
   },
   async setAgent(_shopId, agentId, s) {
     const a = demoInternals.db().agents.find((x) => x.id === agentId);

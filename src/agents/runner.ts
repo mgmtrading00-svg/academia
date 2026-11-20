@@ -1,6 +1,7 @@
 import { ApiError } from '@google/genai';
 import { AgentRefusal } from './gemini';
 import { runTeo } from './teo';
+import { runNuria } from './nuria';
 import type { OfficeStore, QueuedTask, TaskOutcome } from './store';
 import type { AgentId } from '../lib/agents';
 
@@ -9,6 +10,7 @@ type Worker = (task: QueuedTask, store: OfficeStore) => Promise<TaskOutcome>;
 /** Empleados que ya trabajan de verdad. Los demás dejan sus tareas en cola. */
 export const WORKERS: Partial<Record<AgentId, Worker>> = {
   teo: runTeo,
+  nuria: runNuria,
 };
 
 const MAX_ATTEMPTS = 3;
@@ -24,7 +26,8 @@ export async function tick(store: OfficeStore): Promise<number> {
       const outcome = await worker(task, store);
       await store.finish(task, outcome);
       if (outcome.status === 'espera_aprobacion') {
-        await store.setAgent(task.shopId, agentId, { status: 'warn', task: 'Tienes fotos nuevas para dar el visto bueno', short: 'Fotos para aprobar' });
+        const what = agentId === 'nuria' ? ['fichas nuevas', 'Fichas para aprobar'] : ['fotos nuevas', 'Fotos para aprobar'];
+        await store.setAgent(task.shopId, agentId, { status: 'warn', task: `Tienes ${what[0]} para dar el visto bueno`, short: what[1] });
         await store.setAgent(task.shopId, 'lola', { status: 'busy', task: 'Te he dejado cosas para aprobar', short: 'Cosas para aprobar' });
       }
     } catch (e) {

@@ -43,6 +43,9 @@ La tabla `tasks` es la cola de trabajo. Cada agente (proceso en servidor) coge t
   si no, Teo mejora la foto él mismo (luz y encuadre) sin coste.
   Si sigue sin serlo, la tarea queda en `revision` para nuestro equipo y la tienda no ve nada malo.
   Según la autonomía de la encuesta, la aprueba solo o deja un «Sí, adelante». Después pasa la ficha a Nuria.
+- `src/agents/nuria/` es Nuria, la catalogadora: con lo que vio Teo y la nota de la tienda escribe la
+  ficha para la web, Vinted y Amazon con el tono de la encuesta. Precio y tallas salen solo de la nota
+  de la tienda (nunca los inventa); si faltan, Lola se los pide. Las fichas van a la tabla `listings`.
 - Una sola `GEMINI_API_KEY` de la oficina para todas las tiendas. Sin ella todo funciona igual pero simulado (útil para la demo).
 - En la demo los empleados trabajan dentro del propio servidor al subir una foto.
   En producción corre aparte: `npm run empleados` (o `npm run empleados -- --una` desde un cron).

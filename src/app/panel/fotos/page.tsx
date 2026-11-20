@@ -2,7 +2,7 @@
 import PhotoUpload from '@/components/PhotoUpload';
 import AutoRefresh from '@/components/AutoRefresh';
 import { currentShopId, getPhotos } from '@/lib/data';
-import type { Photo } from '@/lib/types';
+import type { Listing, Photo } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 
@@ -13,6 +13,29 @@ const LABEL: Record<Photo['status'], [string, string]> = {
   aprobada: ['Aprobada', 'ok'],
   publicada: ['Publicada', 'ok'],
 };
+
+const eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
+const LISTING: Record<Listing['status'], [string, string]> = {
+  falta_info: ['Lola te pregunta lo que falta', 'warn'],
+  lista: ['Ficha para tu visto bueno', 'warn'],
+  aprobada: ['Ficha aprobada', 'ok'],
+  publicada: ['Ficha publicada', 'ok'],
+};
+
+function ListingBlock({ l }: { l: Listing }) {
+  return (
+    <details className="ficha">
+      <summary>
+        <span>Ficha de Nuria{l.priceEur != null ? ` · ${eur.format(l.priceEur)}` : ''}{l.sizes.length ? ` · ${l.sizes.join(', ')}` : ''}</span>
+        <span className={`pill ${LISTING[l.status][1]}`}>{LISTING[l.status][0]}</span>
+      </summary>
+      {l.missing.length > 0 && <p className="ask">Falta {l.missing.map((m) => (m === 'precio' ? 'el precio' : 'las tallas')).join(' y ')}. Lola te lo pregunta por WhatsApp.</p>}
+      <div className="ficha-canal"><span className="eyebrow">Tu web</span><b>{l.web.title}</b>{l.web.description.split('\n').filter(Boolean).map((t, i) => <p key={i}>{t}</p>)}</div>
+      <div className="ficha-canal"><span className="eyebrow">Vinted</span><b>{l.vinted.title}</b><p className="pre">{l.vinted.description}</p></div>
+      <div className="ficha-canal"><span className="eyebrow">Amazon</span><b>{l.amazon.title}</b><ul>{l.amazon.bullets.map((b, i) => <li key={i}>{b}</li>)}</ul></div>
+    </details>
+  );
+}
 
 function PhotoCard({ p }: { p: Photo }) {
   const g = p.attributes?.garment;
@@ -37,6 +60,7 @@ function PhotoCard({ p }: { p: Photo }) {
         {!!g?.defects.length && <span className="ask">Ojo: {g.defects.join(', ')}</span>}
         {p.note && <span className="muted">{p.note}</span>}
         <span className={`pill ${LABEL[p.status][1]}`}>{LABEL[p.status][0]}</span>
+        {p.listing && <ListingBlock l={p.listing} />}
       </div>
     </article>
   );
@@ -44,7 +68,8 @@ function PhotoCard({ p }: { p: Photo }) {
 
 export default async function Fotos() {
   const photos = await getPhotos((await currentShopId())!);
-  const working = photos.some((p) => p.status === 'en_cola');
+  // Seguir refrescando mientras Teo o Nuria tengan trabajo con estas fotos.
+  const working = photos.some((p) => p.status === 'en_cola' || ((p.status === 'lista' || p.status === 'aprobada') && !p.listing));
   return (
     <div style={{ display: 'grid', gap: 18 }}>
       <AutoRefresh active={working} />

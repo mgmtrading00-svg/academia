@@ -44,7 +44,7 @@ export function supabaseStore(url: string, serviceKey: string): OfficeStore {
         sb.from('survey_responses').select('answers').eq('shop_id', shopId).maybeSingle(),
       ]);
       const a = (survey.data?.answers ?? {}) as Record<string, string>;
-      return { name: shop.data?.name ?? '', modelo: a.modelo, autonomia: a.autonomia, tono: a.tono };
+      return { name: a.nombre || shop.data?.name || '', modelo: a.modelo, autonomia: a.autonomia, tono: a.tono, evitar: a.evitar, canales: a.canales };
     },
 
     async getPhoto(photoId) {
@@ -63,6 +63,11 @@ export function supabaseStore(url: string, serviceKey: string): OfficeStore {
 
     async markPhoto(photoId, status, attributes) {
       must(await sb.from('photos').update({ status, attributes }).eq('id', photoId));
+    },
+
+    async saveListing(photoId, listing) {
+      const { data: p } = await sb.from('photos').select('shop_id').eq('id', photoId).single();
+      must(await sb.from('listings').upsert({ photo_id: photoId, shop_id: p!.shop_id, status: listing.status, data: listing, updated_at: new Date().toISOString() }));
     },
 
     async setAgent(shopId, agentId, s) {

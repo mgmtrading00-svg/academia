@@ -1,4 +1,5 @@
 import type { AgentId, AgentStatus } from '../lib/agents';
+import type { Listing } from '../lib/types';
 
 /** Tarea de la cola tal y como la recibe un empleado. */
 export interface QueuedTask {
@@ -25,6 +26,10 @@ export interface ShopProfile {
   autonomia?: string;
   /** Tono de la marca, para Nuria y Sara. */
   tono?: string;
+  /** Palabras que la tienda no quiere usar. */
+  evitar?: string;
+  /** Dónde vende (web, Vinted, Amazon…). */
+  canales?: string;
 }
 
 export type TaskOutcome =
@@ -49,6 +54,7 @@ export interface OfficeStore {
   getPhoto(photoId: string): Promise<{ id: string; shopId: string; fileName: string; note: string; image: StoredImage } | null>;
   savePhotoResult(photoId: string, r: { image: StoredImage; attributes: Record<string, unknown>; status: 'lista' | 'aprobada' }): Promise<void>;
   markPhoto(photoId: string, status: 'repetir', attributes: Record<string, unknown>): Promise<void>;
+  saveListing(photoId: string, listing: Listing): Promise<void>;
 
   setAgent(shopId: string, agentId: AgentId, s: { status: AgentStatus; task: string; short: string }): Promise<void>;
   log(shopId: string, agentId: AgentId, message: string): Promise<void>;

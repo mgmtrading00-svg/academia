@@ -4,7 +4,7 @@ import { AGENTS, type AgentId, type AgentState } from './agents';
 import { DEMO_COOKIE, IS_DEMO, PHOTO_BUCKET } from './config';
 import { demo } from './demo-store';
 import { supabaseServer } from './supabase/server';
-import type { OfficeSnapshot, Photo, SurveyAnswers } from './types';
+import type { Listing, OfficeSnapshot, Photo, SurveyAnswers } from './types';
 
 /** Devuelve el id de la tienda de la sesión actual, o null si no hay sesión. */
 export async function currentShopId(): Promise<string | null> {
@@ -59,7 +59,7 @@ export async function getOffice(shopId: string): Promise<OfficeSnapshot> {
 export async function getPhotos(shopId: string): Promise<Photo[]> {
   if (IS_DEMO) return demo.photos();
   const sb = await supabaseServer();
-  const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
+  const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at,listings(data)').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
   const rows = data ?? [];
   const paths = rows.flatMap((r) => (r.model_path ? [r.storage_path, r.model_path] : [r.storage_path]));
   const signed = paths.length ? await sb.storage.from(PHOTO_BUCKET).createSignedUrls(paths, 3600) : { data: [] as { path: string | null; signedUrl: string | null }[] };
@@ -69,6 +69,7 @@ export async function getPhotos(shopId: string): Promise<Photo[]> {
     url: urlOf.get(r.storage_path) ?? null,
     modelUrl: r.model_path ? urlOf.get(r.model_path) ?? null : null,
     attributes: r.attributes ?? {},
+    listing: (Array.isArray(r.listings) ? r.listings[0]?.data : (r.listings as { data?: Listing } | null)?.data) ?? undefined,
   }));
 }
 

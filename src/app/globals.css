@@ -329,3 +329,14 @@ input,select,textarea{font:16px var(--body);color:var(--ink);background:var(--bg
 .ph figcaption{position:absolute;left:8px;bottom:8px;background:rgba(15,23,42,.72);color:#fff;font-size:11px;padding:3px 7px;border-radius:6px}
 .ph .meta{padding:12px;display:grid;gap:6px;font-size:13px}
 .ph .ask{font-size:13px;color:var(--ink);background:color-mix(in srgb,var(--warn) 14%,transparent);border-radius:8px;padding:6px 8px}
+.ficha{border-top:1px solid var(--line);margin-top:4px;padding-top:8px}
+.ficha summary{cursor:pointer;display:flex;flex-wrap:wrap;gap:6px 10px;align-items:center;justify-content:space-between;font-weight:600;list-style:none}
+.ficha summary::-webkit-details-marker{display:none}
+.ficha summary::after{content:'Ver';font-weight:500;color:var(--accent);font-size:12px}
+.ficha[open] summary::after{content:'Ocultar'}
+.ficha summary:focus-visible{outline:2px solid var(--accent);outline-offset:2px;border-radius:6px}
+.ficha-canal{display:grid;gap:4px;margin-top:10px}
+.ficha-canal p,.ficha-canal ul{margin:0;color:var(--muted)}
+.ficha-canal ul{padding-left:18px}
+.ficha .pre{white-space:pre-line}
+.ficha .ask{margin-top:8px}

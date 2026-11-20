@@ -42,7 +42,21 @@ export interface Photo {
   modelUrl?: string | null;
   /** Lo que Teo ha visto de la prenda: título, color, defectos… */
   attributes?: PhotoAttributes;
+  /** Ficha de producto que ha escrito Nuria. */
+  listing?: Listing;
   createdAt: string;
+}
+
+/** Ficha de producto para cada canal. Precio y tallas salen solo de lo que dijo la tienda. */
+export interface Listing {
+  status: 'falta_info' | 'lista' | 'aprobada' | 'publicada';
+  priceEur: number | null;
+  sizes: string[];
+  missing: ('precio' | 'tallas')[];
+  web: { title: string; description: string };
+  vinted: { title: string; description: string };
+  amazon: { title: string; bullets: string[] };
+  tags: string[];
 }
 
 export interface PhotoAttributes {

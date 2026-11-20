@@ -77,6 +77,11 @@ export const demo = {
     t.status = approve ? 'hecha' : 'cambios';
     const photo = t.kind === 'foto_modelo' && typeof t.payload?.photo_id === 'string' ? d.photos.find((p) => p.id === t.payload!.photo_id) : undefined;
     if (photo && approve) photo.status = 'aprobada';
+    const listed = t.kind === 'ficha' && typeof t.payload?.photo_id === 'string' ? d.photos.find((p) => p.id === t.payload!.photo_id) : undefined;
+    if (listed?.listing) {
+      if (approve) listed.listing.status = 'aprobada';
+      else d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'nuria', kind: 'ficha', title: `Reescribir: ${t.title}`, status: 'pendiente', payload: { ...t.payload, redo: true }, attempts: 0, createdAt: new Date().toISOString() });
+    }
     if (photo && !approve) {
       photo.status = 'en_cola';
       d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'teo', kind: 'foto_modelo', title: `Repetir: ${t.title}`, status: 'pendiente', payload: { ...t.payload, redo: true }, attempts: 0, createdAt: new Date().toISOString() });
@@ -104,7 +109,7 @@ export const demo = {
     teo.status = 'busy';
     teo.task = `Poniendo en modelo ${list.length} foto${list.length > 1 ? 's' : ''} nueva${list.length > 1 ? 's' : ''}`;
     teo.short = 'Fotos nuevas en cola';
-    d.activity.push({ id: id(), agentId: 'teo', at: new Date().toISOString(), message: list.length === 1 ? 'Recibida 1 foto. Te aviso cuando esté en modelo.' : `Recibidas ${list.length} fotos. Te aviso cuando estén en modelo.` });
+    d.activity.push({ id: id(), agentId: 'teo', at: new Date().toISOString(), message: list.length === 1 ? 'Recibida 1 foto. Te aviso cuando esté lista.' : `Recibidas ${list.length} fotos. Te aviso cuando estén listas.` });
   },
   photos: () => db().photos,
   survey: () => db().survey,
