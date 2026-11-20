@@ -1,7 +1,7 @@
 import { redirect } from 'next/navigation';
+import Link from 'next/link';
 import TopBar from '@/components/TopBar';
-import LoginForm from '@/components/LoginForm';
-import { demoLogin } from '@/app/actions';
+import AccessForm from '@/components/AccessForm';
 import { IS_DEMO } from '@/lib/config';
 import { hasSession } from '@/lib/data';
 
@@ -13,19 +13,25 @@ export default async function Acceso({ searchParams }: { searchParams: Promise<{
   return (
     <>
       <TopBar variant="public" />
-      <div className="wrap auth">
-        <div className="card">
+      <div className="wrap acc-page">
+        <div className="acc-card">
           <p className="eyebrow">Área de clientes</p>
-          <h2 style={{ fontSize: 28 }}>Entra en tu oficina</h2>
+          <h1>Entra en tu oficina</h1>
           {error === 'enlace' && <p className="err" role="alert">El enlace ha caducado o ya se usó. Pide uno nuevo.</p>}
-          <LoginForm demo={IS_DEMO} />
-          {IS_DEMO && (
-            <>
-              <hr style={{ border: 0, borderTop: '1px solid var(--line)', width: '100%' }} />
-              <form action={demoLogin}><button type="submit" className="btn ghost" style={{ width: '100%', justifyContent: 'center' }}>Entrar con la tienda de ejemplo</button></form>
-            </>
-          )}
+          <AccessForm demo={IS_DEMO} />
         </div>
+        <aside className="acc-side">
+          <p className="eyebrow">Recuerda</p>
+          <h2>No tienes que entrar para que tu oficina trabaje</h2>
+          <p>Todo lo importante te llega por WhatsApp. El panel es para cuando te apetezca ver qué está haciendo tu equipo.</p>
+          <ul>
+            <li>Qué está haciendo cada empleado ahora mismo</li>
+            <li>Tus fotos, antes y después</li>
+            <li>Lo poco que necesita tu decisión</li>
+            <li>Tus ventas y tu stock del mes</li>
+          </ul>
+          <p className="small">¿Aún no eres cliente? <Link href="/#beta">Pide plaza en la beta</Link>.</p>
+        </aside>
       </div>
     </>
   );

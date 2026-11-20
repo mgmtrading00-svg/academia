@@ -20,21 +20,62 @@ async function requireShop() {
 }
 
 // ---------- Acceso ----------
-export async function demoLogin() {
+export async function demoLogin(): Promise<never> {
   (await cookies()).set(DEMO_COOKIE, '1', { httpOnly: true, sameSite: 'lax', path: '/', maxAge: 60 * 60 * 24 * 7 });
   redirect('/panel');
 }
 
-export async function sendMagicLink(_prev: FormState, form: FormData): Promise<FormState> {
+export type AccessState = FormState & { step?: 'sent' | 'code'; to?: string; demo?: boolean };
+
+const DEMO_CODE = '000000';
+
+function normalizePhone(raw: string): string | null {
+  let p = raw.replace(/[\s().-]/g, '');
+  if (p.startsWith('00')) p = '+' + p.slice(2);
+  if (/^[67]\d{8}$/.test(p)) p = '+34' + p; // móvil español sin prefijo
+  return /^\+\d{9,15}$/.test(p) ? p : null;
+}
+
+async function origin() {
+  const h = await headers();
+  return h.get('origin') ?? `https://${h.get('host')}`;
+}
+
+/** Paso 1 por correo: envía el enlace mágico. */
+export async function sendMagicLink(_prev: AccessState, form: FormData): Promise<AccessState> {
   const email = String(form.get('email') ?? '').trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: 'Escribe un correo válido, por ejemplo hola@tutienda.es.' };
-  if (IS_DEMO) return { error: 'Esta instalación está en modo demostración. Entra con la tienda de ejemplo.' };
-  const h = await headers();
-  const origin = h.get('origin') ?? `https://${h.get('host')}`;
+  if (IS_DEMO) return { step: 'sent', to: email, demo: true };
   const sb = await supabaseServer();
-  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${origin}/auth/callback`, shouldCreateUser: false } });
-  if (error) return { error: 'No hemos podido enviar el enlace. Comprueba que el correo es el de tu tienda.' };
-  return { ok: `Te hemos enviado un enlace a ${email}. Ábrelo desde este mismo dispositivo.` };
+  const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${await origin()}/auth/callback`, shouldCreateUser: false } });
+  if (error) return { error: 'No encontramos una tienda con ese correo. Usa el que nos diste en el alta.' };
+  return { step: 'sent', to: email };
+}
+
+/** Paso 1 por WhatsApp: envía un código de 6 cifras. */
+export async function sendWhatsappCode(_prev: AccessState, form: FormData): Promise<AccessState> {
+  const phone = normalizePhone(String(form.get('phone') ?? ''));
+  if (!phone) return { error: 'Escribe tu móvil, por ejemplo 600 123 456.' };
+  if (IS_DEMO) return { step: 'code', to: phone, demo: true };
+  const sb = await supabaseServer();
+  const { error } = await sb.auth.signInWithOtp({ phone, options: { channel: 'whatsapp', shouldCreateUser: false } });
+  if (error) return { error: 'No encontramos una tienda con ese móvil. Usa el que nos diste en el alta.' };
+  return { step: 'code', to: phone };
+}
+
+/** Paso 2 por WhatsApp: comprueba el código y entra. */
+export async function verifyWhatsappCode(prev: AccessState, form: FormData): Promise<AccessState> {
+  const phone = String(form.get('phone') ?? '');
+  const token = String(form.get('code') ?? '').replace(/\D/g, '');
+  if (token.length !== 6) return { ...prev, error: 'El código tiene 6 cifras.' };
+  if (IS_DEMO) {
+    if (token !== DEMO_CODE) return { ...prev, error: `Código incorrecto. En la demostración es ${DEMO_CODE}.` };
+    return demoLogin();
+  }
+  const sb = await supabaseServer();
+  const { error } = await sb.auth.verifyOtp({ phone, token, type: 'sms' });
+  if (error) return { ...prev, error: 'Código incorrecto o caducado. Pide uno nuevo.' };
+  redirect('/panel');
 }
 
 export async function logout() {

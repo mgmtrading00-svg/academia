@@ -1,13 +1,15 @@
 import PanelOffice from '@/components/PanelOffice';
-import { currentShopId, getOffice } from '@/lib/data';
+import Link from 'next/link';
+import { currentShopId, getOffice, getSurvey } from '@/lib/data';
 
 export const dynamic = 'force-dynamic';
 
 const fmt = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 });
 
 export default async function Panel() {
-  const office = await getOffice((await currentShopId())!);
-  const waiting = office.tasks.filter((t) => t.status === 'espera_aprobacion').length;
+  const shopId = (await currentShopId())!;
+  const [office, survey] = await Promise.all([getOffice(shopId), getSurvey(shopId)]);
+  const firstTime = !survey.nombre;
   const today = new Date().toLocaleDateString('es-ES', { weekday: 'long', day: 'numeric', month: 'long', timeZone: 'Europe/Madrid' });
   const hour = Number(new Date().toLocaleString('es-ES', { hour: 'numeric', hour12: false, timeZone: 'Europe/Madrid' }));
   const greet = hour < 14 ? 'Buenos días' : hour < 21 ? 'Buenas tardes' : 'Buenas noches';
@@ -16,8 +18,16 @@ export default async function Panel() {
     <div style={{ display: 'grid', gap: 20 }}>
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'end', gap: 12, flexWrap: 'wrap' }}>
         <div><p className="eyebrow">{today}</p><h1 style={{ marginTop: 6 }}>{greet}, {office.shop.ownerName || office.shop.name}</h1></div>
-        {waiting > 0 ? <span className="pill warn">{waiting === 1 ? '1 cosa espera tu visto bueno' : `${waiting} cosas esperan tu visto bueno`}</span> : <span className="pill ok">Todo al día</span>}
       </div>
+      {firstTime && (
+        <div className="welcome">
+          <div>
+            <b>Te damos la bienvenida a tu oficina</b>
+            <p>Para empezar, Lola necesita conocer tu tienda. Te llamará para hacerlo contigo o, si lo prefieres, rellenas la encuesta en unos minutos.</p>
+          </div>
+          <Link className="btn" href="/panel/encuesta">Rellenar la encuesta</Link>
+        </div>
+      )}
       <div className="kpis">
         <div className="kpi"><b>{kpis.published}</b><span>prendas publicadas este mes</span></div>
         <div className="kpi"><b>{kpis.marketplaceSales}</b><span>ventas en Vinted y Amazon</span></div>
