@@ -7,7 +7,7 @@ export interface Shop {
   plan: 'esencial' | 'profesional' | 'elite' | 'beta';
 }
 
-export type TaskStatus = 'pendiente' | 'en_curso' | 'espera_aprobacion' | 'hecha' | 'cambios';
+export type TaskStatus = 'pendiente' | 'en_curso' | 'espera_aprobacion' | 'hecha' | 'cambios' | 'revision';
 
 /** Unidad de trabajo de un empleado. Es la "cola" que procesan los agentes. */
 export interface Task {
@@ -18,6 +18,9 @@ export interface Task {
   title: string;
   status: TaskStatus;
   approvalLabel?: string; // texto del botón cuando espera aprobación
+  payload?: Record<string, unknown>;
+  attempts?: number;
+  lastError?: string;
   createdAt: string;
 }
 
@@ -34,8 +37,20 @@ export interface Photo {
   fileName: string;
   url: string | null; // URL firmada o data: en modo demo
   note: string;
-  status: 'en_cola' | 'lista' | 'aprobada' | 'publicada';
+  status: 'en_cola' | 'repetir' | 'lista' | 'aprobada' | 'publicada';
+  /** Foto de catálogo que ha hecho Teo (URL firmada o data: en modo demo). */
+  modelUrl?: string | null;
+  /** Lo que Teo ha visto de la prenda: título, color, defectos… */
+  attributes?: PhotoAttributes;
   createdAt: string;
+}
+
+export interface PhotoAttributes {
+  garment?: { title: string; color: string; pattern: string; category: string; defects: string[]; ask_shop: string };
+  qa?: { pass: boolean; problems: string[] };
+  tries?: number;
+  mode?: 'modelo' | 'producto';
+  provider?: 'fashn' | 'simulado';
 }
 
 export interface Kpis {

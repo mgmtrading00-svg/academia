@@ -59,12 +59,17 @@ export async function getOffice(shopId: string): Promise<OfficeSnapshot> {
 export async function getPhotos(shopId: string): Promise<Photo[]> {
   if (IS_DEMO) return demo.photos();
   const sb = await supabaseServer();
-  const { data } = await sb.from('photos').select('id,storage_path,file_name,note,status,created_at').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
+  const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
   const rows = data ?? [];
-  const signed = rows.length
-    ? await sb.storage.from(PHOTO_BUCKET).createSignedUrls(rows.map((r) => r.storage_path), 3600)
-    : { data: [] as { signedUrl: string | null }[] };
-  return rows.map((r, i) => ({ id: r.id, shopId, fileName: r.file_name, url: signed.data?.[i]?.signedUrl ?? null, note: r.note, status: r.status, createdAt: r.created_at }));
+  const paths = rows.flatMap((r) => (r.model_path ? [r.storage_path, r.model_path] : [r.storage_path]));
+  const signed = paths.length ? await sb.storage.from(PHOTO_BUCKET).createSignedUrls(paths, 3600) : { data: [] as { path: string | null; signedUrl: string | null }[] };
+  const urlOf = new Map((signed.data ?? []).map((s) => [s.path, s.signedUrl]));
+  return rows.map((r) => ({
+    id: r.id, shopId, fileName: r.file_name, note: r.note, status: r.status, createdAt: r.created_at,
+    url: urlOf.get(r.storage_path) ?? null,
+    modelUrl: r.model_path ? urlOf.get(r.model_path) ?? null : null,
+    attributes: r.attributes ?? {},
+  }));
 }
 
 export async function getSurvey(shopId: string): Promise<SurveyAnswers> {

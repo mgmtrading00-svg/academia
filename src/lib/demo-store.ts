@@ -54,8 +54,13 @@ function seed(): DemoDb {
   };
 }
 
-const g = globalThis as unknown as { __ovDemo?: DemoDb };
+const g = globalThis as unknown as { __ovDemo?: DemoDb; __ovDemoFiles?: Map<string, { data: Buffer; mediaType: string }> };
 const db = () => (g.__ovDemo ??= seed());
+/** Fotos originales completas (el panel solo guarda una vista previa). */
+const files = () => (g.__ovDemoFiles ??= new Map());
+
+/** Acceso interno para el motor de empleados en modo demostración. */
+export const demoInternals = { db, files, id };
 
 export const demo = {
   addBetaRequest(r: Record<string, string>) {
@@ -70,6 +75,12 @@ export const demo = {
     const t = d.tasks.find((x) => x.id === taskId && x.status === 'espera_aprobacion');
     if (!t) throw new Error('Esta tarea ya no espera aprobación');
     t.status = approve ? 'hecha' : 'cambios';
+    const photo = t.kind === 'foto_modelo' && typeof t.payload?.photo_id === 'string' ? d.photos.find((p) => p.id === t.payload!.photo_id) : undefined;
+    if (photo && approve) photo.status = 'aprobada';
+    if (photo && !approve) {
+      photo.status = 'en_cola';
+      d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'teo', kind: 'foto_modelo', title: `Repetir: ${t.title}`, status: 'pendiente', payload: { ...t.payload, redo: true }, attempts: 0, createdAt: new Date().toISOString() });
+    }
     d.activity.push({ id: id(), agentId: t.agentId, at: new Date().toISOString(), message: approve ? `Aprobado: ${t.title}. Me pongo con ello.` : `Vale, rehago: ${t.title}.` });
     const a = d.agents.find((x) => x.id === t.agentId)!;
     a.status = 'busy';
@@ -81,17 +92,19 @@ export const demo = {
     lola.task = left ? `Te he dejado ${left} cosa${left > 1 ? 's' : ''} para aprobar` : 'Todo aprobado. Vigilo que el equipo avance.';
     lola.status = left ? 'busy' : 'ok';
   },
-  addPhotos(files: { name: string; dataUrl: string | null }[], note: string) {
+  addPhotos(list: { name: string; dataUrl: string | null; data: Buffer; mediaType: string }[], note: string) {
     const d = db();
-    for (const f of files) {
-      d.photos.unshift({ id: id(), shopId: d.shop.id, fileName: f.name, url: f.dataUrl, note, status: 'en_cola', createdAt: new Date().toISOString() });
-      d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'teo', kind: 'foto_modelo', title: `Foto en modelo: ${f.name}`, status: 'pendiente', createdAt: new Date().toISOString() });
+    for (const f of list) {
+      const photoId = id();
+      files().set(photoId, { data: f.data, mediaType: f.mediaType });
+      d.photos.unshift({ id: photoId, shopId: d.shop.id, fileName: f.name, url: f.dataUrl, note, status: 'en_cola', createdAt: new Date().toISOString() });
+      d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'teo', kind: 'foto_modelo', title: `Foto en modelo: ${f.name}`, status: 'pendiente', payload: { photo_id: photoId }, attempts: 0, createdAt: new Date().toISOString() });
     }
     const teo = d.agents.find((x) => x.id === 'teo')!;
     teo.status = 'busy';
-    teo.task = `Poniendo en modelo ${files.length} foto${files.length > 1 ? 's' : ''} nueva${files.length > 1 ? 's' : ''}`;
+    teo.task = `Poniendo en modelo ${list.length} foto${list.length > 1 ? 's' : ''} nueva${list.length > 1 ? 's' : ''}`;
     teo.short = 'Fotos nuevas en cola';
-    d.activity.push({ id: id(), agentId: 'teo', at: new Date().toISOString(), message: files.length === 1 ? 'Recibida 1 foto. Te aviso cuando esté en modelo.' : `Recibidas ${files.length} fotos. Te aviso cuando estén en modelo.` });
+    d.activity.push({ id: id(), agentId: 'teo', at: new Date().toISOString(), message: list.length === 1 ? 'Recibida 1 foto. Te aviso cuando esté en modelo.' : `Recibidas ${list.length} fotos. Te aviso cuando estén en modelo.` });
   },
   photos: () => db().photos,
   survey: () => db().survey,

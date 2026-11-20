@@ -2,6 +2,7 @@
 import { cookies, headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
+import { after } from 'next/server';
 import { DEMO_COOKIE, IS_DEMO, PHOTO_BUCKET } from '@/lib/config';
 import { currentShopId } from '@/lib/data';
 import { demo } from '@/lib/demo-store';
@@ -113,11 +114,16 @@ export async function uploadPhotos(_prev: FormState, form: FormData): Promise<Fo
   }
 
   if (IS_DEMO) {
-    const items = await Promise.all(files.map(async (f) => ({
-      name: f.name,
-      dataUrl: f.size < 2_000_000 ? `data:${f.type};base64,${Buffer.from(await f.arrayBuffer()).toString('base64')}` : null,
-    })));
+    const items = await Promise.all(files.map(async (f) => {
+      const data = Buffer.from(await f.arrayBuffer());
+      return { name: f.name, data, mediaType: f.type, dataUrl: f.size < 2_000_000 ? `data:${f.type};base64,${data.toString('base64')}` : null };
+    }));
     demo.addPhotos(items, note);
+    // En la demostración los empleados trabajan dentro del propio servidor, justo después de responder.
+    after(async () => {
+      const [{ drain }, { demoStore }] = await Promise.all([import('@/agents/runner'), import('@/agents/stores/demo')]);
+      await drain(demoStore);
+    });
   } else {
     const sb = await supabaseServer();
     for (const f of files) {
