@@ -27,11 +27,11 @@ Tardas unos 20 minutos. Las claves las pegas tú directamente en Vercel: no hace
    - Database password: pulsa **Generate a password** (no la vas a necesitar).
    - Region: **Central EU (Frankfurt)**.
    - Pulsa **Create new project** y espera un par de minutos.
-3. Menú de la izquierda → **SQL Editor** → **New query**. Abre el archivo `supabase/instalar.sql`,
+3. Menú de la izquierda → **SQL Editor** → **New query**. Abre el archivo `instalar.sql` (te lo he adjuntado; también está en tu repositorio, carpeta `supabase`),
    copia todo, pégalo y pulsa **Run**. Debe decir «Success».
 4. Menú → **Authentication** → **Users** → **Add user** → **Create new user**:
    pon tu correo, una contraseña cualquiera y marca **Auto Confirm User**.
-5. Otra vez **SQL Editor** → **New query**. Pega el archivo `supabase/alta-tienda.sql`, cambia el
+5. Otra vez **SQL Editor** → **New query**. Pega el archivo `alta-tienda.sql` (también adjunto), cambia el
    nombre de tu tienda, tu nombre y tu correo (el mismo del paso 4), y pulsa **Run**.
    Abajo debe salir una fila con tu tienda y tu correo.
 6. Menú → **Project Settings** → **API**. Deja esta página abierta: vas a copiar tres datos
