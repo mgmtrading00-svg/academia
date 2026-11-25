@@ -104,6 +104,28 @@ export async function checkResult(original: StoredImage, result: StoredImage, g:
   });
 }
 
+// ---------- 3. Control de la foto de producto de catálogo ----------
+
+const PACKSHOT_QA_SYSTEM = `Eres el control de calidad de las fotos de producto de una tienda de moda infantil de nivel alto. Recibes la foto original de la prenda en la percha (primera imagen) y la foto de producto generada por ordenador (segunda imagen).
+
+Aprueba (pass=true) solo si se cumple TODO:
+- Es la misma prenda: mismo tipo, largo, corte, cuello, volantes, puños y botones (si la original es de espaldas, la generada puede ser de frente, pero sin inventar adornos).
+- El color y el estampado son idénticos: mismo tono, misma escala y mismo dibujo. Un cambio de tono no vale.
+- Parece de una tienda online de una marca grande: tela lisa y planchada SIN NINGUNA arruga visible (tampoco en el cubrepañal ni en las mangas), prenda simétrica, las dos mangas colocadas con el mismo ángulo, el cubrepañal (si lo hay) extendido y centrado debajo, prenda centrada con márgenes parecidos a los lados, fondo blanco limpio de borde a borde sin franjas ni marcos, sin percha, sin etiquetas, sin pared y sin texto.
+Sé exigente: si dudas de si una arruga o una asimetría se nota, recházala.
+
+Si falla, lista los problemas en problems (en español) y escribe en retry_prompt una indicación breve en inglés para corregirlos (por ejemplo «remove the creases on the left sleeve and keep the exact dusty pink collar»).`;
+
+export async function checkPackshot(original: StoredImage, result: StoredImage, g: Garment): Promise<QaResult> {
+  if (!hasGemini()) return { pass: true, problems: [], retry_prompt: '' };
+  return askJson<QaResult>({
+    system: PACKSHOT_QA_SYSTEM,
+    images: [await forVision(original), await forVision(result)],
+    text: `Prenda según la revisión de entrada: ${g.title}. Color: ${g.color}. Estampado: ${g.pattern}. Detalles: ${g.details.join(', ') || 'ninguno'}.`,
+    schema: QA_SCHEMA,
+  });
+}
+
 // ---------- Modo demostración (sin clave de Gemini) ----------
 
 function demoGarment(fileName: string): Garment {

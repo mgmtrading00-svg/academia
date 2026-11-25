@@ -1,8 +1,9 @@
 import sharp from 'sharp';
 import type { OfficeStore, QueuedTask, ShopProfile, StoredImage, TaskOutcome, TeoResult } from '../store';
 import { canGenerateImages, generateImage } from '../gemini';
-import { checkResult, inspectGarment, type Garment } from './vision';
-import { packshotLocal } from './recorte';
+import { checkPackshot, checkResult, inspectGarment, type Garment } from './vision';
+import { ESTILO_PRODUCTO } from './estilo-producto';
+import { centerOnWhite, packshotLocal } from './recorte';
 import { escenasPara, modeloPara, type Escena } from './escenas';
 import { postNovedad, postOferta, preciosOferta } from '../posts';
 import { parseNote } from '../nuria';
@@ -130,17 +131,32 @@ export function canPublishPhotos(p: ShopProfile) {
 
 /** Foto de producto de catálogo con Gemini, a partir del recorte. Si no es fiel tras dos intentos, se queda el recorte. */
 async function catalogPackshot(original: StoredImage, recorte: StoredImage, g: Garment): Promise<StoredImage | null> {
-  const refs = await Promise.all([recorte, original].map(async (img) => ({
+  const prep = async (img: StoredImage) => ({
     mimeType: 'image/jpeg',
     base64: (await sharp(img.data).rotate().resize(1536, 1536, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer()).toString('base64'),
-  })));
-  const prompt = (extra: string) => `Premium e-commerce flat lay product photo of this exact garment (${g.title}), as for a high-end Spanish children's fashion brand catalogue. Pure white background, the garment perfectly ironed and neatly shaped, symmetrical, sleeves arranged naturally, collar and ruffles crisp, soft natural shadow underneath, even diffused studio light, centred with generous margins. No hanger, no tags, no labels, no wall. ${KEEP}${extra ? ' ' + extra : ''}`;
-  let image = await generateImage({ images: refs, prompt: prompt(''), aspectRatio: '4:5' });
-  let qa = await checkResult(original, image, g);
-  if (qa.pass) return image;
-  image = await generateImage({ images: refs, prompt: prompt(qa.retry_prompt), aspectRatio: '4:5' });
-  qa = await checkResult(original, image, g);
-  return qa.pass ? image : null;
+  });
+  // Orden: 1) ejemplo de estilo de catálogo, 2) la prenda en la percha, 3) la prenda recortada.
+  const refs = [ESTILO_PRODUCTO, await prep(original), await prep(recorte)];
+  const prompt = (extra: string) => [
+    `Create a professional e-commerce "ghost mannequin" packshot of the garment shown in images 2 and 3 (${g.title}).`,
+    'Image 1 is ONLY a style reference from the same shop: copy its presentation exactly (front view, garment perfectly steamed and smooth with absolutely no creases or wrinkles anywhere, as in a big fashion brand online shop, fabric gently filled as if worn by an invisible body, perfectly symmetrical, sleeves angled down and slightly outward at the same angle on both sides, cuffs and collar neatly arranged, very soft even studio light, plain white background, no visible shadow or only a faint one, garment centred and filling about 75% of the height). Never copy the garment, fabric, print or colours of image 1.',
+    'Images 2 and 3 are the real garment, photographed on a hanger with a phone. Reproduce that garment, not a new one.',
+    KEEP,
+    'If the set includes bloomers or a diaper cover, show it laid flat, smooth and fully spread just below the garment, centred and symmetrical, never crumpled.',
+    'Plain pure white background edge to edge: no frame, no border, no dark strip, no hanger, no tags, no labels, no wall, no props, no text.',
+    extra,
+  ].filter(Boolean).join(' ');
+  const model = process.env.GEMINI_PRODUCT_IMAGE_MODEL || undefined;
+  // Hasta 3 intentos; cada uno se centra en código y pasa el control (arrugas, simetría, centrado, bordes, fidelidad).
+  let extra = '';
+  for (let i = 0; i < 3; i++) {
+    const raw = await generateImage({ images: refs, prompt: prompt(extra), aspectRatio: '4:5', model });
+    const image = await centerOnWhite(raw.data);
+    const qa = await checkPackshot(original, image, g);
+    if (qa.pass) return image;
+    extra = qa.retry_prompt;
+  }
+  return null;
 }
 
 /** Recorta la prenda sobre blanco. Si la foto no es de una prenda sobre pared clara, solo la encuadra. */

@@ -51,9 +51,9 @@ export async function askJson<T>(opts: { system: string; images: ImageInput[]; t
 }
 
 /** Genera una imagen a partir de otras imágenes y una indicación. Devuelve la primera imagen. */
-export async function generateImage(opts: { images: ImageInput[]; prompt: string; aspectRatio?: string }): Promise<{ data: Buffer; mediaType: string }> {
+export async function generateImage(opts: { images: ImageInput[]; prompt: string; aspectRatio?: string; model?: string }): Promise<{ data: Buffer; mediaType: string }> {
   const res = await ai().models.generateContent({
-    model: IMAGE_MODEL,
+    model: opts.model ?? IMAGE_MODEL,
     contents: [{ role: 'user', parts: [...opts.images.map(imagePart), { text: opts.prompt }] }],
     config: { responseModalities: ['IMAGE'], imageConfig: { aspectRatio: opts.aspectRatio ?? '3:4', imageSize: '1K' } },
   });

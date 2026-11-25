@@ -149,3 +149,58 @@ function keepBig(m: Uint8Array, w: number, h: number, minFrac: number) {
   const keep = sizes.map((s) => s === biggest || s >= minFrac * m.length);
   return label.map((l) => (l && keep[l] ? 1 : 0)) as unknown as Uint8Array;
 }
+
+/**
+ * Acabado de una foto de producto que ya viene sobre blanco (la de Gemini): quita bordes o franjas
+ * en los lados, deja el fondo blanco puro y centra la prenda con los mismos márgenes a los lados.
+ * No recorta la prenda, así que no pierde cuellos blancos ni detalles claros.
+ */
+export async function centerOnWhite(input: Buffer, opts: { width?: number; height?: number; fill?: number } = {}): Promise<StoredImage> {
+  const OW = opts.width ?? 1200, OH = opts.height ?? 1500, FILL = opts.fill ?? 0.8;
+  const img = sharp(input).rotate().toColourspace('srgb').removeAlpha();
+  const meta = await img.clone().raw().toBuffer({ resolveWithObject: true });
+  const { width: W, height: H } = meta.info;
+  // Quitar un 2 % de cada lado: ahí aparecen las franjas y marcos que a veces añade el generador.
+  const sx = Math.round(W * 0.02), sy = Math.round(H * 0.02);
+  const inner = await sharp(meta.data, { raw: { width: W, height: H, channels: 3 } }).extract({ left: sx, top: sy, width: W - 2 * sx, height: H - 2 * sy }).raw().toBuffer({ resolveWithObject: true });
+  // Además, quitar franjas o marcos enteros: columnas o filas del borde que no son casi todo blanco.
+  const iw = inner.info.width, ih = inner.info.height, ip = inner.data;
+  const darkRatioCol = (x: number) => { let n = 0; for (let y = 0; y < ih; y++) { const i = (y * iw + x) * 3; if (Math.min(ip[i], ip[i + 1], ip[i + 2]) < 200) n++; } return n / ih; };
+  const darkRatioRow = (y: number) => { let n = 0; for (let x = 0; x < iw; x++) { const i = (y * iw + x) * 3; if (Math.min(ip[i], ip[i + 1], ip[i + 2]) < 200) n++; } return n / iw; };
+  let L = 0, R = iw - 1, T = 0, B = ih - 1;
+  const maxCut = 0.12;
+  while (L < iw * maxCut && darkRatioCol(L) > 0.6) L++;
+  while (R > iw * (1 - maxCut) && darkRatioCol(R) > 0.6) R--;
+  while (T < ih * maxCut && darkRatioRow(T) > 0.6) T++;
+  while (B > ih * (1 - maxCut) && darkRatioRow(B) > 0.6) B--;
+  // Un margen de seguridad tras la franja, por si tiene borde difuminado.
+  if (L > 0) L = Math.min(L + 4, iw - 1); if (R < iw - 1) R = Math.max(R - 4, L + 1);
+  if (T > 0) T = Math.min(T + 4, ih - 1); if (B < ih - 1) B = Math.max(B - 4, T + 1);
+  const clean = (L || T || R < iw - 1 || B < ih - 1)
+    ? await sharp(ip, { raw: { width: iw, height: ih, channels: 3 } }).extract({ left: L, top: T, width: R - L + 1, height: B - T + 1 }).raw().toBuffer({ resolveWithObject: true })
+    : inner;
+  const { width: w, height: h } = clean.info;
+  const px = clean.data;
+  // Fondo casi blanco → blanco puro, con transición suave para no dejar halo.
+  const out = Buffer.alloc(px.length);
+  let x0 = w, y0 = h, x1 = 0, y1 = 0;
+  for (let i = 0; i < w * h; i++) {
+    const r = px[i * 3], g = px[i * 3 + 1], b = px[i * 3 + 2];
+    const m = Math.min(r, g, b);
+    const t = m >= 246 ? 1 : m <= 232 ? 0 : (m - 232) / 14;
+    out[i * 3] = Math.round(r + (255 - r) * t); out[i * 3 + 1] = Math.round(g + (255 - g) * t); out[i * 3 + 2] = Math.round(b + (255 - b) * t);
+    if (m < 228) { const x = i % w, y = (i / w) | 0; if (x < x0) x0 = x; if (x > x1) x1 = x; if (y < y0) y0 = y; if (y > y1) y1 = y; }
+  }
+  if (x1 <= x0 || y1 <= y0) return { data: await sharp(input).jpeg({ quality: 92 }).toBuffer(), mediaType: 'image/jpeg' };
+  const pad = 6;
+  const left = Math.max(0, x0 - pad), top = Math.max(0, y0 - pad);
+  const cw = Math.min(w - left, x1 - x0 + 1 + 2 * pad), ch = Math.min(h - top, y1 - y0 + 1 + 2 * pad);
+  const item = await sharp(out, { raw: { width: w, height: h, channels: 3 } })
+    .extract({ left, top, width: cw, height: ch })
+    .resize(Math.round(OW * FILL), Math.round(OH * FILL), { fit: 'inside' })
+    .png().toBuffer({ resolveWithObject: true });
+  const data = await sharp({ create: { width: OW, height: OH, channels: 3, background: '#FFFFFF' } })
+    .composite([{ input: item.data, left: Math.round((OW - item.info.width) / 2), top: Math.round((OH - item.info.height) / 2) }])
+    .jpeg({ quality: 93 }).toBuffer();
+  return { data, mediaType: 'image/jpeg' };
+}
