@@ -14,7 +14,7 @@ export const IMAGE_MODEL = process.env.GEMINI_IMAGE_MODEL ?? 'gemini-3.1-flash-i
 
 export const hasGemini = () => !!process.env.GEMINI_API_KEY;
 /** Acepta «si», «sí», «Si», «true» o «1», con o sin espacios: en Vercel es fácil escribirlo con tilde. */
-export const imageFlagOn = () => /^\s*["'«]?\s*(s[ií]|yes|true|1)\s*["'»]?\s*$/i.test(process.env.GEMINI_FOTOS_MODELO ?? '');
+export const imageFlagOn = () => /^\s*["'«]?\s*(s[ií]|yes|true|1)\s*["'»]?\s*$/i.test(process.env.GEMINI_FOTOS_MODELO ?? process.env.GEMINI_FOTOS_MODEL ?? '');
 
 /** Para el aviso del panel: qué variables parecidas a GEMINI_FOTOS_MODELO ve el servidor y con qué valor (no son secretas). */
 export function imageFlagDebug() {
