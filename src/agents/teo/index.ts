@@ -90,11 +90,21 @@ async function generate(original: StoredImage, g: Garment, p: ShopProfile, packs
   return { image: await generateImage({ images: [product], prompt, aspectRatio: '3:4' }), provider: 'gemini' };
 }
 
-/** Sin generación de fotos: corrige la luz y encuadra en 3:4 sobre fondo claro. Gratis. */
+/**
+ * Sin generación de fotos: encuadra en 3:4 sobre fondo claro. Gratis.
+ * No toca el color ni la saturación de la prenda: solo aclara un poco si la foto está oscura.
+ */
 async function enhanceLocally(input: Buffer): Promise<StoredImage> {
   const W = 1200, H = 1600;
-  const item = await sharp(input).normalise().modulate({ brightness: 1.06, saturation: 1.05 }).resize(Math.round(W * 0.86), Math.round(H * 0.86), { fit: 'inside' }).toBuffer();
-  const data = await sharp({ create: { width: W, height: H, channels: 3, background: '#F2F1EE' } }).composite([{ input: item, gravity: 'center' }]).jpeg({ quality: 88 }).toBuffer();
+  const base = sharp(input).rotate().toColourspace('srgb');
+  const { channels } = await base.clone().stats();
+  const mean = channels.slice(0, 3).reduce((a, c) => a + c.mean, 0) / 3 / 255;
+  // Solo si está muy oscura (media < 35 %): subir la luz por igual en todos los canales, sin cambiar el tono.
+  const gain = mean < 0.35 ? Math.min(1.15, 0.4 / Math.max(mean, 0.2)) : 1;
+  const lit = gain > 1 ? base.linear(gain, 0) : base;
+  const item = await lit.resize(Math.round(W * 0.9), Math.round(H * 0.9), { fit: 'inside' }).toBuffer();
+  const data = await sharp({ create: { width: W, height: H, channels: 3, background: '#F2F1EE' } })
+    .composite([{ input: item, gravity: 'center' }]).toColourspace('srgb').jpeg({ quality: 90 }).toBuffer();
   return { data, mediaType: 'image/jpeg' };
 }
 
