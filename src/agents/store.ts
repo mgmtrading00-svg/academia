@@ -17,6 +17,14 @@ export interface StoredImage {
   mediaType: string;
 }
 
+/** Una foto terminada por Teo: la de producto limpia, una en modelo o un post. */
+export interface TeoResult {
+  kind: 'producto' | 'modelo' | 'mejorada' | 'post';
+  /** Lo que ve la tienda debajo de la foto, p. ej. «En modelo · patio andaluz». */
+  label: string;
+  image: StoredImage;
+}
+
 /** Lo que el empleado necesita saber de la tienda (sale de la encuesta de alta). */
 export interface ShopProfile {
   name: string;
@@ -52,7 +60,8 @@ export interface OfficeStore {
 
   shopProfile(shopId: string): Promise<ShopProfile>;
   getPhoto(photoId: string): Promise<{ id: string; shopId: string; fileName: string; note: string; image: StoredImage } | null>;
-  savePhotoResult(photoId: string, r: { image: StoredImage; attributes: Record<string, unknown>; status: 'lista' | 'aprobada' }): Promise<void>;
+  /** Guarda las fotos de Teo. La primera es la principal (la de la ficha). */
+  savePhotoResult(photoId: string, r: { results: TeoResult[]; attributes: Record<string, unknown>; status: 'lista' | 'aprobada' }): Promise<void>;
   markPhoto(photoId: string, status: 'repetir', attributes: Record<string, unknown>): Promise<void>;
   saveListing(photoId: string, listing: Listing): Promise<void>;
 

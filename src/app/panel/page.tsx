@@ -4,7 +4,7 @@ import { currentShopId, getOffice, getSurvey } from '@/lib/data';
 
 export const dynamic = 'force-dynamic';
 // Los empleados trabajan justo después de subir fotos o decidir; les damos hasta un minuto.
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 const fmt = new Intl.NumberFormat('es-ES', { maximumFractionDigits: 1 });
 

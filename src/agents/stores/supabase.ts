@@ -56,9 +56,14 @@ export function supabaseStore(url: string, serviceKey: string): OfficeStore {
 
     async savePhotoResult(photoId, r) {
       const { data: p } = await sb.from('photos').select('shop_id').eq('id', photoId).single();
-      const path = `${p!.shop_id}/modelo/${photoId}-${Date.now()}.jpg`;
-      must(await sb.storage.from(BUCKET).upload(path, r.image.data, { contentType: r.image.mediaType, upsert: true }));
-      must(await sb.from('photos').update({ model_path: path, status: r.status, attributes: r.attributes }).eq('id', photoId));
+      const stamp = Date.now();
+      const results = [];
+      for (const [i, res] of r.results.entries()) {
+        const path = `${p!.shop_id}/teo/${photoId}-${stamp}-${i}-${res.kind}.${res.image.mediaType === 'image/png' ? 'png' : 'jpg'}`;
+        must(await sb.storage.from(BUCKET).upload(path, res.image.data, { contentType: res.image.mediaType, upsert: true }));
+        results.push({ kind: res.kind, label: res.label, path });
+      }
+      must(await sb.from('photos').update({ model_path: results[0]?.path ?? null, status: r.status, attributes: { ...r.attributes, results } }).eq('id', photoId));
     },
 
     async markPhoto(photoId, status, attributes) {

@@ -31,7 +31,7 @@ const server = http.createServer(async (req, res) => {
   if (system.includes('Nuria')) return reply([{ text: JSON.stringify({ web: { title: 'Vestido midi verde botella', description: 'Vestido de punto con botones.\n\nCon botines para el día.' }, vinted: { title: 'Vestido midi verde botella', description: 'Vestido midi.\nEnvío rápido.' }, amazon: { title: 'Vestido midi verde botella con botones', bullets: ['Color: verde botella', 'Detalle: seis botones', 'Corte: midi'] }, tags: ['vestido', 'verde'] }) }]);
   const out = system.includes('control de calidad')
     ? (qaCalls++ === 0 && failFirstQa ? { pass: false, problems: ['El verde es más claro que el original'], retry_prompt: 'keep the exact bottle green colour' } : { pass: true, problems: [], retry_prompt: '' })
-    : { usable: true, ask_shop: '', category: 'vestido', placement: 'entera', color: 'verde botella', pattern: 'liso', fabric_guess: 'punto', details: ['seis botones crudos', 'cinturón fino'], defects: [], title: 'Vestido midi verde botella' };
+    : { usable: true, ask_shop: '', category: 'vestido', placement: 'entera', wearer: 'bebe', color: 'verde botella', pattern: 'liso', fabric_guess: 'punto', details: ['seis botones crudos', 'cinturón fino'], defects: [], title: 'Vestido midi verde botella' };
   reply([{ text: JSON.stringify(out) }]);
 });
 
@@ -44,9 +44,9 @@ async function main() {
   const store: OfficeStore = {
     claimNext: async () => null, finish: async () => {}, retryLater: async () => {},
     createTask: async (t) => void created.push({ ...t, id: `t${created.length + 2}`, attempts: 0 }),
-    shopProfile: async () => ({ name: 'Prueba', modelo: 'Mujer 25 a 40', autonomia: 'Nada, quiero aprobar todo' }),
+    shopProfile: async () => ({ name: 'Prueba', modelo: 'Bebés', autonomia: 'Nada, quiero aprobar todo' }),
     getPhoto: async () => ({ id: 'f1', shopId: 's1', fileName: 'vestido.jpg', note: process.argv.includes('--sin-precio') ? 'vestido verde' : 'Vestido midi · 39,90 € · S, M, L', image: { data: readFileSync(photoPath), mediaType: 'image/jpeg' } }),
-    savePhotoResult: async (_id, r) => void (saved = { status: r.status, bytes: r.image.data.length, provider: r.attributes.provider, tries: r.attributes.tries }),
+    savePhotoResult: async (_id, r) => void (saved = { status: r.status, bytes: r.results[0].image.data.length, kinds: r.results.map((x) => x.kind), provider: r.attributes.provider, tries: r.attributes.tries }),
     markPhoto: async () => {}, saveListing: async (_id, l) => void (listing = l), setAgent: async () => {}, log: async (_s, a, m) => void log.push(`${a}: ${m}`),
   };
   const task: QueuedTask = { id: 't1', shopId: 's1', agentId: 'teo', kind: 'foto_modelo', title: 'x', payload: { photo_id: 'f1' }, attempts: 0 };

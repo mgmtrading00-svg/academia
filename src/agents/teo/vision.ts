@@ -17,6 +17,8 @@ export interface Garment {
   category: 'vestido' | 'camisa' | 'camiseta' | 'blusa' | 'jersey' | 'chaqueta' | 'abrigo' | 'pantalon' | 'falda' | 'mono' | 'calzado' | 'bolso' | 'complemento' | 'otro';
   /** Prenda de arriba, de abajo, de cuerpo entero, o algo que no se lleva puesto en el cuerpo. */
   placement: 'arriba' | 'abajo' | 'entera' | 'no_se_viste';
+  /** Quién la lleva, por la talla y el corte: decide si la modelo es un bebé, una niña, una mujer… */
+  wearer: 'bebe' | 'nina' | 'nino' | 'infantil' | 'mujer' | 'hombre';
   color: string;
   pattern: string;
   fabric_guess: string;
@@ -29,12 +31,13 @@ export interface Garment {
 const GARMENT_SCHEMA = {
   type: 'object',
   additionalProperties: false,
-  required: ['usable', 'ask_shop', 'category', 'placement', 'color', 'pattern', 'fabric_guess', 'details', 'defects', 'title'],
+  required: ['usable', 'ask_shop', 'category', 'placement', 'wearer', 'color', 'pattern', 'fabric_guess', 'details', 'defects', 'title'],
   properties: {
     usable: { type: 'boolean' },
     ask_shop: { type: 'string' },
     category: { type: 'string', enum: ['vestido', 'camisa', 'camiseta', 'blusa', 'jersey', 'chaqueta', 'abrigo', 'pantalon', 'falda', 'mono', 'calzado', 'bolso', 'complemento', 'otro'] },
     placement: { type: 'string', enum: ['arriba', 'abajo', 'entera', 'no_se_viste'] },
+    wearer: { type: 'string', enum: ['bebe', 'nina', 'nino', 'infantil', 'mujer', 'hombre'] },
     color: { type: 'string' },
     pattern: { type: 'string' },
     fabric_guess: { type: 'string' },
@@ -49,6 +52,8 @@ const INSPECT_SYSTEM = `Eres Teo, el fotógrafo de una tienda de ropa española.
 Mira la foto y describe la prenda principal para que otra persona pueda escribir la ficha de producto y comprobar después que la foto en modelo es fiel.
 
 Marca usable=false solo si con esta foto es imposible sacar una buena foto en modelo: la prenda está cortada de forma que falta una parte importante, está tan borrosa u oscura que no se distingue el color o el estampado, hay varias prendas mezcladas y no se sabe cuál es, o no aparece ninguna prenda. Cuando sea false, escribe en ask_shop qué foto necesitas, en una frase corta, cercana y concreta, tuteando (por ejemplo: «¿Me mandas otra del vestido entero, desde un poco más lejos?»). Cuando sea true, deja ask_shop vacío.
+
+En wearer indica quién la lleva por el tamaño y el corte: «bebe» para peleles, ranitas, jesusitos y ropa de 0 a 2 años; «nina» o «nino» para ropa infantil de 2 a 12 años; «infantil» si es de niño pero no se sabe si de niña o niño; «mujer» u «hombre» para adultos. Fíjate en el tamaño de la percha y de la prenda.
 
 En defects anota manchas, roturas, hilos o arrugas fuertes que se vean en la prenda (no los defectos de la foto). Los colores, en palabras normales de tienda («verde botella», «crudo»). Todo en español de España.`;
 
@@ -108,5 +113,6 @@ function demoGarment(fileName: string): Garment {
   const placement: Garment['placement'] = category === 'vestido' || category === 'abrigo' ? 'entera' : category === 'falda' || category === 'pantalon' ? 'abajo' : 'arriba';
   const color = pick([[/verde/, 'verde'], [/azul|navy/, 'azul marino'], [/negr/, 'negro'], [/blanc|crudo/, 'crudo'], [/rojo|granate/, 'granate'], [/rosa/, 'rosa empolvado']], 'beige');
   const name = category === 'pantalon' ? 'Pantalón' : category[0].toUpperCase() + category.slice(1);
-  return { usable: true, ask_shop: '', category, placement, color, pattern: 'liso', fabric_guess: 'por confirmar', details: [], defects: [], title: `${name} ${color}` };
+  const wearer: Garment['wearer'] = /pelele|ranita|jesusito|beb[eé]/.test(n) ? 'bebe' : /ni[ñn]a/.test(n) ? 'nina' : 'mujer';
+  return { usable: true, ask_shop: '', category, placement, wearer, color, pattern: 'liso', fabric_guess: 'por confirmar', details: [], defects: [], title: `${name} ${color}` };
 }

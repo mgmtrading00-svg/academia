@@ -1,19 +1,24 @@
 import sharp from 'sharp';
-import type { OfficeStore, QueuedTask, ShopProfile, StoredImage, TaskOutcome } from '../store';
+import type { OfficeStore, QueuedTask, ShopProfile, StoredImage, TaskOutcome, TeoResult } from '../store';
 import { canGenerateImages, generateImage } from '../gemini';
 import { checkResult, inspectGarment, type Garment } from './vision';
+import { packshotLocal } from './recorte';
+import { escenasPara, modeloPara, type Escena } from './escenas';
+
+/** Fotos en modelo por prenda (cada una cuesta unos céntimos en Gemini). */
+const FOTOS_MODELO = Math.max(0, Math.min(4, Number(process.env.GEMINI_FOTOS_POR_PRENDA ?? 2) || 0));
 
 /**
- * Teo, el fotógrafo. Recibe una foto mala de una prenda y entrega una foto de catálogo:
- *   1. Revisa la foto con Gemini: qué prenda es, color, detalles y si sirve.
- *      Si no sirve, Lola le pide otra a la tienda (lo único que la tienda tendría que hacer).
- *   2. La pone en una modelo con Gemini (o solo producto con fondo limpio, según la encuesta).
- *      Si la generación de fotos no está activada (es de pago en Google), mejora la foto él
- *      mismo: la gira según el móvil, corrige la luz y la encuadra, sin coste.
- *   3. Compara el resultado con la original. Si no es fiel, lo repite una vez con indicaciones.
- *      Si sigue sin ser fiel, lo revisa nuestro equipo: a la tienda no le llega nada malo.
- *   4. Según la autonomía elegida, la aprueba solo o deja al cliente un «Sí, adelante».
- *   5. Pasa la ficha a Nuria con todo lo que ha visto de la prenda.
+ * Teo, el fotógrafo. Recibe una foto de una prenda en la percha y entrega:
+ *   1. Foto de producto: la prenda sola sobre blanco, sin pared ni percha, centrada. Gratis,
+ *      se hace aquí mismo sin IA de pago y sin tocar el color.
+ *   2. Fotos en modelo (si la generación de fotos de Gemini está activada): un bebé, una niña
+ *      o una mujer, según la prenda, con ella puesta en escenas cuidadas (patio andaluz, calle
+ *      encalada, otoño…). Cada una pasa un control: si el estampado, el color o el cuello no son
+ *      idénticos, la repite una vez; si sigue sin serlo, la descarta. A la tienda no le llega nada malo.
+ *   3. Según la autonomía elegida, las aprueba solo o deja al cliente un «Sí, adelante».
+ *   4. Pasa la ficha a Nuria con todo lo que ha visto de la prenda.
+ * Si la foto no sirve, Lola le pide otra a la tienda.
  */
 export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<TaskOutcome> {
   const photoId = String(task.payload.photo_id ?? '');
@@ -32,36 +37,45 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
     return { status: 'hecha', payload: { garment: g, result: 'pedida_otra_foto' } };
   }
 
-  const packshot = profile.modelo === 'Sin modelo, solo producto' || g.placement === 'no_se_viste';
-  await store.setAgent(task.shopId, 'teo', { status: 'busy', task: packshot ? `Limpiando el fondo de: ${g.title}` : `Poniendo en modelo: ${g.title}`, short: packshot ? 'Limpiando fondo' : 'Foto en modelo' });
+  // 1. Foto de producto limpia (gratis).
+  await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Quitando la percha y el fondo: ${g.title.toLowerCase()}`, short: 'Foto de producto' });
+  const producto = await cleanProduct(photo.image);
 
-  const firstSeed = task.payload.redo ? Math.floor(Math.random() * 1e6) : 42;
-  let result = await generate(photo.image, g, profile, packshot, '', firstSeed);
-  let qa = result.provider === 'local' ? { pass: true, problems: [], retry_prompt: '' } : await checkResult(photo.image, result.image, g);
-  let tries = 1;
-  if (!qa.pass && !packshot) {
-    await store.log(task.shopId, 'teo', `Repito la foto de ${g.title.toLowerCase()}: ${qa.problems.join('; ')}.`);
-    result = await generate(photo.image, g, profile, packshot, qa.retry_prompt, firstSeed + 7);
-    qa = await checkResult(photo.image, result.image, g);
-    tries = 2;
+  // 2. Fotos en modelo con Gemini.
+  const results: TeoResult[] = [];
+  const problems: string[] = [];
+  const wantsModel = canGenerateImages() && FOTOS_MODELO > 0 && profile.modelo !== 'Sin modelo, solo producto' && g.placement !== 'no_se_viste';
+  if (wantsModel) {
+    const seed = task.payload.redo ? `${photoId}-${Date.now()}` : photoId;
+    for (const escena of escenasPara(g, seed, FOTOS_MODELO)) {
+      await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Foto en modelo (${escena.label}): ${g.title.toLowerCase()}`, short: 'Foto en modelo' });
+      const r = await modelPhoto(photo.image, producto.result.image, g, profile, escena);
+      if (r.image) results.push({ kind: 'modelo', label: `En modelo · ${escena.label}`, image: r.image });
+      else problems.push(...r.problems);
+      if (r.retried) await store.log(task.shopId, 'teo', `He repetido la foto de ${g.title.toLowerCase()} en ${escena.label}: ${r.firstProblems.join('; ')}.`);
+    }
   }
-  const meta = { garment: g, qa, tries, mode: packshot ? 'producto' : 'modelo', provider: result.provider };
-  if (!qa.pass) {
-    await idle(store, task.shopId);
-    return { status: 'revision', reason: `La foto en modelo no es fiel tras ${tries} intentos: ${qa.problems.join('; ')}`, payload: meta };
-  }
+  // La de producto va primera: es la de la ficha y la que se ve en la tienda online.
+  results.unshift(producto.result);
 
+  const meta = {
+    garment: g, provider: results.some((r) => r.kind === 'modelo') ? 'gemini' : 'local', mode: wantsModel ? 'modelo' : 'producto',
+    qa: { pass: true, problems }, tries: 1,
+  };
   const auto = canPublishPhotos(profile);
-  await store.savePhotoResult(photo.id, { image: result.image, attributes: meta, status: auto ? 'aprobada' : 'lista' });
-  const kind = result.provider === 'local' ? 'Foto mejorada' : packshot ? 'Foto de producto' : 'Foto en modelo';
-  await store.log(task.shopId, 'teo', `${kind} lista: ${g.title.toLowerCase()}.`);
+  await store.savePhotoResult(photo.id, { results, attributes: meta, status: auto ? 'aprobada' : 'lista' });
+
+  const modelos = results.filter((r) => r.kind === 'modelo').length;
+  const what = [producto.result.kind === 'producto' ? 'foto de producto' : 'foto mejorada', modelos ? `${modelos} en modelo` : ''].filter(Boolean).join(' y ');
+  await store.log(task.shopId, 'teo', `Lista la ${what}: ${g.title.toLowerCase()}.`);
+  if (wantsModel && !modelos) await store.log(task.shopId, 'teo', `No he conseguido una foto en modelo fiel de ${g.title.toLowerCase()} (${problems.join('; ')}). Te dejo la de producto.`);
   if (g.defects.length) await store.log(task.shopId, 'teo', `Ojo, en la foto de ${g.title.toLowerCase()} se ve: ${g.defects.join(', ')}. Revísalo antes de venderla.`);
 
   await store.createTask({ shopId: task.shopId, agentId: 'nuria', kind: 'ficha', title: `Ficha: ${g.title}`, payload: { photo_id: photo.id, garment: g } });
   await idle(store, task.shopId);
   return auto
     ? { status: 'hecha', payload: meta }
-    : { status: 'espera_aprobacion', approvalLabel: `Aprobar la ${kind.toLowerCase()}: ${g.title.toLowerCase()}`, payload: meta };
+    : { status: 'espera_aprobacion', approvalLabel: `Aprobar las fotos: ${g.title.toLowerCase()}`, payload: meta };
 }
 
 /** Las respuestas de la encuesta que dejan publicar fotos sin preguntar. */
@@ -69,42 +83,43 @@ export function canPublishPhotos(p: ShopProfile) {
   return !!p.autonomia && p.autonomia !== 'Nada, quiero aprobar todo';
 }
 
-const MODEL_PROMPT: Record<string, string> = {
-  'Mujer 25 a 40': 'woman in her early thirties',
-  'Mujer 40 a 60': 'elegant woman in her fifties',
-  'Bebés': 'baby of about nine months, sitting naturally, gentle family-friendly catalogue style',
-  'Niños y niñas': 'child model, age appropriate',
-  'Variadas en edad y talla': 'woman, natural body type',
-};
-
-async function generate(original: StoredImage, g: Garment, p: ShopProfile, packshot: boolean, extra: string, seed = 42): Promise<{ image: StoredImage; provider: 'gemini' | 'local' }> {
-  const input = await sharp(original.data).rotate().resize(2048, 2048, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer();
-  if (!canGenerateImages()) return { image: await enhanceLocally(input), provider: 'local' };
-
-  const product = { mimeType: 'image/jpeg', base64: input.toString('base64') };
-  const garment = `${g.title} (${g.color}${g.pattern && g.pattern !== 'liso' ? `, ${g.pattern}` : ''}${g.details.length ? `; ${g.details.join(', ')}` : ''})`;
-  const keep = 'Keep the garment exactly as in the photo: same colour, length, cut, pattern, buttons and details. Do not add text, logos or watermarks.';
-  const variation = seed === 42 ? '' : ` Variation ${seed}.`;
-  const prompt = packshot
-    ? `Professional e-commerce product photo of this item: ${garment}. Remove the background and any other objects, straighten it and place it centred on a plain light grey studio background with soft even lighting. ${keep}${extra ? ' ' + extra : ''}`
-    : `Professional e-commerce catalogue photo: a ${MODEL_PROMPT[p.modelo ?? ''] ?? 'woman in her thirties'} wearing this exact garment: ${garment}. ${g.placement === 'entera' ? 'Full-body shot' : g.placement === 'abajo' ? 'Full-body shot, focus on the lower garment' : 'Three-quarter shot'}, plain light grey studio background, soft even lighting, natural relaxed pose, realistic hands and face. ${keep}${extra ? ' ' + extra : ''}${variation}`;
-  return { image: await generateImage({ images: [product], prompt, aspectRatio: '3:4' }), provider: 'gemini' };
+/** Recorta la prenda sobre blanco. Si la foto no es de una prenda sobre pared clara, solo la encuadra. */
+async function cleanProduct(original: StoredImage): Promise<{ result: TeoResult }> {
+  try {
+    const r = await packshotLocal(original.data);
+    // Si «la prenda» ocupa casi nada o casi todo, el recorte no es fiable.
+    if (r.coverage > 0.06 && r.coverage < 0.8) return { result: { kind: 'producto', label: 'Foto de producto', image: { data: r.data, mediaType: r.mediaType } } };
+  } catch { /* se usa el encuadre simple */ }
+  return { result: { kind: 'mejorada', label: 'Foto encuadrada', image: await enhanceLocally(original.data) } };
 }
 
-/**
- * Sin generación de fotos: encuadra en 3:4 sobre fondo claro. Gratis.
- * No toca el color ni la saturación de la prenda: solo aclara un poco si la foto está oscura.
- */
+const KEEP = 'The garment must be an exact copy of the one in the reference photos: identical fabric print or plaid (same colours, same scale and spacing of stripes or checks), identical collar shape, ruffles, buttons, cuffs, length and cut. Do not recolour, simplify or redesign it. No text, logos or watermarks.';
+
+async function modelPhoto(original: StoredImage, producto: StoredImage, g: Garment, p: ShopProfile, escena: Escena, ) {
+  const refs = await Promise.all([producto, original].map(async (img) => ({
+    mimeType: 'image/jpeg',
+    base64: (await sharp(img.data).rotate().resize(1536, 1536, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer()).toString('base64'),
+  })));
+  const garment = `${g.title} (${g.color}${g.pattern && g.pattern !== 'liso' ? `, ${g.pattern}` : ''}${g.details.length ? `; ${g.details.join(', ')}` : ''})`;
+  const isKid = !['mujer', 'hombre'].includes(g.wearer);
+  const styling = isKid ? 'Style it like a premium Spanish children\'s fashion brand: knee-high socks in a matching tone and classic leather shoes, natural and tender, never posed like an adult.' : 'Natural relaxed pose.';
+  const prompt = (extra: string) =>
+    `Photorealistic children's and family fashion catalogue photograph. ${modeloPara(g, p.modelo)} wearing this exact garment: ${garment}. The first image shows the garment alone, the second shows it on a hanger. Scene: ${escena.prompt}. ${styling} Shot on an 85mm lens, natural light, shallow depth of field, the garment sharp and fully visible, realistic face and hands. ${KEEP}${extra ? ' ' + extra : ''}`;
+
+  let image = await generateImage({ images: refs, prompt: prompt(''), aspectRatio: '4:5' });
+  let qa = await checkResult(original, image, g);
+  const firstProblems = qa.problems;
+  if (qa.pass) return { image, problems: [], firstProblems, retried: false };
+  image = await generateImage({ images: refs, prompt: prompt(qa.retry_prompt), aspectRatio: '4:5' });
+  qa = await checkResult(original, image, g);
+  return { image: qa.pass ? image : null, problems: qa.problems, firstProblems, retried: true };
+}
+
+/** Sin recorte posible: encuadra en 4:5 sobre fondo claro sin tocar el color. */
 async function enhanceLocally(input: Buffer): Promise<StoredImage> {
-  const W = 1200, H = 1600;
-  const base = sharp(input).rotate().toColourspace('srgb');
-  const { channels } = await base.clone().stats();
-  const mean = channels.slice(0, 3).reduce((a, c) => a + c.mean, 0) / 3 / 255;
-  // Solo si está muy oscura (media < 35 %): subir la luz por igual en todos los canales, sin cambiar el tono.
-  const gain = mean < 0.35 ? Math.min(1.15, 0.4 / Math.max(mean, 0.2)) : 1;
-  const lit = gain > 1 ? base.linear(gain, 0) : base;
-  const item = await lit.resize(Math.round(W * 0.9), Math.round(H * 0.9), { fit: 'inside' }).toBuffer();
-  const data = await sharp({ create: { width: W, height: H, channels: 3, background: '#F2F1EE' } })
+  const W = 1200, H = 1500;
+  const item = await sharp(input).rotate().toColourspace('srgb').resize(Math.round(W * 0.92), Math.round(H * 0.92), { fit: 'inside' }).toBuffer();
+  const data = await sharp({ create: { width: W, height: H, channels: 3, background: '#F7F6F3' } })
     .composite([{ input: item, gravity: 'center' }]).toColourspace('srgb').jpeg({ quality: 90 }).toBuffer();
   return { data, mediaType: 'image/jpeg' };
 }

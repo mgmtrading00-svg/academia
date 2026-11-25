@@ -6,7 +6,7 @@ import type { Listing, Photo } from '@/lib/types';
 
 export const dynamic = 'force-dynamic';
 // Los empleados trabajan justo después de subir fotos o decidir; les damos hasta un minuto.
-export const maxDuration = 60;
+export const maxDuration = 300;
 
 const LABEL: Record<Photo['status'], [string, string]> = {
   en_cola: ['Teo está con ella', 'busy'],
@@ -48,12 +48,12 @@ function PhotoCard({ p }: { p: Photo }) {
           <div className="img">{p.url ? <img src={p.url} alt={`Tu foto: ${p.fileName}`} /> : 'Sin vista previa'}</div>
           {p.modelUrl && <figcaption>Tu foto</figcaption>}
         </figure>
-        {p.modelUrl && (
-          <figure>
-            <div className="img"><img src={p.modelUrl} alt={`Foto de Teo: ${g?.title ?? p.fileName}`} /></div>
-            <figcaption>De Teo{p.attributes?.provider === 'local' ? ' · mejorada' : ''}</figcaption>
+        {(p.attributes?.results?.length ? p.attributes.results : p.modelUrl ? [{ kind: 'producto', label: 'De Teo', url: p.modelUrl }] : []).map((r, i) => (
+          <figure key={i}>
+            <div className="img">{r.url ? <a href={r.url} target="_blank" rel="noreferrer"><img src={r.url} alt={`${r.label}: ${g?.title ?? p.fileName}`} /></a> : '…'}</div>
+            <figcaption>{r.label}</figcaption>
           </figure>
-        )}
+        ))}
       </div>
       <div className="meta">
         <b>{g?.title ?? p.fileName}</b>
@@ -78,7 +78,7 @@ export default async function Fotos() {
       <div>
         <p className="eyebrow">Fotógrafo y Catalogadora</p>
         <h1 style={{ marginTop: 6 }}>Enviar fotos de prendas</h1>
-        <p className="muted" style={{ marginTop: 6 }}>Sube la foto como la tengas, aunque sea en la percha o en el mostrador. Teo la pone en modelo, comprueba que el color y los detalles son fieles, y Nuria escribe la ficha.</p>
+        <p className="muted" style={{ marginTop: 6 }}>Sube la foto como la tengas, aunque sea en la percha o en el mostrador. Teo quita la percha y el fondo, la pone en modelo comprobando que el estampado y el color son idénticos, y Nuria escribe la ficha.</p>
       </div>
       <PhotoUpload />
       {photos.length ? (

@@ -65,6 +65,8 @@ export interface PhotoAttributes {
   tries?: number;
   mode?: 'modelo' | 'producto';
   provider?: 'gemini' | 'local';
+  /** Todas las fotos de Teo para esta prenda (en la base de datos, `path`; para mostrar, `url`). */
+  results?: { kind: 'producto' | 'modelo' | 'mejorada' | 'post'; label: string; path?: string; url?: string | null }[];
 }
 
 export interface Kpis {

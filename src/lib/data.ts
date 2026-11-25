@@ -4,7 +4,7 @@ import { AGENTS, type AgentId, type AgentState } from './agents';
 import { DEMO_COOKIE, IS_DEMO, PHOTO_BUCKET } from './config';
 import { demo } from './demo-store';
 import { supabaseServer } from './supabase/server';
-import type { Listing, OfficeSnapshot, Photo, SurveyAnswers } from './types';
+import type { Listing, OfficeSnapshot, Photo, PhotoAttributes, SurveyAnswers } from './types';
 
 /** Devuelve el id de la tienda de la sesión actual, o null si no hay sesión. */
 export async function currentShopId(): Promise<string | null> {
@@ -61,14 +61,15 @@ export async function getPhotos(shopId: string): Promise<Photo[]> {
   const sb = await supabaseServer();
   const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at,listings(data)').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
   const rows = data ?? [];
-  const paths = rows.flatMap((r) => (r.model_path ? [r.storage_path, r.model_path] : [r.storage_path]));
+  const extra = (r: { attributes: PhotoAttributes | null }) => (r.attributes?.results ?? []).map((x) => x.path).filter((x): x is string => !!x);
+  const paths = rows.flatMap((r) => [r.storage_path, ...(r.model_path ? [r.model_path] : []), ...extra(r)]);
   const signed = paths.length ? await sb.storage.from(PHOTO_BUCKET).createSignedUrls(paths, 3600) : { data: [] as { path: string | null; signedUrl: string | null }[] };
   const urlOf = new Map((signed.data ?? []).map((s) => [s.path, s.signedUrl]));
   return rows.map((r) => ({
     id: r.id, shopId, fileName: r.file_name, note: r.note, status: r.status, createdAt: r.created_at,
     url: urlOf.get(r.storage_path) ?? null,
     modelUrl: r.model_path ? urlOf.get(r.model_path) ?? null : null,
-    attributes: r.attributes ?? {},
+    attributes: { ...(r.attributes ?? {}), results: (r.attributes?.results ?? []).map((x: { path?: string }) => ({ ...x, url: x.path ? urlOf.get(x.path) ?? null : null })) },
     listing: (Array.isArray(r.listings) ? r.listings[0]?.data : (r.listings as { data?: Listing } | null)?.data) ?? undefined,
   }));
 }

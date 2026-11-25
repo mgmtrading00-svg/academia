@@ -42,7 +42,8 @@ export const demoStore: OfficeStore = {
   },
   async savePhotoResult(photoId, r) {
     const p = demoInternals.db().photos.find((x) => x.id === photoId);
-    if (p) Object.assign(p, { status: r.status, modelUrl: dataUrl(r.image), attributes: r.attributes });
+    const results = r.results.map((x) => ({ kind: x.kind, label: x.label, url: dataUrl(x.image) }));
+    if (p) Object.assign(p, { status: r.status, modelUrl: results[0]?.url ?? null, attributes: { ...r.attributes, results } });
   },
   async markPhoto(photoId, status, attributes) {
     const p = demoInternals.db().photos.find((x) => x.id === photoId);
