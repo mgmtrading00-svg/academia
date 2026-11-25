@@ -38,6 +38,8 @@ export interface ShopProfile {
   evitar?: string;
   /** Dónde vende (web, Vinted, Amazon…). */
   canales?: string;
+  /** Dirección de su web, para los posts. */
+  web?: string;
 }
 
 export type TaskOutcome =

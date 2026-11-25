@@ -44,7 +44,7 @@ export function supabaseStore(url: string, serviceKey: string): OfficeStore {
         sb.from('survey_responses').select('answers').eq('shop_id', shopId).maybeSingle(),
       ]);
       const a = (survey.data?.answers ?? {}) as Record<string, string>;
-      return { name: a.nombre || shop.data?.name || '', modelo: a.modelo, autonomia: a.autonomia, tono: a.tono, evitar: a.evitar, canales: a.canales };
+      return { name: a.nombre || shop.data?.name || '', modelo: a.modelo, autonomia: a.autonomia, tono: a.tono, evitar: a.evitar, canales: a.canales, web: a.web };
     },
 
     async getPhoto(photoId) {

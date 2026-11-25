@@ -4,6 +4,8 @@ import { canGenerateImages, generateImage } from '../gemini';
 import { checkResult, inspectGarment, type Garment } from './vision';
 import { packshotLocal } from './recorte';
 import { escenasPara, modeloPara, type Escena } from './escenas';
+import { postNovedad, postOferta, preciosOferta } from '../posts';
+import { parseNote } from '../nuria';
 
 /** Fotos en modelo por prenda (cada una cuesta unos céntimos en Gemini). */
 const FOTOS_MODELO = Math.max(0, Math.min(4, Number(process.env.GEMINI_FOTOS_POR_PRENDA ?? 2) || 0));
@@ -58,6 +60,14 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
   // La de producto va primera: es la de la ficha y la que se ve en la tienda online.
   results.unshift(producto.result);
 
+  // 3. Post para Instagram, si la tienda dijo el precio (y el de antes, si es una oferta).
+  try {
+    const post = await makePost(photo.note, g, profile, results);
+    if (post) results.push(post);
+  } catch (e) {
+    console.error('[teo] post:', e);
+  }
+
   const meta = {
     garment: g, provider: results.some((r) => r.kind === 'modelo') ? 'gemini' : 'local', mode: wantsModel ? 'modelo' : 'producto',
     qa: { pass: true, problems }, tries: 1,
@@ -76,6 +86,22 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
   return auto
     ? { status: 'hecha', payload: meta }
     : { status: 'espera_aprobacion', approvalLabel: `Aprobar las fotos: ${g.title.toLowerCase()}`, payload: meta };
+}
+
+async function makePost(note: string, g: Garment, p: ShopProfile, results: TeoResult[]): Promise<TeoResult | null> {
+  const marca = { web: (p.web || p.name || '').replace(/^https?:\/\//, '').replace(/\/$/, '') };
+  if (!marca.web) return null;
+  const hero = results.find((r) => r.kind === 'modelo')?.image ?? results[0].image;
+  const producto = results.find((r) => r.kind === 'producto')?.image;
+  const oferta = preciosOferta(note);
+  if (oferta) {
+    const pct = Math.round((1 - oferta.ahora / oferta.antes) * 100);
+    const etiqueta = /black/i.test(note) ? `-${pct} % Black Friday` : /rebaja/i.test(note) ? `Rebajas -${pct} %` : `-${pct} %`;
+    return { kind: 'post', label: 'Historia de oferta', image: await postOferta({ marca, etiqueta, nombre: g.title, foto: hero, producto, ...oferta }) };
+  }
+  const { priceEur } = parseNote(note);
+  if (priceEur == null) return null;
+  return { kind: 'post', label: 'Post de novedad', image: await postNovedad({ marca, titulo: g.title, antetitulo: 'Novedad · ya en la web', foto: hero, prendas: producto ? [{ nombre: g.category[0].toUpperCase() + g.category.slice(1), precio: priceEur, foto: producto }] : [] }) };
 }
 
 /** Las respuestas de la encuesta que dejan publicar fotos sin preguntar. */

@@ -77,7 +77,10 @@ export function parseNote(note: string): { priceEur: number | null; sizes: strin
     }
   }
   if (/talla única|t\.?u\.?\b/i.test(note) && !sizes.length) sizes.push('Única');
-  return { priceEur: priceEur && priceEur > 0 ? priceEur : null, sizes };
+  // En una oferta («antes 26 € ahora 20 €») el precio de venta es el de ahora.
+  const all = [...note.matchAll(/(\d{1,4}(?:[.,]\d{1,2})?)\s?(?:€|eur(?:os)?\b)/gi)].map((m) => Number(m[1].replace(',', '.')));
+  const venta = all.length >= 2 && all[0] > all[1] ? all[1] : priceEur;
+  return { priceEur: venta && venta > 0 ? venta : null, sizes };
 }
 
 // ---------- Redacción ----------

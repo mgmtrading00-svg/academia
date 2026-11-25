@@ -33,7 +33,8 @@ export default function PhotoUpload() {
         <input ref={inputRef} id="files" name="files" type="file" accept="image/*" multiple hidden onChange={(e) => setNames([...(e.target.files ?? [])].map((f) => f.name))} />
       </label>
       <label htmlFor="note">Qué es, precio y tallas (opcional)
-        <input id="note" name="note" placeholder="Vestido midi de punto, verde botella · 39,90 € · S, M, L · 2 de cada" maxLength={300} />
+        <input id="note" name="note" placeholder="Pelele de cuadros · 26 € · 6, 12 y 18 meses" maxLength={300} />
+        <span className="muted small">Con el precio, Teo te hace también el post para Instagram. Para una oferta escribe los dos precios: «antes 26 € ahora 20 €».</span>
       </label>
       <div style={{ display: 'flex', gap: 12, alignItems: 'center', flexWrap: 'wrap' }}>
         <button type="submit" disabled={pending || !names.length}>{pending ? 'Subiendo…' : 'Enviar a Teo'}</button>

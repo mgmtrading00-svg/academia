@@ -32,7 +32,7 @@ export const demoStore: OfficeStore = {
   },
   async shopProfile() {
     const d = demoInternals.db();
-    return { name: d.survey.nombre || d.shop.name, modelo: d.survey.modelo, autonomia: d.survey.autonomia, tono: d.survey.tono, evitar: d.survey.evitar, canales: d.survey.canales };
+    return { name: d.survey.nombre || d.shop.name, modelo: d.survey.modelo, autonomia: d.survey.autonomia, tono: d.survey.tono, evitar: d.survey.evitar, canales: d.survey.canales, web: d.survey.web };
   },
   async getPhoto(photoId) {
     const p = demoInternals.db().photos.find((x) => x.id === photoId);
