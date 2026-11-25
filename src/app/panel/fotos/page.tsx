@@ -4,7 +4,7 @@ import AutoRefresh from '@/components/AutoRefresh';
 import { currentShopId, getPhotos } from '@/lib/data';
 import type { Listing, Photo } from '@/lib/types';
 import { RedoButton } from '@/components/RedoButton';
-import { canGenerateImages, hasGemini } from '@/agents/gemini';
+import { canGenerateImages, hasGemini, imageFlagDebug } from '@/agents/gemini';
 
 export const dynamic = 'force-dynamic';
 // Los empleados trabajan justo después de subir fotos o decidir; les damos hasta un minuto.
@@ -83,7 +83,7 @@ export default async function Fotos() {
         <h1 style={{ marginTop: 6 }}>Enviar fotos de prendas</h1>
         <p className="muted small" style={{ marginTop: 6 }}>
           {canGenerateImages() ? 'Fotos con modelo: activadas. Teo hace la foto de producto de catálogo y 2 fotos con modelo por prenda.'
-            : hasGemini() ? 'Fotos con modelo: desactivadas. Teo solo recorta la prenda sobre blanco.' : 'Gemini sin conectar.'}
+            : hasGemini() ? `Fotos con modelo: desactivadas. Teo solo recorta la prenda sobre blanco. (El servidor ve: ${imageFlagDebug()})` : 'Gemini sin conectar.'}
         </p>
         <p className="muted" style={{ marginTop: 6 }}>Sube la foto como la tengas, aunque sea en la percha o en el mostrador. Teo quita la percha y el fondo, la pone en modelo comprobando que el estampado y el color son idénticos, y Nuria escribe la ficha.</p>
       </div>
