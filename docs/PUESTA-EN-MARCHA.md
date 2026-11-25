@@ -75,3 +75,8 @@ Abre la dirección de Vercel → **Acceso clientes** → pon tu correo → abre 
 - El nivel gratuito de Gemini tiene un límite de usos al día y Google puede usar las fotos para mejorar sus productos.
 - La foto en modelo está apagada (`GEMINI_FOTOS_MODELO=no`) porque Google la cobra. Teo mejora la luz y el encuadre gratis.
 - El acceso por WhatsApp está oculto: necesita un proveedor de mensajes de pago. Se activa más adelante.
+
+## Cómo está montado ahora (25-11-2026)
+- Código: repositorio `mgmtrading00-svg/academia`, rama `oficina-virtual` (la rama `main` es la web de academia y no se toca).
+- Vercel: proyecto «academia» del equipo moralagencyai, conectado a ese repositorio, con la rama `oficina-virtual` como producción.
+- Supabase: proyecto `oficina-virtual` en Frankfurt.
