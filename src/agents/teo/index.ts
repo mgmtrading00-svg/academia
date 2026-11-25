@@ -41,7 +41,12 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
 
   // 1. Foto de producto limpia (gratis).
   await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Quitando la percha y el fondo: ${g.title.toLowerCase()}`, short: 'Foto de producto' });
-  const producto = await cleanProduct(photo.image);
+  let producto = await cleanProduct(photo.image);
+  // Con la generación de Gemini activada, la de producto se rehace «de catálogo»: planchada, con forma y sombra suave.
+  if (canGenerateImages()) {
+    const pro = await catalogPackshot(photo.image, producto.result.image, g).catch((e) => { console.error('[teo] packshot:', e); return null; });
+    if (pro) producto = { result: { kind: 'producto', label: 'Foto de producto', image: pro } };
+  }
 
   // 2. Fotos en modelo con Gemini.
   const results: TeoResult[] = [];
@@ -107,6 +112,21 @@ async function makePost(note: string, g: Garment, p: ShopProfile, results: TeoRe
 /** Las respuestas de la encuesta que dejan publicar fotos sin preguntar. */
 export function canPublishPhotos(p: ShopProfile) {
   return !!p.autonomia && p.autonomia !== 'Nada, quiero aprobar todo';
+}
+
+/** Foto de producto de catálogo con Gemini, a partir del recorte. Si no es fiel tras dos intentos, se queda el recorte. */
+async function catalogPackshot(original: StoredImage, recorte: StoredImage, g: Garment): Promise<StoredImage | null> {
+  const refs = await Promise.all([recorte, original].map(async (img) => ({
+    mimeType: 'image/jpeg',
+    base64: (await sharp(img.data).rotate().resize(1536, 1536, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer()).toString('base64'),
+  })));
+  const prompt = (extra: string) => `Premium e-commerce flat lay product photo of this exact garment (${g.title}), as for a high-end Spanish children's fashion brand catalogue. Pure white background, the garment perfectly ironed and neatly shaped, symmetrical, sleeves arranged naturally, collar and ruffles crisp, soft natural shadow underneath, even diffused studio light, centred with generous margins. No hanger, no tags, no labels, no wall. ${KEEP}${extra ? ' ' + extra : ''}`;
+  let image = await generateImage({ images: refs, prompt: prompt(''), aspectRatio: '4:5' });
+  let qa = await checkResult(original, image, g);
+  if (qa.pass) return image;
+  image = await generateImage({ images: refs, prompt: prompt(qa.retry_prompt), aspectRatio: '4:5' });
+  qa = await checkResult(original, image, g);
+  return qa.pass ? image : null;
 }
 
 /** Recorta la prenda sobre blanco. Si la foto no es de una prenda sobre pared clara, solo la encuadra. */
