@@ -139,7 +139,7 @@ async function cleanProduct(original: StoredImage): Promise<{ result: TeoResult 
   return { result: { kind: 'mejorada', label: 'Foto encuadrada', image: await enhanceLocally(original.data) } };
 }
 
-const KEEP = 'The garment must be an exact copy of the one in the reference photos: identical fabric print or plaid (same colours, same scale and spacing of stripes or checks), identical collar shape, ruffles, buttons, cuffs, length and cut. Do not recolour, simplify or redesign it. No text, logos or watermarks.';
+const KEEP = 'The garment must be an exact copy of the one in the reference photos: identical fabric print or plaid (same colours, same scale and spacing of stripes or checks), identical collar shape, ruffles, buttons, cuffs, length and cut. Do not recolour, simplify or redesign it. Shops often photograph the back of the garment: if the reference shows back buttons or a back opening, show the front view with the same fabric, collar and cuffs and without those back buttons. No text, logos or watermarks.';
 
 async function modelPhoto(original: StoredImage, producto: StoredImage, g: Garment, p: ShopProfile, escena: Escena, ) {
   const refs = await Promise.all([producto, original].map(async (img) => ({
