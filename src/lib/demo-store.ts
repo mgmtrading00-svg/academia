@@ -111,6 +111,13 @@ export const demo = {
     teo.short = 'Fotos nuevas en cola';
     d.activity.push({ id: id(), agentId: 'teo', at: new Date().toISOString(), message: list.length === 1 ? 'Recibida 1 foto. Te aviso cuando esté lista.' : `Recibidas ${list.length} fotos. Te aviso cuando estén listas.` });
   },
+  redoPhoto(photoId: string) {
+    const d = db();
+    const p = d.photos.find((x) => x.id === photoId);
+    if (!p || d.tasks.some((t) => t.agentId === 'teo' && t.status === 'pendiente' && t.payload?.photo_id === photoId)) return;
+    p.status = 'en_cola';
+    d.tasks.push({ id: id(), shopId: d.shop.id, agentId: 'teo', kind: 'foto_modelo', title: `Rehacer: ${p.fileName}`, status: 'pendiente', payload: { photo_id: photoId, redo: true }, attempts: 0, createdAt: new Date().toISOString() });
+  },
   photos: () => db().photos,
   survey: () => db().survey,
   saveSurvey(answers: SurveyAnswers, completed: boolean) {

@@ -155,6 +155,27 @@ export async function uploadPhotos(_prev: FormState, form: FormData): Promise<Fo
   return { ok: files.length === 1 ? 'Foto recibida. Teo ya la tiene en su cola.' : `${files.length} fotos recibidas. Teo ya las tiene en su cola.` };
 }
 
+/** «Rehacer con Teo»: vuelve a pasar una foto por Teo (por ejemplo, tras activar las fotos en modelo). */
+export async function redoPhoto(photoId: string): Promise<FormState> {
+  const shopId = await requireShop();
+  if (IS_DEMO) demo.redoPhoto(photoId);
+  else {
+    // Primero se comprueba con la sesión de la tienda que la foto es suya; luego se encola con la clave de servicio.
+    const { data: photo } = await (await supabaseServer()).from('photos').select('id,file_name').eq('id', photoId).eq('shop_id', shopId).maybeSingle();
+    if (!photo || !process.env.SUPABASE_SERVICE_ROLE_KEY) return { error: 'No encuentro esa foto.' };
+    const { createClient } = await import('@supabase/supabase-js');
+    const admin = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY, { auth: { persistSession: false } });
+    const busy = await admin.from('tasks').select('id').eq('shop_id', shopId).eq('agent_id', 'teo').in('status', ['pendiente', 'en_curso']).contains('payload', { photo_id: photoId }).limit(1);
+    if (busy.data?.length) return { ok: 'Teo ya está con ella.' };
+    const ins = await admin.from('tasks').insert({ shop_id: shopId, agent_id: 'teo', kind: 'foto_modelo', title: `Rehacer: ${photo.file_name}`, payload: { photo_id: photoId, redo: true } });
+    if (ins.error) return { error: 'No se ha podido pedir a Teo.' };
+    await admin.from('photos').update({ status: 'en_cola' }).eq('id', photoId);
+  }
+  runAgentsSoon();
+  revalidatePath('/panel/fotos');
+  return { ok: 'Teo la está rehaciendo' };
+}
+
 // ---------- Solicitud de plaza en la beta (portada, sin sesión) ----------
 export async function requestBeta(_prev: FormState, form: FormData): Promise<FormState> {
   const get = (k: string, max: number) => String(form.get(k) ?? '').trim().slice(0, max);

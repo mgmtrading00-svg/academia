@@ -42,24 +42,39 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
   // 1. Foto de producto limpia (gratis).
   await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Quitando la percha y el fondo: ${g.title.toLowerCase()}`, short: 'Foto de producto' });
   let producto = await cleanProduct(photo.image);
-  // Con la generación de Gemini activada, la de producto se rehace «de catálogo»: planchada, con forma y sombra suave.
-  if (canGenerateImages()) {
-    const pro = await catalogPackshot(photo.image, producto.result.image, g).catch((e) => { console.error('[teo] packshot:', e); return null; });
-    if (pro) producto = { result: { kind: 'producto', label: 'Foto de producto', image: pro } };
-  }
+  const recorte = producto.result.image;
 
-  // 2. Fotos en modelo con Gemini.
+  // 2. Con la generación de Gemini activada, a la vez: la de producto «de catálogo» (planchada, con forma
+  //    y sombra suave) y las fotos en modelo. Un fallo en una no tumba las demás: queda anotado en la actividad.
   const results: TeoResult[] = [];
   const problems: string[] = [];
   const wantsModel = canGenerateImages() && FOTOS_MODELO > 0 && profile.modelo !== 'Sin modelo, solo producto' && g.placement !== 'no_se_viste';
-  if (wantsModel) {
+  if (canGenerateImages()) {
+    await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Haciendo las fotos de catálogo: ${g.title.toLowerCase()}`, short: 'Fotos de catálogo' });
     const seed = task.payload.redo ? `${photoId}-${Date.now()}` : photoId;
-    for (const escena of escenasPara(g, seed, FOTOS_MODELO)) {
-      await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Foto en modelo (${escena.label}): ${g.title.toLowerCase()}`, short: 'Foto en modelo' });
-      const r = await modelPhoto(photo.image, producto.result.image, g, profile, escena);
-      if (r.image) results.push({ kind: 'modelo', label: `En modelo · ${escena.label}`, image: r.image });
-      else problems.push(...r.problems);
-      if (r.retried) await store.log(task.shopId, 'teo', `He repetido la foto de ${g.title.toLowerCase()} en ${escena.label}: ${r.firstProblems.join('; ')}.`);
+    const escenas = wantsModel ? escenasPara(g, seed, FOTOS_MODELO) : [];
+    const [pro, ...modelos] = await Promise.allSettled([
+      catalogPackshot(photo.image, recorte, g),
+      ...escenas.map((e) => modelPhoto(photo.image, recorte, g, profile, e)),
+    ]);
+    const why = (r: PromiseRejectedResult) => (r.reason instanceof Error ? r.reason.message : String(r.reason)).slice(0, 200);
+    if (pro.status === 'fulfilled' && pro.value) producto = { result: { kind: 'producto', label: 'Foto de producto', image: pro.value } };
+    else {
+      const msg = pro.status === 'rejected' ? why(pro) : 'no salía idéntica a la prenda';
+      problems.push(`foto de producto: ${msg}`);
+      await store.log(task.shopId, 'teo', `La foto de producto de catálogo de ${g.title.toLowerCase()} no ha salido bien (${msg}). Te dejo el recorte.`);
+    }
+    for (const [i, r] of modelos.entries()) {
+      const escena = escenas[i];
+      if (r.status === 'rejected') {
+        problems.push(`${escena.label}: ${why(r)}`);
+        await store.log(task.shopId, 'teo', `No he podido hacer la foto en modelo de ${g.title.toLowerCase()} en ${escena.label}: ${why(r)}`);
+      } else if (r.value.image) {
+        results.push({ kind: 'modelo', label: `En modelo · ${escena.label}`, image: r.value.image });
+      } else {
+        problems.push(...r.value.problems);
+        await store.log(task.shopId, 'teo', `Descarto la foto en modelo de ${g.title.toLowerCase()} en ${escena.label}: ${r.value.problems.join('; ')}.`);
+      }
     }
   }
   // La de producto va primera: es la de la ficha y la que se ve en la tienda online.
@@ -83,7 +98,6 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
   const modelos = results.filter((r) => r.kind === 'modelo').length;
   const what = [producto.result.kind === 'producto' ? 'foto de producto' : 'foto mejorada', modelos ? `${modelos} en modelo` : ''].filter(Boolean).join(' y ');
   await store.log(task.shopId, 'teo', `Lista la ${what}: ${g.title.toLowerCase()}.`);
-  if (wantsModel && !modelos) await store.log(task.shopId, 'teo', `No he conseguido una foto en modelo fiel de ${g.title.toLowerCase()} (${problems.join('; ')}). Te dejo la de producto.`);
   if (g.defects.length) await store.log(task.shopId, 'teo', `Ojo, en la foto de ${g.title.toLowerCase()} se ve: ${g.defects.join(', ')}. Revísalo antes de venderla.`);
 
   await store.createTask({ shopId: task.shopId, agentId: 'nuria', kind: 'ficha', title: `Ficha: ${g.title}`, payload: { photo_id: photo.id, garment: g } });

@@ -13,7 +13,9 @@ export const VISION_MODEL = process.env.GEMINI_VISION_MODEL ?? 'gemini-3.5-flash
 export const IMAGE_MODEL = process.env.GEMINI_IMAGE_MODEL ?? 'gemini-3.1-flash-image';
 
 export const hasGemini = () => !!process.env.GEMINI_API_KEY;
-export const canGenerateImages = () => hasGemini() && process.env.GEMINI_FOTOS_MODELO === 'si';
+/** Acepta «si», «sí», «Si», «true» o «1», con o sin espacios: en Vercel es fácil escribirlo con tilde. */
+export const imageFlagOn = () => /^\s*(s[ií]|yes|true|1)\s*$/i.test(process.env.GEMINI_FOTOS_MODELO ?? '');
+export const canGenerateImages = () => hasGemini() && imageFlagOn();
 
 let client: GoogleGenAI | null = null;
 const ai = () =>

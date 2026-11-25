@@ -3,6 +3,8 @@ import PhotoUpload from '@/components/PhotoUpload';
 import AutoRefresh from '@/components/AutoRefresh';
 import { currentShopId, getPhotos } from '@/lib/data';
 import type { Listing, Photo } from '@/lib/types';
+import { RedoButton } from '@/components/RedoButton';
+import { canGenerateImages, hasGemini } from '@/agents/gemini';
 
 export const dynamic = 'force-dynamic';
 // Los empleados trabajan justo después de subir fotos o decidir; les damos hasta un minuto.
@@ -63,6 +65,7 @@ function PhotoCard({ p }: { p: Photo }) {
         {p.note && <span className="muted">{p.note}</span>}
         <span className={`pill ${LABEL[p.status][1]}`}>{LABEL[p.status][0]}</span>
         {p.listing && <ListingBlock l={p.listing} />}
+        {p.status !== 'en_cola' && <RedoButton photoId={p.id} />}
       </div>
     </article>
   );
@@ -78,6 +81,10 @@ export default async function Fotos() {
       <div>
         <p className="eyebrow">Fotógrafo y Catalogadora</p>
         <h1 style={{ marginTop: 6 }}>Enviar fotos de prendas</h1>
+        <p className="muted small" style={{ marginTop: 6 }}>
+          {canGenerateImages() ? 'Fotos con modelo: activadas. Teo hace la foto de producto de catálogo y 2 fotos con modelo por prenda.'
+            : hasGemini() ? 'Fotos con modelo: desactivadas. Teo solo recorta la prenda sobre blanco.' : 'Gemini sin conectar.'}
+        </p>
         <p className="muted" style={{ marginTop: 6 }}>Sube la foto como la tengas, aunque sea en la percha o en el mostrador. Teo quita la percha y el fondo, la pone en modelo comprobando que el estampado y el color son idénticos, y Nuria escribe la ficha.</p>
       </div>
       <PhotoUpload />
