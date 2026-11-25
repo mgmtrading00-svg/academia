@@ -72,6 +72,7 @@ export function canPublishPhotos(p: ShopProfile) {
 const MODEL_PROMPT: Record<string, string> = {
   'Mujer 25 a 40': 'woman in her early thirties',
   'Mujer 40 a 60': 'elegant woman in her fifties',
+  'Bebés': 'baby of about nine months, sitting naturally, gentle family-friendly catalogue style',
   'Niños y niñas': 'child model, age appropriate',
   'Variadas en edad y talla': 'woman, natural body type',
 };

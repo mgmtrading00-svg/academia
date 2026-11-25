@@ -35,7 +35,7 @@ export const STEPS: { title: string; fields: Field[] }[] = [
     title: 'Cómo habla tu marca',
     fields: [
       { kind: 'single', name: 'tono', label: 'Tono', options: ['Cercana', 'Elegante', 'Divertida', 'Juvenil', 'Clásica', 'Sostenible'] },
-      { kind: 'select', name: 'modelo', label: 'Modelos para las fotos', options: ['Variadas en edad y talla', 'Mujer 25 a 40', 'Mujer 40 a 60', 'Niños y niñas', 'Sin modelo, solo producto'] },
+      { kind: 'select', name: 'modelo', label: 'Modelos para las fotos', options: ['Variadas en edad y talla', 'Mujer 25 a 40', 'Mujer 40 a 60', 'Bebés', 'Niños y niñas', 'Sin modelo, solo producto'] },
       { kind: 'text', name: 'evitar', label: 'Palabras que nunca usarías (opcional)', placeholder: 'low cost, chollo' },
     ],
   },
