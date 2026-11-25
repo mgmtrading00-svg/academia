@@ -79,4 +79,5 @@ Abre la dirección de Vercel → **Acceso clientes** → pon tu correo → abre 
 ## Cómo está montado ahora (25-11-2026)
 - Código: repositorio `mgmtrading00-svg/academia`, rama `oficina-virtual` (la rama `main` es la web de academia y no se toca).
 - Vercel: proyecto «academia» del equipo moralagencyai, conectado a ese repositorio, con la rama `oficina-virtual` como producción.
+- Dirección de la web: https://academia-eta-flax.vercel.app (Supabase Auth ya apunta a ella).
 - Supabase: proyecto `oficina-virtual` en Frankfurt.
