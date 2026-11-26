@@ -17,7 +17,7 @@ export default async function Acceso({ searchParams }: { searchParams: Promise<{
         <div className="acc-card">
           <p className="eyebrow">Área de clientes</p>
           <h1>Entra en tu oficina</h1>
-          {error === 'enlace' && <p className="err" role="alert">El enlace ha caducado o ya se usó. Pide uno nuevo y, en el móvil, mejor escribe el código que viene en el correo.</p>}
+          {error === 'enlace' && <p className="err" role="alert">El enlace ha caducado o ya se usó. Pide uno nuevo aquí abajo y abre el último correo que te llegue.</p>}
           <AccessForm demo={IS_DEMO} whatsapp={WHATSAPP_LOGIN} />
         </div>
         <aside className="acc-side">

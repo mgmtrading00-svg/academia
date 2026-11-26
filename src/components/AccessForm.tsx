@@ -21,15 +21,18 @@ function EmailFlow() {
       <div className="acc-done" role="status">
         <Check />
         <h3>Revisa tu correo</h3>
-        <p className="muted">Te hemos enviado un correo a <b>{state.to}</b> con un código. Escríbelo aquí, o pulsa el botón del correo.{state.demo && ' En la demostración vale cualquier código de 6 cifras.'}</p>
-        <form action={verify} className="acc-form" style={{ width: '100%' }}>
-          <input type="hidden" name="email" value={state.to} />
-          <label htmlFor="ecode">Código del correo
-            <input id="ecode" name="code" required inputMode="numeric" autoComplete="one-time-code" maxLength={8} pattern="\d{6,8}" className="code" placeholder="000000" />
-          </label>
-          <button type="submit" disabled={verifying}>{verifying ? 'Comprobando…' : 'Entrar'}</button>
-          {checked.error && <p className="err" role="alert">{checked.error}</p>}
-        </form>
+        <p className="muted">Te hemos enviado un correo a <b>{state.to}</b>. Ábrelo y pulsa el enlace: funciona en cualquier móvil u ordenador, también dentro de la app de Gmail.{state.demo && ' En la demostración vale cualquier código de 6 cifras.'}</p>
+        <details className="small" style={{ width: '100%' }}>
+          <summary className="muted">¿Te ha llegado un código? Escríbelo aquí</summary>
+          <form action={verify} className="acc-form" style={{ width: '100%', marginTop: 10 }}>
+            <input type="hidden" name="email" value={state.to} />
+            <label htmlFor="ecode">Código del correo
+              <input id="ecode" name="code" required inputMode="numeric" autoComplete="one-time-code" maxLength={8} pattern="\d{6,8}" className="code" placeholder="000000" />
+            </label>
+            <button type="submit" disabled={verifying}>{verifying ? 'Comprobando…' : 'Entrar'}</button>
+            {checked.error && <p className="err" role="alert">{checked.error}</p>}
+          </form>
+        </details>
         <p className="small muted">¿No llega? Mira en la carpeta de spam o vuelve a pedirlo en unos minutos.</p>
       </div>
     );
@@ -38,7 +41,7 @@ function EmailFlow() {
       <label htmlFor="email">Correo de la tienda
         <input id="email" name="email" type="email" required placeholder="hola@tutienda.es" autoComplete="email" inputMode="email" />
       </label>
-      <button type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviarme el código de acceso'}</button>
+      <button type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviarme el enlace de acceso'}</button>
       {state.error && <p className="err" role="alert">{state.error}</p>}
     </form>
   );

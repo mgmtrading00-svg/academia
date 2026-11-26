@@ -65,7 +65,10 @@ export async function sendMagicLink(_prev: AccessState, form: FormData): Promise
   const email = String(form.get('email') ?? '').trim().toLowerCase();
   if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) return { error: 'Escribe un correo válido, por ejemplo hola@tutienda.es.' };
   if (IS_DEMO) return { step: 'sent', to: email, demo: true };
-  const sb = await supabaseServer();
+  // Flujo «implícito»: el enlace del correo trae la sesión en la propia dirección, así que vale
+  // en cualquier navegador (también dentro de la app de Gmail), no solo en el que lo pidió.
+  const { createClient } = await import('@supabase/supabase-js');
+  const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, { auth: { flowType: 'implicit', persistSession: false, autoRefreshToken: false } });
   const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${await origin()}/auth/callback`, shouldCreateUser: false } });
   if (error) return { error: 'No encontramos una tienda con ese correo. Usa el que nos diste en el alta.' };
   return { step: 'sent', to: email };

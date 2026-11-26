@@ -12,5 +12,7 @@ export async function GET(req: NextRequest) {
   // Si el enlace ya se usó pero la sesión está abierta en este navegador, se entra igual.
   const { data } = await (await supabaseServer()).auth.getUser();
   if (data.user) return NextResponse.redirect(new URL('/panel', req.url));
-  return NextResponse.redirect(new URL('/acceso?error=enlace', req.url));
+  // Enlace con la sesión en la parte «#…» de la dirección (flujo implícito): solo el navegador la ve,
+  // así que se pasa a /auth/entrar, que la guarda. El navegador conserva el «#…» al redirigir.
+  return NextResponse.redirect(new URL('/auth/entrar', req.url));
 }
