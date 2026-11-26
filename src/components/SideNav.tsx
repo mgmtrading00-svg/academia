@@ -6,6 +6,7 @@ import { logout } from '@/app/actions';
 const TABS = [
   { href: '/panel', label: 'Oficina' },
   { href: '/panel/fotos', label: 'Enviar fotos' },
+  { href: '/panel/tienda-online', label: 'Tu web (Shopify)' },
   { href: '/panel/encuesta', label: 'Encuesta de alta' },
 ];
 

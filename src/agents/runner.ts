@@ -2,6 +2,7 @@ import { ApiError } from '@google/genai';
 import { AgentRefusal } from './gemini';
 import { runTeo } from './teo';
 import { runNuria } from './nuria';
+import { runMarco } from './marco';
 import type { OfficeStore, QueuedTask, TaskOutcome } from './store';
 import type { AgentId } from '../lib/agents';
 
@@ -11,6 +12,7 @@ type Worker = (task: QueuedTask, store: OfficeStore) => Promise<TaskOutcome>;
 export const WORKERS: Partial<Record<AgentId, Worker>> = {
   teo: runTeo,
   nuria: runNuria,
+  marco: runMarco,
 };
 
 const MAX_ATTEMPTS = 3;

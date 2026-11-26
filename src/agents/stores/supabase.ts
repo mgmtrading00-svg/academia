@@ -1,5 +1,7 @@
 import { createClient, type SupabaseClient } from '@supabase/supabase-js';
-import type { OfficeStore, QueuedTask } from '../store';
+import type { OfficeStore, QueuedTask, ShopifyStore } from '../store';
+import { decrypt, encrypt } from '../marco/shopify';
+import type { Listing } from '../../lib/types';
 
 const BUCKET = 'fotos';
 
@@ -11,7 +13,56 @@ export function supabaseStore(url: string, serviceKey: string): OfficeStore {
     return r.data;
   };
 
+  const shopify: ShopifyStore = {
+    async connection(shopId) {
+      const { data: c } = await sb.from('shop_connections').select('*').eq('shop_id', shopId).eq('provider', 'shopify').maybeSingle();
+      if (!c) return null;
+      return {
+        shopDomain: c.shop_domain, clientId: c.client_id, clientSecret: decrypt(c.client_secret_enc),
+        accessToken: decrypt(c.access_token_enc), tokenExpiresAt: c.token_expires_at, publishStatus: c.publish_status, storeName: c.store_name,
+      };
+    },
+    async saveToken(shopId, token, expiresAt) {
+      must(await sb.from('shop_connections').update({ access_token_enc: encrypt(token), token_expires_at: expiresAt }).eq('shop_id', shopId).eq('provider', 'shopify'));
+    },
+    async setStatus(shopId, st) {
+      const patch: Record<string, unknown> = st.ok ? { last_ok_at: new Date().toISOString(), last_error: null } : { last_error: st.error ?? 'Error' };
+      if (st.storeName) patch.store_name = st.storeName;
+      must(await sb.from('shop_connections').update(patch).eq('shop_id', shopId).eq('provider', 'shopify'));
+    },
+    async publishData(photoId) {
+      const { data: p } = await sb.from('photos').select('shop_id,attributes,model_path,listings(data,shopify_product_id)').eq('id', photoId).maybeSingle();
+      if (!p) return null;
+      const l = (Array.isArray(p.listings) ? p.listings[0] : p.listings) as { data: Listing; shopify_product_id: string | null } | null;
+      if (!l) return null;
+      const attrs = (p.attributes ?? {}) as { garment?: { title: string; category: string; color: string }; results?: { kind: string; label: string; path?: string }[] };
+      const results = (attrs.results ?? []).filter((r) => r.path && r.kind !== 'post');
+      if (!results.length && p.model_path) results.push({ kind: 'producto', label: 'Producto', path: p.model_path });
+      // Primero la foto de producto, luego las de modelo.
+      results.sort((a, b) => Number(a.kind !== 'producto') - Number(b.kind !== 'producto'));
+      const images = [];
+      for (const r of results) {
+        const s = await sb.storage.from(BUCKET).createSignedUrl(r.path!, 60 * 60 * 24);
+        if (s.data?.signedUrl) images.push({ url: s.data.signedUrl, alt: `${l.data.web.title}${r.kind === 'modelo' ? ' puesto' : ''}`, kind: r.kind });
+      }
+      return { shopId: p.shop_id, listing: { ...l.data, shopifyProductId: l.shopify_product_id }, garment: attrs.garment, images };
+    },
+    async markPublished(photoId, r) {
+      const { data: l } = await sb.from('listings').select('data').eq('photo_id', photoId).single();
+      must(await sb.from('listings').update({
+        status: 'publicada', data: { ...(l!.data as Listing), status: 'publicada' },
+        shopify_product_id: r.productId, shopify_admin_url: r.adminUrl, shopify_url: r.onlineUrl, publish_error: null, updated_at: new Date().toISOString(),
+      }).eq('photo_id', photoId));
+      must(await sb.from('photos').update({ status: 'publicada' }).eq('id', photoId));
+    },
+    async markFailed(photoId, error) {
+      must(await sb.from('listings').update({ publish_error: error.slice(0, 500) }).eq('photo_id', photoId));
+    },
+  };
+
   return {
+    shopify,
+
     async claimNext(agentId) {
       const rows = must(await sb.rpc('claim_task', { p_agent: agentId })) as Record<string, unknown>[] | null;
       const r = rows?.[0];

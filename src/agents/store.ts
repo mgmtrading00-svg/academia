@@ -67,6 +67,25 @@ export interface OfficeStore {
   markPhoto(photoId: string, status: 'repetir', attributes: Record<string, unknown>): Promise<void>;
   saveListing(photoId: string, listing: Listing): Promise<void>;
 
+  /** Solo en la web real: conexión con la tienda online del cliente (Marco). */
+  shopify?: ShopifyStore;
+
   setAgent(shopId: string, agentId: AgentId, s: { status: AgentStatus; task: string; short: string }): Promise<void>;
   log(shopId: string, agentId: AgentId, message: string): Promise<void>;
+}
+
+/** Lo que Marco necesita para subir una prenda a la tienda Shopify del cliente. */
+export interface ShopifyStore {
+  connection(shopId: string): Promise<(import('./marco/shopify').ShopifyConnection & { storeName?: string | null }) | null>;
+  saveToken(shopId: string, token: string, expiresAt: string): Promise<void>;
+  setStatus(shopId: string, s: { ok: boolean; error?: string; storeName?: string }): Promise<void>;
+  /** Ficha, datos de Teo y direcciones temporales de sus fotos (para que Shopify las descargue). */
+  publishData(photoId: string): Promise<{
+    shopId: string;
+    listing: Listing & { shopifyProductId?: string | null };
+    garment?: { title: string; category: string; color: string };
+    images: { url: string; alt: string; kind: string }[];
+  } | null>;
+  markPublished(photoId: string, r: { productId: string; adminUrl: string; onlineUrl: string | null }): Promise<void>;
+  markFailed(photoId: string, error: string): Promise<void>;
 }

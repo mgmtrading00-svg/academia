@@ -44,6 +44,8 @@ export interface Photo {
   attributes?: PhotoAttributes;
   /** Ficha de producto que ha escrito Nuria. */
   listing?: Listing;
+  /** La prenda en la web de la tienda (Shopify), si Marco ya la ha subido o lo ha intentado. */
+  web?: { adminUrl?: string | null; url?: string | null; error?: string | null };
   createdAt: string;
 }
 

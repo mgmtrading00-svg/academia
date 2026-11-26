@@ -59,7 +59,7 @@ export async function getOffice(shopId: string): Promise<OfficeSnapshot> {
 export async function getPhotos(shopId: string): Promise<Photo[]> {
   if (IS_DEMO) return demo.photos();
   const sb = await supabaseServer();
-  const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at,listings(data)').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
+  const { data } = await sb.from('photos').select('id,storage_path,model_path,attributes,file_name,note,status,created_at,listings(data,shopify_admin_url,shopify_url,publish_error)').eq('shop_id', shopId).order('created_at', { ascending: false }).limit(60);
   const rows = data ?? [];
   const extra = (r: { attributes: PhotoAttributes | null }) => (r.attributes?.results ?? []).map((x) => x.path).filter((x): x is string => !!x);
   const paths = rows.flatMap((r) => [r.storage_path, ...(r.model_path ? [r.model_path] : []), ...extra(r)]);
@@ -70,9 +70,15 @@ export async function getPhotos(shopId: string): Promise<Photo[]> {
     url: urlOf.get(r.storage_path) ?? null,
     modelUrl: r.model_path ? urlOf.get(r.model_path) ?? null : null,
     attributes: { ...(r.attributes ?? {}), results: (r.attributes?.results ?? []).map((x: { path?: string }) => ({ ...x, url: x.path ? urlOf.get(x.path) ?? null : null })) },
-    listing: (Array.isArray(r.listings) ? r.listings[0]?.data : (r.listings as { data?: Listing } | null)?.data) ?? undefined,
+    listing: listingRow(r.listings)?.data ?? undefined,
+    web: webOf(listingRow(r.listings)),
   }));
 }
+
+type ListingRow = { data?: Listing; shopify_admin_url?: string | null; shopify_url?: string | null; publish_error?: string | null };
+const listingRow = (x: unknown): ListingRow | null => (Array.isArray(x) ? (x[0] as ListingRow) ?? null : (x as ListingRow | null));
+const webOf = (l: ListingRow | null) =>
+  l && (l.shopify_admin_url || l.publish_error) ? { adminUrl: l.shopify_admin_url, url: l.shopify_url, error: l.publish_error } : undefined;
 
 export async function getSurvey(shopId: string): Promise<SurveyAnswers> {
   if (IS_DEMO) return demo.survey();

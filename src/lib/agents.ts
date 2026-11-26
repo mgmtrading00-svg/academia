@@ -17,7 +17,7 @@ export const AGENTS: AgentDef[] = [
   { id: 'nuria', name: 'Nuria', role: 'Catalogadora', color: '#0F8B8D', phase: 1, does: 'Título, descripción, tallas y palabras clave para cada canal.' },
   { id: 'bruno', name: 'Bruno', role: 'Almacén', color: '#8A5A2B', phase: 1, does: 'Cuadra el stock entre tienda, web, Amazon y Vinted.' },
   { id: 'vera', name: 'Vera', role: 'Publicidad', color: '#6B4FD8', phase: 2, does: 'Estudia tus anuncios de Facebook cada día y propone cambios.' },
-  { id: 'marco', name: 'Marco', role: 'Marketplaces', color: '#C2410C', phase: 2, does: 'Publica y responde en Amazon y Vinted.' },
+  { id: 'marco', name: 'Marco', role: 'Tu web y marketplaces', color: '#C2410C', phase: 1, does: 'Sube a tu web (Shopify) cada prenda aprobada, con fotos, precio y tallas. Pronto también Amazon y Vinted.' },
   { id: 'sara', name: 'Sara', role: 'Redes sociales', color: '#15803D', phase: 2, does: 'Publica sola en Instagram, TikTok y Pinterest: novedades, ofertas y rebajas, con tu estilo.' },
   { id: 'leo', name: 'Leo', role: 'Atención al cliente', color: '#475569', phase: 2, does: 'Contesta dudas de tallas, envíos y devoluciones.' },
 ];

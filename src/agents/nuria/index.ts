@@ -23,6 +23,9 @@ export async function runNuria(task: QueuedTask, store: OfficeStore): Promise<Ta
 
   // Precio y tallas: solo lo que la tienda escribió. Lo que diga el modelo se comprueba contra la nota.
   const facts = parseNote(note);
+  // Datos que la tienda ha escrito en el panel («Completar precio y tallas») mandan sobre la nota.
+  if (typeof task.payload.price_eur === 'number' && task.payload.price_eur > 0) facts.priceEur = task.payload.price_eur;
+  if (Array.isArray(task.payload.sizes) && task.payload.sizes.length) facts.sizes = (task.payload.sizes as unknown[]).map(String).filter(Boolean).slice(0, 20);
   const listing: Listing = { ...draft, priceEur: facts.priceEur, sizes: facts.sizes, missing: [], status: 'lista' };
   if (listing.priceEur == null) listing.missing.push('precio');
   if (!listing.sizes.length) listing.missing.push('tallas');

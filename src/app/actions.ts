@@ -2,7 +2,6 @@
 import { cookies, headers } from 'next/headers';
 import { redirect } from 'next/navigation';
 import { revalidatePath } from 'next/cache';
-import { after } from 'next/server';
 import { DEMO_COOKIE, IS_DEMO, PHOTO_BUCKET } from '@/lib/config';
 import { currentShopId } from '@/lib/data';
 import { demo } from '@/lib/demo-store';
@@ -14,23 +13,7 @@ export type FormState = { ok?: string; error?: string };
 const MAX_FILES = 20;
 const MAX_BYTES = 10 * 1024 * 1024;
 
-/**
- * Los empleados trabajan justo después de responder a la tienda, en el propio servidor.
- * En la demostración, sobre la tienda de ejemplo; en la web real, con la clave de servicio.
- * (En producción también puede correr aparte con `npm run empleados`.)
- */
-function runAgentsSoon() {
-  after(async () => {
-    const { drain } = await import('@/agents/runner');
-    if (IS_DEMO) {
-      const { demoStore } = await import('@/agents/stores/demo');
-      await drain(demoStore);
-    } else if (process.env.SUPABASE_SERVICE_ROLE_KEY) {
-      const { supabaseStore } = await import('@/agents/stores/supabase');
-      await drain(supabaseStore(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.SUPABASE_SERVICE_ROLE_KEY));
-    }
-  });
-}
+import { runAgentsSoon } from '@/lib/run-agents';
 
 async function requireShop() {
   const shopId = await currentShopId();
@@ -151,7 +134,8 @@ export async function decideTask(taskId: string, approve: boolean): Promise<Form
   } catch (e) {
     return { error: e instanceof Error ? e.message : 'No se ha podido guardar.' };
   }
-  if (!approve) runAgentsSoon();
+  // Al aprobar también hay trabajo: Marco sube a la web lo que ya tiene foto y ficha aprobadas.
+  runAgentsSoon();
   revalidatePath('/panel');
   return { ok: approve ? 'Aprobado' : 'Hemos pedido los cambios' };
 }

@@ -5,6 +5,8 @@ import { currentShopId, getPhotos } from '@/lib/data';
 import type { Listing, Photo } from '@/lib/types';
 import { RedoButton } from '@/components/RedoButton';
 import Molinillo from '@/components/Molinillo';
+import WebActions from '@/components/WebActions';
+import { getShopifyStatus } from '@/lib/conexiones';
 import { canGenerateImages, hasGemini, imageFlagDebug } from '@/agents/gemini';
 
 export const dynamic = 'force-dynamic';
@@ -21,7 +23,7 @@ const LABEL: Record<Photo['status'], [string, string]> = {
 
 const eur = new Intl.NumberFormat('es-ES', { style: 'currency', currency: 'EUR' });
 const LISTING: Record<Listing['status'], [string, string]> = {
-  falta_info: ['Lola te pregunta lo que falta', 'warn'],
+  falta_info: ['Falta precio o tallas', 'warn'],
   lista: ['Ficha para tu visto bueno', 'warn'],
   aprobada: ['Ficha aprobada', 'ok'],
   publicada: ['Ficha publicada', 'ok'],
@@ -34,7 +36,7 @@ function ListingBlock({ l }: { l: Listing }) {
         <span>Ficha de Nuria{l.priceEur != null ? ` · ${eur.format(l.priceEur)}` : ''}{l.sizes.length ? ` · ${l.sizes.join(', ')}` : ''}</span>
         <span className={`pill ${LISTING[l.status][1]}`}>{LISTING[l.status][0]}</span>
       </summary>
-      {l.missing.length > 0 && <p className="ask">Falta {l.missing.map((m) => (m === 'precio' ? 'el precio' : 'las tallas')).join(' y ')}. Lola te lo pregunta por WhatsApp.</p>}
+      {l.missing.length > 0 && <p className="ask">Falta {l.missing.map((m) => (m === 'precio' ? 'el precio' : 'las tallas')).join(' y ')}. Escríbelo abajo y Nuria completa la ficha.</p>}
       <div className="ficha-canal"><span className="eyebrow">Tu web</span><b>{l.web.title}</b>{l.web.description.split('\n').filter(Boolean).map((t, i) => <p key={i}>{t}</p>)}</div>
       <div className="ficha-canal"><span className="eyebrow">Vinted</span><b>{l.vinted.title}</b><p className="pre">{l.vinted.description}</p></div>
       <div className="ficha-canal"><span className="eyebrow">Amazon</span><b>{l.amazon.title}</b><ul>{l.amazon.bullets.map((b, i) => <li key={i}>{b}</li>)}</ul></div>
@@ -42,7 +44,7 @@ function ListingBlock({ l }: { l: Listing }) {
   );
 }
 
-function PhotoCard({ p }: { p: Photo }) {
+function PhotoCard({ p, shopify }: { p: Photo; shopify: boolean }) {
   const g = p.attributes?.garment;
   return (
     <article className={`ph ${p.modelUrl ? 'done' : ''}`}>
@@ -66,6 +68,7 @@ function PhotoCard({ p }: { p: Photo }) {
         {p.note && <span className="muted">{p.note}</span>}
         <span className={`pill ${LABEL[p.status][1]}`}>{p.status === 'en_cola' && <Molinillo size={13} spin />}{LABEL[p.status][0]}</span>
         {p.listing && <ListingBlock l={p.listing} />}
+        <WebActions p={p} shopify={shopify} />
         {p.status !== 'en_cola' && <RedoButton photoId={p.id} />}
       </div>
     </article>
@@ -76,9 +79,11 @@ function PhotoCard({ p }: { p: Photo }) {
 const sized = (url: string, w: number) => (url.startsWith('/api/foto') ? `${url}&w=${w}` : url);
 
 export default async function Fotos() {
-  const photos = await getPhotos((await currentShopId())!);
+  const shopId = (await currentShopId())!;
+  const [photos, shop] = await Promise.all([getPhotos(shopId), getShopifyStatus(shopId)]);
   // Seguir refrescando mientras Teo o Nuria tengan trabajo con estas fotos.
-  const working = photos.some((p) => p.status === 'en_cola' || ((p.status === 'lista' || p.status === 'aprobada') && !p.listing));
+  const working = photos.some((p) => p.status === 'en_cola' || ((p.status === 'lista' || p.status === 'aprobada') && !p.listing)
+    || (shop.connected && p.status === 'aprobada' && p.listing?.status === 'aprobada' && !p.web));
   return (
     <div style={{ display: 'grid', gap: 18 }}>
       <AutoRefresh active={working} />
@@ -93,7 +98,7 @@ export default async function Fotos() {
       </div>
       <PhotoUpload />
       {photos.length ? (
-        <div className="phs">{photos.map((p) => <PhotoCard key={p.id} p={p} />)}</div>
+        <div className="phs">{photos.map((p) => <PhotoCard key={p.id} p={p} shopify={shop.connected} />)}</div>
       ) : (
         <p className="empty">Aquí verás tus fotos y en qué punto está cada una. Sube la primera para empezar.</p>
       )}
