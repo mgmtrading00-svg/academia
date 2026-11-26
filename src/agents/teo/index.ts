@@ -49,7 +49,7 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
   //    y sombra suave) y las fotos en modelo. Un fallo en una no tumba las demás: queda anotado en la actividad.
   const results: TeoResult[] = [];
   const problems: string[] = [];
-  const wantsModel = canGenerateImages() && FOTOS_MODELO > 0 && profile.modelo !== 'Sin modelo, solo producto' && g.placement !== 'no_se_viste';
+  const wantsModel = canGenerateImages() && FOTOS_MODELO > 0 && profile.modelo !== 'Sin modelo, solo producto' && (g.placement !== 'no_se_viste' || g.category === 'joya');
   if (canGenerateImages()) {
     await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Haciendo las fotos de catálogo: ${g.title.toLowerCase()}`, short: 'Fotos de catálogo' });
     const seed = task.payload.redo ? `${photoId}-${Date.now()}` : photoId;
@@ -136,8 +136,15 @@ async function catalogPackshot(original: StoredImage, recorte: StoredImage, g: G
     base64: (await sharp(img.data).rotate().resize(1536, 1536, { fit: 'inside', withoutEnlargement: true }).jpeg({ quality: 90 }).toBuffer()).toString('base64'),
   });
   // Orden: 1) ejemplo de estilo de catálogo, 2) la prenda en la percha, 3) la prenda recortada.
-  const refs = [ESTILO_PRODUCTO, await prep(original), await prep(recorte)];
-  const prompt = (extra: string) => [
+  const joya = g.category === 'joya';
+  // Las joyas no llevan la referencia del pelele: tienen su propia presentación de catálogo.
+  const refs = joya ? [await prep(original)] : [ESTILO_PRODUCTO, await prep(original), await prep(recorte)];
+  const prompt = (extra: string) => joya ? [
+    `Create a professional luxury jewellery e-commerce packshot of the exact piece in the photo (${g.title}${g.details.length ? `; ${g.details.join(', ')}` : ''}).`,
+    'It is a phone photo on the floor or a table: keep exactly the same shape, proportions, metal colour and finish, and stones, but show it perfectly clean and polished, in sharp focus, with crisp natural reflections like a high-end jewellery brand online shop.',
+    'Show it at a slight three-quarter angle, standing upright, centred, filling about 55% of the frame, on a seamless pure white background edge to edge with only a faint soft contact shadow below. No hands, no props, no box, no text, no watermark. Do not add stones, engravings or details that are not in the photo.',
+    extra,
+  ].filter(Boolean).join(' ') : [
     `Create a professional e-commerce "ghost mannequin" packshot of the garment shown in images 2 and 3 (${g.title}).`,
     'Image 1 is ONLY a style reference from the same shop: copy its presentation exactly (front view, garment perfectly steamed and smooth with absolutely no creases or wrinkles anywhere, as in a big fashion brand online shop, fabric gently filled as if worn by an invisible body, perfectly symmetrical, sleeves angled down and slightly outward at the same angle on both sides, cuffs and collar neatly arranged, very soft even studio light, plain white background, no visible shadow or only a faint one, garment centred and filling about 75% of the height). Never copy the garment, fabric, print or colours of image 1.',
     'Images 2 and 3 are the real garment, photographed on a hanger with a phone. Reproduce that garment, not a new one.',
@@ -151,7 +158,7 @@ async function catalogPackshot(original: StoredImage, recorte: StoredImage, g: G
   let extra = '';
   for (let i = 0; i < 3; i++) {
     const raw = await generateImage({ images: refs, prompt: prompt(extra), aspectRatio: '4:5', model });
-    const image = await centerOnWhite(raw.data);
+    const image = await centerOnWhite(raw.data, joya ? { fill: 0.6 } : undefined);
     const qa = await checkPackshot(original, image, g);
     if (qa.pass) return image;
     extra = qa.retry_prompt;
@@ -179,8 +186,10 @@ async function modelPhoto(original: StoredImage, producto: StoredImage, g: Garme
   const garment = `${g.title} (${g.color}${g.pattern && g.pattern !== 'liso' ? `, ${g.pattern}` : ''}${g.details.length ? `; ${g.details.join(', ')}` : ''})`;
   const isKid = !['mujer', 'hombre'].includes(g.wearer);
   const styling = isKid ? 'Style it like a premium Spanish children\'s fashion brand: knee-high socks in a matching tone and classic leather shoes, natural and tender, never posed like an adult.' : 'Natural relaxed pose.';
-  const prompt = (extra: string) =>
-    `Photorealistic children's and family fashion catalogue photograph. ${modeloPara(g, p.modelo)} wearing this exact garment: ${garment}. The first image shows the garment alone, the second shows it on a hanger. Scene: ${escena.prompt}. ${styling} Shot on an 85mm lens, natural light, shallow depth of field, the garment sharp and fully visible, realistic face and hands. ${KEEP}${extra ? ' ' + extra : ''}`;
+  const joya = g.category === 'joya';
+  const prompt = (extra: string) => joya
+    ? `Photorealistic luxury jewellery lifestyle photograph. ${escena.prompt}, wearing this exact piece: ${garment}. The first image is the piece itself. The piece must be an exact copy: same shape, proportions, metal colour and stones, worn naturally (a ring on the ring finger), in sharp focus; realistic skin and hands with five natural fingers. Shot on a 100mm macro lens, shallow depth of field. No text, logos or watermarks.${extra ? ' ' + extra : ''}`
+    : `Photorealistic children's and family fashion catalogue photograph. ${modeloPara(g, p.modelo)} wearing this exact garment: ${garment}. The first image shows the garment alone, the second shows it on a hanger. Scene: ${escena.prompt}. ${styling} Shot on an 85mm lens, natural light, shallow depth of field, the garment sharp and fully visible, realistic face and hands. ${KEEP}${extra ? ' ' + extra : ''}`;
 
   let image = await generateImage({ images: refs, prompt: prompt(''), aspectRatio: '4:5' });
   let qa = await checkResult(original, image, g);

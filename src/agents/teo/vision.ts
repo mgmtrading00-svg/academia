@@ -14,7 +14,7 @@ export interface Garment {
   usable: boolean;
   /** Si no sirve: qué pedir a la tienda, en una frase amable y concreta. */
   ask_shop: string;
-  category: 'vestido' | 'camisa' | 'camiseta' | 'blusa' | 'jersey' | 'chaqueta' | 'abrigo' | 'pantalon' | 'falda' | 'mono' | 'calzado' | 'bolso' | 'complemento' | 'otro';
+  category: 'vestido' | 'camisa' | 'camiseta' | 'blusa' | 'jersey' | 'chaqueta' | 'abrigo' | 'pantalon' | 'falda' | 'mono' | 'calzado' | 'bolso' | 'complemento' | 'joya' | 'otro';
   /** Prenda de arriba, de abajo, de cuerpo entero, o algo que no se lleva puesto en el cuerpo. */
   placement: 'arriba' | 'abajo' | 'entera' | 'no_se_viste';
   /** Quién la lleva, por la talla y el corte: decide si la modelo es un bebé, una niña, una mujer… */
@@ -35,7 +35,7 @@ const GARMENT_SCHEMA = {
   properties: {
     usable: { type: 'boolean' },
     ask_shop: { type: 'string' },
-    category: { type: 'string', enum: ['vestido', 'camisa', 'camiseta', 'blusa', 'jersey', 'chaqueta', 'abrigo', 'pantalon', 'falda', 'mono', 'calzado', 'bolso', 'complemento', 'otro'] },
+    category: { type: 'string', enum: ['vestido', 'camisa', 'camiseta', 'blusa', 'jersey', 'chaqueta', 'abrigo', 'pantalon', 'falda', 'mono', 'calzado', 'bolso', 'complemento', 'joya', 'otro'] },
     placement: { type: 'string', enum: ['arriba', 'abajo', 'entera', 'no_se_viste'] },
     wearer: { type: 'string', enum: ['bebe', 'nina', 'nino', 'infantil', 'mujer', 'hombre'] },
     color: { type: 'string' },
@@ -54,6 +54,8 @@ Mira la foto y describe la prenda principal para que otra persona pueda escribir
 Marca usable=false solo si con esta foto es imposible sacar una buena foto en modelo: la prenda está cortada de forma que falta una parte importante, está tan borrosa u oscura que no se distingue el color o el estampado, hay varias prendas mezcladas y no se sabe cuál es, o no aparece ninguna prenda. Cuando sea false, escribe en ask_shop qué foto necesitas, en una frase corta, cercana y concreta, tuteando (por ejemplo: «¿Me mandas otra del vestido entero, desde un poco más lejos?»). Cuando sea true, deja ask_shop vacío.
 
 En wearer indica quién la lleva por el tamaño y el corte: «bebe» para peleles, ranitas, jesusitos y ropa de 0 a 2 años; «nina» o «nino» para ropa infantil de 2 a 12 años; «infantil» si es de niño pero no se sabe si de niña o niño; «mujer» u «hombre» para adultos. Fíjate en el tamaño de la percha y de la prenda.
+
+Si es una joya o bisutería (anillo, pendientes, collar, pulsera), pon category «joya», placement «no_se_viste», wearer «mujer» salvo que sea claramente infantil, y en details describe el metal, la forma y las piedras. Una joya en el suelo, en una mesa o en la mano es una foto válida.
 
 En defects anota manchas, roturas, hilos o arrugas fuertes que se vean en la prenda (no los defectos de la foto). Los colores, en palabras normales de tienda («verde botella», «crudo»). Todo en español de España.`;
 
@@ -84,7 +86,7 @@ const QA_SCHEMA = {
   properties: { pass: { type: 'boolean' }, problems: { type: 'array', items: { type: 'string' } }, retry_prompt: { type: 'string' } },
 };
 
-const QA_SYSTEM = `Eres el control de calidad de las fotos de una tienda de ropa. Recibes la foto original de la prenda (primera imagen) y la foto en modelo generada por ordenador (segunda imagen).
+const QA_SYSTEM = `Eres el control de calidad de las fotos de una tienda de ropa. Recibes la foto original de la prenda (primera imagen) y la foto en modelo generada por ordenador (segunda imagen). Si es una joya, la foto generada la muestra puesta en una mano o en el cuerpo: comprueba que la forma, el metal y las piedras son idénticos.
 
 La tienda va a vender esa prenda con la segunda foto, así que tiene que ser fiel: si el cliente recibe algo distinto, lo devuelve. Aprueba (pass=true) solo si se cumple todo:
 - Es la misma prenda: mismo tipo, largo y corte.
@@ -112,6 +114,7 @@ Aprueba (pass=true) solo si se cumple TODO:
 - Es la misma prenda: mismo tipo, largo, corte, cuello, volantes, puños y botones (si la original es de espaldas, la generada puede ser de frente, pero sin inventar adornos).
 - El color y el estampado son idénticos: mismo tono, misma escala y mismo dibujo. Un cambio de tono no vale.
 - Parece de una tienda online de una marca grande: tela lisa y planchada SIN NINGUNA arruga visible (tampoco en el cubrepañal ni en las mangas), prenda simétrica, las dos mangas colocadas con el mismo ángulo, el cubrepañal (si lo hay) extendido y centrado debajo, prenda centrada con márgenes parecidos a los lados, fondo blanco limpio de borde a borde sin franjas ni marcos, sin percha, sin etiquetas, sin pared y sin texto.
+Si es una joya: misma forma, mismo metal y mismas piedras, la joya nítida, centrada y entera sobre blanco limpio con un reflejo o sombra suave; ahí no apliques lo de arrugas, mangas ni cubrepañal.
 Sé exigente: si dudas de si una arruga o una asimetría se nota, recházala.
 
 Si falla, lista los problemas en problems (en español) y escribe en retry_prompt una indicación breve en inglés para corregirlos (por ejemplo «remove the creases on the left sleeve and keep the exact dusty pink collar»).`;

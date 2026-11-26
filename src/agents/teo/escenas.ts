@@ -20,8 +20,15 @@ const ADULTO: Escena[] = [
   { id: 'estudio', label: 'estudio', prompt: 'a minimal photo studio with a warm off-white backdrop and soft window-style light' },
 ];
 
+const JOYA: Escena[] = [
+  { id: 'mano', label: 'en la mano', prompt: 'a close-up of an elegant woman\'s hand with natural nude manicure resting lightly on a cream linen cloth next to a small sprig of dried flowers, soft warm window light' },
+  { id: 'cafe', label: 'mano con taza', prompt: 'a close-up of a woman\'s hand holding a ceramic coffee cup on a light oak table in a bright Andalusian home, soft morning sun' },
+  { id: 'cara', label: 'mano junto a la cara', prompt: 'a woman touching her chin softly with her hand, cropped below the eyes, cream knit sweater, warm golden-hour light, the jewel in sharp focus' },
+];
+
 /** Escenas para esta prenda, empezando por una distinta según la foto. */
 export function escenasPara(g: Garment, seed: string, n: number): Escena[] {
+  if (g.category === 'joya') return JOYA.slice(0, Math.min(n, JOYA.length));
   const list = g.wearer === 'mujer' || g.wearer === 'hombre' ? ADULTO : INFANTIL;
   // Los bebés no andan: mejor escenas sentados primero.
   const ordered = g.wearer === 'bebe' ? [...list].sort((a, b) => Number(/walks|stands/.test(a.prompt)) - Number(/walks|stands/.test(b.prompt))) : list;
