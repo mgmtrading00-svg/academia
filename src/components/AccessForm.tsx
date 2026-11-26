@@ -1,6 +1,6 @@
 'use client';
 import { useActionState, useState } from 'react';
-import { demoLogin, sendMagicLink, sendWhatsappCode, verifyWhatsappCode, type AccessState } from '@/app/actions';
+import { demoLogin, sendMagicLink, sendWhatsappCode, verifyEmailCode, verifyWhatsappCode, type AccessState } from '@/app/actions';
 
 type Mode = 'email' | 'whatsapp';
 
@@ -15,17 +15,22 @@ function Check() {
 
 function EmailFlow() {
   const [state, action, pending] = useActionState<AccessState, FormData>(sendMagicLink, {});
+  const [checked, verify, verifying] = useActionState<AccessState, FormData>(verifyEmailCode, {});
   if (state.step === 'sent')
     return (
       <div className="acc-done" role="status">
         <Check />
         <h3>Revisa tu correo</h3>
-        <p className="muted">Te hemos enviado un enlace a <b>{state.to}</b>. Ábrelo en este mismo dispositivo y entrarás directamente. Caduca en una hora.</p>
-        {state.demo ? (
-          <form action={demoLogin}><button type="submit">Simular que abro el enlace</button></form>
-        ) : (
-          <p className="small muted">¿No llega? Mira en la carpeta de spam o vuelve a pedirlo en unos minutos.</p>
-        )}
+        <p className="muted">Te hemos enviado un correo a <b>{state.to}</b> con un código. Escríbelo aquí, o pulsa el botón del correo.{state.demo && ' En la demostración vale cualquier código de 6 cifras.'}</p>
+        <form action={verify} className="acc-form" style={{ width: '100%' }}>
+          <input type="hidden" name="email" value={state.to} />
+          <label htmlFor="ecode">Código del correo
+            <input id="ecode" name="code" required inputMode="numeric" autoComplete="one-time-code" maxLength={8} pattern="\d{6,8}" className="code" placeholder="000000" />
+          </label>
+          <button type="submit" disabled={verifying}>{verifying ? 'Comprobando…' : 'Entrar'}</button>
+          {checked.error && <p className="err" role="alert">{checked.error}</p>}
+        </form>
+        <p className="small muted">¿No llega? Mira en la carpeta de spam o vuelve a pedirlo en unos minutos.</p>
       </div>
     );
   return (
@@ -33,7 +38,7 @@ function EmailFlow() {
       <label htmlFor="email">Correo de la tienda
         <input id="email" name="email" type="email" required placeholder="hola@tutienda.es" autoComplete="email" inputMode="email" />
       </label>
-      <button type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviarme el enlace de acceso'}</button>
+      <button type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviarme el código de acceso'}</button>
       {state.error && <p className="err" role="alert">{state.error}</p>}
     </form>
   );

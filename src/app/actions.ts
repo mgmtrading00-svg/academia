@@ -71,6 +71,31 @@ export async function sendMagicLink(_prev: AccessState, form: FormData): Promise
   return { step: 'sent', to: email };
 }
 
+/** Paso 2 por correo: el código que viene en el mismo correo. Funciona en cualquier navegador o móvil. */
+export async function verifyEmailCode(prev: AccessState, form: FormData): Promise<AccessState> {
+  const email = String(form.get('email') ?? '').trim().toLowerCase();
+  const token = String(form.get('code') ?? '').replace(/\D/g, '');
+  if (token.length < 6 || token.length > 8) return { ...prev, error: 'Escribe el código del correo (6 cifras).' };
+  if (IS_DEMO) return demoLogin();
+  const sb = await supabaseServer();
+  const { error } = await sb.auth.verifyOtp({ email, token, type: 'email' });
+  if (error) return { ...prev, error: 'Código incorrecto o caducado. Pide uno nuevo.' };
+  redirect('/panel');
+}
+
+/** El enlace del correo (versión que funciona en cualquier navegador): se confirma al pulsar «Entrar». */
+export async function confirmEmailLink(form: FormData): Promise<never> {
+  const token_hash = String(form.get('token_hash') ?? '');
+  const type = String(form.get('type') ?? 'email') as 'email' | 'magiclink';
+  const sb = await supabaseServer();
+  const { error } = await sb.auth.verifyOtp({ token_hash, type });
+  if (error) {
+    if (await sb.auth.getUser().then((r) => !!r.data.user)) redirect('/panel');
+    redirect('/acceso?error=enlace');
+  }
+  redirect('/panel');
+}
+
 /** Paso 1 por WhatsApp: envía un código de 6 cifras. */
 export async function sendWhatsappCode(_prev: AccessState, form: FormData): Promise<AccessState> {
   const phone = normalizePhone(String(form.get('phone') ?? ''));
