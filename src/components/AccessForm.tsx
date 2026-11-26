@@ -39,7 +39,7 @@ function EmailFlow() {
   return (
     <form action={action} className="acc-form">
       <label htmlFor="email">Correo de la tienda
-        <input id="email" name="email" type="email" required placeholder="hola@tutienda.es" autoComplete="email" inputMode="email" />
+        <input id="email" name="email" type="email" required placeholder="hola@tutienda.es" autoComplete="email" inputMode="email" autoCapitalize="none" autoCorrect="off" spellCheck={false} />
       </label>
       <button type="submit" disabled={pending}>{pending ? 'Enviando…' : 'Enviarme el enlace de acceso'}</button>
       {state.error && <p className="err" role="alert">{state.error}</p>}

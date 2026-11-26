@@ -70,7 +70,15 @@ export async function sendMagicLink(_prev: AccessState, form: FormData): Promise
   const { createClient } = await import('@supabase/supabase-js');
   const sb = createClient(process.env.NEXT_PUBLIC_SUPABASE_URL!, process.env.NEXT_PUBLIC_SUPABASE_ANON_KEY!, { auth: { flowType: 'implicit', persistSession: false, autoRefreshToken: false } });
   const { error } = await sb.auth.signInWithOtp({ email, options: { emailRedirectTo: `${await origin()}/auth/callback`, shouldCreateUser: false } });
-  if (error) return { error: 'No encontramos una tienda con ese correo. Usa el que nos diste en el alta.' };
+  if (error) {
+    console.error('sendMagicLink', error.status, error.code, error.message);
+    const msg = `${error.code ?? ''} ${error.message}`.toLowerCase();
+    if (error.status === 429 || msg.includes('rate limit') || msg.includes('security purposes'))
+      return { error: 'Has pedido varios correos seguidos y el sistema pide esperar un poco. Prueba de nuevo dentro de una hora, o abre el último correo que te llegó.' };
+    if (msg.includes('signup') || msg.includes('not found') || msg.includes('otp_disabled'))
+      return { error: 'No encontramos una tienda con ese correo. Usa el que nos diste en el alta.' };
+    return { error: 'No hemos podido enviar el correo ahora mismo. Prueba otra vez en unos minutos.' };
+  }
   return { step: 'sent', to: email };
 }
 
