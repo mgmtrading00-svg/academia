@@ -4,6 +4,7 @@ import AutoRefresh from '@/components/AutoRefresh';
 import { currentShopId, getPhotos } from '@/lib/data';
 import type { Listing, Photo } from '@/lib/types';
 import { RedoButton } from '@/components/RedoButton';
+import Molinillo from '@/components/Molinillo';
 import { canGenerateImages, hasGemini, imageFlagDebug } from '@/agents/gemini';
 
 export const dynamic = 'force-dynamic';
@@ -63,7 +64,7 @@ function PhotoCard({ p }: { p: Photo }) {
         {p.status === 'repetir' && g?.ask_shop && <span className="ask">«{g.ask_shop}»</span>}
         {!!g?.defects.length && <span className="ask">Ojo: {g.defects.join(', ')}</span>}
         {p.note && <span className="muted">{p.note}</span>}
-        <span className={`pill ${LABEL[p.status][1]}`}>{LABEL[p.status][0]}</span>
+        <span className={`pill ${LABEL[p.status][1]}`}>{p.status === 'en_cola' && <Molinillo size={13} spin />}{LABEL[p.status][0]}</span>
         {p.listing && <ListingBlock l={p.listing} />}
         {p.status !== 'en_cola' && <RedoButton photoId={p.id} />}
       </div>

@@ -7,6 +7,7 @@ import BeforeAfter from '@/components/landing/BeforeAfter';
 import Advantages from '@/components/landing/Advantages';
 import Faq from '@/components/landing/Faq';
 import BetaForm from '@/components/landing/BetaForm';
+import Molinillo from '@/components/Molinillo';
 
 // Escena de la portada: ilustrativa, no son datos de ninguna tienda.
 const HERO: AgentState[] = [
@@ -136,7 +137,7 @@ export default function Home() {
         <BetaForm />
       </div></section>
 
-      <footer><div className="wrap foot"><span className="logo small-logo"><i />Oficina Virtual</span><span>Hecho en España para tiendas de ropa.</span><span>© {new Date().getFullYear()} · nombre provisional</span></div></footer>
+      <footer><div className="wrap foot"><span className="logo small-logo"><Molinillo size={22} /><span className="logo-txt"><b>Oficina Virtual</b><small>Moral · Agency · AI</small></span></span><span>Hecho en España para tiendas de ropa.</span><span>© {new Date().getFullYear()} · nombre provisional</span></div></footer>
     </>
   );
 }

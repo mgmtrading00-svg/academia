@@ -6,6 +6,7 @@ import type { OfficeSnapshot, Task } from '@/lib/types';
 import { decideTask } from '@/app/actions';
 import OfficeScene from './OfficeScene';
 import Avatar from './Avatar';
+import Molinillo from './Molinillo';
 
 const TZ = 'Europe/Madrid';
 const hhmm = (iso: string) => new Date(iso).toLocaleTimeString('es-ES', { hour: '2-digit', minute: '2-digit', timeZone: TZ });
@@ -88,7 +89,7 @@ export default function PanelOffice({ office }: { office: OfficeSnapshot }) {
             const st = office.agents.find((s) => s.id === a.id)!.status;
             return (
               <button key={a.id} type="button" role="tab" aria-selected={sel === a.id} className={sel === a.id ? 'on' : ''} onClick={() => setSel(a.id)}>
-                <span className={`dot ${st}`} />{a.name}
+                {st === 'busy' ? <Molinillo size={14} spin title="Trabajando" /> : <span className={`dot ${st}`} />}{a.name}
               </button>
             );
           })}

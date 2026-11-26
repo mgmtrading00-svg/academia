@@ -1,10 +1,11 @@
 import Link from 'next/link';
+import Molinillo from './Molinillo';
 
 export default function TopBar({ variant }: { variant: 'public' | 'app' }) {
   return (
     <header className="top">
       <div className="wrap">
-        <Link className="logo" href="/"><i />Oficina Virtual</Link>
+        <Link className="logo" href="/" aria-label="Oficina Virtual, de Moral Agency AI"><Molinillo size={30} /><span className="logo-txt"><b>Oficina Virtual</b><small>Moral · Agency · AI</small></span></Link>
         <nav className="links">
           {variant === 'public' ? (
             <>
