@@ -42,7 +42,15 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
 
   // 1. Foto de producto limpia (gratis).
   await store.setAgent(task.shopId, 'teo', { status: 'busy', task: `Quitando la percha y el fondo: ${g.title.toLowerCase()}`, short: 'Foto de producto' });
-  let producto = await cleanProduct(photo.image);
+  // Si el producto es pequeño en la foto (una joya en el suelo, una prenda lejos), primero se
+  // acerca la foto al producto: así ni el recorte ni Gemini lo pierden entre el fondo.
+  const focus = await focusOn(photo.image, g);
+  const small = focus !== photo.image;
+  const original = small ? focus : photo.image;
+  // Las joyas nunca pasan por el recorte de prendas (separaría la pared, no la joya).
+  let producto: { result: TeoResult } = g.category === 'joya' || small
+    ? { result: { kind: 'mejorada', label: 'Foto encuadrada', image: await enhanceLocally(original.data) } }
+    : await cleanProduct(photo.image);
   const recorte = producto.result.image;
 
   // 2. Con la generación de Gemini activada, a la vez: la de producto «de catálogo» (planchada, con forma
@@ -55,8 +63,8 @@ export async function runTeo(task: QueuedTask, store: OfficeStore): Promise<Task
     const seed = task.payload.redo ? `${photoId}-${Date.now()}` : photoId;
     const escenas = wantsModel ? escenasPara(g, seed, FOTOS_MODELO) : [];
     const [pro, ...modelos] = await Promise.allSettled([
-      catalogPackshot(photo.image, recorte, g),
-      ...escenas.map((e) => modelPhoto(photo.image, recorte, g, profile, e)),
+      catalogPackshot(original, recorte, g),
+      ...escenas.map((e) => modelPhoto(original, recorte, g, profile, e)),
     ]);
     const why = (r: PromiseRejectedResult) => (r.reason instanceof Error ? r.reason.message : String(r.reason)).slice(0, 200);
     if (pro.status === 'fulfilled' && pro.value) producto = { result: { kind: 'producto', label: 'Foto de producto', image: pro.value } };
@@ -198,6 +206,24 @@ async function modelPhoto(original: StoredImage, producto: StoredImage, g: Garme
   image = await generateImage({ images: refs, prompt: prompt(qa.retry_prompt), aspectRatio: '4:5' });
   qa = await checkResult(original, image, g);
   return { image: qa.pass ? image : null, problems: qa.problems, firstProblems, retried: true };
+}
+
+/** Recorta la foto alrededor del producto cuando ocupa poco (joyas siempre). Si no, devuelve la misma foto. */
+async function focusOn(img: StoredImage, g: Garment): Promise<StoredImage> {
+  const b = g.box;
+  if (!b || b.length !== 4) return img;
+  const [y0, x0, y1, x1] = b.map((v) => Math.min(1000, Math.max(0, v)) / 1000);
+  if (y1 <= y0 || x1 <= x0) return img;
+  const area = (y1 - y0) * (x1 - x0);
+  if (g.category !== 'joya' && area > 0.12) return img;
+  const base = await sharp(img.data).rotate().toBuffer();
+  const { width: W = 0, height: H = 0 } = await sharp(base).metadata();
+  // Cuadro con margen: 60% más grande que el producto, mínimo 380 px, sin salirse de la foto.
+  const cx = ((x0 + x1) / 2) * W, cy = ((y0 + y1) / 2) * H;
+  const side = Math.floor(Math.min(W, H, Math.max(380, Math.max((x1 - x0) * W, (y1 - y0) * H) * 1.6)));
+  const left = Math.round(Math.min(Math.max(cx - side / 2, 0), W - side)), top = Math.round(Math.min(Math.max(cy - side / 2, 0), H - side));
+  const data = await sharp(base).extract({ left, top, width: Math.round(side), height: Math.round(side) }).resize(1200, 1200, { fit: 'inside' }).jpeg({ quality: 92 }).toBuffer();
+  return { data, mediaType: 'image/jpeg' };
 }
 
 /** Sin recorte posible: encuadra en 4:5 sobre fondo claro sin tocar el color. */

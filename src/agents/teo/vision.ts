@@ -26,12 +26,14 @@ export interface Garment {
   defects: string[];
   /** Título corto para la ficha, en español de España. */
   title: string;
+  /** Dónde está el producto en la foto: [arriba, izquierda, abajo, derecha] de 0 a 1000. */
+  box?: number[];
 }
 
 const GARMENT_SCHEMA = {
   type: 'object',
   additionalProperties: false,
-  required: ['usable', 'ask_shop', 'category', 'placement', 'wearer', 'color', 'pattern', 'fabric_guess', 'details', 'defects', 'title'],
+  required: ['usable', 'ask_shop', 'category', 'placement', 'wearer', 'color', 'pattern', 'fabric_guess', 'details', 'defects', 'title', 'box'],
   properties: {
     usable: { type: 'boolean' },
     ask_shop: { type: 'string' },
@@ -44,6 +46,7 @@ const GARMENT_SCHEMA = {
     details: { type: 'array', items: { type: 'string' } },
     defects: { type: 'array', items: { type: 'string' } },
     title: { type: 'string' },
+    box: { type: 'array', items: { type: 'integer' }, minItems: 4, maxItems: 4 },
   },
 };
 
@@ -56,6 +59,8 @@ Marca usable=false solo si con esta foto es imposible sacar una buena foto en mo
 En wearer indica quién la lleva por el tamaño y el corte: «bebe» para peleles, ranitas, jesusitos y ropa de 0 a 2 años; «nina» o «nino» para ropa infantil de 2 a 12 años; «infantil» si es de niño pero no se sabe si de niña o niño; «mujer» u «hombre» para adultos. Fíjate en el tamaño de la percha y de la prenda.
 
 Si es una joya o bisutería (anillo, pendientes, collar, pulsera), pon category «joya», placement «no_se_viste», wearer «mujer» salvo que sea claramente infantil, y en details describe el metal, la forma y las piedras. Una joya en el suelo, en una mesa o en la mano es una foto válida.
+
+En box da el recuadro ajustado del producto principal (solo la prenda o la joya, sin percha ni fondo) como [ymin, xmin, ymax, xmax] en una escala de 0 a 1000 sobre la foto. Si es pequeño, como un anillo en el suelo, el recuadro debe ser pequeño y preciso.
 
 En defects anota manchas, roturas, hilos o arrugas fuertes que se vean en la prenda (no los defectos de la foto). Los colores, en palabras normales de tienda («verde botella», «crudo»). Todo en español de España.`;
 
