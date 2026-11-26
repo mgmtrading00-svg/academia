@@ -63,8 +63,8 @@ export async function getPhotos(shopId: string): Promise<Photo[]> {
   const rows = data ?? [];
   const extra = (r: { attributes: PhotoAttributes | null }) => (r.attributes?.results ?? []).map((x) => x.path).filter((x): x is string => !!x);
   const paths = rows.flatMap((r) => [r.storage_path, ...(r.model_path ? [r.model_path] : []), ...extra(r)]);
-  const signed = paths.length ? await sb.storage.from(PHOTO_BUCKET).createSignedUrls(paths, 3600) : { data: [] as { path: string | null; signedUrl: string | null }[] };
-  const urlOf = new Map((signed.data ?? []).map((s) => [s.path, s.signedUrl]));
+  // Direcciones fijas: el navegador las guarda y no vuelve a bajar la foto en cada refresco.
+  const urlOf = new Map(paths.map((p) => [p, `/api/foto?p=${encodeURIComponent(p)}`]));
   return rows.map((r) => ({
     id: r.id, shopId, fileName: r.file_name, note: r.note, status: r.status, createdAt: r.created_at,
     url: urlOf.get(r.storage_path) ?? null,

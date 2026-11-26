@@ -48,12 +48,12 @@ function PhotoCard({ p }: { p: Photo }) {
     <article className={`ph ${p.modelUrl ? 'done' : ''}`}>
       <div className="ph-imgs">
         <figure>
-          <div className="img">{p.url ? <img src={p.url} alt={`Tu foto: ${p.fileName}`} /> : 'Sin vista previa'}</div>
+          <div className="img">{p.url ? <img src={sized(p.url, 700)} alt={`Tu foto: ${p.fileName}`} /> : 'Sin vista previa'}</div>
           {p.modelUrl && <figcaption>Tu foto</figcaption>}
         </figure>
         {(p.attributes?.results?.length ? p.attributes.results : p.modelUrl ? [{ kind: 'producto', label: 'De Teo', url: p.modelUrl }] : []).map((r, i) => (
           <figure key={i}>
-            <div className="img">{r.url ? <a href={r.url} target="_blank" rel="noreferrer"><img src={r.url} alt={`${r.label}: ${g?.title ?? p.fileName}`} /></a> : '…'}</div>
+            <div className="img">{r.url ? <a href={sized(r.url, 2000)} target="_blank" rel="noreferrer"><img src={sized(r.url, 700)} alt={`${r.label}: ${g?.title ?? p.fileName}`} /></a> : '…'}</div>
             <figcaption>{r.label}</figcaption>
           </figure>
         ))}
@@ -71,6 +71,9 @@ function PhotoCard({ p }: { p: Photo }) {
     </article>
   );
 }
+
+/** Pide la foto al tamaño justo (solo para las fotos guardadas en el almacén). */
+const sized = (url: string, w: number) => (url.startsWith('/api/foto') ? `${url}&w=${w}` : url);
 
 export default async function Fotos() {
   const photos = await getPhotos((await currentShopId())!);
